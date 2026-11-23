@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Temporary visual QA screenshots and Playwright output
+qa-screenshots/
+screenshots/tmp/
+test-results/
+playwright-report/
+.playwright-mcp/
+.playwright-cli/
+
+# Logs and env
+*.log
+.env
+.env.*
+
+# Local Claude Code settings
+.claude/settings.local.json

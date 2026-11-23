@@ -1,0 +1,21 @@
+{
+  "name": "modern-design-pack",
+  "version": "0.1.0",
+  "description": "Modern, context-aware UI design for Claude Code: design direction, tokens, components, motion, anti-slop review and visual QA.",
+  "author": {
+    "name": "Santiago Die",
+    "url": "https://github.com/santiagodie"
+  },
+  "homepage": "https://github.com/santiagodie/modern-design-pack",
+  "repository": "https://github.com/santiagodie/modern-design-pack",
+  "license": "MIT",
+  "keywords": [
+    "design",
+    "ui",
+    "ux",
+    "frontend",
+    "anti-slop",
+    "design-system",
+    "motion"
+  ]
+}

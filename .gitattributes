@@ -1,0 +1,20 @@
+# Normalise text files and store them with LF in the repository
+* text=auto
+
+# Always LF in the working tree, also on Windows
+*.md   text eol=lf
+*.json text eol=lf
+*.svg  text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+.gitattributes text eol=lf
+.gitignore     text eol=lf
+.gitkeep       text eol=lf
+LICENSE        text eol=lf
+
+# Binary files
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.gif  binary

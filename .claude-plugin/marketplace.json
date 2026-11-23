@@ -1,0 +1,15 @@
+{
+  "name": "santiagodie-plugins",
+  "description": "Claude Code plugins by Santiago Die.",
+  "owner": {
+    "name": "Santiago Die"
+  },
+  "plugins": [
+    {
+      "name": "modern-design-pack",
+      "source": "./",
+      "version": "0.1.0",
+      "description": "Modern, context-aware UI design for Claude Code: design direction, tokens, components, motion, anti-slop review and visual QA."
+    }
+  ]
+}
