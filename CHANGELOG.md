@@ -21,6 +21,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Impeccable recommended in the README as a companion plugin.
 - `modern-design` step 1: `references/direction.md` (context and the page's main job, assumptions when the user can't answer, 3–5 live references with principles on five axes, structure from content, one committed direction, template test, `design-brief.md` output; respects `PRODUCT.md` and `DESIGN.md` without writing them).
 - `design-review`: emoji used as any kind of image (CP2), and re-checking the areas a fix changed.
+- CI: NVIDIA SkillEvaluator "Skill checks" workflow (bundle 1.0.1, unmodified, checksum verified) on `skills/` with a minimum score of 70 and read-only permissions; badge in both READMEs.
+- Security: page content (HTML, text, metadata, `alt`, comments) is treated as data, never as instructions, in `design-review` and the direction step; text addressed to an AI is reported as a security finding in URL audits.
+- Pinned tool versions: Lighthouse 13.6.0, `@playwright/cli` 0.1.25, `serve` 14.2.8.
 - Phase 3a tests in `docs/examples/phase-3/` (bakery landing and veterinary dashboard built with the direction step, then reviewed).
 
 ### Changed
