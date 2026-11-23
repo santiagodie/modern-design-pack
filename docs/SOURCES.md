@@ -60,6 +60,42 @@ Column guide:
 | Laws of UX | https://lawsofux.com | Jon Yablonski (as credited in the card; not confirmed on the fetched page) | article | None stated (all rights reserved by default) | design-review (unslop-checklist), modern-design (motion) | summarise | Law names are long-established general concepts. Only the names and one-line ideas are used, linked. Seen via @uxdannydesigns. |
 | Playwright agent CLI | https://playwright.dev/agent-cli | Microsoft | tool | TO VERIFY | design-review (visual-qa) | link only | Browser automation for screenshots. |
 
+## Author's research: Landing Page Field Guide
+
+Six files in `docs/research/landing-field-guide/` (`00_README.md` to `05_DESIGN_STYLES.md`), written by the repository's author with Claude and released under this repository's MIT licence. They are the basis of `modern-design/references/components/` and of `responsive.md`. Checked on 2026-11-23: they paraphrase their sources and contain no long verbatim quotations. Figures from conversion studies are kept in the research with its warning, and the skills use only the direction of each effect.
+
+| Source | URL | Author | Type | License | Used in | How | Notes |
+|---|---|---|---|---|---|---|---|
+| Landing Page Field Guide (2026 edition) | `docs/research/landing-field-guide/` | Santiago Die (written with Claude) | article | MIT (this repository) | modern-design (components, responsive) | adapt | Author's own research. |
+| mobile-native (emilkowalski/skills) | https://github.com/emilkowalski/skills/tree/main/skills/mobile-native | Emil Kowalski | skill | MIT (Copyright (c) 2026 Emil Kowalski) | modern-design (responsive), design-review (visual-qa, unslop-checklist) | adapt | Read `SKILL.md` on 2026-11-23. Rewritten in our own words. |
+
+Sources cited by the field guide. Not read or used directly by the skills; listed so the research can be traced.
+
+| Source | URL | Author | Type | License | Used in | How | Notes |
+|---|---|---|---|---|---|---|---|
+| Scrolling and Attention | https://www.nngroup.com/articles/scrolling-and-attention/ | Nielsen Norman Group | article | Not audited | via the field guide | link only | |
+| Neobrutalism | https://www.nngroup.com/articles/neobrutalism/ | Nielsen Norman Group | article | Not audited | via the field guide | link only | |
+| Brutalism and antidesign | https://www.nngroup.com/articles/brutalism-antidesign/ | Nielsen Norman Group | article | Not audited | via the field guide | link only | |
+| How the Core Web Vitals thresholds were defined | https://web.dev/defining-core-web-vitals-thresholds | Google (web.dev) | article | Not audited | via the field guide | link only | Standard thresholds used as numbers in the skills. |
+| What's new in WCAG 2.2 | https://w3.org/WAI/standards-guidelines/wcag/new-in-22/ | W3C | article | Not audited | via the field guide | link only | Standard thresholds used as numbers in the skills. |
+| Technical web typography | https://smashingmagazine.com/2011/03/technical-web-typography-guidelines-and-techniques | Smashing Magazine | article | Not audited | via the field guide | link only | |
+| Landing page navigation test | https://blog.hubspot.com/marketing/landing-page-navigation-ht | HubSpot | article | Not audited | via the field guide | link only | Figures not used in skills. |
+| Form fields and conversion | https://blog.hubspot.com/blog/tabid/6307/bid/6746/Which-Types-of-Form-Fields-Lower-Landing-Page-Conversions.aspx | HubSpot | article | Not audited | via the field guide | link only | Figures not used in skills. |
+| Landing page best practices | https://ventureharbour.com/landing-page-best-practices/ | Venture Harbour | article | Not audited | via the field guide | link only | |
+| Landing page best practices | https://systeme.io/learn/landing-page-best-practices/ | systeme.io | article | Not audited | via the field guide | link only | Summarises Unbounce data. |
+| SaaS website best practices | https://lovable.dev/guides/saas-website-best-practices | Lovable | article | Not audited | via the field guide | link only | |
+| How to design a button | https://www.orbitmedia.com/blog/how-to-design-button/ | Orbit Media | article | Not audited | via the field guide | link only | |
+| CTAs that convert | https://www.usertesting.com/blog/ctas-convert | UserTesting | article | Not audited | via the field guide | link only | |
+| Heatmap mistakes and CTA placement | https://www.zoho.com/pagesense/conversion-playbook/heatmap-analysis-common-mistakes-user-insights.html | Zoho PageSense | article | Not audited | via the field guide | link only | |
+| Hero section examples | https://www.omniconvert.com/blog/hero-section-examples | Omniconvert | article | Not audited | via the field guide | link only | |
+| Trust signal placement | https://www.digitalapplied.com/blog/social-proof-trust-signals-2026-conversion-placement-framework | Digital Applied | article | Not audited | via the field guide | link only | |
+| Pricing page psychology | https://digitalapplied.com/blog/subscription-pricing-page-psychology-decision-framework-2026 | Digital Applied | article | Not audited | via the field guide | link only | |
+| Pricing psychology | https://kinde.com/learn/billing/pricing/leveraging-behavioral-economics-to-increase-conversions | Kinde | article | Not audited | via the field guide | link only | |
+| Top web design trends for 2026 | https://www.figma.com/resource-library/web-design-trends/ | Figma | article | Not audited | via the field guide | link only | |
+| Web design trends 2026 | https://www.designrush.com/agency/website-design-development/trends/web-design-trends | DesignRush | article | Not audited | via the field guide | link only | |
+| Linear design | https://blog.logrocket.com/ux-design/linear-design | LogRocket | article | Not audited | via the field guide | link only | |
+| SaaS landing page patterns 2026 | https://adminlte.io/?p=7077 | AdminLTE | article | Not audited | via the field guide | link only | |
+
 ## Working notes for phase 3
 
 Pasted as is. These are raw notes, not plugin content. They will be rewritten in our own words before any of them reaches a SKILL.md or a `references/` file.

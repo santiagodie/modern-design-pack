@@ -110,12 +110,14 @@ modern-design-pack/
 ├── skills/
 │   ├── modern-design/
 │   │   ├── SKILL.md
-│   │   └── references/      # direction, tokens, components, motion, resources
+│   │   └── references/      # direction, responsive, components/, tokens, motion, resources
 │   └── design-review/
 │       ├── SKILL.md
 │       └── references/      # unslop-checklist, visual-qa, audit-report
 ├── assets/banner.svg
 ├── docs/
+│   ├── research/            # guía de landing pages del autor, base de los componentes
+│   ├── examples/            # informes y capturas de las pruebas de cada fase
 │   ├── SOURCES.md           # todas las fuentes externas y el estado de su licencia
 │   ├── ARCHITECTURE.md      # flujo entre skills y principios
 │   └── ROADMAP.md

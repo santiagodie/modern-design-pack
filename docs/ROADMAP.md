@@ -29,7 +29,9 @@ Write one reference at a time, test it on the bakery and the vet dashboard, and 
 
 - [x] 3a: `direction.md` and step 1 of SKILL.md: [phase-3-results.md](examples/phase-3/phase-3-results.md)
 - [ ] Re-test the reference research in an interactive session (the browser couldn't open external sites in the non-interactive tests)
-- [ ] 3b: `components.md` (most failures in 3a: photo placeholders, per-item actions, board navigation on narrow screens, read-only display layouts)
+- [x] 3b, batch A: `components/` for pages that persuade (index plus header, hero, CTA, social proof, benefits, forms, final CTA, footer) and `responsive.md` (phone, tablet, desktop; capability over device): [phase-3b-results.md](examples/phase-3b-results.md)
+- [ ] 3b, batch B: important components (problem, how it works, demo, testimonials, pricing, trust, FAQ)
+- [ ] 3b, batch C: components for pages that operate (app bar, boards, tables, side panels, per-item actions, read-only displays)
 - [ ] 3c: `tokens.md` (section spacing rhythm, semantic color roles)
 - [ ] 3d: `motion.md`
 - [ ] `resources.md`

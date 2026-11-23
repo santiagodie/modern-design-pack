@@ -365,6 +365,45 @@ Before reporting, rule out artefacts of the audit setup:
 - **Fix:** keep one h1 and a continuous outline, and style headings by class when the size has to differ.
 - **Report as:** minor (`measured`).
 
+## Mobile, measurable
+
+Checks for pages used on touch screens. Each one can be read from the HTML or the CSS, so it is `measured`. Run the script below once (it reads the page's stylesheets; stylesheets from other domains can't be read and are reported as skipped), then confirm hits in the screenshots taken with a touch device preset.
+
+| ID | Signal | Why it matters | Fix | Report as |
+|---|---|---|---|---|
+| MN1 | Viewport meta with `user-scalable=no` or `maximum-scale=1` (same as ME2) | People can't zoom to read | Remove both | critical |
+| MN2 | Inputs, selects or textareas with a computed font size under 16 px at touch widths | iOS Safari zooms the page on focus and doesn't zoom back | 16 px or more on touch screens; smaller sizes only inside `(pointer: fine)` | minor |
+| MN3 | `:hover` rules outside a `(hover: hover)` media query | On touch screens the hover style sticks after a tap, and hover-only content can't be reached | Wrap hover styles in `@media (hover: hover) and (pointer: fine)` and give touch users `:active` feedback | minor; critical when content or navigation only appears on hover |
+| MN4 | `100vh` on heroes, full-height sections or fixed bars | On mobile `100vh` is taller than the visible screen, so content and bottom bars hide under the browser bar | `min-height: 100svh` for heroes; `100dvh` for app shells | minor |
+| MN5 | `env(safe-area-inset-*)` used without `viewport-fit=cover`, or bars fixed to the bottom edge with no safe-area padding when `viewport-fit=cover` is set | Without the meta the insets are zero; without the padding, bars sit under the home indicator | Add `viewport-fit=cover` and pad fixed edges with `env(safe-area-inset-*, 0px)` | minor |
+
+```js
+() => {
+  const viewport = document.querySelector('meta[name="viewport"]')?.content ?? '';
+  const out = { viewport, zoomDisabled: /user-scalable\s*=\s*(no|0)|maximum-scale\s*=\s*1(\.0+)?(\s*[,;]|$)/i.test(viewport),
+    viewportFitCover: /viewport-fit\s*=\s*cover/i.test(viewport), smallInputs: [], ungatedHover: [], vh100: [],
+    usesSafeArea: false, skippedSheets: 0 };
+  document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]), select, textarea').forEach(el => {
+    const size = parseFloat(getComputedStyle(el).fontSize);
+    if (size < 16 && out.smallInputs.length < 8) out.smallInputs.push((el.name || el.id || el.tagName.toLowerCase()) + ' ' + size + 'px');
+  });
+  const walk = (rules, inHover) => {
+    for (const r of rules) {
+      if (r.media) { walk(r.cssRules, inHover || /hover\s*:\s*hover/.test(r.media.mediaText)); continue; }
+      if (r.cssRules && !r.selectorText) { walk(r.cssRules, inHover); continue; }
+      const text = r.cssText || '';
+      if (r.selectorText && /:hover/.test(r.selectorText) && !inHover && out.ungatedHover.length < 10) out.ungatedHover.push(r.selectorText);
+      if (/(^|[^.\d])100vh/.test(text) && out.vh100.length < 8) out.vh100.push(r.selectorText || text.slice(0, 60));
+      if (/safe-area-inset/.test(text)) out.usesSafeArea = true;
+    }
+  };
+  for (const sheet of document.styleSheets) { try { walk(sheet.cssRules, false); } catch { out.skippedSheets++; } }
+  return out;
+}
+```
+
+Read the result with care: a `:hover` rule that only changes a cursor or underlines a text link is a tip at most, and `100vh` used as a fallback before an `svh` or `dvh` declaration is fine.
+
 ## Outdated, measurable
 
 Use these first when filling the "Outdated" section of a report. Each one can be checked on a live page, so it is `measured`, not taste. They follow the direction of Chrome's Modern Web Guidance, which steers sites toward Baseline web features instead of older workarounds. Run the script below at 1440 px and confirm each hit in the HTML before reporting it.

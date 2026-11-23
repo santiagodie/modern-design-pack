@@ -56,7 +56,7 @@ Number findings by section: C1, C2 for critical; M1 for minor; O1 for outdated; 
 | URL | <url> |
 | Pages reviewed | <up to 3 URLs> |
 | Date | <YYYY-MM-DD> |
-| Viewports | 375 px, 768 px, 1440 px |
+| Viewports | 375 px, 768 px, 1024 px (touch emulated), 1440 px |
 | Tools used | <for example: Playwright screenshots, HTML read, Lighthouse> |
 | Tools not available | <for example: Lighthouse, Chrome not found, so performance and accessibility scores are not measured> or "None" |
 
@@ -111,6 +111,10 @@ Number findings by section: C1, C2 for critical; M1 for minor; O1 for outdated; 
 ### A1. <title>
 
 <same fields; under "How to fix", describe the direction and its trade-off>
+
+## Needs a real device
+
+<What emulation couldn't verify and matters for this page, one line each: sticky hover after a tap, tap delay, safe areas, the on-screen keyboard, rubber-band scrolling, real Safari, performance on a mid-range phone. Write "Nothing relevant" when the page has no touch-specific risk.>
 
 ## What to keep
 
