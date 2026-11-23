@@ -8,6 +8,15 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 
 ## Entries
 
+### frontend-design (Anthropic)
+
+- **URL:** https://github.com/anthropics/skills/tree/main/skills/frontend-design
+- **Author / copyright holder:** Anthropic
+- **License:** Apache License 2.0 (`LICENSE.txt` in the skill folder), https://www.apache.org/licenses/LICENSE-2.0
+- **Used in:** `skills/modern-design/references/direction.md`
+- **What was used:** the approach of naming a concrete subject, audience and main job; planning colors, type and layout before coding and reviewing that plan against the brief; the list of generator defaults to check a direction against; spending boldness on one element.
+- **Changes:** rewritten in our own words, combined with other sources, and organised into a brief-writing process with an output template.
+
 ### unslop
 
 - **URL:** https://github.com/heydamir/unslop
@@ -31,9 +40,9 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 - **URL:** https://github.com/Leonxlnx/taste-skill (https://tasteskill.dev)
 - **Author / copyright holder:** Leon Lin and blueemi (Copyright (c) 2026 Leonxlnx)
 - **License:** MIT, https://opensource.org/license/mit
-- **Used in:** `skills/design-review/references/unslop-checklist.md`
-- **What was used:** ideas on showing the real product, effects that don't fit the business, scroll-triggered card animations, and mobile checks.
-- **Changes:** rewritten in our own words and merged with other sources.
+- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/modern-design/references/direction.md`
+- **What was used:** ideas on showing the real product, effects that don't fit the business, scroll-triggered card animations and mobile checks (checklist); writing down the real material before building, marking assumed facts, deciding structure by kind of business, and planning one line per section (direction).
+- **Changes:** rewritten in our own words and merged with other sources. Its seeded per-kind palette selection and fixed section lists were not used.
 
 ### Web Interface Guidelines
 
@@ -46,7 +55,7 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 
 ### Ideas without a stated licence
 
-Ideas from these sources were used in rewritten form only, with credit and no reuse of their wording: Instagram posts by @charles.unemployed and @millee.md, two shared screenshots whose authors are not yet identified, the names of laws from Laws of UX (https://lawsofux.com) by Jon Yablonski, and the legacy-to-modern direction of Chrome's Modern Web Guidance (https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers, used for the "Outdated, measurable" section (the detection script is our own). See `docs/SOURCES.md`.
+Ideas from these sources were used in rewritten form only, with credit and no reuse of their wording: Instagram posts by @charles.unemployed and @millee.md, two shared screenshots whose authors are not yet identified, the names of laws from Laws of UX (https://lawsofux.com) by Jon Yablonski, and the legacy-to-modern direction of Chrome's Modern Web Guidance (https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers, used for the "Outdated, measurable" section (the detection script is our own). `direction.md` also uses rewritten ideas from Figma's articles "What is web design" and "Tendencias de diseño web" (content before visuals, mobile first, performance as a design input, choosing from audience and brand values), and follows Impeccable's convention of `PRODUCT.md` and `DESIGN.md` files without reproducing their format. See `docs/SOURCES.md`.
 
 ## Entry template
 

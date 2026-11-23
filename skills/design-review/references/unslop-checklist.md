@@ -208,11 +208,12 @@ Before reporting, rule out artefacts of the audit setup:
 - **Fix:** remove it, or turn it into a plain text link.
 - **Report as:** outdated.
 
-### CP2. Mixed icons and emoji as icons
-- **Look for:** icons from several sets, mixed stroke widths and sizes, emoji used as feature icons.
-- **Fine when:** emoji appear in user content or in a playful brand that uses them consistently.
-- **Fix:** use one icon set, at one size and stroke.
-- **Report as:** minor.
+### CP2. Mixed icons, and emoji standing in for icons or images
+- **Look for:** icons from several sets, mixed stroke widths and sizes, and emoji used anywhere an icon or image belongs: feature icons, product photos, avatars, illustrations, empty states.
+- **Reads as generic because:** emoji render differently on every system and signal a prototype that never got real assets.
+- **Fine when:** emoji appear in user content, or in a playful brand that uses them consistently on purpose.
+- **Fix:** use one icon set, at one size and stroke. Where a photo or illustration is missing, put a neutral placeholder in the page's own style (a flat tone with a short label, or a simple shape that matches the page's illustrations) and mark it for the real asset. Never invent photos or stock imagery.
+- **Report as:** minor; outdated when emoji stand in for product images.
 
 ### CP3. Unstyled component library defaults
 - **Look for:** the default look of a popular kit (shadcn/ui is the common one): same radius, gray borders, default focus rings.

@@ -20,12 +20,20 @@
 - [x] Build a test landing page with Claude Code **without** this plugin, and run the own-project mode on it
 - [x] Save before and after screenshots in `docs/examples/`
 - [x] Record what the review caught and what it missed: [phase-2-results.md](examples/phase-2-results.md)
-- [ ] Re-test the two rules added after round 2 (borderline findings, CDN image formats)
+- [x] Re-test the two rules added after round 2 (borderline findings, CDN image formats): both held in round 3
+- [ ] Test the wider emoji rule (CP2), which no build has triggered yet
 
 ## Phase 3: modern-design references
 
-- [ ] Fill the references of `modern-design`, starting with the one that fails most in the tests: `direction.md`, `tokens.md`, `components.md`, `motion.md`, `resources.md`
-- [ ] Write the `modern-design` SKILL.md process and rules
+Write one reference at a time, test it on the bakery and the vet dashboard, and pick the next one from the failures.
+
+- [x] 3a: `direction.md` and step 1 of SKILL.md: [phase-3-results.md](examples/phase-3/phase-3-results.md)
+- [ ] Re-test the reference research in an interactive session (the browser couldn't open external sites in the non-interactive tests)
+- [ ] 3b: `components.md` (most failures in 3a: photo placeholders, per-item actions, board navigation on narrow screens, read-only display layouts)
+- [ ] 3c: `tokens.md` (section spacing rhythm, semantic color roles)
+- [ ] 3d: `motion.md`
+- [ ] `resources.md`
+- [ ] Write the `modern-design` SKILL.md rules
 - [ ] Remove the "Sources to merge" sections as they are used
 
 ## Phase 4: Tests with real briefs

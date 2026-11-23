@@ -114,9 +114,11 @@ The small-target list includes inline text links, which are fine inside a paragr
 - Capture with reduced motion on, so screenshots show the content, not the middle of an animation.
 - When a screenshot looks wrong, recapture before reporting. Lazy loading and slow fonts cause false alarms.
 - Report a layout problem at the width where it first appears, and mention the other widths where it repeats.
+- After fixing, capture again and look only at the areas you changed, at all three widths. Check them for gaps, empty panels, orphaned spacing or leftover styles that the fix itself created (for example, a decorative block that becomes an empty box once its decoration is removed). Fix those before calling the review done.
 - In URL audits, stay read-only: no clicking through forms, no logins, no accepting purchases. Accepting a cookie banner to see the page is fine; say so in the report.
 - Keep screenshots out of version control unless the user wants them committed.
 - Keep helper scripts you write (capture loops, check scripts) inside the screenshot folder or a temp folder, never loose in the project, and remove them when the user doesn't need them.
+- Stop any local server you started (for example `npx serve`) and close the browser when you finish. Servers left running keep the project folder locked and its port busy.
 - `playwright-cli` writes a `.playwright-cli/` folder (snapshots, console logs) in the directory it runs from. Run it from the screenshot folder, or delete that folder when you finish.
 
 ## Hand-off

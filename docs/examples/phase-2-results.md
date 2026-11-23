@@ -74,10 +74,16 @@ After round 1, then re-tested in round 2:
 - `audit-report.md`: label Lighthouse numbers as lab data; new "What to keep" section in the template.
 - `SKILL.md` (both skills): reference paths use `${CLAUDE_SKILL_DIR}`.
 
-After round 2, not re-tested:
+After round 2, re-tested in round 3 (below):
 
 - `unslop-checklist.md`: borderline findings go to Tips; confirm OM5 against CDN format negotiation.
 - `visual-qa.md`: run `playwright-cli` from the screenshot folder or delete `.playwright-cli/`.
+
+## Round 3 (phase 3a)
+
+- **linear.app, third run** ([report](url-audits/linear.app-2026-11-23.run3.md)). Both rules held. The two patterns that run 2 had put under Outdated (uppercase label above the logos, three equal cards) now appear as Tips marked "borderline", and the Outdated section says plainly that it found no dated aesthetic patterns. OM5 recognised the CDN's `f=auto` format negotiation, confirmed it with Lighthouse, and reported only the missing `srcset`. Helper scripts stayed in the audit folder, as the rule asks, but the session couldn't delete them in non-interactive mode.
+- **An unmodified SaaS template from a public AI-builder gallery** (report kept out of the repository). The page could belong to any competitor. It found 8 generic patterns (template hero, pill label above every section, six identical icon-tile cards, 01/02/03 steps, gradient headline text, default component styling with a single default font, fade-in on every section), placeholder client logos, a hotlinked product screenshot from another brand, calls to action that do nothing, contradictory claims, and dark-mode contrast failures.
+- **Two rules added in phase 3a.** Re-checking the areas a fix changed (`visual-qa.md`) was exercised: both own-project reviews caught and fixed regressions their own fixes had introduced. The wider emoji rule (CP2) was not triggered, because the new builds used no emoji. It is still untested. See [phase-3-results.md](phase-3/phase-3-results.md).
 
 ## Comparison
 

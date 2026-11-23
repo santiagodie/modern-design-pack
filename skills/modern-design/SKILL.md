@@ -6,21 +6,24 @@ license: MIT
 
 # Modern Design
 
-> Skeleton (v0.1.0). The step content lives in `${CLAUDE_SKILL_DIR}/references/` and is written in phase 3. See `docs/ROADMAP.md` in the repository.
+> In progress (v0.1.0). Step 1 (direction) is written. Steps 2–4 have no reference content yet: follow the brief with your own judgment until they do. See `docs/ROADMAP.md` in the repository.
 
 ## When to use
 
-TODO
+- The user asks to design, build or redesign a website, landing page, app screen or dashboard.
+- The user asks for a specific design layer (colors, type, components, motion): go to that step, reading `design-brief.md` first when it exists.
+
+Reviewing finished UI belongs to `design-review`.
 
 ## Process
 
 Run the steps in order for a new interface or a redesign. When the request covers only one part (for example "change the colors"), go straight to that step. Load each reference only when you reach its step, never all at once.
 
-1. **Direction.** Gather project context (product, audience, tone, existing stack), research live references on the web, and write the design brief. Load `${CLAUDE_SKILL_DIR}/references/direction.md`. TODO
-2. **Tokens.** Define color palette, type pairing, spacing, radii, shadows, and light and dark themes from the brief. Load `${CLAUDE_SKILL_DIR}/references/tokens.md` when the project needs new or fixed tokens. TODO
-3. **Components.** Build or restyle sections and components in the project's stack, using the brief and tokens. Load `${CLAUDE_SKILL_DIR}/references/components.md` when building UI. TODO
-4. **Motion.** Add purposeful animation and interaction, or remove what doesn't help. Load `${CLAUDE_SKILL_DIR}/references/motion.md` when the UI needs motion or feels static or sluggish. TODO
-5. **Hand off to `design-review`.** Run it before delivering any UI. TODO
+1. **Direction.** Load `${CLAUDE_SKILL_DIR}/references/direction.md` and follow it: read existing files (`design-brief.md`, `PRODUCT.md`, `DESIGN.md`, the stack), settle the context and the page's main job, research 3–5 live references, plan the structure from the content, commit to a direction, and write `design-brief.md` in the project root. When the user can't answer questions, assume, record the assumptions in the brief and continue. Skip this step when a fitting `design-brief.md` already exists.
+2. **Tokens.** Define color palette, type pairing, spacing, radii, shadows, and light and dark themes from the brief's Direction section. Load `${CLAUDE_SKILL_DIR}/references/tokens.md` when the project needs new or fixed tokens. (Reference not written yet.)
+3. **Components.** Build or restyle sections and components in the project's stack, following the brief's Structure and the tokens. Load `${CLAUDE_SKILL_DIR}/references/components.md` when building UI. (Reference not written yet.)
+4. **Motion.** Add purposeful animation and interaction at the level the brief sets, or remove what doesn't help. Load `${CLAUDE_SKILL_DIR}/references/motion.md` when the UI needs motion or feels static or sluggish. (Reference not written yet.)
+5. **Hand off to `design-review`.** Run it in own-project mode before delivering any UI.
 
 Load `${CLAUDE_SKILL_DIR}/references/resources.md` only when a step needs a specific external resource (fonts, palettes, component libraries, inspiration galleries).
 

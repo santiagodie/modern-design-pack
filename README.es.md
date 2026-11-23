@@ -10,7 +10,7 @@
 
 <p align="center"><a href="README.md">English</a> · <b>Español</b></p>
 
-> **En desarrollo inicial.** `design-review` está escrita y ha pasado una primera ronda de pruebas ([resultados](docs/examples/phase-2-results.md), en inglés). `modern-design` sigue siendo una plantilla vacía. Consulta el [Roadmap](docs/ROADMAP.md).
+> **En desarrollo inicial.** `design-review` está escrita y ha pasado una primera ronda de pruebas ([resultados](docs/examples/phase-2-results.md), en inglés). `modern-design` tiene escrito y probado su primer paso, dirección y brief de diseño ([resultados](docs/examples/phase-3/phase-3-results.md), en inglés); los pasos de tokens, componentes y animación siguen vacíos. Consulta el [Roadmap](docs/ROADMAP.md).
 
 ## Tabla de contenidos
 
@@ -128,7 +128,7 @@ modern-design-pack/
 
 ## Limitaciones conocidas
 
-- **modern-design está vacía:** su `SKILL.md` y sus referencias son plantillas con secciones TODO. Solo funciona `design-review`.
+- **modern-design está incompleta:** solo el paso de dirección tiene contenido. Tokens, componentes y animación funcionan con el criterio por defecto del modelo, siguiendo el brief.
 - **Poco probado:** `design-review` se ha probado con tres webs públicas y una landing generada, una o dos veces cada una, en sesiones no interactivas ([resultados](docs/examples/phase-2-results.md)). Dos cambios de reglas hechos tras la última ronda no se han vuelto a probar. Los juicios y las métricas de laboratorio varían entre ejecuciones. No está comprobado que las skills se activen con peticiones naturales en inglés y en español.
 - **Auditoría de licencias parcial:** solo se han revisado las fuentes que usa `design-review`. El resto de `docs/SOURCES.md` sigue en `TO VERIFY` y se revisa cuando se vaya a usar cada fuente. No se ha copiado texto de terceros: las ideas se reescriben y se acreditan.
 - **Fuentes sin identificar:** dos de las listas anti-slop vienen de capturas cuyo autor aún no está identificado.

@@ -10,7 +10,7 @@
 
 <p align="center"><b>English</b> · <a href="README.es.md">Español</a></p>
 
-> **Early development.** `design-review` is written and has been through a first round of tests ([results](docs/examples/phase-2-results.md)). `modern-design` is still an empty template. See the [Roadmap](docs/ROADMAP.md).
+> **Early development.** `design-review` is written and has been through a first round of tests ([results](docs/examples/phase-2-results.md)). `modern-design` has its first step (direction and design brief) written and tested ([results](docs/examples/phase-3/phase-3-results.md)); its tokens, components and motion steps are still empty. See the [Roadmap](docs/ROADMAP.md).
 
 ## Table of Contents
 
@@ -128,7 +128,7 @@ modern-design-pack/
 
 ## Known Limitations
 
-- **modern-design is empty:** its `SKILL.md` and references are templates with TODO sections. Only `design-review` works.
+- **modern-design is incomplete:** only the direction step has content. Tokens, components and motion run on the model's default judgment, following the brief.
 - **Lightly tested:** `design-review` was tested on three public sites and one generated landing page, once or twice each, in non-interactive sessions ([results](docs/examples/phase-2-results.md)). Two rule changes made after the last round are not re-tested. Judgment calls and lab metrics vary between runs. Skill triggering from natural requests in English and Spanish is unverified.
 - **Partial licence audit:** only the sources used by `design-review` have been checked. The rest of `docs/SOURCES.md` is still `TO VERIFY` and is checked when each source is about to be used. No third-party text has been copied; ideas are rewritten and credited.
 - **Unidentified sources:** two of the anti-slop lists come from screenshots whose authors are not yet identified.
