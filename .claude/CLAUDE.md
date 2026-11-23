@@ -2,8 +2,18 @@
 
 This repository is both a Claude Code marketplace (`santiagodie-plugins`) and the plugin it lists (`modern-design-pack`, source `./`). Read `docs/ARCHITECTURE.md` and `docs/ROADMAP.md` before starting work.
 
+## Skills
+
+There are two skills:
+
+- `modern-design`: designing or redesigning. Its five steps load `references/direction.md`, `tokens.md`, `components.md` and `motion.md` one at a time, plus `resources.md` (curated links) when needed.
+- `unslop-review`: auditing finished UI, including the browser check in `references/visual-qa.md`.
+
+Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests. Prefer adding a reference file.
+
 ## Third-party material
 
+- Audit a source's licence when it is about to be used, not before. Update its row in `docs/SOURCES.md` at that point.
 - Never copy text from a source whose licence is not confirmed as compatible. Summarise it in our own words instead.
 - Record every source used in `docs/SOURCES.md`, and every adapted piece in `THIRD_PARTY_NOTICES.md`.
 - The working notes in `docs/SOURCES.md` are raw input. Rewrite them before they go into a skill.
@@ -14,7 +24,7 @@ This repository is both a Claude Code marketplace (`santiagodie-plugins`) and th
 - Keep each `SKILL.md` under ~500 lines and move detail to its `references/` folder, loaded only when needed.
 - Write rules in context: "do X when Y". Avoid absolute bans.
 - Each skill is self-contained. No paths that leave its folder, and no symlinks anywhere in the repo.
-- Descriptions stay under 1024 characters and must not overlap with the other skills.
+- Descriptions stay under 1024 characters and must not overlap with each other.
 
 ## Checks and releases
 

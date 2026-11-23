@@ -10,7 +10,7 @@
 
 <p align="center"><a href="README.md">English</a> · <b>Español</b></p>
 
-> **En desarrollo inicial.** Esto es un esqueleto. Las seis skills existen, pero son plantillas vacías, y todavía no se ha probado con proyectos reales. Si lo instalas hoy, Claude Code verá los nombres de las skills y poco más. Consulta el [Roadmap](docs/ROADMAP.md).
+> **En desarrollo inicial.** Esto es un esqueleto. Las dos skills existen, pero son plantillas vacías, y todavía no se ha probado con proyectos reales. Si lo instalas hoy, Claude Code verá los nombres de las skills y poco más. Consulta el [Roadmap](docs/ROADMAP.md).
 
 ## Tabla de contenidos
 
@@ -70,23 +70,23 @@ Para ofrecerlo a todo el equipo de un proyecto, añade esto al `.claude/settings
 
 Cada persona acepta el aviso de confianza del espacio de trabajo e instala el plugin una vez por clon, por ejemplo con `claude plugin install modern-design-pack@santiagodie-plugins --scope project`.
 
-Las skills se activan solas a partir de su descripción, o se pueden llamar directamente, por ejemplo `/modern-design-pack:design-direction`.
+Las skills se activan solas a partir de su descripción, o se pueden llamar directamente, por ejemplo `/modern-design-pack:modern-design`.
 
 ## Cómo funciona
 
+Dos skills: una construye y la otra revisa.
+
 ```mermaid
 flowchart LR
-    A[design-direction] --> B[design-tokens]
-    B --> C[compose-ui]
-    C --> D[motion]
-    D --> E[unslop-review]
-    E --> F[visual-qa]
-    F -- problemas detectados --> C
+    A[modern-design] --> B[unslop-review]
+    B -- problemas detectados --> A
 ```
 
-**El contexto manda sobre las reglas.** Las reglas se escriben como "haz X cuando Y", no como prohibiciones absolutas. El brief de `design-direction` decide cuándo se aplica cada una.
+`modern-design` trabaja en cinco pasos: dirección, tokens, componentes, animación y paso a `unslop-review`. Cada paso carga su propio archivo de referencia solo cuando hace falta, así que una petición sobre colores no carga las pautas de animación.
 
-**Referencias, no copias.** `design-direction` usa WebSearch para encontrar webs comparables, WebFetch para leerlas y capturas con Playwright para verlas. Anota los principios de cada referencia, nunca su código, recursos ni textos.
+**El contexto manda sobre las reglas.** Las reglas se escriben como "haz X cuando Y", no como prohibiciones absolutas. El brief del paso de dirección decide cuándo se aplica cada una.
+
+**Referencias, no copias.** El paso de dirección usa WebSearch para encontrar webs comparables, WebFetch para leerlas y capturas con Playwright para verlas. Anota los principios de cada referencia, nunca su código, recursos ni textos.
 
 Más detalle en [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) (en inglés).
 
@@ -94,12 +94,8 @@ Más detalle en [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) (en inglés).
 
 | Skill | Para qué sirve |
 |---|---|
-| `design-direction` | Punto de partida. Reúne contexto, busca referencias en vivo y escribe el brief de diseño. |
-| `design-tokens` | Paleta de color, combinación tipográfica, espaciado, radios, sombras, temas claro y oscuro. |
-| `compose-ui` | Construye secciones y componentes (hero, features, precios, navegación, formularios, fondos). |
-| `motion` | Animación e interacción: tiempos, curvas, microinteracciones, scroll, texto. |
-| `unslop-review` | Detecta y corrige patrones genéricos de IA y errores habituales de UI. |
-| `visual-qa` | Revisa la interfaz en marcha en un navegador real a anchos de móvil, tablet y escritorio. |
+| `modern-design` | Punto de entrada para diseñar o rediseñar. Reúne contexto y referencias en vivo y después define dirección, tokens (color, tipografía, espaciado), componentes y animación para el proyecto. |
+| `unslop-review` | Detecta y corrige patrones genéricos de IA y errores habituales de UI, con revisión en un navegador real y capturas a anchos de móvil, tablet y escritorio. |
 
 ## Estructura del proyecto
 
@@ -109,12 +105,12 @@ modern-design-pack/
 │   ├── plugin.json          # manifiesto del plugin
 │   └── marketplace.json     # marketplace "santiagodie-plugins", apunta a este repo como "./"
 ├── skills/
-│   ├── design-direction/    # SKILL.md + references/
-│   ├── design-tokens/
-│   ├── compose-ui/
-│   ├── motion/
-│   ├── unslop-review/
-│   └── visual-qa/
+│   ├── modern-design/
+│   │   ├── SKILL.md
+│   │   └── references/      # direction, tokens, components, motion, resources
+│   └── unslop-review/
+│       ├── SKILL.md
+│       └── references/      # visual-qa
 ├── assets/banner.svg
 ├── docs/
 │   ├── SOURCES.md           # todas las fuentes externas y el estado de su licencia
@@ -131,9 +127,9 @@ modern-design-pack/
 
 - **Skills vacías:** cada `SKILL.md` es una plantilla con secciones TODO. El plugin todavía no hace nada útil.
 - **Sin probar:** ningún proyecto real ha pasado por el flujo. No está comprobado que las skills se activen en inglés y en español.
-- **Licencias sin auditar:** la licencia de cada fuente de `docs/SOURCES.md` sigue en `TO VERIFY`. No se ha copiado nada de terceros.
+- **Licencias sin auditar:** la licencia de cada fuente de `docs/SOURCES.md` sigue en `TO VERIFY`. Cada una se revisa cuando se vaya a usar. No se ha copiado nada de terceros.
 - **Fuentes sin identificar:** dos de las listas anti-slop vienen de capturas cuyo autor aún no está identificado.
-- **Depende de un navegador:** `visual-qa` y la parte de capturas de `design-direction` necesitarán Playwright, que el plugin no instala.
+- **Depende de un navegador:** la revisión en navegador de `unslop-review` y la parte de capturas del paso de dirección necesitarán Playwright, que el plugin no instala.
 - **Sin icono:** el plugin aún no tiene icono para el listado.
 
 ## Créditos

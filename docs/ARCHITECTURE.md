@@ -4,38 +4,38 @@
 
 ## Skill flow
 
-Six skills, each with one job. They run in order on a new interface. Each skill can also be called on its own when the task only needs that step.
+Two skills. `modern-design` builds, `unslop-review` checks. Each one keeps its detail in `references/` files that are loaded only for the step that needs them, so a request that touches only colors does not load the motion guidance.
 
 ```mermaid
 flowchart LR
-    A[design-direction] --> B[design-tokens]
-    B --> C[compose-ui]
-    C --> D[motion]
-    D --> E[unslop-review]
-    E --> F[visual-qa]
-    F -- issues found --> C
+    A[modern-design] --> B[unslop-review]
+    B -- issues found --> A
 ```
 
-| Skill | Input | Output |
+| Skill | Steps | Reference loaded per step |
 |---|---|---|
-| design-direction | User request, project files, live web references | Design brief |
-| design-tokens | Design brief | Color, type, spacing, radius, shadow and theme tokens |
-| compose-ui | Brief and tokens | Sections and components in the project's stack |
-| motion | Built UI | Purposeful animation and interaction |
-| unslop-review | Built UI | List of generic patterns found, and fixes applied |
-| visual-qa | Running app | Screenshots and an issue list, sent back to compose-ui when needed |
+| modern-design | 1. Direction: context, live references, design brief | `references/direction.md` |
+| | 2. Tokens: color, type, spacing, radii, shadows, themes | `references/tokens.md` |
+| | 3. Components: sections and components in the project's stack | `references/components.md` |
+| | 4. Motion: purposeful animation and interaction | `references/motion.md` |
+| | 5. Hand off to unslop-review | none |
+| | Any step that needs an external resource | `references/resources.md` |
+| unslop-review | 1. Review code and design decisions for generic patterns | none yet |
+| | 2. Browser check with screenshots, when the app is running | `references/visual-qa.md` |
 
 Each skill is self-contained. It reads only its own `SKILL.md` and `references/` folder, and never paths outside its folder, because installed plugins are copied to a cache and files outside the plugin are not available.
+
+A skill is split into more skills only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests.
 
 ## Context over rules
 
 Design rules that hold everywhere are rare. A pill badge, a gradient or an italic serif word is a tired cliché in one product and the right choice in another. So:
 
 - Rules are written as "do X when Y", never as absolute bans.
-- The design brief from `design-direction` is the tie-breaker. When a rule and the brief disagree, the brief wins and the reason is stated.
+- The design brief from the direction step is the tie-breaker. When a rule and the brief disagree, the brief wins and the reason is stated.
 - `unslop-review` flags patterns as likely generic in this context, not as forbidden.
 
-## How design-direction researches references
+## How the direction step researches references
 
 1. **Find** with WebSearch: look for live sites in the same category, audience and tone as the project, on galleries such as Awwwards and Curated and on real product sites.
 2. **Read** with WebFetch: take text, structure and copy patterns from the pages found.

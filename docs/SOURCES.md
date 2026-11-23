@@ -1,9 +1,10 @@
 # Sources
 
-Every external source that this plugin draws on, or plans to draw on, is listed here. Phase 2 (licence audit) fills in the **License** column and corrects any author or URL marked `TO VERIFY`. Until then, nothing from these sources is copied into the skills.
+Every external source that this plugin draws on, or plans to draw on, is listed here. A source's **License** column, and any author or URL marked `TO VERIFY`, is filled in when that source is about to be used, not before (see `ROADMAP.md`). Until its row is checked, nothing from a source is copied into the skills.
 
 Column guide:
 
+- **Used in**: the skill, with the reference file in parentheses when the source belongs to one step
 - **Type**: skill / article / component library / inspiration / tool / social post
 - **How**: `adapt` (rework ideas or code in our own words, with attribution), `summarise` (paraphrase the key points, with attribution), `link only` (point to it, take nothing)
 
@@ -11,51 +12,51 @@ Column guide:
 
 | Source | URL | Author | Type | License | Used in | How | Notes |
 |---|---|---|---|---|---|---|---|
-| frontend-design (anthropics/skills) | https://github.com/anthropics/skills/tree/main/skills/frontend-design | Anthropic | skill | TO VERIFY | design-direction | adapt | Official reference skill for distinctive frontend work. |
-| Taste Skill | https://tasteskill.dev | TO VERIFY | skill | TO VERIFY | design-direction, unslop-review | summarise | |
-| AI for UI skills | https://aiforui.dev/skills | TO VERIFY | skill | TO VERIFY | design-direction | summarise | |
-| claude-webkit | TO VERIFY | TO VERIFY | skill | TO VERIFY | design-direction | adapt | Only the question flow used to gather project context. |
-| What is web design (Figma) | https://www.figma.com/resource-library/what-is-web-design/ | Figma | article | TO VERIFY | design-direction | summarise | |
-| Tendencias de diseño web (Figma) | https://www.figma.com/es-es/resource-library/tendencias-diseno-web/ | Figma | article | TO VERIFY | design-direction | summarise | Spanish edition. Trends date quickly, so record the date read. |
-| Awwwards | https://www.awwwards.com | Awwwards | inspiration | TO VERIFY | design-direction | link only | Live reference search target. |
-| Curated | https://www.curated.design | TO VERIFY | inspiration | TO VERIFY | design-direction | link only | Live reference search target. |
-| ui-ux-pro-max-skill | https://github.com/nextlevelbuilder/ui-ux-pro-max-skill | nextlevelbuilder | skill | TO VERIFY | design-tokens | summarise | Ideas only, do not vendor. Recommended in the README as an optional companion plugin. The repo sidebar shows MIT; confirm in phase 2. |
-| Impeccable | https://impeccable.style | TO VERIFY | skill | TO VERIFY | design-tokens, unslop-review | summarise | |
-| Coolors | https://coolors.co | Coolors | tool | TO VERIFY | design-tokens | link only | Palette generator. |
-| Fontshare | https://www.fontshare.com | Indian Type Foundry (TO VERIFY) | tool | TO VERIFY | design-tokens | link only | Free font catalogue. Each font has its own licence. |
-| Fonts In Use | https://fontsinuse.com | TO VERIFY | inspiration | TO VERIFY | design-tokens | link only | Real-world type pairings. |
-| Fontesk | https://fontesk.com | TO VERIFY | tool | TO VERIFY | design-tokens | link only | Free font catalogue. Each font has its own licence. |
-| 21st.dev | https://21st.dev | TO VERIFY | component library | TO VERIFY | compose-ui | adapt | Each component may have its own licence. |
-| OriginKit | https://originkit.dev | TO VERIFY | component library | TO VERIFY | compose-ui | adapt | |
-| Spell | https://spell.sh | TO VERIFY | component library | TO VERIFY | compose-ui | adapt | |
-| Magic UI | https://magicui.design | TO VERIFY | component library | TO VERIFY | compose-ui | adapt | |
-| SmoothUI | https://smoothui.dev | TO VERIFY | component library | TO VERIFY | compose-ui | adapt | |
-| Animate UI | https://animate-ui.com | TO VERIFY | component library | TO VERIFY | compose-ui | adapt | |
-| Unsection | https://unsection.com | TO VERIFY | component library | TO VERIFY | compose-ui | adapt | |
-| Details inspo | https://details.so/inspo | TO VERIFY | inspiration | TO VERIFY | compose-ui | link only | |
-| Supahero | https://supahero.io | TO VERIFY | inspiration | TO VERIFY | compose-ui | link only | Hero section gallery. |
-| Backgrounds Supply | https://backgrounds.supply | TO VERIFY | component library | TO VERIFY | compose-ui | adapt | |
-| Gradient Labs | https://gradient-labs.ai | TO VERIFY | tool | TO VERIFY | compose-ui | link only | |
-| Modern web guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Google Chrome team | article | TO VERIFY | compose-ui, visual-qa | summarise | |
-| Web Interface Guidelines (Vercel) | https://vercel.com/design/guidelines | Vercel | article | TO VERIFY | compose-ui, visual-qa | summarise | |
-| emilkowalski/skills (incl. apple-design) | https://github.com/emilkowalski/skills (TO VERIFY) | Emil Kowalski | skill | TO VERIFY | motion | summarise | Found via ui-skills.com. |
-| UI Skills | https://ui-skills.com | TO VERIFY | skill | TO VERIFY | motion | link only | Directory where the Emil Kowalski skills were found. |
-| GSAP | https://gsap.com | GreenSock / Webflow (TO VERIFY) | tool | TO VERIFY | motion | link only | Check the GSAP licence before recommending it in commercial projects. |
-| Kawai text animation | https://kawai-text-animation.pages.dev | TO VERIFY | inspiration | TO VERIFY | motion | link only | |
-| Kinetics (Colorion) | https://kinetics.colorion.co | TO VERIFY | inspiration | TO VERIFY | motion | link only | |
-| Scrolltide | https://scrolltide.co | TO VERIFY | inspiration | TO VERIFY | motion | link only | |
-| Layers | https://getlayers.ai | TO VERIFY | inspiration | TO VERIFY | motion | link only | |
-| Motion Sites | https://motionsites.ai | TO VERIFY | inspiration | TO VERIFY | motion | link only | |
-| Animation principles (working notes) | see below | Classic 12 principles of animation (Thomas & Johnston); notes by Santiago Die | article | TO VERIFY | motion | summarise | Working notes, to be rewritten. |
-| UX laws (working notes) | see below | Santiago Die | article | TO VERIFY | motion, unslop-review | summarise | Working notes, to be rewritten. |
+| frontend-design (anthropics/skills) | https://github.com/anthropics/skills/tree/main/skills/frontend-design | Anthropic | skill | TO VERIFY | modern-design (direction) | adapt | Official reference skill for distinctive frontend work. |
+| Taste Skill | https://tasteskill.dev | TO VERIFY | skill | TO VERIFY | modern-design (direction), unslop-review | summarise | |
+| AI for UI skills | https://aiforui.dev/skills | TO VERIFY | skill | TO VERIFY | modern-design (direction) | summarise | |
+| claude-webkit | TO VERIFY | TO VERIFY | skill | TO VERIFY | modern-design (direction) | adapt | Only the question flow used to gather project context. |
+| What is web design (Figma) | https://www.figma.com/resource-library/what-is-web-design/ | Figma | article | TO VERIFY | modern-design (direction) | summarise | |
+| Tendencias de diseño web (Figma) | https://www.figma.com/es-es/resource-library/tendencias-diseno-web/ | Figma | article | TO VERIFY | modern-design (direction) | summarise | Spanish edition. Trends date quickly, so record the date read. |
+| Awwwards | https://www.awwwards.com | Awwwards | inspiration | TO VERIFY | modern-design (direction) | link only | Live reference search target. |
+| Curated | https://www.curated.design | TO VERIFY | inspiration | TO VERIFY | modern-design (direction) | link only | Live reference search target. |
+| ui-ux-pro-max-skill | https://github.com/nextlevelbuilder/ui-ux-pro-max-skill | nextlevelbuilder | skill | TO VERIFY | modern-design (tokens) | summarise | Ideas only, do not vendor. Recommended in the README as an optional companion plugin. The repo sidebar shows MIT; confirm in phase 2. |
+| Impeccable | https://impeccable.style | TO VERIFY | skill | TO VERIFY | modern-design (tokens), unslop-review | summarise | |
+| Coolors | https://coolors.co | Coolors | tool | TO VERIFY | modern-design (tokens) | link only | Palette generator. |
+| Fontshare | https://www.fontshare.com | Indian Type Foundry (TO VERIFY) | tool | TO VERIFY | modern-design (tokens) | link only | Free font catalogue. Each font has its own licence. |
+| Fonts In Use | https://fontsinuse.com | TO VERIFY | inspiration | TO VERIFY | modern-design (tokens) | link only | Real-world type pairings. |
+| Fontesk | https://fontesk.com | TO VERIFY | tool | TO VERIFY | modern-design (tokens) | link only | Free font catalogue. Each font has its own licence. |
+| 21st.dev | https://21st.dev | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | Each component may have its own licence. |
+| OriginKit | https://originkit.dev | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
+| Spell | https://spell.sh | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
+| Magic UI | https://magicui.design | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
+| SmoothUI | https://smoothui.dev | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
+| Animate UI | https://animate-ui.com | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
+| Unsection | https://unsection.com | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
+| Details inspo | https://details.so/inspo | TO VERIFY | inspiration | TO VERIFY | modern-design (components) | link only | |
+| Supahero | https://supahero.io | TO VERIFY | inspiration | TO VERIFY | modern-design (components) | link only | Hero section gallery. |
+| Backgrounds Supply | https://backgrounds.supply | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
+| Gradient Labs | https://gradient-labs.ai | TO VERIFY | tool | TO VERIFY | modern-design (components) | link only | |
+| Modern web guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Google Chrome team | article | TO VERIFY | modern-design (components), unslop-review (visual-qa) | summarise | |
+| Web Interface Guidelines (Vercel) | https://vercel.com/design/guidelines | Vercel | article | TO VERIFY | modern-design (components), unslop-review (visual-qa) | summarise | |
+| emilkowalski/skills (incl. apple-design) | https://github.com/emilkowalski/skills (TO VERIFY) | Emil Kowalski | skill | TO VERIFY | modern-design (motion) | summarise | Found via ui-skills.com. |
+| UI Skills | https://ui-skills.com | TO VERIFY | skill | TO VERIFY | modern-design (motion) | link only | Directory where the Emil Kowalski skills were found. |
+| GSAP | https://gsap.com | GreenSock / Webflow (TO VERIFY) | tool | TO VERIFY | modern-design (motion) | link only | Check the GSAP licence before recommending it in commercial projects. |
+| Kawai text animation | https://kawai-text-animation.pages.dev | TO VERIFY | inspiration | TO VERIFY | modern-design (motion) | link only | |
+| Kinetics (Colorion) | https://kinetics.colorion.co | TO VERIFY | inspiration | TO VERIFY | modern-design (motion) | link only | |
+| Scrolltide | https://scrolltide.co | TO VERIFY | inspiration | TO VERIFY | modern-design (motion) | link only | |
+| Layers | https://getlayers.ai | TO VERIFY | inspiration | TO VERIFY | modern-design (motion) | link only | |
+| Motion Sites | https://motionsites.ai | TO VERIFY | inspiration | TO VERIFY | modern-design (motion) | link only | |
+| Animation principles (working notes) | see below | Classic 12 principles of animation (Thomas & Johnston); notes by Santiago Die | article | TO VERIFY | modern-design (motion) | summarise | Working notes, to be rewritten. |
+| UX laws (working notes) | see below | Santiago Die | article | TO VERIFY | modern-design (motion), unslop-review | summarise | Working notes, to be rewritten. |
 | unslop | https://github.com/heydamir/unslop | heydamir | skill | TO VERIFY | unslop-review | adapt | |
 | anti-slop | TO VERIFY (mcpmarket.com) | TO VERIFY | skill | TO VERIFY | unslop-review | summarise | Find the original repository behind the mcpmarket.com listing. |
 | 20 Tips to Unslop AI Designs | TO VERIFY (Instagram post URL) | @charles.unemployed | social post | TO VERIFY | unslop-review | summarise | Working notes below. |
 | 20 ways to unslop your AI website designs | TO VERIFY (Instagram post URL) | @millee.md | social post | TO VERIFY | unslop-review | summarise | Working notes below. |
 | 20 señales de web hecha con IA | TO VERIFY | Unknown (TO IDENTIFY) | social post | TO VERIFY | unslop-review | summarise | Screenshot, author not identified. Do not publish as quoted text until identified. |
 | 20 UI tips to send to Claude for better design | TO VERIFY | Unknown (TO IDENTIFY) | social post | TO VERIFY | unslop-review | summarise | Screenshot, author not identified. Do not publish as quoted text until identified. |
-| Laws of UX | https://lawsofux.com | Jon Yablonski | article | TO VERIFY | unslop-review, motion | summarise | Seen via @uxdannydesigns. |
-| Playwright agent CLI | https://playwright.dev/agent-cli | Microsoft | tool | TO VERIFY | visual-qa | link only | Browser automation for screenshots. |
+| Laws of UX | https://lawsofux.com | Jon Yablonski | article | TO VERIFY | unslop-review, modern-design (motion) | summarise | Seen via @uxdannydesigns. |
+| Playwright agent CLI | https://playwright.dev/agent-cli | Microsoft | tool | TO VERIFY | unslop-review (visual-qa) | link only | Browser automation for screenshots. |
 
 ## Working notes for phase 3
 

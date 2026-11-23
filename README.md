@@ -10,7 +10,7 @@
 
 <p align="center"><b>English</b> · <a href="README.es.md">Español</a></p>
 
-> **Early development.** This is a skeleton. The six skills exist but are empty templates, and nothing has been tested on real projects yet. Installing it today adds the skill names to Claude Code and little else. See the [Roadmap](docs/ROADMAP.md).
+> **Early development.** This is a skeleton. The two skills exist but are empty templates, and nothing has been tested on real projects yet. Installing it today adds the skill names to Claude Code and little else. See the [Roadmap](docs/ROADMAP.md).
 
 ## Table of Contents
 
@@ -70,23 +70,23 @@ To offer it to everyone working on a project, add this to the project's `.claude
 
 Each contributor accepts the workspace trust prompt and installs the plugin once per clone, for example with `claude plugin install modern-design-pack@santiagodie-plugins --scope project`.
 
-Skills trigger on their own from the description, or can be called directly, for example `/modern-design-pack:design-direction`.
+Skills trigger on their own from the description, or can be called directly, for example `/modern-design-pack:modern-design`.
 
 ## How It Works
 
+Two skills: one builds, the other checks.
+
 ```mermaid
 flowchart LR
-    A[design-direction] --> B[design-tokens]
-    B --> C[compose-ui]
-    C --> D[motion]
-    D --> E[unslop-review]
-    E --> F[visual-qa]
-    F -- issues found --> C
+    A[modern-design] --> B[unslop-review]
+    B -- issues found --> A
 ```
 
-**Context over rules.** Rules are written as "do X when Y", not as absolute bans. The brief from `design-direction` decides when a rule applies.
+`modern-design` works in five steps: direction, tokens, components, motion, then hand-off to `unslop-review`. Each step loads its own reference file only when that step is needed, so a request about colors does not pull in the motion guidance.
 
-**References, not copies.** `design-direction` uses WebSearch to find comparable sites, WebFetch to read them, and Playwright screenshots to see them. It records the principles behind each reference and never its code, assets or copy.
+**Context over rules.** Rules are written as "do X when Y", not as absolute bans. The brief from the direction step decides when a rule applies.
+
+**References, not copies.** The direction step uses WebSearch to find comparable sites, WebFetch to read them, and Playwright screenshots to see them. It records the principles behind each reference and never its code, assets or copy.
 
 More detail in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
@@ -94,12 +94,8 @@ More detail in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 | Skill | What it is for |
 |---|---|
-| `design-direction` | Starting point. Gathers context, researches live references, writes the design brief. |
-| `design-tokens` | Color palette, type pairing, spacing, radii, shadows, light and dark themes. |
-| `compose-ui` | Builds sections and components (hero, features, pricing, nav, forms, backgrounds). |
-| `motion` | Animation and interaction: timing, easing, micro-interactions, scroll, text. |
-| `unslop-review` | Finds and fixes generic AI-made patterns and common UI mistakes. |
-| `visual-qa` | Checks the running UI in a real browser at mobile, tablet and desktop widths. |
+| `modern-design` | Entry point for designing or redesigning. Gathers context and live references, then sets direction, tokens (color, type, spacing), components and motion for the project. |
+| `unslop-review` | Finds and fixes generic AI-made patterns and common UI mistakes, including a real-browser check with screenshots at mobile, tablet and desktop widths. |
 
 ## Project Structure
 
@@ -109,12 +105,12 @@ modern-design-pack/
 │   ├── plugin.json          # plugin manifest
 │   └── marketplace.json     # marketplace "santiagodie-plugins", lists this repo as "./"
 ├── skills/
-│   ├── design-direction/    # SKILL.md + references/
-│   ├── design-tokens/
-│   ├── compose-ui/
-│   ├── motion/
-│   ├── unslop-review/
-│   └── visual-qa/
+│   ├── modern-design/
+│   │   ├── SKILL.md
+│   │   └── references/      # direction, tokens, components, motion, resources
+│   └── unslop-review/
+│       ├── SKILL.md
+│       └── references/      # visual-qa
 ├── assets/banner.svg
 ├── docs/
 │   ├── SOURCES.md           # every external source, with licence status
@@ -131,9 +127,9 @@ modern-design-pack/
 
 - **Empty skills:** every `SKILL.md` is a template with TODO sections. The plugin does nothing useful yet.
 - **Untested:** no real project has been through the flow. Skill triggering in English and Spanish is unverified.
-- **Licences unaudited:** the licence of every source in `docs/SOURCES.md` is still `TO VERIFY`. Nothing third-party has been copied in.
+- **Licences unaudited:** the licence of every source in `docs/SOURCES.md` is still `TO VERIFY`. Each one is checked when it is about to be used. Nothing third-party has been copied in.
 - **Unidentified sources:** two of the anti-slop lists come from screenshots whose authors are not yet identified.
-- **Browser dependency:** `visual-qa` and the screenshot part of `design-direction` will need Playwright, which is not set up by the plugin.
+- **Browser dependency:** the browser check in `unslop-review` and the screenshot part of the direction step will need Playwright, which is not set up by the plugin.
 - **No icon:** the plugin has no listing icon yet.
 
 ## Credits
