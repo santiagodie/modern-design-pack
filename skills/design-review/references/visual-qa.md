@@ -1,6 +1,6 @@
 # Visual QA
 
-> Reference for `unslop-review`: the browser check. Skeleton: content written in phase 2. Load only when a running app is available to check.
+> Reference for `design-review`: the browser check. Skeleton: content written in phase 2. Load only when a running app is available to check.
 
 ## When to use
 

@@ -8,15 +8,16 @@
 ## Phase 1: Skeleton (done)
 
 - [x] Plugin and marketplace manifests
-- [x] Two skills: `modern-design` (with five references) and `unslop-review` (with a visual-qa reference)
+- [x] Two skills: `modern-design` (with five references) and `design-review` (with unslop-checklist, visual-qa and audit-report references)
+- [x] Audit report format written (`design-review/references/audit-report.md`)
 - [x] Docs, READMEs, licence files, banner
 - [x] `claude plugin validate .` passes
 
-## Phase 2: unslop-review, tested
+## Phase 2: design-review, tested
 
-- [ ] Write `unslop-review` and `references/visual-qa.md`
-- [ ] Build a test landing page with Claude Code **without** this plugin
-- [ ] Run `unslop-review` on it
+- [ ] Write `design-review`: SKILL.md, `references/unslop-checklist.md` and `references/visual-qa.md`
+- [ ] Test the URL audit mode on 3 real public URLs and review the reports
+- [ ] Build a test landing page with Claude Code **without** this plugin, and run the own-project mode on it
 - [ ] Save before and after screenshots in `docs/examples/`
 - [ ] Record what the review caught and what it missed
 

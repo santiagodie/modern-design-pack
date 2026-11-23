@@ -7,7 +7,7 @@ This repository is both a Claude Code marketplace (`santiagodie-plugins`) and th
 There are two skills:
 
 - `modern-design`: designing or redesigning. Its five steps load `references/direction.md`, `tokens.md`, `components.md` and `motion.md` one at a time, plus `resources.md` (curated links) when needed.
-- `unslop-review`: auditing finished UI, including the browser check in `references/visual-qa.md`.
+- `design-review`: reviewing UI in two modes. Own project: review with `references/unslop-checklist.md`, browser check with `references/visual-qa.md`, then fix. URL audit: read-only, public pages only, three pages at most, report in the format of `references/audit-report.md`.
 
 Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests. Prefer adding a reference file.
 

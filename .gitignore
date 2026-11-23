@@ -19,6 +19,9 @@ playwright-report/
 .playwright-mcp/
 .playwright-cli/
 
+# URL audits produced by design-review
+audits/
+
 # Logs and env
 *.log
 .env

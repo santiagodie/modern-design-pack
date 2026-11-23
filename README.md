@@ -42,6 +42,7 @@ Planned. None of this works yet.
 - **Purposeful motion:** timing, easing and micro-interactions, and knowing when not to animate.
 - **Anti-slop review:** catches generic AI-made patterns before delivery.
 - **Visual QA:** real-browser screenshots at three widths, plus contrast, focus, overflow and empty states.
+- **Audit any URL:** a read-only review of any public site, returned as a report with critical issues, minor issues, outdated patterns, tips, proposals and alternatives. Each finding says whether it was measured or is design judgment.
 - **Bilingual triggers:** skills respond to requests in English and Spanish.
 
 ## Installation
@@ -70,7 +71,7 @@ To offer it to everyone working on a project, add this to the project's `.claude
 
 Each contributor accepts the workspace trust prompt and installs the plugin once per clone, for example with `claude plugin install modern-design-pack@santiagodie-plugins --scope project`.
 
-Skills trigger on their own from the description, or can be called directly, for example `/modern-design-pack:modern-design`.
+Skills trigger on their own from the description, or can be called directly, for example `/modern-design-pack:modern-design`, or `/modern-design-pack:design-review https://example.com` to audit a site.
 
 ## How It Works
 
@@ -78,11 +79,13 @@ Two skills: one builds, the other checks.
 
 ```mermaid
 flowchart LR
-    A[modern-design] --> B[unslop-review]
+    A[modern-design] --> B[design-review]
     B -- issues found --> A
 ```
 
-`modern-design` works in five steps: direction, tokens, components, motion, then hand-off to `unslop-review`. Each step loads its own reference file only when that step is needed, so a request about colors does not pull in the motion guidance.
+`modern-design` works in five steps: direction, tokens, components, motion, then hand-off to `design-review`. Each step loads its own reference file only when that step is needed, so a request about colors does not pull in the motion guidance.
+
+`design-review` has two modes. On your own project it reviews, checks in a real browser and fixes. Given a public URL it runs a read-only audit (three pages at most, no logins) with screenshots at 375, 768 and 1440 px, an HTML read and Lighthouse when Chrome is available, and saves a report in `audits/`.
 
 **Context over rules.** Rules are written as "do X when Y", not as absolute bans. The brief from the direction step decides when a rule applies.
 
@@ -95,7 +98,7 @@ More detail in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 | Skill | What it is for |
 |---|---|
 | `modern-design` | Entry point for designing or redesigning. Gathers context and live references, then sets direction, tokens (color, type, spacing), components and motion for the project. |
-| `unslop-review` | Finds and fixes generic AI-made patterns and common UI mistakes, including a real-browser check with screenshots at mobile, tablet and desktop widths. |
+| `design-review` | Reviews any interface. Own project: finds and fixes generic AI-made patterns and UI mistakes, with a real-browser check. Public URL: read-only audit with a full report. |
 
 ## Project Structure
 
@@ -108,9 +111,9 @@ modern-design-pack/
 │   ├── modern-design/
 │   │   ├── SKILL.md
 │   │   └── references/      # direction, tokens, components, motion, resources
-│   └── unslop-review/
+│   └── design-review/
 │       ├── SKILL.md
-│       └── references/      # visual-qa
+│       └── references/      # unslop-checklist, visual-qa, audit-report
 ├── assets/banner.svg
 ├── docs/
 │   ├── SOURCES.md           # every external source, with licence status
@@ -125,11 +128,11 @@ modern-design-pack/
 
 ## Known Limitations
 
-- **Empty skills:** every `SKILL.md` is a template with TODO sections. The plugin does nothing useful yet.
+- **Empty skills:** every `SKILL.md` is a template with TODO sections. Only the audit report format is written. The plugin does nothing useful yet.
 - **Untested:** no real project has been through the flow. Skill triggering in English and Spanish is unverified.
 - **Licences unaudited:** the licence of every source in `docs/SOURCES.md` is still `TO VERIFY`. Each one is checked when it is about to be used. Nothing third-party has been copied in.
 - **Unidentified sources:** two of the anti-slop lists come from screenshots whose authors are not yet identified.
-- **Browser dependency:** the browser check in `unslop-review` and the screenshot part of the direction step will need Playwright, which is not set up by the plugin.
+- **Browser dependency:** the browser check in `design-review` and the screenshot part of the direction step will need Playwright, which is not set up by the plugin. Lighthouse in URL audits also needs Chrome; without it, the report says so and skips the measured scores.
 - **No icon:** the plugin has no listing icon yet.
 
 ## Credits

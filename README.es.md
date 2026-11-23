@@ -42,6 +42,7 @@ Previstas. Nada de esto funciona todavía.
 - **Animación con propósito:** tiempos, curvas y microinteracciones, y saber cuándo no animar.
 - **Revisión anti-slop:** detecta los patrones genéricos de las webs hechas con IA antes de entregar.
 - **QA visual:** capturas en un navegador real a tres anchos, más contraste, foco, desbordamientos y estados vacíos.
+- **Auditar cualquier URL:** revisión de solo lectura de cualquier web pública, entregada como informe con problemas críticos, problemas menores, patrones obsoletos, consejos, propuestas y alternativas. Cada hallazgo indica si está medido o es criterio de diseño.
 - **Activación bilingüe:** las skills responden a peticiones en inglés y en español.
 
 ## Instalación
@@ -70,7 +71,7 @@ Para ofrecerlo a todo el equipo de un proyecto, añade esto al `.claude/settings
 
 Cada persona acepta el aviso de confianza del espacio de trabajo e instala el plugin una vez por clon, por ejemplo con `claude plugin install modern-design-pack@santiagodie-plugins --scope project`.
 
-Las skills se activan solas a partir de su descripción, o se pueden llamar directamente, por ejemplo `/modern-design-pack:modern-design`.
+Las skills se activan solas a partir de su descripción, o se pueden llamar directamente, por ejemplo `/modern-design-pack:modern-design`, o `/modern-design-pack:design-review https://example.com` para auditar una web.
 
 ## Cómo funciona
 
@@ -78,11 +79,13 @@ Dos skills: una construye y la otra revisa.
 
 ```mermaid
 flowchart LR
-    A[modern-design] --> B[unslop-review]
+    A[modern-design] --> B[design-review]
     B -- problemas detectados --> A
 ```
 
-`modern-design` trabaja en cinco pasos: dirección, tokens, componentes, animación y paso a `unslop-review`. Cada paso carga su propio archivo de referencia solo cuando hace falta, así que una petición sobre colores no carga las pautas de animación.
+`modern-design` trabaja en cinco pasos: dirección, tokens, componentes, animación y paso a `design-review`. Cada paso carga su propio archivo de referencia solo cuando hace falta, así que una petición sobre colores no carga las pautas de animación.
+
+`design-review` tiene dos modos. En tu propio proyecto revisa, comprueba en un navegador real y corrige. Con una URL pública hace una auditoría de solo lectura (tres páginas como máximo, sin logins) con capturas a 375, 768 y 1440 px, lectura del HTML y Lighthouse si hay Chrome disponible, y guarda un informe en `audits/`.
 
 **El contexto manda sobre las reglas.** Las reglas se escriben como "haz X cuando Y", no como prohibiciones absolutas. El brief del paso de dirección decide cuándo se aplica cada una.
 
@@ -95,7 +98,7 @@ Más detalle en [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) (en inglés).
 | Skill | Para qué sirve |
 |---|---|
 | `modern-design` | Punto de entrada para diseñar o rediseñar. Reúne contexto y referencias en vivo y después define dirección, tokens (color, tipografía, espaciado), componentes y animación para el proyecto. |
-| `unslop-review` | Detecta y corrige patrones genéricos de IA y errores habituales de UI, con revisión en un navegador real y capturas a anchos de móvil, tablet y escritorio. |
+| `design-review` | Revisa cualquier interfaz. En tu proyecto: detecta y corrige patrones genéricos de IA y errores de UI, con revisión en un navegador real. Con una URL pública: auditoría de solo lectura con informe completo. |
 
 ## Estructura del proyecto
 
@@ -108,9 +111,9 @@ modern-design-pack/
 │   ├── modern-design/
 │   │   ├── SKILL.md
 │   │   └── references/      # direction, tokens, components, motion, resources
-│   └── unslop-review/
+│   └── design-review/
 │       ├── SKILL.md
-│       └── references/      # visual-qa
+│       └── references/      # unslop-checklist, visual-qa, audit-report
 ├── assets/banner.svg
 ├── docs/
 │   ├── SOURCES.md           # todas las fuentes externas y el estado de su licencia
@@ -125,11 +128,11 @@ modern-design-pack/
 
 ## Limitaciones conocidas
 
-- **Skills vacías:** cada `SKILL.md` es una plantilla con secciones TODO. El plugin todavía no hace nada útil.
+- **Skills vacías:** cada `SKILL.md` es una plantilla con secciones TODO. Solo está escrito el formato del informe de auditoría. El plugin todavía no hace nada útil.
 - **Sin probar:** ningún proyecto real ha pasado por el flujo. No está comprobado que las skills se activen en inglés y en español.
 - **Licencias sin auditar:** la licencia de cada fuente de `docs/SOURCES.md` sigue en `TO VERIFY`. Cada una se revisa cuando se vaya a usar. No se ha copiado nada de terceros.
 - **Fuentes sin identificar:** dos de las listas anti-slop vienen de capturas cuyo autor aún no está identificado.
-- **Depende de un navegador:** la revisión en navegador de `unslop-review` y la parte de capturas del paso de dirección necesitarán Playwright, que el plugin no instala.
+- **Depende de un navegador:** la revisión en navegador de `design-review` y la parte de capturas del paso de dirección necesitarán Playwright, que el plugin no instala. Lighthouse en las auditorías de URL también necesita Chrome; si no está, el informe lo indica y omite las puntuaciones medidas.
 - **Sin icono:** el plugin aún no tiene icono para el listado.
 
 ## Créditos

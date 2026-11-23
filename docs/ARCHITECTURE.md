@@ -4,11 +4,11 @@
 
 ## Skill flow
 
-Two skills. `modern-design` builds, `unslop-review` checks. Each one keeps its detail in `references/` files that are loaded only for the step that needs them, so a request that touches only colors does not load the motion guidance.
+Two skills. `modern-design` builds, `design-review` checks. Each one keeps its detail in `references/` files that are loaded only for the step that needs them, so a request that touches only colors does not load the motion guidance.
 
 ```mermaid
 flowchart LR
-    A[modern-design] --> B[unslop-review]
+    A[modern-design] --> B[design-review]
     B -- issues found --> A
 ```
 
@@ -18,10 +18,14 @@ flowchart LR
 | | 2. Tokens: color, type, spacing, radii, shadows, themes | `references/tokens.md` |
 | | 3. Components: sections and components in the project's stack | `references/components.md` |
 | | 4. Motion: purposeful animation and interaction | `references/motion.md` |
-| | 5. Hand off to unslop-review | none |
+| | 5. Hand off to design-review | none |
 | | Any step that needs an external resource | `references/resources.md` |
-| unslop-review | 1. Review code and design decisions for generic patterns | none yet |
+| design-review: own project | 1. Review code and design decisions for generic patterns and mistakes | `references/unslop-checklist.md` |
 | | 2. Browser check with screenshots, when the app is running | `references/visual-qa.md` |
+| | 3. Fix, or send back to the modern-design step that owns the problem | none |
+| design-review: URL audit | 1. Screenshots at 375, 768, 1440 px, HTML read, Lighthouse if Chrome is available | none |
+| | 2. Review against the checklist and browser criteria | `references/unslop-checklist.md`, `references/visual-qa.md` |
+| | 3. Write the report | `references/audit-report.md` |
 
 Each skill is self-contained. It reads only its own `SKILL.md` and `references/` folder, and never paths outside its folder, because installed plugins are copied to a cache and files outside the plugin are not available.
 
@@ -33,7 +37,13 @@ Design rules that hold everywhere are rare. A pill badge, a gradient or an itali
 
 - Rules are written as "do X when Y", never as absolute bans.
 - The design brief from the direction step is the tie-breaker. When a rule and the brief disagree, the brief wins and the reason is stated.
-- `unslop-review` flags patterns as likely generic in this context, not as forbidden.
+- `design-review` flags patterns as likely generic in this context, not as forbidden.
+
+## URL audit mode
+
+`design-review` can also audit any public site, not only the user's own project. The audit is read-only (no forms, no logins, no changes), covers public pages only, and stops at three pages. It returns a report in the user's language, saved as `audits/<domain>-<YYYY-MM-DD>.md` with screenshots in a folder of the same name.
+
+Each finding in the report is tagged `measured` (Lighthouse or code) or `judgment` (design criteria). "Outdated" findings are almost always judgment, and the report says so, so a reader can tell a measured problem from a matter of taste.
 
 ## How the direction step researches references
 

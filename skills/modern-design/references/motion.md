@@ -16,7 +16,7 @@ TODO. Write every rule as "do X when Y". Never write absolute bans.
 
 ## Hand-off
 
-TODO. Next step: hand off to the `unslop-review` skill.
+TODO. Next step: hand off to the `design-review` skill.
 
 ## Sources to merge (phase 3)
 
@@ -27,4 +27,4 @@ TODO. Next step: hand off to the `unslop-review` skill.
 - scrolltide.co
 - getlayers.ai
 - motionsites.ai
-- Animation principles and UX laws (working notes in `docs/SOURCES.md` in the repository)
+- Animation principles, UX laws, motion durations and the continuity principle (working notes in `docs/SOURCES.md` in the repository)

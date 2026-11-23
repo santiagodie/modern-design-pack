@@ -1,6 +1,6 @@
 ---
 name: modern-design
-description: Entry point for designing or redesigning any website, landing page, app screen or dashboard. Gathers project context, researches live references, then sets direction, tokens, components and motion adapted to the project. Reviewing finished UI belongs to unslop-review. (diseñar, crear una web, landing, rediseñar, interfaz, colores, tipografía, componentes, animaciones)
+description: Entry point for designing or redesigning any website, landing page, app screen or dashboard. Gathers project context, researches live references, then sets direction, tokens, components and motion adapted to the project. Reviewing finished UI belongs to design-review. (diseñar, crear una web, landing, rediseñar, interfaz, colores, tipografía, componentes, animaciones)
 license: MIT
 ---
 
@@ -20,7 +20,7 @@ Run the steps in order for a new interface or a redesign. When the request cover
 2. **Tokens.** Define color palette, type pairing, spacing, radii, shadows, and light and dark themes from the brief. Load `references/tokens.md` when the project needs new or fixed tokens. TODO
 3. **Components.** Build or restyle sections and components in the project's stack, using the brief and tokens. Load `references/components.md` when building UI. TODO
 4. **Motion.** Add purposeful animation and interaction, or remove what doesn't help. Load `references/motion.md` when the UI needs motion or feels static or sluggish. TODO
-5. **Hand off to `unslop-review`.** Run it before delivering any UI. TODO
+5. **Hand off to `design-review`.** Run it before delivering any UI. TODO
 
 Load `references/resources.md` only when a step needs a specific external resource (fonts, palettes, component libraries, inspiration galleries).
 
@@ -30,7 +30,7 @@ TODO. Write every rule as "do X when Y". Never write absolute bans.
 
 ## Hand-off
 
-Next skill: `unslop-review`. When it sends issues back, return to the step that owns them.
+Next skill: `design-review`. When it sends issues back, return to the step that owns them.
 
 ## References
 
