@@ -10,7 +10,7 @@
 
 <p align="center"><b>English</b> · <a href="README.es.md">Español</a></p>
 
-> **Early development.** This is a skeleton. The two skills exist but are empty templates, and nothing has been tested on real projects yet. Installing it today adds the skill names to Claude Code and little else. See the [Roadmap](docs/ROADMAP.md).
+> **Early development.** `design-review` is written and has been through a first round of tests ([results](docs/examples/phase-2-results.md)). `modern-design` is still an empty template. See the [Roadmap](docs/ROADMAP.md).
 
 ## Table of Contents
 
@@ -128,9 +128,9 @@ modern-design-pack/
 
 ## Known Limitations
 
-- **Empty skills:** every `SKILL.md` is a template with TODO sections. Only the audit report format is written. The plugin does nothing useful yet.
-- **Untested:** no real project has been through the flow. Skill triggering in English and Spanish is unverified.
-- **Licences unaudited:** the licence of every source in `docs/SOURCES.md` is still `TO VERIFY`. Each one is checked when it is about to be used. Nothing third-party has been copied in.
+- **modern-design is empty:** its `SKILL.md` and references are templates with TODO sections. Only `design-review` works.
+- **Lightly tested:** `design-review` was tested on three public sites and one generated landing page, once or twice each, in non-interactive sessions ([results](docs/examples/phase-2-results.md)). Two rule changes made after the last round are not re-tested. Judgment calls and lab metrics vary between runs. Skill triggering from natural requests in English and Spanish is unverified.
+- **Partial licence audit:** only the sources used by `design-review` have been checked. The rest of `docs/SOURCES.md` is still `TO VERIFY` and is checked when each source is about to be used. No third-party text has been copied; ideas are rewritten and credited.
 - **Unidentified sources:** two of the anti-slop lists come from screenshots whose authors are not yet identified.
 - **Browser dependency:** the browser check in `design-review` and the screenshot part of the direction step will need Playwright, which is not set up by the plugin. Lighthouse in URL audits also needs Chrome; without it, the report says so and skips the measured scores.
 - **No icon:** the plugin has no listing icon yet.
@@ -139,7 +139,10 @@ modern-design-pack/
 
 This plugin organises ideas from many designers and open-source projects. The full list is in [docs/SOURCES.md](docs/SOURCES.md), and anything adapted will be credited with its licence in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-- [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): recommended as an optional companion. It brings a large searchable catalogue of styles, palettes and font pairings that fits alongside this plugin.
+Recommended companions (optional):
+
+- [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): a large searchable catalogue of styles, palettes and font pairings that fits alongside this plugin.
+- [Impeccable](https://impeccable.style) by Paul Bakaus: design commands and 60+ automated anti-pattern checks. It overlaps with `design-review`, which summarises some of its ideas in its own words but doesn't replicate its checks. Use Impeccable when you want that depth.
 
 ## License
 

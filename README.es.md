@@ -10,7 +10,7 @@
 
 <p align="center"><a href="README.md">English</a> · <b>Español</b></p>
 
-> **En desarrollo inicial.** Esto es un esqueleto. Las dos skills existen, pero son plantillas vacías, y todavía no se ha probado con proyectos reales. Si lo instalas hoy, Claude Code verá los nombres de las skills y poco más. Consulta el [Roadmap](docs/ROADMAP.md).
+> **En desarrollo inicial.** `design-review` está escrita y ha pasado una primera ronda de pruebas ([resultados](docs/examples/phase-2-results.md), en inglés). `modern-design` sigue siendo una plantilla vacía. Consulta el [Roadmap](docs/ROADMAP.md).
 
 ## Tabla de contenidos
 
@@ -128,9 +128,9 @@ modern-design-pack/
 
 ## Limitaciones conocidas
 
-- **Skills vacías:** cada `SKILL.md` es una plantilla con secciones TODO. Solo está escrito el formato del informe de auditoría. El plugin todavía no hace nada útil.
-- **Sin probar:** ningún proyecto real ha pasado por el flujo. No está comprobado que las skills se activen en inglés y en español.
-- **Licencias sin auditar:** la licencia de cada fuente de `docs/SOURCES.md` sigue en `TO VERIFY`. Cada una se revisa cuando se vaya a usar. No se ha copiado nada de terceros.
+- **modern-design está vacía:** su `SKILL.md` y sus referencias son plantillas con secciones TODO. Solo funciona `design-review`.
+- **Poco probado:** `design-review` se ha probado con tres webs públicas y una landing generada, una o dos veces cada una, en sesiones no interactivas ([resultados](docs/examples/phase-2-results.md)). Dos cambios de reglas hechos tras la última ronda no se han vuelto a probar. Los juicios y las métricas de laboratorio varían entre ejecuciones. No está comprobado que las skills se activen con peticiones naturales en inglés y en español.
+- **Auditoría de licencias parcial:** solo se han revisado las fuentes que usa `design-review`. El resto de `docs/SOURCES.md` sigue en `TO VERIFY` y se revisa cuando se vaya a usar cada fuente. No se ha copiado texto de terceros: las ideas se reescriben y se acreditan.
 - **Fuentes sin identificar:** dos de las listas anti-slop vienen de capturas cuyo autor aún no está identificado.
 - **Depende de un navegador:** la revisión en navegador de `design-review` y la parte de capturas del paso de dirección necesitarán Playwright, que el plugin no instala. Lighthouse en las auditorías de URL también necesita Chrome; si no está, el informe lo indica y omite las puntuaciones medidas.
 - **Sin icono:** el plugin aún no tiene icono para el listado.
@@ -139,7 +139,10 @@ modern-design-pack/
 
 Este plugin ordena ideas de muchas personas del diseño y de proyectos de código abierto. La lista completa está en [docs/SOURCES.md](docs/SOURCES.md), y todo lo que se adapte se acreditará con su licencia en [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-- [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): complemento opcional recomendado. Aporta un gran catálogo de estilos, paletas y combinaciones tipográficas que encaja bien junto a este plugin.
+Complementos recomendados (opcionales):
+
+- [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): un gran catálogo de estilos, paletas y combinaciones tipográficas que encaja bien junto a este plugin.
+- [Impeccable](https://impeccable.style), de Paul Bakaus: comandos de diseño y más de 60 comprobaciones automáticas de antipatrones. Se solapa con `design-review`, que resume algunas de sus ideas con palabras propias pero no replica sus comprobaciones. Úsalo cuando quieras esa profundidad.
 
 ## Licencia
 

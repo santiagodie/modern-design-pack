@@ -15,11 +15,12 @@
 
 ## Phase 2: design-review, tested
 
-- [ ] Write `design-review`: SKILL.md, `references/unslop-checklist.md` and `references/visual-qa.md`
-- [ ] Test the URL audit mode on 3 real public URLs and review the reports
-- [ ] Build a test landing page with Claude Code **without** this plugin, and run the own-project mode on it
-- [ ] Save before and after screenshots in `docs/examples/`
-- [ ] Record what the review caught and what it missed
+- [x] Write `design-review`: SKILL.md, `references/unslop-checklist.md` and `references/visual-qa.md`
+- [x] Test the URL audit mode on 3 real public URLs and review the reports
+- [x] Build a test landing page with Claude Code **without** this plugin, and run the own-project mode on it
+- [x] Save before and after screenshots in `docs/examples/`
+- [x] Record what the review caught and what it missed: [phase-2-results.md](examples/phase-2-results.md)
+- [ ] Re-test the two rules added after round 2 (borderline findings, CDN image formats)
 
 ## Phase 3: modern-design references
 

@@ -12,8 +12,8 @@ Column guide:
 
 | Source | URL | Author | Type | License | Used in | How | Notes |
 |---|---|---|---|---|---|---|---|
-| frontend-design (anthropics/skills) | https://github.com/anthropics/skills/tree/main/skills/frontend-design | Anthropic | skill | TO VERIFY | modern-design (direction) | adapt | Official reference skill for distinctive frontend work. |
-| Taste Skill | https://tasteskill.dev | TO VERIFY | skill | TO VERIFY | modern-design (direction), design-review (unslop-checklist) | summarise | |
+| frontend-design (anthropics/skills) | https://github.com/anthropics/skills/tree/main/skills/frontend-design | Anthropic | skill | Apache-2.0 (`LICENSE.txt` in the skill folder; the repo has no root licence) | modern-design (direction) | adapt | Official reference skill for distinctive frontend work. Checked 2026-11-23; not used yet (phase 3). Impeccable started from it. |
+| Taste Skill | https://tasteskill.dev (repo https://github.com/Leonxlnx/taste-skill) | Leon Lin and blueemi (GitHub: Leonxlnx) | skill | MIT | modern-design (direction), design-review (unslop-checklist) | adapt | Read `skills/taste-skill/SKILL.md` on 2026-11-23. Ideas rewritten in our own words. Example photos in the repo carry their own licences; none used. |
 | AI for UI skills | https://aiforui.dev/skills | TO VERIFY | skill | TO VERIFY | modern-design (direction) | summarise | |
 | claude-webkit | TO VERIFY | TO VERIFY | skill | TO VERIFY | modern-design (direction) | adapt | Only the question flow used to gather project context. |
 | What is web design (Figma) | https://www.figma.com/resource-library/what-is-web-design/ | Figma | article | TO VERIFY | modern-design (direction) | summarise | |
@@ -21,7 +21,7 @@ Column guide:
 | Awwwards | https://www.awwwards.com | Awwwards | inspiration | TO VERIFY | modern-design (direction) | link only | Live reference search target. |
 | Curated | https://www.curated.design | TO VERIFY | inspiration | TO VERIFY | modern-design (direction) | link only | Live reference search target. |
 | ui-ux-pro-max-skill | https://github.com/nextlevelbuilder/ui-ux-pro-max-skill | nextlevelbuilder | skill | TO VERIFY | modern-design (tokens) | summarise | Ideas only, do not vendor. Recommended in the README as an optional companion plugin. The repo sidebar shows MIT; confirm in phase 2. |
-| Impeccable | https://impeccable.style | TO VERIFY | skill | TO VERIFY | modern-design (tokens), design-review (unslop-checklist) | summarise | |
+| Impeccable | https://impeccable.style (repo https://github.com/pbakaus/impeccable; catalogue https://impeccable.style/slop) | Paul Bakaus | skill | Repo: Apache-2.0. Site text (including /slop): none stated | modern-design (tokens), design-review (unslop-checklist) | summarise | Read `skill/SKILL.src.md`, `skill/reference/craft-floor.md` and /slop on 2026-11-23. Overlaps heavily with design-review: ideas summarised in our own words, its 60+ automated checks are not replicated. Recommended in the README as a companion. Its README says it started from Anthropic's frontend-design skill. |
 | Coolors | https://coolors.co | Coolors | tool | TO VERIFY | modern-design (tokens) | link only | Palette generator. |
 | Fontshare | https://www.fontshare.com | Indian Type Foundry (TO VERIFY) | tool | TO VERIFY | modern-design (tokens) | link only | Free font catalogue. Each font has its own licence. |
 | Fonts In Use | https://fontsinuse.com | TO VERIFY | inspiration | TO VERIFY | modern-design (tokens) | link only | Real-world type pairings. |
@@ -37,9 +37,9 @@ Column guide:
 | Supahero | https://supahero.io | TO VERIFY | inspiration | TO VERIFY | modern-design (components) | link only | Hero section gallery. |
 | Backgrounds Supply | https://backgrounds.supply | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
 | Gradient Labs | https://gradient-labs.ai | TO VERIFY | tool | TO VERIFY | modern-design (components) | link only | |
-| Modern web guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Google Chrome team | article | TO VERIFY | modern-design (components), design-review (visual-qa) | summarise | |
-| Web Interface Guidelines (Vercel) | https://vercel.com/design/guidelines | Vercel | article | TO VERIFY | modern-design (components), design-review (visual-qa) | summarise | |
-| emilkowalski/skills (incl. apple-design) | https://github.com/emilkowalski/skills (TO VERIFY) | Emil Kowalski | skill | TO VERIFY | modern-design (motion) | summarise | Found via ui-skills.com. |
+| Modern Web Guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Chrome for Developers (Google) | article | None stated on the page (only Google Terms in the footer). Source repo https://github.com/GoogleChrome/modern-web-guidance-src not checked | modern-design (components), design-review (unslop-checklist, visual-qa) | summarise | Read the index, guide catalogue and modernization workflow on 2026-11-23 (catalogue published 2026-11-10). Basis for the "Outdated, measurable" section. Ideas only; detection script is our own. |
+| Web Interface Guidelines (Vercel) | https://vercel.com/design/guidelines (repo https://github.com/vercel-labs/web-interface-guidelines) | Vercel | article | MIT | modern-design (components), design-review (visual-qa, unslop-checklist) | adapt | Read `AGENTS.md` on 2026-11-23. The "Vercel-specific" section is brand preference and is not used. |
+| emilkowalski/skills (incl. apple-design) | https://github.com/emilkowalski/skills | Emil Kowalski | skill | MIT (Copyright (c) 2026 Emil Kowalski) | modern-design (motion) | adapt | Found via ui-skills.com. Licence checked 2026-11-23; not used yet (phase 3). |
 | UI Skills | https://ui-skills.com | TO VERIFY | skill | TO VERIFY | modern-design (motion) | link only | Directory where the Emil Kowalski skills were found. |
 | GSAP | https://gsap.com | GreenSock / Webflow (TO VERIFY) | tool | TO VERIFY | modern-design (motion) | link only | Check the GSAP licence before recommending it in commercial projects. |
 | Kawai text animation | https://kawai-text-animation.pages.dev | TO VERIFY | inspiration | TO VERIFY | modern-design (motion) | link only | |
@@ -51,13 +51,13 @@ Column guide:
 | UX laws (working notes) | see below | Santiago Die | article | TO VERIFY | modern-design (motion), design-review (unslop-checklist) | summarise | Working notes, to be rewritten. |
 | Motion durations (working notes) | TO VERIFY | TO IDENTIFY | social post | TO VERIFY | modern-design (motion) | summarise | Working notes below. Source not identified. |
 | Continuity principle (working notes) | TO VERIFY | TO IDENTIFY | social post | TO VERIFY | modern-design (motion) | summarise | Working notes below. Source not identified. Type to confirm once found. |
-| unslop | https://github.com/heydamir/unslop | heydamir | skill | TO VERIFY | design-review (unslop-checklist) | adapt | |
-| anti-slop | TO VERIFY (mcpmarket.com) | TO VERIFY | skill | TO VERIFY | design-review (unslop-checklist) | summarise | Find the original repository behind the mcpmarket.com listing. |
-| 20 Tips to Unslop AI Designs | TO VERIFY (Instagram post URL) | @charles.unemployed | social post | TO VERIFY | design-review (unslop-checklist) | summarise | Working notes below. |
-| 20 ways to unslop your AI website designs | TO VERIFY (Instagram post URL) | @millee.md | social post | TO VERIFY | design-review (unslop-checklist) | summarise | Working notes below. |
-| 20 señales de web hecha con IA | TO VERIFY | Unknown (TO IDENTIFY) | social post | TO VERIFY | design-review (unslop-checklist) | summarise | Screenshot, author not identified. Do not publish as quoted text until identified. |
-| 20 UI tips to send to Claude for better design | TO VERIFY | Unknown (TO IDENTIFY) | social post | TO VERIFY | design-review (unslop-checklist) | summarise | Screenshot, author not identified. Do not publish as quoted text until identified. |
-| Laws of UX | https://lawsofux.com | Jon Yablonski | article | TO VERIFY | design-review (unslop-checklist), modern-design (motion) | summarise | Seen via @uxdannydesigns. |
+| unslop | https://github.com/heydamir/unslop | Damir Sokolovsky (@heydamir) | skill | CC BY 4.0 | design-review (unslop-checklist) | adapt | Read `skills/unslop/SKILL.md` on 2026-11-23. Adapted in our own words with attribution and a change notice (see THIRD_PARTY_NOTICES.md). |
+| anti-slop | Not resolved: no mcpmarket.com listing found. Candidates: https://github.com/rand/cc-polymath (MIT), https://github.com/miqdadbadjuber/anti-slop, https://github.com/manavmishra/zeroslop | TO IDENTIFY | skill | TO VERIFY | design-review (unslop-checklist) | link only | Not used until the original listing is confirmed. |
+| 20 Tips to Unslop AI Designs | TO VERIFY (Instagram post URL) | @charles.unemployed | social post | None stated (all rights reserved by default) | design-review (unslop-checklist) | summarise | Ideas only, rewritten in our own words and credited. No wording reused. |
+| 20 ways to unslop your AI website designs | TO VERIFY (Instagram post URL) | @millee.md | social post | None stated (all rights reserved by default) | design-review (unslop-checklist) | summarise | Ideas only, rewritten in our own words and credited. No wording reused. |
+| 20 señales de web hecha con IA | TO VERIFY | Unknown (TO IDENTIFY) | social post | Unknown | design-review (unslop-checklist) | summarise | Screenshot, author not identified. Ideas only, rewritten; credited as unidentified. Never quote. |
+| 20 UI tips to send to Claude for better design | TO VERIFY | Unknown (TO IDENTIFY) | social post | Unknown | design-review (unslop-checklist) | summarise | Screenshot, author not identified. Ideas only, rewritten; credited as unidentified. Never quote. |
+| Laws of UX | https://lawsofux.com | Jon Yablonski (as credited in the card; not confirmed on the fetched page) | article | None stated (all rights reserved by default) | design-review (unslop-checklist), modern-design (motion) | summarise | Law names are long-established general concepts. Only the names and one-line ideas are used, linked. Seen via @uxdannydesigns. |
 | Playwright agent CLI | https://playwright.dev/agent-cli | Microsoft | tool | TO VERIFY | design-review (visual-qa) | link only | Browser automation for screenshots. |
 
 ## Working notes for phase 3

@@ -7,7 +7,8 @@ Reference for `design-review`, URL audit mode. Load only when writing the report
 - **Language:** this template is in English. Write the final report, headings included, in the language the user writes in.
 - **Every finding is grounded.** Point to a screenshot file or a CSS selector. A finding with no location is advice, not a finding; cut it or move it to Tips.
 - **Every finding says how it is known.** Tag it `measured` when a tool or the code shows it (Lighthouse score, contrast ratio, missing `alt`, image weight, a broken layout visible in a screenshot at a given width). Tag it `judgment` when it rests on design criteria.
-- **Outdated is almost always judgment.** Saying a style looks dated is an opinion about taste and trends. Tag it `judgment`, say so in plain words, and name what it is being compared to.
+- **Make "Outdated" measurable where you can.** Start the section with the signals in the "Outdated, measurable" table of `unslop-checklist.md` (legacy techniques with a modern Baseline replacement, after Chrome's Modern Web Guidance). Those are `measured`: name the signal, the evidence and the modern approach. Aesthetic findings (a dated gradient, a template hero) come after them and are `judgment`. Say so in plain words and name what they are being compared to.
+- **Say what kind of measurement it is.** Lighthouse runs are lab data on a simulated slow phone; write "lab" next to those numbers and don't present them as what real visitors get.
 - **Never invent numbers.** Give a value only when a tool produced it. When a tool could not run, say which one and what that leaves unchecked.
 - **Be specific to this site.** "Improve contrast" is not a fix. "Set the hero subtitle (`.hero p`) from #9CA3AF to at least #6B7280 on white for 4.5:1" is.
 - **Prioritise honestly.** Critical means it stops people from using, reading, trusting or reaching the page. Visual polish is never critical on its own.
@@ -20,7 +21,7 @@ Reference for `design-review`, URL audit mode. Load only when writing the report
 |---|---|
 | Critical issues | Broken layout at a tested width, unreadable text, inaccessible navigation or forms, very slow load, broken links or images on the main path, missing basics such as a page title or viewport meta. |
 | Minor issues | Real problems with limited impact: inconsistent spacing, mixed icon styles, weak focus states, small contrast misses on secondary text, heavy images that don't block the page. |
-| Outdated | Patterns that make the site look older or more generic than its competitors. Usually `judgment`. |
+| Outdated | First, legacy techniques with a modern replacement, checked on the page (`measured`). Then aesthetic patterns that make the site look older or more generic than its competitors (`judgment`). |
 | Tips | Small, low-effort improvements that don't need a redesign. |
 | Improvement proposals | Larger changes with clear payoff: restructure a section, rewrite the hero, rebuild the type scale. |
 | Alternatives | Different directions the site could take, each with its trade-off. Not fixes: options for the owner to weigh. |
@@ -83,9 +84,13 @@ Number findings by section: C1, C2 for critical; M1 for minor; O1 for outdated; 
 
 ## Outdated
 
-> These findings are design judgment about current conventions, not measurements.
+> Measured legacy techniques first; design judgment about current conventions after, marked as such.
 
-### O1. <title>
+### O1. <title> (measured: <signal ID, for example OM5>)
+
+<same fields>
+
+### O2. <title> (judgment)
 
 <same fields>
 
@@ -107,7 +112,11 @@ Number findings by section: C1, C2 for critical; M1 for minor; O1 for outdated; 
 
 <same fields; under "How to fix", describe the direction and its trade-off>
 
-## Appendix: Lighthouse
+## What to keep
+
+<Short bullets: what is well done and should survive any redesign, with evidence.>
+
+## Appendix: Lighthouse (lab data, simulated mobile)
 
 | Page | Performance | Accessibility | Best practices | SEO |
 |---|---|---|---|---|
