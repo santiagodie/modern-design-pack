@@ -16,7 +16,7 @@ TODO. Write every rule as "do X when Y". Never write absolute bans.
 
 ## Hand-off
 
-TODO. Next step: components (`components.md`).
+TODO. Next step: sections (`sections/index.md`).
 
 ## Sources to merge (phase 3)
 

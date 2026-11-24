@@ -17,6 +17,15 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 - **What was used:** the approach of naming a concrete subject, audience and main job; planning colors, type and layout before coding and reviewing that plan against the brief; the list of generator defaults to check a direction against; spending boldness on one element.
 - **Changes:** rewritten in our own words, combined with other sources, and organised into a brief-writing process with an output template.
 
+### mobile-native (Emil Kowalski)
+
+- **URL:** https://github.com/emilkowalski/skills/tree/main/skills/mobile-native
+- **Author / copyright holder:** Emil Kowalski (Copyright (c) 2026 Emil Kowalski)
+- **License:** MIT, https://opensource.org/license/mit
+- **Used in:** `skills/modern-design/references/responsive.md`, `skills/design-review/references/visual-qa.md`, `skills/design-review/references/unslop-checklist.md` (MN1–MN5)
+- **What was used:** the capability-first approach to touch (hover and pointer queries, `svh` and `dvh`, safe areas with `viewport-fit=cover`, 16 px inputs, `touch-action`, tap highlight with `:active` feedback, selection on controls only, overscroll behaviour) and the list of what emulation can't reproduce.
+- **Changes:** rewritten in our own words, merged with the author's research, extended with a tablet section and with measurable checks and a detection script of our own.
+
 ### unslop
 
 - **URL:** https://github.com/heydamir/unslop

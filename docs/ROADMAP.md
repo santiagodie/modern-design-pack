@@ -29,11 +29,14 @@ Write one reference at a time, test it on the bakery and the vet dashboard, and 
 
 - [x] 3a: `direction.md` and step 1 of SKILL.md: [phase-3-results.md](examples/phase-3/phase-3-results.md)
 - [ ] Re-test the reference research in an interactive session (the browser couldn't open external sites in the non-interactive tests)
-- [ ] 3b: `components.md` (most failures in 3a: photo placeholders, per-item actions, board navigation on narrow screens, read-only display layouts)
+- [x] 3b, batch A: `sections/` for pages that persuade (index plus header, hero, CTA, social proof, benefits, forms, final CTA, footer) and `responsive.md` (phone, tablet, desktop; capability over device): [phase-3b-results.md](examples/phase-3b-results.md)
+- [ ] 3b, batch B: important sections (problem, how it works, demo, testimonials, pricing, trust, FAQ, and "where and when" for local businesses: address, weekly hours, map link, how to get there)
+- [ ] 3b, batch C: sections for pages that operate (app bar, boards, tables, side panels, per-item actions, read-only displays)
+- [ ] 3b, batch D: `references/components/` for reusable pieces (buttons, cards, inputs, badges) shared by several sections
 - [x] Reasoning layer in `modern-design`: `reasoning.md`, `principles.md`, `page-types.md` and `ethics.md`, with one order of authority, the central promise and per-page moment and doubt in `design-brief.md`, and in `design-review` the DP family and the promise check for multi-page audits
 - [ ] Page types: what each type adds in layout and responsive. The reasoning per type (its doubts, priorities and level of persuasion) is already in `page-types.md`
 - [ ] Test the reasoning layer: rebuild the bakery from scratch (does the brief state a promise and per-page doubts?) and audit a page with prices or a cookie banner (does the DP family fire, and only on real cases?)
-- [ ] 3c: `tokens.md` (section spacing rhythm, semantic color roles)
+- [ ] 3c: `tokens.md` (section spacing rhythm, semantic color roles, and two requirements from the 3b test: focus-ring tokens that keep 3:1 on every surface, dark bands and footers included; and touch-target tokens, at least 44 px on coarse pointers, also for inline links, nav items and footer links. Section files point to these tokens instead of repeating them)
 - [ ] 3d: `motion.md`
 - [ ] `resources.md`
 - [ ] Write the `modern-design` SKILL.md rules

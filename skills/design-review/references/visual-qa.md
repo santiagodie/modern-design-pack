@@ -9,7 +9,8 @@ Use the Playwright agent CLI (`playwright-cli`). When it isn't installed, instal
 Useful commands:
 
 ```bash
-playwright-cli open <url>                       # headless by default
+playwright-cli open <url>                       # headless by default, mouse and fine pointer
+playwright-cli open --device "iPad Mini" <url>  # device preset: viewport, touch, coarse pointer
 playwright-cli set-reduced-motion reduce        # before any screenshot
 playwright-cli resize <width> <height>
 playwright-cli screenshot --full-page --filename=<file>.png
@@ -25,11 +26,23 @@ playwright-cli close
 1. **Serve over HTTP.** `playwright-cli` renders `file://` URLs as blank pages. When the project is static files with no dev server, serve the folder locally first (the project's own dev server, `npx --yes serve`, or any static server) and open the `http://127.0.0.1` URL. Don't assume Python is installed.
 2. **Prepare.** Create the screenshot folder (`audits/<domain>-<YYYY-MM-DD>/` for URL audits, or a temporary folder in own-project mode). Open the page and run `set-reduced-motion reduce` first, so scroll reveals and entrance animations don't hide content in the screenshots.
 3. **Load everything.** Scroll to the bottom and back to trigger lazy images and reveals (script below).
-4. **Capture each width** in this order: 375 × 812, 768 × 1024, 1440 × 900. For each one, resize, scroll through again, run the checks script, and take a full-page screenshot named `<page>-<width>.png`.
+4. **Capture each width** with the input it is used with. Touch widths use a device preset, which `open` applies to the whole session, so open the page again for each one and set reduced motion again:
+
+   | Width | How to open | Input emulated |
+   |---|---|---|
+   | 375 (phone portrait) | `playwright-cli open --device "iPhone 13 Mini" <url>` | Touch, coarse pointer, no hover |
+   | 768 (tablet portrait) | `playwright-cli open --device "iPad Mini" <url>` | Touch, coarse pointer, no hover |
+   | 1024 (tablet landscape) | `playwright-cli open --device "iPad Mini landscape" <url>` | Touch, coarse pointer, no hover |
+   | 1440 (desktop) | `playwright-cli open <url>`, then `resize 1440 900` | Mouse, fine pointer, hover |
+   | Phone landscape, only when the page has fixed or sticky elements | `playwright-cli open --device "iPhone 13 Mini landscape" <url>` (viewport 712 × 375 px; the screen is 812 px wide, minus browser chrome) | Touch |
+
+   For each one, scroll through again, run the checks script, and take a full-page screenshot named `<page>-<width>.png` (`<page>-375-landscape.png` for the landscape one). Confirm the emulation with `--raw eval "() => matchMedia('(pointer: coarse)').matches"` when a finding depends on it.
 5. **Check focus** at 1440: press Tab about eight times and take a viewport screenshot (`<page>-focus-1440.png`). When no focus indicator is visible on any of those stops, that is a finding.
 6. **Look at every screenshot**, not only the script output. Use the per-width list below.
 7. **Record findings** with the screenshot file and a selector, tagging script results as `measured` and visual calls as `judgment`.
 8. **Close** the browser when done.
+
+**Lighthouse.** Its mobile run emulates a phone about 412 px wide, not 375. Report its scores with that width, and keep layout findings at 375 to the screenshots. In own-project mode, run it on a local server and note that caching and compression results reflect the test server, not the site.
 
 When a screenshot shows a blank band where content should be, scroll through once more and recapture. When content stays hidden with reduced motion on, that is a finding (see MO4 in `unslop-checklist.md`).
 
@@ -57,7 +70,7 @@ Run it at each width. It returns JSON with horizontal overflow, the widest offen
     (typeof e.className === 'string' && e.className.trim() ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '');
   const visible = e => { const r = e.getBoundingClientRect(); const s = getComputedStyle(e);
     return r.width > 0 && r.height > 0 && s.visibility !== 'hidden' && s.display !== 'none'; };
-  const minTarget = vw < 600 ? 44 : 24;
+  const minTarget = matchMedia('(pointer: coarse)').matches ? 44 : 24;
   const overflowing = [...document.querySelectorAll('body *')]
     .filter(e => visible(e) && e.getBoundingClientRect().right > vw + 1).slice(0, 8).map(sel);
   const smallTargets = [...document.querySelectorAll('a, button, input, select, textarea, [role="button"]')]
@@ -66,6 +79,7 @@ Run it at each width. It returns JSON with horizontal overflow, the widest offen
   const meta = n => document.querySelector(`meta[name="${n}"], meta[property="${n}"]`)?.content ?? null;
   return {
     width: vw,
+    coarsePointer: matchMedia('(pointer: coarse)').matches,
     horizontalOverflow: document.documentElement.scrollWidth > vw,
     overflowing,
     smallTargets,
@@ -93,10 +107,20 @@ The small-target list includes inline text links, which are fine inside a paragr
 - The main call to action visible without much scrolling.
 - Images cropped so the subject is lost.
 
-**768 px (tablet)**
+**Phone landscape, 712 × 375 px viewport (only with fixed or sticky elements)**
+- How much of the roughly 375 px of height the header, bars and banners leave for content.
+- Dialogs and sheets that don't fit and can't scroll.
+
+**768 px (tablet portrait, touch)**
 - Layouts stuck between mobile and desktop: two columns too narrow, cards with one word per line.
-- Navigation that neither collapses nor fits.
-- Large empty gaps where a grid didn't reflow.
+- Navigation that neither collapses nor fits; the primary action hidden inside a menu.
+- Large empty gaps where a grid didn't reflow; tall empty bands in heroes sized for desktop.
+- Tables and side panels overflowing instead of scrolling inside a container or reflowing.
+
+**1024 px (tablet landscape, touch)**
+- Desktop layouts shown to a finger: menus or content that only open on hover, tap targets under 44 px.
+- Hover styles that stay "stuck" after a tap (check the CSS: `:hover` outside a hover-capability query; see MN3).
+- Boards, tables and multi-column tools that need sideways scrolling to reach a column.
 
 **1440 px (desktop)**
 - Lines of body text running much wider than about 75 characters.
@@ -114,7 +138,9 @@ The small-target list includes inline text links, which are fine inside a paragr
 - Capture with reduced motion on, so screenshots show the content, not the middle of an animation.
 - When a screenshot looks wrong, recapture before reporting. Lazy loading and slow fonts cause false alarms.
 - Report a layout problem at the width where it first appears, and mention the other widths where it repeats.
-- After fixing, capture again and look only at the areas you changed, at all three widths. Check them for gaps, empty panels, orphaned spacing or leftover styles that the fix itself created (for example, a decorative block that becomes an empty box once its decoration is removed). Fix those before calling the review done.
+- Record what emulation couldn't verify under "Needs a real device" in the report or review notes: sticky hover after a tap, tap delay and press feel, safe areas around notches and home indicators, the on-screen keyboard (what it covers, input zoom), rubber-band and pull-to-refresh behaviour, real Safari (device presets change the viewport and touch, not the browser engine), and performance on a mid-range phone. List only the items that matter for this page.
+- You may read this plugin's section references (`${CLAUDE_SKILL_DIR}/../modern-design/references/sections/`) for the critical and common errors of a section under review. When that folder doesn't exist, continue without it.
+- After fixing, capture again and look only at the areas you changed, at all four widths. Check them for gaps, empty panels, orphaned spacing or leftover styles that the fix itself created (for example, a decorative block that becomes an empty box once its decoration is removed). Fix those before calling the review done.
 - In URL audits, stay read-only: no clicking through forms, no logins, no accepting purchases. Accepting a cookie banner to see the page is fine; say so in the report.
 - Keep screenshots out of version control unless the user wants them committed.
 - Keep helper scripts you write (capture loops, check scripts) inside the screenshot folder or a temp folder, never loose in the project, and remove them when the user doesn't need them.
@@ -127,4 +153,4 @@ Own project: send problems back to `modern-design`, to the step that owns them (
 
 ## Sources
 
-Written in our own words. The width-by-width checks, tap target sizes, focus and reduced-motion guidance draw on the [Web Interface Guidelines](https://github.com/vercel-labs/web-interface-guidelines) by Vercel (MIT). Commands follow the [Playwright agent CLI documentation](https://playwright.dev/agent-cli/installation).
+Written in our own words. The width-by-width checks, tap target sizes, focus and reduced-motion guidance draw on the [Web Interface Guidelines](https://github.com/vercel-labs/web-interface-guidelines) by Vercel (MIT). The touch checks and the list of what emulation can't reproduce adapt the `mobile-native` skill in [emilkowalski/skills](https://github.com/emilkowalski/skills) by Emil Kowalski (MIT). Commands follow the [Playwright agent CLI documentation](https://playwright.dev/agent-cli/installation).

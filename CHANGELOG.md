@@ -22,9 +22,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `modern-design` step 1: `references/direction.md` (context and the page's main job, assumptions when the user can't answer, 3–5 live references with principles on five axes, structure from content, one committed direction, template test, `design-brief.md` output; respects `PRODUCT.md` and `DESIGN.md` without writing them).
 - `design-review`: emoji used as any kind of image (CP2), and re-checking the areas a fix changed.
 - Phase 3a tests in `docs/examples/phase-3/` (bakery landing and veterinary dashboard built with the direction step, then reviewed).
+- `modern-design` step 3: `references/sections/` (an index with the sections each page job needs, and one file per mandatory section for pages that persuade: header, hero, CTA, social proof, benefits, forms, final CTA, footer, each with phone, tablet and desktop layouts) and `references/responsive.md` (capability-first touch baseline, tablet section, what emulation can't reproduce). Replaces the empty `components.md`.
+- `design-review`: screenshots at 375, 768, 1024 and 1440 px with touch emulated through device presets at the first three, phone landscape when the page has fixed elements, a "Needs a real device" section in reports, measurable mobile checks MN1–MN5 with a detection script, and optional reading of `modern-design`'s section files.
+- Phase 3b batch A test in `docs/examples/phase-3b-results.md` (bakery rebuilt with `sections/` and `responsive.md`, reviewed at 375, 768, 1024 and 1440 px).
+- The author's research (`docs/research/landing-field-guide/`) and its cited sources in `docs/SOURCES.md`.
+
 - `modern-design` reasoning layer: `references/reasoning.md` (method for writing the brief: one central promise, and per page its moment in the journey and its main doubt), `principles.md` (P01–P31 with evidence levels), `page-types.md` (doubts and priorities per page type, with "common answers" to check, not copy) and `ethics.md` (hard limit: dark-pattern blacklist, reference cases, evidence quality, minimum checks per page type). One order of authority in SKILL.md and in each file: ethics > brief > reasoning > principles and page types.
 - `design-brief.md` template: "Central promise" and, per page, its moment in the journey and its main doubt.
 - `design-review`: Deceptive patterns family (DP1–DP10 plus a minimum per page type), each rule marked measured or judgment, pointing to CY3 for invented proof; optional reading of `modern-design`'s `ethics.md`; promise check for audits of two or three pages, with its own report section.
+### Changed (phase 3b)
+
+- Skills may read each other's files inside the plugin; the rule is now "nothing outside the plugin".
+- Landing-page sections live in `modern-design/references/sections/`. `references/components/` is kept for reusable pieces (batch D).
+- Batch A gaps from the phase 3b test: "Without JavaScript" notes in header, CTA and footer (`<details>` menu, real `tel:`/`wa.me` links, static copyright year); phone hero order led by the brief's main job; stacked tablet hero; one action with several channels; cookie settings link only when consent is needed; CY3 accepts brief-required placeholders that are visibly marked; own-project review notes format and non-interactive runs in `design-review`; Lighthouse width and the 712 px phone landscape viewport in `visual-qa.md`.
 
 ### Changed
 

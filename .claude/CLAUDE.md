@@ -6,7 +6,7 @@ This repository is both a Claude Code marketplace (`santiagodie-plugins`) and th
 
 There are two skills:
 
-- `modern-design`: designing or redesigning. Its five steps load `references/direction.md`, `tokens.md`, `components.md` and `motion.md` one at a time, plus `resources.md` (curated links) when needed.
+- `modern-design`: designing or redesigning. Its five steps load `references/direction.md`, `tokens.md`, `sections/` (an index plus one file per page section, with `responsive.md`; `components/` is reserved for reusable pieces in a later batch) and `motion.md` one at a time, plus `resources.md` (curated links) when needed.
 - `design-review`: reviewing UI in two modes. Own project: review with `references/unslop-checklist.md`, browser check with `references/visual-qa.md`, then fix. URL audit: read-only, public pages only, three pages at most, report in the format of `references/audit-report.md`.
 
 Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests. Prefer adding a reference file.
@@ -23,7 +23,7 @@ Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badl
 - Skill content is in English. Descriptions include Spanish trigger keywords in parentheses.
 - Keep each `SKILL.md` under ~500 lines and move detail to its `references/` folder, loaded only when needed.
 - Write rules in context: "do X when Y". Avoid absolute bans.
-- Each skill is self-contained. No paths that leave its folder, and no symlinks anywhere in the repo.
+- Nothing outside the plugin. Skills may read each other's files inside the plugin (for example `${CLAUDE_SKILL_DIR}/../modern-design/references/sections/`), but never paths outside the plugin root, because installed plugins are copied to a cache without anything around them. A skill that reads another skill's files must keep working when they're missing. No symlinks anywhere in the repo.
 - Descriptions stay under 1024 characters and must not overlap with each other.
 
 ## Checks and releases

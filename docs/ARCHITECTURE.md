@@ -18,7 +18,7 @@ flowchart LR
 | | After the brief is drafted, for reference | `references/principles.md`, `references/page-types.md` |
 | | Pages with prices, consent, subscriptions, scarcity, urgency or reviews (hard limit) | `references/ethics.md` |
 | | 2. Tokens: color, type, spacing, radii, shadows, themes | `references/tokens.md` |
-| | 3. Components: sections and components in the project's stack | `references/components.md` |
+| | 3. Components: sections and components in the project's stack, for phone, tablet and desktop | `references/sections/index.md`, one file per section built, `references/responsive.md` |
 | | 4. Motion: purposeful animation and interaction | `references/motion.md` |
 | | 5. Hand off to design-review | none |
 | | Any step that needs an external resource | `references/resources.md` |
@@ -29,7 +29,7 @@ flowchart LR
 | | 2. Review against the checklist and browser criteria | `references/unslop-checklist.md`, `references/visual-qa.md` |
 | | 3. Write the report | `references/audit-report.md` |
 
-Each skill is self-contained. It reads only its own `SKILL.md` and `references/` folder, and never paths outside its folder, because installed plugins are copied to a cache and files outside the plugin are not available.
+Nothing outside the plugin: installed plugins are copied to a cache, and files outside the plugin are not available. Skills may read each other's files inside the plugin (`design-review` reads `modern-design`'s section references when they exist) and must keep working when they don't.
 
 Order of authority, the same in both skills: `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `page-types.md` (consulted afterwards). `design-review` checks the hard limit through its DP family and reads `ethics.md` when it exists.
 
