@@ -1,6 +1,6 @@
 # Web psychology and marketing principles
 
-Reference for `modern-design`. Consult it after reasoning (`reasoning.md`), never as a starting point: to name a mechanism you have already detected, check its evidence and know its limits. Apply the principles silently; don't repeat headings or turn them into a visible checklist.
+Reference for `modern-design`. Consult it after reasoning (`reasoning.md`), never as a starting point: to name a mechanism you have already detected, check its evidence and know its limits. Use the principles while you reason; when you present, explain decisions in terms of the user's doubt rather than listing principle names or turning them into a visible checklist.
 
 > **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
 

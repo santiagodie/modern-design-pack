@@ -36,7 +36,7 @@ That nothing important to the user is hidden here that wasn't said elsewhere.
 
 ### 🔴 Critical errors
 - Material terms that contradict what the pricing or checkout pages say.
-- Silent changes to terms without notice to existing users.
+- Changes to terms with no advance notice to existing users.
 
 ### 🟠 Common errors
 - Walls of capitalised text; no anchors; no date.

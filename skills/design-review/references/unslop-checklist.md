@@ -423,7 +423,7 @@ Built from sections 4 (never propose) and 6 (minimum by page type) of `modern-de
 - **Evidence:** measured (screenshot of the first layer; the clicks each choice takes).
 - **Report as:** critical.
 
-### DP8. Trials and renewals without notice
+### DP8. Trials and renewals with no advance notice
 - **Look for:** free trials that take a card without saying when the first charge happens and how much it is; no mention of a reminder before the trial converts; renewal date and amount missing from pricing or billing.
 - **Fine when:** the date and amount of the first charge sit next to the trial button, and the page says a reminder will be sent.
 - **Fix:** "Free for 14 days, then €12/month from 8 December. We'll remind you 3 days before", next to the button; the next charge's date and amount always visible in billing.

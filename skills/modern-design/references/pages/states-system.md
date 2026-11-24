@@ -111,7 +111,7 @@ Reliability: that this is planned or under control, and temporary.
 
 ### 🔴 Critical errors
 - "We'll be back soon" with no time, for hours.
-- Maintenance during a promoted sale or deadline without warning.
+- Maintenance during a promoted sale or deadline, with no advance notice to users.
 
 ### 🟠 Common errors
 - No mention of whether scheduled things (orders, bookings, payments) still happen.

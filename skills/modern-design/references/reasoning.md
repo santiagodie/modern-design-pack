@@ -1,6 +1,6 @@
 # Reasoning about web design from the user's mind
 
-Reference for `modern-design`, step 1. Load it before writing `design-brief.md`; `direction.md` says when. It teaches a way of thinking, not a checklist: apply it silently, and don't repeat its headings to the user or turn them into an output format.
+Reference for `modern-design`, step 1. Load it before writing `design-brief.md`; `direction.md` says when. It teaches a way of thinking, not a checklist: use it while you work, and when you present, explain decisions in terms of the user's doubt rather than reciting its headings or turning them into an output format (see "How to present design work").
 
 > **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
 

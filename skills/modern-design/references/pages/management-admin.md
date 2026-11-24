@@ -75,7 +75,7 @@ The integrity of the numbers. A misleading chart damages trust in the whole prod
 
 ### 🔴 Critical errors
 - Hiding the period, sample or definition behind a chart.
-- Comparisons of incomparable periods (a full month vs a partial one) without a warning.
+- Comparisons of incomparable periods (a full month vs a partial one) that don't tell the reader the periods differ.
 
 ### 🟠 Common errors
 - No export, forcing screenshots.
