@@ -37,6 +37,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 ### Changed (phase 3b)
 
 - Skills may read each other's files inside the plugin; the rule is now "nothing outside the plugin".
+- `design-review` page scripts moved from js code blocks in `visual-qa.md` and `unslop-checklist.md` to `skills/design-review/scripts/` (`scroll-check.js`, `page-checks.js`, `mobile-measurable.js`, `outdated-measurable.js`), unchanged and with a header comment, so the skill scanner can analyse the Markdown; the agent reads each file and passes it to `playwright-cli --raw eval`, which has no option to run a file in the page.
 - Landing-page sections live in `modern-design/references/sections/`. `references/components/` is kept for reusable pieces (batch D).
 - Batch A gaps from the phase 3b test: "Without JavaScript" notes in header, CTA and footer (`<details>` menu, real `tel:`/`wa.me` links, static copyright year); phone hero order led by the brief's main job; stacked tablet hero; one action with several channels; cookie settings link only when consent is needed; CY3 accepts brief-required placeholders that are visibly marked; own-project review notes format and non-interactive runs in `design-review`; Lighthouse width and the 712 px phone landscape viewport in `visual-qa.md`.
 

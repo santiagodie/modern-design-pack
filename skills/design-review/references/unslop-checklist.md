@@ -456,7 +456,7 @@ Built from sections 4 (never propose) and 6 (minimum by page type) of `modern-de
 
 ## Mobile, measurable
 
-Checks for pages used on touch screens. Each one can be read from the HTML or the CSS, so it is `measured`. Run the script below once (it reads the page's stylesheets; stylesheets from other domains can't be read and are reported as skipped), then confirm hits in the screenshots taken with a touch device preset.
+Checks for pages used on touch screens. Each one can be read from the HTML or the CSS, so it is `measured`. Run `${CLAUDE_SKILL_DIR}/scripts/mobile-measurable.js` once, at a touch width (how to run it: "How to run the scripts" in `visual-qa.md`). It reads the page's stylesheets; stylesheets from other domains can't be read and are reported as skipped. Then confirm hits in the screenshots taken with a touch device preset.
 
 | ID | Signal | Why it matters | Fix | Report as |
 |---|---|---|---|---|
@@ -466,76 +466,30 @@ Checks for pages used on touch screens. Each one can be read from the HTML or th
 | MN4 | `100vh` on heroes, full-height sections or fixed bars | On mobile `100vh` is taller than the visible screen, so content and bottom bars hide under the browser bar | `min-height: 100svh` for heroes; `100dvh` for app shells | minor |
 | MN5 | `env(safe-area-inset-*)` used without `viewport-fit=cover`, or bars fixed to the bottom edge with no safe-area padding when `viewport-fit=cover` is set | Without the meta the insets are zero; without the padding, bars sit under the home indicator | Add `viewport-fit=cover` and pad fixed edges with `env(safe-area-inset-*, 0px)` | minor |
 
-```js
-() => {
-  const viewport = document.querySelector('meta[name="viewport"]')?.content ?? '';
-  const out = { viewport, zoomDisabled: /user-scalable\s*=\s*(no|0)|maximum-scale\s*=\s*1(\.0+)?(\s*[,;]|$)/i.test(viewport),
-    viewportFitCover: /viewport-fit\s*=\s*cover/i.test(viewport), smallInputs: [], ungatedHover: [], vh100: [],
-    usesSafeArea: false, skippedSheets: 0 };
-  document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]), select, textarea').forEach(el => {
-    const size = parseFloat(getComputedStyle(el).fontSize);
-    if (size < 16 && out.smallInputs.length < 8) out.smallInputs.push((el.name || el.id || el.tagName.toLowerCase()) + ' ' + size + 'px');
-  });
-  const walk = (rules, inHover) => {
-    for (const r of rules) {
-      if (r.media) { walk(r.cssRules, inHover || /hover\s*:\s*hover/.test(r.media.mediaText)); continue; }
-      if (r.cssRules && !r.selectorText) { walk(r.cssRules, inHover); continue; }
-      const text = r.cssText || '';
-      if (r.selectorText && /:hover/.test(r.selectorText) && !inHover && out.ungatedHover.length < 10) out.ungatedHover.push(r.selectorText);
-      if (/(^|[^.\d])100vh/.test(text) && out.vh100.length < 8) out.vh100.push(r.selectorText || text.slice(0, 60));
-      if (/safe-area-inset/.test(text)) out.usesSafeArea = true;
-    }
-  };
-  for (const sheet of document.styleSheets) { try { walk(sheet.cssRules, false); } catch { out.skippedSheets++; } }
-  return out;
-}
-```
+Each field of `mobile-measurable.js` maps to a row: `zoomDisabled` to MN1, `smallInputs` to MN2, `ungatedHover` to MN3, `vh100` to MN4, and `usesSafeArea` with `viewportFitCover: false` to MN5. When `skippedSheets` is above zero, an empty list doesn't clear those stylesheets.
 
 Read the result with care: a `:hover` rule that only changes a cursor or underlines a text link is a tip at most, and `100vh` used as a fallback before an `svh` or `dvh` declaration is fine.
 
 ## Outdated, measurable
 
-Use these first when filling the "Outdated" section of a report. Each one can be checked on a live page, so it is `measured`, not taste. They follow the direction of Chrome's Modern Web Guidance, which steers sites toward Baseline web features instead of older workarounds. Run the script below at 1440 px and confirm each hit in the HTML before reporting it.
+Use these first when filling the "Outdated" section of a report. Each one can be checked on a live page, so it is `measured`, not taste. They follow the direction of Chrome's Modern Web Guidance, which steers sites toward Baseline web features instead of older workarounds. Run `${CLAUDE_SKILL_DIR}/scripts/outdated-measurable.js` at 1440 px (how to run it: "How to run the scripts" in `visual-qa.md`) and confirm each hit in the HTML before reporting it.
 
 | ID | Legacy signal | Modern approach | How to check |
 |---|---|---|---|
 | OM1 | No viewport meta, or a fixed-width layout that scrolls sideways at 375 px | Responsive layout with `width=device-width` | Checks script in `visual-qa.md` (`viewport`, `horizontalOverflow`) |
 | OM2 | Zoom disabled in the viewport meta | Let people zoom and scale text | `viewport` contains `user-scalable=no` or `maximum-scale=1` (also ME2) |
-| OM3 | Render-blocking scripts in `<head>` | `defer`, `async` or `type="module"` | Script below (`blockingScripts`); Lighthouse `render-blocking-resources` |
-| OM4 | Icon fonts (Font Awesome-style stylesheets, `<i class="fa …">`) | Inline or sprite SVG icons | Script below (`iconFont`) |
-| OM5 | Large images with no `srcset`/`<picture>`, or only JPEG/PNG | Responsive images in modern formats (WebP, AVIF) | Script below (`imagesWithoutSrcset`, `modernImageFormats`); Lighthouse `modern-image-formats`, `uses-responsive-images` |
-| OM6 | The main (LCP) image lazy-loaded or not prioritised; below-the-fold images loaded eagerly | `fetchpriority="high"` on the hero image, `loading="lazy"` below the fold | Lighthouse `prioritize-lcp-image`, `lcp-lazy-loaded`; script below (`lazyImages`) |
-| OM7 | Old JavaScript libraries (jQuery 1.x–2.x and similar) loaded for small effects | Native DOM APIs and CSS | Script below (`jquery`); Lighthouse `no-vulnerable-libraries` when present |
-| OM8 | Third-party scripts or stylesheets with no integrity check | `integrity` + `crossorigin` | Script below (`thirdPartyWithoutSri`) |
-| OM9 | Headings with no balanced wrapping | `text-wrap: balance` on headings | Script below (`balancedHeadings`) |
+| OM3 | Render-blocking scripts in `<head>` | `defer`, `async` or `type="module"` | `outdated-measurable.js` (`blockingScripts`); Lighthouse `render-blocking-resources` |
+| OM4 | Icon fonts (Font Awesome-style stylesheets, `<i class="fa …">`) | Inline or sprite SVG icons | `outdated-measurable.js` (`iconFont`) |
+| OM5 | Large images with no `srcset`/`<picture>`, or only JPEG/PNG | Responsive images in modern formats (WebP, AVIF) | `outdated-measurable.js` (`imagesWithoutSrcset`, `modernImageFormats`); Lighthouse `modern-image-formats`, `uses-responsive-images` |
+| OM6 | The main (LCP) image lazy-loaded or not prioritised; below-the-fold images loaded eagerly | `fetchpriority="high"` on the hero image, `loading="lazy"` below the fold | Lighthouse `prioritize-lcp-image`, `lcp-lazy-loaded`; `outdated-measurable.js` (`lazyImages`) |
+| OM7 | Old JavaScript libraries (jQuery 1.x–2.x and similar) loaded for small effects | Native DOM APIs and CSS | `outdated-measurable.js` (`jquery`); Lighthouse `no-vulnerable-libraries` when present |
+| OM8 | Third-party scripts or stylesheets with no integrity check | `integrity` + `crossorigin` | `outdated-measurable.js` (`thirdPartyWithoutSri`) |
+| OM9 | Headings with no balanced wrapping | `text-wrap: balance` on headings | `outdated-measurable.js` (`balancedHeadings`) |
 | OM10 | Animation with no reduced-motion handling | `@media (prefers-reduced-motion)` | Search the CSS; compare screenshots with reduced motion on and off |
-| OM11 | Forms missing `autocomplete`, `type` and `inputmode` | Standard autocomplete tokens and input types | Script below (`inputsWithoutAutocomplete`) |
+| OM11 | Forms missing `autocomplete`, `type` and `inputmode` | Standard autocomplete tokens and input types | `outdated-measurable.js` (`inputsWithoutAutocomplete`) |
 | OM12 | Custom JS modals and popovers on `<div>`s | `<dialog>` and the `popover` attribute | Look for `role="dialog"` on divs in the HTML |
 
-```js
-() => {
-  const scripts = [...document.scripts];
-  const imgs = [...document.images].filter(i => i.naturalWidth > 400);
-  const host = location.hostname;
-  return {
-    blockingScripts: [...document.head.querySelectorAll('script[src]')]
-      .filter(s => !s.defer && !s.async && s.type !== 'module').map(s => s.src).slice(0, 8),
-    iconFont: [...document.styleSheets].some(s => /font-?awesome|icomoon|glyphicons|material-icons/i.test(s.href || '')) ||
-      !!document.querySelector('i[class*="fa-"], .glyphicon'),
-    imagesWithoutSrcset: imgs.filter(i => !i.srcset && !i.closest('picture')).length,
-    modernImageFormats: imgs.filter(i => /\.(webp|avif)(\?|$)/i.test(i.currentSrc)).length + ' of ' + imgs.length,
-    lazyImages: [...document.images].filter(i => i.loading === 'lazy').length + ' of ' + document.images.length,
-    jquery: window.jQuery ? window.jQuery.fn.jquery : null,
-    thirdPartyWithoutSri: [...document.querySelectorAll('script[src], link[rel="stylesheet"]')]
-      .filter(e => { try { return new URL(e.src || e.href).hostname !== host && !e.integrity; } catch { return false; } })
-      .length,
-    balancedHeadings: [...document.querySelectorAll('h1, h2')].filter(h => getComputedStyle(h).textWrap?.includes('balance')).length +
-      ' of ' + document.querySelectorAll('h1, h2').length,
-    inputsWithoutAutocomplete: [...document.querySelectorAll('input:not([type=hidden]):not([type=submit]):not([type=checkbox]):not([type=radio])')]
-      .filter(i => !i.autocomplete).length
-  };
-}
-```
+Each field of `outdated-measurable.js` is named in the "How to check" column above; a non-empty list, `true` or a count above zero is a hit to confirm in the HTML.
 
 Not every hit is a problem. A missing `text-wrap: balance` on a site with well-wrapped headings is a tip at most, and Google Fonts or analytics without SRI are common and low risk. Report the hits that affect the user (OM1–OM3, OM5–OM6, OM10) above the ones that are housekeeping.
 

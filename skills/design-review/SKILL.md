@@ -92,3 +92,4 @@ Load only when needed:
 - `${CLAUDE_SKILL_DIR}/references/unslop-checklist.md`: generic patterns and common mistakes, with when each is fine and where it goes in the report (both modes, review step)
 - `${CLAUDE_SKILL_DIR}/references/visual-qa.md`: screenshot process, checks script and what to look for at each width (both modes, browser step)
 - `${CLAUDE_SKILL_DIR}/references/audit-report.md`: report format and file locations (URL audit, last step)
+- `${CLAUDE_SKILL_DIR}/scripts/`: the four page scripts (`scroll-check.js`, `page-checks.js`, `mobile-measurable.js`, `outdated-measurable.js`), read and passed to `playwright-cli --raw eval` when `visual-qa.md` or the checklist call for them
