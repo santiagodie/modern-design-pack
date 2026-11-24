@@ -6,6 +6,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-C9A227?style=flat-square&labelColor=0B1F3A" alt="Licencia: MIT" /></a>
   <img src="https://img.shields.io/badge/Claude%20Code-plugin-C9A227?style=flat-square&labelColor=0B1F3A" alt="Plugin de Claude Code" />
   <img src="https://img.shields.io/badge/status-early%20development-C9A227?style=flat-square&labelColor=0B1F3A" alt="Estado: desarrollo inicial" />
+  <a href="https://github.com/santiagodie/modern-design-pack/actions/workflows/skill-checks.yml"><img src="https://github.com/santiagodie/modern-design-pack/actions/workflows/skill-checks.yml/badge.svg" alt="Skill checks" /></a>
 </p>
 
 <p align="center"><a href="README.md">English</a> · <b>Español</b></p>
@@ -104,6 +105,8 @@ Más detalle en [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) (en inglés).
 
 ```text
 modern-design-pack/
+├── .github/workflows/
+│   └── skill-checks.yml     # comprobaciones de NVIDIA SkillEvaluator en cada push y PR
 ├── .claude-plugin/
 │   ├── plugin.json          # manifiesto del plugin
 │   └── marketplace.json     # marketplace "santiagodie-plugins", apunta a este repo como "./"
