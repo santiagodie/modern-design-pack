@@ -31,6 +31,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 - Skills may read each other's files inside the plugin; the rule is now "nothing outside the plugin".
 - Landing-page sections live in `modern-design/references/sections/`. `references/components/` is kept for reusable pieces (batch D).
+- Batch A gaps from the phase 3b test: "Without JavaScript" notes in header, CTA and footer (`<details>` menu, real `tel:`/`wa.me` links, static copyright year); phone hero order led by the brief's main job; stacked tablet hero; one action with several channels; cookie settings link only when consent is needed; CY3 accepts brief-required placeholders that are visibly marked; own-project review notes format and non-interactive runs in `design-review`; Lighthouse width and the 712 px phone landscape viewport in `visual-qa.md`.
 
 ### Changed
 

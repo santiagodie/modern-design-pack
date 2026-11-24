@@ -4,9 +4,9 @@ Date: 2026-11-24. Tested: `modern-design/references/sections/` (index plus heade
 
 | Test | Brief | Review notes |
 |---|---|---|
-| Bakery landing, rebuilt from the phase 3a brief | [design-brief.md](phase-3/bakery/design-brief.md) (unchanged) | [review-notes.md](phase-3b/bakery/review-notes.md) |
+| Bakery landing, rebuilt from the phase 3a brief | [design-brief.md](phase-3/bakery/design-brief.md) (unchanged) | [review-notes.md](phase-3b/bakery/review-notes.md) · site after review: [site/](phase-3b/site/) |
 
-The vet dashboard was not rebuilt: batch A covers pages that persuade, and its open issues belong to batch C (sections for pages that operate).
+The vet dashboard was not rebuilt: batch A covers pages that persuade, and its open issues belong to batch D.
 
 ## How it was run, and how that differs from phase 3a
 
@@ -15,7 +15,11 @@ Phases 2 and 3a used non-interactive `claude -p --plugin-dir` sessions. This tim
 1. **Build:** told to follow `modern-design/SKILL.md` exactly with the request "Create a landing page for a bakery in this folder, in static HTML and CSS", in a folder holding only the phase 3a `design-brief.md`. It stopped at the hand-off.
 2. **Review:** told to follow `design-review/SKILL.md` in own-project mode at the four widths, with Lighthouse once, fixing what the skill says to fix.
 
-Two differences matter when comparing: the brief already existed, so step 1 was skipped, and both prompts asked the agent to stop any server it started, so "servers left running" (a phase 3a problem) was not tested independently.
+Three differences matter when comparing:
+
+- The brief already existed, so step 1 was skipped.
+- Both prompts asked the agent to stop any server it started, so "servers left running" (a phase 3a problem) was not tested independently.
+- The subagents had no context, but their prompts were written by a session that knew the phase 3a results. The prompts didn't mention those failures, but the choice of what to ask for (stopping servers, Lighthouse once, the four widths, the report fields) may have been shaped by them. A clean `claude -p` run with the bare user request is still the stronger test.
 
 ## What the build loaded and used
 
@@ -51,16 +55,16 @@ Measured: no horizontal overflow at 375, 712 (phone landscape), 768, 1024 or 144
 | Phase 3a issue (owner: components) | Batch A result |
 |---|---|
 | Missing photo shown as a panel of diagonal stripes (CP4) | **Fixed.** A plain dashed frame with "Foto pendiente" and a caption saying what to photograph. Still a tall empty box at 1440 px until the photo exists. |
-| Per-item action buttons repeated 12 times (vet) | Not tested: batch C |
-| Board needing sideways scroll at 768 px (vet) | Not tested: batch C |
-| Read-only TV layout (vet) | Not tested: batch C |
+| Per-item action buttons repeated 12 times (vet) | Not tested: batch D |
+| Board needing sideways scroll at 768 px (vet) | Not tested: batch D |
+| Read-only TV layout (vet) | Not tested: batch D |
 | Servers left running after the build | Not tested independently (the prompt asked to stop them); none were left running |
 
 Still open from phase 3a and owned by `tokens.md`: vertical spacing between sections is large and uneven (visible at 1440 around the bakehouse and the order band).
 
 ## Gaps found in the references
 
-These decide the next edits. Owners in brackets.
+Owners in brackets. All twelve were addressed in the commit after this test ("fix: batch A reference gaps"), as "do X when Y" rules. Gap 5 went to the ROADMAP as part of batch B without being written. The focus and touch-target fixes from the review (M1, M2, T1, T2) were not repeated in each section file: they are recorded in the ROADMAP as requirements for `tokens.md`.
 
 1. **Static sites with no JavaScript** [`header.md`, `cta.md`, `footer.md`]. Menu focus trap and Esc, hide-on-scroll, the sticky phone CTA appearing and hiding, and the dynamic copyright year all assume JavaScript. None of the files says what to do without it. Add a "no JavaScript" line to each.
 2. **Mobile order of the hero** [`hero.md`]. The build put the bold element (the board) below the copy and both CTAs on phones, although the brief asked for it right under the headline. The review caught it. `hero.md` should say that the brief's mobile order wins and that the distinctive element should appear on the first phone screen when it carries the information.
@@ -89,4 +93,4 @@ In `design-review`:
 
 Compare with [phase 3a at 1440](phase-3/screenshots/bakery-1440.jpg). The review notes refer to the reviewer's working screenshots in `qa-tmp/`, which were not kept.
 
-**Next:** apply gaps 1–4, 6–8 and 11–12 (small edits), then batch B with the location and hours section.
+**Next:** re-run the bakery with a clean `claude -p` session when it is allowed, to check the new rules (phone hero order, no-JavaScript header, CY3 placeholders), then batch B with the "where and when" section.

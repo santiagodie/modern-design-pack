@@ -30,10 +30,10 @@ Write one reference at a time, test it on the bakery and the vet dashboard, and 
 - [x] 3a: `direction.md` and step 1 of SKILL.md: [phase-3-results.md](examples/phase-3/phase-3-results.md)
 - [ ] Re-test the reference research in an interactive session (the browser couldn't open external sites in the non-interactive tests)
 - [x] 3b, batch A: `sections/` for pages that persuade (index plus header, hero, CTA, social proof, benefits, forms, final CTA, footer) and `responsive.md` (phone, tablet, desktop; capability over device): [phase-3b-results.md](examples/phase-3b-results.md)
-- [ ] 3b, batch B: important sections (problem, how it works, demo, testimonials, pricing, trust, FAQ)
+- [ ] 3b, batch B: important sections (problem, how it works, demo, testimonials, pricing, trust, FAQ, and "where and when" for local businesses: address, weekly hours, map link, how to get there)
 - [ ] 3b, batch C: sections for pages that operate (app bar, boards, tables, side panels, per-item actions, read-only displays)
 - [ ] 3b, batch D: `references/components/` for reusable pieces (buttons, cards, inputs, badges) shared by several sections
-- [ ] 3c: `tokens.md` (section spacing rhythm, semantic color roles)
+- [ ] 3c: `tokens.md` (section spacing rhythm, semantic color roles, and two requirements from the 3b test: focus-ring tokens that keep 3:1 on every surface, dark bands and footers included; and touch-target tokens, at least 44 px on coarse pointers, also for inline links, nav items and footer links. Section files point to these tokens instead of repeating them)
 - [ ] 3d: `motion.md`
 - [ ] `resources.md`
 - [ ] Write the `modern-design` SKILL.md rules

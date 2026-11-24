@@ -253,8 +253,9 @@ Before reporting, rule out artefacts of the audit setup:
 
 ### CY3. Placeholders and unverifiable claims
 - **Look for:** lorem ipsum, "[Company]", round fake numbers, "Trusted by thousands" with no names, testimonials with no person behind them.
-- **Fix:** replace with real content or remove. In own-project mode, ask the user for the real facts.
-- **Report as:** **critical** when placeholders are visible; minor for vague claims.
+- **Fine when:** the brief asks for placeholders because the real facts don't exist yet, each one is visibly marked as a placeholder on the page (brackets, a label such as "example times"), and the review notes list them under "Before publishing". Marks that exist only in HTML comments don't count.
+- **Fix:** replace with real content or remove. In own-project mode, ask the user for the real facts, or mark the placeholder visibly when the brief allows placeholders.
+- **Report as:** **critical** when invented content is presented as real (a made-up review, address, figure or schedule that a visitor would believe), or when a placeholder is visible but not marked as one; minor for vague claims. Placeholders that the brief requires and that are visibly marked are not findings: list them under "Before publishing".
 
 ### CY4. Hype tone
 - **Look for:** exclamation marks, "revolutionary", "seamless", "AI-powered" on every line.

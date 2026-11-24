@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <!-- viewport-fit=cover so safe-area insets apply; never block zoom -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Miga Lenta · Pan de masa madre en [barrio], Madrid</title>
+  <meta name="description" content="Panadería de masa madre con obrador propio en [barrio], Madrid. Horas de hornada de cada día, la carta de panes y encargos para recoger al día siguiente.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F3F2EE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#17110D" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- The single external request allowed by the brief: Archivo with its width axis -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#main" aria-label="Miga Lenta, inicio">Miga Lenta</a>
+      <nav class="nav" aria-label="Secciones">
+        <ul>
+          <li><a href="#hoy">Hoy</a></li>
+          <li><a href="#el-pan">El pan</a></li>
+          <li><a href="#encargos">Encargos</a></li>
+          <li><a href="#donde">Dónde</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-small header-cta" href="#encargos">Encargar para mañana</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 1. Primera pantalla: qué es, dónde, horario y la pizarra de hornadas -->
+    <section class="hero" id="hoy" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title">Pan de masa madre, hecho de madrugada en&nbsp;[barrio].</h1>
+          <p class="lead">Lo horneamos en el obrador de la propia tienda, en varias hornadas cada mañana. Ven a por él recién salido o encárgalo hoy y recógelo mañana.</p>
+          <p class="hours-today"><span class="dot" aria-hidden="true"></span>Martes a domingo, [8:00–14:00]. Lunes cerrado.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#encargos">Encargar para mañana</a>
+            <a class="btn btn-secondary" href="#el-pan">Ver el pan</a>
+          </div>
+          <p class="reassure">Pide antes de las [hora] y recógelo al día siguiente en el mostrador.</p>
+        </div>
+
+        <div class="board-wrap">
+          <!-- CONTENIDO DE EJEMPLO: sustituir horas y panes por la hornada real -->
+          <div class="board">
+            <table>
+              <caption>Sale del horno hoy</caption>
+              <thead class="visually-hidden">
+                <tr><th scope="col">Hora</th><th scope="col">Pan</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><time>07:30</time></td><th scope="row">Hogaza de trigo</th></tr>
+                <tr><td><time>08:15</time></td><th scope="row">Centeno 100&nbsp;%</th></tr>
+                <tr><td><time>09:00</time></td><th scope="row">Espelta</th></tr>
+                <tr><td><time>10:00</time></td><th scope="row">Pan de molde</th></tr>
+                <tr><td><time>11:30</time></td><th scope="row">Chapata</th></tr>
+                <tr><td><time>12:15</time></td><th scope="row">Brioche</th></tr>
+              </tbody>
+            </table>
+            <p class="board-note">Horas de ejemplo. Cuando se acaba una hornada, se acaba.</p>
+          </div>
+          <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <defs><path id="stamp-ring" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+            <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="60" cy="60" r="33" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <text font-size="10.5" font-weight="700" fill="currentColor"><textPath href="#stamp-ring" textLength="262" lengthAdjust="spacing">MIGA LENTA · MASA MADRE · MADRID ·</textPath></text>
+            <text x="60" y="57" text-anchor="middle" font-size="12" font-weight="800" fill="currentColor">HECHO</text>
+            <text x="60" y="71" text-anchor="middle" font-size="12" font-weight="800" fill="currentColor">AQUÍ</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. El pan: la carta como fichas de mostrador, en lista -->
+    <section class="section" id="el-pan" aria-labelledby="pan-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="pan-title">El pan</h2>
+          <p>Todo con nuestra masa madre y fermentación lenta. La carta cambia poco; lo que cambia es la hora a la que sale.</p>
+        </div>
+        <!-- Variedades genéricas: ajustar a la carta real. Precios pendientes. -->
+        <ul class="menu" role="list">
+          <li class="menu-item">
+            <h3>Hogaza de trigo</h3>
+            <p class="menu-flour">Trigo de molino de piedra</p>
+            <p class="menu-ferment">Fermentación en frío, toda la noche</p>
+            <p class="menu-price">[0,00&nbsp;€]</p>
+          </li>
+          <li class="menu-item">
+            <h3>Centeno 100&nbsp;%</h3>
+            <p class="menu-flour">Centeno integral</p>
+            <p class="menu-ferment">Miga densa, aguanta varios días</p>
+            <p class="menu-price">[0,00&nbsp;€]</p>
+          </li>
+          <li class="menu-item">
+            <h3>Espelta</h3>
+            <p class="menu-flour">Espelta blanca e integral</p>
+            <p class="menu-ferment">Fermentación en frío, toda la noche</p>
+            <p class="menu-price">[0,00&nbsp;€]</p>
+          </li>
+          <li class="menu-item">
+            <h3>Chapata</h3>
+            <p class="menu-flour">Trigo, mucha agua</p>
+            <p class="menu-ferment">Alveolo grande, corteza fina</p>
+            <p class="menu-price">[0,00&nbsp;€]</p>
+          </li>
+          <li class="menu-item">
+            <h3>Pan de molde</h3>
+            <p class="menu-flour">Trigo y un poco de centeno</p>
+            <p class="menu-ferment">Para tostadas de toda la semana</p>
+            <p class="menu-price">[0,00&nbsp;€]</p>
+          </li>
+          <li class="menu-item">
+            <h3>Brioche</h3>
+            <p class="menu-flour">Trigo, mantequilla y huevo</p>
+            <p class="menu-ferment">Solo fines de semana</p>
+            <p class="menu-price">[0,00&nbsp;€]</p>
+          </li>
+        </ul>
+        <p class="allergens-note">Alérgenos de cada pan: pregunta en el mostrador o consulta la ficha en tienda.</p>
+      </div>
+    </section>
+
+    <!-- 3. El obrador -->
+    <section class="section section-workshop" aria-labelledby="obrador-title">
+      <div class="wrap workshop-grid">
+        <div class="workshop-copy">
+          <h2 id="obrador-title">El obrador está detrás del mostrador</h2>
+          <p>La masa madre es la misma desde que abrimos. Cada tarde se forman las piezas y pasan la noche fermentando en frío; de madrugada entran al horno y salen por tandas hasta mediodía. Por eso no hay una sola hora del pan, sino varias.</p>
+          <p>Si pasas temprano, verás el obrador en marcha a través del cristal.</p>
+        </div>
+        <figure class="photo-slot">
+          <div class="photo-frame" role="img" aria-label="Hueco reservado para una foto del obrador">
+            <span>Foto pendiente</span>
+          </div>
+          <figcaption>Qué fotografiar: manos formando hogazas sobre la mesa del obrador, con luz de madrugada. Vertical, 4:5.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 4. Encargos: mecanismo de conversión (acción directa: WhatsApp o teléfono) -->
+    <section class="section section-orders" id="encargos" aria-labelledby="encargos-title">
+      <div class="wrap orders-grid">
+        <div class="orders-head">
+          <h2 id="encargos-title">Encarga hoy, recoge mañana</h2>
+          <p>Para no quedarte sin hogaza, o si necesitas varias piezas.</p>
+        </div>
+        <ol class="steps" role="list">
+          <li>
+            <span class="step-n" aria-hidden="true">1</span>
+            <h3>Escríbenos antes de las [hora]</h3>
+            <p>Por WhatsApp o por teléfono: qué pan, cuántas piezas y tu nombre.</p>
+          </li>
+          <li>
+            <span class="step-n" aria-hidden="true">2</span>
+            <h3>Te confirmamos el mismo día</h3>
+            <p>Con la hora a partir de la cual estará listo.</p>
+          </li>
+          <li>
+            <span class="step-n" aria-hidden="true">3</span>
+            <h3>Recoge al día siguiente</h3>
+            <p>En el mostrador, a tu nombre. Pagas al recoger.</p>
+          </li>
+        </ol>
+        <div class="orders-actions">
+          <div class="actions">
+            <a class="btn btn-primary" href="https://wa.me/[34XXXXXXXXX]">Encargar por WhatsApp</a>
+            <a class="btn btn-secondary" href="tel:+34[XXXXXXXXX]">Llamar al [teléfono]</a>
+          </div>
+          <p class="reassure">Lunes cerrado: los encargos para el martes, hasta el domingo a las [hora].</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Dónde: información práctica completa -->
+    <section class="section" id="donde" aria-labelledby="donde-title">
+      <div class="wrap where-grid">
+        <div class="where-copy">
+          <h2 id="donde-title">Dónde estamos</h2>
+          <address>
+            <span class="addr-line">[Calle y número]</span>
+            <span class="addr-line">[Código postal] Madrid · [barrio]</span>
+            <span class="addr-line">Metro: [estación]</span>
+          </address>
+          <p><a class="text-link" href="https://maps.google.com/?q=[direccion]">Abrir en el mapa</a></p>
+        </div>
+        <div class="week">
+          <table>
+            <caption>Horario</caption>
+            <tbody>
+              <tr><th scope="row">Lunes</th><td>Cerrado</td></tr>
+              <tr><th scope="row">Martes</th><td>[8:00–14:00]</td></tr>
+              <tr><th scope="row">Miércoles</th><td>[8:00–14:00]</td></tr>
+              <tr><th scope="row">Jueves</th><td>[8:00–14:00]</td></tr>
+              <tr><th scope="row">Viernes</th><td>[8:00–14:00]</td></tr>
+              <tr><th scope="row">Sábado</th><td>[8:00–14:30]</td></tr>
+              <tr><th scope="row">Domingo</th><td>[8:30–14:00]</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand">Miga Lenta</p>
+        <p>[Calle y número], Madrid · <a href="tel:+34[XXXXXXXXX]">[teléfono]</a></p>
+      </div>
+      <p class="footer-allergens">Trabajamos con gluten, frutos secos, sésamo, huevo y lácteos en el mismo obrador. Pide la información de alérgenos de cada pan en tienda.</p>
+      <nav aria-label="Información legal">
+        <ul class="legal" role="list">
+          <li><a href="[aviso-legal]">Aviso legal</a></li>
+          <li><a href="[privacidad]">Privacidad</a></li>
+          <li><a href="[cookies]">Cookies</a></li>
+          <li><a href="[accesibilidad]">Accesibilidad</a></li>
+        </ul>
+      </nav>
+      <!-- Sin JavaScript: actualizar el año a mano. Datos legales (razón social, NIF) pendientes. -->
+      <p class="copy">© 2026 [Razón social] · NIF [pendiente]</p>
+    </div>
+  </footer>
+</body>
+</html>

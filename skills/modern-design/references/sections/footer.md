@@ -16,7 +16,7 @@ Every public page. App screens that operate usually need only a minimal footer o
 
 - Legal notice (in Spain, required by the LSSI-CE: company name, tax ID, registered address, contact email, registry details).
 - Privacy policy (GDPR).
-- Cookie policy, plus a "Cookie settings" link that reopens consent at any time.
+- Cookie policy, plus a "Cookie settings" link that reopens consent, when the site sets cookies or similar storage that need consent (analytics, ads, embedded videos or maps). When it sets none, a short cookie or privacy note saying so is enough, with no settings link. Third-party requests that set no cookies (such as a web font) still belong in the privacy policy.
 - Terms and conditions when you sell or offer a service.
 - Accessibility statement: recommended, and increasingly expected under the European Accessibility Act.
 
@@ -42,7 +42,7 @@ In builds without real data, mark legal details and contact information as place
 ## States and interaction
 
 - Link hover behind the hover-capability query; `:active` feedback on touch.
-- Generate the copyright year dynamically.
+- Generate the copyright year dynamically when the page has JavaScript or a build step. On a static page with neither, write the year at build time, or a range ("2024–2026"), and add a comment saying it needs updating.
 - Social links point only to active profiles.
 
 ## Accessibility
@@ -57,7 +57,7 @@ In builds without real data, mark legal details and contact information as place
 
 ## Common errors
 
-- A hard-coded, outdated copyright year.
+- An outdated copyright year.
 - Social icons linking to dead profiles.
 - A full mega-footer on a campaign page, which adds exits at the end of the funnel.
 - Tiny tap targets packed together on phones.

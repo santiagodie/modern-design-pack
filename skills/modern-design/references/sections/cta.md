@@ -26,7 +26,11 @@ Every page with an action. The CTA is a system repeated down the page (hero, aft
 | Position | In thumb reach; a sticky bottom CTA can appear once the hero CTA scrolls out | As phone in portrait; inline in landscape | Inline; a sticky header CTA is enough |
 | Spacing | At least 8 px from other targets; 12–16 px between primary and secondary | Same | 12–16 px between primary and secondary |
 
-**Sticky mobile CTA:** appears after the hero CTA leaves the screen, hides when the final CTA or a form is visible, adds `env(safe-area-inset-bottom)` to its padding, and never covers the cookie banner, a submit button or the focused element. A short context line ("Order by 7 pm · Pick up tomorrow") often helps more than the button alone.
+**Sticky mobile CTA (needs JavaScript):** appears after the hero CTA leaves the screen, hides when the final CTA or a form is visible, adds `env(safe-area-inset-bottom)` to its padding, and never covers the cookie banner, a submit button or the focused element. A short context line ("Order by 7 pm · Pick up tomorrow") often helps more than the button alone.
+
+**Without JavaScript:** skip the sticky bottom CTA, because it can't hide when the final CTA or a form appears. Repeat the CTA inline at the decision points instead (after the argument, the final CTA), and keep the header CTA visible. Make direct actions real links that work with no script: `tel:`, `https://wa.me/`, `mailto:`, a booking page.
+
+**Several channels, one action:** when the mechanism offers more than one channel (WhatsApp and phone, for example), keep the action's name and add the channel as a qualifier: "Order by WhatsApp", "Order by phone". The primary button is the channel most visitors will use; the other is the secondary.
 
 ## States and interaction
 

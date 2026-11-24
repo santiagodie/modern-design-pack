@@ -8,7 +8,7 @@ Turn intent into action with the least friction, collecting only what's needed.
 
 ## When it applies
 
-Every page that persuades needs a mechanism: a form, a sign-up, a checkout, or a direct action (call, message, book). Pages that operate use the same rules for data entry.
+Every page that persuades needs a mechanism: a form, a sign-up, a checkout, or a direct action (call, message, book). A direct action is a real link (`tel:`, `https://wa.me/`, `mailto:`, a booking page) that works without JavaScript. When there are several channels, name them as in `cta.md` ("Order by WhatsApp", "Order by phone"). Pages that operate use the same rules for data entry.
 
 ## Content
 

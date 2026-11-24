@@ -34,13 +34,15 @@ playwright-cli close
    | 768 (tablet portrait) | `playwright-cli open --device "iPad Mini" <url>` | Touch, coarse pointer, no hover |
    | 1024 (tablet landscape) | `playwright-cli open --device "iPad Mini landscape" <url>` | Touch, coarse pointer, no hover |
    | 1440 (desktop) | `playwright-cli open <url>`, then `resize 1440 900` | Mouse, fine pointer, hover |
-   | Phone landscape, only when the page has fixed or sticky elements | `playwright-cli open --device "iPhone 13 Mini landscape" <url>` | Touch |
+   | Phone landscape, only when the page has fixed or sticky elements | `playwright-cli open --device "iPhone 13 Mini landscape" <url>` (viewport 712 × 375 px; the screen is 812 px wide, minus browser chrome) | Touch |
 
    For each one, scroll through again, run the checks script, and take a full-page screenshot named `<page>-<width>.png` (`<page>-375-landscape.png` for the landscape one). Confirm the emulation with `--raw eval "() => matchMedia('(pointer: coarse)').matches"` when a finding depends on it.
 5. **Check focus** at 1440: press Tab about eight times and take a viewport screenshot (`<page>-focus-1440.png`). When no focus indicator is visible on any of those stops, that is a finding.
 6. **Look at every screenshot**, not only the script output. Use the per-width list below.
 7. **Record findings** with the screenshot file and a selector, tagging script results as `measured` and visual calls as `judgment`.
 8. **Close** the browser when done.
+
+**Lighthouse.** Its mobile run emulates a phone about 412 px wide, not 375. Report its scores with that width, and keep layout findings at 375 to the screenshots. In own-project mode, run it on a local server and note that caching and compression results reflect the test server, not the site.
 
 When a screenshot shows a blank band where content should be, scroll through once more and recapture. When content stays hidden with reduced motion on, that is a finding (see MO4 in `unslop-checklist.md`).
 
@@ -105,7 +107,7 @@ The small-target list includes inline text links, which are fine inside a paragr
 - The main call to action visible without much scrolling.
 - Images cropped so the subject is lost.
 
-**375 px in landscape (only with fixed or sticky elements)**
+**Phone landscape, 712 × 375 px viewport (only with fixed or sticky elements)**
 - How much of the roughly 375 px of height the header, bars and banners leave for content.
 - Dialogs and sheets that don't fit and can't scroll.
 

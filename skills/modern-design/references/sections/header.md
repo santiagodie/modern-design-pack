@@ -43,14 +43,22 @@ Keep horizontal padding equal to the page container, and 24–40 px between link
 - Link hover styles only inside `@media (hover: hover) and (pointer: fine)`; `:active` feedback for touch.
 - Show the current section or page (`aria-current`) on long single pages and multi-page sites.
 - On scroll, move from transparent to a solid background with a hairline border rather than a heavy shadow.
-- Consider hiding the header CTA while the hero CTA is visible, so two identical buttons don't share the screen.
+- When the header CTA and the hero CTA share the first screen, hide the header one while the hero CTA is visible if the page has JavaScript. On a static page, keep both: two buttons for the **same** action are acceptable, so make the header one the small version. Two buttons for different actions are not.
 
 ## Accessibility
 
 - A "Skip to content" link as the first focusable element.
 - `<header>` and `<nav>` landmarks; the menu button has an accessible name, `aria-expanded` and `aria-controls`.
-- The open menu traps focus, closes with Esc and returns focus to the button.
+- With JavaScript, the open menu traps focus, closes with Esc and returns focus to the button.
 - `scroll-padding-top` equal to the header height, so anchored headings and focused elements aren't hidden behind a sticky header (WCAG 2.2 Focus Not Obscured).
+
+## Without JavaScript
+
+When the brief or stack rules out JavaScript:
+
+- Show the links inline on phones when they fit with 44 px targets (a second row under the name works for 3–5 short links). When they don't fit, build the menu with `<details>` and `<summary>`: it opens and closes with the keyboard and announces its state without a script. Keep the primary action outside it.
+- Use real anchor or page links, never `href="#"` with a handler.
+- Skip hide-on-scroll and the transparent-to-solid change. Choose a header that works in one state: solid background, sticky with `position: sticky` only when the screen is tall enough (for example from about 560 px of height), or not sticky at all.
 
 ## Critical errors
 
