@@ -122,7 +122,7 @@ The small-target list includes inline text links, which are fine inside a paragr
 - In URL audits, stay read-only: no clicking through forms, no logins, no accepting purchases. Accepting a cookie banner to see the page is fine; say so in the report.
 - Keep screenshots out of version control unless the user wants them committed.
 - Keep helper scripts you write (capture loops, check scripts) inside the screenshot folder or a temp folder, never loose in the project, and remove them when the user doesn't need them.
-- Stop any local server you started (for example `npx --yes serve@14.2.8`) and close the browser when you finish. Servers left running keep the project folder locked and its port busy.
+- Stop any local server you started (for example `npx --yes serve@14.2.8`) and close the browser when you finish. Servers left running keep the project folder locked and its port busy. After stopping it, check that the port is free (for example `curl -s -o /dev/null --max-time 3 http://localhost:<port>/` fails, or no process is listening on it). When it is still taken, a child process usually survived (`npx` starts `node`, which keeps listening): find the process on that port, check that it is the server you started, and stop it.
 - `playwright-cli` writes a `.playwright-cli/` folder (snapshots, console logs) in the directory it runs from. Run it from the screenshot folder, or delete that folder when you finish.
 
 ## Hand-off

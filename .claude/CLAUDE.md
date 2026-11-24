@@ -37,5 +37,5 @@ Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badl
 ## Checks and releases
 
 - Run `claude plugin validate .` after every change.
-- Bump the version in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` together, and add a `CHANGELOG.md` entry.
+- Add every change to the "Unreleased" section of `CHANGELOG.md`. Bump the version only when publishing a release, in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` together; until then it stays at 0.1.0.
 - Line endings are LF (see `.gitattributes`).

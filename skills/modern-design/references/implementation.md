@@ -118,7 +118,7 @@ Prefer what the browser already does over custom JavaScript. A short check befor
 - [ ] Swipes and carousels use scroll snapping, not pointer-move physics.
 - [ ] No hand-written HTML sanitizer.
 
-For depth, use Chrome's [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance) alongside this plugin: an agent skill with guides on these features and the mistakes agents make with them. In its published evaluation of 19 checks, an agent passed 60.8% with no guidance, 76.5% with the skill installed and 94.0% when the prompt named the skill. `design-review` measures some of the same signals in `outdated-checklist.md`.
+For depth, use Chrome's [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance) alongside this plugin: an agent skill with guides on these features and the mistakes agents make with them. At its 1.0 release, one agent ("Agent One") was reported to pass 60.8% of 19 checks with no guidance, 76.5% with the skill installed and 94.0% when the prompt named the skill ([Search Engine Journal](https://www.searchenginejournal.com/google-releases-modern-web-guidance-1-0-for-ai-coding-agents/596495/)); one agent and 19 checks, so read it as direction, not as a general rate. `design-review` measures some of the same signals in `outdated-checklist.md`.
 
 ## 6. Performance
 
@@ -200,4 +200,4 @@ Static: yes (fully static), partial (static page plus an endpoint, widget or isl
 
 ## Sources
 
-Written in our own words from implementation research provided by the repository's author (four documents, November 2026; see `docs/SOURCES.md`, "Implementation research"), which summarises framework documentation, web.dev, MDN, OWASP and published case studies. The case studies are listed with their URLs in `docs/SOURCES.md`. Modern Web Guidance is linked, not copied.
+Written in our own words from the author's implementation research (written with Claude, MIT) (four documents, November 2026; see `docs/SOURCES.md`, "Implementation research"), which summarises framework documentation, web.dev, MDN, OWASP and published case studies. The case studies are listed with their URLs in `docs/SOURCES.md`. Modern Web Guidance is linked, not copied.

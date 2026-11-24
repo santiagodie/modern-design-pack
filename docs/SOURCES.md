@@ -37,7 +37,7 @@ Column guide:
 | Supahero | https://supahero.io | TO VERIFY | inspiration | TO VERIFY | modern-design (components) | link only | Hero section gallery. |
 | Backgrounds Supply | https://backgrounds.supply | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
 | Gradient Labs | https://gradient-labs.ai | TO VERIFY | tool | TO VERIFY | modern-design (components) | link only | |
-| Modern Web Guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Chrome for Developers (Google) | article | None stated on the page (only Google Terms in the footer). Source repo https://github.com/GoogleChrome/modern-web-guidance-src not checked | modern-design (components, implementation), design-review (outdated-checklist, visual-qa) | summarise | Read the index, guide catalogue and modernization workflow on 2026-11-23 (catalogue published 2026-11-10). Basis for the "Outdated, measurable" section. Ideas only; detection script is our own. On 2026-11-24, linked from `implementation.md` §5 and recommended in both READMEs as a companion; its feature table and agent-mistakes list are not copied. Evaluation figures quoted as given by the repository's author: 19 checks, 60.8% unguided, 76.5% installed, 94.0% named. |
+| Modern Web Guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Chrome for Developers (Google) | article | None stated on the page (only Google Terms in the footer). Source repo https://github.com/GoogleChrome/modern-web-guidance-src not checked | modern-design (components, implementation), design-review (outdated-checklist, visual-qa) | summarise | Read the index, guide catalogue and modernization workflow on 2026-11-23 (catalogue published 2026-11-10). Basis for the "Outdated, measurable" section. Ideas only; detection script is our own. On 2026-11-24, linked from `implementation.md` §5 and recommended in both READMEs as a companion; its feature table and agent-mistakes list are not copied. Figures quoted: one agent ("Agent One"), 19 checks, 60.8% unguided, 76.5% installed, 94.0% named, as reported by Search Engine Journal (https://www.searchenginejournal.com/google-releases-modern-web-guidance-1-0-for-ai-coding-agents/596495/). |
 | Web Interface Guidelines (Vercel) | https://vercel.com/design/guidelines (repo https://github.com/vercel-labs/web-interface-guidelines) | Vercel | article | MIT | modern-design (components), design-review (visual-qa, unslop-checklist) | adapt | Read `AGENTS.md` on 2026-11-23. The "Vercel-specific" section is brand preference and is not used. |
 | emilkowalski/skills (incl. apple-design) | https://github.com/emilkowalski/skills | Emil Kowalski | skill | MIT (Copyright (c) 2026 Emil Kowalski) | modern-design (motion) | adapt | Found via ui-skills.com. Licence checked 2026-11-23; not used yet (phase 3). |
 | UI Skills | https://ui-skills.com | TO VERIFY | skill | TO VERIFY | modern-design (motion) | link only | Directory where the Emil Kowalski skills were found. |
@@ -133,7 +133,7 @@ New sources cited by `pages/` and `reasoning.md`. Facts and figures are summaris
 
 ## Implementation research
 
-Four documents provided by the repository's author on 2026-11-24, not stored in the repository: `00_README_index.md` (conventions, glossary, source registry), `01_foundations_architecture.md` (rendering, static and app rules, state, reuse layers, platform features, performance, security, accessibility, agent mistakes), `02_page_type_matrix.md` (per page type: static viability, rendering, data and state, priorities, anti-patterns) and `03_real_world_case_studies.md` (case studies with sources).
+Four documents written by the repository's author with Claude (2026-11-24) and released under this repository's MIT licence, not stored in the repository: `00_README_index.md` (conventions, glossary, source registry), `01_foundations_architecture.md` (rendering, static and app rules, state, reuse layers, platform features, performance, security, accessibility, agent mistakes), `02_page_type_matrix.md` (per page type: static viability, rendering, data and state, priorities, anti-patterns) and `03_real_world_case_studies.md` (case studies with sources).
 
 How they were used:
 
@@ -142,7 +142,7 @@ How they were used:
 - `03` is recorded below; no skill file quotes it.
 - `00`: only its source registry is recorded below. Its conventions and glossary were not copied.
 
-Licences not audited, because nothing is adapted: facts are summarised in our own words. Figures from the case studies are self-reported by the companies and are not used in the skills.
+Licences not audited, because nothing is adapted: facts are summarised in our own words. Figures from the case studies are self-reported by the companies and are not used in the skills. The research also gives Modern Web Guidance pass rates of about 52% for unguided agents and 91% for guided ones (and 61% to 94% for one adopter): not verified, and not used; the skills quote only the Agent One figures above.
 
 ### Source registry from `00_README_index.md`
 
@@ -216,7 +216,7 @@ Listed so the research can be traced. No skill file quotes them; outcomes are se
 
 | Source | URL | Author | Type | License | Used in | How | Notes |
 |---|---|---|---|---|---|---|---|
-| Landgericht München I, 2022 judgment on Google Fonts | TO VERIFY (case reference and link) | Landgericht München I | legal decision | Public court decision | design-review (outdated-checklist, OM13) | summarise | Cited as one decision in Germany, not as a general ban. Add the case reference when verified. |
+| LG München I, judgment of 20.01.2022, Az. 3 O 17493/20 (Google Fonts) | https://www.gesetze-bayern.de/Content/Document/Y-300-Z-BECKRS-B-2022-N-612 | Landgericht München I | legal decision | Public court decision | design-review (outdated-checklist, OM13) | summarise | Official text on gesetze-bayern.de. IP address passed to Google through embedded Google Fonts without consent; 100 € in damages. Cited as one concrete case in Germany, not as a general ban. |
 
 ## Working notes for phase 3
 

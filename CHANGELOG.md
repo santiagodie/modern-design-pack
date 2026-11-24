@@ -42,9 +42,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `modern-design/references/templates/site-decisions.md`: current standards (pointing to the tokens in the code), the inventory of pages, sections and components, and the user's decisions with the guideline each overrides. Never named `design.md`, which collides with Impeccable's `DESIGN.md` on case-insensitive file systems.
 - `modern-design/references/implementation.md`: rendering per route, static site or app, kinds of state, reuse layers matching the levels in `ARCHITECTURE.md`, platform features with a link to Modern Web Guidance, performance, accessibility, legal minimum, a "Boundaries" section on the backend security this plugin doesn't review, and a summary table per page type. MUST only for security, accessibility and legal rules.
 - An "Implementation" subsection (static, rendering, data and state, anti-patterns) in each of the 45 page-type entries in `pages/`.
-- `design-review`: OM13, fonts loaded from Google Fonts (recommend self-hosting; the 2022 Munich judgment cited as one decision in Germany), detected by `outdated-measurable.js` (`googleFonts`), which no longer counts Google Fonts in `thirdPartyWithoutSri`. A "Before publishing (blocking)" section in the audit report.
+- `design-review`: OM13, fonts loaded from Google Fonts (recommend self-hosting; LG München I, 20.01.2022, Az. 3 O 17493/20, cited as one concrete case in Germany), detected by `outdated-measurable.js` (`googleFonts`), which no longer counts Google Fonts in `thirdPartyWithoutSri`. A "Before publishing (blocking)" section in the audit report.
 - Modern Web Guidance recommended in both READMEs as a companion.
-- `docs/SOURCES.md`: the third screenshot, the implementation research with its source registry and case studies, and the Munich judgment (reference to verify).
+- `docs/SOURCES.md`: the third screenshot, the implementation research with its source registry and case studies, and the Munich judgment with its official source.
 
 ### Changed (content rules, decisions and implementation)
 
@@ -54,6 +54,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `direction.md` asks for the business's documentation and data first; non-interactive runs build with placeholders and write `content-needed.md`. Design assumptions still go in the brief; content assumptions never do.
 - A planned section without data is built with placeholders instead of left out; removing it is the user's decision (`sections/social-proof.md`, `sections/index.md`, `sections/footer.md`).
 - `modern-design` reads `site-decisions.md` at the start and updates it after each step; `design-review` reads it and doesn't report what the user decided, except measured failures (contrast, accessibility), reported as "decided by user".
+- `ethics.md` §7: the model may write and persuade with facts the user supplied; any new fact inside a sentence (frequency, origin, figures, guarantees, shipping, delivery times) is data and takes a placeholder or goes to `content-needed.md` as a proposal.
+- `visual-qa.md`: after stopping a local server, check that its port is free and stop a surviving child process.
+- Versioning: the version is bumped only when a release is published; changes go to "Unreleased" until then.
 - `visual-qa.md`: `read -r -d '' JS <<'EOF' || true`, because `read` returns 1 at the end of input and stops scripts that use `set -e`.
 
 ### Changed (phase 3b)

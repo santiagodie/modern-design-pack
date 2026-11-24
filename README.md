@@ -156,7 +156,7 @@ Recommended companions (optional):
 
 - [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): a large searchable catalogue of styles, palettes and font pairings that fits alongside this plugin.
 - [Impeccable](https://impeccable.style) by Paul Bakaus: design commands and 60+ automated anti-pattern checks. It overlaps with `design-review`, which summarises some of its ideas in its own words but doesn't replicate its checks. Use Impeccable when you want that depth.
-- [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers: an agent skill with guides on native web platform features and the implementation mistakes agents make. `modern-design`'s `implementation.md` keeps only a short checklist and points to it; in its published evaluation of 19 checks, an agent passed 60.8% with no guidance, 76.5% with the skill installed and 94.0% when the prompt named it. Use it alongside this plugin for implementation depth.
+- [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers: an agent skill with guides on native web platform features and the implementation mistakes agents make. `modern-design`'s `implementation.md` keeps only a short checklist and points to it; at its 1.0 release one agent ("Agent One") was reported to pass 60.8% of 19 checks with no guidance, 76.5% with the skill installed and 94.0% when the prompt named it ([Search Engine Journal](https://www.searchenginejournal.com/google-releases-modern-web-guidance-1-0-for-ai-coding-agents/596495/)). Use it alongside this plugin for implementation depth.
 
 ## License
 
