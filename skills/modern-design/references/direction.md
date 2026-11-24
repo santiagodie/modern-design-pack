@@ -14,6 +14,7 @@ Reference for `modern-design`, step 1. Load it at the start of a new interface o
 
 Before asking anything, look at the project:
 
+- `site-decisions.md`: the user's decisions, the current standards and the inventory. It ranks above the brief; follow it.
 - `design-brief.md` from an earlier run.
 - `PRODUCT.md` and `DESIGN.md`, written by Impeccable or another tool. Treat them as decisions already made: follow them, and note in the brief where you rely on them. Never write or overwrite these two files; they belong to their tools.
 - The stack: framework, CSS approach (plain CSS, Tailwind, CSS modules), component library, existing tokens or theme files.

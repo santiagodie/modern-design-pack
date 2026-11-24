@@ -8,7 +8,7 @@ Persuasion dial for this group: none to low. These pages are about control. User
 
 Group summary: dominant phase confidence; principles that weigh most P14, P23, P09, P17; main risk: hard cancellation, abusive defaults.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 ---
 

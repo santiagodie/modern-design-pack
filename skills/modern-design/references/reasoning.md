@@ -2,7 +2,7 @@
 
 Reference for `modern-design`, step 1. Load it before writing `design-brief.md`; `direction.md` says when. It teaches a way of thinking, not a checklist: use it while you work, and when you present, explain decisions in terms of the user's doubt rather than reciting its headings or turning them into an output format (see "How to present design work").
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 What this method produces goes into the brief: the central promise in one sentence, and for each page its moment in the journey and its main doubt.
 

@@ -8,7 +8,7 @@ Persuasion dial for this group: low. The user has already decided to buy; the jo
 
 Group summary: dominant phase confidence + conversion; principles that weigh most P13, P19, P14, P17, P12; main risk: hidden costs, friction, pre-ticked extras.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 ---
 

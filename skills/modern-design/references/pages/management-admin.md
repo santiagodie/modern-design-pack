@@ -8,7 +8,7 @@ Persuasion dial for this group: none. These users are often experts who come bac
 
 Group summary: dominant phase operational confidence; principles that weigh most P10, P07, P17, P12; main risk: density without hierarchy, irreversible errors.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 ---
 

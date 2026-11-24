@@ -8,7 +8,7 @@ Persuasion dial for this group: high by default. Marketing pages are where expli
 
 Group summary: dominant phase capture + confidence; principles that weigh most P01, P07, P11, P04, P08; main risk: vague or false claims.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 ---
 

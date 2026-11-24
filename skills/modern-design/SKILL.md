@@ -17,14 +17,17 @@ Reviewing finished UI belongs to `design-review`.
 
 ## Order of authority
 
-`ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+`ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 - `${CLAUDE_SKILL_DIR}/references/ethics.md` is a hard limit: nothing that deceives is built, whatever the brief or a principle says. Load it when the page shows prices, offers, trials, subscriptions, sign-ups, consent, stock, urgency or reviews, and before handing off any page that persuades. Its section 7, the no-invention rule, applies to every build: never invent or assume prices, figures, business texts, reviews, testimonials, hours, addresses, footer legal details or photos, and decline when the user asks for them. Use marked placeholders and keep `content-needed.md` (template in `${CLAUDE_SKILL_DIR}/references/templates/content-needed.md`).
-- `design-brief.md` holds the project's decisions and wins over every reference below it.
+- `site-decisions.md` (project root) holds the current standards (pointing to the tokens in the code), the inventory of pages, sections and components, and the user's own decisions. It wins over the brief. Template: `${CLAUDE_SKILL_DIR}/references/templates/site-decisions.md`.
+- `design-brief.md` holds the direction proposed for the project and wins over every reference below it.
 - `${CLAUDE_SKILL_DIR}/references/reasoning.md` is the method for writing the brief, used in step 1.
 - `${CLAUDE_SKILL_DIR}/references/principles.md` and the files in `${CLAUDE_SKILL_DIR}/references/pages/` (one per group of page types) are consulted after reasoning, to name a mechanism or catch a missed doubt. When reasoning you can explain in one sentence disagrees with them, the reasoning wins.
 
 ## Process
+
+Before step 1, and before any single step, read `site-decisions.md` in the project root, or create it from `${CLAUDE_SKILL_DIR}/references/templates/site-decisions.md` when it doesn't exist. At the end of each step, update it as the template says. Before building anything new, check its inventory for something to reuse. Never name it `design.md`.
 
 Run the steps in order for a new interface or a redesign. When the request covers only one part (for example "change the colors"), go straight to that step. Load each reference only when you reach its step, never all at once.
 
@@ -59,4 +62,5 @@ Load only when needed:
 - `${CLAUDE_SKILL_DIR}/references/responsive.md`: step 3, phone, tablet and desktop
 - `${CLAUDE_SKILL_DIR}/references/motion.md`: step 4
 - `${CLAUDE_SKILL_DIR}/references/resources.md`: curated link catalogue
+- `${CLAUDE_SKILL_DIR}/references/templates/site-decisions.md`: template for the project's `site-decisions.md`, at the start of every run
 - `${CLAUDE_SKILL_DIR}/references/templates/content-needed.md`: template for the project's `content-needed.md`, the first time a build uses a placeholder

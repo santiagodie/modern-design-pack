@@ -31,7 +31,7 @@ flowchart LR
 
 Nothing outside the plugin: installed plugins are copied to a cache, and files outside the plugin are not available. Skills may read each other's files inside the plugin (`design-review` reads `modern-design`'s section references when they exist) and must keep working when they don't.
 
-Order of authority, the same in both skills: `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). `design-review` checks the hard limit through its DP family and reads `ethics.md` when it exists.
+Order of authority, the same in both skills: `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). A user decision that breaks `ethics.md` is declined with the reason. `design-review` checks the hard limit through its DP family and reads `ethics.md` when it exists.
 
 A skill is split into more skills only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests.
 

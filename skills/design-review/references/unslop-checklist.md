@@ -6,7 +6,7 @@ Three more checklists use the same rules for severity, evidence and reporting (b
 
 ## How to use it
 
-- **Context decides.** Every pattern below is fine somewhere. Check the "Fine when" line before flagging anything, and when the project has a design brief, the brief wins. The exception is the Deceptive patterns family: ethics ranks above the brief.
+- **Context decides.** Every pattern below is fine somewhere. Check the "Fine when" line before flagging anything. When the project has a `site-decisions.md`, the user's decisions in it win, and then the design brief. Two exceptions: the Deceptive patterns family and the no-invention rule (ethics ranks above both), and measured failures such as contrast or accessibility, which are reported anyway, marked "decided by user".
 - **Run the template test first.** Swap the product's name for a competitor's. If the page still makes sense, it is generic. Report the result in plain words ("the page could belong to any competitor" or "the page is specific to this product"), never as "passes" or "fails", which readers take in opposite ways.
 - **Flag a pattern once.** Name the first clear case and say "also in X, Y" instead of repeating the finding.
 - **Report as** gives the default report section. Raise or lower it when the impact on this page is clearly different, and say why.

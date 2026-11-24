@@ -8,7 +8,7 @@ Persuasion dial for this group: none for login, recovery and verification; mediu
 
 Group summary: dominant phase conversion + activation; principles that weigh most P30, P21, P19, P17; main risk: sign-up before value, passwords.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 Current standards worth knowing: NIST SP 800-63B Revision 4 (final July 2025) changed password guidance substantially; passkeys reached mainstream use in 2025–2026.
 

@@ -4,7 +4,7 @@ Reference for `modern-design` and `design-review`. A hard limit: if something de
 
 Load it for any page that persuades and, for section 7, for every build: the no-invention rule applies to every page, whatever its content.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 Not legal advice. It summarises public facts to guide design decisions, with regulatory status as of November 2026; for specific cases, consult a professional.
 
