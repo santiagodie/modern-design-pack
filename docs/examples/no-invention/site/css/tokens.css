@@ -1,0 +1,126 @@
+/* Tokens: "letrero de puerta y papel de estraza" (ver design-brief.md, Dirección).
+   Tres niveles: valores base, roles semánticos y tokens de componente.
+   Los temas solo cambian el nivel semántico. */
+
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo-latin-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Fallback con métricas ajustadas para que el cambio de fuente no mueva el texto. */
+@font-face {
+  font-family: "Archivo Fallback";
+  src: local("Arial");
+  size-adjust: 104%;
+  ascent-override: 84%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+:root {
+  color-scheme: light dark;
+
+  /* 1. Valores base */
+  --base-harina: #fcfbf8;
+  --base-miga: #f1ece3;
+  --base-estraza: #dcc39a;
+  --base-estraza-oscura: #3b3024;
+  --base-tinta: #1c1a17;
+  --base-tinta-suave: #4b463f;
+  --base-rotulo: #1d5a45;
+  --base-rotulo-claro: #82c9ab;
+  --base-horno: #a33a24;
+  --base-horno-claro: #f29a82;
+  --base-noche: #15130f;
+  --base-noche-miga: #221f1a;
+  --base-noche-tinta: #f3efe7;
+  --base-noche-tinta-suave: #c3bbae;
+
+  /* 2. Roles semánticos (tema claro) */
+  --color-fondo: var(--base-harina);
+  --color-superficie: var(--base-miga);
+  --color-cartel: var(--base-estraza);
+  --color-texto: var(--base-tinta);
+  --color-texto-suave: var(--base-tinta-suave);
+  --color-marca: var(--base-rotulo);
+  --color-sobre-marca: #ffffff;
+  --color-cerrado: var(--base-horno);
+  --color-borde: color-mix(in srgb, var(--base-tinta) 18%, transparent);
+  --color-foco: var(--base-rotulo);
+
+  /* Tipografía */
+  --font-familia: "Archivo", "Archivo Fallback", system-ui, sans-serif;
+  --font-ancho-rotulo: 68%;
+  --font-ancho-texto: 100%;
+  --font-peso-texto: 400;
+  --font-peso-fuerte: 650;
+  --font-peso-rotulo: 850;
+  --text-sm: 0.875rem;
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --text-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.75rem);
+  --text-rotulo: clamp(3rem, 1.6rem + 6.5vw, 6.5rem);
+  --leading-texto: 1.55;
+  --leading-titulo: 1.05;
+  --medida: 68ch;
+
+  /* Espaciado (escala de 4 px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+  --ancho-max: 76rem;
+
+  /* Radios: el papel y el esmalte tienen esquinas apenas redondeadas */
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-pill: 999px;
+
+  /* Sombras: solo el cartel cuelga, nada más flota */
+  --shadow-cartel: 0 1px 0 rgb(0 0 0 / 0.08), 0 10px 24px -12px rgb(40 25 10 / 0.35);
+
+  /* Movimiento: solo funcional */
+  --duration-rapida: 120ms;
+  --duration-media: 200ms;
+  --ease-salida: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* 3. Tokens de componente */
+  --boton-alto: 3rem;
+  --boton-radio: var(--radius-md);
+  --cartel-radio: var(--radius-sm);
+  --placeholder-borde: 2px dashed currentColor;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fondo: var(--base-noche);
+    --color-superficie: var(--base-noche-miga);
+    --color-cartel: var(--base-estraza-oscura);
+    --color-texto: var(--base-noche-tinta);
+    --color-texto-suave: var(--base-noche-tinta-suave);
+    --color-marca: var(--base-rotulo-claro);
+    --color-sobre-marca: #0f241c;
+    --color-cerrado: var(--base-horno-claro);
+    --color-borde: color-mix(in srgb, var(--base-noche-tinta) 22%, transparent);
+    --color-foco: var(--base-rotulo-claro);
+    --shadow-cartel: 0 1px 0 rgb(0 0 0 / 0.4), 0 10px 24px -12px rgb(0 0 0 / 0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-rapida: 0ms;
+    --duration-media: 0ms;
+  }
+}
