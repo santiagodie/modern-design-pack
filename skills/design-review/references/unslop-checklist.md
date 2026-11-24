@@ -2,7 +2,7 @@
 
 Reference for `design-review`, used in both modes during the review step. Load it when reviewing; you don't need it while taking screenshots. It holds the shared rules and the Typography (TY), Color (CO), Layout (LA) and Components (CP) families; `copy-states-checklist.md` holds Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME). Load both.
 
-Three more checklists use the same rules for severity, evidence and reporting (below): `mobile-checklist.md` (MN1–MN5), `outdated-checklist.md` (OM1–OM12) and `dark-patterns-checklist.md` (DP1–DP10, loaded when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content).
+Three more checklists use the same rules for severity, evidence and reporting (below): `mobile-checklist.md` (MN1–MN5), `outdated-checklist.md` (OM1–OM13) and `dark-patterns-checklist.md` (DP1–DP10, loaded when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content).
 
 ## How to use it
 

@@ -37,7 +37,7 @@ Column guide:
 | Supahero | https://supahero.io | TO VERIFY | inspiration | TO VERIFY | modern-design (components) | link only | Hero section gallery. |
 | Backgrounds Supply | https://backgrounds.supply | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
 | Gradient Labs | https://gradient-labs.ai | TO VERIFY | tool | TO VERIFY | modern-design (components) | link only | |
-| Modern Web Guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Chrome for Developers (Google) | article | None stated on the page (only Google Terms in the footer). Source repo https://github.com/GoogleChrome/modern-web-guidance-src not checked | modern-design (components), design-review (outdated-checklist, visual-qa) | summarise | Read the index, guide catalogue and modernization workflow on 2026-11-23 (catalogue published 2026-11-10). Basis for the "Outdated, measurable" section. Ideas only; detection script is our own. |
+| Modern Web Guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Chrome for Developers (Google) | article | None stated on the page (only Google Terms in the footer). Source repo https://github.com/GoogleChrome/modern-web-guidance-src not checked | modern-design (components, implementation), design-review (outdated-checklist, visual-qa) | summarise | Read the index, guide catalogue and modernization workflow on 2026-11-23 (catalogue published 2026-11-10). Basis for the "Outdated, measurable" section. Ideas only; detection script is our own. On 2026-11-24, linked from `implementation.md` §5 and recommended in both READMEs as a companion; its feature table and agent-mistakes list are not copied. Evaluation figures quoted as given by the repository's author: 19 checks, 60.8% unguided, 76.5% installed, 94.0% named. |
 | Web Interface Guidelines (Vercel) | https://vercel.com/design/guidelines (repo https://github.com/vercel-labs/web-interface-guidelines) | Vercel | article | MIT | modern-design (components), design-review (visual-qa, unslop-checklist) | adapt | Read `AGENTS.md` on 2026-11-23. The "Vercel-specific" section is brand preference and is not used. |
 | emilkowalski/skills (incl. apple-design) | https://github.com/emilkowalski/skills | Emil Kowalski | skill | MIT (Copyright (c) 2026 Emil Kowalski) | modern-design (motion) | adapt | Found via ui-skills.com. Licence checked 2026-11-23; not used yet (phase 3). |
 | UI Skills | https://ui-skills.com | TO VERIFY | skill | TO VERIFY | modern-design (motion) | link only | Directory where the Emil Kowalski skills were found. |
@@ -130,6 +130,93 @@ New sources cited by `pages/` and `reasoning.md`. Facts and figures are summaris
 | Chrome permission prompts | https://developer.chrome.com/blog/permissions-chip | Google Chrome | article | Not audited | modern-design (pages/user-account) | summarise | |
 | Introducing "You're All Caught Up" | https://about.instagram.com/blog/announcements/introducing-youre-all-caught-up-in-feed | Instagram | article | Not audited | modern-design (pages/interaction-creation) | summarise | |
 | Amazon settlement coverage | https://www.pbs.org/newshour/economy/amazon-to-pay-2-5-billion-to-settle-ftc-allegations-it-duped-customers-into-enrolling-in-prime | PBS NewsHour | article | Not audited | modern-design (pages/user-account) | summarise | |
+
+## Implementation research
+
+Four documents provided by the repository's author on 2026-11-24, not stored in the repository: `00_README_index.md` (conventions, glossary, source registry), `01_foundations_architecture.md` (rendering, static and app rules, state, reuse layers, platform features, performance, security, accessibility, agent mistakes), `02_page_type_matrix.md` (per page type: static viability, rendering, data and state, priorities, anti-patterns) and `03_real_world_case_studies.md` (case studies with sources).
+
+How they were used:
+
+- `01` became `modern-design/references/implementation.md`, rewritten in our own words. Rule IDs were not kept, and MUST is reserved for security, accessibility and legal rules. Backend security (data access layer, CSP, idempotency, specific CVEs, sync engines, CRDTs) became only a "Boundaries" section that points to OWASP and the framework's docs. The platform-features table (§4.2) and the agent-mistakes list (§8) were not copied: a short checklist links to Modern Web Guidance. The Next.js 16.4 and TanStack Start 1.0 claims are marked "verify before citing".
+- `02` became the "Implementation" subsection of each entry in `modern-design/references/pages/` and the summary table in `implementation.md`, rewritten.
+- `03` is recorded below; no skill file quotes it.
+- `00`: only its source registry is recorded below. Its conventions and glossary were not copied.
+
+Licences not audited, because nothing is adapted: facts are summarised in our own words. Figures from the case studies are self-reported by the companies and are not used in the skills.
+
+### Source registry from `00_README_index.md`
+
+| Source | URL | Author | Type | License | Used in | How | Notes |
+|---|---|---|---|---|---|---|---|
+| Astro islands and server islands | https://docs.astro.build/en/concepts/islands · https://docs.astro.build/en/guides/server-islands/ | Astro | article | Not audited | modern-design (implementation) | summarise | |
+| Next.js 16 release | https://nextjs.org/blog/next-16 | Vercel | article | Not audited | modern-design (implementation) | summarise | 2025-10-21: Cache Components, `proxy.ts`. |
+| Next.js 16.4 | https://nextjs.org/blog/next-16-4 | Vercel | article | Not audited | modern-design (implementation) | summarise | Verify before citing. |
+| Next.js `cacheComponents` config | https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents | Vercel | article | Not audited | via the research | link only | |
+| Nuxt rendering and route rules | https://nuxtseo.com/learn-seo/nuxt/routes-and-rendering | Nuxt SEO | article | Not audited | via the research | link only | |
+| TanStack Start 1.0 | https://tanstack.com/blog/tanstack-start-1-0 | TanStack | article | Not audited | modern-design (implementation) | summarise | Verify before citing. |
+| React `<form>` and actions | https://react.dev/reference/react-dom/components/form | Meta | article | Not audited | via the research | link only | |
+| Shopify speculation rules | https://shopify.dev/docs/storefronts/themes/best-practices/performance/use-speculation-rules | Shopify | article | Not audited | via the research | link only | |
+| Cross-document view transitions | https://developer.chrome.com/docs/web-platform/view-transitions/cross-document | Chrome for Developers | article | Not audited | modern-design (implementation) | summarise | |
+| content-visibility | https://web.dev/articles/content-visibility | web.dev | article | Not audited | modern-design (implementation) | summarise | |
+| Fetch Priority | https://web.dev/articles/fetch-priority | web.dev | article | Not audited | modern-design (implementation) | summarise | |
+| Invoker Commands API | https://developer.mozilla.org/docs/Web/API/Invoker_Commands_API | MDN | article | Not audited | via the research | link only | |
+| New in web UI, I/O 2025 recap | https://developer.chrome.com/blog/new-in-web-ui-io-2025-recap | Chrome for Developers | article | Not audited | via the research | link only | |
+| New in the web, I/O 2024 | https://web.dev/blog/new-in-the-web-io2024 | web.dev | article | Not audited | via the research | link only | |
+| Modern Web Guidance 1.0 | https://developer.chrome.com/blog/modern-web-guidance-v1 | Chrome for Developers | article | Not audited | modern-design (implementation), READMEs | link only | |
+| Top 10 things AI gets wrong in web dev | https://developer.chrome.com/blog/top-10-things-ai-gets-wrong-in-web-dev | Chrome for Developers | article | Not audited | via the research | link only | Not copied; see Modern Web Guidance. |
+| W3C Design Tokens 2025.10 | https://www.designtokens.org/tr/2025.10/ | W3C Design Tokens Community Group | standard | Not audited | modern-design (implementation) | summarise | First stable version. |
+| Tailwind CSS v4 | https://tailwindcss.com/blog/tailwindcss-v4 | Tailwind Labs | article | Not audited | via the research | link only | |
+| shadcn/ui | https://ui.shadcn.com/docs | shadcn | article | Not audited | modern-design (implementation) | summarise | The "own the source" model. |
+| bulletproof-react project structure | https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md | Alan Alickovic | article | Not audited | via the research | link only | |
+| Next.js data security | https://nextjs.org/docs/app/guides/data-security · https://nextjs.org/blog/security-nextjs-server-components-actions | Vercel | article | Not audited | via the research | link only | Out of scope: "Boundaries". |
+| OWASP Cheat Sheet Series (Next.js, Forgot Password) | https://cheatsheetseries.owasp.org/ | OWASP | article | Not audited | modern-design (implementation, Boundaries) | link only | |
+| React Server Components vulnerability | https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components | Meta | article | Not audited | via the research | link only | Out of scope: "Boundaries". |
+| NIST SP 800-63B-4 | https://csrc.nist.gov/pubs/sp/800/63/b/4/final | NIST | standard | Not audited | via the research | link only | Already listed under the reasoning layer. |
+| Sign-in form best practices; passkey form autofill | https://web.dev/articles/sign-in-form-best-practices · https://web.dev/articles/passkey-form-autofill | web.dev | article | Not audited | modern-design (pages/authentication) | summarise | |
+| Baymard checkout research | https://baymard.com/research-articles/checkout-flow-average-form-fields · https://baymard.com/research-articles/ecommerce-checkout-usability-report-and-benchmark | Baymard Institute | article | Not audited | modern-design (pages/commerce) | summarise | |
+| Stripe fulfillment | https://docs.stripe.com/checkout/fulfillment | Stripe | article | Not audited | modern-design (pages/commerce) | summarise | |
+| Shopify Hydrogen cart | https://shopify.dev/docs/storefronts/hydrogen/cart | Shopify | article | Not audited | modern-design (pages/commerce) | summarise | |
+| Slack real-time messaging | https://slack.engineering/real-time-messaging | Slack | article | Not audited | modern-design (pages/interaction-creation) | summarise | |
+| Linear sync engine (reverse-engineered) | https://github.com/wzhudev/reverse-linear-sync-engine | wzhudev | article | Not audited | via the research | link only | |
+| Notion and CRDTs | https://www.notion.com/blog/how-notion-handles-concurrent-editing-with-crdts | Notion | article | Not audited | via the research | link only | |
+| llms.txt | https://github.com/AnswerDotAI/llms-txt | Answer.AI | standard | Not audited | modern-design (implementation, pages/blog-resources) | summarise | |
+| Google: HTTP status codes and soft 404s | https://developers.google.com/search/docs/crawling-indexing/http-network-errors | Google | article | Not audited | modern-design (implementation, pages/states-system) | summarise | |
+| Google Consent Mode | https://developers.google.com/tag-platform/security/concepts/consent-mode | Google | article | Not audited | modern-design (pages/legal) | summarise | |
+| WebKit Declarative Web Push | https://webkit.org/blog/16574/ | WebKit | article | Not audited | via the research | link only | |
+
+### Case studies from `03_real_world_case_studies.md`
+
+Listed so the research can be traced. No skill file quotes them; outcomes are self-reported by the companies.
+
+| Case | URL | Topic |
+|---|---|---|
+| QuintoAndar: INP | https://web.dev/case-studies/quintoandar-inp | Responsiveness of filters; canary releases |
+| Fotocasa: INP | https://web.dev/case-studies/fotocasa-cwv | Real-user monitoring with attribution |
+| Ray-Ban: speculation rules and back/forward cache | https://web.dev/case-studies/rayban-speculation-rules | Prerendering product pages from listings |
+| Shopify: platform-wide speculation rules | https://shopify.dev/docs/storefronts/themes/best-practices/performance/use-speculation-rules | Prefetch on every storefront; clearing caches when the cart changes |
+| Monrif: prerender and back/forward cache | https://web.dev/case-studies/monrif-cwv | News articles |
+| Nuvemshop / Tiendanube: LCP and image priority | https://web.dev/case-studies/nuvemshop | Carousels as LCP; `fetchpriority` |
+| Google Flights and Etsy: Fetch Priority | https://web.dev/articles/fetch-priority · https://www.etsy.com/codeascraft/priority-hints-what-your-browser-doesnt-know-yet | Hero image priority |
+| The Guardian: islands | https://github.com/guardian/dotcom-rendering | Server rendering with isolated interactive islands |
+| Astro server islands (documentation example) | https://docs.astro.build/en/guides/server-islands/ | Static product page with deferred personal parts |
+| Next.js 16 Cache Components | https://nextjs.org/blog/next-16 · https://nextjs.org/blog/next-16-4 | Static shell with streamed holes |
+| Linear: local-first sync engine | https://github.com/wzhudev/reverse-linear-sync-engine | Local replica, transactions, deltas over WebSocket |
+| Notion: CRDTs for rich text | https://www.notion.com/blog/how-notion-handles-concurrent-editing-with-crdts | Concurrent editing |
+| Slack: real-time messaging | https://slack.engineering/real-time-messaging · https://www.infoq.com/news/2023/04/real-time-messaging-slack/ | Persist first, then fan out |
+| Shopify Hydrogen: optimistic cart | https://shopify.dev/docs/storefronts/hydrogen/cart · https://shopify.dev/docs/api/hydrogen/latest/hooks/useoptimisticcart | Forms that work without JavaScript, optimistic lines |
+| Stripe Checkout: webhook fulfilment | https://docs.stripe.com/checkout/fulfillment | Fulfil from webhooks, idempotently |
+| Baymard: checkout | https://baymard.com/research-articles/checkout-flow-average-form-fields · https://baymard.com/research-articles/ecommerce-checkout-usability-report-and-benchmark | Fields and guest checkout |
+| React Server Components vulnerability (CVE-2025-55182) | https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components · https://nvd.nist.gov/vuln/detail/CVE-2025-55182 | Out of scope: "Boundaries" |
+| Middleware-only authorisation bypass (CVE-2025-29927) | https://cheatsheetseries.owasp.org/cheatsheets/Nextjs_Security_Cheat_Sheet.html | Out of scope: "Boundaries" |
+| NIST SP 800-63B-4 | https://csrc.nist.gov/pubs/sp/800/63/b/4/final · https://pages.nist.gov/800-63-4 | Passwords and authenticators |
+| Hosted docs and llms.txt | https://github.com/AnswerDotAI/llms-txt · https://context7.com/llms-txt-documentation-platforms | Docs for agents |
+| Chrome Modern Web Guidance 1.0 | https://developer.chrome.com/blog/modern-web-guidance-v1 · https://developer.chrome.com/blog/top-10-things-ai-gets-wrong-in-web-dev | Agent mistakes; recommended as a companion |
+
+### Google Fonts and the GDPR
+
+| Source | URL | Author | Type | License | Used in | How | Notes |
+|---|---|---|---|---|---|---|---|
+| Landgericht München I, 2022 judgment on Google Fonts | TO VERIFY (case reference and link) | Landgericht München I | legal decision | Public court decision | design-review (outdated-checklist, OM13) | summarise | Cited as one decision in Germany, not as a general ban. Add the case reference when verified. |
 
 ## Working notes for phase 3
 

@@ -53,6 +53,12 @@ That the promise ("the right X for you") is findable here, without wading throug
 ### Signal it's working
 Click-through to product pages, filter use, time-to-add-to-cart, return-to-list behaviour.
 
+### Implementation
+- **Static:** yes for small catalogues; regenerated pages for large ones.
+- **Rendering:** canonical listing pages static or regenerated; filtered and sorted views on the server, or filtered in the browser for small static data.
+- **Data and state:** filters, sort and page in the URL, read by one typed parser on server and client; real `?page=` links (a "load more" button may enhance them); a card that reserves its image box; `content-visibility: auto` on long grids; back/forward cache kept working.
+- **Anti-patterns:** infinite scroll with no URLs; filters held only in memory; the whole grid rendered in the browser.
+
 ---
 
 ## Category / Collection
@@ -86,6 +92,12 @@ That the store understands this domain, and that the user can get from browsing 
 
 ### Signal it's working
 Depth of browsing, click-through to product pages, use of subcategory links.
+
+### Implementation
+- **Static:** yes, or regenerated.
+- **Rendering:** regenerated when its products change.
+- **Data and state:** the listing template with a category header block; breadcrumbs with structured data.
+- **Anti-patterns:** a separate implementation of the listing for categories.
 
 ---
 
@@ -132,6 +144,12 @@ Airbnb total price in results (2025); Booking.com scarcity messages as a counter
 ### Signal it's working
 Add-to-cart rate, returns due to "not as expected", pre-sale support questions.
 
+### Implementation
+- **Static:** yes; partial when stock or delivery is live.
+- **Rendering:** static shell (content, images, specs) with holes for price, stock, delivery estimate and reviews.
+- **Data and state:** the variant in the URL; add to cart as a form that works without JavaScript, with an optimistic cart update; the main image with `fetchpriority="high"`; Product structured data; reviews loaded when visible.
+- **Anti-patterns:** rendering the whole page per request just for stock; a gallery library that blocks the main thread; variant changes that don't update the URL.
+
 ---
 
 ## Search results
@@ -172,6 +190,12 @@ That the site understands the user's language and carries what they need, or say
 ### Signal it's working
 Null-search rate, refinement rate, click-through on top results, search exits.
 
+### Implementation
+- **Static:** partial: a build-time index searched in the browser, or a search service.
+- **Rendering:** server-rendered from `?q=` so results can be shared, or a client island against the search service; the same results template as the listing.
+- **Data and state:** query and facets in the URL; debounce typing and cancel stale requests; announce the result count in a live region; a no-results state with suggestions; internal search pages not indexed.
+- **Anti-patterns:** a request per keystroke; results that exist only in the browser, with no URL.
+
 ---
 
 ## Map
@@ -203,6 +227,12 @@ That what's shown on the map is the same truth as the list: real price, real ava
 
 ### Signal it's working
 Pin interaction → detail views; bookings started from map vs list.
+
+### Implementation
+- **Static:** partial: static page with the map as an island.
+- **Rendering:** page static or server-rendered; the map loads when visible or on interaction, with a still image first.
+- **Data and state:** map area and selected place in the URL; query by area and cancel requests in flight; an accessible list of the same places next to the map.
+- **Anti-patterns:** loading the map library in `<head>`; places shown only on the canvas, with no list.
 
 ---
 
@@ -240,3 +270,9 @@ That the booked time is exactly what they think it is, and that changing it is p
 
 ### Signal it's working
 Completed bookings, failed confirmations, reschedules caused by errors, no-shows.
+
+### Implementation
+- **Static:** partial for a public list of events (with a downloadable `.ics`); app for personal scheduling.
+- **Rendering:** public list static, grouped by date; an app renders the month or week on the server and handles interaction in the browser.
+- **Data and state:** times stored in UTC with the event's time zone; view and range in the URL; optimistic moves that roll back on error; conflicts checked on the server; a list view on small screens.
+- **Anti-patterns:** local times stored without a zone; drag as the only way to move an event.

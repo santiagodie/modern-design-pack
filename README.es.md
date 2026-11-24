@@ -149,6 +149,7 @@ Complementos recomendados (opcionales):
 
 - [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): un gran catálogo de estilos, paletas y combinaciones tipográficas que encaja bien junto a este plugin.
 - [Impeccable](https://impeccable.style), de Paul Bakaus: comandos de diseño y más de 60 comprobaciones automáticas de antipatrones. Se solapa con `design-review`, que resume algunas de sus ideas con palabras propias pero no replica sus comprobaciones. Úsalo cuando quieras esa profundidad.
+- [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance), de Chrome for Developers: una skill para agentes con guías sobre las funciones nativas de la plataforma web y los fallos de implementación que cometen los agentes. El `implementation.md` de `modern-design` solo guarda una checklist breve y remite a ella; en su evaluación publicada de 19 comprobaciones, un agente pasó del 60,8% sin guía al 76,5% con la skill instalada y al 94,0% al nombrarla en la petición. Úsala junto a este plugin para profundizar en la implementación.
 
 ## Licencia
 

@@ -92,7 +92,7 @@ Load only when needed:
 - `${CLAUDE_SKILL_DIR}/references/unslop-checklist.md`: the shared rules for all checklists, and generic patterns and common mistakes in typography, color, layout and components (TY, CO, LA, CP), with when each is fine and where it goes in the report (both modes, review step)
 - `${CLAUDE_SKILL_DIR}/references/copy-states-checklist.md`: the same for copy, states and feedback, motion and meta (CY, SF, MO, ME) (both modes, review step)
 - `${CLAUDE_SKILL_DIR}/references/mobile-checklist.md`: measurable mobile checks MN1–MN5 (both modes, review step)
-- `${CLAUDE_SKILL_DIR}/references/outdated-checklist.md`: measurable outdated signals OM1–OM12 (both modes, review step)
+- `${CLAUDE_SKILL_DIR}/references/outdated-checklist.md`: measurable outdated signals OM1–OM13 (both modes, review step)
 - `${CLAUDE_SKILL_DIR}/references/dark-patterns-checklist.md`: deceptive patterns DP1–DP10 and the minimum per page type (both modes, when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content)
 - `${CLAUDE_SKILL_DIR}/references/visual-qa.md`: screenshot process, checks script and what to look for at each width (both modes, browser step)
 - `${CLAUDE_SKILL_DIR}/references/audit-report.md`: report format and file locations (URL audit, last step)

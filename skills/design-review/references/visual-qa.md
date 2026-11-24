@@ -53,10 +53,10 @@ When a screenshot shows a blank band where content should be, scroll through onc
 
 ### How to run the scripts
 
-The scripts live in `${CLAUDE_SKILL_DIR}/scripts/`. `playwright-cli` has no option to run a file inside the page: `eval` takes the function itself as its argument (its `--filename` option saves the result to a file), and `run-code --filename` runs Playwright code, not page code. So read the script with the file-reading tool and pass its whole content, header comment included, as the single argument of `playwright-cli --raw eval`. Pass it unchanged, with no shell expansion: the scripts contain quotes, backticks and `${...}`. In bash, a quoted heredoc read into a variable does that; paste the file's content in place of SCRIPT_CONTENT:
+The scripts live in `${CLAUDE_SKILL_DIR}/scripts/`. `playwright-cli` has no option to run a file inside the page: `eval` takes the function itself as its argument (its `--filename` option saves the result to a file), and `run-code --filename` runs Playwright code, not page code. So read the script with the file-reading tool and pass its whole content, header comment included, as the single argument of `playwright-cli --raw eval`. Pass it unchanged, with no shell expansion: the scripts contain quotes, backticks and `${...}`. In bash, a quoted heredoc read into a variable does that; paste the file's content in place of SCRIPT_CONTENT. `read -d ''` returns 1 when it reaches the end of the input even though it worked, which stops a script running with `set -e`, hence `|| true`:
 
 ```bash
-read -r -d '' JS <<'EOF'
+read -r -d '' JS <<'EOF' || true
 SCRIPT_CONTENT
 EOF
 playwright-cli --raw eval "$JS"

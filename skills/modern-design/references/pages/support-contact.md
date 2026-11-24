@@ -48,6 +48,12 @@ That real, accountable people are behind the promise and reachable.
 ### Signal it's working
 Submissions completed; first response within the promised time; repeat contacts about the same issue.
 
+### Implementation
+- **Static:** partial: static page plus a form endpoint.
+- **Rendering:** static.
+- **Data and state:** the form works without JavaScript and redirects to a thank-you page; server validation; spam protection (honeypot, challenge, rate limit); only the personal data needed; an acknowledgement email; route by topic.
+- **Anti-patterns:** a form that only submits with JavaScript; collecting data nobody uses.
+
 ---
 
 ## FAQ / Help centre
@@ -85,6 +91,12 @@ That the answer exists, is current and is written in their words.
 ### Signal it's working
 Ticket deflection; searches without results; "did this help? no" rate per article.
 
+### Implementation
+- **Static:** yes.
+- **Rendering:** static.
+- **Data and state:** native `<details>` and `<summary>` (find-in-page works, no JavaScript); an anchor per question; FAQ entries as a collection reused on pricing and checkout.
+- **Anti-patterns:** an accordion script that hides answers from find-in-page.
+
 ---
 
 ## Support centre / Tickets
@@ -120,3 +132,9 @@ That the problem is being handled, by whom and by when — and that the ending i
 
 ### Signal it's working
 Time to resolution; reopenings; satisfaction at close.
+
+### Implementation
+- **Static:** partial: help articles are static; tickets are app (or a provider's widget).
+- **Rendering:** static articles with search; ticket list and detail server-rendered behind login.
+- **Data and state:** a status timeline; replies threaded by email; attachments uploaded straight to storage; the ticket form suggests relevant articles first.
+- **Anti-patterns:** ticket status worked out in the browser.

@@ -48,6 +48,12 @@ That the price and delivery promised on the product page are still true, now in 
 ### Signal it's working
 Cart → checkout progression; cart edits followed by abandonment.
 
+### Implementation
+- **Static:** app; partial with a hosted cart on a static site.
+- **Rendering:** server-rendered and private, never cached for others; the header cart count as an island.
+- **Data and state:** the cart lives on the server (its id in an HttpOnly cookie); add, update and remove are forms that work without JavaScript, with an optimistic update and a pending state per line; the server recomputes totals, discounts and taxes; all costs shown early.
+- **Anti-patterns:** the cart only in local storage; personal cart HTML cached by a CDN; trusting prices sent by the browser.
+
 ---
 
 ## Checkout / Payment
@@ -95,6 +101,12 @@ That the deal agreed on the previous pages holds: same price, same date, no surp
 ### Signal it's working
 Checkout completion rate, errors per field, payment-decline recovery rate, support contacts during checkout.
 
+### Implementation
+- **Static:** app.
+- **Rendering:** server-rendered, never cached, in its own layout with few third-party scripts; payment through the provider's hosted fields or page.
+- **Data and state:** guest checkout first; few fields with the right `autocomplete` and `inputmode`; one column; one idempotency key per payment attempt and no double submit; totals and stock checked on the server.
+- **Anti-patterns:** an optimistic "order placed"; custom card inputs; prerendering checkout; marketing pixels on the payment step.
+
 ---
 
 ## Order confirmation
@@ -131,6 +143,12 @@ That the deal is sealed exactly as agreed, and what happens next.
 
 ### Signal it's working
 "Did my order go through?" contacts near zero; post-purchase account creation rate.
+
+### Implementation
+- **Static:** app.
+- **Rendering:** server-rendered, not indexed, never cached; reads the order by id with the session or a signed token.
+- **Data and state:** fulfil from the payment provider's webhooks, never from reaching this page; handle pending payments; count the conversion once even on reload.
+- **Anti-patterns:** treating a session id in the URL as proof of payment; sending the purchase event on every reload.
 
 ---
 
@@ -171,3 +189,9 @@ The delivery and return promises. This is where "free returns" or "arrives Frida
 
 ### Signal it's working
 Share of order issues resolved without contacting support; "where is my order" contacts; return completion time.
+
+### Implementation
+- **Static:** app.
+- **Rendering:** server-rendered behind login, with cursor pagination and one route per order.
+- **Data and state:** every query scoped to the user; statuses updated from webhooks; filters in the URL; reorder and invoice download as actions; a first-use empty state.
+- **Anti-patterns:** order status worked out in the browser.

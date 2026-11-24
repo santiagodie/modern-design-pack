@@ -21,6 +21,7 @@ flowchart LR
 | | 3. Components: sections and components in the project's stack, for phone, tablet and desktop | `references/sections/index.md`, one file per section built, `references/responsive.md` |
 | | 4. Motion: purposeful animation and interaction | `references/motion.md` |
 | | 5. Hand off to design-review | none |
+| | Steps 1 and 3: static or app, rendering per route, kinds of state, reuse layers, performance, accessibility, legal minimum | `references/implementation.md` (and the "Implementation" subsection of each `pages/` entry) |
 | | Any step that needs an external resource | `references/resources.md` |
 | design-review: own project | 1. Review code and design decisions for generic patterns and mistakes | `references/unslop-checklist.md`, `references/copy-states-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`; `references/dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content |
 | | 2. Browser check with screenshots, when the app is running | `references/visual-qa.md` |

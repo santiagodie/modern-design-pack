@@ -54,6 +54,12 @@ That joining is as light as the promise implied, and that the value is close.
 ### Signal it's working
 Sign-up completion, and more importantly activation of those who signed up (not just account count).
 
+### Implementation
+- **Static:** app; partial with a hosted auth service.
+- **Rendering:** server-rendered, or a static form posting to the auth service; never cached; no third-party scripts.
+- **Data and state:** a native form with labels, `autocomplete="username"` and `"new-password"`; a show-password toggle; one shared password policy (length, a blocklist of breached passwords, no composition rules); passkey creation offered after sign-up; email verification with single-use, expiring tokens.
+- **Anti-patterns:** a submit button disabled until the form is valid; placeholder text as labels; asking twice for email or password.
+
 ---
 
 ## Login / Sign-in
@@ -93,6 +99,12 @@ That their account and data are still there and safe, without making them prove 
 ### Signal it's working
 Sign-in success rate, time to sign in, account-access support tickets.
 
+### Implementation
+- **Static:** app; partial with a hosted auth service.
+- **Rendering:** server-rendered or a static form posting to the auth service; signed-in users redirected on the server.
+- **Data and state:** `autocomplete="username webauthn"` and `"current-password"` so passkeys and passwords share autofill; navigate after success so password managers save it; one generic error; rate limits rather than hard lockout.
+- **Anti-patterns:** a separate "log in with passkey" page as the only passkey route; errors that reveal whether the account exists.
+
 ---
 
 ## Password recovery / Reset
@@ -130,6 +142,12 @@ That access can be restored quickly and that their account is safe.
 ### Signal it's working
 Recovery completion rate; time to regain access; repeated recoveries per user (a sign passkeys should be offered).
 
+### Implementation
+- **Static:** app; partial with a hosted auth service.
+- **Rendering:** server-rendered, never cached.
+- **Data and state:** the same message and timing whether or not the account exists; single-use, short-lived tokens stored hashed; after a reset, notify the user and end other sessions.
+- **Anti-patterns:** a message that confirms the account exists; reset links built from the request's host.
+
 ---
 
 ## Verification (email / SMS / 2FA)
@@ -165,6 +183,12 @@ That security is there to protect them, at the lowest possible effort.
 
 ### Signal it's working
 Verification completion rate and time; codes requested per success.
+
+### Implementation
+- **Static:** app; partial with a hosted auth service.
+- **Rendering:** server-rendered, never cached.
+- **Data and state:** code fields with `autocomplete="one-time-code"` and `inputmode="numeric"`; resend with a cooldown; recovery codes treated as strongly as login.
+- **Anti-patterns:** one input per digit that breaks paste; SMS as the only factor on high-risk accounts.
 
 ---
 
@@ -207,3 +231,9 @@ The central promise, as quickly as possible, through a first real result (the "a
 
 ### Signal it's working
 Time to first value; share of new users reaching the activation action; D1/D7 retention.
+
+### Implementation
+- **Static:** app.
+- **Rendering:** server-rendered, one URL per step so reload and back work; progress saved on the server.
+- **Data and state:** step order and skip rules on the server; ask only what is needed now; sample data or templates so the first screen isn't empty; focus moved to each new step.
+- **Anti-patterns:** a wizard whose state lives only in the browser and is lost on reload.

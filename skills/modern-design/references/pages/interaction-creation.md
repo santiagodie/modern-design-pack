@@ -54,6 +54,12 @@ That their effort is respected: asked only what's needed, saved, and confirmed.
 ### Signal it's working
 Completion rate, abandonment per step/field, errors per field, time to complete.
 
+### Implementation
+- **Static:** partial for simple submit-only forms; app otherwise.
+- **Rendering:** server-rendered with actions; redirect after a successful post.
+- **Data and state:** one validation schema for server checks and client hints; errors shown after interaction, hints above fields, a linked error summary on submit; drafts saved and restored; uploads straight to storage, resumable when large; create requests safe to retry.
+- **Anti-patterns:** validation only in the browser; losing the user's input on an error.
+
 ---
 
 ## Editor (documents, designs, code, listings)
@@ -94,6 +100,12 @@ That their work is safe and that the tool keeps up with their thinking.
 ### Signal it's working
 Completed creation sessions; lost-work reports; use of undo vs abandonment after errors.
 
+### Implementation
+- **Static:** app.
+- **Rendering:** a client-heavy route, loaded lazily inside a server-rendered shell; show read-only content first when possible.
+- **Data and state:** an editor framework with a structured document model; CRDTs for collaboration; debounced autosave with version history; sanitise stored HTML when rendering it; undo and redo as transactions; keyboard shortcuts that can be discovered.
+- **Anti-patterns:** `contenteditable` with `innerHTML` strings as storage; last write wins on shared documents.
+
 ---
 
 ## Messages / Chat
@@ -133,6 +145,12 @@ Delivery and continuity: nothing lost, nothing sent by mistake.
 ### Signal it's working
 Send success rate; response times; conversations continued vs abandoned.
 
+### Implementation
+- **Static:** app.
+- **Rendering:** server shell with recent messages; WebSocket for two-way chat, server-sent events for streamed AI replies.
+- **Data and state:** save first, then broadcast, and catch up over HTTP after reconnecting; optimistic send with a client-made id, de-duplicated on the server; typing and presence kept separate from saved messages; a virtualised list that keeps its scroll position; new messages announced politely.
+- **Anti-patterns:** the socket as the source of truth; re-rendering the whole thread for each message.
+
 ---
 
 ## Feed / Activity
@@ -170,3 +188,9 @@ That time spent here is worth it, and that the user can tell when they're done.
 
 ### Signal it's working
 Useful return (actions taken after reading), not raw time-in-feed; muted/unfollowed sources; complaints about overuse.
+
+### Implementation
+- **Static:** app; partial for a public feed such as a changelog.
+- **Rendering:** server-rendered with cursor pagination and real "next" URLs.
+- **Data and state:** new items announced with an "N new" banner instead of inserted above the reader; `content-visibility` or virtualisation for long feeds; optimistic reactions; media sizes reserved.
+- **Anti-patterns:** items inserted above the viewport that push content down.
