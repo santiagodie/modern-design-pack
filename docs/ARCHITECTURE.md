@@ -1,6 +1,6 @@
 # Architecture
 
-> Skeleton (v0.1.0). This describes the intended design. The skills are still empty.
+> In progress (v0.1.0, unreleased). This describes the design; `docs/ROADMAP.md` says which parts have content.
 
 ## Skill flow
 
@@ -36,6 +36,20 @@ Order of authority, the same in both skills: `ethics.md` (hard limit, including 
 
 A skill is split into more skills only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests.
 
+## Project files
+
+`modern-design` writes three files in the root of the user's project, and `design-review` reads them when they exist:
+
+| File | Holds | Rank |
+|---|---|---|
+| `site-decisions.md` | Current standards (pointing to the tokens in the code, never copying values), the inventory of pages, sections and components, and the user's own decisions with the guideline each overrides. Read at the start of every run and updated after every step. Never named `design.md`, which collides with Impeccable's `DESIGN.md` on case-insensitive file systems. | Above the brief, below `ethics.md` |
+| `design-brief.md` | The direction the model proposed: context, central promise, design assumptions, references, structure, direction. | Below `site-decisions.md` |
+| `content-needed.md` | Every placeholder: what is missing, where it goes, the placeholder used, the model's guess (only here, marked "assumption: confirm") and its status. | Not a rule; a list of what blocks publishing |
+
+Templates for the first and third are in `modern-design/references/templates/`; the brief's template is in `direction.md`. The skills never write `PRODUCT.md` or `DESIGN.md`.
+
+**No invention.** `ethics.md` §7 is a hard limit: the model never invents or assumes prices, figures, business texts, reviews, testimonials, hours, addresses, footer legal details or photos, and declines when the user asks. Missing content is built as a marked placeholder (`data-placeholder`, `[FIELD]`, lorem ipsum, labelled image boxes); a planned section without data keeps its placeholders until the user decides to drop it. `design-review` reports every placeholder as `measured` and blocking under "Before publishing".
+
 ## Levels
 
 The design references are organised in four levels, from the smallest piece to the whole page:
@@ -47,14 +61,15 @@ The design references are organised in four levels, from the smallest piece to t
 | Sections | Whole page sections with phone, tablet and desktop layouts | `references/sections/`, `references/responsive.md` | Batch A written |
 | Pages | Per page type: the user's moment, what the page must prove, levers, specifics, when the usual advice flips, persuasion dial | `references/pages/` | Reasoning written; "Layout & responsive" per page type pending |
 
-Above the levels sits the reasoning layer (`reasoning.md`, `principles.md`, `ethics.md`), which decides which pages and sections exist before any level is built.
+Above the levels sits the reasoning layer (`reasoning.md`, `principles.md`, `ethics.md`), which decides which pages and sections exist before any level is built. Beside them, `implementation.md` decides how each level is built: rendering per route, state, the same four levels as reuse layers, performance, accessibility and the legal minimum. Backend security is out of scope (its "Boundaries" section).
 
 ## Context over rules
 
 Design rules that hold everywhere are rare. A pill badge, a gradient or an italic serif word is a tired cliché in one product and the right choice in another. So:
 
 - Rules are written as "do X when Y", never as absolute bans.
-- The design brief from the direction step is the tie-breaker. When a rule and the brief disagree, the brief wins and the reason is stated.
+- The user's decisions in `site-decisions.md`, then the design brief from the direction step, are the tie-breakers. When a rule and either of them disagree, they win and the reason is stated.
+- `ethics.md` stays above both: a decision that deceives, or invents content, is declined. Measured failures (contrast, accessibility) are still reported when the user decided them, marked "decided by user".
 - `design-review` flags patterns as likely generic in this context, not as forbidden.
 
 ## URL audit mode

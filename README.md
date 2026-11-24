@@ -88,7 +88,13 @@ flowchart LR
 
 `design-review` has two modes. On your own project it reviews, checks in a real browser and fixes. Given a public URL it runs a read-only audit (three pages at most, no logins) with screenshots at 375, 768 and 1440 px, an HTML read and Lighthouse when Chrome is available, and saves a report in `audits/`.
 
-**Context over rules.** Rules are written as "do X when Y", not as absolute bans. The brief from the direction step decides when a rule applies.
+**Context over rules.** Rules are written as "do X when Y", not as absolute bans. The user's decisions in `site-decisions.md`, then the brief from the direction step, decide when a rule applies.
+
+**Nothing invented.** `modern-design` never invents prices, figures, business texts, reviews, hours, addresses, legal details or photos, and declines when asked. Missing content becomes a visibly marked placeholder, listed in `content-needed.md`, and `design-review` treats every placeholder as blocking before publishing. This rule ranks above everything else, including the user's decisions.
+
+**Project files.** `modern-design` writes three files in your project root: `design-brief.md` (the direction), `site-decisions.md` (the standards in your code, an inventory of what exists, and your own decisions, which rank above the brief) and `content-needed.md` (what you still need to supply).
+
+**Implementation.** `implementation.md` covers rendering per route, static site or app, state, reuse layers, performance, accessibility and the legal minimum. The plugin doesn't review backend security; it says when a project needs that review.
 
 **References, not copies.** The direction step uses WebSearch to find comparable sites, WebFetch to read them, and Playwright screenshots to see them. It records the principles behind each reference and never its code, assets or copy.
 
@@ -113,7 +119,7 @@ modern-design-pack/
 ├── skills/
 │   ├── modern-design/
 │   │   ├── SKILL.md
-│   │   └── references/      # direction, reasoning, reasoning-examples, pages/, principles, ethics, responsive, sections/, tokens, motion, resources
+│   │   └── references/      # direction, reasoning, reasoning-examples, pages/, principles, ethics, implementation, responsive, sections/, templates/, tokens, motion, resources
 │   └── design-review/
 │       ├── SKILL.md
 │       ├── references/      # unslop-checklist, copy-states-checklist, mobile-checklist, outdated-checklist, dark-patterns-checklist, visual-qa, audit-report
@@ -134,10 +140,11 @@ modern-design-pack/
 
 ## Known Limitations
 
-- **modern-design is incomplete:** only the direction step has content. Tokens, components and motion run on the model's default judgment, following the brief.
+- **modern-design is incomplete:** direction, reasoning, the sections for pages that persuade, and implementation have content. Tokens and motion run on the model's default judgment, following the brief.
+- **New rules untested:** the no-invention rule, `site-decisions.md` and the implementation layer have not been tested in a full build yet (see the roadmap).
 - **Lightly tested:** `design-review` was tested on three public sites and one generated landing page, once or twice each, in non-interactive sessions ([results](docs/examples/phase-2-results.md)). Two rule changes made after the last round are not re-tested. Judgment calls and lab metrics vary between runs. Skill triggering from natural requests in English and Spanish is unverified.
 - **Partial licence audit:** only the sources used by `design-review` have been checked. The rest of `docs/SOURCES.md` is still `TO VERIFY` and is checked when each source is about to be used. No third-party text has been copied; ideas are rewritten and credited.
-- **Unidentified sources:** two of the anti-slop lists come from screenshots whose authors are not yet identified.
+- **Unidentified sources:** three of the anti-slop lists come from screenshots whose authors are not yet identified.
 - **Browser dependency:** the browser check in `design-review` and the screenshot part of the direction step will need Playwright, which is not set up by the plugin. Lighthouse in URL audits also needs Chrome; without it, the report says so and skips the measured scores.
 - **No icon:** the plugin has no listing icon yet.
 

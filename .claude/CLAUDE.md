@@ -6,10 +6,18 @@ This repository is both a Claude Code marketplace (`santiagodie-plugins`) and th
 
 There are two skills:
 
-- `modern-design`: designing or redesigning. Its five steps load `references/direction.md` (which sends step 1 through `reasoning.md`, then only the `pages/` file of each page type, with `principles.md` and `ethics.md` when needed), `tokens.md`, `sections/` (an index plus one file per page section, with `responsive.md`; `components/` is reserved for reusable pieces in a later batch) and `motion.md` one at a time, plus `resources.md` (curated links) when needed.
+- `modern-design`: designing or redesigning. Its five steps load `references/direction.md` (which sends step 1 through `reasoning.md`, then only the `pages/` file of each page type, with `principles.md` and `ethics.md` when needed), `tokens.md`, `sections/` (an index plus one file per page section, with `responsive.md`; `components/` is reserved for reusable pieces in a later batch), `implementation.md` (steps 1 and 3) and `motion.md` one at a time, plus `resources.md` (curated links) when needed. It reads and updates `site-decisions.md` in the user's project at every step, and writes `content-needed.md` when it uses placeholders (templates in `references/templates/`).
 - `design-review`: reviewing UI in two modes. Own project: review with `references/unslop-checklist.md` and `copy-states-checklist.md` (plus `mobile-checklist.md`, `outdated-checklist.md`, and `dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content), browser check with `references/visual-qa.md`, then fix. URL audit: read-only, public pages only, three pages at most, report in the format of `references/audit-report.md`.
 
 Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests. Prefer adding a reference file.
+
+## Rules that shape every skill
+
+- Order of authority, written the same in both `SKILL.md` files, `docs/ARCHITECTURE.md` and every reference header that states it: `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` > `design-brief.md` > `reasoning.md` > the other references. Change it everywhere at once or not at all.
+- No invention: no skill content may tell the model to invent or assume prices, figures, business texts, reviews, hours, addresses, legal details or photos. Missing content is a marked placeholder (`ethics.md` §7).
+- The project file for the user's decisions is `site-decisions.md`; never `design.md`.
+- MUST in `implementation.md` is only for security, accessibility and legal rules. Date framework facts and mark unverified ones "verify before citing".
+- Keep every file in `skills/` under about 400 lines (the CI scanner fails on large files). Split by rule family without changing IDs.
 
 ## Third-party material
 

@@ -34,6 +34,28 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `design-brief.md` template: "Central promise" and, per page, its moment in the journey, its main doubt and its persuasion dial. `direction.md` sets the order: reason, read only the `pages/` file of each page type, then principles and ethics, then write the brief.
 - `modern-design` description names a few app page types (pricing, checkout, sign-up, onboarding, settings, dashboard) and more Spanish keywords.
 - `design-review`: Deceptive patterns family (DP1–DP10 plus a minimum per page type), each rule marked measured or judgment, pointing to CY3 for invented proof; optional reading of `modern-design`'s `ethics.md`; promise check for audits of two or three pages, with its own report section; audit rules against generic advice (infer whom the page serves first, comment only on what was seen or measured, check before recommending, order findings by how much they block the main decision, justify repeated findings per page); optional reading of `modern-design`'s `pages/` file for the page type.
+### Added (content rules, decisions and implementation)
+
+- `design-review`: slop indicators from a third shared screenshot (author not identified): TY11 (the display face of the season, such as Instrument Serif), CO9 (blurred glow behind the hero), CP7 (an arrow on every button), CP8 (sparkle icons), CP9 (dithering), CY6 (dots between words), CY7 ("real" and "quiet" as filler), CY8 (two-word sentences). TY11, CO6, CO9, CY6 and CY7 say how to measure them in code or text. TY2 and CO6 gain their legitimate cases (a brief that chooses the italic word with a reason; notices and notes with a side bar).
+- No-invention rule (hard limit), `modern-design/references/ethics.md` §7: the model never invents or assumes prices, figures, business texts, reviews, testimonials, hours, addresses, footer legal details or photos, and declines when asked. Placeholders: `[FIELD]` for data, lorem ipsum of realistic length for text, labelled image boxes with their aspect ratio, all in `data-placeholder` elements with a visible style; no stock photos presented as real.
+- `modern-design/references/templates/content-needed.md`: what is missing, where it goes, the placeholder, the model's assumption (only there, marked "assumption: confirm") and its status.
+- `modern-design/references/templates/site-decisions.md`: current standards (pointing to the tokens in the code), the inventory of pages, sections and components, and the user's decisions with the guideline each overrides. Never named `design.md`, which collides with Impeccable's `DESIGN.md` on case-insensitive file systems.
+- `modern-design/references/implementation.md`: rendering per route, static site or app, kinds of state, reuse layers matching the levels in `ARCHITECTURE.md`, platform features with a link to Modern Web Guidance, performance, accessibility, legal minimum, a "Boundaries" section on the backend security this plugin doesn't review, and a summary table per page type. MUST only for security, accessibility and legal rules.
+- An "Implementation" subsection (static, rendering, data and state, anti-patterns) in each of the 45 page-type entries in `pages/`.
+- `design-review`: OM13, fonts loaded from Google Fonts (recommend self-hosting; the 2022 Munich judgment cited as one decision in Germany), detected by `outdated-measurable.js` (`googleFonts`), which no longer counts Google Fonts in `thirdPartyWithoutSri`. A "Before publishing (blocking)" section in the audit report.
+- Modern Web Guidance recommended in both READMEs as a companion.
+- `docs/SOURCES.md`: the third screenshot, the implementation research with its source registry and case studies, and the Munich judgment (reference to verify).
+
+### Changed (content rules, decisions and implementation)
+
+- Order of authority, the same in both skills, `ARCHITECTURE.md` and every reference header: `ethics.md` (including the no-invention rule) > `site-decisions.md` > `design-brief.md` > `reasoning.md` > the other references. A user decision that breaks `ethics.md` is declined with the reason.
+- `design-review` checklist split by family, IDs unchanged: `unslop-checklist.md` keeps the shared rules and TY, CO, LA, CP; `copy-states-checklist.md` holds CY, SF, MO, ME.
+- CY3 points to the no-invention rule: any `data-placeholder`, bracketed text in capitals or lorem ipsum is `measured` and blocking under "Before publishing"; invented content presented as real stays critical. Labelled example values ("example times") no longer count as placeholders.
+- `direction.md` asks for the business's documentation and data first; non-interactive runs build with placeholders and write `content-needed.md`. Design assumptions still go in the brief; content assumptions never do.
+- A planned section without data is built with placeholders instead of left out; removing it is the user's decision (`sections/social-proof.md`, `sections/index.md`, `sections/footer.md`).
+- `modern-design` reads `site-decisions.md` at the start and updates it after each step; `design-review` reads it and doesn't report what the user decided, except measured failures (contrast, accessibility), reported as "decided by user".
+- `visual-qa.md`: `read -r -d '' JS <<'EOF' || true`, because `read` returns 1 at the end of input and stops scripts that use `set -e`.
+
 ### Changed (phase 3b)
 
 - Skills may read each other's files inside the plugin; the rule is now "nothing outside the plugin".

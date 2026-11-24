@@ -88,7 +88,13 @@ flowchart LR
 
 `design-review` tiene dos modos. En tu propio proyecto revisa, comprueba en un navegador real y corrige. Con una URL pública hace una auditoría de solo lectura (tres páginas como máximo, sin logins) con capturas a 375, 768 y 1440 px, lectura del HTML y Lighthouse si hay Chrome disponible, y guarda un informe en `audits/`.
 
-**El contexto manda sobre las reglas.** Las reglas se escriben como "haz X cuando Y", no como prohibiciones absolutas. El brief del paso de dirección decide cuándo se aplica cada una.
+**El contexto manda sobre las reglas.** Las reglas se escriben como "haz X cuando Y", no como prohibiciones absolutas. Tus decisiones en `site-decisions.md`, y después el brief del paso de dirección, deciden cuándo se aplica cada una.
+
+**Nada inventado.** `modern-design` nunca inventa precios, cifras, textos del negocio, reseñas, horarios, direcciones, datos legales ni fotos, y lo rechaza si se le pide. El contenido que falta se convierte en un relleno marcado de forma visible y se anota en `content-needed.md`; `design-review` trata cada relleno como un bloqueo antes de publicar. Esta regla está por encima de todo, incluidas tus decisiones.
+
+**Archivos del proyecto.** `modern-design` escribe tres archivos en la raíz del proyecto: `design-brief.md` (la dirección), `site-decisions.md` (los estándares de tu código, el inventario de lo que existe y tus decisiones, que están por encima del brief) y `content-needed.md` (lo que aún tienes que aportar).
+
+**Implementación.** `implementation.md` cubre el renderizado por ruta, web estática o app, el estado, las capas de reutilización, el rendimiento, la accesibilidad y el mínimo legal. El plugin no revisa la seguridad del backend; avisa cuando un proyecto necesita esa revisión.
 
 **Referencias, no copias.** El paso de dirección usa WebSearch para encontrar webs comparables, WebFetch para leerlas y capturas con Playwright para verlas. Anota los principios de cada referencia, nunca su código, recursos ni textos.
 
@@ -113,7 +119,7 @@ modern-design-pack/
 ├── skills/
 │   ├── modern-design/
 │   │   ├── SKILL.md
-│   │   └── references/      # direction, reasoning, reasoning-examples, pages/, principles, ethics, responsive, sections/, tokens, motion, resources
+│   │   └── references/      # direction, reasoning, reasoning-examples, pages/, principles, ethics, implementation, responsive, sections/, templates/, tokens, motion, resources
 │   └── design-review/
 │       ├── SKILL.md
 │       ├── references/      # unslop-checklist, copy-states-checklist, mobile-checklist, outdated-checklist, dark-patterns-checklist, visual-qa, audit-report
@@ -134,10 +140,11 @@ modern-design-pack/
 
 ## Limitaciones conocidas
 
-- **modern-design está incompleta:** solo el paso de dirección tiene contenido. Tokens, componentes y animación funcionan con el criterio por defecto del modelo, siguiendo el brief.
+- **modern-design está incompleta:** tienen contenido la dirección, el razonamiento, las secciones de las páginas que persuaden y la implementación. Tokens y animación funcionan con el criterio por defecto del modelo, siguiendo el brief.
+- **Reglas nuevas sin probar:** la regla de no inventar, `site-decisions.md` y la capa de implementación aún no se han probado en una construcción completa (ver la hoja de ruta).
 - **Poco probado:** `design-review` se ha probado con tres webs públicas y una landing generada, una o dos veces cada una, en sesiones no interactivas ([resultados](docs/examples/phase-2-results.md)). Dos cambios de reglas hechos tras la última ronda no se han vuelto a probar. Los juicios y las métricas de laboratorio varían entre ejecuciones. No está comprobado que las skills se activen con peticiones naturales en inglés y en español.
 - **Auditoría de licencias parcial:** solo se han revisado las fuentes que usa `design-review`. El resto de `docs/SOURCES.md` sigue en `TO VERIFY` y se revisa cuando se vaya a usar cada fuente. No se ha copiado texto de terceros: las ideas se reescriben y se acreditan.
-- **Fuentes sin identificar:** dos de las listas anti-slop vienen de capturas cuyo autor aún no está identificado.
+- **Fuentes sin identificar:** tres de las listas anti-slop vienen de capturas cuyo autor aún no está identificado.
 - **Depende de un navegador:** la revisión en navegador de `design-review` y la parte de capturas del paso de dirección necesitarán Playwright, que el plugin no instala. Lighthouse en las auditorías de URL también necesita Chrome; si no está, el informe lo indica y omite las puntuaciones medidas.
 - **Sin icono:** el plugin aún no tiene icono para el listado.
 
