@@ -53,6 +53,7 @@ Cart → checkout progression; cart edits followed by abandonment.
 - **Rendering:** rendered on the server for each visitor and kept out of shared caches; the cart count in the header is a small interactive part.
 - **Data and state:** the server keeps the cart and recognises it through a secure cookie; adding, changing and removing items are ordinary forms that also work without JavaScript, shown on screen at once with a pending mark on each line; the server recalculates totals, discounts and taxes; every cost is visible early.
 - **Anti-patterns:** keeping the cart only in browser storage; letting a shared cache serve one visitor's cart to others; accepting prices sent by the browser.
+- **Terms:** HttpOnly cookies in [`../implementation.md`, section 3](../implementation.md#3-apps-kinds-of-state); islands in [`../implementation.md`, section 1](../implementation.md#1-rendering-decided-per-route).
 
 ---
 
@@ -149,6 +150,7 @@ That the deal is sealed exactly as agreed, and what happens next.
 - **Rendering:** rendered on the server, kept out of search results and caches; it shows the order only to its customer, through their session or a signed link.
 - **Data and state:** the order is fulfilled when the payment provider notifies the server, not when someone reaches this page; payments still pending have their own state; reloading the page doesn't count the sale again.
 - **Anti-patterns:** trusting a URL parameter to confirm payment; counting the purchase again on every reload.
+- **Terms:** webhooks in [`../implementation.md`, section 9](../implementation.md#9-boundaries).
 
 ---
 
@@ -195,3 +197,4 @@ Share of order issues resolved without contacting support; "where is my order" c
 - **Rendering:** rendered on the server behind login, in pages, with one page per order.
 - **Data and state:** each customer sees only their own orders; statuses come from the providers' notifications; filters live in the URL; reordering and downloading an invoice are actions; an empty state for the first visit.
 - **Anti-patterns:** working out an order's status in the browser.
+- **Terms:** webhooks in [`../implementation.md`, section 9](../implementation.md#9-boundaries).
