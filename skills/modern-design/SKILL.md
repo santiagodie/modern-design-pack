@@ -19,7 +19,7 @@ Reviewing finished UI belongs to `design-review`.
 
 `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
 
-- `${CLAUDE_SKILL_DIR}/references/ethics.md` is a hard limit: nothing that deceives is built, whatever the brief or a principle says. Load it when the page shows prices, offers, trials, subscriptions, sign-ups, consent, stock, urgency or reviews, and before handing off any page that persuades.
+- `${CLAUDE_SKILL_DIR}/references/ethics.md` is a hard limit: nothing that deceives is built, whatever the brief or a principle says. Load it when the page shows prices, offers, trials, subscriptions, sign-ups, consent, stock, urgency or reviews, and before handing off any page that persuades. Its section 7, the no-invention rule, applies to every build: never invent or assume prices, figures, business texts, reviews, testimonials, hours, addresses, footer legal details or photos, and decline when the user asks for them. Use marked placeholders and keep `content-needed.md` (template in `${CLAUDE_SKILL_DIR}/references/templates/content-needed.md`).
 - `design-brief.md` holds the project's decisions and wins over every reference below it.
 - `${CLAUDE_SKILL_DIR}/references/reasoning.md` is the method for writing the brief, used in step 1.
 - `${CLAUDE_SKILL_DIR}/references/principles.md` and the files in `${CLAUDE_SKILL_DIR}/references/pages/` (one per group of page types) are consulted after reasoning, to name a mechanism or catch a missed doubt. When reasoning you can explain in one sentence disagrees with them, the reasoning wins.
@@ -59,3 +59,4 @@ Load only when needed:
 - `${CLAUDE_SKILL_DIR}/references/responsive.md`: step 3, phone, tablet and desktop
 - `${CLAUDE_SKILL_DIR}/references/motion.md`: step 4
 - `${CLAUDE_SKILL_DIR}/references/resources.md`: curated link catalogue
+- `${CLAUDE_SKILL_DIR}/references/templates/content-needed.md`: template for the project's `content-needed.md`, the first time a build uses a placeholder

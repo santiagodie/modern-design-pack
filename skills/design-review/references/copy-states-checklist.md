@@ -14,11 +14,11 @@ Reference for `design-review`, used in both modes during the review step, togeth
 - **Fix:** cut the repeat.
 - **Report as:** tip.
 
-### CY3. Placeholders and unverifiable claims
-- **Look for:** lorem ipsum, "[Company]", round fake numbers, "Trusted by thousands" with no names, testimonials with no person behind them.
-- **Fine when:** the brief asks for placeholders because the real facts don't exist yet, each one is visibly marked as a placeholder on the page (brackets, a label such as "example times"), and the review notes list them under "Before publishing". Marks that exist only in HTML comments don't count.
-- **Fix:** replace with real content or remove. In own-project mode, ask the user for the real facts, or mark the placeholder visibly when the brief allows placeholders.
-- **Report as:** **critical** when invented content is presented as real (a made-up review, address, figure or schedule that a visitor would believe), or when a placeholder is visible but not marked as one; minor for vague claims. Placeholders that the brief requires and that are visibly marked are not findings: list them under "Before publishing".
+### CY3. Invented content and unverifiable claims
+- **Look for:** content a visitor would believe that nobody supplied (a review, a figure, an address, opening hours, a price, a legal detail, a photo presented as the business's own); round fake numbers; "Trusted by thousands" with no names; testimonials with no person behind them; placeholder text without the marking.
+- **Placeholders** follow the no-invention rule in `modern-design/references/ethics.md`, section 7 (read it when it exists): any `data-placeholder` element, any bracketed text in capitals (`[PRICE]`) and any lorem ipsum is `measured` and blocking. List each one under "Before publishing" with its file and line or selector, never as a finding to fix by writing content. Search the code for `data-placeholder`, `\[[A-Z][A-Z0-9 _:-]*\]` and "lorem ipsum", and compare with `content-needed.md` when it exists.
+- **Fix:** ask the user for the real facts. Until they arrive, replace invented content with a marked placeholder and add it to `content-needed.md`. Never replace a placeholder with invented content.
+- **Report as:** **critical** when invented content is presented as real, or when a placeholder is visible but not marked (no `data-placeholder`, no visible style; marks that exist only in HTML comments don't count); minor for vague claims. Marked placeholders go under "Before publishing", where they block publication.
 
 ### CY4. Hype tone
 - **Look for:** exclamation marks, "revolutionary", "seamless", "AI-powered" on every line.

@@ -26,6 +26,7 @@ Reference for `design-review`, URL audit mode. Load only when writing the report
 | Promise check | Only when two or three pages were audited: the first page's central promise in one sentence, and the first page where it stops being true (or that it holds throughout). |
 | Improvement proposals | Larger changes with clear payoff: restructure a section, rewrite the hero, rebuild the type scale. |
 | Alternatives | Different directions the site could take, each with its trade-off. Not fixes: options for the owner to weigh. |
+| Before publishing | Blocking. Every placeholder found (CY3): `data-placeholder` elements, bracketed text in capitals such as `[PRICE]`, lorem ipsum. Each is `measured`, with its selector and screenshot. On a page that is already public, also name the most visible one in the Summary. Write "None found" when there are none. |
 
 ## Finding format
 
@@ -116,6 +117,10 @@ Number findings by section: C1, C2 for critical; M1 for minor; O1 for outdated; 
 ### A1. <title>
 
 <same fields; under "How to fix", describe the direction and its trade-off>
+
+## Before publishing (blocking)
+
+<Every placeholder found, one line each: the placeholder, page, selector, screenshot (measured). "None found" when there are none.>
 
 ## Needs a real device
 

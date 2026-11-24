@@ -18,7 +18,7 @@ Reference for `modern-design`, step 3. Load this file first, then only the file 
 | Header / navigation | `header.md` | Always | Yes (app bar; see note) | Yes | Usually, often minimal |
 | Hero | `hero.md` | Always | No: open on the work itself | A title block, not a hero | Often the main piece |
 | Primary CTA (button system) | `cta.md` | Always | Buttons only | Rarely | When there is an action |
-| Quick social proof | `social-proof.md` | When real proof exists | No | No | Rarely |
+| Quick social proof | `social-proof.md` | Always; with placeholders until real proof arrives | No | No | Rarely |
 | Benefits and features | `benefits.md` | Always (the argument) | No | No | Sometimes, as story |
 | Conversion mechanism (forms) | `forms.md` | Always (no mechanism, no landing page) | Often (data entry) | Newsletter at most | Sometimes |
 | Final CTA | `final-cta.md` | On long pages | No | Optional (next read) | Optional |
@@ -34,7 +34,7 @@ For "operate" pages, `header.md`, `cta.md` and `forms.md` apply to the app bar, 
 | Important (no file yet) | Problem or pain, how it works, visual demonstration, testimonials and case studies, pricing, trust elements (guarantees, security), FAQ |
 | Complement (no file yet) | Comparison, live chat, interactive demo or calculator, announcement bar, founder or team story, exit-intent offers |
 
-Quick social proof is mandatory only when real proof exists. Without it, see `social-proof.md` for what to do instead.
+When the project has no proof yet, build quick social proof with marked placeholders (see `social-proof.md`); removing it is the user's decision.
 
 Cross-cutting needs for every persuade page: mobile-first responsive (`../responsive.md`), performance within Core Web Vitals (LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1), accessibility at WCAG 2.2 AA, SEO basics, analytics with lawful cookie consent, and a consistent visual system.
 
@@ -57,7 +57,8 @@ The research quotes conversion figures from single tests on single sites. In the
 - Put proof next to the doubt it answers: near the hero, near the action.
 - Gate hover effects by capability (`(hover: hover) and (pointer: fine)`) and give touch users `:active` feedback.
 - Every section has a phone, tablet and desktop layout. Tablet is not "stretched phone" or "squeezed desktop".
-- Real content or marked placeholders only. Never invent facts, logos, figures or reviews.
+- Real content or marked placeholders only (`../ethics.md`, section 7). Never invent facts, logos, figures or reviews.
+- A planned section with no data is built with placeholders, never left out; only the user decides to remove it. List every placeholder in `content-needed.md`.
 
 ## Sources
 
