@@ -1,0 +1,139 @@
+/* Tokens de diseño. Dirección: "rótulo y cristal de la puerta" (design-brief.md).
+   Tres niveles: valores base, roles semánticos y tokens de componente.
+   Los temas solo cambian el nivel semántico. */
+
+@font-face {
+  font-family: "Barlow";
+  src: url("../fonts/barlow-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("../fonts/barlow-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/barlow-condensed-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/barlow-condensed-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Respaldo con métricas ajustadas para que el cambio de fuente no mueva el texto. */
+@font-face {
+  font-family: "Barlow Condensed Fallback";
+  src: local("Arial Narrow"), local("Arial");
+  size-adjust: 88%;
+  ascent-override: 100%;
+  descent-override: 20%;
+}
+@font-face {
+  font-family: "Barlow Fallback";
+  src: local("Arial");
+  size-adjust: 96%;
+  ascent-override: 100%;
+  descent-override: 20%;
+}
+
+:root {
+  color-scheme: light dark;
+
+  /* 1. Valores base (no usar directamente en componentes) */
+  --base-harina: #fafaf7;
+  --base-tinta: #1c1a17;
+  --base-tinta-suave: #55504a;
+  --base-linea: #d6d0c6;
+  --base-miga: #eee8de;
+  --base-vidrio: #13302c;
+  --base-vinilo: #f4f4ee;
+  --base-toldo: #1f4fa8;
+  --base-toldo-hondo: #173d84;
+  --base-ticket: #f5c842;
+
+  --base-noche: #151412;
+  --base-noche-alta: #1f1d1a;
+  --base-noche-linea: #3a3631;
+  --base-noche-miga: #2a2723;
+  --base-noche-texto: #efede8;
+  --base-noche-suave: #b4aea5;
+  --base-noche-vidrio: #0f2724;
+  --base-noche-toldo: #9db9ff;
+  --base-noche-toldo-hondo: #c3d4ff;
+
+  /* 2. Roles semánticos (los temas cambian solo esto) */
+  --color-fondo: light-dark(var(--base-harina), var(--base-noche));
+  --color-superficie: light-dark(#ffffff, var(--base-noche-alta));
+  --color-texto: light-dark(var(--base-tinta), var(--base-noche-texto));
+  --color-texto-suave: light-dark(var(--base-tinta-suave), var(--base-noche-suave));
+  --color-linea: light-dark(var(--base-linea), var(--base-noche-linea));
+  --color-miga: light-dark(var(--base-miga), var(--base-noche-miga));
+  --color-accion: light-dark(var(--base-toldo), var(--base-noche-toldo));
+  --color-accion-hover: light-dark(var(--base-toldo-hondo), var(--base-noche-toldo-hondo));
+  --color-sobre-accion: light-dark(#ffffff, var(--base-noche));
+  --color-vidrio: light-dark(var(--base-vidrio), var(--base-noche-vidrio));
+  --color-vinilo: var(--base-vinilo);
+  --color-ticket: var(--base-ticket);
+  --color-sobre-ticket: var(--base-tinta);
+  --color-foco: light-dark(var(--base-toldo), var(--base-ticket));
+  --color-marcador: light-dark(#8a4b00, #f5c842);
+
+  /* Tipografía */
+  --font-rotulo: "Barlow Condensed", "Barlow Condensed Fallback", "Arial Narrow", sans-serif;
+  --font-texto: "Barlow", "Barlow Fallback", Arial, sans-serif;
+  --text-sm: 0.9375rem;                          /* 15 px: notas, pie */
+  --text-base: 1.125rem;                         /* 18 px: texto */
+  --text-lg: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);  /* títulos de tarjeta, horas */
+  --text-xl: clamp(2rem, 1.6rem + 2vw, 3rem);           /* títulos de sección */
+  --text-rotulo: clamp(3.5rem, 2rem + 9vw, 8.5rem);     /* PANADERÍA */
+  --leading-texto: 1.55;
+  --leading-titulo: 1.02;
+  --measure: 62ch;
+
+  /* Espaciado (escala de 4 px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --max-ancho: 75rem;
+
+  /* Radios: casi rectos, como un cartel */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-boton: 999px;
+
+  /* Sombras: una sola, para la tablilla */
+  --shadow-tablilla: 0 1px 0 rgb(0 0 0 / 0.04), 0 12px 32px -16px rgb(0 0 0 / 0.35);
+
+  /* Movimiento (paso 4) */
+  --duration-rapida: 120ms;
+  --duration-media: 200ms;
+  --ease-salida: cubic-bezier(0.2, 0, 0, 1);
+
+  /* 3. Tokens de componente */
+  --boton-alto: 3rem;               /* 48 px: objetivo táctil */
+  --tablilla-fondo: var(--color-vidrio);
+  --tablilla-texto: var(--color-vinilo);
+  --tablilla-hoy-fondo: var(--color-ticket);
+  --tablilla-hoy-texto: var(--color-sobre-ticket);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { --shadow-tablilla: 0 0 0 1px var(--base-noche-linea); }
+}

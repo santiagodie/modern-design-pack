@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Solo lo confirmado: es una panadería de barrio. Nombre, barrio y servicios se añaden cuando lleguen (content-needed.md). -->
+  <title>Panadería de barrio</title>
+  <meta name="description" content="Panadería de barrio: horario, dirección y productos.">
+  <!-- Datos para compartir: solo lo confirmado. og:image falta hasta tener la foto de la fachada (content-needed.md #10, #23). -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Panadería de barrio">
+  <meta property="og:description" content="Panadería de barrio: horario, dirección y productos.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/barlow-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/hoy.js" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="cabecera__fila contenedor">
+      <a class="cabecera__nombre" href="#contenido"><span data-placeholder="nombre">[NOMBRE DE LA PANADERÍA]</span></a>
+
+      <nav class="cabecera__nav" aria-label="Secciones">
+        <ul class="nav-lista">
+          <li><a href="#horario">Horario</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#encargos"><span data-placeholder="encargos-nav">[ENCARGOS]</span></a></li>
+          <li><a href="#sobre">Sobre la panadería</a></li>
+        </ul>
+      </nav>
+
+      <a class="boton boton--primario boton--pequeno cabecera__accion" href="#donde"><span data-placeholder="enlace-mapa">Cómo llegar</span></a>
+
+      <details class="menu-movil">
+        <summary class="menu-movil__boton"><span>Menú</span></summary>
+        <nav class="menu-movil__hoja" aria-label="Secciones (móvil)">
+          <ul>
+            <li><a href="#horario">Horario</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#encargos"><span data-placeholder="encargos-nav">[ENCARGOS]</span></a></li>
+            <li><a href="#sobre">Sobre la panadería</a></li>
+            <li><a href="#donde">Dirección</a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+    <!-- Portada: qué es y, justo debajo, lo que se viene a buscar (hoy, dirección, cómo llegar). -->
+    <section class="portada" aria-labelledby="titulo-portada">
+      <div class="portada__rejilla contenedor">
+        <div class="portada__texto">
+          <h1 id="titulo-portada" class="portada__titulo">
+            <span class="rotulo">Panadería</span>
+            <span class="portada__subtitulo">de barrio en <span data-placeholder="barrio">[BARRIO]</span></span>
+          </h1>
+
+          <div class="hoy" aria-labelledby="hoy-titulo">
+            <p class="hoy__fila">
+              <span id="hoy-titulo" class="hoy__etiqueta">Hoy<span class="hoy__dia" data-hoy-dia></span></span>
+              <span class="hoy__horas" data-hoy-horas><span data-placeholder="horario-hoy">[HORARIO: hoy]</span></span>
+            </p>
+            <p class="hoy__direccion"><span data-placeholder="direccion">[DIRECCIÓN]</span></p>
+            <div class="hoy__acciones">
+              <a class="boton boton--primario" href="#donde"><span data-placeholder="enlace-mapa">Cómo llegar</span></a>
+              <span class="boton boton--secundario boton--inerte" data-placeholder="telefono">Llamar: [TELÉFONO]</span>
+            </div>
+            <p class="hoy__nota"><a href="#horario">Ver el horario de toda la semana</a></p>
+          </div>
+        </div>
+
+        <figure class="portada__foto">
+          <div class="foto-pendiente foto-pendiente--4x5" data-placeholder="foto-fachada" role="img" aria-label="Foto pendiente: fachada de la tienda">
+            <span>[FOTO: fachada de la tienda]</span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Elemento audaz: la tablilla del horario, como el cartel del cristal de la puerta. -->
+    <section class="visita" aria-labelledby="titulo-horario">
+      <div class="visita__rejilla contenedor">
+        <div class="tablilla" id="horario">
+          <h2 id="titulo-horario" class="tablilla__titulo">Horario</h2>
+          <table class="tablilla__tabla">
+            <caption class="sr-only">Horario de apertura por día de la semana</caption>
+            <tbody>
+              <tr data-dia="1"><th scope="row">Lunes</th><td><span data-placeholder="horario-lunes">[HORARIO: lunes]</span></td></tr>
+              <tr data-dia="2"><th scope="row">Martes</th><td><span data-placeholder="horario-martes">[HORARIO: martes]</span></td></tr>
+              <tr data-dia="3"><th scope="row">Miércoles</th><td><span data-placeholder="horario-miercoles">[HORARIO: miércoles]</span></td></tr>
+              <tr data-dia="4"><th scope="row">Jueves</th><td><span data-placeholder="horario-jueves">[HORARIO: jueves]</span></td></tr>
+              <tr data-dia="5"><th scope="row">Viernes</th><td><span data-placeholder="horario-viernes">[HORARIO: viernes]</span></td></tr>
+              <tr data-dia="6"><th scope="row">Sábado</th><td><span data-placeholder="horario-sabado">[HORARIO: sábado]</span></td></tr>
+              <tr data-dia="0"><th scope="row">Domingo</th><td><span data-placeholder="horario-domingo">[HORARIO: domingo]</span></td></tr>
+            </tbody>
+          </table>
+          <p class="tablilla__nota"><span data-placeholder="horario-festivos">[HORARIO: festivos y vacaciones]</span></p>
+        </div>
+
+        <div class="donde" id="donde">
+          <h2 class="titulo-seccion">Dónde estamos</h2>
+          <address class="donde__direccion">
+            <span data-placeholder="direccion">[DIRECCIÓN]</span><br>
+            <span data-placeholder="barrio">[BARRIO]</span>
+          </address>
+          <dl class="donde__datos">
+            <div><dt>Teléfono</dt><dd><span data-placeholder="telefono">[TELÉFONO]</span></dd></div>
+          </dl>
+          <p class="donde__accion">
+            <span class="boton boton--primario boton--inerte" data-placeholder="enlace-mapa">Abrir en el mapa: [ENLACE AL MAPA]</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="productos" id="productos" aria-labelledby="titulo-productos">
+      <div class="contenedor">
+        <h2 id="titulo-productos" class="titulo-seccion">Productos</h2>
+        <ul class="productos__lista" role="list">
+          <li class="producto">
+            <div class="foto-pendiente foto-pendiente--4x3" data-placeholder="foto-producto-1" role="img" aria-label="Foto pendiente: producto 1"><span>[FOTO: producto 1]</span></div>
+            <h3 class="producto__nombre"><span data-placeholder="producto-1">[PRODUCTO 1]</span></h3>
+            <p class="producto__texto" data-placeholder="producto-1-texto" data-placeholder-kind="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
+          </li>
+          <li class="producto">
+            <div class="foto-pendiente foto-pendiente--4x3" data-placeholder="foto-producto-2" role="img" aria-label="Foto pendiente: producto 2"><span>[FOTO: producto 2]</span></div>
+            <h3 class="producto__nombre"><span data-placeholder="producto-2">[PRODUCTO 2]</span></h3>
+            <p class="producto__texto" data-placeholder="producto-2-texto" data-placeholder-kind="text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </li>
+          <li class="producto">
+            <div class="foto-pendiente foto-pendiente--4x3" data-placeholder="foto-producto-3" role="img" aria-label="Foto pendiente: producto 3"><span>[FOTO: producto 3]</span></div>
+            <h3 class="producto__nombre"><span data-placeholder="producto-3">[PRODUCTO 3]</span></h3>
+            <p class="producto__texto" data-placeholder="producto-3-texto" data-placeholder-kind="text">Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+          </li>
+          <li class="producto">
+            <div class="foto-pendiente foto-pendiente--4x3" data-placeholder="foto-producto-4" role="img" aria-label="Foto pendiente: producto 4"><span>[FOTO: producto 4]</span></div>
+            <h3 class="producto__nombre"><span data-placeholder="producto-4">[PRODUCTO 4]</span></h3>
+            <p class="producto__texto" data-placeholder="producto-4-texto" data-placeholder-kind="text">Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
+          </li>
+          <li class="producto">
+            <div class="foto-pendiente foto-pendiente--4x3" data-placeholder="foto-producto-5" role="img" aria-label="Foto pendiente: producto 5"><span>[FOTO: producto 5]</span></div>
+            <h3 class="producto__nombre"><span data-placeholder="producto-5">[PRODUCTO 5]</span></h3>
+            <p class="producto__texto" data-placeholder="producto-5-texto" data-placeholder-kind="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+          </li>
+          <li class="producto">
+            <div class="foto-pendiente foto-pendiente--4x3" data-placeholder="foto-producto-6" role="img" aria-label="Foto pendiente: producto 6"><span>[FOTO: producto 6]</span></div>
+            <h3 class="producto__nombre"><span data-placeholder="producto-6">[PRODUCTO 6]</span></h3>
+            <p class="producto__texto" data-placeholder="producto-6-texto" data-placeholder-kind="text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- Solo reseñas reales, con permiso y fuente (ethics.md §7; content-needed.md #21–#22). -->
+    <section class="resenas" id="resenas" aria-labelledby="titulo-resenas">
+      <div class="contenedor">
+        <h2 id="titulo-resenas" class="titulo-seccion">Reseñas</h2>
+        <p class="resenas__valoracion"><span data-placeholder="valoracion">[VALORACIÓN]</span> de <span data-placeholder="numero-resenas">[NÚMERO DE RESEÑAS]</span> reseñas en <span data-placeholder="plataforma-resenas">[PLATAFORMA]</span></p>
+        <ul class="resenas__lista" role="list">
+          <li class="resena">
+            <blockquote class="resena__cita"><p data-placeholder="resena-1-texto" data-placeholder-kind="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></blockquote>
+            <p class="resena__autor"><span data-placeholder="resena-1-nombre">[NOMBRE DEL CLIENTE 1]</span> · <span data-placeholder="resena-1-fuente">[FUENTE Y FECHA DE LA RESEÑA 1]</span></p>
+          </li>
+          <li class="resena">
+            <blockquote class="resena__cita"><p data-placeholder="resena-2-texto" data-placeholder-kind="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></blockquote>
+            <p class="resena__autor"><span data-placeholder="resena-2-nombre">[NOMBRE DEL CLIENTE 2]</span> · <span data-placeholder="resena-2-fuente">[FUENTE Y FECHA DE LA RESEÑA 2]</span></p>
+          </li>
+          <li class="resena">
+            <blockquote class="resena__cita"><p data-placeholder="resena-3-texto" data-placeholder-kind="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></blockquote>
+            <p class="resena__autor"><span data-placeholder="resena-3-nombre">[NOMBRE DEL CLIENTE 3]</span> · <span data-placeholder="resena-3-fuente">[FUENTE Y FECHA DE LA RESEÑA 3]</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Depende de content-needed.md #17 y #18: título y texto neutros hasta saber si hay encargos. -->
+    <section class="encargos" id="encargos" aria-labelledby="titulo-encargos">
+      <div class="encargos__caja contenedor">
+        <h2 id="titulo-encargos" class="titulo-seccion"><span data-placeholder="encargos-titulo">[SECCIÓN DE ENCARGOS: título]</span></h2>
+        <p class="encargos__texto" data-placeholder="encargos-texto" data-placeholder-kind="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+        <p class="encargos__accion">
+          <span class="boton boton--secundario boton--inerte" data-placeholder="encargos-accion">[ENCARGOS: cómo se pide]</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Depende de content-needed.md #19 para el título y la foto; ningún texto habla de hornear. -->
+    <section class="sobre" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="sobre__rejilla contenedor">
+        <div class="sobre__texto">
+          <h2 id="titulo-sobre" class="titulo-seccion">Sobre la panadería</h2>
+          <p data-placeholder="texto-sobre" data-placeholder-kind="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        </div>
+        <figure class="sobre__foto">
+          <div class="foto-pendiente foto-pendiente--3x2" data-placeholder="foto-equipo" role="img" aria-label="Foto pendiente: quienes atienden la panadería">
+            <span>[FOTO: quienes atienden la panadería]</span>
+          </div>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__rejilla contenedor">
+      <div class="pie__bloque">
+        <p class="pie__nombre"><span data-placeholder="nombre">[NOMBRE DE LA PANADERÍA]</span></p>
+        <address>
+          <span data-placeholder="direccion">[DIRECCIÓN]</span><br>
+          <span data-placeholder="telefono">[TELÉFONO]</span>
+        </address>
+        <p><a href="#horario">Horario completo</a></p>
+      </div>
+
+      <nav class="pie__bloque" aria-label="Información legal">
+        <h2 class="pie__titulo">Información legal</h2>
+        <ul role="list">
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html">Privacidad</a></li>
+        </ul>
+        <p class="pie__nota">Esta web no usa cookies.</p>
+      </nav>
+
+      <div class="pie__bloque">
+        <h2 class="pie__titulo">Redes</h2>
+        <p><span data-placeholder="enlace-instagram">[ENLACE: Instagram]</span></p>
+      </div>
+    </div>
+
+    <div class="pie__legal contenedor">
+      <p>
+        <span data-placeholder="razon-social">[RAZÓN SOCIAL]</span> ·
+        NIF <span data-placeholder="nif">[NIF]</span> ·
+        <span data-placeholder="domicilio-social">[DOMICILIO SOCIAL]</span> ·
+        <span data-placeholder="email">[E-MAIL]</span>
+      </p>
+      <!-- Año escrito a mano: actualizarlo cada año (no hay paso de compilación). -->
+      <p>© 2026 <span data-placeholder="nombre">[NOMBRE DE LA PANADERÍA]</span></p>
+    </div>
+  </footer>
+</body>
+</html>
