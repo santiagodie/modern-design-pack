@@ -147,7 +147,7 @@ Before reporting, rule out artefacts of the audit setup:
 ### CO8. Warm cream as the automatic background
 - **Look for:** an off-white, cream or beige page background chosen by default, with brown or terracotta accents, on a product that has no reason for warmth.
 - **Reads as generic because:** generators reach for it as the "tasteful" alternative to white, so it now signals a template too.
-- **Fine when:** the product is warm, crafted or food-related (a bakery, a ceramics studio) and the palette comes from the brand.
+- **Fine when:** the product is warm, crafted or food-related (a ceramics studio, a wine shop) and the palette comes from the brand.
 - **Fix:** derive the background from the brand and the use scene, not from a default.
 - **Report as:** outdated.
 

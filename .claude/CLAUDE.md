@@ -34,6 +34,7 @@ Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badl
 - Write rules in context: "do X when Y". Avoid absolute bans.
 - Nothing outside the plugin. Skills may read each other's files inside the plugin (for example `${CLAUDE_SKILL_DIR}/../modern-design/references/sections/`), but never paths outside the plugin root, because installed plugins are copied to a cache without anything around them. A skill that reads another skill's files must keep working when they're missing. No symlinks anywhere in the repo.
 - Descriptions stay under 1024 characters and must not overlap with each other.
+- Never copy concepts, names or solutions from the briefs and results in `docs/examples/` into `skills/` as examples. Keep the examples in the references varied, and don't repeat a business or concept across files. Reason: in tests 3a, no-invention 1 and no-invention 2, the bakery examples in the references made the builds converge (the same "flour" white, the same hours board).
 
 ## Checks and releases
 

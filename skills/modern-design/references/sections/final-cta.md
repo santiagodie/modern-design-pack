@@ -40,7 +40,7 @@ Same button states as `cta.md`: gated hover, immediate `:active`, visible focus,
 ## Accessibility
 
 - The section has a heading in the page outline (usually `h2`).
-- The button label makes sense out of context ("Order for tomorrow", not "Go").
+- The button label makes sense out of context ("Get a quote", not "Go").
 - Text and button keep contrast on the band's color.
 
 ## Critical errors
@@ -56,7 +56,7 @@ Same button states as `cta.md`: gated hover, immediate `:active`, visible focus,
 
 ## Level-up
 
-- A benefit-recap headline ("Fresh bread at 7:30. Ordered the night before.").
+- A benefit-recap headline built only from facts the user supplied (for a language school that confirmed both: "Speak at work in six months. Classes after 18:00.").
 - Faces of a few real customers or the team.
 - Measure clicks on this CTA separately: it often converts the most qualified visitors.
 

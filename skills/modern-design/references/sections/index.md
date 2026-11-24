@@ -53,7 +53,7 @@ The research quotes conversion figures from single tests on single sites. In the
 
 ## Shared rules
 
-- One primary action per page, named the same everywhere it appears. When it has several channels (WhatsApp and phone), the channel is a qualifier on the same name ("Order by WhatsApp"); see `cta.md`.
+- One primary action per page, named the same everywhere it appears. When it has several channels (WhatsApp and phone), the channel is a qualifier on the same name ("Book by WhatsApp"); see `cta.md`.
 - When the brief rules out JavaScript, use each file's "Without JavaScript" notes (header, CTA, footer): native elements such as `<details>` and real links instead of scripted behaviour.
 - Focus styles and target sizes come from the page's tokens (see `../tokens.md` when it has content); each section file only says where they apply.
 - Put proof next to the doubt it answers: near the hero, near the action.
