@@ -6,6 +6,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-C9A227?style=flat-square&labelColor=0B1F3A" alt="License: MIT" /></a>
   <img src="https://img.shields.io/badge/Claude%20Code-plugin-C9A227?style=flat-square&labelColor=0B1F3A" alt="Claude Code plugin" />
   <img src="https://img.shields.io/badge/status-early%20development-C9A227?style=flat-square&labelColor=0B1F3A" alt="Status: early development" />
+  <a href="https://github.com/santiagodie/modern-design-pack/actions/workflows/skill-checks.yml"><img src="https://github.com/santiagodie/modern-design-pack/actions/workflows/skill-checks.yml/badge.svg" alt="Skill checks" /></a>
 </p>
 
 <p align="center"><b>English</b> · <a href="README.es.md">Español</a></p>
@@ -104,18 +105,23 @@ More detail in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ```text
 modern-design-pack/
+├── .github/workflows/
+│   └── skill-checks.yml     # NVIDIA SkillEvaluator checks on every push and PR
 ├── .claude-plugin/
 │   ├── plugin.json          # plugin manifest
 │   └── marketplace.json     # marketplace "santiagodie-plugins", lists this repo as "./"
 ├── skills/
 │   ├── modern-design/
 │   │   ├── SKILL.md
-│   │   └── references/      # direction, tokens, components, motion, resources
+│   │   └── references/      # direction, reasoning, reasoning-examples, pages/, principles, ethics, responsive, sections/, tokens, motion, resources
 │   └── design-review/
 │       ├── SKILL.md
-│       └── references/      # unslop-checklist, visual-qa, audit-report
+│       ├── references/      # unslop-checklist, mobile-checklist, outdated-checklist, dark-patterns-checklist, visual-qa, audit-report
+│       └── scripts/         # page scripts run with playwright-cli eval
 ├── assets/banner.svg
 ├── docs/
+│   ├── research/            # the author's landing page field guide, basis of the components
+│   ├── examples/            # test reports and screenshots from each phase
 │   ├── SOURCES.md           # every external source, with licence status
 │   ├── ARCHITECTURE.md      # skill flow and principles
 │   └── ROADMAP.md

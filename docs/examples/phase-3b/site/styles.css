@@ -1,0 +1,555 @@
+/* Miga Lenta: "pizarra de hornadas". Static CSS, no JavaScript. */
+
+:root {
+  /* Named colors from the brief */
+  --harina: #F3F2EE;
+  --corteza: #231A14;
+  --sello: #2346A0;
+  --kraft: #D2B48A;
+  --centeno: #6A5443;
+  --miga: #FBFAF7;
+
+  /* Roles */
+  --bg: var(--harina);
+  --surface: var(--miga);
+  --text: var(--corteza);
+  --text-2: var(--centeno);
+  --accent: var(--sello);
+  --accent-press: #1A3580;
+  --on-accent: #FFFFFF;
+  --line: rgba(35, 26, 20, 0.18);
+  --line-strong: rgba(35, 26, 20, 0.55); /* 3:1+ on harina for borders of controls */
+  --board: var(--corteza);
+  --on-board: var(--harina);
+  --on-board-2: #CBBFB2;
+  --band: var(--kraft);
+  --on-band: var(--corteza);
+  --stamp: var(--sello);
+  --focus: var(--sello);
+
+  /* Type */
+  --font: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.25rem;
+  --fs-lg: 1.75rem;
+  --fs-xl: clamp(2rem, 1.4rem + 2.4vw, 2.75rem);
+  --fs-hero: clamp(2.5rem, 1.2rem + 5.4vw, 5.5rem);
+  --narrow: 68%;   /* display width (wdth 62–75 in the brief) */
+
+  /* Space and layout */
+  --gutter: clamp(1rem, 0.6rem + 1.8vw, 2rem);
+  --max: 1200px;
+  --section-y: clamp(3.5rem, 2rem + 6vw, 8rem);
+  --radius: 4px;
+  --header-h: 64px;
+  --t: 150ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* "Las 5 de la mañana en el obrador" */
+    --bg: #17110D;
+    --surface: #211912;
+    --text: var(--harina);
+    --text-2: #C9B8A6;
+    --accent: #9DB2F2;
+    --accent-press: #B9C9F6;
+    --on-accent: var(--corteza);
+    --line: rgba(243, 242, 238, 0.16);
+    --line-strong: rgba(243, 242, 238, 0.5);
+    --board: #2B211A;
+    --on-board: var(--harina);
+    --on-board-2: #C9B8A6;
+    --band: #33271C;
+    --on-band: var(--harina);
+    --stamp: #9DB2F2;
+    --focus: #9DB2F2;
+  }
+}
+
+/* ---------- Base ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;          /* no font inflation in landscape */
+  -webkit-tap-highlight-color: transparent; /* replaced by :active styles */
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  line-height: 1.55;
+  font-variant-numeric: tabular-nums;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-stretch: var(--narrow);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+p { margin: 0; text-wrap: pretty; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; }
+
+a, button { touch-action: manipulation; }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: max(var(--gutter), env(safe-area-inset-left)) max(var(--gutter), env(safe-area-inset-right));
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem; top: -100px;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip:focus { top: 1rem; }
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  transition: background-color var(--t) ease-out, color var(--t) ease-out, transform var(--t) ease-out;
+}
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-secondary { border-color: var(--line-strong); color: var(--text); }
+.btn-small { min-height: 44px; padding: 0.5rem 1rem; font-size: var(--fs-sm); }
+
+.btn:active { transform: translateY(1px); }
+.btn-primary:active { background: var(--accent-press); }
+.btn-secondary:active { background: var(--line); }
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover { background: var(--accent-press); }
+  .btn-secondary:hover { border-color: var(--text); }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+@media (min-width: 560px) {
+  .actions { flex-direction: row; flex-wrap: wrap; }
+}
+
+.reassure {
+  margin-top: 0.875rem;
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+}
+
+.text-link {
+  font-weight: 600;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* review: padding alone gave 43.99px */
+}
+.text-link:active { color: var(--accent); }
+@media (hover: hover) and (pointer: fine) {
+  .text-link:hover { color: var(--accent); }
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding-top: env(safe-area-inset-top);
+}
+.header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "brand cta"
+    "nav nav";
+  align-items: center;
+  column-gap: 1rem;
+  padding-top: 0.5rem;
+}
+.brand {
+  grid-area: brand;
+  font-weight: 800;
+  font-stretch: var(--narrow);
+  font-size: 1.375rem;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  padding-block: 0.5rem;
+}
+.header-cta { grid-area: cta; }
+
+.nav { grid-area: nav; }
+.nav ul { display: flex; gap: 0.25rem 0.25rem; flex-wrap: wrap; margin-left: -0.5rem; }
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px; /* review: Hoy was 26px wide on touch */
+  padding-inline: 0.5rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-2);
+}
+.nav a:active { color: var(--text); }
+@media (hover: hover) and (pointer: fine) {
+  .nav a:hover { color: var(--text); text-decoration: underline; text-underline-offset: 0.3em; }
+}
+
+/* One row from tablet up; sticky only when there is height to spare
+   (phones and phone landscape keep the screen for content). */
+@media (min-width: 700px) {
+  .header-inner {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "brand nav cta";
+    min-height: var(--header-h);
+    padding-top: 0;
+  }
+  .nav ul { justify-content: flex-end; gap: 0 0.75rem; margin-left: 0; margin-right: 0.25rem; }
+}
+@media (min-width: 700px) and (min-height: 560px) {
+  .site-header { position: sticky; top: 0; z-index: 10; }
+  html { scroll-padding-top: calc(var(--header-h) + env(safe-area-inset-top) + 1rem); }
+}
+@media (min-width: 1000px) {
+  .nav ul { gap: 0 1.25rem; margin-right: 1rem; }
+  .nav a { font-size: var(--fs-base); }
+}
+
+/* ---------- Hero with the board ---------- */
+
+.hero { padding-block: clamp(2rem, 1rem + 5vw, 6rem) var(--section-y); }
+
+.hero-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+.hero h1 {
+  font-size: var(--fs-hero);
+  max-width: 12ch;
+}
+.lead {
+  margin-top: 1.25rem;
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.3rem);
+  max-width: 34em;
+  color: var(--text);
+}
+.hours-today {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 1.25rem 0 1.75rem;
+  font-weight: 600;
+}
+.dot {
+  width: 0.6rem; height: 0.6rem;
+  transform: translateY(-0.05em); /* sits on the first line when the text wraps */
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+.hero .actions .btn { width: 100%; }
+@media (min-width: 560px) {
+  .hero .actions .btn { width: auto; }
+}
+
+.board-wrap { position: relative; }
+.board {
+  background: var(--board);
+  color: var(--on-board);
+  border-radius: var(--radius);
+  padding: clamp(1.25rem, 0.8rem + 2vw, 2rem);
+}
+.board table { width: 100%; border-collapse: collapse; }
+.board caption {
+  text-align: left;
+  font-stretch: var(--narrow);
+  font-weight: 800;
+  font-size: var(--fs-md);
+  letter-spacing: 0.01em;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--on-board);
+  margin-bottom: 0.25rem;
+  padding-right: 5.5rem; /* room for the stamp */
+}
+.board tr + tr td, .board tr + tr th { border-top: 1px dashed rgba(243, 242, 238, 0.25); }
+.board td, .board th { padding-block: 0.55rem; vertical-align: baseline; }
+.board td {
+  width: 1%;
+  padding-right: 1rem;
+  font-stretch: 62%;
+  font-weight: 800;
+  font-size: clamp(2rem, 1.4rem + 2.2vw, 3.25rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+.board th {
+  text-align: left;
+  font-weight: 500;
+  font-size: var(--fs-md);
+  line-height: 1.2;
+}
+.board-note {
+  margin-top: 1rem;
+  font-size: var(--fs-sm);
+  color: var(--on-board-2);
+}
+
+.stamp {
+  position: absolute;
+  top: -1.75rem;
+  right: 0.75rem;
+  width: 6.5rem;
+  height: 6.5rem;
+  color: var(--stamp);
+  transform: rotate(-12deg);
+  font-family: var(--font);
+  font-stretch: var(--narrow);
+  background: var(--bg);
+  border-radius: 50%;
+}
+
+/* Brief: on phones and tablets the board goes right under the headline.
+   DOM order stays (copy first) so reading and focus order are unchanged. */
+@media (max-width: 899.98px) {
+  .hero-grid { gap: 0; }
+  .hero-copy { display: contents; }
+  .hero h1 { order: 0; }
+  .board-wrap { order: 1; margin-top: 2.75rem; }
+  .hero-copy > :not(h1) { order: 2; }
+  .hero .lead { margin-top: 2rem; }
+}
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 2rem;
+    align-items: start;
+  }
+  .hero-copy { grid-column: 1 / span 7; }
+  .board-wrap { grid-column: 8 / span 5; margin-top: 1.5rem; }
+  .stamp { top: -2.5rem; right: -1rem; width: 7.5rem; height: 7.5rem; }
+}
+
+/* ---------- Sections ---------- */
+
+.section { padding-block: var(--section-y); border-top: 1px solid var(--line); }
+
+.section-head { max-width: 40rem; margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem); }
+.section h2 { font-size: var(--fs-xl); }
+.section-head p { margin-top: 0.75rem; color: var(--text-2); font-size: var(--fs-md); line-height: 1.45; }
+
+/* El pan: counter-slip list, not cards */
+.menu { border-top: 2px solid var(--text); }
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "name price"
+    "flour flour"
+    "ferment ferment";
+  column-gap: 1rem;
+  row-gap: 0.15rem;
+  padding-block: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+.menu-item h3 { grid-area: name; font-size: var(--fs-lg); }
+.menu-flour { grid-area: flour; font-weight: 500; }
+.menu-ferment { grid-area: ferment; color: var(--text-2); }
+.menu-price { grid-area: price; font-weight: 600; align-self: baseline; }
+
+@media (min-width: 700px) {
+  .menu-item {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto;
+    grid-template-areas:
+      "name flour price"
+      "name ferment price";
+    column-gap: 2rem;
+    align-items: baseline;
+  }
+}
+@media (min-width: 1000px) {
+  .menu-item {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 4fr) minmax(0, 1fr);
+    grid-template-areas: "name flour ferment price";
+    padding-block: 1.25rem;
+  }
+  .menu-price { text-align: right; }
+}
+.allergens-note { margin-top: 1.25rem; color: var(--text-2); font-size: var(--fs-sm); }
+
+/* El obrador */
+.workshop-grid { display: grid; gap: 2.5rem; }
+.workshop-copy p { margin-top: 1rem; max-width: 36em; font-size: 1.0625rem; }
+.workshop-copy p:first-of-type { margin-top: 1.25rem; }
+
+.photo-slot { margin: 0; }
+.photo-frame {
+  aspect-ratio: 4 / 5;
+  max-height: 70svh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  border: 2px dashed var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text-2);
+  font-weight: 600;
+}
+.photo-slot figcaption { margin-top: 0.75rem; font-size: var(--fs-sm); color: var(--text-2); max-width: 32em; }
+
+@media (min-width: 700px) {
+  .workshop-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); column-gap: 3rem; align-items: center; }
+  .photo-frame { max-height: none; }
+}
+@media (min-width: 1000px) {
+  .workshop-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 2rem; }
+  .workshop-copy { grid-column: 1 / span 6; }
+  .photo-slot { grid-column: 8 / span 5; }
+}
+
+/* Encargos: kraft band, like the paper bag */
+.section-orders { background: var(--band); color: var(--on-band); border-top: 0; }
+.section-orders .reassure { color: var(--on-band); }
+.section-orders .btn-secondary { border-color: currentColor; color: var(--on-band); }
+.orders-grid { display: grid; gap: 2rem; }
+.orders-head p { margin-top: 0.75rem; font-size: var(--fs-md); line-height: 1.45; }
+
+.steps { display: grid; gap: 1.5rem; counter-reset: none; }
+.steps li {
+  display: grid;
+  align-content: start; /* review: stretched rows pushed h3 down in shorter steps */
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  row-gap: 0.25rem;
+  align-items: baseline;
+}
+.step-n {
+  grid-row: span 2;
+  font-stretch: 62%;
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+.steps h3 { font-size: var(--fs-md); font-stretch: 85%; letter-spacing: 0; }
+.steps p { grid-column: 2; }
+
+@media (min-width: 700px) {
+  .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+  .steps li { grid-template-columns: 1fr; }
+  .step-n { grid-row: auto; font-size: 3rem; margin-bottom: 0.5rem; }
+  .steps p { grid-column: 1; }
+}
+@media (min-width: 1000px) {
+  .orders-head { max-width: 40rem; }
+  .steps { gap: 3rem; }
+}
+
+/* Dónde */
+.where-grid { display: grid; gap: 2.5rem; }
+address { font-style: normal; margin-top: 1.25rem; font-size: var(--fs-md); line-height: 1.5; }
+.addr-line { display: block; }
+.where-copy p { margin-top: 0.75rem; }
+
+.week table { width: 100%; max-width: 28rem; border-collapse: collapse; }
+.week caption {
+  text-align: left;
+  font-stretch: var(--narrow);
+  font-weight: 800;
+  font-size: var(--fs-lg);
+  padding-bottom: 0.5rem;
+}
+.week th, .week td { padding-block: 0.7rem; border-bottom: 1px solid var(--line); text-align: left; }
+.week th { font-weight: 500; }
+.week td { text-align: right; font-weight: 600; }
+.week tr:first-child th, .week tr:first-child td { color: var(--text-2); }
+
+@media (min-width: 700px) {
+  .where-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; align-items: start; }
+}
+@media (min-width: 1000px) {
+  .where-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 2rem; }
+  .where-copy { grid-column: 1 / span 5; }
+  .week { grid-column: 7 / span 5; }
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--board);
+  color: var(--on-board);
+  padding-block: clamp(3rem, 2rem + 3vw, 5rem) calc(clamp(3rem, 2rem + 3vw, 5rem) + env(safe-area-inset-bottom));
+  font-size: var(--fs-sm);
+}
+.footer-grid { display: grid; gap: 1.5rem; }
+.footer-brand { font-stretch: var(--narrow); font-weight: 800; font-size: var(--fs-lg); line-height: 1.1; margin-bottom: 0.5rem; }
+.footer-allergens { color: var(--on-board-2); max-width: 40em; }
+.site-footer a { color: var(--on-board); }
+/* review: the blue ring was 2.0:1 on the dark footer */
+.site-footer :focus-visible { outline-color: var(--on-board); }
+.site-footer a[href^="tel:"] { display: inline-block; padding-block: 0.875rem; margin-block: -0.875rem; }
+.legal { display: flex; flex-wrap: wrap; column-gap: 1.5rem; }
+.legal a { display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 0.25em; }
+.legal a:active { color: var(--on-board-2); }
+@media (hover: hover) and (pointer: fine) {
+  .legal a:hover { text-decoration-thickness: 2px; }
+}
+.copy { color: var(--on-board-2); }
+
+@media (min-width: 700px) {
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; }
+}
+@media (min-width: 1000px) {
+  .footer-grid { grid-template-columns: 3fr 4fr 3fr; }
+  .copy { grid-column: 1 / -1; padding-top: 1rem; border-top: 1px solid rgba(243, 242, 238, 0.2); }
+}

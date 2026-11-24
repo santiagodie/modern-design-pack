@@ -7,11 +7,11 @@ Reference for `design-review`, URL audit mode. Load only when writing the report
 - **Language:** this template is in English. Write the final report, headings included, in the language the user writes in.
 - **Every finding is grounded.** Point to a screenshot file or a CSS selector. A finding with no location is advice, not a finding; cut it or move it to Tips.
 - **Every finding says how it is known.** Tag it `measured` when a tool or the code shows it (Lighthouse score, contrast ratio, missing `alt`, image weight, a broken layout visible in a screenshot at a given width). Tag it `judgment` when it rests on design criteria.
-- **Make "Outdated" measurable where you can.** Start the section with the signals in the "Outdated, measurable" table of `unslop-checklist.md` (legacy techniques with a modern Baseline replacement, after Chrome's Modern Web Guidance). Those are `measured`: name the signal, the evidence and the modern approach. Aesthetic findings (a dated gradient, a template hero) come after them and are `judgment`. Say so in plain words and name what they are being compared to.
+- **Make "Outdated" measurable where you can.** Start the section with the signals in the "Outdated, measurable" table of `outdated-checklist.md` (legacy techniques with a modern Baseline replacement, after Chrome's Modern Web Guidance). Those are `measured`: name the signal, the evidence and the modern approach. Aesthetic findings (a dated gradient, a template hero) come after them and are `judgment`. Say so in plain words and name what they are being compared to.
 - **Say what kind of measurement it is.** Lighthouse runs are lab data on a simulated slow phone; write "lab" next to those numbers and don't present them as what real visitors get.
 - **Never invent numbers.** Give a value only when a tool produced it. When a tool could not run, say which one and what that leaves unchecked.
 - **Be specific to this site.** "Improve contrast" is not a fix. "Set the hero subtitle (`.hero p`) from #9CA3AF to at least #6B7280 on white for 4.5:1" is.
-- **Prioritise honestly.** Critical means it stops people from using, reading, trusting or reaching the page. Visual polish is never critical on its own.
+- **Prioritise honestly.** Critical means it stops people from using, reading, trusting or reaching the page. Visual polish is never critical on its own. Within each section, put first what blocks the page's main decision most.
 - **Empty sections stay.** Write "None found" instead of padding a section.
 - **Keep the tone neutral.** The site may belong to the user, a client or a competitor.
 
@@ -23,6 +23,7 @@ Reference for `design-review`, URL audit mode. Load only when writing the report
 | Minor issues | Real problems with limited impact: inconsistent spacing, mixed icon styles, weak focus states, small contrast misses on secondary text, heavy images that don't block the page. |
 | Outdated | First, legacy techniques with a modern replacement, checked on the page (`measured`). Then aesthetic patterns that make the site look older or more generic than its competitors (`judgment`). |
 | Tips | Small, low-effort improvements that don't need a redesign. |
+| Promise check | Only when two or three pages were audited: the first page's central promise in one sentence, and the first page where it stops being true (or that it holds throughout). |
 | Improvement proposals | Larger changes with clear payoff: restructure a section, rewrite the hero, rebuild the type scale. |
 | Alternatives | Different directions the site could take, each with its trade-off. Not fixes: options for the owner to weigh. |
 
@@ -56,7 +57,7 @@ Number findings by section: C1, C2 for critical; M1 for minor; O1 for outdated; 
 | URL | <url> |
 | Pages reviewed | <up to 3 URLs> |
 | Date | <YYYY-MM-DD> |
-| Viewports | 375 px, 768 px, 1440 px |
+| Viewports | 375 px, 768 px, 1024 px (touch emulated), 1440 px |
 | Tools used | <for example: Playwright screenshots, HTML read, Lighthouse> |
 | Tools not available | <for example: Lighthouse, Chrome not found, so performance and accessibility scores are not measured> or "None" |
 
@@ -100,6 +101,10 @@ Number findings by section: C1, C2 for critical; M1 for minor; O1 for outdated; 
 
 <same fields>
 
+## Promise check
+
+<Only for audits of two or three pages. Promise: "<one sentence>", from <page and selector>. Holds on <pages>; breaks on <page>, <selector or screenshot>: <how>. (judgment)>
+
 ## Improvement proposals
 
 ### P1. <title>
@@ -111,6 +116,10 @@ Number findings by section: C1, C2 for critical; M1 for minor; O1 for outdated; 
 ### A1. <title>
 
 <same fields; under "How to fix", describe the direction and its trade-off>
+
+## Needs a real device
+
+<What emulation couldn't verify and matters for this page, one line each: sticky hover after a tap, tap delay, safe areas, the on-screen keyboard, rubber-band scrolling, real Safari, performance on a mid-range phone. Write "Nothing relevant" when the page has no touch-specific risk.>
 
 ## What to keep
 

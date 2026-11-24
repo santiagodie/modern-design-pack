@@ -2,9 +2,11 @@
 
 Reference for `design-review`, used in both modes during the review step. Load it when reviewing; you don't need it while taking screenshots.
 
+Three more checklists use the same rules for severity, evidence and reporting (below): `mobile-checklist.md` (MN1–MN5), `outdated-checklist.md` (OM1–OM12) and `dark-patterns-checklist.md` (DP1–DP10, loaded when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content).
+
 ## How to use it
 
-- **Context decides.** Every pattern below is fine somewhere. Check the "Fine when" line before flagging anything, and when the project has a design brief, the brief wins.
+- **Context decides.** Every pattern below is fine somewhere. Check the "Fine when" line before flagging anything, and when the project has a design brief, the brief wins. The exception is the Deceptive patterns family: ethics ranks above the brief.
 - **Run the template test first.** Swap the product's name for a competitor's. If the page still makes sense, it is generic. Report the result in plain words ("the page could belong to any competitor" or "the page is specific to this product"), never as "passes" or "fails", which readers take in opposite ways.
 - **Flag a pattern once.** Name the first clear case and say "also in X, Y" instead of repeating the finding.
 - **Report as** gives the default report section. Raise or lower it when the impact on this page is clearly different, and say why.
@@ -253,8 +255,9 @@ Before reporting, rule out artefacts of the audit setup:
 
 ### CY3. Placeholders and unverifiable claims
 - **Look for:** lorem ipsum, "[Company]", round fake numbers, "Trusted by thousands" with no names, testimonials with no person behind them.
-- **Fix:** replace with real content or remove. In own-project mode, ask the user for the real facts.
-- **Report as:** **critical** when placeholders are visible; minor for vague claims.
+- **Fine when:** the brief asks for placeholders because the real facts don't exist yet, each one is visibly marked as a placeholder on the page (brackets, a label such as "example times"), and the review notes list them under "Before publishing". Marks that exist only in HTML comments don't count.
+- **Fix:** replace with real content or remove. In own-project mode, ask the user for the real facts, or mark the placeholder visibly when the brief allows placeholders.
+- **Report as:** **critical** when invented content is presented as real (a made-up review, address, figure or schedule that a visitor would believe), or when a placeholder is visible but not marked as one; minor for vague claims. Placeholders that the brief requires and that are visibly marked are not findings: list them under "Before publishing".
 
 ### CY4. Hype tone
 - **Look for:** exclamation marks, "revolutionary", "seamless", "AI-powered" on every line.
@@ -365,52 +368,6 @@ Before reporting, rule out artefacts of the audit setup:
 - **Fix:** keep one h1 and a continuous outline, and style headings by class when the size has to differ.
 - **Report as:** minor (`measured`).
 
-## Outdated, measurable
-
-Use these first when filling the "Outdated" section of a report. Each one can be checked on a live page, so it is `measured`, not taste. They follow the direction of Chrome's Modern Web Guidance, which steers sites toward Baseline web features instead of older workarounds. Run the script below at 1440 px and confirm each hit in the HTML before reporting it.
-
-| ID | Legacy signal | Modern approach | How to check |
-|---|---|---|---|
-| OM1 | No viewport meta, or a fixed-width layout that scrolls sideways at 375 px | Responsive layout with `width=device-width` | Checks script in `visual-qa.md` (`viewport`, `horizontalOverflow`) |
-| OM2 | Zoom disabled in the viewport meta | Let people zoom and scale text | `viewport` contains `user-scalable=no` or `maximum-scale=1` (also ME2) |
-| OM3 | Render-blocking scripts in `<head>` | `defer`, `async` or `type="module"` | Script below (`blockingScripts`); Lighthouse `render-blocking-resources` |
-| OM4 | Icon fonts (Font Awesome-style stylesheets, `<i class="fa …">`) | Inline or sprite SVG icons | Script below (`iconFont`) |
-| OM5 | Large images with no `srcset`/`<picture>`, or only JPEG/PNG | Responsive images in modern formats (WebP, AVIF) | Script below (`imagesWithoutSrcset`, `modernImageFormats`); Lighthouse `modern-image-formats`, `uses-responsive-images` |
-| OM6 | The main (LCP) image lazy-loaded or not prioritised; below-the-fold images loaded eagerly | `fetchpriority="high"` on the hero image, `loading="lazy"` below the fold | Lighthouse `prioritize-lcp-image`, `lcp-lazy-loaded`; script below (`lazyImages`) |
-| OM7 | Old JavaScript libraries (jQuery 1.x–2.x and similar) loaded for small effects | Native DOM APIs and CSS | Script below (`jquery`); Lighthouse `no-vulnerable-libraries` when present |
-| OM8 | Third-party scripts or stylesheets with no integrity check | `integrity` + `crossorigin` | Script below (`thirdPartyWithoutSri`) |
-| OM9 | Headings with no balanced wrapping | `text-wrap: balance` on headings | Script below (`balancedHeadings`) |
-| OM10 | Animation with no reduced-motion handling | `@media (prefers-reduced-motion)` | Search the CSS; compare screenshots with reduced motion on and off |
-| OM11 | Forms missing `autocomplete`, `type` and `inputmode` | Standard autocomplete tokens and input types | Script below (`inputsWithoutAutocomplete`) |
-| OM12 | Custom JS modals and popovers on `<div>`s | `<dialog>` and the `popover` attribute | Look for `role="dialog"` on divs in the HTML |
-
-```js
-() => {
-  const scripts = [...document.scripts];
-  const imgs = [...document.images].filter(i => i.naturalWidth > 400);
-  const host = location.hostname;
-  return {
-    blockingScripts: [...document.head.querySelectorAll('script[src]')]
-      .filter(s => !s.defer && !s.async && s.type !== 'module').map(s => s.src).slice(0, 8),
-    iconFont: [...document.styleSheets].some(s => /font-?awesome|icomoon|glyphicons|material-icons/i.test(s.href || '')) ||
-      !!document.querySelector('i[class*="fa-"], .glyphicon'),
-    imagesWithoutSrcset: imgs.filter(i => !i.srcset && !i.closest('picture')).length,
-    modernImageFormats: imgs.filter(i => /\.(webp|avif)(\?|$)/i.test(i.currentSrc)).length + ' of ' + imgs.length,
-    lazyImages: [...document.images].filter(i => i.loading === 'lazy').length + ' of ' + document.images.length,
-    jquery: window.jQuery ? window.jQuery.fn.jquery : null,
-    thirdPartyWithoutSri: [...document.querySelectorAll('script[src], link[rel="stylesheet"]')]
-      .filter(e => { try { return new URL(e.src || e.href).hostname !== host && !e.integrity; } catch { return false; } })
-      .length,
-    balancedHeadings: [...document.querySelectorAll('h1, h2')].filter(h => getComputedStyle(h).textWrap?.includes('balance')).length +
-      ' of ' + document.querySelectorAll('h1, h2').length,
-    inputsWithoutAutocomplete: [...document.querySelectorAll('input:not([type=hidden]):not([type=submit]):not([type=checkbox]):not([type=radio])')]
-      .filter(i => !i.autocomplete).length
-  };
-}
-```
-
-Not every hit is a problem. A missing `text-wrap: balance` on a site with well-wrapped headings is a tip at most, and Google Fonts or analytics without SRI are common and low risk. Report the hits that affect the user (OM1–OM3, OM5–OM6, OM10) above the ones that are housekeeping.
-
 ## Considered and left out
 
 These came up in the source lists but don't belong in a visual review of web pages: idempotency keys and stale-while-revalidate (backend and data concerns), pre-rendering (Lighthouse covers the effect), predictive back and swipe-to-dismiss sheets (native app patterns; check them only for app-like PWAs), command menus and shortcut hints (useful for apps, not for marketing pages; mention them as tips when reviewing a web app).
@@ -421,7 +378,6 @@ This checklist is written in our own words. It draws on ideas from:
 
 - [unslop](https://github.com/heydamir/unslop) by Damir Sokolovsky, CC BY 4.0. Ideas adapted and rewritten; not endorsed by the author.
 - [Impeccable](https://github.com/pbakaus/impeccable) by Paul Bakaus, Apache-2.0, including ideas summarised from its [slop catalogue](https://impeccable.style/slop). Impeccable runs 60+ automated checks; this checklist doesn't reproduce them. Use Impeccable alongside this plugin for that depth.
-- [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers, for the direction of the "Outdated, measurable" section. Ideas only; the detection script is our own.
 - [Taste Skill](https://github.com/Leonxlnx/taste-skill) by Leon Lin and blueemi, MIT.
 - [Web Interface Guidelines](https://github.com/vercel-labs/web-interface-guidelines) by Vercel, MIT.
 - Instagram lists by @charles.unemployed ("20 Tips to Unslop AI Designs") and @millee.md ("20 ways to unslop your AI website designs"), and two shared screenshots whose authors are not yet identified. Ideas only.

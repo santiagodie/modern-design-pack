@@ -37,7 +37,7 @@ Column guide:
 | Supahero | https://supahero.io | TO VERIFY | inspiration | TO VERIFY | modern-design (components) | link only | Hero section gallery. |
 | Backgrounds Supply | https://backgrounds.supply | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
 | Gradient Labs | https://gradient-labs.ai | TO VERIFY | tool | TO VERIFY | modern-design (components) | link only | |
-| Modern Web Guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Chrome for Developers (Google) | article | None stated on the page (only Google Terms in the footer). Source repo https://github.com/GoogleChrome/modern-web-guidance-src not checked | modern-design (components), design-review (unslop-checklist, visual-qa) | summarise | Read the index, guide catalogue and modernization workflow on 2026-11-23 (catalogue published 2026-11-10). Basis for the "Outdated, measurable" section. Ideas only; detection script is our own. |
+| Modern Web Guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Chrome for Developers (Google) | article | None stated on the page (only Google Terms in the footer). Source repo https://github.com/GoogleChrome/modern-web-guidance-src not checked | modern-design (components), design-review (outdated-checklist, visual-qa) | summarise | Read the index, guide catalogue and modernization workflow on 2026-11-23 (catalogue published 2026-11-10). Basis for the "Outdated, measurable" section. Ideas only; detection script is our own. |
 | Web Interface Guidelines (Vercel) | https://vercel.com/design/guidelines (repo https://github.com/vercel-labs/web-interface-guidelines) | Vercel | article | MIT | modern-design (components), design-review (visual-qa, unslop-checklist) | adapt | Read `AGENTS.md` on 2026-11-23. The "Vercel-specific" section is brand preference and is not used. |
 | emilkowalski/skills (incl. apple-design) | https://github.com/emilkowalski/skills | Emil Kowalski | skill | MIT (Copyright (c) 2026 Emil Kowalski) | modern-design (motion) | adapt | Found via ui-skills.com. Licence checked 2026-11-23; not used yet (phase 3). |
 | UI Skills | https://ui-skills.com | TO VERIFY | skill | TO VERIFY | modern-design (motion) | link only | Directory where the Emil Kowalski skills were found. |
@@ -59,6 +59,76 @@ Column guide:
 | 20 UI tips to send to Claude for better design | TO VERIFY | Unknown (TO IDENTIFY) | social post | Unknown | design-review (unslop-checklist) | summarise | Screenshot, author not identified. Ideas only, rewritten; credited as unidentified. Never quote. |
 | Laws of UX | https://lawsofux.com | Jon Yablonski (as credited in the card; not confirmed on the fetched page) | article | None stated (all rights reserved by default) | design-review (unslop-checklist), modern-design (motion) | summarise | Law names are long-established general concepts. Only the names and one-line ideas are used, linked. Seen via @uxdannydesigns. |
 | Playwright agent CLI | https://playwright.dev/agent-cli | Microsoft | tool | TO VERIFY | design-review (visual-qa) | link only | Browser automation for screenshots. |
+
+## Author's research: Landing Page Field Guide
+
+Six files in `docs/research/landing-field-guide/` (`00_README.md` to `05_DESIGN_STYLES.md`), written by the repository's author with Claude and released under this repository's MIT licence. They are the basis of `modern-design/references/sections/` and of `responsive.md`. Checked on 2026-11-23: they paraphrase their sources and contain no long verbatim quotations. Figures from conversion studies are kept in the research with its warning, and the skills use only the direction of each effect.
+
+| Source | URL | Author | Type | License | Used in | How | Notes |
+|---|---|---|---|---|---|---|---|
+| Landing Page Field Guide (2026 edition) | `docs/research/landing-field-guide/` | Santiago Die (written with Claude) | article | MIT (this repository) | modern-design (components, responsive) | adapt | Author's own research. |
+| mobile-native (emilkowalski/skills) | https://github.com/emilkowalski/skills/tree/main/skills/mobile-native | Emil Kowalski | skill | MIT (Copyright (c) 2026 Emil Kowalski) | modern-design (responsive), design-review (visual-qa, mobile-checklist) | adapt | Read `SKILL.md` on 2026-11-23. Rewritten in our own words. |
+
+Sources cited by the field guide. Not read or used directly by the skills; listed so the research can be traced.
+
+| Source | URL | Author | Type | License | Used in | How | Notes |
+|---|---|---|---|---|---|---|---|
+| Scrolling and Attention | https://www.nngroup.com/articles/scrolling-and-attention/ | Nielsen Norman Group | article | Not audited | via the field guide | link only | |
+| Neobrutalism | https://www.nngroup.com/articles/neobrutalism/ | Nielsen Norman Group | article | Not audited | via the field guide | link only | |
+| Brutalism and antidesign | https://www.nngroup.com/articles/brutalism-antidesign/ | Nielsen Norman Group | article | Not audited | via the field guide | link only | |
+| How the Core Web Vitals thresholds were defined | https://web.dev/defining-core-web-vitals-thresholds | Google (web.dev) | article | Not audited | via the field guide | link only | Standard thresholds used as numbers in the skills. |
+| What's new in WCAG 2.2 | https://w3.org/WAI/standards-guidelines/wcag/new-in-22/ | W3C | article | Not audited | via the field guide | link only | Standard thresholds used as numbers in the skills. |
+| Technical web typography | https://smashingmagazine.com/2011/03/technical-web-typography-guidelines-and-techniques | Smashing Magazine | article | Not audited | via the field guide | link only | |
+| Landing page navigation test | https://blog.hubspot.com/marketing/landing-page-navigation-ht | HubSpot | article | Not audited | via the field guide | link only | Figures not used in skills. |
+| Form fields and conversion | https://blog.hubspot.com/blog/tabid/6307/bid/6746/Which-Types-of-Form-Fields-Lower-Landing-Page-Conversions.aspx | HubSpot | article | Not audited | via the field guide | link only | Figures not used in skills. |
+| Landing page best practices | https://ventureharbour.com/landing-page-best-practices/ | Venture Harbour | article | Not audited | via the field guide | link only | |
+| Landing page best practices | https://systeme.io/learn/landing-page-best-practices/ | systeme.io | article | Not audited | via the field guide | link only | Summarises Unbounce data. |
+| SaaS website best practices | https://lovable.dev/guides/saas-website-best-practices | Lovable | article | Not audited | via the field guide | link only | |
+| How to design a button | https://www.orbitmedia.com/blog/how-to-design-button/ | Orbit Media | article | Not audited | via the field guide | link only | |
+| CTAs that convert | https://www.usertesting.com/blog/ctas-convert | UserTesting | article | Not audited | via the field guide | link only | |
+| Heatmap mistakes and CTA placement | https://www.zoho.com/pagesense/conversion-playbook/heatmap-analysis-common-mistakes-user-insights.html | Zoho PageSense | article | Not audited | via the field guide | link only | |
+| Hero section examples | https://www.omniconvert.com/blog/hero-section-examples | Omniconvert | article | Not audited | via the field guide | link only | |
+| Trust signal placement | https://www.digitalapplied.com/blog/social-proof-trust-signals-2026-conversion-placement-framework | Digital Applied | article | Not audited | via the field guide | link only | |
+| Pricing page psychology | https://digitalapplied.com/blog/subscription-pricing-page-psychology-decision-framework-2026 | Digital Applied | article | Not audited | via the field guide | link only | |
+| Pricing psychology | https://kinde.com/learn/billing/pricing/leveraging-behavioral-economics-to-increase-conversions | Kinde | article | Not audited | via the field guide | link only | |
+| Top web design trends for 2026 | https://www.figma.com/resource-library/web-design-trends/ | Figma | article | Not audited | via the field guide | link only | |
+| Web design trends 2026 | https://www.designrush.com/agency/website-design-development/trends/web-design-trends | DesignRush | article | Not audited | via the field guide | link only | |
+| Linear design | https://blog.logrocket.com/ux-design/linear-design | LogRocket | article | Not audited | via the field guide | link only | |
+| SaaS landing page patterns 2026 | https://adminlte.io/?p=7077 | AdminLTE | article | Not audited | via the field guide | link only | |
+
+## Reasoning layer documents
+
+Written by the repository's author with Claude and released under this repository's MIT licence. Two batches:
+
+- **Four documents** (2026-11-24): `00-core-reasoning`, `01-web-psychology-marketing-principles`, `02-page-type-matrix`, `03-ethical-legal-limits-and-evidence`. They became `modern-design/references/reasoning.md`, `principles.md`, `page-types.md` (later replaced by `pages/`) and `ethics.md`, and the DP family of `design-review/references/dark-patterns-checklist.md`.
+- **A `web-design-reasoning` skill** written in another session (2026-11-24), integrated rather than shipped as a separate skill. Its eleven page files became `modern-design/references/pages/` and `reasoning-examples.md` was copied as is. From its `SKILL.md`, the Baymard evidence, the list-mode signal about advice on what isn't visible, the persuasion dial, the novice-versus-expert collision, the reference table and "How to present design work" went into `reasoning.md`; its review rules went into `design-review/SKILL.md`. Its copies of `principles.md` and `limits-and-evidence.md` were older versions of ours and were not used, and its `landing-field-guide/` copy was identical to `docs/research/landing-field-guide/` and was not copied.
+
+Checked on 2026-11-24:
+
+- They summarise their sources in their own words and link each one in place (NN/g, Baymard Institute, Stanford Web Credibility, web.dev, the FTC, the UK CMA, Which?, FIDO Alliance, company blogs and peer-reviewed papers). Facts and figures are attributed where they appear; no long passages are copied.
+- The only verbatim text is short quotations used as examples: product headlines (Stripe, Linear), a few named notices, and paper and talk titles.
+- Edits on import: the dependency on an external short-form writing skill was removed (the transfer table and the "(transferred)" labels in `principles.md`; the transfer notes in `page-types.md` and in `pages/blog-resources.md`); P05 rewritten so the order of sections comes from the brief; the Epic Games source corrected.
+- `pages/` edits: the 3C weights per page and the group summary of the old `page-types.md` were moved into each file (its metrics were already covered by "Signal it's working"); "Real examples" renamed "Real examples (illustrate the mechanism, don't copy)"; links to the field guide replaced by `../sections/` files where one exists, or marked pending; "verify before citing" marks kept as written.
+- The Baymard GPT-4 audit is described with its limits: GPT-4, October 2023, screenshots only and a generic prompt.
+- The Epic Games row cited an unrelated article. Corrected to the FTC press release of 19 December 2022 ($520 M settlement: $275 M civil penalty under COPPA and $245 M in refunds over dark patterns), verified on ftc.gov on 2026-11-24.
+- Regulatory status is dated November 2026 (the Digital Fairness Act is a proposal) and needs a check before release. Three claims are marked "verify before citing" and listed in the ROADMAP: CNIL and AEPD decisions on cookie-banner parity, NIST SP 800-63B Rev. 4 wording on SMS codes, and the EDPB 2026 coordinated enforcement action.
+
+New sources cited by `pages/` and `reasoning.md`. Facts and figures are summarised in our own words with a link in place; no text is copied. Licences not audited because nothing is adapted.
+
+| Source | URL | Author | Type | License | Used in | How | Notes |
+|---|---|---|---|---|---|---|---|
+| GPT-4 UX audit study | https://baymard.com/research-articles/gpt-ux-audit | Baymard Institute | article | Not audited | modern-design (reasoning) | summarise | October 2023; GPT-4 with screenshots and a generic prompt, compared with human experts. |
+| Baymard research (cart abandonment, product lists, filtering, search, tracking, in-scale images, accounts) | https://baymard.com | Baymard Institute | article | Not audited | modern-design (pages) | summarise | Several articles, each linked in place. |
+| NIST SP 800-63B Revision 4 | https://pages.nist.gov/800-63-4/sp800-63b.html | NIST | standard | Not audited (US government work) | modern-design (pages/authentication) | summarise | Password and authenticator guidance; SMS wording to verify. |
+| GOV.UK Design System and Service Manual (validation, confirmation pages, form structure) | https://design-system.service.gov.uk | UK Government Digital Service | article | Not audited (OGL v3 expected; to confirm) | modern-design (pages) | summarise | |
+| Nielsen Norman Group (error messages, empty states, confirmation dialogs, dashboards, onboarding tutorials, inverted pyramid) | https://www.nngroup.com | Nielsen Norman Group | article | Not audited | modern-design (pages) | summarise | Several articles, each linked in place. |
+| FIDO Passkey Index 2026 | https://fidoalliance.org/passkey-index-2026/ | FIDO Alliance | article | Not audited | modern-design (pages, principles) | summarise | Interested source with deployment data. |
+| Diátaxis | https://diataxis.fr/ | Daniele Procida | article | Not audited | modern-design (pages/blog-resources) | summarise | |
+| Google Search Central: pausing an online business | https://developers.google.com/search/docs/crawling-indexing/pause-online-business | Google | article | Not audited | modern-design (pages/states-system) | summarise | |
+| WP29 transparency guidelines (endorsed by the EDPB) and ICO guidance | https://www.edpb.europa.eu/system/files/2023-09/wp260rev01_en.pdf | EDPB / ICO | article | Not audited | modern-design (pages/legal, pages/user-account) | summarise | |
+| Chrome permission prompts | https://developer.chrome.com/blog/permissions-chip | Google Chrome | article | Not audited | modern-design (pages/user-account) | summarise | |
+| Introducing "You're All Caught Up" | https://about.instagram.com/blog/announcements/introducing-youre-all-caught-up-in-feed | Instagram | article | Not audited | modern-design (pages/interaction-creation) | summarise | |
+| Amazon settlement coverage | https://www.pbs.org/newshour/economy/amazon-to-pay-2-5-billion-to-settle-ftc-allegations-it-duped-customers-into-enrolling-in-prime | PBS NewsHour | article | Not audited | modern-design (pages/user-account) | summarise | |
 
 ## Working notes for phase 3
 

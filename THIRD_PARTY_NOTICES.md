@@ -17,6 +17,15 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 - **What was used:** the approach of naming a concrete subject, audience and main job; planning colors, type and layout before coding and reviewing that plan against the brief; the list of generator defaults to check a direction against; spending boldness on one element.
 - **Changes:** rewritten in our own words, combined with other sources, and organised into a brief-writing process with an output template.
 
+### mobile-native (Emil Kowalski)
+
+- **URL:** https://github.com/emilkowalski/skills/tree/main/skills/mobile-native
+- **Author / copyright holder:** Emil Kowalski (Copyright (c) 2026 Emil Kowalski)
+- **License:** MIT, https://opensource.org/license/mit
+- **Used in:** `skills/modern-design/references/responsive.md`, `skills/design-review/references/visual-qa.md`, `skills/design-review/references/mobile-checklist.md` (MN1–MN5)
+- **What was used:** the capability-first approach to touch (hover and pointer queries, `svh` and `dvh`, safe areas with `viewport-fit=cover`, 16 px inputs, `touch-action`, tap highlight with `:active` feedback, selection on controls only, overscroll behaviour) and the list of what emulation can't reproduce.
+- **Changes:** rewritten in our own words, merged with the author's research, extended with a tablet section and with measurable checks and a detection script of our own.
+
 ### unslop
 
 - **URL:** https://github.com/heydamir/unslop
@@ -53,9 +62,18 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 - **What was used:** guidance on tap target sizes, focus states, text wrapping, layout shift, loading timing, reduced motion, safe areas and mobile input sizes.
 - **Changes:** rewritten in our own words and mapped to checks at 375, 768 and 1440 px. The Vercel-specific section was not used.
 
+### SkillEvaluator CI workflow (NVIDIA)
+
+- **URL:** https://github.com/NVIDIA/SkillEvaluator (file `ci/bundles/1.0.1/skill-checks.yml`)
+- **Author / copyright holder:** NVIDIA Corporation & Affiliates
+- **License:** Apache License 2.0, https://www.apache.org/licenses/LICENSE-2.0
+- **Used in:** `.github/workflows/skill-checks.yml`
+- **What was used:** the release workflow file, copied unmodified (SHA-256 `c192e32cf40cf42c789d9ec326114a18f7a1e723fe7333cf9fe8210e00dfa73f`, matching the bundle's `SHA256SUMS.txt`). Its SPDX header is kept.
+- **Changes:** none. It calls NVIDIA's reusable workflow and container image, pinned by commit SHA and digest, at run time.
+
 ### Ideas without a stated licence
 
-Ideas from these sources were used in rewritten form only, with credit and no reuse of their wording: Instagram posts by @charles.unemployed and @millee.md, two shared screenshots whose authors are not yet identified, the names of laws from Laws of UX (https://lawsofux.com) by Jon Yablonski, and the legacy-to-modern direction of Chrome's Modern Web Guidance (https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers, used for the "Outdated, measurable" section (the detection script is our own). `direction.md` also uses rewritten ideas from Figma's articles "What is web design" and "Tendencias de diseño web" (content before visuals, mobile first, performance as a design input, choosing from audience and brand values), and follows Impeccable's convention of `PRODUCT.md` and `DESIGN.md` files without reproducing their format. See `docs/SOURCES.md`.
+Ideas from these sources were used in rewritten form only, with credit and no reuse of their wording: Instagram posts by @charles.unemployed and @millee.md, two shared screenshots whose authors are not yet identified, the names of laws from Laws of UX (https://lawsofux.com) by Jon Yablonski, and the legacy-to-modern direction of Chrome's Modern Web Guidance (https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers, used for the "Outdated, measurable" section in `outdated-checklist.md` (the detection script is our own). `direction.md` also uses rewritten ideas from Figma's articles "What is web design" and "Tendencias de diseño web" (content before visuals, mobile first, performance as a design input, choosing from audience and brand values), and follows Impeccable's convention of `PRODUCT.md` and `DESIGN.md` files without reproducing their format. See `docs/SOURCES.md`.
 
 ## Entry template
 
