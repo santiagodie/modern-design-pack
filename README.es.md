@@ -116,7 +116,8 @@ modern-design-pack/
 │   │   └── references/      # direction, reasoning, reasoning-examples, pages/, principles, ethics, responsive, sections/, tokens, motion, resources
 │   └── design-review/
 │       ├── SKILL.md
-│       └── references/      # unslop-checklist, visual-qa, audit-report
+│       ├── references/      # unslop-checklist, mobile-checklist, outdated-checklist, dark-patterns-checklist, visual-qa, audit-report
+│       └── scripts/         # page scripts run with playwright-cli eval
 ├── assets/banner.svg
 ├── docs/
 │   ├── research/            # guía de landing pages del autor, base de los componentes

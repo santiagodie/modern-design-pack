@@ -37,7 +37,7 @@ Column guide:
 | Supahero | https://supahero.io | TO VERIFY | inspiration | TO VERIFY | modern-design (components) | link only | Hero section gallery. |
 | Backgrounds Supply | https://backgrounds.supply | TO VERIFY | component library | TO VERIFY | modern-design (components) | adapt | |
 | Gradient Labs | https://gradient-labs.ai | TO VERIFY | tool | TO VERIFY | modern-design (components) | link only | |
-| Modern Web Guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Chrome for Developers (Google) | article | None stated on the page (only Google Terms in the footer). Source repo https://github.com/GoogleChrome/modern-web-guidance-src not checked | modern-design (components), design-review (unslop-checklist, visual-qa) | summarise | Read the index, guide catalogue and modernization workflow on 2026-11-23 (catalogue published 2026-11-10). Basis for the "Outdated, measurable" section. Ideas only; detection script is our own. |
+| Modern Web Guidance (Chrome) | https://developer.chrome.com/docs/modern-web-guidance | Chrome for Developers (Google) | article | None stated on the page (only Google Terms in the footer). Source repo https://github.com/GoogleChrome/modern-web-guidance-src not checked | modern-design (components), design-review (outdated-checklist, visual-qa) | summarise | Read the index, guide catalogue and modernization workflow on 2026-11-23 (catalogue published 2026-11-10). Basis for the "Outdated, measurable" section. Ideas only; detection script is our own. |
 | Web Interface Guidelines (Vercel) | https://vercel.com/design/guidelines (repo https://github.com/vercel-labs/web-interface-guidelines) | Vercel | article | MIT | modern-design (components), design-review (visual-qa, unslop-checklist) | adapt | Read `AGENTS.md` on 2026-11-23. The "Vercel-specific" section is brand preference and is not used. |
 | emilkowalski/skills (incl. apple-design) | https://github.com/emilkowalski/skills | Emil Kowalski | skill | MIT (Copyright (c) 2026 Emil Kowalski) | modern-design (motion) | adapt | Found via ui-skills.com. Licence checked 2026-11-23; not used yet (phase 3). |
 | UI Skills | https://ui-skills.com | TO VERIFY | skill | TO VERIFY | modern-design (motion) | link only | Directory where the Emil Kowalski skills were found. |
@@ -67,7 +67,7 @@ Six files in `docs/research/landing-field-guide/` (`00_README.md` to `05_DESIGN_
 | Source | URL | Author | Type | License | Used in | How | Notes |
 |---|---|---|---|---|---|---|---|
 | Landing Page Field Guide (2026 edition) | `docs/research/landing-field-guide/` | Santiago Die (written with Claude) | article | MIT (this repository) | modern-design (components, responsive) | adapt | Author's own research. |
-| mobile-native (emilkowalski/skills) | https://github.com/emilkowalski/skills/tree/main/skills/mobile-native | Emil Kowalski | skill | MIT (Copyright (c) 2026 Emil Kowalski) | modern-design (responsive), design-review (visual-qa, unslop-checklist) | adapt | Read `SKILL.md` on 2026-11-23. Rewritten in our own words. |
+| mobile-native (emilkowalski/skills) | https://github.com/emilkowalski/skills/tree/main/skills/mobile-native | Emil Kowalski | skill | MIT (Copyright (c) 2026 Emil Kowalski) | modern-design (responsive), design-review (visual-qa, mobile-checklist) | adapt | Read `SKILL.md` on 2026-11-23. Rewritten in our own words. |
 
 Sources cited by the field guide. Not read or used directly by the skills; listed so the research can be traced.
 
@@ -100,7 +100,7 @@ Sources cited by the field guide. Not read or used directly by the skills; liste
 
 Written by the repository's author with Claude and released under this repository's MIT licence. Two batches:
 
-- **Four documents** (2026-11-24): `00-core-reasoning`, `01-web-psychology-marketing-principles`, `02-page-type-matrix`, `03-ethical-legal-limits-and-evidence`. They became `modern-design/references/reasoning.md`, `principles.md`, `page-types.md` (later replaced by `pages/`) and `ethics.md`, and the DP family of `design-review/references/unslop-checklist.md`.
+- **Four documents** (2026-11-24): `00-core-reasoning`, `01-web-psychology-marketing-principles`, `02-page-type-matrix`, `03-ethical-legal-limits-and-evidence`. They became `modern-design/references/reasoning.md`, `principles.md`, `page-types.md` (later replaced by `pages/`) and `ethics.md`, and the DP family of `design-review/references/dark-patterns-checklist.md`.
 - **A `web-design-reasoning` skill** written in another session (2026-11-24), integrated rather than shipped as a separate skill. Its eleven page files became `modern-design/references/pages/` and `reasoning-examples.md` was copied as is. From its `SKILL.md`, the Baymard evidence, the list-mode signal about advice on what isn't visible, the persuasion dial, the novice-versus-expert collision, the reference table and "How to present design work" went into `reasoning.md`; its review rules went into `design-review/SKILL.md`. Its copies of `principles.md` and `limits-and-evidence.md` were older versions of ours and were not used, and its `landing-field-guide/` copy was identical to `docs/research/landing-field-guide/` and was not copied.
 
 Checked on 2026-11-24:

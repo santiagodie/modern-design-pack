@@ -1,7 +1,7 @@
 /*
  * Outdated, measurable (OM3-OM9, OM11): render-blocking scripts, icon fonts, images without srcset or modern formats, lazy images, jQuery, third-party files without SRI, balanced headings, inputs without autocomplete.
  * Returns: an object with blockingScripts, iconFont, imagesWithoutSrcset, modernImageFormats, lazyImages, jquery, thirdPartyWithoutSri, balancedHeadings and inputsWithoutAutocomplete.
- * Used from: references/unslop-checklist.md ("Outdated, measurable"), at 1440 px.
+ * Used from: references/outdated-checklist.md ("Outdated, measurable"), at 1440 px.
  * Run it by passing this whole file to playwright-cli --raw eval (see the .md above).
  */
 () => {

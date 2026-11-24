@@ -1,7 +1,7 @@
 /*
  * Mobile, measurable (MN1-MN5): zoom disabled in the viewport meta, inputs under 16 px, :hover rules outside a hover media query, 100vh, safe-area insets without viewport-fit=cover.
  * Returns: an object with viewport, zoomDisabled, viewportFitCover, smallInputs, ungatedHover, vh100, usesSafeArea and skippedSheets (stylesheets from other domains that couldn't be read).
- * Used from: references/unslop-checklist.md ("Mobile, measurable"), once at a touch width.
+ * Used from: references/mobile-checklist.md ("Mobile, measurable"), once at a touch width.
  * Run it by passing this whole file to playwright-cli --raw eval (see the .md above).
  */
 () => {
