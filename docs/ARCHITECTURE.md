@@ -16,7 +16,7 @@ flowchart LR
 |---|---|---|
 | modern-design | 1. Direction: context, live references, design brief | `references/direction.md` |
 | | 2. Tokens: color, type, spacing, radii, shadows, themes | `references/tokens.md` |
-| | 3. Components: sections and components in the project's stack, for phone, tablet and desktop | `references/components/index.md`, one file per component built, `references/responsive.md` |
+| | 3. Components: sections and components in the project's stack, for phone, tablet and desktop | `references/sections/index.md`, one file per section built, `references/responsive.md` |
 | | 4. Motion: purposeful animation and interaction | `references/motion.md` |
 | | 5. Hand off to design-review | none |
 | | Any step that needs an external resource | `references/resources.md` |
@@ -27,7 +27,7 @@ flowchart LR
 | | 2. Review against the checklist and browser criteria | `references/unslop-checklist.md`, `references/visual-qa.md` |
 | | 3. Write the report | `references/audit-report.md` |
 
-Nothing outside the plugin: installed plugins are copied to a cache, and files outside the plugin are not available. Skills may read each other's files inside the plugin (`design-review` reads `modern-design`'s component references when they exist) and must keep working when they don't.
+Nothing outside the plugin: installed plugins are copied to a cache, and files outside the plugin are not available. Skills may read each other's files inside the plugin (`design-review` reads `modern-design`'s section references when they exist) and must keep working when they don't.
 
 A skill is split into more skills only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests.
 

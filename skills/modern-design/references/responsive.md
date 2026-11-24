@@ -1,6 +1,6 @@
 # Responsive
 
-Reference for `modern-design`, step 3. Load it together with `components/index.md` whenever you build or restyle UI. It covers phone, tablet and desktop, and the baseline that makes a web page behave well on touch screens.
+Reference for `modern-design`, step 3. Load it together with `sections/index.md` whenever you build or restyle UI. It covers phone, tablet and desktop, and the baseline that makes a web page behave well on touch screens.
 
 ## The principle: decide by capability, not by device
 

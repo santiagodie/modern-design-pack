@@ -62,7 +62,7 @@ Column guide:
 
 ## Author's research: Landing Page Field Guide
 
-Six files in `docs/research/landing-field-guide/` (`00_README.md` to `05_DESIGN_STYLES.md`), written by the repository's author with Claude and released under this repository's MIT licence. They are the basis of `modern-design/references/components/` and of `responsive.md`. Checked on 2026-11-23: they paraphrase their sources and contain no long verbatim quotations. Figures from conversion studies are kept in the research with its warning, and the skills use only the direction of each effect.
+Six files in `docs/research/landing-field-guide/` (`00_README.md` to `05_DESIGN_STYLES.md`), written by the repository's author with Claude and released under this repository's MIT licence. They are the basis of `modern-design/references/sections/` and of `responsive.md`. Checked on 2026-11-23: they paraphrase their sources and contain no long verbatim quotations. Figures from conversion studies are kept in the research with its warning, and the skills use only the direction of each effect.
 
 | Source | URL | Author | Type | License | Used in | How | Notes |
 |---|---|---|---|---|---|---|---|

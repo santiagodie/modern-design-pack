@@ -1,19 +1,19 @@
-# Components
+# Sections
 
-Reference for `modern-design`, step 3. Load this file first, then only the file of each component you are about to build, plus `../responsive.md`.
+Reference for `modern-design`, step 3. Load this file first, then only the file of each section you are about to build, plus `../responsive.md`. These files cover whole page sections; reusable pieces (buttons, cards, inputs on their own) will live in a separate `components/` folder in a later batch.
 
-> **Scope.** This catalogue covers pages that **persuade**: landing pages, product homepages, local business sites, campaign pages. Components for pages that **operate** (dashboards, internal tools, admin screens) will come in a later batch. Until then, build those from the brief's Structure, `../responsive.md` and your own judgment, and borrow only the parts of these files that clearly apply (buttons, forms, header).
+> **Scope.** This catalogue covers pages that **persuade**: landing pages, product homepages, local business sites, campaign pages. Sections for pages that **operate** (dashboards, internal tools, admin screens) will come in a later batch. Until then, build those from the brief's Structure, `../responsive.md` and your own judgment, and borrow only the parts of these files that clearly apply (buttons, forms, header).
 
 ## How to use it
 
 1. Read the brief's Structure (from `../direction.md`). It decides which sections exist and in what order.
-2. For each section, find its component below and load that file only.
-3. Load `../responsive.md` once, and build every component for phone, tablet and desktop.
-4. Before handing off, run each component's "Generic-pattern watch" against `design-review`'s checklist IDs.
+2. For each section, find its file below and load that file only.
+3. Load `../responsive.md` once, and build every section for phone, tablet and desktop.
+4. Before handing off, run each section's "Generic-pattern watch" against `design-review`'s checklist IDs.
 
-## Which components each page job needs
+## Which sections each page job needs
 
-| Component | File | Persuade | Operate | Read | Experience |
+| Section | File | Persuade | Operate | Read | Experience |
 |---|---|---|---|---|---|
 | Header / navigation | `header.md` | Always | Yes (app bar; see note) | Yes | Usually, often minimal |
 | Hero | `hero.md` | Always | No: open on the work itself | A title block, not a hero | Often the main piece |
@@ -28,7 +28,7 @@ For "operate" pages, `header.md`, `cta.md` and `forms.md` apply to the app bar, 
 
 ## Priority matrix (persuade pages)
 
-| Priority | Components |
+| Priority | Sections |
 |---|---|
 | Mandatory (files written) | Header, hero, primary CTA, quick social proof, benefits and features, conversion mechanism, final CTA, footer |
 | Important (no file yet) | Problem or pain, how it works, visual demonstration, testimonials and case studies, pricing, trust elements (guarantees, security), FAQ |
@@ -54,7 +54,7 @@ The research quotes conversion figures from single tests on single sites. In the
 - One primary action per page, named the same everywhere it appears.
 - Put proof next to the doubt it answers: near the hero, near the action.
 - Gate hover effects by capability (`(hover: hover) and (pointer: fine)`) and give touch users `:active` feedback.
-- Every component has a phone, tablet and desktop layout. Tablet is not "stretched phone" or "squeezed desktop".
+- Every section has a phone, tablet and desktop layout. Tablet is not "stretched phone" or "squeezed desktop".
 - Real content or marked placeholders only. Never invent facts, logos, figures or reviews.
 
 ## Sources
