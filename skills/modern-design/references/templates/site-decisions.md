@@ -6,7 +6,7 @@ Never name the file `design.md`: on Windows and macOS file names ignore case, so
 
 ## Where it sits
 
-Order of authority: `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` > `design-brief.md` > `reasoning.md` > the other references. The brief holds the direction the model proposed; this file holds what exists in the code and what the user decided. When the user asks for something that breaks `ethics.md` (an invented review, a reject button hidden behind a second layer), decline it, explain why in one or two sentences, and don't record it.
+Order of authority: ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` > `design-brief.md` > `reasoning.md` > the other references. The brief holds the direction the model proposed; this file holds what exists in the code and what the user decided. When the user asks for something that breaks `ethics.md` (an invented review, a reject button hidden behind a second layer), decline it, explain why in one or two sentences, and don't record it.
 
 ## When to read and write it
 
@@ -27,7 +27,7 @@ Order of authority: `ethics.md` (hard limit, including the no-invention rule) > 
 
 Updated: <YYYY-MM-DD>
 
-Order of authority: ethics (hard limit) > this file > design-brief.md > reasoning > references.
+Order of authority: ethics (ethics.md and content-truth.md, hard limits) > this file > design-brief.md > reasoning > references.
 
 ## 1. Current standards
 

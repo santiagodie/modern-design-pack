@@ -12,9 +12,10 @@ Every page with an action. The CTA is a system repeated down the page (hero, aft
 
 ## Content
 
-- Verb plus outcome, 2–5 words: "Order for tomorrow", "Start free trial", "Book a visit". Never "Submit", "Click here" or "Learn more" as the primary.
+- Verb plus outcome, 2–5 words: "Get a quote", "Start free trial", "Book a visit". Never "Submit", "Click here" or "Learn more" as the primary.
 - The label predicts the next screen. A button that says "Start free trial" and opens a sales form breaks trust.
-- One line of microcopy next to it answers the main worry ("Ready the next morning", "No card needed"). Reassure without naming the fear: "Your data stays private" works better than "We never spam".
+- One line of microcopy next to it answers the main worry ("No card needed", or a fact the user supplied, such as "Free returns for 30 days"). Reassure without naming the fear: "Your data stays private" works better than "We never spam".
+- **Destination still missing:** when the phone, map link, booking page or e-mail is a placeholder, the button either leads to the section where that placeholder is shown, with a label that stays true ("Get directions" to `#where`), or is shown as a placeholder itself: a non-link element with `data-placeholder` that doesn't look like a working button. Never a `tel:`, `mailto:`, `href="#"` or made-up URL (`../content-truth.md`).
 - First-person wording ("Start my trial") often helps; treat it as something to test, not a law.
 - **Arrows:** add an arrow or chevron only to the primary CTA, and only when it leads forward to a next step. Secondary actions, inline links and every other button stay without arrows. Arrows on every link are template chrome.
 
@@ -26,11 +27,11 @@ Every page with an action. The CTA is a system repeated down the page (hero, aft
 | Position | In thumb reach; a sticky bottom CTA can appear once the hero CTA scrolls out | As phone in portrait; inline in landscape | Inline; a sticky header CTA is enough |
 | Spacing | At least 8 px from other targets; 12–16 px between primary and secondary | Same | 12–16 px between primary and secondary |
 
-**Sticky mobile CTA (needs JavaScript):** appears after the hero CTA leaves the screen, hides when the final CTA or a form is visible, adds `env(safe-area-inset-bottom)` to its padding, and never covers the cookie banner, a submit button or the focused element. A short context line ("Order by 7 pm · Pick up tomorrow") often helps more than the button alone.
+**Sticky mobile CTA (needs JavaScript):** appears after the hero CTA leaves the screen, hides when the final CTA or a form is visible, adds `env(safe-area-inset-bottom)` to its padding, and never covers the cookie banner, a submit button or the focused element. A short context line built from confirmed facts ("Free returns · 30 days") often helps more than the button alone.
 
-**Without JavaScript:** skip the sticky bottom CTA, because it can't hide when the final CTA or a form appears. Repeat the CTA inline at the decision points instead (after the argument, the final CTA), and keep the header CTA visible. Make direct actions real links that work with no script: `tel:`, `https://wa.me/`, `mailto:`, a booking page.
+**Without JavaScript:** skip the sticky bottom CTA, because it can't hide when the final CTA or a form appears. Repeat the CTA inline at the decision points instead (after the argument, the final CTA), and keep the header CTA visible. Make direct actions real links that work with no script: `tel:`, `https://wa.me/`, `mailto:`, a booking page, once their value is confirmed.
 
-**Several channels, one action:** when the mechanism offers more than one channel (WhatsApp and phone, for example), keep the action's name and add the channel as a qualifier: "Order by WhatsApp", "Order by phone". The primary button is the channel most visitors will use; the other is the secondary.
+**Several channels, one action:** when the mechanism offers more than one channel (WhatsApp and phone, for example), keep the action's name and add the channel as a qualifier: "Book by WhatsApp", "Book by phone". The primary button is the channel most visitors will use; the other is the secondary.
 
 ## States and interaction
 

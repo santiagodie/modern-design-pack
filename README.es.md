@@ -119,7 +119,7 @@ modern-design-pack/
 ├── skills/
 │   ├── modern-design/
 │   │   ├── SKILL.md
-│   │   └── references/      # direction, reasoning, reasoning-examples, pages/, principles, ethics, implementation, responsive, sections/, templates/, tokens, motion, resources
+│   │   └── references/      # direction, reasoning, reasoning-examples, pages/, principles, ethics, content-truth, implementation, responsive, sections/, templates/, tokens, motion, resources
 │   └── design-review/
 │       ├── SKILL.md
 │       ├── references/      # unslop-checklist, copy-states-checklist, mobile-checklist, outdated-checklist, dark-patterns-checklist, visual-qa, audit-report

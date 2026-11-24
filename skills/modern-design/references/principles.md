@@ -2,7 +2,7 @@
 
 Reference for `modern-design`. Consult it after reasoning (`reasoning.md`), never as a starting point: to name a mechanism you have already detected, check its evidence and know its limits. Use the principles while you reason; when you present, explain decisions in terms of the user's doubt rather than listing principle names or turning them into a visible checklist.
 
-> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
+> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
 
 IDs P01–P31 are used by the files in `pages/`. Evidence: **A** = experiment, meta-analysis or large-scale primary data; **B** = company primary data or documented case; **C** = professional consensus or heuristic without a public experiment.
 

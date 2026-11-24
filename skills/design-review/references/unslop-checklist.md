@@ -147,7 +147,7 @@ Before reporting, rule out artefacts of the audit setup:
 ### CO8. Warm cream as the automatic background
 - **Look for:** an off-white, cream or beige page background chosen by default, with brown or terracotta accents, on a product that has no reason for warmth.
 - **Reads as generic because:** generators reach for it as the "tasteful" alternative to white, so it now signals a template too.
-- **Fine when:** the product is warm, crafted or food-related (a bakery, a ceramics studio) and the palette comes from the brand.
+- **Fine when:** the product is warm, crafted or food-related (a ceramics studio, a wine shop) and the palette comes from the brand.
 - **Fix:** derive the background from the brand and the use scene, not from a default.
 - **Report as:** outdated.
 
@@ -231,7 +231,7 @@ Before reporting, rule out artefacts of the audit setup:
 - **Look for:** icons from several sets, mixed stroke widths and sizes, and emoji used anywhere an icon or image belongs: feature icons, product photos, avatars, illustrations, empty states.
 - **Reads as generic because:** emoji render differently on every system and signal a prototype that never got real assets.
 - **Fine when:** emoji appear in user content, or in a playful brand that uses them consistently on purpose.
-- **Fix:** use one icon set, at one size and stroke. Where a photo or illustration is missing, put a box with the final aspect ratio and a label naming the picture, inside a `data-placeholder` element (the no-invention rule in `modern-design/references/ethics.md`, section 7), and list it in `content-needed.md`. Never invent photos or use stock imagery presented as real.
+- **Fix:** use one icon set, at one size and stroke. Where a photo or illustration is missing, put a box with the final aspect ratio and a label naming the picture, inside a `data-placeholder` element (the no-invention rule in `modern-design/references/content-truth.md`), and list it in `content-needed.md`. Never invent photos or use stock imagery presented as real.
 - **Report as:** minor; outdated when emoji stand in for product images.
 
 ### CP3. Unstyled component library defaults

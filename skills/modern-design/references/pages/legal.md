@@ -8,7 +8,7 @@ Persuasion dial for this group: none. Not legal advice: these entries cover how 
 
 Group summary: dominant phase confidence; principles that weigh most P01, P12, P18, P23; main risk: opacity, forced consent.
 
-> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
+> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
 
 The moment is similar on all three pages: most visitors skim or never come; the few who do are checking something specific ("can I cancel?", "do they sell my data?", "how do I refuse tracking?") and are often already suspicious. Clarity here is itself a trust signal.
 

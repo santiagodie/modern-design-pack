@@ -10,13 +10,13 @@ In a few seconds, answer three questions: what is this, is it for me, what do I 
 
 Pages that persuade, and many pages that create an experience. Pages that operate open on the work itself, with no hero. Pages people read open with a title block: title, short summary, author or date.
 
-The brief may replace the classic hero with something more useful (the bakery's "out of the oven today" board is a hero that is also information). Follow the brief.
+The brief may replace the classic hero with something more useful (a ferry line's timetable for today is a hero that is also information). Follow the brief.
 
 ## Content
 
 | Element | Rule |
 |---|---|
-| Label above the headline (eyebrow) | **Use it only when it carries real information the headline doesn't**: the audience ("For clinics with 2–10 vets"), the category, or a dated announcement that links to it. Delete it when it repeats the headline or only decorates (checklist TY4, CP1). |
+| Label above the headline (eyebrow) | **Use it only when it carries real information the headline doesn't**: the audience ("For translation agencies of 2–20 people"), the category, or a dated announcement that links to it. Delete it when it repeats the headline or only decorates (checklist TY4, CP1). |
 | Headline (h1) | The outcome the visitor gets, in their words, about 4–12 words. Specific beats clever. |
 | Subheadline | How it works and who it's for, one or two sentences. |
 | Primary CTA | One verb-plus-outcome button (see `cta.md`). |
@@ -37,7 +37,7 @@ The brief may replace the classic hero with something more useful (the bakery's 
 | CTA | Full width inside the side padding, in thumb reach | Natural width, at least 48 px tall | Natural width |
 | Top padding | 32–56 px | 48–80 px | 64–120 px |
 
-**Phone order.** On phones, put first what serves the main job in the brief, right after the headline. When the brief names a hero element that carries the information visitors come for (the bakery's baking-times board, a price, an availability slot, the product itself), place it straight under the headline, before the subheadline and buttons. When the brief gives a mobile order, follow it. Otherwise use headline, subheadline, CTA, reassurance, then the visual. Keep the header CTA visible, so the action stays on the first screen when the buttons move down. Reorder with CSS (`order`, `display: contents`) only when the reading and focus order still make sense. Otherwise change the HTML order.
+**Phone order.** On phones, put first what serves the main job in the brief, right after the headline. When the brief names a hero element that carries the information visitors come for (a timetable, a price, an availability slot, the product itself), place it straight under the headline, before the subheadline and buttons. When the brief gives a mobile order, follow it. Otherwise use headline, subheadline, CTA, reassurance, then the visual. Keep the header CTA visible, so the action stays on the first screen when the buttons move down. Reorder with CSS (`order`, `display: contents`) only when the reading and focus order still make sense. Otherwise change the HTML order.
 
 **Stacked tablet hero.** When the tablet portrait hero stacks, widen the text to the container (a headline measure around 16–22 characters per line at tablet size, a subheadline up to about 60–70), or let the hero element sit beside the subheadline. A phone column in the middle of a 768 px screen, with empty space beside it, reads as a stretched phone.
 

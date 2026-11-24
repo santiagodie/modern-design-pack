@@ -21,7 +21,7 @@ Before asking anything, look at the project:
 - Brand material: logo, colors and fonts already in use, real photos, product screenshots, real copy.
 - `content-needed.md` from an earlier run: what is still missing and what the user has confirmed.
 
-Then, before anything else, ask the user for the business's own documentation and data: existing website or listings, brochures, menus or price lists, opening hours, address and phone, legal details for the footer, reviews they are allowed to show, photographs and product screenshots. Everything a visitor would read as a fact comes from this material or from the user, never from the model (`ethics.md`, section 7).
+Then, before anything else, ask the user for the business's own documentation and data: existing website or listings, brochures, menus or price lists, opening hours, address and phone, legal details for the footer, reviews they are allowed to show, photographs and product screenshots. Everything a visitor would read as a fact comes from this material or from the user, never from the model (`content-truth.md`).
 
 ### 2. Gather context
 
@@ -29,7 +29,7 @@ Settle these points, from the project files first and from the user second:
 
 | Point | What to pin down |
 |---|---|
-| Product | One concrete subject: what it is, in the user's words. "A sourdough bakery in a Madrid neighbourhood", not "a food business". |
+| Product | One concrete subject: what it is, in the user's words. "A family-run bicycle repair workshop in a small coastal town", not "a local business". |
 | Audience | Who uses the page and what they already know. |
 | Main job of the page | One of the four below. It decides structure, density and how much the page may perform. |
 | Tone | Three adjectives that fit, and one to avoid. |
@@ -49,8 +49,8 @@ When you can ask, ask at most five short questions in one message, only about wh
 
 **When there are no answers** (a non-interactive session, or the user says "you decide"), don't stop. Make reasonable design assumptions (audience, devices, where traffic comes from, tone, direction) and write each one under "Design assumptions" in the brief, so the user can correct them later. Facts about the business are different, and they never go into the brief as assumptions:
 
-- **Content** the user would have to stand behind (prices, figures, business texts, reviews, hours, addresses, footer legal details, photos): build with the placeholders in `ethics.md`, section 7.
-- **How the business works** (do they take orders, deliver, bake or make on site, take bookings, offer pickup): write each open point as a business-question row in `content-needed.md`, listing the sections that depend on it. Those sections may be planned and built, with neutral headings or placeholders until the answer arrives.
+- **Content** the user would have to stand behind (prices, figures, business texts, reviews, hours, addresses, footer legal details, photos): build with the placeholders in `content-truth.md`.
+- **How the business works** (do they take orders, deliver, make or repair on site, take bookings, offer pickup, which country's law applies): write each open point as a business-question row in `content-needed.md`, listing the sections that depend on it. Those sections may be planned and built, with neutral headings or placeholders until the answer arrives.
 
 Write `content-needed.md` from `templates/content-needed.md`.
 
@@ -58,7 +58,7 @@ Write `content-needed.md` from `templates/content-needed.md`.
 
 Look at real sites before deciding anything.
 
-1. **Find** 3 to 5 live sites with WebSearch: the same category and a similar tone, ideally real businesses or products rather than templates. Search for the category plus a quality signal ("independent sourdough bakery website", "veterinary practice management software dashboard"). Galleries such as Awwwards or Curated help for "experience" pages; for "operate", look at well-regarded products in the category.
+1. **Find** 3 to 5 live sites with WebSearch: the same category and a similar tone, ideally real businesses or products rather than templates. Search for the category plus a quality signal ("independent bicycle repair workshop website", "warehouse inventory dashboard"). Galleries such as Awwwards or Curated help for "experience" pages; for "operate", look at well-regarded products in the category.
 2. **See** them. Take screenshots with `playwright-cli`: first screen and full page at 1440 px, and the first screen at 375 px, with reduced motion on. Save them in a temporary folder outside the project and don't commit them. When the browser isn't available, read the pages with WebFetch and say that the visual comparison was skipped.
 3. **Extract principles**, not looks. For each reference, write one line on each of:
    - **Layout rhythm:** how sections are sized and paced, alignment, grid, how the first screen is used.
@@ -83,7 +83,7 @@ Work in this order before writing the brief:
 
 Decide the sections from what the product needs to say and what people need to do, not from the usual landing sequence.
 
-1. List the content: the messages, the proof, the actions, the information people come for (for a bakery: what it sells, opening hours, where it is, and whether and how it takes orders; for a dashboard: today's appointments, who is waiting, what needs attention).
+1. List the content: the messages, the proof, the actions, the information people come for (for a physiotherapy practice: what it treats, where it is, opening hours, and whether and how people book; for a warehouse dashboard: orders to ship today, stock below its minimum, late deliveries).
 2. Order it by what the audience needs first.
 3. Turn it into sections, one line each: the section's purpose, its content or picture, and whether the asset is real or a placeholder.
 4. Check the result against the default sequence (hero, three features, stats, testimonials, call to action). When your plan matches it section by section, question each one: keep it only when the content needs it.
@@ -93,7 +93,7 @@ For "operate" pages, think in regions instead of sections: navigation, the prima
 
 ### 5. Commit to a direction
 
-Choose one clear aesthetic direction and give it a short name ("market-stall chalkboard", "quiet clinical ledger"). Take it from the subject's own world: its industry, materials, places and vernacular. Then decide:
+Choose one clear aesthetic direction and give it a short name ("harbour tide table" for a sailing school, "night-shift dispatch log" for a logistics tool). Take it from the subject's own world: its industry, materials, places and vernacular. Then decide:
 
 - **Typography:** one family, or two that clearly differ, each with a role. The scale and the size of the headline voice.
 - **Color strategy:** a neutral base and where color is spent. Plan 4 to 6 named colors with their roles; `design-tokens` turns them into tokens.
@@ -181,7 +181,7 @@ None assumed here. Open questions about how the business works are business-ques
 - Write the central promise before the structure, and check that every page keeps it true.
 - Ask for the business's documentation and data at the start, before researching references.
 - When the user can't answer, assume design decisions, write the assumption down, and keep going. Never assume content or how the business works: use placeholders, ask business questions in `content-needed.md`, and keep the headings of the sections that depend on them neutral.
-- Mark every placeholder for facts, photos and figures the user must supply with `data-placeholder` and a visible style (`ethics.md`, section 7); never fill them with invented data, and decline when asked to.
+- Mark every placeholder for facts, photos and figures the user must supply with `data-placeholder` and a visible style (`content-truth.md`); never fill them with invented data, and decline when asked to.
 - Take the direction from the subject's world, and say why in the brief.
 - Spend boldness on one element when the page's job allows it; for "operate" and "read" pages, spend it on clarity instead.
 - Keep reference screenshots out of the project and out of version control.
