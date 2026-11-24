@@ -1,0 +1,435 @@
+/* Estilos de la página. Todos los valores salen de tokens.css. */
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent; /* sustituido por estados :active */
+  /* Altura de la cabecera fija más aire, para que los títulos anclados no queden tapados.
+     Por debajo de 52rem la cabecera ocupa dos filas (unos 106 px). */
+  scroll-padding-top: 8rem;
+}
+@media (min-width: 52rem) {
+  html { scroll-padding-top: 5rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  margin: 0;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--font-familia);
+  font-size: var(--text-base);
+  font-weight: var(--font-peso-texto);
+  line-height: var(--leading-texto);
+}
+
+h1, h2, h3, h4, p, ul, dl, dd, address { margin: 0; }
+ul { padding: 0; list-style: none; }
+address { font-style: normal; }
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-foco);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+main:focus { outline: none; }
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin-inline: auto;
+  padding-inline: max(var(--gutter), env(safe-area-inset-left)) max(var(--gutter), env(safe-area-inset-right));
+}
+
+.visualmente-oculto {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Marcadores (ethics.md, sección 7) ---------- */
+[data-placeholder] {
+  outline: var(--placeholder-borde);
+  outline-offset: 2px;
+}
+
+/* ---------- Saltar al contenido ---------- */
+.saltar {
+  position: absolute;
+  left: var(--space-4);
+  top: -10rem;
+  z-index: 10;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-texto);
+  color: var(--color-fondo);
+  font-weight: var(--font-peso-fuerte);
+}
+.saltar:focus { top: var(--space-4); }
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--boton-alto);
+  padding: var(--space-2) var(--space-6);
+  border: 2px solid transparent;
+  border-radius: var(--boton-radio);
+  font-weight: var(--font-peso-fuerte);
+  font-size: var(--text-base);
+  line-height: 1.2;
+  text-decoration: none;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  transition: background-color var(--duration-rapida) var(--ease-salida),
+              transform var(--duration-rapida) var(--ease-salida);
+}
+.boton--principal {
+  background: var(--color-marca);
+  color: var(--color-sobre-marca);
+}
+.boton--secundario {
+  border-color: currentColor;
+  color: var(--color-texto);
+  background: transparent;
+}
+/* Mientras el teléfono sea un marcador, no es un control: texto seleccionable y sin efectos. */
+.boton--marcador { user-select: text; }
+.boton--pequeno {
+  min-height: 2.75rem;
+  padding-inline: var(--space-4);
+  font-size: var(--text-sm);
+}
+.boton--principal:active { transform: translateY(1px); background: color-mix(in srgb, var(--color-marca) 85%, var(--color-texto)); }
+
+@media (hover: hover) and (pointer: fine) {
+  .boton--principal:hover { background: color-mix(in srgb, var(--color-marca) 88%, var(--color-texto)); }
+  a:hover { text-decoration-thickness: 2px; }
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  background: var(--color-fondo);
+  border-bottom: 1px solid var(--color-borde);
+}
+/* Fija solo cuando la pantalla es lo bastante alta (sin JS no se oculta al bajar). */
+@media (min-height: 560px) {
+  .cabecera {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    padding-top: env(safe-area-inset-top);
+  }
+}
+.cabecera__fila {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "nombre accion"
+    "nav nav";
+  align-items: center;
+  column-gap: var(--space-4);
+  padding-block: var(--space-2);
+}
+.cabecera__nombre {
+  grid-area: nombre;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem; /* objetivo táctil de 44 px */
+  font-weight: var(--font-peso-rotulo);
+  font-stretch: var(--font-ancho-rotulo);
+  font-size: var(--text-lg);
+  line-height: 1.1;
+  text-decoration: none;
+  min-width: 0;
+}
+.cabecera__accion { grid-area: accion; }
+.cabecera__nav { grid-area: nav; }
+.cabecera__nav ul {
+  display: flex;
+  gap: var(--space-1) var(--space-6);
+  flex-wrap: wrap;
+}
+.cabecera__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: var(--text-sm);
+  font-weight: var(--font-peso-fuerte);
+  text-decoration: none;
+}
+.cabecera__nav a:active { text-decoration: underline; }
+
+@media (min-width: 52rem) {
+  .cabecera__fila {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "nombre nav accion";
+    column-gap: var(--space-8);
+  }
+  .cabecera__nav ul { justify-content: flex-end; gap: var(--space-8); }
+}
+
+/* ---------- Portada ---------- */
+.portada { padding-block: clamp(2rem, 1rem + 4vw, 5rem) clamp(3rem, 2rem + 4vw, 6rem); }
+.portada__rejilla {
+  display: grid;
+  gap: var(--space-8);
+}
+.rotulo {
+  font-size: var(--text-rotulo);
+  font-weight: var(--font-peso-rotulo);
+  font-stretch: var(--font-ancho-rotulo);
+  line-height: var(--leading-titulo);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.portada__lema {
+  margin-top: var(--space-4);
+  font-size: var(--text-lg);
+  max-width: 32ch;
+  color: var(--color-texto-suave);
+}
+
+/* Cartel del horario: papel de estraza colgado de un cordel. */
+.cartel {
+  position: relative;
+  margin-top: var(--space-12);
+  max-width: 26rem;
+  padding: var(--space-6);
+  background: var(--color-cartel);
+  color: var(--color-texto);
+  border-radius: var(--cartel-radio);
+  box-shadow: var(--shadow-cartel);
+  rotate: -1.2deg;
+}
+.cartel__cordel {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  width: 7rem;
+  height: 2.25rem;
+  translate: -50% 0;
+  border: 2px solid var(--color-marca);
+  border-bottom: 0;
+  border-radius: 3.5rem 3.5rem 0 0 / 2.25rem 2.25rem 0 0;
+}
+.cartel__cordel::after {
+  /* el clavo */
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -0.4rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: var(--color-texto);
+}
+.cartel__titulo {
+  font-size: var(--text-xl);
+  font-weight: var(--font-peso-rotulo);
+  font-stretch: var(--font-ancho-rotulo);
+  text-transform: uppercase;
+  line-height: 1;
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid currentColor;
+}
+.cartel__horario {
+  width: 100%;
+  margin-top: var(--space-3);
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.cartel__horario th,
+.cartel__horario td {
+  padding-block: var(--space-2);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px dashed color-mix(in srgb, currentColor 35%, transparent);
+}
+.cartel__horario th { font-weight: var(--font-peso-fuerte); padding-right: var(--space-4); width: 40%; }
+.cartel__direccion {
+  margin-top: var(--space-4);
+  font-weight: var(--font-peso-fuerte);
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+.acciones .boton { flex: 1 1 100%; }
+
+/* Fotos y marcadores de imagen: reservan su proporción final. */
+.foto {
+  display: grid;
+  place-items: center;
+  background: var(--color-superficie);
+  color: var(--color-texto-suave);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-peso-fuerte);
+  text-align: center;
+  padding: var(--space-4);
+  width: 100%;
+}
+.foto--4x3 { aspect-ratio: 4 / 3; }
+.foto--1x1 { aspect-ratio: 1; }
+.foto--4x5 { aspect-ratio: 4 / 5; }
+.foto--16x9 { aspect-ratio: 16 / 9; }
+
+/* Tableta: el cartel y la foto pueden ir lado a lado sin quedar estrechos. */
+@media (min-width: 40rem) {
+  .acciones .boton { flex: 0 1 auto; }
+}
+@media (min-width: 56rem) {
+  .portada__rejilla {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: start;
+    gap: var(--space-12);
+  }
+  .portada__foto { margin-top: var(--space-4); }
+}
+
+/* ---------- Secciones ---------- */
+.seccion { padding-block: clamp(3rem, 2rem + 5vw, 7rem); }
+.seccion--superficie { background: var(--color-superficie); }
+.seccion--superficie .foto { background: var(--color-fondo); }
+.seccion__titulo {
+  font-size: var(--text-xl);
+  font-weight: var(--font-peso-rotulo);
+  font-stretch: var(--font-ancho-rotulo);
+  line-height: var(--leading-titulo);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.seccion__intro {
+  margin-top: var(--space-3);
+  max-width: var(--medida);
+  color: var(--color-texto-suave);
+}
+
+/* En el mostrador: lista sencilla (nombre, línea, precio), no tarjetas iguales. */
+.familias {
+  display: grid;
+  gap: var(--space-12);
+  margin-top: var(--space-8);
+}
+.familia__titulo {
+  font-size: var(--text-lg);
+  font-weight: var(--font-peso-fuerte);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-texto);
+}
+.productos { display: grid; }
+.producto {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: var(--space-4);
+  align-items: start;
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--color-borde);
+}
+.producto .foto { padding: var(--space-1); font-size: 0.75rem; }
+.producto__texto {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "nombre precio" "desc desc";
+  column-gap: var(--space-4);
+  row-gap: var(--space-1);
+}
+.producto__nombre { grid-area: nombre; font-size: var(--text-base); font-weight: var(--font-peso-fuerte); }
+.producto__precio { grid-area: precio; font-weight: var(--font-peso-fuerte); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.producto__desc { grid-area: desc; color: var(--color-texto-suave); font-size: var(--text-sm); }
+
+@media (min-width: 56rem) {
+  .familias { grid-template-columns: 1fr 1fr; gap: var(--space-16); }
+  .producto { grid-template-columns: 7rem 1fr; }
+}
+
+/* Encargos */
+.pasos {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+.paso {
+  padding-top: var(--space-3);
+  border-top: 2px solid var(--color-texto);
+}
+.paso dt { font-weight: var(--font-peso-fuerte); }
+.paso dd { margin-top: var(--space-1); color: var(--color-texto-suave); }
+.encargos__contacto { margin-top: var(--space-8); font-weight: var(--font-peso-fuerte); }
+
+@media (min-width: 40rem) {
+  .pasos { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Quién hornea */
+.quienes { display: grid; gap: var(--space-8); }
+.quienes__texto p { margin-top: var(--space-4); max-width: 60ch; }
+.quienes__firma { font-weight: var(--font-peso-fuerte); }
+.quienes .foto { max-width: 26rem; }
+@media (min-width: 48rem) {
+  .quienes { grid-template-columns: 3fr 2fr; align-items: center; gap: var(--space-12); }
+  .quienes .foto { max-width: none; }
+}
+
+/* Dónde estamos */
+.visitanos { display: grid; gap: var(--space-8); }
+.visitanos__direccion {
+  margin-top: var(--space-4);
+  font-size: var(--text-lg);
+  font-weight: var(--font-peso-fuerte);
+}
+.datos { display: grid; gap: var(--space-4); margin-top: var(--space-6); }
+.datos dt { font-weight: var(--font-peso-fuerte); }
+.datos dd { color: var(--color-texto-suave); }
+.visitanos__nota { margin-top: var(--space-6); color: var(--color-texto-suave); }
+.visitanos__nota a { display: inline-block; min-height: 1.5rem; }
+@media (min-width: 56rem) {
+  .visitanos { grid-template-columns: 2fr 3fr; align-items: start; gap: var(--space-12); }
+}
+
+/* ---------- Pie ---------- */
+.pie {
+  padding-block: var(--space-12) calc(var(--space-12) + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--color-borde);
+  font-size: var(--text-sm);
+  color: var(--color-texto-suave);
+}
+.pie__rejilla { display: grid; gap: var(--space-8); }
+.pie__rejilla p + p { margin-top: var(--space-2); }
+.pie__nombre {
+  color: var(--color-texto);
+  font-size: var(--text-lg);
+  font-weight: var(--font-peso-rotulo);
+  font-stretch: var(--font-ancho-rotulo);
+}
+.pie__lista li { min-height: 2.75rem; display: flex; align-items: center; }
+.pie__lista--fila { display: flex; flex-wrap: wrap; column-gap: var(--space-6); margin-block: var(--space-2); }
+@media (min-width: 48rem) {
+  .pie__rejilla { grid-template-columns: 2fr 1fr 2fr; }
+}

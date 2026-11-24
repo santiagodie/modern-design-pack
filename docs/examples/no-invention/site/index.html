@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fcfbf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15130f" media="(prefers-color-scheme: dark)">
+  <!-- Título y descripción sin datos del negocio: el nombre y el barrio se añaden cuando el usuario los confirme (content-needed.md). -->
+  <title>Panadería de barrio</title>
+  <meta name="description" content="Horario, dirección, productos y encargos de la panadería del barrio.">
+  <link rel="preload" href="fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="cabecera__nombre" href="#contenido"><span data-placeholder="nombre">[NOMBRE DE LA PANADERÍA]</span></a>
+      <nav class="cabecera__nav" aria-label="Secciones">
+        <ul>
+          <li><a href="#mostrador">Productos</a></li>
+          <li><a href="#encargos">Encargos</a></li>
+          <li><a href="#visitanos">Dónde estamos</a></li>
+        </ul>
+      </nav>
+      <!-- Misma acción que la portada. Apunta a #visitanos hasta tener la dirección real; entonces, enlace al mapa. -->
+      <a class="boton boton--principal boton--pequeno cabecera__accion" href="#visitanos">Cómo llegar</a>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+    <!-- Portada: letrero y cartel de horario de la puerta (elemento audaz del brief). -->
+    <section class="portada" aria-labelledby="portada-titulo">
+      <div class="contenedor portada__rejilla">
+        <div class="portada__texto">
+          <h1 id="portada-titulo" class="rotulo"><span data-placeholder="nombre">[NOMBRE DE LA PANADERÍA]</span></h1>
+          <p class="portada__lema"><span data-placeholder="lema">[LEMA: una frase sobre la panadería, con palabras del dueño]</span></p>
+
+          <section class="cartel" aria-labelledby="cartel-titulo">
+            <span class="cartel__cordel" aria-hidden="true"></span>
+            <h2 id="cartel-titulo" class="cartel__titulo">Horario</h2>
+            <table class="cartel__horario">
+              <caption class="visualmente-oculto">Horario de apertura por día de la semana</caption>
+              <tbody>
+                <tr><th scope="row">Lunes</th><td><span data-placeholder="horario-lunes">[HORARIO: lunes]</span></td></tr>
+                <tr><th scope="row">Martes</th><td><span data-placeholder="horario-martes">[HORARIO: martes]</span></td></tr>
+                <tr><th scope="row">Miércoles</th><td><span data-placeholder="horario-miercoles">[HORARIO: miércoles]</span></td></tr>
+                <tr><th scope="row">Jueves</th><td><span data-placeholder="horario-jueves">[HORARIO: jueves]</span></td></tr>
+                <tr><th scope="row">Viernes</th><td><span data-placeholder="horario-viernes">[HORARIO: viernes]</span></td></tr>
+                <tr><th scope="row">Sábado</th><td><span data-placeholder="horario-sabado">[HORARIO: sábado]</span></td></tr>
+                <tr><th scope="row">Domingo</th><td><span data-placeholder="horario-domingo">[HORARIO: domingo]</span></td></tr>
+              </tbody>
+            </table>
+            <p class="cartel__direccion"><span data-placeholder="direccion">[DIRECCIÓN: calle, número, código postal]</span></p>
+          </section>
+
+          <div class="acciones">
+            <a class="boton boton--principal" href="#visitanos">Cómo llegar</a>
+            <!-- Se convierte en <a href="tel:..."> cuando el teléfono esté confirmado; nunca un tel: con marcador. -->
+            <p class="boton boton--secundario boton--marcador">Llamar: <span data-placeholder="telefono">[TELÉFONO]</span></p>
+          </div>
+        </div>
+
+        <div class="foto foto--4x3 portada__foto" role="img" aria-label="Marcador de imagen: foto de la fachada o del mostrador" data-placeholder="foto-fachada">
+          <span>[FOTO: fachada o mostrador]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lo que suele haber: lista sencilla, no tarjetas de ventajas. -->
+    <section id="mostrador" class="seccion" aria-labelledby="mostrador-titulo">
+      <div class="contenedor">
+        <h2 id="mostrador-titulo" class="seccion__titulo">En el mostrador</h2>
+        <p class="seccion__intro">Lo que suele haber. Pregunta en la tienda por lo que queda cada día.</p>
+
+        <div class="familias">
+          <section class="familia" aria-labelledby="familia-pan">
+            <h3 id="familia-pan" class="familia__titulo"><span data-placeholder="familia-1">[FAMILIA: por ejemplo, pan]</span></h3>
+            <ul class="productos">
+              <li class="producto">
+                <div class="foto foto--1x1" role="img" aria-label="Marcador de imagen: foto del producto" data-placeholder="foto-producto-1"><span>[FOTO: producto]</span></div>
+                <div class="producto__texto">
+                  <h4 class="producto__nombre"><span data-placeholder="producto-1-nombre">[NOMBRE DEL PRODUCTO]</span></h4>
+                  <p class="producto__desc" data-placeholder="producto-1-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.</p>
+                  <p class="producto__precio"><span data-placeholder="producto-1-precio">[PRECIO]</span></p>
+                </div>
+              </li>
+              <li class="producto">
+                <div class="foto foto--1x1" role="img" aria-label="Marcador de imagen: foto del producto" data-placeholder="foto-producto-2"><span>[FOTO: producto]</span></div>
+                <div class="producto__texto">
+                  <h4 class="producto__nombre"><span data-placeholder="producto-2-nombre">[NOMBRE DEL PRODUCTO]</span></h4>
+                  <p class="producto__desc" data-placeholder="producto-2-desc">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                  <p class="producto__precio"><span data-placeholder="producto-2-precio">[PRECIO]</span></p>
+                </div>
+              </li>
+              <li class="producto">
+                <div class="foto foto--1x1" role="img" aria-label="Marcador de imagen: foto del producto" data-placeholder="foto-producto-3"><span>[FOTO: producto]</span></div>
+                <div class="producto__texto">
+                  <h4 class="producto__nombre"><span data-placeholder="producto-3-nombre">[NOMBRE DEL PRODUCTO]</span></h4>
+                  <p class="producto__desc" data-placeholder="producto-3-desc">Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+                  <p class="producto__precio"><span data-placeholder="producto-3-precio">[PRECIO]</span></p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="familia" aria-labelledby="familia-bolleria">
+            <h3 id="familia-bolleria" class="familia__titulo"><span data-placeholder="familia-2">[FAMILIA: por ejemplo, bollería]</span></h3>
+            <ul class="productos">
+              <li class="producto">
+                <div class="foto foto--1x1" role="img" aria-label="Marcador de imagen: foto del producto" data-placeholder="foto-producto-4"><span>[FOTO: producto]</span></div>
+                <div class="producto__texto">
+                  <h4 class="producto__nombre"><span data-placeholder="producto-4-nombre">[NOMBRE DEL PRODUCTO]</span></h4>
+                  <p class="producto__desc" data-placeholder="producto-4-desc">Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
+                  <p class="producto__precio"><span data-placeholder="producto-4-precio">[PRECIO]</span></p>
+                </div>
+              </li>
+              <li class="producto">
+                <div class="foto foto--1x1" role="img" aria-label="Marcador de imagen: foto del producto" data-placeholder="foto-producto-5"><span>[FOTO: producto]</span></div>
+                <div class="producto__texto">
+                  <h4 class="producto__nombre"><span data-placeholder="producto-5-nombre">[NOMBRE DEL PRODUCTO]</span></h4>
+                  <p class="producto__desc" data-placeholder="producto-5-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                  <p class="producto__precio"><span data-placeholder="producto-5-precio">[PRECIO]</span></p>
+                </div>
+              </li>
+              <li class="producto">
+                <div class="foto foto--1x1" role="img" aria-label="Marcador de imagen: foto del producto" data-placeholder="foto-producto-6"><span>[FOTO: producto]</span></div>
+                <div class="producto__texto">
+                  <h4 class="producto__nombre"><span data-placeholder="producto-6-nombre">[NOMBRE DEL PRODUCTO]</span></h4>
+                  <p class="producto__desc" data-placeholder="producto-6-desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.</p>
+                  <p class="producto__precio"><span data-placeholder="producto-6-precio">[PRECIO]</span></p>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section id="encargos" class="seccion seccion--superficie" aria-labelledby="encargos-titulo">
+      <div class="contenedor encargos">
+        <h2 id="encargos-titulo" class="seccion__titulo">Encargos</h2>
+        <dl class="pasos">
+          <div class="paso">
+            <dt>Cómo se encarga</dt>
+            <dd><span data-placeholder="encargos-como">[CÓMO ENCARGAR: por teléfono, en tienda…]</span></dd>
+          </div>
+          <div class="paso">
+            <dt>Con cuánta antelación</dt>
+            <dd><span data-placeholder="encargos-antelacion">[ANTELACIÓN]</span></dd>
+          </div>
+          <div class="paso">
+            <dt>Dónde se recoge</dt>
+            <dd><span data-placeholder="encargos-recogida">[RECOGIDA]</span></dd>
+          </div>
+        </dl>
+        <p class="encargos__contacto">Teléfono para encargos: <span data-placeholder="telefono">[TELÉFONO]</span></p>
+      </div>
+    </section>
+
+    <section id="quienes" class="seccion" aria-labelledby="quienes-titulo">
+      <div class="contenedor quienes">
+        <div class="quienes__texto">
+          <h2 id="quienes-titulo" class="seccion__titulo">Quién hornea</h2>
+          <!-- Lorem de la longitud real prevista (60–120 palabras). La historia la escribe o la cuenta el usuario. -->
+          <p data-placeholder="historia">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+          <p class="quienes__firma"><span data-placeholder="nombres-panaderos">[NOMBRES DE QUIENES HORNEAN]</span></p>
+        </div>
+        <div class="foto foto--4x5" role="img" aria-label="Marcador de imagen: foto de los panaderos en el obrador" data-placeholder="foto-obrador">
+          <span>[FOTO: panaderos en el obrador]</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="visitanos" class="seccion seccion--superficie" aria-labelledby="visitanos-titulo">
+      <div class="contenedor visitanos">
+        <div class="visitanos__datos">
+          <h2 id="visitanos-titulo" class="seccion__titulo">Dónde estamos</h2>
+          <address class="visitanos__direccion">
+            <span data-placeholder="direccion">[DIRECCIÓN: calle, número, código postal]</span>
+          </address>
+          <dl class="datos">
+            <div><dt>Cómo llegar</dt><dd><span data-placeholder="como-llegar">[CÓMO LLEGAR: metro, autobús, aparcamiento]</span></dd></div>
+            <div><dt>Festivos</dt><dd><span data-placeholder="horario-festivos">[HORARIO: festivos]</span></dd></div>
+            <div><dt>Teléfono</dt><dd><span data-placeholder="telefono">[TELÉFONO]</span></dd></div>
+          </dl>
+          <p class="visitanos__nota">El horario de cada día está en el <a href="#cartel-titulo">cartel de arriba</a>.</p>
+        </div>
+        <!-- Mapa: imagen estática o enlace a un mapa cuando exista la dirección. Un mapa incrustado de terceros exigiría consentimiento de cookies. -->
+        <div class="foto foto--16x9" role="img" aria-label="Marcador de imagen: mapa con la ubicación de la panadería" data-placeholder="mapa">
+          <span>[MAPA]</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__rejilla">
+      <div>
+        <p class="pie__nombre"><span data-placeholder="nombre">[NOMBRE DE LA PANADERÍA]</span></p>
+        <p><span data-placeholder="direccion">[DIRECCIÓN: calle, número, código postal]</span></p>
+        <p><span data-placeholder="telefono">[TELÉFONO]</span></p>
+      </div>
+      <nav aria-label="Redes sociales">
+        <ul class="pie__lista">
+          <li><span data-placeholder="red-social">[RED SOCIAL: enlace al perfil activo]</span></li>
+        </ul>
+      </nav>
+      <div class="pie__legal">
+        <p>Titular: <span data-placeholder="razon-social">[RAZÓN SOCIAL]</span> · NIF: <span data-placeholder="nif">[NIF]</span></p>
+        <p>Correo: <span data-placeholder="email">[CORREO DE CONTACTO]</span></p>
+        <ul class="pie__lista pie__lista--fila" aria-label="Textos legales">
+          <li><span data-placeholder="enlace-aviso-legal">[ENLACE: Aviso legal]</span></li>
+          <li><span data-placeholder="enlace-privacidad">[ENLACE: Política de privacidad]</span></li>
+        </ul>
+        <p>Esta web no usa cookies ni analítica.</p>
+        <!-- Año escrito a mano: actualizarlo cada año o generarlo en el build. -->
+        <p>© 2026</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
