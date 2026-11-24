@@ -1,8 +1,10 @@
 # Ethical and legal limits, and quality of evidence
 
-Reference for `modern-design` and `design-review`. A hard limit: if something deceives, it is not done, and good reasoning is no exception. When a recommendation in `principles.md` or `pages/` conflicts with this file, this file wins. `design-review` turns sections 4 and 6 into its DP checks.
+Reference for `modern-design` and `design-review`. A hard limit: if something deceives, it is not done, and good reasoning is no exception. When a recommendation in `principles.md` or `pages/` conflicts with this file, this file wins. `design-review` turns sections 4 and 6 into its DP checks, and section 7 into its placeholder check before publishing.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+Load it for any page that persuades and, for section 7, for every build: the no-invention rule applies to every page, whatever its content.
+
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 Not legal advice. It summarises public facts to guide design decisions, with regulatory status as of November 2026; for specific cases, consult a professional.
 
@@ -47,7 +49,7 @@ Sources: Bird & Bird on the EAA (https://www.twobirds.com/en/insights/2025/a-gui
 - Confirmshaming ("No, I prefer to keep losing money").
 - Reject buttons hidden, greyed out, or on a second layer when accept is on the first.
 - Free trials that convert to paid without prior notice.
-- Invented testimonials, logos or customer figures.
+- Invented testimonials, logos or customer figures, or any other invented content (see section 7).
 - "Gifted" progress that doesn't correspond to anything real (P26 misused).
 - Loss mechanics (streaks, "you'll lose everything") without an escape valve, or used to prevent cancellation.
 - Advertising disguised as a notification, organic result or editorial content.
@@ -74,3 +76,30 @@ Sources: Bird & Bird on the EAA (https://www.twobirds.com/en/insights/2025/a-gui
 - Checkout / Login / Sign-up / Forms: WCAG 2.1 AA (focus, labels, errors not only by colour, touch targets).
 - Cookies / Privacy: accept/reject parity; no consent by default; readable layers.
 - Feed / Onboarding with gamification: escape valves (pause, freeze); special care if minors are involved.
+
+## 7. No invention (hard limit)
+
+The model never invents or assumes content that a visitor would take as a fact about the business: prices, figures and statistics, texts that describe the business (its story, its products, its team), reviews and testimonials, client names and logos, opening hours, addresses and phone numbers, legal details in the footer (company name, tax ID, registry entry), and photographs. This holds in every page, every step and every mode, and nothing ranks above it.
+
+- **When the user asks for invented content** ("make up some reviews", "put a plausible price", "write a history for the shop"), decline that part and say why in one or two sentences: the page would present as true something nobody has checked, which misleads visitors and, for reviews and prices, is illegal in the EU and the US. Then offer what helps: placeholders, a list of what to collect, or copy written from facts the user supplies.
+- **What the model may write:** design decisions and their assumptions (in `design-brief.md`); interface text with no factual claim (labels, buttons, navigation, form hints, error messages); and copy, persuasive copy included, that phrases and orders facts the user or the project supplied.
+- **A new fact inside a sentence is data, not copy.** Frequency, origin, figures, guarantees, shipping, delivery times, ingredients, awards: when the user didn't supply it, the sentence carries a placeholder for it ("bread baked [FREQUENCY]"), or the sentence goes to `content-needed.md` as a proposal for the user to confirm, never onto the page. "Bread baked fresh every morning" is a claim about the bakery, not copy; write it only when the user said so.
+
+### Placeholders
+
+Use a placeholder wherever real content is missing, so the layout is built and tested at its real size:
+
+| Missing | Placeholder | Example |
+|---|---|---|
+| A datum (price, phone, address, hours, figure, name, tax ID) | The field's name in capitals between brackets, in the page's language | `[PRICE]`, `[PHONE]`, `[HOURS: Saturday]` |
+| Running text (description, story, testimonial body) | Lorem ipsum of the length the real text should have | A three-line product description gets three lines of lorem ipsum |
+| An image | A box with the final aspect ratio and a label naming the picture | `[PHOTO: shop front]`, in a 4:3 box |
+
+- Wrap every placeholder in an element with `data-placeholder="<field>"` and give that attribute a visible style, for example `[data-placeholder] { outline: 2px dashed currentColor; outline-offset: 2px; }`, so nobody can mistake it for real content in a screenshot.
+- Never use stock photos or generated images presented as the business's own. A labelled box is the placeholder.
+- Keep placeholder values out of machine-read places: no placeholder in structured data, meta descriptions, `tel:`, `mailto:` or map links. Add those when the real value arrives, and list them in `content-needed.md`.
+- A section the brief plans but has no data for is designed and built with placeholders, never dropped. Removing it is the user's decision; record it in `content-needed.md` with status "discarded".
+
+### content-needed.md
+
+Every build that uses a placeholder writes `content-needed.md` in the project root, from `templates/content-needed.md` in this folder, and keeps it up to date: what is missing, where it goes (page and section), the placeholder used, and its status. When the model has a guess about a value (from a public listing, from the brief), it writes the guess only in this file, marked "assumption: confirm" in the user's language ("suposición: confirmar" in Spanish), never on the page.

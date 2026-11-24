@@ -8,7 +8,7 @@ Persuasion dial for this group: none to low. These pages are about control. User
 
 Group summary: dominant phase confidence; principles that weigh most P14, P23, P09, P17; main risk: hard cancellation, abusive defaults.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 ---
 
@@ -44,6 +44,12 @@ That the user controls their identity and visibility.
 
 ### Signal it's working
 Completion of the fields that matter; privacy-related support tickets.
+
+### Implementation
+- **Static:** app (a public profile page can be static, regenerated on change).
+- **Rendering:** server-rendered with form actions.
+- **Data and state:** optimistic saves for low-risk fields; avatar uploads straight to storage, checked on the server; bios sanitised; every write checks ownership on the server.
+- **Anti-patterns:** trusting the browser to say whose profile it is editing.
 
 ---
 
@@ -83,6 +89,12 @@ That the product respects the user's choices and doesn't silently reverse them.
 
 ### Signal it's working
 "Where do I change…?" tickets; settings changes followed by reversal.
+
+### Implementation
+- **Static:** app.
+- **Rendering:** server-rendered; each settings group is its own form with its own errors.
+- **Data and state:** explicit save for consequential settings, autosave with a visible status for trivial toggles; theme with light, dark and system, stored in a cookie when the server needs it; delete account in a `<dialog>` with re-authentication; each group reachable by URL.
+- **Anti-patterns:** one giant form where one error blocks every change.
 
 ---
 
@@ -125,6 +137,12 @@ The "cancel anytime" and "no surprises" halves of the promise. This is the end o
 ### Signal it's working
 Voluntary cancellations completed in-product versus chargebacks and complaints; billing tickets; reactivations later.
 
+### Implementation
+- **Static:** app.
+- **Rendering:** server-rendered.
+- **Data and state:** plan and entitlements come from the billing provider's webhooks, never from the browser; the same plans source as the pricing page; payment methods and invoices through the provider's customer portal when possible; proration previewed by the server.
+- **Anti-patterns:** checking the subscription only in the front end; storing card data.
+
 ---
 
 ## Notifications (preferences and permission requests)
@@ -161,3 +179,9 @@ That interruptions will be useful and controllable; that the product respects at
 
 ### Signal it's working
 Permission acceptance rate; opt-out/revocation rate; notification-to-action rate.
+
+### Implementation
+- **Static:** app.
+- **Rendering:** server-rendered preferences; the in-app inbox updated by server-sent events.
+- **Data and state:** preferences per channel and event stored on the server; ask for push permission only after a user action with context; one-click unsubscribe in emails.
+- **Anti-patterns:** a permission prompt on page load; polling every second.

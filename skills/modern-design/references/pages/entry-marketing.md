@@ -2,13 +2,13 @@
 
 Landing · Home · About us · Pricing · Coming soon / Waitlist
 
-How to read each entry: **The moment** describes the user's mind; **Must prove or protect** links the page to the central promise; **Levers** are mechanisms with the reason they apply (P-IDs → `../principles.md`); **Specifics** are research-backed details with evidence grade [A] experiment/large dataset, [B] company data/documented case, [C] professional consensus; **When the usual advice flips** lists conditions where the default is wrong; **3C weight** rates capture, confidence and conversion from 0 to 3 for that page (3 = critical; Act = activation and continuity, Mem = memory); **Real examples** illustrate a mechanism and are not designs to copy. Use all of it after reasoning, not instead of it.
+How to read each entry: **The moment** describes the user's mind; **Must prove or protect** links the page to the central promise; **Levers** are mechanisms with the reason they apply (P-IDs → `../principles.md`); **Specifics** are research-backed details with evidence grade [A] experiment/large dataset, [B] company data/documented case, [C] professional consensus; **When the usual advice flips** lists conditions where the default is wrong; **3C weight** rates capture, confidence and conversion from 0 to 3 for that page (3 = critical; Act = activation and continuity, Mem = memory); **Real examples** illustrate a mechanism and are not designs to copy. **Implementation** says whether the page can be static, how to render it, where its data and state live, and the anti-patterns (`../implementation.md`). Use all of it after reasoning, not instead of it.
 
 Persuasion dial for this group: high by default. Marketing pages are where explicit persuasion is legitimate, provided it is true.
 
 Group summary: dominant phase capture + confidence; principles that weigh most P01, P07, P11, P04, P08; main risk: vague or false claims.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 ---
 
@@ -55,6 +55,12 @@ Stripe opens with what it is and verifiable numbers; Duolingo, ChatGPT and Shopi
 ### Signal it's working
 Conversion by traffic source (not blended); early-abandonment rate; qualified leads or revenue, not just submits.
 
+### Implementation
+- **Static:** yes.
+- **Rendering:** static. Run A/B variants by serving a prebuilt variant from the edge or server, not with a client script that hides the page.
+- **Data and state:** content as typed section blocks; the lead form posts to an endpoint that works without JavaScript and is the only island.
+- **Anti-patterns:** a landing rendered by a client app; a carousel as the largest first-screen element, with transitions that delay its image; a heavy animation library for scroll effects.
+
 ---
 
 ## Home / Start page
@@ -98,6 +104,12 @@ Stripe (category + numbers), Linear (one sentence + real UI), Vercel (minimalism
 ### Signal it's working
 Click-through to key routes per audience; abandonment in the first 10–30 s; support tickets of the "where is X" kind.
 
+### Implementation
+- **Static:** yes; partial when some modules are personal.
+- **Rendering:** static shell with holes for personal parts (cart count, avatar, "continue where you left off"), each reserving its size. Signed-in users of a product can be redirected to the app on the server.
+- **Data and state:** the same section blocks as the landing page; prefetch or prerender the main categories.
+- **Anti-patterns:** making the whole page dynamic for one avatar; fetching first-screen content in the browser.
+
 ---
 
 ## About us
@@ -134,6 +146,12 @@ That real, accountable people stand behind the promise, and why they care about 
 
 ### Signal it's working
 About-page visitors who continue to contact or sign-up.
+
+### Implementation
+- **Static:** yes.
+- **Rendering:** static.
+- **Data and state:** team members and milestones as a content collection; Organization structured data.
+- **Anti-patterns:** anything dynamic.
 
 ---
 
@@ -180,6 +198,12 @@ Airbnb's switch to total prices by default (2025) shows transparency becoming th
 ### Signal it's working
 Trial/paid conversion, plan mix, refund requests and billing-related tickets falling.
 
+### Implementation
+- **Static:** yes.
+- **Rendering:** static, regenerated when the billing catalogue changes (a webhook from the billing provider).
+- **Data and state:** one plans source shared with checkout, billing and the server's entitlement checks; the monthly/annual toggle as native radios or a tiny island, reflected in the URL; prices formatted with `Intl.NumberFormat`; the comparison as a real `<table>`; plan links carry the plan id and the server re-checks the price.
+- **Anti-patterns:** prices typed into the markup and repeated on several pages; computing the final price in the browser and trusting it at checkout.
+
 ---
 
 ## Coming soon / Waitlist
@@ -216,3 +240,9 @@ That the promise is concrete enough to wait for, and that joining has a clear, h
 
 ### Signal it's working
 Sign-up rate, share of sign-ups from referrals, list-to-active-user conversion at launch.
+
+### Implementation
+- **Static:** partial: static page plus a form endpoint.
+- **Rendering:** static.
+- **Data and state:** the form posts without JavaScript and redirects to a thank-you page; signing up twice gives the same answer; spam protection and a rate limit; double opt-in by email.
+- **Anti-patterns:** a form that only submits with JavaScript; a message that reveals whether an email is already registered.

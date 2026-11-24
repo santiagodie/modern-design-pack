@@ -8,7 +8,7 @@ Persuasion dial for this group: none for errors and maintenance; low to medium f
 
 Group summary: dominant phase confidence + memory; principles that weigh most P17, P28, P29, P27; main risk: dead ends, blaming the user.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 ---
 
@@ -49,6 +49,12 @@ That the site still has what they need, and that it's easy to get back on track.
 ### Signal it's working
 Share of 404 visitors who continue to another page; what they search for from the 404.
 
+### Implementation
+- **Static:** yes.
+- **Rendering:** a static page served with status 404 (frameworks: their not-found helper).
+- **Data and state:** search and popular links; a redirect map (301) for known moved URLs; 404s logged to find broken links; no data dependencies.
+- **Anti-patterns:** a not-found page served with status 200 (a soft 404).
+
 ---
 
 ## Error 500 (server error)
@@ -86,6 +92,12 @@ That their data and money are safe, and what to do now.
 ### Signal it's working
 Retries that succeed; support contacts after errors; duplicate charges.
 
+### Implementation
+- **Static:** yes: a prebuilt static fallback.
+- **Rendering:** static HTML that doesn't depend on the failing app, its data or its layout providers; served with a 5xx status.
+- **Data and state:** a request id for support; a retry action; error boundaries for partial failures inside pages.
+- **Anti-patterns:** stack traces on the page; an error page that needs the broken app to render.
+
 ---
 
 ## Maintenance
@@ -122,6 +134,12 @@ Reliability: that this is planned or under control, and temporary.
 ### Signal it's working
 Support contacts during maintenance; users returning after the stated time.
 
+### Implementation
+- **Static:** yes: served from the CDN or edge.
+- **Rendering:** a static page with status 503 and `Retry-After`.
+- **Data and state:** switched by an edge rule or flag; a link to an external status page; for planned work, prefer a read-only mode to full downtime.
+- **Anti-patterns:** status 200 with "maintenance" text; a maintenance page that loads the app bundle.
+
 ---
 
 ## Empty state
@@ -156,6 +174,12 @@ That the system works and that the next step toward value is obvious. For new us
 
 ### Signal it's working
 Share of users who take the suggested action from the empty state; time to first item created.
+
+### Implementation
+- **Static:** not a page: a state of every list.
+- **Rendering:** part of the component that renders the list.
+- **Data and state:** one empty-state component with variants: first use (explain, primary action, sample data), no results (show active filters and how to clear them), done, error (retry), no permission (request access).
+- **Anti-patterns:** "no data" shown while loading or after a failed request.
 
 ---
 
@@ -193,3 +217,9 @@ That the action succeeded and what happens next — closing one story and, if ap
 
 ### Signal it's working
 Next-step click-through; confirmation-related support contacts; referral share where relevant.
+
+### Implementation
+- **Static:** yes for a generic thank-you; app when it shows an order.
+- **Rendering:** reached by a redirect after the post; not indexed.
+- **Data and state:** safe on reload (no second submission, the conversion counted once); a clear next action; transaction details read from the server, never from query parameters.
+- **Anti-patterns:** re-submitting or re-counting on reload.

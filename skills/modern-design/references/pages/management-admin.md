@@ -8,7 +8,7 @@ Persuasion dial for this group: none. These users are often experts who come bac
 
 Group summary: dominant phase operational confidence; principles that weigh most P10, P07, P17, P12; main risk: density without hierarchy, irreversible errors.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 ---
 
@@ -50,6 +50,12 @@ That nothing important is hidden, and that what's shown is current and trustwort
 ### Signal it's working
 Time from opening to action; recurring use; questions to support about "what does this number mean".
 
+### Implementation
+- **Static:** app.
+- **Rendering:** streamed server rendering; each widget with its own loading and error boundary; charts as islands only where they are interactive.
+- **Data and state:** date range, filters and tab in the URL; numbers aggregated on the server; per-tenant caching; skeletons the size of the final widget; widget visibility follows roles, and the server enforces it.
+- **Anti-patterns:** one failing widget that blanks the page; sending raw rows to the browser to aggregate.
+
 ---
 
 ## Analytics / Reports
@@ -87,6 +93,12 @@ The integrity of the numbers. A misleading chart damages trust in the whole prod
 
 ### Signal it's working
 Reports exported or shared; support questions about definitions; decisions referencing the report.
+
+### Implementation
+- **Static:** app.
+- **Rendering:** streamed server rendering.
+- **Data and state:** pre-aggregated data; large tables paginated or virtualised, with keyboard navigation and sticky headers; exports as background jobs; every chart with a data-table alternative; one shared formatter for numbers and dates.
+- **Anti-patterns:** exports that block the page; charts with no table alternative.
 
 ---
 
@@ -127,6 +139,12 @@ That operators can act fast without causing irreversible damage, and that action
 ### Signal it's working
 Operational errors; time per task; actions reversed shortly after execution.
 
+### Implementation
+- **Static:** app.
+- **Rendering:** its own route group (or subdomain) with stricter policies and shorter sessions; not indexed.
+- **Data and state:** roles enforced on the server for every read and write; an audit log for privileged changes; bulk actions safe to retry, confirmed in a `<dialog>` with progress; list, detail and form generated from one resource definition.
+- **Anti-patterns:** hiding admin buttons as the only protection; admin code shipped in the public bundle.
+
 ---
 
 ## User / Team management
@@ -164,3 +182,9 @@ Control and security of the organisation's data; no surprise charges.
 
 ### Signal it's working
 Invitations sent and accepted; time-to-second-active-user; permission-related incidents.
+
+### Implementation
+- **Static:** app.
+- **Rendering:** server-rendered.
+- **Data and state:** single-use, expiring invitations; a role model that protects the last owner; tenant scoping everywhere; seat counts tied to billing.
+- **Anti-patterns:** roles checked only in the interface.

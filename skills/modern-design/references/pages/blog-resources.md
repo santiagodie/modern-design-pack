@@ -8,7 +8,7 @@ Persuasion dial for this group: medium for blog content, none for documentation.
 
 Group summary: dominant phase capture; principles that weigh most P01, P05, P06, P07; main risk: clickbait, filler.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 ---
 
@@ -45,6 +45,12 @@ That each title is an honest promise the article keeps. Clickbait that doesn't p
 
 ### Signal it's working
 Click-through from the list; full reads; returning readers.
+
+### Implementation
+- **Static:** yes.
+- **Rendering:** static, regenerated when a CMS publishes.
+- **Data and state:** posts as a typed collection; static pagination pages; tag archives and RSS generated at build; the same card system as other listings.
+- **Anti-patterns:** client-side pagination with no URLs.
 
 ---
 
@@ -85,6 +91,12 @@ The title's promise, as early as possible.
 ### Signal it's working
 Scroll depth; time on page relative to length; contextual CTA conversion; search refinements after reading (a sign it didn't answer).
 
+### Implementation
+- **Static:** yes.
+- **Rendering:** static; interactive embeds and comments as islands loaded later.
+- **Data and state:** Article structured data, canonical URL and share image generated at build; a table of contents from stable heading anchors; code highlighted at build time; prerender the next article.
+- **Anti-patterns:** rendering Markdown in the browser; a runtime syntax highlighter.
+
 ---
 
 ## Documentation
@@ -123,3 +135,9 @@ That the product is usable as promised: the shortest path from question to worki
 
 ### Signal it's working
 Searches with no results; time to first successful integration; support tickets that the docs should have answered.
+
+### Implementation
+- **Static:** yes.
+- **Rendering:** static (a docs generator or a hosted docs platform).
+- **Data and state:** versioned content; a static or hosted search index; `llms.txt` and a Markdown version of each page for agents; pages that stand on their own; stable anchors and redirects on renames; API reference generated from types or OpenAPI; last-updated from version control.
+- **Anti-patterns:** renamed pages with no redirect; content that only renders with JavaScript.

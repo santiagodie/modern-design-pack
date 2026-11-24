@@ -49,14 +49,14 @@ playwright-cli close
 
 **Lighthouse.** Its mobile run emulates a phone about 412 px wide, not 375. Report its scores with that width, and keep layout findings at 375 to the screenshots. In own-project mode, run it on a local server and note that caching and compression results reflect the test server, not the site.
 
-When a screenshot shows a blank band where content should be, scroll through once more and recapture. When content stays hidden with reduced motion on, that is a finding (see MO4 in `unslop-checklist.md`).
+When a screenshot shows a blank band where content should be, scroll through once more and recapture. When content stays hidden with reduced motion on, that is a finding (see MO4 in `copy-states-checklist.md`).
 
 ### How to run the scripts
 
-The scripts live in `${CLAUDE_SKILL_DIR}/scripts/`. `playwright-cli` has no option to run a file inside the page: `eval` takes the function itself as its argument (its `--filename` option saves the result to a file), and `run-code --filename` runs Playwright code, not page code. So read the script with the file-reading tool and pass its whole content, header comment included, as the single argument of `playwright-cli --raw eval`. Pass it unchanged, with no shell expansion: the scripts contain quotes, backticks and `${...}`. In bash, a quoted heredoc read into a variable does that; paste the file's content in place of SCRIPT_CONTENT:
+The scripts live in `${CLAUDE_SKILL_DIR}/scripts/`. `playwright-cli` has no option to run a file inside the page: `eval` takes the function itself as its argument (its `--filename` option saves the result to a file), and `run-code --filename` runs Playwright code, not page code. So read the script with the file-reading tool and pass its whole content, header comment included, as the single argument of `playwright-cli --raw eval`. Pass it unchanged, with no shell expansion: the scripts contain quotes, backticks and `${...}`. In bash, a quoted heredoc read into a variable does that; paste the file's content in place of SCRIPT_CONTENT. `read -d ''` returns 1 when it reaches the end of the input even though it worked, which stops a script running with `set -e`, hence `|| true`:
 
 ```bash
-read -r -d '' JS <<'EOF'
+read -r -d '' JS <<'EOF' || true
 SCRIPT_CONTENT
 EOF
 playwright-cli --raw eval "$JS"
@@ -122,7 +122,7 @@ The small-target list includes inline text links, which are fine inside a paragr
 - In URL audits, stay read-only: no clicking through forms, no logins, no accepting purchases. Accepting a cookie banner to see the page is fine; say so in the report.
 - Keep screenshots out of version control unless the user wants them committed.
 - Keep helper scripts you write (capture loops, check scripts) inside the screenshot folder or a temp folder, never loose in the project, and remove them when the user doesn't need them.
-- Stop any local server you started (for example `npx --yes serve@14.2.8`) and close the browser when you finish. Servers left running keep the project folder locked and its port busy.
+- Stop any local server you started (for example `npx --yes serve@14.2.8`) and close the browser when you finish. Servers left running keep the project folder locked and its port busy. After stopping it, check that the port is free (for example `curl -s -o /dev/null --max-time 3 http://localhost:<port>/` fails, or no process is listening on it). When it is still taken, a child process usually survived (`npx` starts `node`, which keeps listening): find the process on that port, check that it is the server you started, and stop it.
 - `playwright-cli` writes a `.playwright-cli/` folder (snapshots, console logs) in the directory it runs from. Run it from the screenshot folder, or delete that folder when you finish.
 
 ## Hand-off

@@ -8,7 +8,7 @@ Persuasion dial for this group: none. The user usually arrives with a problem, o
 
 Group summary: dominant phase confidence; principles that weigh most P17, P04, P10; main risk: no way out to a human.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 ---
 
@@ -48,6 +48,12 @@ That real, accountable people are behind the promise and reachable.
 ### Signal it's working
 Submissions completed; first response within the promised time; repeat contacts about the same issue.
 
+### Implementation
+- **Static:** partial: static page plus a form endpoint.
+- **Rendering:** static.
+- **Data and state:** the form works without JavaScript and redirects to a thank-you page; server validation; spam protection (honeypot, challenge, rate limit); only the personal data needed; an acknowledgement email; route by topic.
+- **Anti-patterns:** a form that only submits with JavaScript; collecting data nobody uses.
+
 ---
 
 ## FAQ / Help centre
@@ -85,6 +91,12 @@ That the answer exists, is current and is written in their words.
 ### Signal it's working
 Ticket deflection; searches without results; "did this help? no" rate per article.
 
+### Implementation
+- **Static:** yes.
+- **Rendering:** static.
+- **Data and state:** native `<details>` and `<summary>` (find-in-page works, no JavaScript); an anchor per question; FAQ entries as a collection reused on pricing and checkout.
+- **Anti-patterns:** an accordion script that hides answers from find-in-page.
+
 ---
 
 ## Support centre / Tickets
@@ -106,7 +118,7 @@ That the problem is being handled, by whom and by when — and that the ending i
 ### Specifics
 - [C] Ticket states in plain language ("We're waiting for your reply", "Fixed — please confirm"), not internal workflow names.
 - [C] Close tickets only after confirming the problem is solved, or after a stated period with clear notice.
-- [B] Order-related questions dominate e-commerce support; Baymard found order tracking is the most important self-service feature (50%), so good tracking pages reduce ticket volume (see `commerce.md`).
+- [B] Order-related questions dominate e-commerce support; Baymard found order tracking is the most important self-service feature (50%), so good tracking pages reduce ticket volume (see `commerce-after-purchase.md`, order history).
 
 ### 🔴 Critical errors
 - Tickets closed automatically without resolution.
@@ -120,3 +132,9 @@ That the problem is being handled, by whom and by when — and that the ending i
 
 ### Signal it's working
 Time to resolution; reopenings; satisfaction at close.
+
+### Implementation
+- **Static:** partial: help articles are static; tickets are app (or a provider's widget).
+- **Rendering:** static articles with search; ticket list and detail server-rendered behind login.
+- **Data and state:** a status timeline; replies threaded by email; attachments uploaded straight to storage; the ticket form suggests relevant articles first.
+- **Anti-patterns:** ticket status worked out in the browser.

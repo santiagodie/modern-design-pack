@@ -8,15 +8,15 @@ Answer "is this real, and do people like me use it?" before the visitor reads th
 
 ## When it applies
 
-Pages that persuade, **when real proof exists**. Proof works best next to the doubt it answers: near the hero (is this legitimate?) and near the action (will I regret this?).
+Pages that persuade. When real proof doesn't exist yet, build the section with placeholders. Proof works best next to the doubt it answers: near the hero (is this legitimate?) and near the action (will I regret this?).
 
 ## Content
 
 **Figures, logos and ratings: show them only when they are real, verifiable and you can say where they come from.** When the project has none:
 
-- leave the proof slot out rather than filling it;
-- or use one specific, attributable proof: a named review with its source, a real count of something (orders, years open, members), a credential;
-- in builds without real data, mark the slot as a placeholder that can't be mistaken for real content.
+- prefer one specific, attributable proof when the user can supply it: a named review with its source, a real count of something (orders, years open, members), a credential;
+- otherwise build the slot with placeholders (`../ethics.md`, section 7): `[RATING]`, `[REVIEW COUNT]`, a lorem ipsum quote with `[CUSTOMER NAME]`, a labelled box for each logo, each inside a `data-placeholder` element with a visible style, and list them in `content-needed.md`;
+- removing the slot is the user's decision, recorded in `content-needed.md` as "discarded".
 
 Never invent counts, logos, ratings or testimonials, even as examples (checklist LA8, CY3). Fake reviews and unauthorised logos are also illegal in the EU and the US.
 

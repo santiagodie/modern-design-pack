@@ -6,10 +6,19 @@ This repository is both a Claude Code marketplace (`santiagodie-plugins`) and th
 
 There are two skills:
 
-- `modern-design`: designing or redesigning. Its five steps load `references/direction.md` (which sends step 1 through `reasoning.md`, then only the `pages/` file of each page type, with `principles.md` and `ethics.md` when needed), `tokens.md`, `sections/` (an index plus one file per page section, with `responsive.md`; `components/` is reserved for reusable pieces in a later batch) and `motion.md` one at a time, plus `resources.md` (curated links) when needed.
-- `design-review`: reviewing UI in two modes. Own project: review with `references/unslop-checklist.md` (plus `mobile-checklist.md`, `outdated-checklist.md`, and `dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content), browser check with `references/visual-qa.md`, then fix. URL audit: read-only, public pages only, three pages at most, report in the format of `references/audit-report.md`.
+- `modern-design`: designing or redesigning. Its five steps load `references/direction.md` (which sends step 1 through `reasoning.md`, then only the `pages/` file of each page type (commerce has two: `commerce-purchase.md` for cart and checkout, `commerce-after-purchase.md` for order confirmation and order history), with `principles.md` and `ethics.md` when needed), `tokens.md`, `sections/` (an index plus one file per page section, with `responsive.md`; `components/` is reserved for reusable pieces in a later batch), `implementation.md` (steps 1 and 3) and `motion.md` one at a time, plus `resources.md` (curated links) when needed. It reads and updates `site-decisions.md` in the user's project at every step, and writes `content-needed.md` when it uses placeholders (templates in `references/templates/`).
+- `design-review`: reviewing UI in two modes. Own project: review with `references/unslop-checklist.md` and `copy-states-checklist.md` (plus `mobile-checklist.md`, `outdated-checklist.md`, and `dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content), browser check with `references/visual-qa.md`, then fix. URL audit: read-only, public pages only, three pages at most, report in the format of `references/audit-report.md`.
 
 Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests. Prefer adding a reference file.
+
+## Rules that shape every skill
+
+- Order of authority, the same order in both `SKILL.md` files, `docs/ARCHITECTURE.md` and every reference header that states it: `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` > `design-brief.md` > `reasoning.md` > the other references. Change it everywhere at once or not at all.
+- In `SKILL.md` files, name the skill's own files by their path relative to the `SKILL.md` (`references/ethics.md`), and use `${CLAUDE_SKILL_DIR}` only in bash commands that need the real path. Name the user's project files in prose with their exact name and no path or extension ("a Markdown file named design-brief in the project root"); for files with a template, say "copy `references/templates/<file>` to the project root and fill it". Never point a `SKILL.md` at a repository document such as the roadmap. The skill scanner reports any other file reference as missing. Exception: `design-review`'s paths into the other skill (`${CLAUDE_SKILL_DIR}/../modern-design/...`) stay as they are, because they resolve at run time and point outside the scanned folder.
+- No invention: no skill content may tell the model to invent or assume prices, figures, business texts, reviews, hours, addresses, legal details or photos. Missing content is a marked placeholder (`ethics.md` §7).
+- The project file for the user's decisions is `site-decisions.md`; never `design.md`.
+- MUST in `implementation.md` is only for security, accessibility and legal rules, and for the truth rule in `ethics.md`. Date framework facts and mark unverified ones "verify before citing".
+- Keep every file in `skills/` under about 300 lines (see "Skill scanner" below). Split by rule family or journey moment without changing IDs.
 
 ## Third-party material
 
@@ -29,5 +38,16 @@ Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badl
 ## Checks and releases
 
 - Run `claude plugin validate .` after every change.
-- Bump the version in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` together, and add a `CHANGELOG.md` entry.
+- Add every change to the "Unreleased" section of `CHANGELOG.md`. Bump the version only when publishing a release, in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` together; until then it stays at 0.1.0.
 - Line endings are LF (see `.gitattributes`).
+
+## Skill scanner (SkillEvaluator / SkillSpector)
+
+The CI workflow runs NVIDIA's SkillEvaluator, whose security stage is SkillSpector. What we learned fixing its reports:
+
+- When it reports `static_parse_limit` or `obfuscated_instruction_text` with no line, first split the affected file by rule family or journey moment. Look for a specific phrase only if the split doesn't fix it. Both times it happened (the review checklist and `pages/commerce.md`), the cause was the combination of content in one file, not a single phrase.
+- `reference_missing` doesn't block the scan on its own. Still, name the user's project files in prose and the skill's own files with a path relative to the `SKILL.md` (`references/...`), as the rule above says.
+- Executable code blocks go in `scripts/`, not in the Markdown.
+- Rephrase words that sound like suppressing warnings ("without warning"), even when they mean something else.
+- To locate a failure without a local scanner, use a throwaway branch with temporary `zz-bisect-*` skills (one change each, plus a control with none and one with all) and a draft PR. Never merge it.
+- Keep every file in `skills/` under about 300 lines.

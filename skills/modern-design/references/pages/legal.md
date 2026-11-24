@@ -8,7 +8,7 @@ Persuasion dial for this group: none. Not legal advice: these entries cover how 
 
 Group summary: dominant phase confidence; principles that weigh most P01, P12, P18, P23; main risk: opacity, forced consent.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
 The moment is similar on all three pages: most visitors skim or never come; the few who do are checking something specific ("can I cancel?", "do they sell my data?", "how do I refuse tracking?") and are often already suspicious. Clarity here is itself a trust signal.
 
@@ -47,6 +47,12 @@ That nothing important to the user is hidden here that wasn't said elsewhere.
 ### Signal it's working
 Support questions about terms; disputes caused by misunderstood terms.
 
+### Implementation
+- **Static:** yes.
+- **Rendering:** static.
+- **Data and state:** versioned documents with an effective date and an archive of earlier versions; stable section anchors; the accepted version recorded per user (app); print-friendly styles.
+- **Anti-patterns:** editing the live terms in place with no record of earlier versions.
+
 ---
 
 ## Privacy policy
@@ -82,6 +88,12 @@ That their data is handled as they'd expect, and that their rights are easy to e
 
 ### Signal it's working
 Privacy-related tickets; rights requests completed within legal timeframes.
+
+### Implementation
+- **Static:** yes.
+- **Rendering:** static.
+- **Data and state:** versioned like the terms; the list of processors and cookies generated from the same source as the consent manager.
+- **Anti-patterns:** a policy that lists different cookies from the ones the site sets.
 
 ---
 
@@ -119,3 +131,9 @@ That choosing privacy is as easy as accepting tracking, and that the choice is r
 
 ### Signal it's working
 Consent choice distribution (an unusually high acceptance rate can indicate a manipulative design); complaints; layout shift caused by the banner.
+
+### Implementation
+- **Static:** yes for the policy; the banner is an island.
+- **Rendering:** static policy page; the banner as a small island.
+- **Data and state:** one registry of cookies and trackers that generates the policy table and drives the consent manager; no non-essential tags before consent (with Google tags, set consent to denied by default first); the banner never the largest first-screen element and never shifting layout; an accessible dialog with equal-weight accept and reject; consent re-openable from the footer and stored with its version.
+- **Anti-patterns:** loading analytics and then asking; a banner injected late that shifts the page.
