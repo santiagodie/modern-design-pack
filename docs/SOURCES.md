@@ -57,6 +57,7 @@ Column guide:
 | 20 ways to unslop your AI website designs | TO VERIFY (Instagram post URL) | @millee.md | social post | None stated (all rights reserved by default) | design-review (unslop-checklist) | summarise | Ideas only, rewritten in our own words and credited. No wording reused. |
 | 20 señales de web hecha con IA | TO VERIFY | Unknown (TO IDENTIFY) | social post | Unknown | design-review (unslop-checklist) | summarise | Screenshot, author not identified. Ideas only, rewritten; credited as unidentified. Never quote. |
 | 20 UI tips to send to Claude for better design | TO VERIFY | Unknown (TO IDENTIFY) | social post | Unknown | design-review (unslop-checklist) | summarise | Screenshot, author not identified. Ideas only, rewritten; credited as unidentified. Never quote. |
+| AI slop indicators (Instagram) | TO VERIFY | Unknown (TO IDENTIFY) | social post | Unknown | design-review (unslop-checklist, copy-states-checklist) | summarise | Screenshot from Instagram, author not identified. Used on 2026-11-24 for TY11, CO9, CP7–CP9 and CY6–CY8, and to widen TY2 and CO6. Ideas only, rewritten; credited as unidentified. Never quote. |
 | Laws of UX | https://lawsofux.com | Jon Yablonski (as credited in the card; not confirmed on the fetched page) | article | None stated (all rights reserved by default) | design-review (unslop-checklist), modern-design (motion) | summarise | Law names are long-established general concepts. Only the names and one-line ideas are used, linked. Seen via @uxdannydesigns. |
 | Playwright agent CLI | https://playwright.dev/agent-cli | Microsoft | tool | TO VERIFY | design-review (visual-qa) | link only | Browser automation for screenshots. |
 
@@ -198,6 +199,13 @@ Law of Similarity, Peak-End Rule, Miller's Law, Tesler's Law
 12 Predictive back · 13 Hit slop · 14 Safe area insets · 15 One-time code autofill ·
 16 Tabular numbers · 17 Balanced headlines · 18 Continuous corners ·
 19 Idempotency keys · 20 Amazon safe triangle
+
+### "AI slop indicators" (Instagram screenshot, author unknown — TO IDENTIFY)
+arrows on every button · little dots between words · overusing eyebrows · cream backgrounds ·
+one italic word in the headline · sparkle icons · everything in a card · the word "quiet" ·
+numbered sections · pulsing green dots · blurry glows behind the hero · Instrument Serif ·
+colored left borders · three icon cards in a row · pills above the headline · the word "real" ·
+made-up stats · two-word sentences · sections fading on scroll · dithering
 
 ### Motion durations (source TO IDENTIFY)
 Press 0.16s, reveal 0.7s, full scene 1.2s.

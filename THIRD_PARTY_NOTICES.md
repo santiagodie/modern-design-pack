@@ -31,7 +31,7 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 - **URL:** https://github.com/heydamir/unslop
 - **Author / copyright holder:** Damir Sokolovsky (@heydamir)
 - **License:** Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/
-- **Used in:** `skills/design-review/references/unslop-checklist.md`
+- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`
 - **What was used:** ideas for detecting generic AI-made UI patterns (gradients and glows, emoji icons, nested radii, filler visuals, decorative loops, copy tells, the template test).
 - **Changes:** rewritten in our own words, merged with other sources, reorganised by category, and given context exceptions and report severities. Not endorsed by the original author.
 
@@ -40,7 +40,7 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 - **URL:** https://github.com/pbakaus/impeccable (https://impeccable.style)
 - **Author / copyright holder:** Paul Bakaus
 - **License:** Apache License 2.0, https://www.apache.org/licenses/LICENSE-2.0
-- **Used in:** `skills/design-review/references/unslop-checklist.md`
+- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`
 - **What was used:** ideas on anti-patterns (identical card grids, eyebrow labels, numbered sections, side accent bars, monospace as decoration, glass as decoration, ghost cards, icon tiles, cream defaults, formula copy) and quality checks (contrast floors, tracking, measure, states, heading outline). Some ideas come from the catalogue at https://impeccable.style/slop, whose site text has no stated licence; only the ideas were summarised.
 - **Changes:** rewritten in our own words, merged with other sources, and turned from bans into context-dependent rules. Impeccable's automated checks were not replicated.
 
@@ -49,7 +49,7 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 - **URL:** https://github.com/Leonxlnx/taste-skill (https://tasteskill.dev)
 - **Author / copyright holder:** Leon Lin and blueemi (Copyright (c) 2026 Leonxlnx)
 - **License:** MIT, https://opensource.org/license/mit
-- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/modern-design/references/direction.md`
+- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`, `skills/modern-design/references/direction.md`
 - **What was used:** ideas on showing the real product, effects that don't fit the business, scroll-triggered card animations and mobile checks (checklist); writing down the real material before building, marking assumed facts, deciding structure by kind of business, and planning one line per section (direction).
 - **Changes:** rewritten in our own words and merged with other sources. Its seeded per-kind palette selection and fixed section lists were not used.
 
@@ -58,7 +58,7 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 - **URL:** https://github.com/vercel-labs/web-interface-guidelines (https://vercel.com/design/guidelines)
 - **Author / copyright holder:** Vercel
 - **License:** MIT, https://opensource.org/license/mit
-- **Used in:** `skills/design-review/references/visual-qa.md`, `skills/design-review/references/unslop-checklist.md`
+- **Used in:** `skills/design-review/references/visual-qa.md`, `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`
 - **What was used:** guidance on tap target sizes, focus states, text wrapping, layout shift, loading timing, reduced motion, safe areas and mobile input sizes.
 - **Changes:** rewritten in our own words and mapped to checks at 375, 768 and 1440 px. The Vercel-specific section was not used.
 
@@ -73,7 +73,7 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 
 ### Ideas without a stated licence
 
-Ideas from these sources were used in rewritten form only, with credit and no reuse of their wording: Instagram posts by @charles.unemployed and @millee.md, two shared screenshots whose authors are not yet identified, the names of laws from Laws of UX (https://lawsofux.com) by Jon Yablonski, and the legacy-to-modern direction of Chrome's Modern Web Guidance (https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers, used for the "Outdated, measurable" section in `outdated-checklist.md` (the detection script is our own). `direction.md` also uses rewritten ideas from Figma's articles "What is web design" and "Tendencias de diseño web" (content before visuals, mobile first, performance as a design input, choosing from audience and brand values), and follows Impeccable's convention of `PRODUCT.md` and `DESIGN.md` files without reproducing their format. See `docs/SOURCES.md`.
+Ideas from these sources were used in rewritten form only, with credit and no reuse of their wording: Instagram posts by @charles.unemployed and @millee.md, three shared screenshots whose authors are not yet identified (the third is a list of AI slop indicators, used in `unslop-checklist.md` and `copy-states-checklist.md`), the names of laws from Laws of UX (https://lawsofux.com) by Jon Yablonski, and the legacy-to-modern direction of Chrome's Modern Web Guidance (https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers, used for the "Outdated, measurable" section in `outdated-checklist.md` (the detection script is our own). `direction.md` also uses rewritten ideas from Figma's articles "What is web design" and "Tendencias de diseño web" (content before visuals, mobile first, performance as a design input, choosing from audience and brand values), and follows Impeccable's convention of `PRODUCT.md` and `DESIGN.md` files without reproducing their format. See `docs/SOURCES.md`.
 
 ## Entry template
 

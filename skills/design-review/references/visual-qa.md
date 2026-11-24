@@ -49,7 +49,7 @@ playwright-cli close
 
 **Lighthouse.** Its mobile run emulates a phone about 412 px wide, not 375. Report its scores with that width, and keep layout findings at 375 to the screenshots. In own-project mode, run it on a local server and note that caching and compression results reflect the test server, not the site.
 
-When a screenshot shows a blank band where content should be, scroll through once more and recapture. When content stays hidden with reduced motion on, that is a finding (see MO4 in `unslop-checklist.md`).
+When a screenshot shows a blank band where content should be, scroll through once more and recapture. When content stays hidden with reduced motion on, that is a finding (see MO4 in `copy-states-checklist.md`).
 
 ### How to run the scripts
 

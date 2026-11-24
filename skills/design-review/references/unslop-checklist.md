@@ -1,6 +1,6 @@
 # Unslop checklist
 
-Reference for `design-review`, used in both modes during the review step. Load it when reviewing; you don't need it while taking screenshots.
+Reference for `design-review`, used in both modes during the review step. Load it when reviewing; you don't need it while taking screenshots. It holds the shared rules and the Typography (TY), Color (CO), Layout (LA) and Components (CP) families; `copy-states-checklist.md` holds Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME). Load both.
 
 Three more checklists use the same rules for severity, evidence and reporting (below): `mobile-checklist.md` (MN1–MN5), `outdated-checklist.md` (OM1–OM12) and `dark-patterns-checklist.md` (DP1–DP10, loaded when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content).
 
@@ -33,7 +33,7 @@ Before reporting, rule out artefacts of the audit setup:
 ### TY2. A serif headline with one italic word
 - **Look for:** a display serif (Instrument Serif is the usual one) with a single word in italic or a different color for emphasis.
 - **Reads as generic because:** it became the signature move of AI-generated landings in 2025–26.
-- **Fine when:** the brand is editorial and the italic word carries meaning the reader would otherwise miss.
+- **Fine when:** the brand is editorial and the italic word carries meaning the reader would otherwise miss, or the brief chooses it and says why.
 - **Fix:** set the headline in one style. Get emphasis from the words themselves or from size.
 - **Report as:** outdated.
 
@@ -89,6 +89,14 @@ Before reporting, rule out artefacts of the audit setup:
 - **Fix:** set `font-variant-numeric: tabular-nums` on numbers that change or line up.
 - **Report as:** tip.
 
+### TY11. The display face of the season
+- **Look for:** Instrument Serif, or another face that generated pages currently share, set for headlines with no link to the brand.
+- **Reads as generic because:** generators converge on a handful of display faces at a time, so the face alone now signals a generated page.
+- **Fine when:** the brief picks the face and states why it fits this brand, for example because it is already the brand's face.
+- **Fix:** choose the display face from the brand's tone and world when the brief gives no reason for the current one, and write the reason in the brief.
+- **How to check:** read the computed `font-family` of `h1` and `h2`, or the `@font-face` and font links in the CSS.
+- **Report as:** outdated (`measured` for the face; whether it fits the brand is `judgment`).
+
 ## Color
 
 ### CO1. The purple-to-blue gradient brand
@@ -125,9 +133,10 @@ Before reporting, rule out artefacts of the audit setup:
 
 ### CO6. Colored card borders and side accent bars
 - **Look for:** cards with colored borders, or a colored bar down one side of a rounded box.
-- **Fine when:** the color carries status (error, warning, success) and is used consistently.
+- **Fine when:** the color carries status (error, warning, success) and is used consistently, or the box is a notice, a note or a quotation, where a side bar is the convention.
 - **Fix:** use a neutral border, a subtle tint, or a leading icon or label.
-- **Report as:** outdated.
+- **How to check:** a box with a `border-left` (or `border-inline-start`) in a non-neutral color, in the CSS or the computed style. Whether the box is a notice is `judgment`.
+- **Report as:** outdated (`measured`).
 
 ### CO7. Glassmorphism as decoration
 - **Look for:** frosted, blurred, translucent panels over plain or gradient backgrounds.
@@ -141,6 +150,14 @@ Before reporting, rule out artefacts of the audit setup:
 - **Fine when:** the product is warm, crafted or food-related (a bakery, a ceramics studio) and the palette comes from the brand.
 - **Fix:** derive the background from the brand and the use scene, not from a default.
 - **Report as:** outdated.
+
+### CO9. A blurred glow behind the hero
+- **Look for:** a large colored shape or radial gradient, blurred, sitting behind the hero headline or the product image.
+- **Reads as generic because:** it is the default "premium" backdrop of generated landings and says nothing about the product.
+- **Fine when:** the brief chooses it as part of the brand's visual language and says why, or the light is part of a real product photograph.
+- **Fix:** remove it and let the product, a photograph or a flat surface carry the hero.
+- **How to check:** inside the hero, a decorative element (absolutely positioned, behind the content, often `aria-hidden`) with `filter: blur()` at a large radius, or a blurred `radial-gradient` layer. CO3 covers glows on elements and CP4 blobs as decoration: flag the pattern once.
+- **Report as:** outdated (`measured`).
 
 ## Layout and spacing
 
@@ -241,132 +258,26 @@ Before reporting, rule out artefacts of the audit setup:
 - **Fix:** add a hover safe area (the "safe triangle") or a short close delay.
 - **Report as:** tip.
 
-## Copy
-
-### CY1. Headlines that fit any product
-- **Look for:** "Supercharge your workflow", "The future of X", "Build faster": headlines that pass the template test.
-- **Fix:** say what it is, who it's for and one concrete proof, using facts from the page.
-- **Report as:** minor.
-
-### CY2. Redundant labels and text
-- **Look for:** a label that repeats the heading, "Features" above the features, a subtitle that restates the title.
-- **Fix:** cut the repeat.
-- **Report as:** tip.
-
-### CY3. Placeholders and unverifiable claims
-- **Look for:** lorem ipsum, "[Company]", round fake numbers, "Trusted by thousands" with no names, testimonials with no person behind them.
-- **Fine when:** the brief asks for placeholders because the real facts don't exist yet, each one is visibly marked as a placeholder on the page (brackets, a label such as "example times"), and the review notes list them under "Before publishing". Marks that exist only in HTML comments don't count.
-- **Fix:** replace with real content or remove. In own-project mode, ask the user for the real facts, or mark the placeholder visibly when the brief allows placeholders.
-- **Report as:** **critical** when invented content is presented as real (a made-up review, address, figure or schedule that a visitor would believe), or when a placeholder is visible but not marked as one; minor for vague claims. Placeholders that the brief requires and that are visibly marked are not findings: list them under "Before publishing".
-
-### CY4. Hype tone
-- **Look for:** exclamation marks, "revolutionary", "seamless", "AI-powered" on every line.
-- **Fix:** use plain, specific statements.
-- **Report as:** minor.
-
-### CY5. Formula phrasing
-- **Look for:** "Not X. Y." contrasts ("Not a tool. A platform."), em dashes in every sentence, triplets of adjectives, the same sentence shape in every section.
-- **Fix:** vary the sentences and say the thing directly.
-- **Report as:** minor.
-
-## States and feedback
-
-### SF1. No loading state
-- **Look for:** blank areas while data loads, spinners with no delay that flicker, content that jumps in.
-- **Fix:** use skeletons that mirror the final layout. Show a spinner only after about 150–300 ms, and keep it visible long enough not to flicker.
-- **Report as:** minor; **critical** when the page stays blank for long.
-
-### SF2. No empty or error state
-- **Look for:** an empty list with no message, a form error with no explanation, a dead end with no next step.
-- **Fix:** design the empty, sparse and error states. Errors say what went wrong and how to recover.
-- **Report as:** minor.
-
-### SF3. Silent actions
-- **Look for:** buttons that give no feedback, destructive actions with no undo, a confirm dialog where an undo toast would do.
-- **Fix:** give immediate feedback, use optimistic updates when the action rarely fails, and offer undo instead of a confirmation dialog when the action can be reversed.
-- **Report as:** tip.
-
-### SF4. Small touch targets
-- **Look for:** links, icons or buttons smaller than about 44 × 44 px at 375 px wide, or tightly packed together (Fitts's law: small, distant targets are slower to hit).
-- **Fix:** enlarge the hit area with padding even when the visual stays small.
-- **Report as:** minor; **critical** when the main navigation or call to action is hard to tap.
-
-### SF5. Missing focus states
-- **Look for:** `outline: none` with no replacement; tabbing through the page shows no visible focus.
-- **Fix:** add a visible `:focus-visible` style that matches the palette.
-- **Report as:** **critical** (`measured`) when keyboard users can't see where they are.
-
-### SF6. Layout shift from media
-- **Look for:** images or embeds without dimensions that push content down as they load.
-- **Fix:** set width and height or aspect-ratio, and use a placeholder (blurred preview or flat color).
-- **Report as:** minor.
-
-### SF7. Mobile form friction
-- **Look for:** inputs under 16 px that make iOS zoom on focus, missing `autocomplete` or `inputmode`, one-time-code fields that don't autofill.
-- **Fix:** use 16 px inputs, the right `type`, `inputmode` and `autocomplete` (including `one-time-code`).
-- **Report as:** tip.
-
-### SF8. Fixed bars over the notch or content
-- **Look for:** sticky headers or bottom bars covering content, the notch or the home indicator, or covering the focused element.
-- **Fix:** respect safe-area insets and add `scroll-margin-top` to anchored headings.
-- **Report as:** minor.
-
-### SF9. Broken on load
-- **Look for:** images that don't load, content stuck invisible because a reveal script failed, errors in the browser console on load.
-- **Fix:** fix the source, and make reveal effects start from visible content so a failed script doesn't hide anything.
-- **Report as:** **critical** when content or the main image is missing (`measured`).
-
-## Motion
-
-### MO1. Fade-in on every section
-- **Look for:** each section fading or sliding in on scroll.
-- **Reads as generic because:** it is the default "make it feel premium" move, and it delays content on every scroll.
-- **Fine when:** there is one authored entrance (the hero), or a reveal that explains something.
-- **Fix:** remove the scroll reveals. Keep motion for state changes and one entrance at most.
+### CP7. An arrow on every button
+- **Look for:** an arrow or chevron after the label of every button and link, including actions that don't move the user anywhere.
+- **Reads as generic because:** the arrow is added by default, and when every action has one it no longer tells which one moves the user forward.
+- **Fine when:** the arrow means something: the primary action that leads to the next step, a "next" control in a sequence, or a link that leaves the site (with an external-link icon).
+- **Fix:** keep the arrow where moving forward is the point of the action, and remove it from the rest.
 - **Report as:** outdated.
 
-### MO2. Decorative loops and hover gimmicks
-- **Look for:** pulsing, shimmering or pinging elements that aren't live (status dots, blinking cursors), auto-scrolling logo marquees, cards that scale or tilt on hover, bounce or elastic easing on UI controls.
-- **Fix:** keep loops for genuinely live states, and use a subtle color or shadow change on hover.
-- **Report as:** minor.
+### CP8. Sparkle icons
+- **Look for:** the four-pointed sparkle (as an emoji or an icon) marking AI features, buttons, headings or list items. CP1 covers sparkles inside a pill above the headline; this rule covers the icon anywhere else.
+- **Reads as generic because:** it became the universal "AI" mark, so it says nothing about what the feature does.
+- **Fine when:** the product's own brand uses it, or the app's users already know it as the mark of one specific action.
+- **Fix:** name what the feature does in words, and use an icon that shows that action.
+- **Report as:** outdated.
 
-### MO3. Slow or linear UI feedback
-- **Look for:** hover, press or toggle transitions over about 300 ms, or linear easing on UI motion. The more often an element is used, the faster and quieter its motion should be.
-- **Fix:** keep UI feedback under about 300 ms with ease-out curves, and save longer durations for rare, one-off moments.
-- **Report as:** minor (`measured` when read from CSS).
-
-### MO4. Motion that ignores the user
-- **Look for:** no `prefers-reduced-motion` handling; content that stays hidden when motion is reduced; autoplay or carousels running longer than 5 s with no pause.
-- **Fix:** honor reduced motion by replacing movement with a simple fade or nothing, never hiding content, and add pause controls.
-- **Report as:** minor; **critical** when content is hidden under reduced motion.
-
-### MO5. Hard cuts between states
-- **Look for:** modals and panels that appear from nowhere, navigation that jumps with no sense of where things went.
-- **Fine when:** the change is frequent and speed matters more than orientation.
-- **Fix:** carry the user between states: the card grows into the page, back reverses the move. View transitions help here.
-- **Report as:** tip.
-
-## Meta
-
-### ME1. Default favicon and missing meta
-- **Look for:** the framework's default favicon, a missing or generic `<title>`, no meta description, no Open Graph image.
-- **Fix:** add a custom favicon, a specific title and description, and a share image.
-- **Report as:** minor; **critical** when there is no `<title>` or no viewport meta.
-
-### ME2. Zoom disabled
-- **Look for:** `user-scalable=no` or `maximum-scale=1` in the viewport meta.
-- **Fix:** remove them.
-- **Report as:** **critical** (`measured`).
-
-### ME3. Missing language attribute
-- **Look for:** `<html>` with no `lang`, or the wrong one.
-- **Fix:** set `lang` to the page language.
-- **Report as:** minor (`measured`).
-
-### ME4. Skipped heading levels
-- **Look for:** headings that jump levels (h1 to h3), several h1s, or headings chosen for their size rather than their place in the outline.
-- **Fix:** keep one h1 and a continuous outline, and style headings by class when the size has to differ.
-- **Report as:** minor (`measured`).
+### CP9. Dithering as texture
+- **Look for:** dithered images, gradients or backgrounds (dot or pixel patterns from 1-bit or retro shaders) used as decoration.
+- **Reads as generic because:** it is a passing fashion borrowed from other brands rather than chosen for this one.
+- **Fine when:** the brief chooses it and says why, for example for a print, retro or image-processing product.
+- **Fix:** remove it when the brief gives no reason, or tie it to the brand's world and write the reason in the brief.
+- **Report as:** outdated.
 
 ## Considered and left out
 
@@ -380,7 +291,7 @@ This checklist is written in our own words. It draws on ideas from:
 - [Impeccable](https://github.com/pbakaus/impeccable) by Paul Bakaus, Apache-2.0, including ideas summarised from its [slop catalogue](https://impeccable.style/slop). Impeccable runs 60+ automated checks; this checklist doesn't reproduce them. Use Impeccable alongside this plugin for that depth.
 - [Taste Skill](https://github.com/Leonxlnx/taste-skill) by Leon Lin and blueemi, MIT.
 - [Web Interface Guidelines](https://github.com/vercel-labs/web-interface-guidelines) by Vercel, MIT.
-- Instagram lists by @charles.unemployed ("20 Tips to Unslop AI Designs") and @millee.md ("20 ways to unslop your AI website designs"), and two shared screenshots whose authors are not yet identified. Ideas only.
+- Instagram lists by @charles.unemployed ("20 Tips to Unslop AI Designs") and @millee.md ("20 ways to unslop your AI website designs"), and three shared screenshots whose authors are not yet identified (the third, a list of AI slop indicators, adds TY11, CO9, CP7–CP9 and CY6–CY8). Ideas only.
 - [Laws of UX](https://lawsofux.com) by Jon Yablonski, for the names of Fitts's and Hick's laws.
 
 Full source list with licences: [docs/SOURCES.md](https://github.com/santiagodie/modern-design-pack/blob/main/docs/SOURCES.md). Licence notices: [THIRD_PARTY_NOTICES.md](https://github.com/santiagodie/modern-design-pack/blob/main/THIRD_PARTY_NOTICES.md).
