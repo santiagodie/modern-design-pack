@@ -17,7 +17,7 @@ Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badl
 - In `SKILL.md` files, name the skill's own files by their path relative to the `SKILL.md` (`references/ethics.md`), and use `${CLAUDE_SKILL_DIR}` only in bash commands that need the real path. Name the user's project files in prose with their exact name and no path or extension ("a Markdown file named design-brief in the project root"); for files with a template, say "copy `references/templates/<file>` to the project root and fill it". Never point a `SKILL.md` at a repository document such as the roadmap. The skill scanner reports any other file reference as missing. Exception: `design-review`'s paths into the other skill (`${CLAUDE_SKILL_DIR}/../modern-design/...`) stay as they are, because they resolve at run time and point outside the scanned folder.
 - No invention: no skill content may tell the model to invent or assume prices, figures, business texts, reviews, hours, addresses, legal details or photos. Missing content is a marked placeholder (`ethics.md` §7).
 - The project file for the user's decisions is `site-decisions.md`; never `design.md`.
-- MUST in `implementation.md` is only for security, accessibility and legal rules. Date framework facts and mark unverified ones "verify before citing".
+- MUST in `implementation.md` is only for security, accessibility and legal rules, and for the truth rule in `ethics.md`. Date framework facts and mark unverified ones "verify before citing".
 - Keep every file in `skills/` under about 400 lines (the CI scanner fails on large files). Split by rule family without changing IDs.
 
 ## Third-party material

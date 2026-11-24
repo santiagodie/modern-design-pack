@@ -4,7 +4,7 @@ Reference for `modern-design`. Load it in step 1 when the brief has to choose a 
 
 > **Order of authority:** `ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
 
-**How strong each rule is.** MUST is used only for security, accessibility and legal requirements. Everything else is SHOULD: the default, which you may leave when the project has a reason; write the reason in the brief or, when the user decided it, in `site-decisions.md`.
+**How strong each rule is.** MUST is used only for security, accessibility and legal requirements, and for the truth rule in `ethics.md` (never show something as done or true when it may not be). Everything else is SHOULD: the default, which you may leave when the project has a reason; write the reason in the brief or, when the user decided it, in `site-decisions.md`.
 
 **Dates.** Framework facts are as of November 2026 and age fast. Facts marked "verify before citing" were not checked against the framework's own release notes; check them before you quote them to the user or base a decision on them.
 
@@ -84,7 +84,8 @@ Classify every piece of state before writing it, and keep each kind in its own p
 - MUST: never put secrets or personal data in URLs.
 - MUST: keep sessions in HttpOnly, Secure, SameSite cookies.
 - SHOULD: build changes as real forms that work before JavaScript loads, then add pending and optimistic states on top.
-- SHOULD: use optimistic updates only for small, reversible, frequent actions (add to cart, like, rename). For payments, deletions and anything irreversible, show a pending state and wait for the server; telling someone an order went through before it did is a false statement (`ethics.md`, section 1).
+- SHOULD: use optimistic UI (showing the result before the server confirms it) only for small, reversible, frequent actions (add to cart, like, rename).
+- MUST: never use optimistic UI for actions that are irreversible or move money, such as paying, deleting an account or sending an invoice: show an explicit pending state and wait for the server's confirmation. Showing "order placed" before the server confirms it can be false, which breaks the truth rule in [`ethics.md`, section 1](ethics.md#1-decision-rule-legitimate-persuasion-vs-dark-pattern).
 - SHOULD: give every route its own loading, error and not-found states, and give each dashboard widget its own error boundary, so one failure doesn't blank the page. Every list has loading, first-use empty, no-results, error and partial states (`pages/states-system.md`, Empty state).
 
 ## 4. Reuse layers
@@ -136,7 +137,7 @@ Target WCAG 2.2 AA. Under the European Accessibility Act, B2C commerce in the EU
 - MUST: use semantic elements for what they are: buttons, links, forms with labels, tables for tabular data, landmarks, one continuous heading outline.
 - MUST: manage focus when the view changes, keep a visible focus indicator with at least 3:1 contrast, and make background content inert behind a modal.
 - MUST: honour `prefers-reduced-motion` for every kind of motion, without hiding content.
-- MUST: give form fields persistent labels (never placeholder text as the label), link hints and errors to their field, and summarise errors on submit.
+- MUST: build forms as [`sections/forms.md`](sections/forms.md#accessibility) says: persistent labels, errors linked to their field, an error summary on submit, and the right `autocomplete` and `inputmode` (its "Accessibility" section and keyboard row). Two points it doesn't spell out: put format hints above the field, linked with `aria-describedby`, where the on-screen keyboard and autofill can't cover them; and keep `aria-invalid` in sync with the error on screen, set and cleared together.
 - MUST: keep text contrast at 4.5:1 (3:1 for large text) and touch targets at least 24 × 24 px (44 px on touch-first layouts).
 - SHOULD: announce results that arrive later (search counts, saved states, new messages) in a live region.
 
@@ -154,7 +155,7 @@ This plugin does not review security. A site with a backend needs, at least, all
 - one server-side data access layer that authenticates and authorises every read and write, instead of relying on route guards or middleware;
 - a strict Content Security Policy and the other security headers;
 - server-side validation, rate limits and bot protection on every endpoint;
-- idempotent side effects and webhooks, so a retry never charges or sends twice;
+- an idempotency key for each payment attempt, so a retry never charges twice, and webhooks that tolerate duplicate and concurrent deliveries; the payment provider's documentation says how to do both;
 - prompt patching of framework and server-rendering dependencies;
 - for collaborative or offline products, a sync engine or CRDTs, which are architecture decisions in their own right.
 

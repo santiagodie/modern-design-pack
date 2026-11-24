@@ -107,6 +107,7 @@ Checkout completion rate, errors per field, payment-decline recovery rate, suppo
 - **Rendering:** rendered on the server and never cached, in its own layout with few external scripts; card details go into the payment provider's own fields or page.
 - **Data and state:** guest checkout first; few fields, each with the right autofill and keyboard settings; one column; a retried payment attempt never charges twice, and the pay button can't be sent twice; the server checks totals and stock.
 - **Anti-patterns:** showing the order as complete before the server confirms it; building card fields by hand; loading the checkout page in advance; tracking scripts on the payment step.
+- **Terms:** autocomplete and inputmode in [`../implementation.md`, section 7](../implementation.md#7-accessibility) and [`../sections/forms.md`](../sections/forms.md#accessibility); optimistic UI in [`../implementation.md`, section 3](../implementation.md#3-apps-kinds-of-state); idempotency key and webhooks in [`../implementation.md`, section 9](../implementation.md#9-boundaries).
 
 ---
 
