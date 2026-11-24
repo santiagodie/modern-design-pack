@@ -15,7 +15,7 @@ Pages that persuade. When real proof doesn't exist yet, build the section with p
 **Figures, logos and ratings: show them only when they are real, verifiable and you can say where they come from.** When the project has none:
 
 - prefer one specific, attributable proof when the user can supply it: a named review with its source, a real count of something (orders, years open, members), a credential;
-- otherwise build the slot with placeholders (`../ethics.md`, section 7): `[RATING]`, `[REVIEW COUNT]`, a lorem ipsum quote with `[CUSTOMER NAME]`, a labelled box for each logo, each inside a `data-placeholder` element with a visible style, and list them in `content-needed.md`;
+- otherwise build the slot with placeholders (`../ethics.md`, section 7): `[RATING]`, `[REVIEW COUNT]`, a lorem ipsum quote with `[CUSTOMER NAME]`, a labelled box for each logo, each inside a `data-placeholder` element with a visible style (the dashed outline for the data and logos, the lighter running-text mark for the quote), and list them in `content-needed.md`;
 - removing the slot is the user's decision, recorded in `content-needed.md` as "discarded".
 
 Never invent counts, logos, ratings or testimonials, even as examples (checklist LA8, CY3). Fake reviews and unauthorised logos are also illegal in the EU and the US.
