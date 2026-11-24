@@ -64,12 +64,15 @@ When search is unavailable, say so in the brief and set the direction from the c
 
 ### 4. Plan the structure from the content
 
+Before planning, load `reasoning.md` (in this folder) and reason with it: who arrives and from where, the central promise in one sentence, and for each page its moment in the journey and its main doubt. These go into the brief. After drafting the structure, you may consult `principles.md` and `page-types.md` to check for a missed doubt. `ethics.md` is a hard limit for anything with prices, consent, subscriptions, scarcity, urgency or reviews.
+
 Decide the sections from what the product needs to say and what people need to do, not from the usual landing sequence.
 
 1. List the content: the messages, the proof, the actions, the information people come for (for a bakery: what's on the counter today, opening hours, how to order; for a dashboard: today's appointments, who is waiting, what needs attention).
 2. Order it by what the audience needs first.
 3. Turn it into sections, one line each: the section's purpose, its content or picture, and whether the asset is real or a placeholder.
 4. Check the result against the default sequence (hero, three features, stats, testimonials, call to action). When your plan matches it section by section, question each one: keep it only when the content needs it.
+5. For each section, say which doubt or cost it resolves at this moment. Cut it when you can't.
 
 For "operate" pages, think in regions instead of sections: navigation, the primary task area, secondary panels, status and alerts.
 
@@ -117,6 +120,9 @@ Date: <YYYY-MM-DD>
 - Stack and constraints: <framework, CSS, languages, accessibility, performance>
 - Existing decisions followed: <PRODUCT.md / DESIGN.md, if any>
 
+## Central promise
+<one sentence: what the product promises, which every page and step must keep true>
+
 ## Assumptions
 - <each assumption made without the user's answer, so it can be corrected>
 
@@ -126,6 +132,9 @@ Date: <YYYY-MM-DD>
 | <name> | <url> | <layout rhythm; type scale; color strategy; density; motion; what makes it specific> |
 
 ## Structure
+### <page> (one block per page; a single-page site has one)
+- Moment in the journey: <where the visitor comes from and what they already believe>
+- Main doubt: <the one doubt or effort this page must resolve>
 1. <section or region>: <purpose> — <content or picture> — <real | placeholder>
 
 ## Direction
@@ -149,6 +158,7 @@ Date: <YYYY-MM-DD>
 ## Rules
 
 - Read existing files before asking, and ask only what the files don't answer.
+- Write the central promise before the structure, and check that every page keeps it true.
 - When the user can't answer, assume, write the assumption down, and keep going.
 - Mark every placeholder for facts, photos and figures the user must supply; never fill them with invented data.
 - Take the direction from the subject's world, and say why in the brief.

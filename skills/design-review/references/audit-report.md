@@ -23,6 +23,7 @@ Reference for `design-review`, URL audit mode. Load only when writing the report
 | Minor issues | Real problems with limited impact: inconsistent spacing, mixed icon styles, weak focus states, small contrast misses on secondary text, heavy images that don't block the page. |
 | Outdated | First, legacy techniques with a modern replacement, checked on the page (`measured`). Then aesthetic patterns that make the site look older or more generic than its competitors (`judgment`). |
 | Tips | Small, low-effort improvements that don't need a redesign. |
+| Promise check | Only when two or three pages were audited: the first page's central promise in one sentence, and the first page where it stops being true (or that it holds throughout). |
 | Improvement proposals | Larger changes with clear payoff: restructure a section, rewrite the hero, rebuild the type scale. |
 | Alternatives | Different directions the site could take, each with its trade-off. Not fixes: options for the owner to weigh. |
 
@@ -99,6 +100,10 @@ Number findings by section: C1, C2 for critical; M1 for minor; O1 for outdated; 
 ### T1. <title>
 
 <same fields>
+
+## Promise check
+
+<Only for audits of two or three pages. Promise: "<one sentence>", from <page and selector>. Holds on <pages>; breaks on <page>, <selector or screenshot>: <how>. (judgment)>
 
 ## Improvement proposals
 

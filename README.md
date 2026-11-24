@@ -110,7 +110,7 @@ modern-design-pack/
 ├── skills/
 │   ├── modern-design/
 │   │   ├── SKILL.md
-│   │   └── references/      # direction, tokens, components, motion, resources
+│   │   └── references/      # direction, reasoning, principles, page-types, ethics, tokens, components, motion, resources
 │   └── design-review/
 │       ├── SKILL.md
 │       └── references/      # unslop-checklist, visual-qa, audit-report

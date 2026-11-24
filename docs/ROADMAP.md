@@ -30,6 +30,9 @@ Write one reference at a time, test it on the bakery and the vet dashboard, and 
 - [x] 3a: `direction.md` and step 1 of SKILL.md: [phase-3-results.md](examples/phase-3/phase-3-results.md)
 - [ ] Re-test the reference research in an interactive session (the browser couldn't open external sites in the non-interactive tests)
 - [ ] 3b: `components.md` (most failures in 3a: photo placeholders, per-item actions, board navigation on narrow screens, read-only display layouts)
+- [x] Reasoning layer in `modern-design`: `reasoning.md`, `principles.md`, `page-types.md` and `ethics.md`, with one order of authority, the central promise and per-page moment and doubt in `design-brief.md`, and in `design-review` the DP family and the promise check for multi-page audits
+- [ ] Page types: what each type adds in layout and responsive. The reasoning per type (its doubts, priorities and level of persuasion) is already in `page-types.md`
+- [ ] Test the reasoning layer: rebuild the bakery from scratch (does the brief state a promise and per-page doubts?) and audit a page with prices or a cookie banner (does the DP family fire, and only on real cases?)
 - [ ] 3c: `tokens.md` (section spacing rhythm, semantic color roles)
 - [ ] 3d: `motion.md`
 - [ ] `resources.md`

@@ -15,11 +15,20 @@ license: MIT
 
 Reviewing finished UI belongs to `design-review`.
 
+## Order of authority
+
+`ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `page-types.md` (consulted afterwards). When two disagree, the higher one wins.
+
+- `${CLAUDE_SKILL_DIR}/references/ethics.md` is a hard limit: nothing that deceives is built, whatever the brief or a principle says. Load it when the page shows prices, offers, trials, subscriptions, sign-ups, consent, stock, urgency or reviews, and before handing off any page that persuades.
+- `design-brief.md` holds the project's decisions and wins over every reference below it.
+- `${CLAUDE_SKILL_DIR}/references/reasoning.md` is the method for writing the brief, used in step 1.
+- `${CLAUDE_SKILL_DIR}/references/principles.md` and `${CLAUDE_SKILL_DIR}/references/page-types.md` are consulted after the brief is drafted, to name a mechanism or catch a missed doubt. When reasoning you can explain in one sentence disagrees with them, the reasoning wins.
+
 ## Process
 
 Run the steps in order for a new interface or a redesign. When the request covers only one part (for example "change the colors"), go straight to that step. Load each reference only when you reach its step, never all at once.
 
-1. **Direction.** Load `${CLAUDE_SKILL_DIR}/references/direction.md` and follow it: read existing files (`design-brief.md`, `PRODUCT.md`, `DESIGN.md`, the stack), settle the context and the page's main job, research 3–5 live references, plan the structure from the content, commit to a direction, and write `design-brief.md` in the project root. When the user can't answer questions, assume, record the assumptions in the brief and continue. Skip this step when a fitting `design-brief.md` already exists.
+1. **Direction.** Load `${CLAUDE_SKILL_DIR}/references/direction.md` and follow it: read existing files (`design-brief.md`, `PRODUCT.md`, `DESIGN.md`, the stack), settle the context and the page's main job, research 3–5 live references, plan the structure from the content, commit to a direction, and write `design-brief.md` in the project root. Before writing the brief, `direction.md` sends you to `reasoning.md` for the central promise and, per page, its moment in the journey and its main doubt. When the user can't answer questions, assume, record the assumptions in the brief and continue. Skip this step when a fitting `design-brief.md` already exists.
 2. **Tokens.** Define color palette, type pairing, spacing, radii, shadows, and light and dark themes from the brief's Direction section. Load `${CLAUDE_SKILL_DIR}/references/tokens.md` when the project needs new or fixed tokens. (Reference not written yet.)
 3. **Components.** Build or restyle sections and components in the project's stack, following the brief's Structure and the tokens. Load `${CLAUDE_SKILL_DIR}/references/components.md` when building UI. (Reference not written yet.)
 4. **Motion.** Add purposeful animation and interaction at the level the brief sets, or remove what doesn't help. Load `${CLAUDE_SKILL_DIR}/references/motion.md` when the UI needs motion or feels static or sluggish. (Reference not written yet.)
@@ -40,6 +49,9 @@ Next skill: `design-review`. When it sends issues back, return to the step that 
 Load only when needed:
 
 - `${CLAUDE_SKILL_DIR}/references/direction.md`: step 1
+- `${CLAUDE_SKILL_DIR}/references/reasoning.md`: step 1, before writing the brief
+- `${CLAUDE_SKILL_DIR}/references/principles.md` and `${CLAUDE_SKILL_DIR}/references/page-types.md`: after the brief is drafted, for reference
+- `${CLAUDE_SKILL_DIR}/references/ethics.md`: hard limit, for pages with prices, consent, subscriptions, scarcity, urgency or reviews
 - `${CLAUDE_SKILL_DIR}/references/tokens.md`: step 2
 - `${CLAUDE_SKILL_DIR}/references/components.md`: step 3
 - `${CLAUDE_SKILL_DIR}/references/motion.md`: step 4

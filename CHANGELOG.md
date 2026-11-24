@@ -22,6 +22,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `modern-design` step 1: `references/direction.md` (context and the page's main job, assumptions when the user can't answer, 3–5 live references with principles on five axes, structure from content, one committed direction, template test, `design-brief.md` output; respects `PRODUCT.md` and `DESIGN.md` without writing them).
 - `design-review`: emoji used as any kind of image (CP2), and re-checking the areas a fix changed.
 - Phase 3a tests in `docs/examples/phase-3/` (bakery landing and veterinary dashboard built with the direction step, then reviewed).
+- `modern-design` reasoning layer: `references/reasoning.md` (method for writing the brief: one central promise, and per page its moment in the journey and its main doubt), `principles.md` (P01–P31 with evidence levels), `page-types.md` (doubts and priorities per page type, with "common answers" to check, not copy) and `ethics.md` (hard limit: dark-pattern blacklist, reference cases, evidence quality, minimum checks per page type). One order of authority in SKILL.md and in each file: ethics > brief > reasoning > principles and page types.
+- `design-brief.md` template: "Central promise" and, per page, its moment in the journey and its main doubt.
+- `design-review`: Deceptive patterns family (DP1–DP10 plus a minimum per page type), each rule marked measured or judgment, pointing to CY3 for invented proof; optional reading of `modern-design`'s `ethics.md`; promise check for audits of two or three pages, with its own report section.
 
 ### Changed
 

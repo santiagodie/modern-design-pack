@@ -60,6 +60,18 @@ Column guide:
 | Laws of UX | https://lawsofux.com | Jon Yablonski (as credited in the card; not confirmed on the fetched page) | article | None stated (all rights reserved by default) | design-review (unslop-checklist), modern-design (motion) | summarise | Law names are long-established general concepts. Only the names and one-line ideas are used, linked. Seen via @uxdannydesigns. |
 | Playwright agent CLI | https://playwright.dev/agent-cli | Microsoft | tool | TO VERIFY | design-review (visual-qa) | link only | Browser automation for screenshots. |
 
+## Reasoning layer documents
+
+Four documents supplied by the repository's author on 2026-11-24 (`00-core-reasoning`, `01-web-psychology-marketing-principles`, `02-page-type-matrix`, `03-ethical-legal-limits-and-evidence`) and released under this repository's MIT licence. They became `modern-design/references/reasoning.md`, `principles.md`, `page-types.md` and `ethics.md`, and the DP family of `design-review/references/unslop-checklist.md`.
+
+Checked on 2026-11-24:
+
+- They summarise their sources in their own words and link each one in place (NN/g, Baymard Institute, Stanford Web Credibility, web.dev, the FTC, the UK CMA, Which?, FIDO Alliance, company blogs and peer-reviewed papers). Facts and figures are attributed where they appear; no long passages are copied.
+- The only verbatim text is short quotations used as examples: product headlines (Stripe, Linear), a few named notices, and paper and talk titles.
+- Edits on import: the dependency on an external short-form writing skill was removed (the transfer table and the "(transferred)" labels in `principles.md`; the transfer notes in `page-types.md`); P05 rewritten so the order of sections comes from the brief; "Patterns" renamed "Common answers"; the Epic Games source corrected.
+- The Epic Games row cited an unrelated article. Corrected to the FTC press release of 19 December 2022 ($520 M settlement: $275 M civil penalty under COPPA and $245 M in refunds over dark patterns), verified on ftc.gov on 2026-11-24.
+- Regulatory status is dated November 2026 (the Digital Fairness Act is a proposal) and needs a check before release.
+
 ## Working notes for phase 3
 
 Pasted as is. These are raw notes, not plugin content. They will be rewritten in our own words before any of them reaches a SKILL.md or a `references/` file.

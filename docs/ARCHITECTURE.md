@@ -14,7 +14,9 @@ flowchart LR
 
 | Skill | Steps | Reference loaded per step |
 |---|---|---|
-| modern-design | 1. Direction: context, live references, design brief | `references/direction.md` |
+| modern-design | 1. Direction: context, live references, central promise, design brief | `references/direction.md`, then `references/reasoning.md` before writing the brief |
+| | After the brief is drafted, for reference | `references/principles.md`, `references/page-types.md` |
+| | Pages with prices, consent, subscriptions, scarcity, urgency or reviews (hard limit) | `references/ethics.md` |
 | | 2. Tokens: color, type, spacing, radii, shadows, themes | `references/tokens.md` |
 | | 3. Components: sections and components in the project's stack | `references/components.md` |
 | | 4. Motion: purposeful animation and interaction | `references/motion.md` |
@@ -28,6 +30,8 @@ flowchart LR
 | | 3. Write the report | `references/audit-report.md` |
 
 Each skill is self-contained. It reads only its own `SKILL.md` and `references/` folder, and never paths outside its folder, because installed plugins are copied to a cache and files outside the plugin are not available.
+
+Order of authority, the same in both skills: `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `page-types.md` (consulted afterwards). `design-review` checks the hard limit through its DP family and reads `ethics.md` when it exists.
 
 A skill is split into more skills only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests.
 

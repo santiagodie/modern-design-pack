@@ -30,7 +30,7 @@ When a URL points to the user's own project and its code is here, use own-projec
 ### Mode 1: Own project
 
 1. **Context.** Read the design brief when one exists (from `modern-design`), and note the product, audience and stack. The brief overrides the checklist: a pattern the brief chose on purpose is not a finding.
-2. **Review the code.** Load `${CLAUDE_SKILL_DIR}/references/unslop-checklist.md`. Go through the pages and components the user named, or the main page when none was named. Run the template test first, then the checklist by category. Note each finding with the file and line.
+2. **Review the code.** Load `${CLAUDE_SKILL_DIR}/references/unslop-checklist.md`. Go through the pages and components the user named, or the main page when none was named. Run the template test first, then the checklist by category. Note each finding with the file and line. When the project has several pages and the brief states a central promise, run the promise check (Mode 2, step 5) across them.
 3. **Browser check.** When the app can be started or is already running, load `${CLAUDE_SKILL_DIR}/references/visual-qa.md` and follow it: screenshots at 375, 768 and 1440 px with reduced motion, the checks script, the focus pass. When the app can't run, say so and continue with the code review only.
 4. **Prioritise.** Sort findings into critical, minor, outdated and tip (definitions in the checklist). Show the user the list, critical first, before changing anything large.
 5. **Fix.** Fix critical and minor issues directly when the fix is local (a color, a size, a missing state). For outdated patterns, fix them when the user agrees or the brief already points that way. Send problems of direction, tokens, components or motion back to `modern-design`, to the step that owns them.
@@ -55,10 +55,13 @@ Steps:
    ```
    Read the four category scores and the failing audits that matter for design (contrast, tap targets, image sizes, layout shift, LCP). When Chrome is missing or Lighthouse fails, record the reason in the report header and continue without it. Never invent scores.
 5. **Review.** Load `${CLAUDE_SKILL_DIR}/references/unslop-checklist.md`. Run the template test, then the checklist by category, using the screenshots, the checks output, the HTML and Lighthouse together. Run the "Outdated, measurable" script at 1440 px, so the Outdated section starts from evidence rather than taste.
+
+   **Promise check,** when the audit covers two or three pages: state in one sentence the central promise of the first page (its headline, or the ad or search snippet that leads to it). On each other page, check whether it still holds: the price, the effort asked, the claims, the tone. Report the first page where it breaks, with both locations, as `judgment`. When it holds on every page, say so under "What to keep".
 6. **Write the report.** Load `${CLAUDE_SKILL_DIR}/references/audit-report.md` and follow its format. Write it in the user's language and save it as `audits/<domain>-<YYYY-MM-DD>.md`. In the chat, give the three summary priorities and the path to the report.
 
 ## Rules
 
+- Run the Deceptive patterns (DP) family whenever a page shows prices, offers, trials, subscriptions, consent, stock, urgency, reviews or sponsored content. For the cases behind it you may read `${CLAUDE_SKILL_DIR}/../modern-design/references/ethics.md`; continue without it when that file doesn't exist. The brief never makes a DP finding fine.
 - Flag a pattern when it hurts this page in this context; leave it alone when the "Fine when" line of the checklist applies or the brief chose it, and say so when it's borderline.
 - Tag a finding `measured` when a tool or the code shows it, and `judgment` when it rests on design criteria. Tag "outdated" findings as judgment unless something measurable is also wrong.
 - Give a number only when a tool produced it.
