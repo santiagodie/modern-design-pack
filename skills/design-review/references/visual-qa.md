@@ -6,18 +6,23 @@ Reference for `design-review`: the browser check. Used in both modes. Load it wh
 
 Use the Playwright agent CLI (`playwright-cli`). When it isn't installed, install it with `npm install -g @playwright/cli@0.1.25` after asking the user (this is the tested version; don't install `@latest`). It downloads a browser on first use. When it can't run, say so in the report and review the HTML and code only.
 
-Useful commands:
+Useful commands. Replace URL, WIDTH, HEIGHT, FILE and JS_FUNCTION with real values.
 
 ```bash
-playwright-cli open <url>                       # headless by default, mouse and fine pointer
-playwright-cli open --device "iPad Mini" <url>  # device preset: viewport, touch, coarse pointer
-playwright-cli set-reduced-motion reduce        # before any screenshot
-playwright-cli resize <width> <height>
-playwright-cli screenshot --full-page --filename=<file>.png
-playwright-cli screenshot --filename=<file>.png # viewport only
-playwright-cli --raw eval "<js function>"       # returns the value only
+# headless by default, mouse and fine pointer
+playwright-cli open URL
+# device preset: viewport, touch, coarse pointer
+playwright-cli open --device 'iPad Mini' URL
+# before any screenshot
+playwright-cli set-reduced-motion reduce
+playwright-cli resize WIDTH HEIGHT
+playwright-cli screenshot --full-page --filename=FILE.png
+# viewport only
+playwright-cli screenshot --filename=FILE.png
+# returns the value only
+playwright-cli --raw eval 'JS_FUNCTION'
 playwright-cli press Tab
-playwright-cli goto <url>
+playwright-cli goto URL
 playwright-cli close
 ```
 
@@ -30,13 +35,13 @@ playwright-cli close
 
    | Width | How to open | Input emulated |
    |---|---|---|
-   | 375 (phone portrait) | `playwright-cli open --device "iPhone 13 Mini" <url>` | Touch, coarse pointer, no hover |
-   | 768 (tablet portrait) | `playwright-cli open --device "iPad Mini" <url>` | Touch, coarse pointer, no hover |
-   | 1024 (tablet landscape) | `playwright-cli open --device "iPad Mini landscape" <url>` | Touch, coarse pointer, no hover |
-   | 1440 (desktop) | `playwright-cli open <url>`, then `resize 1440 900` | Mouse, fine pointer, hover |
-   | Phone landscape, only when the page has fixed or sticky elements | `playwright-cli open --device "iPhone 13 Mini landscape" <url>` (viewport 712 × 375 px; the screen is 812 px wide, minus browser chrome) | Touch |
+   | 375 (phone portrait) | `playwright-cli open --device 'iPhone 13 Mini' URL` | Touch, coarse pointer, no hover |
+   | 768 (tablet portrait) | `playwright-cli open --device 'iPad Mini' URL` | Touch, coarse pointer, no hover |
+   | 1024 (tablet landscape) | `playwright-cli open --device 'iPad Mini landscape' URL` | Touch, coarse pointer, no hover |
+   | 1440 (desktop) | `playwright-cli open URL`, then `resize 1440 900` | Mouse, fine pointer, hover |
+   | Phone landscape, only when the page has fixed or sticky elements | `playwright-cli open --device 'iPhone 13 Mini landscape' URL` (viewport 712 × 375 px; the screen is 812 px wide, minus browser chrome) | Touch |
 
-   For each one, scroll through again, run the checks script, and take a full-page screenshot named `<page>-<width>.png` (`<page>-375-landscape.png` for the landscape one). Confirm the emulation with `--raw eval "() => matchMedia('(pointer: coarse)').matches"` when a finding depends on it.
+   For each one, scroll through again, run the checks script, and take a full-page screenshot named `<page>-<width>.png` (`<page>-375-landscape.png` for the landscape one). When a finding depends on the emulation, confirm it by evaluating `matchMedia('(pointer: coarse)').matches` with `--raw eval`.
 5. **Check focus** at 1440: press Tab about eight times and take a viewport screenshot (`<page>-focus-1440.png`). When no focus indicator is visible on any of those stops, that is a finding.
 6. **Look at every screenshot**, not only the script output. Use the per-width list below.
 7. **Record findings** with the screenshot file and a selector, tagging script results as `measured` and visual calls as `judgment`.
