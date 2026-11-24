@@ -33,11 +33,12 @@ Write one reference at a time, test it on the bakery and the vet dashboard, and 
 - [ ] 3b, batch B: important sections (problem, how it works, demo, testimonials, pricing, trust, FAQ, and "where and when" for local businesses: address, weekly hours, map link, how to get there)
 - [ ] 3b, batch C: sections for pages that operate (app bar, boards, tables, side panels, per-item actions, read-only displays)
 - [ ] 3b, batch D: `references/components/` for reusable pieces (buttons, cards, inputs, badges) shared by several sections
-- [x] Reasoning layer in `modern-design`: `reasoning.md`, `principles.md`, `page-types.md` and `ethics.md`, with one order of authority, the central promise and per-page moment and doubt in `design-brief.md`, and in `design-review` the DP family and the promise check for multi-page audits
-- [ ] Page types: what each type adds in layout and responsive. The reasoning per type (its doubts, priorities and level of persuasion) is already in `page-types.md`
+- [x] Reasoning layer in `modern-design`: `reasoning.md` (with `reasoning-examples.md`), `pages/` (11 files, one per group of page types), `principles.md` and `ethics.md`, with one order of authority; the central promise and, per page, moment, main doubt and persuasion dial in `design-brief.md`; in `design-review` the DP family, the promise check and the audit rules against generic advice
+- [ ] "Layout & responsive" subsection inside each `pages/` file: what each page type adds in layout and responsive (the reasoning per type is already there)
+- [ ] Verify before citing, then update `pages/`: CNIL and AEPD decisions on reject-vs-accept parity in cookie banners (`pages/legal.md`, also `ethics.md` §3); NIST SP 800-63B Rev. 4 wording on SMS and phone codes as a restricted authenticator (`pages/authentication.md`); the EDPB 2026 coordinated enforcement action on transparency (`pages/legal.md`)
 - [ ] Test the reasoning layer: rebuild the bakery from scratch (does the brief state a promise and per-page doubts?) and audit a page with prices or a cookie banner (does the DP family fire, and only on real cases?)
-- [ ] 3c: `tokens.md` (section spacing rhythm, semantic color roles, and two requirements from the 3b test: focus-ring tokens that keep 3:1 on every surface, dark bands and footers included; and touch-target tokens, at least 44 px on coarse pointers, also for inline links, nav items and footer links. Section files point to these tokens instead of repeating them)
-- [ ] 3d: `motion.md`
+- [ ] 3c: `tokens.md` (section spacing rhythm, semantic color roles, density from the brief's persuasion dial per page, and two requirements from the 3b test: focus-ring tokens that keep 3:1 on every surface, dark bands and footers included; and touch-target tokens, at least 44 px on coarse pointers, also for inline links, nav items and footer links. Section files point to these tokens instead of repeating them)
+- [ ] 3d: `motion.md` (how much animation each page allows, from the brief's persuasion dial: more room on high, almost none on low and none)
 - [ ] `resources.md`
 - [ ] Write the `modern-design` SKILL.md rules
 - [ ] Remove the "Sources to merge" sections as they are used

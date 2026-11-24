@@ -15,7 +15,7 @@ flowchart LR
 | Skill | Steps | Reference loaded per step |
 |---|---|---|
 | modern-design | 1. Direction: context, live references, central promise, design brief | `references/direction.md`, then `references/reasoning.md` before writing the brief |
-| | After the brief is drafted, for reference | `references/principles.md`, `references/page-types.md` |
+| | After reasoning: only the file of each page type in the brief, then principles when needed | `references/pages/<group>.md`, `references/principles.md` (`references/reasoning-examples.md` for worked examples) |
 | | Pages with prices, consent, subscriptions, scarcity, urgency or reviews (hard limit) | `references/ethics.md` |
 | | 2. Tokens: color, type, spacing, radii, shadows, themes | `references/tokens.md` |
 | | 3. Components: sections and components in the project's stack, for phone, tablet and desktop | `references/sections/index.md`, one file per section built, `references/responsive.md` |
@@ -31,9 +31,22 @@ flowchart LR
 
 Nothing outside the plugin: installed plugins are copied to a cache, and files outside the plugin are not available. Skills may read each other's files inside the plugin (`design-review` reads `modern-design`'s section references when they exist) and must keep working when they don't.
 
-Order of authority, the same in both skills: `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `page-types.md` (consulted afterwards). `design-review` checks the hard limit through its DP family and reads `ethics.md` when it exists.
+Order of authority, the same in both skills: `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). `design-review` checks the hard limit through its DP family and reads `ethics.md` when it exists.
 
 A skill is split into more skills only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests.
+
+## Levels
+
+The design references are organised in four levels, from the smallest piece to the whole page:
+
+| Level | What it decides | Where | Status |
+|---|---|---|---|
+| Tokens | Color, type, spacing, radii, shadows, themes | `references/tokens.md` | Pending (3c) |
+| Components | Reusable pieces shared by several sections: buttons, cards, inputs, badges | `references/components/` | Pending (3b, batch D) |
+| Sections | Whole page sections with phone, tablet and desktop layouts | `references/sections/`, `references/responsive.md` | Batch A written |
+| Pages | Per page type: the user's moment, what the page must prove, levers, specifics, when the usual advice flips, persuasion dial | `references/pages/` | Reasoning written; "Layout & responsive" per page type pending |
+
+Above the levels sits the reasoning layer (`reasoning.md`, `principles.md`, `ethics.md`), which decides which pages and sections exist before any level is built.
 
 ## Context over rules
 

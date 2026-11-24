@@ -2,14 +2,14 @@
 
 Reference for `modern-design`. Consult it after reasoning (`reasoning.md`), never as a starting point: to name a mechanism you have already detected, check its evidence and know its limits. Apply the principles silently; don't repeat headings or turn them into a visible checklist.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `page-types.md` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
 
-IDs P01–P31 are used by `page-types.md`. Evidence: **A** = experiment, meta-analysis or large-scale primary data; **B** = company primary data or documented case; **C** = professional consensus or heuristic without a public experiment.
+IDs P01–P31 are used by the files in `pages/`. Evidence: **A** = experiment, meta-analysis or large-scale primary data; **B** = company primary data or documented case; **C** = professional consensus or heuristic without a public experiment.
 
 ## 0. How to use this document (instructions for the LLM)
 
 - Each principle describes a mechanism in the user's mind, not a component to copy.
-- Before proposing a pattern, identify: (1) page type (see `page-types.md`), (2) what decision the user is making at that moment, (3) which principle reduces their doubt or effort.
+- Before proposing a pattern, identify: (1) page type (see `pages/`), (2) what decision the user is making at that moment, (3) which principle reduces their doubt or effort.
 - If a principle only works by deceiving (fake scarcity, invented urgency, hard cancellation), it is NOT a principle: it is a dark pattern. See `ethics.md`.
 - Prioritise evidence A > B > C. When evidence is weak, say so.
 - If the design still works when you swap the product for any other, it is a template, not reasoning. Rewrite from the specific user.

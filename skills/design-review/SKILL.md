@@ -62,6 +62,12 @@ Steps:
 
 ## Rules
 
+- Before criticising, work out whom the page serves and what it promises. When nobody says, infer it from the page and state the inference in the notes or the report.
+- Comment only on what you saw or measured. When a judgment would need interaction, other pages or real data, say so instead of guessing.
+- Before recommending something, check that the page doesn't already have it.
+- Within each section of the report or notes, order findings by how much they block the page's main decision, not by how many guidelines they touch.
+- When a finding repeats on every audited page, justify it on each page with that page's own evidence; generic advice copied across pages is the commonest audit error.
+- For the page type under review, you may read its file in `${CLAUDE_SKILL_DIR}/../modern-design/references/pages/` (its moment, critical errors and when the usual advice flips); continue without it when that folder doesn't exist.
 - Run the Deceptive patterns (DP) family whenever a page shows prices, offers, trials, subscriptions, consent, stock, urgency, reviews or sponsored content. For the cases behind it you may read `${CLAUDE_SKILL_DIR}/../modern-design/references/ethics.md`; continue without it when that file doesn't exist. The brief never makes a DP finding fine.
 - Flag a pattern when it hurts this page in this context; leave it alone when the "Fine when" line of the checklist applies or the brief chose it, and say so when it's borderline.
 - Tag a finding `measured` when a tool or the code shows it, and `judgment` when it rests on design criteria. Tag "outdated" findings as judgment unless something measurable is also wrong.

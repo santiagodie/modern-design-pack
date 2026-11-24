@@ -1,8 +1,8 @@
 # Ethical and legal limits, and quality of evidence
 
-Reference for `modern-design` and `design-review`. A hard limit: if something deceives, it is not done, and good reasoning is no exception. When a recommendation in `principles.md` or `page-types.md` conflicts with this file, this file wins. `design-review` turns sections 4 and 6 into its DP checks.
+Reference for `modern-design` and `design-review`. A hard limit: if something deceives, it is not done, and good reasoning is no exception. When a recommendation in `principles.md` or `pages/` conflicts with this file, this file wins. `design-review` turns sections 4 and 6 into its DP checks.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `page-types.md` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
 
 Not legal advice. It summarises public facts to guide design decisions, with regulatory status as of November 2026; for specific cases, consult a professional.
 
@@ -32,7 +32,7 @@ If any fails, it is a dark pattern. Do not propose it, even if it "converts".
 | European Accessibility Act (Directive 2019/882) | Applicable since 28-06-2025. Existing content/services have a transition to 2030 depending on the case. | B2C e-commerce, including authentication and payment, must be accessible; technical reference EN 301 549 → WCAG 2.1 AA. Accessibility statement. |
 | Digital Fairness Act (Commission proposal, 11-11-2026) | Proposal; under negotiation in Parliament and Council, the final text may change. | Targets: dark patterns, addictive design, unfair personalisation, influencer marketing, subscription traps. Includes a simple, unambiguous cancellation option, a reminder before a free trial converts to paid with express consent, and renewal reminders. Press coverage mentions fines of up to 6% of global turnover in the associated enforcement reform. |
 | Digital Services Act | In force | Prohibits online platforms from interface designs that deceive or manipulate (Art. 25). |
-| GDPR + ePrivacy (cookies) | In force | Free, specific, informed consent; rejecting cannot be harder than accepting (see verification note in `page-types.md`, J3). |
+| GDPR + ePrivacy (cookies) | In force | Free, specific, informed consent; rejecting cannot be harder than accepting (see the verification note in `pages/legal.md`, cookie policy and consent banner). |
 | (US reference) FTC: ROSCA, fees rule | In force (the fees rule applies to live-event tickets and short-term lodging since May 2025) | Total price visible; clear consent in subscriptions; simple cancellation. |
 
 Sources: Bird & Bird on the EAA (https://www.twobirds.com/en/insights/2025/a-guide-to-navigating-the-european-accessibility-act-for-online-retailers-service-providers-and-plat), Euronews and A&O Shearman/Legal500 on the DFA (https://www.euronews.com/2026/11/11/eu-targets-subscription-traps-addictive-design-and-hidden-fees-with-new-digital-rules), Fortune/ABC on the fees rule and Airbnb.

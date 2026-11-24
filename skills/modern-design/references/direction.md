@@ -64,7 +64,12 @@ When search is unavailable, say so in the brief and set the direction from the c
 
 ### 4. Plan the structure from the content
 
-Before planning, load `reasoning.md` (in this folder) and reason with it: who arrives and from where, the central promise in one sentence, and for each page its moment in the journey and its main doubt. These go into the brief. After drafting the structure, you may consult `principles.md` and `page-types.md` to check for a missed doubt. `ethics.md` is a hard limit for anything with prices, consent, subscriptions, scarcity, urgency or reviews.
+Work in this order before writing the brief:
+
+1. **Reason** with `reasoning.md` (in this folder): who arrives and from where, the central promise in one sentence, and for each page its moment in the journey, its main doubt and its place on the persuasion dial.
+2. **Read only the `pages/` file of each page type in the brief** (`reasoning.md`, "Which reference to open", maps types to files). Use it to catch a missed doubt and to check when the usual advice flips.
+3. **Consult `principles.md` and `ethics.md` when needed:** principles to name a mechanism and check its evidence; ethics as a hard limit for anything with prices, consent, subscriptions, scarcity, urgency or reviews.
+4. **Write the brief**, starting with the structure below.
 
 Decide the sections from what the product needs to say and what people need to do, not from the usual landing sequence.
 
@@ -135,6 +140,7 @@ Date: <YYYY-MM-DD>
 ### <page> (one block per page; a single-page site has one)
 - Moment in the journey: <where the visitor comes from and what they already believe>
 - Main doubt: <the one doubt or effort this page must resolve>
+- Persuasion dial: <high | medium | low | none> — <why, for this page and this person>
 1. <section or region>: <purpose> — <content or picture> — <real | placeholder>
 
 ## Direction

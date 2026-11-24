@@ -2,13 +2,17 @@
 
 Reference for `modern-design`, step 1. Load it before writing `design-brief.md`; `direction.md` says when. It teaches a way of thinking, not a checklist: apply it silently, and don't repeat its headings to the user or turn them into an output format.
 
-> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `page-types.md` (consulted afterwards). When two disagree, the higher one wins.
+> **Order of authority:** `ethics.md` (hard limit) > `design-brief.md` > `reasoning.md` (method for writing the brief) > `principles.md` and `pages/` (consulted afterwards). When two disagree, the higher one wins.
 
 What this method produces goes into the brief: the central promise in one sentence, and for each page its moment in the journey and its main doubt.
 
 This document does not teach components or patterns. It teaches how to think. If all you take away from it is a list of things to put on a page, you have read it wrong.
 
 ---
+
+## Why this method exists
+
+Baymard Institute tested this failure in October 2023. It gave GPT-4 screenshots of 12 e-commerce pages and a generic prompt, and compared its UX audit with human UX experts. About 80% of the model's suggestions were wrong (roughly 1 in 8 actively harmful, the rest a waste of time), and it found only 14–26% of the real issues. The typical errors were generic advice repeated on every page ("make it mobile responsive"), recommending things the page already had, giving advice about parts it could not see, and outdated rules of thumb (https://baymard.com/research-articles/gpt-ux-audit). The test used one older model with screenshots only, so the numbers don't transfer to every setup. The lesson does: the failure is in the method. Every one of those errors comes from pattern-matching instead of reasoning about this page and this user.
 
 ## The stance: think, don't fill in
 
@@ -20,8 +24,9 @@ The alternative is not "be creative". It is to reason from the user's mind every
 - You chose the elements before knowing who arrives at the page and where they came from.
 - You could remove an element and not be able to say which user doubt is left unresolved.
 - The design would work just as well if you swapped the product for any other.
-- You applied a principle because "the matrix says it goes on this page", not because you detected the problem it solves.
+- You applied a principle because "this page type usually has it", not because you detected the problem it solves.
 - You used every principle. No real page needs them all; if you used them all, you chose none.
+- You are giving advice about something you cannot see, or that the page already has.
 
 If any of these is true, throw out what you have and go back to the user.
 
@@ -61,7 +66,7 @@ They are not an output template. They are what you think through before deciding
 
 **What happens next, and how will they feel when they leave?** No page is an ending, except the one the user abandons. Design the exit as much as the entrance.
 
-Once you have these answers, the principles in `principles.md`, `page-types.md` and `ethics.md` stop being a list: they become tools you choose because you know what problem is in front of you.
+Once you have these answers, the principles in `principles.md`, the page files in `pages/` and `ethics.md` stop being a list: they become tools you choose because you know what problem is in front of you.
 
 ---
 
@@ -103,7 +108,13 @@ Consequence for reasoning: endings are not closing details. A flawless purchase 
 
 ---
 
-## 4. When principles collide
+## 4. Context changes everything: persuasion has a dial
+
+What works on a landing page (curiosity, social proof, emotion) is friction on a payment form or an admin panel, where people want predictability. **The closer the person is to their money, their data or an irreversible action, the less persuasion and the more transparency.** Expert tools used daily optimise for speed and density; first-time consumer flows optimise for comprehension. Before borrowing any pattern, ask which side of the dial this page sits on: high, medium, low or none. Each file in `pages/` states its default setting and when it flips. Record the setting and the reason for each page in the brief; later steps use it to decide density and how much motion is allowed.
+
+---
+
+## 5. When principles collide
 
 Principles are not rules, because they often contradict each other. Knowing how to resolve the collision is exactly what separates reasoning from filling in.
 
@@ -115,51 +126,59 @@ Principles are not rules, because they often contradict each other. Knowing how 
 
 **Defaults versus autonomy.** A preselected value helps people decide, but it can decide for the user something they did not want. Resolve it by asking: *if the user knew I had preselected it, would they thank me or feel tricked?*
 
-**Persuasion versus context.** What works on a landing page (curiosity, social proof, emotion) gets in the way on a payment form or an admin panel, where the user wants predictability. The closer the person is to their money, their data or an irreversible action, the less persuasion and the more transparency.
+**Persuasion versus context.** See the dial in section 4: the closer the person is to their money, their data or an irreversible action, the less persuasion and the more transparency.
+
+**Novice versus expert.** A screen that guides a first-time visitor slows down someone who uses it forty times a day, and density that suits the expert overwhelms the newcomer. Resolve it by asking: *who uses this screen most, and how often?* Design for them, and give the other group a path (a guided first run, or shortcuts and a dense view).
 
 In every case, the tiebreaker is the same: go back to the central promise and to the doubt the user has *at that moment*. The principle that resolves that doubt without breaking the promise wins.
 
 ---
 
-## 5. A reasoned journey, end to end
+## 6. Worked examples
 
-Illustrative example (invented product) to show the reasoning, not to copy the solution.
-
-**Product:** an app that lets small dental clinics manage online appointments.
-**Person:** the owner of a two-chair clinic who handles appointments by phone today, misses calls while treating patients and doesn't really trust software ("we tried one already and it was a mess").
-**Central promise:** *"Your patients book on their own and you stop losing appointments because you couldn't answer the phone, without changing how you work."*
-
-Notice that the promise has two halves: a benefit ("you stop losing appointments") and a protection against her fear ("without changing how you work"). Both have to survive the whole journey.
-
-**Ad → Landing page.** She arrives from an ad that talked about missed calls, and that is what she believes now. If the landing page opens with "Comprehensive clinic management software", the promise breaks in the first second: it is not what she was told, and "comprehensive" sounds like exactly the mess she fears. The headline picks up the missed call. Below it, instead of an abstract illustration, she sees what her patient will see when booking, because her doubt is "will my older patients use this?". The social proof is not "thousands of customers" but something close to her: small clinics, in her country, with a concrete figure. Her main objection ("we tried one and it was a mess") is answered where it arises, before the button: "we set it up with you in a 20-minute call".
-
-**Pricing.** Her decision here is not "which plan" but "how much does it really cost and can I get out?". So the total price per clinic, with taxes clarified, matters more than a "most popular" plan. And "cancel anytime" has to sit next to the price, not in the terms, because her fear is getting trapped again. A third decoy plan would be a mistake: she is comparing against the phone, not against another plan.
-
-**Sign-up.** The promise says "without changing how you work". A twelve-field form contradicts the promise before she even starts. Ask for the minimum needed to show her booking page working, and the rest when it is needed.
-
-**Onboarding and empty state.** The first real win is not "profile complete" but *the first appointment that arrives on its own*. The whole onboarding is designed toward that moment: set opening hours, share the link, see the first booking. The empty calendar does not say "No appointments"; it says what is missing for them to arrive and offers the next step.
-
-**First appointment booked.** This is the peak. It deserves its own moment, because it is proof that the promise was true. It is worth far more than any welcome animation at sign-up.
-
-**Error.** If a patient tries to book a slot that is already taken, the system prevents it before it happens and offers the next free slots. A badly handled error in front of a patient breaks the protective half of the promise ("no mess").
-
-**Billing and cancellation.** The date and amount of the next charge are always visible. If she decides to leave, she leaves in the same number of steps it took to get in, with her data exportable. It seems to work against the business, but the ending is what she will remember and what she will tell other clinics.
-
-What matters in the example is not the decisions but where they come from. None of them comes from "on a pricing page you put X". They all come from the same promise, the same person and the specific doubt at each moment.
+`reasoning-examples.md` follows the method through three invented products at different points of the dial: a booking tool for small dental clinics, a running-shoe shop and an internal support console. Read them for where the decisions come from, not for the decisions.
 
 ---
 
-## 6. How to use `principles.md`, `page-types.md` and `ethics.md`
+## 7. Which reference to open
 
-First reason with this document: person, promise, decision, doubt, cost, exit. Only then consult:
+First reason with this document: person, promise, decision, doubt, cost, exit, dial. Only then open the file for each page type in the brief, and nothing else. `direction.md` gives the order of the whole step.
 
-- **`principles.md`:** to name the mechanism you have already detected, check its evidence and know its limits.
-- **`page-types.md`:** to check whether you have missed a typical doubt for that kind of page. It is a safety net, not a starting point. If your reasoning contradicts the matrix and you can explain why in one sentence, your reasoning wins.
-- **`ethics.md`:** as a hard constraint. No exceptions for good reasoning here: if something deceives, it is not done.
+| Page | File |
+|---|---|
+| Landing, Home, About us, Pricing, Coming soon / Waitlist | `pages/entry-marketing.md` (for landing sections in depth, also `sections/`) |
+| Catalogue, Category, Product page, Search results, Map, Calendar | `pages/content-navigation.md` |
+| Cart, Checkout, Order confirmation, Order history | `pages/commerce.md` |
+| Sign-up, Login, Password recovery, Verification, Onboarding | `pages/authentication.md` |
+| Profile, Settings, Account and billing, Notifications | `pages/user-account.md` |
+| Forms, Editor, Messages / Chat, Feed / Activity | `pages/interaction-creation.md` |
+| Dashboard, Analytics, Admin panel, User / Team management | `pages/management-admin.md` |
+| Article list, Article, Documentation | `pages/blog-resources.md` |
+| Contact, FAQ / Help, Support / Tickets | `pages/support-contact.md` |
+| Terms, Privacy, Cookies | `pages/legal.md` |
+| 404, 500, Maintenance, Empty state, Success page | `pages/states-system.md` |
+| Naming a mechanism (P01–P31) and checking its evidence | `principles.md` |
+| Anything with prices, consent, subscriptions, scarcity, urgency or reviews | `ethics.md` (hard limit) |
+| Visual system, typography, spacing, performance, accessibility, motion, dark mode | (pending: tokens.md / styles.md) |
+| How a design style (minimalism, neo-brutalism, bento...) changes sections | (pending: tokens.md / styles.md) |
+
+- **The page file** checks whether you missed a typical doubt, gives research-backed specifics (sizes, numbers, thresholds) and says when the usual advice flips. It is a safety net, not a starting point. If your reasoning contradicts it and you can explain why in one sentence for this user, your reasoning wins.
+- **`principles.md`** names the mechanism you have already detected, with its evidence grade and limits.
+- **`ethics.md`** is a hard constraint. No exceptions for good reasoning here: if something deceives, it is not done.
+- **`sections/`** holds section-by-section rules for pages that persuade. A section belongs on the page only if it resolves a doubt this user actually has.
+- Five principles apply to every page: P03 speed, P09 familiarity in functional areas, P12 credibility, P17 errors, P18 accessibility..
+
+When a request spans a flow (for example "sign-up to first value"), open every file the flow touches and reason about the hand-offs between pages, where promises most often break.
 
 **Final check before delivering a design.** For each important element you should be able to complete this sentence: *"This is here because, at this moment, the user doubts ___ / finds it costly to ___, and without it ___."* If you can't, the element is unnecessary or the reason is misunderstood.
 
 And one last check on the whole: walk the entire flow asking whether the central promise is still true at every step. The place where it stops being true is almost always the biggest problem in the design, even if each page on its own is well made.
+
+---
+
+## 8. How to present design work
+
+Keep the reasoning mostly internal, but let its results show. When you present a design or a review, explain the two to four decisions that matter most in terms of the user's doubt ("the price includes delivery because the main reason people abandon here is a surprise cost"), not in terms of frameworks ("applying P13 and the peak-end rule"). Don't recite these headings or the six questions. When you assumed something about the user or the promise, state it in one line so it can be corrected.
 
 ---
 

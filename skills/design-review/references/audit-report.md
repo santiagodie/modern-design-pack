@@ -11,7 +11,7 @@ Reference for `design-review`, URL audit mode. Load only when writing the report
 - **Say what kind of measurement it is.** Lighthouse runs are lab data on a simulated slow phone; write "lab" next to those numbers and don't present them as what real visitors get.
 - **Never invent numbers.** Give a value only when a tool produced it. When a tool could not run, say which one and what that leaves unchecked.
 - **Be specific to this site.** "Improve contrast" is not a fix. "Set the hero subtitle (`.hero p`) from #9CA3AF to at least #6B7280 on white for 4.5:1" is.
-- **Prioritise honestly.** Critical means it stops people from using, reading, trusting or reaching the page. Visual polish is never critical on its own.
+- **Prioritise honestly.** Critical means it stops people from using, reading, trusting or reaching the page. Visual polish is never critical on its own. Within each section, put first what blocks the page's main decision most.
 - **Empty sections stay.** Write "None found" instead of padding a section.
 - **Keep the tone neutral.** The site may belong to the user, a client or a competitor.
 

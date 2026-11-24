@@ -98,15 +98,37 @@ Sources cited by the field guide. Not read or used directly by the skills; liste
 
 ## Reasoning layer documents
 
-Four documents supplied by the repository's author on 2026-11-24 (`00-core-reasoning`, `01-web-psychology-marketing-principles`, `02-page-type-matrix`, `03-ethical-legal-limits-and-evidence`) and released under this repository's MIT licence. They became `modern-design/references/reasoning.md`, `principles.md`, `page-types.md` and `ethics.md`, and the DP family of `design-review/references/unslop-checklist.md`.
+Written by the repository's author with Claude and released under this repository's MIT licence. Two batches:
+
+- **Four documents** (2026-11-24): `00-core-reasoning`, `01-web-psychology-marketing-principles`, `02-page-type-matrix`, `03-ethical-legal-limits-and-evidence`. They became `modern-design/references/reasoning.md`, `principles.md`, `page-types.md` (later replaced by `pages/`) and `ethics.md`, and the DP family of `design-review/references/unslop-checklist.md`.
+- **A `web-design-reasoning` skill** written in another session (2026-11-24), integrated rather than shipped as a separate skill. Its eleven page files became `modern-design/references/pages/` and `reasoning-examples.md` was copied as is. From its `SKILL.md`, the Baymard evidence, the list-mode signal about advice on what isn't visible, the persuasion dial, the novice-versus-expert collision, the reference table and "How to present design work" went into `reasoning.md`; its review rules went into `design-review/SKILL.md`. Its copies of `principles.md` and `limits-and-evidence.md` were older versions of ours and were not used, and its `landing-field-guide/` copy was identical to `docs/research/landing-field-guide/` and was not copied.
 
 Checked on 2026-11-24:
 
 - They summarise their sources in their own words and link each one in place (NN/g, Baymard Institute, Stanford Web Credibility, web.dev, the FTC, the UK CMA, Which?, FIDO Alliance, company blogs and peer-reviewed papers). Facts and figures are attributed where they appear; no long passages are copied.
 - The only verbatim text is short quotations used as examples: product headlines (Stripe, Linear), a few named notices, and paper and talk titles.
-- Edits on import: the dependency on an external short-form writing skill was removed (the transfer table and the "(transferred)" labels in `principles.md`; the transfer notes in `page-types.md`); P05 rewritten so the order of sections comes from the brief; "Patterns" renamed "Common answers"; the Epic Games source corrected.
+- Edits on import: the dependency on an external short-form writing skill was removed (the transfer table and the "(transferred)" labels in `principles.md`; the transfer notes in `page-types.md` and in `pages/blog-resources.md`); P05 rewritten so the order of sections comes from the brief; the Epic Games source corrected.
+- `pages/` edits: the 3C weights per page and the group summary of the old `page-types.md` were moved into each file (its metrics were already covered by "Signal it's working"); "Real examples" renamed "Real examples (illustrate the mechanism, don't copy)"; links to the field guide replaced by `../sections/` files where one exists, or marked pending; "verify before citing" marks kept as written.
+- The Baymard GPT-4 audit is described with its limits: GPT-4, October 2023, screenshots only and a generic prompt.
 - The Epic Games row cited an unrelated article. Corrected to the FTC press release of 19 December 2022 ($520 M settlement: $275 M civil penalty under COPPA and $245 M in refunds over dark patterns), verified on ftc.gov on 2026-11-24.
-- Regulatory status is dated November 2026 (the Digital Fairness Act is a proposal) and needs a check before release.
+- Regulatory status is dated November 2026 (the Digital Fairness Act is a proposal) and needs a check before release. Three claims are marked "verify before citing" and listed in the ROADMAP: CNIL and AEPD decisions on cookie-banner parity, NIST SP 800-63B Rev. 4 wording on SMS codes, and the EDPB 2026 coordinated enforcement action.
+
+New sources cited by `pages/` and `reasoning.md`. Facts and figures are summarised in our own words with a link in place; no text is copied. Licences not audited because nothing is adapted.
+
+| Source | URL | Author | Type | License | Used in | How | Notes |
+|---|---|---|---|---|---|---|---|
+| GPT-4 UX audit study | https://baymard.com/research-articles/gpt-ux-audit | Baymard Institute | article | Not audited | modern-design (reasoning) | summarise | October 2023; GPT-4 with screenshots and a generic prompt, compared with human experts. |
+| Baymard research (cart abandonment, product lists, filtering, search, tracking, in-scale images, accounts) | https://baymard.com | Baymard Institute | article | Not audited | modern-design (pages) | summarise | Several articles, each linked in place. |
+| NIST SP 800-63B Revision 4 | https://pages.nist.gov/800-63-4/sp800-63b.html | NIST | standard | Not audited (US government work) | modern-design (pages/authentication) | summarise | Password and authenticator guidance; SMS wording to verify. |
+| GOV.UK Design System and Service Manual (validation, confirmation pages, form structure) | https://design-system.service.gov.uk | UK Government Digital Service | article | Not audited (OGL v3 expected; to confirm) | modern-design (pages) | summarise | |
+| Nielsen Norman Group (error messages, empty states, confirmation dialogs, dashboards, onboarding tutorials, inverted pyramid) | https://www.nngroup.com | Nielsen Norman Group | article | Not audited | modern-design (pages) | summarise | Several articles, each linked in place. |
+| FIDO Passkey Index 2026 | https://fidoalliance.org/passkey-index-2026/ | FIDO Alliance | article | Not audited | modern-design (pages, principles) | summarise | Interested source with deployment data. |
+| Diátaxis | https://diataxis.fr/ | Daniele Procida | article | Not audited | modern-design (pages/blog-resources) | summarise | |
+| Google Search Central: pausing an online business | https://developers.google.com/search/docs/crawling-indexing/pause-online-business | Google | article | Not audited | modern-design (pages/states-system) | summarise | |
+| WP29 transparency guidelines (endorsed by the EDPB) and ICO guidance | https://www.edpb.europa.eu/system/files/2023-09/wp260rev01_en.pdf | EDPB / ICO | article | Not audited | modern-design (pages/legal, pages/user-account) | summarise | |
+| Chrome permission prompts | https://developer.chrome.com/blog/permissions-chip | Google Chrome | article | Not audited | modern-design (pages/user-account) | summarise | |
+| Introducing "You're All Caught Up" | https://about.instagram.com/blog/announcements/introducing-youre-all-caught-up-in-feed | Instagram | article | Not audited | modern-design (pages/interaction-creation) | summarise | |
+| Amazon settlement coverage | https://www.pbs.org/newshour/economy/amazon-to-pay-2-5-billion-to-settle-ftc-allegations-it-duped-customers-into-enrolling-in-prime | PBS NewsHour | article | Not audited | modern-design (pages/user-account) | summarise | |
 
 ## Working notes for phase 3
 
