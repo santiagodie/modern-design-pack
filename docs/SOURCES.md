@@ -101,7 +101,7 @@ Sources cited by the field guide. Not read or used directly by the skills; liste
 
 Written by the repository's author with Claude and released under this repository's MIT licence. Two batches:
 
-- **Four documents** (2026-11-24): `00-core-reasoning`, `01-web-psychology-marketing-principles`, `02-page-type-matrix`, `03-ethical-legal-limits-and-evidence`. They became `modern-design/references/reasoning.md`, `principles.md`, `page-types.md` (later replaced by `pages/`) and `ethics.md`, and the DP family of `design-review/references/dark-patterns-checklist.md`.
+- **Four documents** (2026-11-24), archived unchanged in `docs/research/web-reasoning/`: `00-core-reasoning`, `01-web-psychology-marketing-principles`, `02-page-type-matrix`, `03-ethical-legal-limits-and-evidence`. They became `modern-design/references/reasoning.md`, `principles.md`, `page-types.md` (later replaced by `pages/`) and `ethics.md`, and the DP family of `design-review/references/dark-patterns-checklist.md`.
 - **A `web-design-reasoning` skill** written in another session (2026-11-24), integrated rather than shipped as a separate skill. Its eleven page files became `modern-design/references/pages/` and `reasoning-examples.md` was copied as is. From its `SKILL.md`, the Baymard evidence, the list-mode signal about advice on what isn't visible, the persuasion dial, the novice-versus-expert collision, the reference table and "How to present design work" went into `reasoning.md`; its review rules went into `design-review/SKILL.md`. Its copies of `principles.md` and `limits-and-evidence.md` were older versions of ours and were not used, and its `landing-field-guide/` copy was identical to `docs/research/landing-field-guide/` and was not copied.
 
 Checked on 2026-11-24:
@@ -133,7 +133,7 @@ New sources cited by `pages/` and `reasoning.md`. Facts and figures are summaris
 
 ## Implementation research
 
-Four documents written by the repository's author with Claude (2026-11-24) and released under this repository's MIT licence, not stored in the repository: `00_README_index.md` (conventions, glossary, source registry), `01_foundations_architecture.md` (rendering, static and app rules, state, reuse layers, platform features, performance, security, accessibility, agent mistakes), `02_page_type_matrix.md` (per page type: static viability, rendering, data and state, priorities, anti-patterns) and `03_real_world_case_studies.md` (case studies with sources).
+Four documents written by the repository's author with Claude (2026-11-24) and released under this repository's MIT licence, archived unchanged in `docs/research/implementation/`: `00_README_index.md` (conventions, glossary, source registry), `01_foundations_architecture.md` (rendering, static and app rules, state, reuse layers, platform features, performance, security, accessibility, agent mistakes), `02_page_type_matrix.md` (per page type: static viability, rendering, data and state, priorities, anti-patterns) and `03_real_world_case_studies.md` (case studies with sources).
 
 How they were used:
 
