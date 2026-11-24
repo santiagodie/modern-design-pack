@@ -6,38 +6,48 @@ license: MIT
 
 # Modern Design
 
-> In progress (v0.1.0). Step 1 (direction) and step 3 for pages that persuade (components and responsive) are written. Steps 2 and 4 have no reference content yet: follow the brief with your own judgment until they do. See `docs/ROADMAP.md` in the repository.
+> In progress (v0.1.0). Step 1 (direction) and step 3 for pages that persuade (components and responsive) are written. Steps 2 and 4 are not covered yet: follow the brief with your own judgment until they are.
 
 ## When to use
 
 - The user asks to design, build or redesign a website, landing page, app screen or dashboard.
-- The user asks for a specific design layer (colors, type, components, motion): go to that step, reading `design-brief.md` first when it exists.
+- The user asks for a specific design layer (colors, type, components, motion): go to that step, reading the project's design brief first when it exists (a Markdown file named design-brief in the project root).
 
 Reviewing finished UI belongs to `design-review`.
 
+## Project files
+
+The skill keeps three Markdown files in the root of the user's project. Use these exact names:
+
+- **site-decisions**: current standards (pointing to the tokens in the code), the inventory of pages, sections and components, and the user's own decisions. To create it, copy `references/templates/site-decisions.md` to the project root and fill it. Never give it the same name as Impeccable's DESIGN file: on Windows, file names ignore case.
+- **design-brief**: the direction proposed for the project. Its template is in `references/direction.md`.
+- **content-needed**: every placeholder and what the user still has to supply. To create it, copy `references/templates/content-needed.md` to the project root and fill it.
+
+Impeccable may also have left a PRODUCT file and a DESIGN file (Markdown, in the project root). Read and follow them; never write them.
+
 ## Order of authority
 
-`ethics.md` (hard limit, including the no-invention rule) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `ethics.md` is declined with the reason.
+`references/ethics.md` (hard limit, including the no-invention rule) > the site-decisions file (what exists and what the user decided) > the design-brief file > `references/reasoning.md` (method for writing the brief) > the other references (`references/principles.md`, `references/pages/`, `references/sections/`, `references/implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks `references/ethics.md` is declined with the reason.
 
-- `${CLAUDE_SKILL_DIR}/references/ethics.md` is a hard limit: nothing that deceives is built, whatever the brief or a principle says. Load it when the page shows prices, offers, trials, subscriptions, sign-ups, consent, stock, urgency or reviews, and before handing off any page that persuades. Its section 7, the no-invention rule, applies to every build: never invent or assume prices, figures, business texts, reviews, testimonials, hours, addresses, footer legal details or photos, and decline when the user asks for them. Use marked placeholders and keep `content-needed.md` (template in `${CLAUDE_SKILL_DIR}/references/templates/content-needed.md`).
-- `site-decisions.md` (project root) holds the current standards (pointing to the tokens in the code), the inventory of pages, sections and components, and the user's own decisions. It wins over the brief. Template: `${CLAUDE_SKILL_DIR}/references/templates/site-decisions.md`.
-- `design-brief.md` holds the direction proposed for the project and wins over every reference below it.
-- `${CLAUDE_SKILL_DIR}/references/reasoning.md` is the method for writing the brief, used in step 1.
-- `${CLAUDE_SKILL_DIR}/references/principles.md` and the files in `${CLAUDE_SKILL_DIR}/references/pages/` (one per group of page types) are consulted after reasoning, to name a mechanism or catch a missed doubt. When reasoning you can explain in one sentence disagrees with them, the reasoning wins.
+- `references/ethics.md` is a hard limit: nothing that deceives is built, whatever the brief or a principle says. Load it when the page shows prices, offers, trials, subscriptions, sign-ups, consent, stock, urgency or reviews, and before handing off any page that persuades. Its section 7, the no-invention rule, applies to every build: never invent or assume prices, figures, business texts, reviews, testimonials, hours, addresses, footer legal details or photos, and decline when the user asks for them. Use marked placeholders and keep the content-needed file up to date.
+- The site-decisions file wins over the brief.
+- The design-brief file wins over every reference below it.
+- `references/reasoning.md` is the method for writing the brief, used in step 1.
+- `references/principles.md` and the files in `references/pages/` (one per group of page types) are consulted after reasoning, to name a mechanism or catch a missed doubt. When reasoning you can explain in one sentence disagrees with them, the reasoning wins.
 
 ## Process
 
-Before step 1, and before any single step, read `site-decisions.md` in the project root, or create it from `${CLAUDE_SKILL_DIR}/references/templates/site-decisions.md` when it doesn't exist. At the end of each step, update it as the template says. Before building anything new, check its inventory for something to reuse. Never name it `design.md`.
+Before step 1, and before any single step, read the site-decisions file in the project root; when it doesn't exist, copy `references/templates/site-decisions.md` to the project root and fill it. At the end of each step, update it as the template says. Before building anything new, check its inventory for something to reuse.
 
 Run the steps in order for a new interface or a redesign. When the request covers only one part (for example "change the colors"), go straight to that step. Load each reference only when you reach its step, never all at once.
 
-1. **Direction.** Load `${CLAUDE_SKILL_DIR}/references/direction.md` and follow it: read existing files (`design-brief.md`, `PRODUCT.md`, `DESIGN.md`, the stack), settle the context and the page's main job, research 3–5 live references, plan the structure from the content, commit to a direction, and write `design-brief.md` in the project root. Before writing the brief, `direction.md` sets the order: reason with `reasoning.md` (central promise and, per page, its moment, main doubt and persuasion dial), read only the `pages/` file of each page type, then `principles.md` and `ethics.md` when needed. When the brief must choose a stack or decide between a static site and an app, load `${CLAUDE_SKILL_DIR}/references/implementation.md`. When the user can't answer questions, assume design decisions, record them in the brief and continue; never assume content (`ethics.md`, section 7). Skip this step when a fitting `design-brief.md` already exists.
-2. **Tokens.** Define color palette, type pairing, spacing, radii, shadows, and light and dark themes from the brief's Direction section. Load `${CLAUDE_SKILL_DIR}/references/tokens.md` when the project needs new or fixed tokens. (Reference not written yet.)
-3. **Components.** Build or restyle sections and components in the project's stack, following the brief's Structure and the tokens. Load `${CLAUDE_SKILL_DIR}/references/sections/index.md` first, then only the file of each section you are about to build (for example `sections/hero.md`), plus `${CLAUDE_SKILL_DIR}/references/responsive.md`, and `${CLAUDE_SKILL_DIR}/references/implementation.md` when you set up routes, rendering, state or shared components. Build every component for phone, tablet and desktop. The catalogue covers pages that persuade; for pages that operate, use the brief, `responsive.md` and the parts of `header.md`, `cta.md` and `forms.md` that apply.
-4. **Motion.** Add purposeful animation and interaction at the level the brief sets, or remove what doesn't help. Load `${CLAUDE_SKILL_DIR}/references/motion.md` when the UI needs motion or feels static or sluggish. (Reference not written yet.)
+1. **Direction.** Load `references/direction.md` and follow it: read what exists (the design-brief file, Impeccable's PRODUCT and DESIGN files, the stack), settle the context and the page's main job, research 3–5 live references, plan the structure from the content, commit to a direction, and write the design-brief file in the project root. Before writing the brief, `references/direction.md` sets the order: reason with `references/reasoning.md` (central promise and, per page, its moment, main doubt and persuasion dial), read only the `references/pages/` file of each page type, then `references/principles.md` and `references/ethics.md` when needed. When the brief must choose a stack or decide between a static site and an app, load `references/implementation.md`. When the user can't answer questions, assume design decisions, record them in the brief and continue; never assume content (`references/ethics.md`, section 7). Skip this step when a fitting design-brief file already exists.
+2. **Tokens.** Define color palette, type pairing, spacing, radii, shadows, and light and dark themes from the brief's Direction section. Load `references/tokens.md` when the project needs new or fixed tokens. (Reference not written yet.)
+3. **Components.** Build or restyle sections and components in the project's stack, following the brief's Structure and the tokens. Load `references/sections/index.md` first, then only the file of each section you are about to build (for example `references/sections/hero.md`), plus `references/responsive.md`, and `references/implementation.md` when you set up routes, rendering, state or shared components. Build every component for phone, tablet and desktop. The catalogue covers pages that persuade; for pages that operate, use the brief, `references/responsive.md` and the parts of `references/sections/header.md`, `references/sections/cta.md` and `references/sections/forms.md` that apply.
+4. **Motion.** Add purposeful animation and interaction at the level the brief sets, or remove what doesn't help. Load `references/motion.md` when the UI needs motion or feels static or sluggish. (Reference not written yet.)
 5. **Hand off to `design-review`.** Run it in own-project mode before delivering any UI.
 
-Load `${CLAUDE_SKILL_DIR}/references/resources.md` only when a step needs a specific external resource (fonts, palettes, component libraries, inspiration galleries).
+Load `references/resources.md` only when a step needs a specific external resource (fonts, palettes, component libraries, inspiration galleries).
 
 ## Rules
 
@@ -51,17 +61,17 @@ Next skill: `design-review`. When it sends issues back, return to the step that 
 
 Load only when needed:
 
-- `${CLAUDE_SKILL_DIR}/references/direction.md`: step 1
-- `${CLAUDE_SKILL_DIR}/references/reasoning.md`: step 1, before writing the brief
-- `${CLAUDE_SKILL_DIR}/references/reasoning-examples.md`: worked examples of the method, when useful
-- `${CLAUDE_SKILL_DIR}/references/pages/`: step 1, only the file of each page type in the brief
-- `${CLAUDE_SKILL_DIR}/references/principles.md`: after reasoning, for reference
-- `${CLAUDE_SKILL_DIR}/references/ethics.md`: hard limit, for pages with prices, consent, subscriptions, scarcity, urgency or reviews
-- `${CLAUDE_SKILL_DIR}/references/tokens.md`: step 2
-- `${CLAUDE_SKILL_DIR}/references/sections/index.md`: step 3, then one file per section being built
-- `${CLAUDE_SKILL_DIR}/references/responsive.md`: step 3, phone, tablet and desktop
-- `${CLAUDE_SKILL_DIR}/references/implementation.md`: step 1 when choosing static or app, and step 3 for rendering, state, reuse layers, performance, accessibility and the legal minimum; its "Boundaries" section says what this plugin doesn't review
-- `${CLAUDE_SKILL_DIR}/references/motion.md`: step 4
-- `${CLAUDE_SKILL_DIR}/references/resources.md`: curated link catalogue
-- `${CLAUDE_SKILL_DIR}/references/templates/site-decisions.md`: template for the project's `site-decisions.md`, at the start of every run
-- `${CLAUDE_SKILL_DIR}/references/templates/content-needed.md`: template for the project's `content-needed.md`, the first time a build uses a placeholder
+- `references/direction.md`: step 1
+- `references/reasoning.md`: step 1, before writing the brief
+- `references/reasoning-examples.md`: worked examples of the method, when useful
+- `references/pages/`: step 1, only the file of each page type in the brief
+- `references/principles.md`: after reasoning, for reference
+- `references/ethics.md`: hard limit, for pages with prices, consent, subscriptions, scarcity, urgency or reviews; its section 7 for every build
+- `references/tokens.md`: step 2
+- `references/sections/index.md`: step 3, then one file per section being built
+- `references/responsive.md`: step 3, phone, tablet and desktop
+- `references/implementation.md`: step 1 when choosing static or app, and step 3 for rendering, state, reuse layers, performance, accessibility and the legal minimum; its "Boundaries" section says what this plugin doesn't review
+- `references/motion.md`: step 4
+- `references/resources.md`: curated link catalogue
+- `references/templates/site-decisions.md`: copy it to the project root and fill it, at the start of the first run
+- `references/templates/content-needed.md`: copy it to the project root and fill it, the first time a build uses a placeholder

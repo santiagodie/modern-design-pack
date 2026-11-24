@@ -49,10 +49,10 @@ That the price and delivery promised on the product page are still true, now in 
 Cart → checkout progression; cart edits followed by abandonment.
 
 ### Implementation
-- **Static:** app; partial with a hosted cart on a static site.
-- **Rendering:** server-rendered and private, never cached for others; the header cart count as an island.
-- **Data and state:** the cart lives on the server (its id in an HttpOnly cookie); add, update and remove are forms that work without JavaScript, with an optimistic update and a pending state per line; the server recomputes totals, discounts and taxes; all costs shown early.
-- **Anti-patterns:** the cart only in local storage; personal cart HTML cached by a CDN; trusting prices sent by the browser.
+- **Static:** app; partial when a static site embeds a hosted cart.
+- **Rendering:** rendered on the server for each visitor and kept out of shared caches; the cart count in the header is a small interactive part.
+- **Data and state:** the server keeps the cart and recognises it through a secure cookie; adding, changing and removing items are ordinary forms that also work without JavaScript, shown on screen at once with a pending mark on each line; the server recalculates totals, discounts and taxes; every cost is visible early.
+- **Anti-patterns:** keeping the cart only in browser storage; letting a shared cache serve one visitor's cart to others; accepting prices sent by the browser.
 
 ---
 
@@ -103,9 +103,9 @@ Checkout completion rate, errors per field, payment-decline recovery rate, suppo
 
 ### Implementation
 - **Static:** app.
-- **Rendering:** server-rendered, never cached, in its own layout with few third-party scripts; payment through the provider's hosted fields or page.
-- **Data and state:** guest checkout first; few fields with the right `autocomplete` and `inputmode`; one column; one idempotency key per payment attempt and no double submit; totals and stock checked on the server.
-- **Anti-patterns:** an optimistic "order placed"; custom card inputs; prerendering checkout; marketing pixels on the payment step.
+- **Rendering:** rendered on the server and never cached, in its own layout with few external scripts; card details go into the payment provider's own fields or page.
+- **Data and state:** guest checkout first; few fields, each with the right autofill and keyboard settings; one column; a retried payment attempt never charges twice, and the pay button can't be sent twice; the server checks totals and stock.
+- **Anti-patterns:** showing the order as complete before the server confirms it; building card fields by hand; loading the checkout page in advance; tracking scripts on the payment step.
 
 ---
 
@@ -146,9 +146,9 @@ That the deal is sealed exactly as agreed, and what happens next.
 
 ### Implementation
 - **Static:** app.
-- **Rendering:** server-rendered, not indexed, never cached; reads the order by id with the session or a signed token.
-- **Data and state:** fulfil from the payment provider's webhooks, never from reaching this page; handle pending payments; count the conversion once even on reload.
-- **Anti-patterns:** treating a session id in the URL as proof of payment; sending the purchase event on every reload.
+- **Rendering:** rendered on the server, kept out of search results and caches; it shows the order only to its customer, through their session or a signed link.
+- **Data and state:** the order is fulfilled when the payment provider notifies the server, not when someone reaches this page; payments still pending have their own state; reloading the page doesn't count the sale again.
+- **Anti-patterns:** trusting a URL parameter to confirm payment; counting the purchase again on every reload.
 
 ---
 
@@ -192,6 +192,6 @@ Share of order issues resolved without contacting support; "where is my order" c
 
 ### Implementation
 - **Static:** app.
-- **Rendering:** server-rendered behind login, with cursor pagination and one route per order.
-- **Data and state:** every query scoped to the user; statuses updated from webhooks; filters in the URL; reorder and invoice download as actions; a first-use empty state.
-- **Anti-patterns:** order status worked out in the browser.
+- **Rendering:** rendered on the server behind login, in pages, with one page per order.
+- **Data and state:** each customer sees only their own orders; statuses come from the providers' notifications; filters live in the URL; reordering and downloading an invoice are actions; an empty state for the first visit.
+- **Anti-patterns:** working out an order's status in the browser.
