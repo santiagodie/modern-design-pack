@@ -22,11 +22,11 @@ flowchart LR
 | | 4. Motion: purposeful animation and interaction | `references/motion.md` |
 | | 5. Hand off to design-review | none |
 | | Any step that needs an external resource | `references/resources.md` |
-| design-review: own project | 1. Review code and design decisions for generic patterns and mistakes | `references/unslop-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`; `references/dark-patterns-checklist.md` when the page has a price, sign-up, subscription, payment or cookie banner |
+| design-review: own project | 1. Review code and design decisions for generic patterns and mistakes | `references/unslop-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`; `references/dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content |
 | | 2. Browser check with screenshots, when the app is running | `references/visual-qa.md` |
 | | 3. Fix, or send back to the modern-design step that owns the problem | none |
 | design-review: URL audit | 1. Screenshots at 375, 768, 1440 px, HTML read, Lighthouse if Chrome is available | none |
-| | 2. Review against the checklists and browser criteria | `references/unslop-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`, `references/visual-qa.md`; `references/dark-patterns-checklist.md` when the page has a price, sign-up, subscription, payment or cookie banner |
+| | 2. Review against the checklists and browser criteria | `references/unslop-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`, `references/visual-qa.md`; `references/dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content |
 | | 3. Write the report | `references/audit-report.md` |
 
 Nothing outside the plugin: installed plugins are copied to a cache, and files outside the plugin are not available. Skills may read each other's files inside the plugin (`design-review` reads `modern-design`'s section references when they exist) and must keep working when they don't.
