@@ -33,7 +33,7 @@ Impeccable may also have left a PRODUCT file and a DESIGN file (Markdown, in the
 - The site-decisions file wins over the brief.
 - The design-brief file wins over every reference below it.
 - `references/reasoning.md` is the method for writing the brief, used in step 1.
-- `references/principles.md` and the files in `references/pages/` (one per group of page types) are consulted after reasoning, to name a mechanism or catch a missed doubt. When reasoning you can explain in one sentence disagrees with them, the reasoning wins.
+- `references/principles.md` and the files in `references/pages/` (one per group of page types; commerce has two, `references/pages/commerce-purchase.md` and `references/pages/commerce-after-purchase.md`) are consulted after reasoning, to name a mechanism or catch a missed doubt. When reasoning you can explain in one sentence disagrees with them, the reasoning wins.
 
 ## Process
 

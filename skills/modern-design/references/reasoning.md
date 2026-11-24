@@ -148,7 +148,8 @@ First reason with this document: person, promise, decision, doubt, cost, exit, d
 |---|---|
 | Landing, Home, About us, Pricing, Coming soon / Waitlist | `pages/entry-marketing.md` (for landing sections in depth, also `sections/`) |
 | Catalogue, Category, Product page, Search results, Map, Calendar | `pages/content-navigation.md` |
-| Cart, Checkout, Order confirmation, Order history | `pages/commerce.md` |
+| Cart, Checkout | `pages/commerce-purchase.md` |
+| Order confirmation, Order history | `pages/commerce-after-purchase.md` |
 | Sign-up, Login, Password recovery, Verification, Onboarding | `pages/authentication.md` |
 | Profile, Settings, Account and billing, Notifications | `pages/user-account.md` |
 | Forms, Editor, Messages / Chat, Feed / Activity | `pages/interaction-creation.md` |

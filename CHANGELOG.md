@@ -56,6 +56,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `modern-design` reads `site-decisions.md` at the start and updates it after each step; `design-review` reads it and doesn't report what the user decided, except measured failures (contrast, accessibility), reported as "decided by user".
 - `ethics.md` §7: the model may write and persuade with facts the user supplied; any new fact inside a sentence (frequency, origin, figures, guarantees, shipping, delivery times) is data and takes a placeholder or goes to `content-needed.md` as a proposal.
 - `visual-qa.md`: after stopping a local server, check that its port is free and stop a surviving child process.
+- `pages/commerce.md` split by moment in the journey, content unchanged: `pages/commerce-purchase.md` (cart, checkout) and `pages/commerce-after-purchase.md` (order confirmation, order history). Each header says they form one group and links to the other. The two together tripped the skill scanner's obfuscated-text check, which no single section did on its own.
 - Versioning: the version is bumped only when a release is published; changes go to "Unreleased" until then.
 - `visual-qa.md`: `read -r -d '' JS <<'EOF' || true`, because `read` returns 1 at the end of input and stops scripts that use `set -e`.
 

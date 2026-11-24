@@ -118,7 +118,7 @@ That the problem is being handled, by whom and by when — and that the ending i
 ### Specifics
 - [C] Ticket states in plain language ("We're waiting for your reply", "Fixed — please confirm"), not internal workflow names.
 - [C] Close tickets only after confirming the problem is solved, or after a stated period with clear notice.
-- [B] Order-related questions dominate e-commerce support; Baymard found order tracking is the most important self-service feature (50%), so good tracking pages reduce ticket volume (see `commerce.md`).
+- [B] Order-related questions dominate e-commerce support; Baymard found order tracking is the most important self-service feature (50%), so good tracking pages reduce ticket volume (see `commerce-after-purchase.md`, order history).
 
 ### 🔴 Critical errors
 - Tickets closed automatically without resolution.

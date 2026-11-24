@@ -173,9 +173,9 @@ Licences not audited, because nothing is adapted: facts are summarised in our ow
 | React Server Components vulnerability | https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components | Meta | article | Not audited | via the research | link only | Out of scope: "Boundaries". |
 | NIST SP 800-63B-4 | https://csrc.nist.gov/pubs/sp/800/63/b/4/final | NIST | standard | Not audited | via the research | link only | Already listed under the reasoning layer. |
 | Sign-in form best practices; passkey form autofill | https://web.dev/articles/sign-in-form-best-practices · https://web.dev/articles/passkey-form-autofill | web.dev | article | Not audited | modern-design (pages/authentication) | summarise | |
-| Baymard checkout research | https://baymard.com/research-articles/checkout-flow-average-form-fields · https://baymard.com/research-articles/ecommerce-checkout-usability-report-and-benchmark | Baymard Institute | article | Not audited | modern-design (pages/commerce) | summarise | |
-| Stripe fulfillment | https://docs.stripe.com/checkout/fulfillment | Stripe | article | Not audited | modern-design (pages/commerce) | summarise | |
-| Shopify Hydrogen cart | https://shopify.dev/docs/storefronts/hydrogen/cart | Shopify | article | Not audited | modern-design (pages/commerce) | summarise | |
+| Baymard checkout research | https://baymard.com/research-articles/checkout-flow-average-form-fields · https://baymard.com/research-articles/ecommerce-checkout-usability-report-and-benchmark | Baymard Institute | article | Not audited | modern-design (pages/commerce-purchase, pages/commerce-after-purchase) | summarise | |
+| Stripe fulfillment | https://docs.stripe.com/checkout/fulfillment | Stripe | article | Not audited | modern-design (pages/commerce-purchase, pages/commerce-after-purchase) | summarise | |
+| Shopify Hydrogen cart | https://shopify.dev/docs/storefronts/hydrogen/cart | Shopify | article | Not audited | modern-design (pages/commerce-purchase, pages/commerce-after-purchase) | summarise | |
 | Slack real-time messaging | https://slack.engineering/real-time-messaging | Slack | article | Not audited | modern-design (pages/interaction-creation) | summarise | |
 | Linear sync engine (reverse-engineered) | https://github.com/wzhudev/reverse-linear-sync-engine | wzhudev | article | Not audited | via the research | link only | |
 | Notion and CRDTs | https://www.notion.com/blog/how-notion-handles-concurrent-editing-with-crdts | Notion | article | Not audited | via the research | link only | |

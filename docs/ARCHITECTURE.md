@@ -15,7 +15,7 @@ flowchart LR
 | Skill | Steps | Reference loaded per step |
 |---|---|---|
 | modern-design | 1. Direction: context, live references, central promise, design brief | `references/direction.md`, then `references/reasoning.md` before writing the brief |
-| | After reasoning: only the file of each page type in the brief, then principles when needed | `references/pages/<group>.md`, `references/principles.md` (`references/reasoning-examples.md` for worked examples) |
+| | After reasoning: only the file of each page type in the brief, then principles when needed | `references/pages/<group>.md` (commerce is split in two: `commerce-purchase.md` and `commerce-after-purchase.md`), `references/principles.md` (`references/reasoning-examples.md` for worked examples) |
 | | Pages with prices, consent, subscriptions, scarcity, urgency or reviews (hard limit) | `references/ethics.md` |
 | | 2. Tokens: color, type, spacing, radii, shadows, themes | `references/tokens.md` |
 | | 3. Components: sections and components in the project's stack, for phone, tablet and desktop | `references/sections/index.md`, one file per section built, `references/responsive.md` |
