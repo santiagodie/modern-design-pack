@@ -15,7 +15,7 @@ Every page with an action. The CTA is a system repeated down the page (hero, aft
 - Verb plus outcome, 2–5 words: "Get a quote", "Start free trial", "Book a visit". Never "Submit", "Click here" or "Learn more" as the primary.
 - The label predicts the next screen. A button that says "Start free trial" and opens a sales form breaks trust.
 - One line of microcopy next to it answers the main worry ("No card needed", or a fact the user supplied, such as "Free returns for 30 days"). Reassure without naming the fear: "Your data stays private" works better than "We never spam".
-- **Destination still missing:** when the phone, map link, booking page or e-mail is a placeholder, the button either leads to the section where that placeholder is shown, with a label that stays true ("Get directions" to `#where`), or is shown as a placeholder itself: a non-link element with `data-placeholder` that doesn't look like a working button. Never a `tel:`, `mailto:`, `href="#"` or made-up URL (`../ethics.md`, section 7).
+- **Destination still missing:** when the phone, map link, booking page or e-mail is a placeholder, the button either leads to the section where that placeholder is shown, with a label that stays true ("Get directions" to `#where`), or is shown as a placeholder itself: a non-link element with `data-placeholder` that doesn't look like a working button. Never a `tel:`, `mailto:`, `href="#"` or made-up URL (`../content-truth.md`).
 - First-person wording ("Start my trial") often helps; treat it as something to test, not a law.
 - **Arrows:** add an arrow or chevron only to the primary CTA, and only when it leads forward to a next step. Secondary actions, inline links and every other button stay without arrows. Arrows on every link are template chrome.
 

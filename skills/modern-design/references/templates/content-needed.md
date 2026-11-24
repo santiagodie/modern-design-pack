@@ -1,11 +1,11 @@
 # Template: content-needed.md
 
-Template for `modern-design`. Copy it to the project root as `content-needed.md` the first time a build uses a placeholder or has an open question about the business (see `../ethics.md`, section 7), write it in the user's language, and keep it up to date in every step. `design-review` reads it and adds the claims it finds.
+Template for `modern-design`. Copy it to the project root as `content-needed.md` the first time a build uses a placeholder or has an open question about the business (see `../content-truth.md`), write it in the user's language, and keep it up to date in every step. `design-review` reads it and adds the claims it finds.
 
 ## Rules
 
 - One row per missing item. When the same item appears in several places (the phone in the header and the footer), use one row and list every place.
-- **Type:** `content` for a missing value, text or image; `business question` for a fact about how the business works that the page would otherwise presuppose (do they take orders, deliver, make or repair on site, take bookings, which country's law applies). Never assume the answer in the brief or on the page: until it arrives, the dependent sections use neutral headings or placeholders (`../ethics.md`, section 7).
+- **Type:** `content` for a missing value, text or image; `business question` for a fact about how the business works that the page would otherwise presuppose (do they take orders, deliver, make or repair on site, take bookings, which country's law applies). Never assume the answer in the brief or on the page: until it arrives, the dependent sections use neutral headings or placeholders (`../content-truth.md`).
 - **Sections that depend on it:** for a business question, every section, heading, nav link, button and metadatum that changes or disappears with the answer. For content, "—".
 - **Placeholder used:** the exact placeholder and its `data-placeholder` value, so a search finds every occurrence. For a business question, the neutral heading or placeholder used meanwhile.
 - **Model's guess:** one of three, in the user's language:

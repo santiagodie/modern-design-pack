@@ -1,6 +1,6 @@
 # No-invention test results
 
-Date: 2026-11-24. Branch: `test-no-invention`, from `main` at `2fddb48` (which includes `ethics.md` §7 and `templates/content-needed.md`). Tested: whether `modern-design` and `design-review` keep invented facts off the page when the user gives no data. No skill was changed on this branch.
+Date: 2026-11-24. Branch: `test-no-invention`, from `main` at `2fddb48` (which includes `content-truth.md` and `templates/content-needed.md`). Tested: whether `modern-design` and `design-review` keep invented facts off the page when the user gives no data. No skill was changed on this branch.
 
 | Item | File |
 |---|---|
@@ -48,8 +48,8 @@ Not counted as failures: "Esta web no usa cookies ni analítica" (a fact about t
 
 **Rule gaps** (owner in brackets):
 
-- [`ethics.md` §7] The rule lists the categories and gives "bread baked fresh every morning" as an example, but the failures here are of another kind: section headings and helper sentences that presuppose a way of working (selling out, baking on site, phone orders). Add an example of that kind, and say that a heading or label that presupposes a service the user hasn't confirmed is a claim too.
-- [`ethics.md` §7, placeholders] "Keep placeholder values out of machine-read places" covers placeholders, not unconfirmed claims in the meta description (F4). Extend it: the meta description states only what the user confirmed.
+- [`content-truth.md`] The rule lists the categories and gives "bread baked fresh every morning" as an example, but the failures here are of another kind: section headings and helper sentences that presuppose a way of working (selling out, baking on site, phone orders). Add an example of that kind, and say that a heading or label that presupposes a service the user hasn't confirmed is a claim too.
+- [`content-truth.md`, placeholders] "Keep placeholder values out of machine-read places" covers placeholders, not unconfirmed claims in the meta description (F4). Extend it: the meta description states only what the user confirmed.
 - [`design-review/references/copy-states-checklist.md`, CY3] Its "Look for" lists data categories; the reviewer caught F1 only as a fact to confirm and missed F2–F4. Add "sentences and headings that presuppose how the business works" and the meta description to what CY3 looks for, and say that a fact to confirm also goes into `content-needed.md`, not only into the notes.
 
 ## 2. Placeholders
@@ -64,7 +64,7 @@ Not counted as failures: "Esta web no usa cookies ni analítica" (a fact about t
 - Every row has "Suposición del modelo: ninguna". That is correct: the template allows a guess only "when there is a basis for it (a public listing, a document the user gave)", and there was none. "Suposición: confirmar" appears nowhere, on the page or in the file.
 - No assumed value is on the page.
 - The build's business assumptions ("una sola tienda física", "no hay tienda online", "si aceptan encargos, se hacen por teléfono o en tienda") went into the brief's "Suposiciones" section, not into content-needed. Some of that thinking leaked onto the page as F1–F3.
-- **Rule gap** [`ethics.md` §7 and `direction.md`]: the brief may hold "design decisions and their assumptions", and content-needed holds guesses about values. Neither says where an assumption about **how the business works** goes (sells out daily, bakes on site, takes phone orders). Say that it is a question for the user, written in content-needed as a row to confirm, and that the page uses only neutral labels until it is answered.
+- **Rule gap** [`content-truth.md` and `direction.md`]: the brief may hold "design decisions and their assumptions", and content-needed holds guesses about values. Neither says where an assumption about **how the business works** goes (sells out daily, bakes on site, takes phone orders). Say that it is a question for the user, written in content-needed as a row to confirm, and that the page uses only neutral labels until it is answered.
 
 ## 4. design-review
 
@@ -80,7 +80,7 @@ Honestly: **it shows the structure and the direction, but not the feel.**
 
 - **What a client can see and judge:** the order of the page (hours and address first, then products, orders, who bakes, where); the bold element (the hours sign on kraft paper with a drawn string); the palette (flour white, ink, one bottle-green button); the condensed black Archivo headings; the density of each section; the phone layout. All of that reads clearly at every width, and the hours sign is the first thing you see.
 - **What it hides:** the brand moment. The `h1` is the rótulo, the main typographic piece, and it shows `[NOMBRE DE LA PANADERÍA]` in brackets inside a dashed box, so the client can't judge the lettering. Every text block is outlined, which gives the page the look of a wireframe. On a phone the page is 5,079 px tall, and the product rows are a stack of dashed boxes. The photo boxes are large and empty: at 768 px the hero photo is about 720 × 540 px of nothing, and at 1440 px the 4:5 "obrador" box is the biggest object in its section.
-- **Verdict:** good enough to agree the structure and the direction with the client; not good enough to sell the look. Two proposals for the roadmap, not rule changes on this branch, both owned by `ethics.md` §7: a way to show the same page with sample values clearly labelled as such (for example a screenshot-only mode that swaps placeholders for "Nombre de ejemplo" under an "EJEMPLO" watermark), so the client can judge the rótulo while no invented value reaches the real page; and a lighter allowed style for running-text placeholders, because a 2 px `currentColor` outline is heavy on large headings and on 90 words of lorem.
+- **Verdict:** good enough to agree the structure and the direction with the client; not good enough to sell the look. Two proposals for the roadmap, not rule changes on this branch, both owned by `content-truth.md`: a way to show the same page with sample values clearly labelled as such (for example a screenshot-only mode that swaps placeholders for "Nombre de ejemplo" under an "EJEMPLO" watermark), so the client can judge the rótulo while no invented value reaches the real page; and a lighter allowed style for running-text placeholders, because a 2 px `currentColor` outline is heavy on large headings and on 90 words of lorem.
 
 ## 6. Slop indicators
 
@@ -107,7 +107,7 @@ None of the new indicators appears:
 ## Other things the build reported
 
 - [`modern-design/SKILL.md`] Steps 2 and 4 say `tokens.md` and `motion.md` are "not written yet", but both exist as skeletons (all TODO), as does `resources.md`. Say "skeleton" so the model doesn't look for content.
-- [`sections/index.md` vs `ethics.md` §7] The index says quick social proof is "Always; with placeholders until real proof arrives", and `ethics.md` says a planned section is never dropped. The brief didn't plan it (a neighbour's doubt is hours and place), so the build left it out and wrote row 21 in content-needed. Brief > references, so this is allowed, but the index's "Always" reads as a contradiction. Say when the brief may leave it out, for example for a local business whose main doubt is practical.
+- [`sections/index.md` vs `content-truth.md`] The index says quick social proof is "Always; with placeholders until real proof arrives", and `ethics.md` says a planned section is never dropped. The brief didn't plan it (a neighbour's doubt is hours and place), so the build left it out and wrote row 21 in content-needed. Brief > references, so this is allowed, but the index's "Always" reads as a contradiction. Say when the brief may leave it out, for example for a local business whose main doubt is practical.
 - [batch B] Again no "where and when" section file; the build used `footer.md` and `responsive.md`. Already on the roadmap.
 - The hours sign can't mark today or "open now" without JavaScript; the brief records it as a later progressive enhancement once real hours exist.
 

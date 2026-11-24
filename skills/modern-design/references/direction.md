@@ -21,7 +21,7 @@ Before asking anything, look at the project:
 - Brand material: logo, colors and fonts already in use, real photos, product screenshots, real copy.
 - `content-needed.md` from an earlier run: what is still missing and what the user has confirmed.
 
-Then, before anything else, ask the user for the business's own documentation and data: existing website or listings, brochures, menus or price lists, opening hours, address and phone, legal details for the footer, reviews they are allowed to show, photographs and product screenshots. Everything a visitor would read as a fact comes from this material or from the user, never from the model (`ethics.md`, section 7).
+Then, before anything else, ask the user for the business's own documentation and data: existing website or listings, brochures, menus or price lists, opening hours, address and phone, legal details for the footer, reviews they are allowed to show, photographs and product screenshots. Everything a visitor would read as a fact comes from this material or from the user, never from the model (`content-truth.md`).
 
 ### 2. Gather context
 
@@ -49,7 +49,7 @@ When you can ask, ask at most five short questions in one message, only about wh
 
 **When there are no answers** (a non-interactive session, or the user says "you decide"), don't stop. Make reasonable design assumptions (audience, devices, where traffic comes from, tone, direction) and write each one under "Design assumptions" in the brief, so the user can correct them later. Facts about the business are different, and they never go into the brief as assumptions:
 
-- **Content** the user would have to stand behind (prices, figures, business texts, reviews, hours, addresses, footer legal details, photos): build with the placeholders in `ethics.md`, section 7.
+- **Content** the user would have to stand behind (prices, figures, business texts, reviews, hours, addresses, footer legal details, photos): build with the placeholders in `content-truth.md`.
 - **How the business works** (do they take orders, deliver, make or repair on site, take bookings, offer pickup, which country's law applies): write each open point as a business-question row in `content-needed.md`, listing the sections that depend on it. Those sections may be planned and built, with neutral headings or placeholders until the answer arrives.
 
 Write `content-needed.md` from `templates/content-needed.md`.
@@ -181,7 +181,7 @@ None assumed here. Open questions about how the business works are business-ques
 - Write the central promise before the structure, and check that every page keeps it true.
 - Ask for the business's documentation and data at the start, before researching references.
 - When the user can't answer, assume design decisions, write the assumption down, and keep going. Never assume content or how the business works: use placeholders, ask business questions in `content-needed.md`, and keep the headings of the sections that depend on them neutral.
-- Mark every placeholder for facts, photos and figures the user must supply with `data-placeholder` and a visible style (`ethics.md`, section 7); never fill them with invented data, and decline when asked to.
+- Mark every placeholder for facts, photos and figures the user must supply with `data-placeholder` and a visible style (`content-truth.md`); never fill them with invented data, and decline when asked to.
 - Take the direction from the subject's world, and say why in the brief.
 - Spend boldness on one element when the page's job allows it; for "operate" and "read" pages, spend it on clarity instead.
 - Keep reference screenshots out of the project and out of version control.
