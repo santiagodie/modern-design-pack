@@ -24,6 +24,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Phase 3a tests in `docs/examples/phase-3/` (bakery landing and veterinary dashboard built with the direction step, then reviewed).
 - `modern-design` step 3: `references/sections/` (an index with the sections each page job needs, and one file per mandatory section for pages that persuade: header, hero, CTA, social proof, benefits, forms, final CTA, footer, each with phone, tablet and desktop layouts) and `references/responsive.md` (capability-first touch baseline, tablet section, what emulation can't reproduce). Replaces the empty `components.md`.
 - `design-review`: screenshots at 375, 768, 1024 and 1440 px with touch emulated through device presets at the first three, phone landscape when the page has fixed elements, a "Needs a real device" section in reports, measurable mobile checks MN1–MN5 with a detection script, and optional reading of `modern-design`'s section files.
+- Phase 3b batch A test in `docs/examples/phase-3b-results.md` (bakery rebuilt with `sections/` and `responsive.md`, reviewed at 375, 768, 1024 and 1440 px).
 - The author's research (`docs/research/landing-field-guide/`) and its cited sources in `docs/SOURCES.md`.
 
 ### Changed (phase 3b)
