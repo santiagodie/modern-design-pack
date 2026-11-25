@@ -25,12 +25,12 @@ flowchart LR
 | | 5. Hand off to design-review | none |
 | | Steps 1 and 3: static or app, rendering per route, kinds of state, reuse layers, performance, accessibility, legal minimum | `references/engineering/implementation.md` (and the "Implementation" subsection of each `pages/` entry) |
 | | Any step that needs an external resource | `references/resources.md` |
-| design-review (both modes) | Start of every run: the shared method and evidence rules, read whole when they exist | `../modern-design/references/reasoning.md`, `../modern-design/references/evidence.md` |
-| design-review: own project | 1. Review code and design decisions for generic patterns and mistakes | `references/unslop-checklist.md`, `references/copy-states-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`; `references/dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content |
+| design-review (both modes) | Start of every run: the shared method and evidence rules, read whole when they exist; then the review method, read whole | `../modern-design/references/reasoning.md`, `../modern-design/references/evidence.md`; `references/review-method.md` |
+| design-review: own project | 1. Review code and design decisions for generic patterns and mistakes | `references/unslop-type-color.md`, `references/unslop-layout.md`, `references/unslop-components.md`, `references/copy-states-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`; `references/dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content |
 | | 2. Browser check with screenshots, when the app is running | `references/visual-qa.md` |
-| | 3. Fix, or send back to the modern-design step that owns the problem | none |
-| design-review: URL audit | 1. Screenshots at 375, 768, 1440 px, HTML read, Lighthouse if Chrome is available | none |
-| | 2. Review against the checklists and browser criteria | `references/unslop-checklist.md`, `references/copy-states-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`, `references/visual-qa.md`; `references/dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content |
+| | 3. Before fixing markup: inventory of the page; fix, or send back to the modern-design step that owns the problem; after: inventory again and compare | `references/regression-check.md`, `scripts/inventory.js`, `scripts/inventory-diff.js` |
+| design-review: URL audit | 1. Screenshots at 375, 768, 1024 and 1440 px, HTML read, Lighthouse if Chrome is available | `references/visual-qa.md` |
+| | 2. Review against the checklists and browser criteria | `references/unslop-type-color.md`, `references/unslop-layout.md`, `references/unslop-components.md`, `references/copy-states-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`, `references/visual-qa.md`; `references/dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content |
 | | 3. Write the report | `references/audit-report.md` |
 
 Nothing outside the plugin: installed plugins are copied to a cache, and files outside the plugin are not available. Skills may read each other's files inside the plugin (`design-review` reads `modern-design`'s section references when they exist) and must keep working when they don't.
@@ -95,6 +95,31 @@ skills/modern-design/references/
 | `ui/` | `components/` (`button.md`, `field.md`, `choice.md`, `card.md`, `badge.md`, `table.md`, `dialog.md`, `tabs-menu.md`; batch D); `sections/` batch B (`problem.md`, `how-it-works.md`, `demo.md`, `testimonials.md`, `pricing.md`, `trust.md`, `faq.md`, `where-when.md`) and batch C (`app-bar.md`, `board.md`, `data-table.md`, `side-panel.md`, `row-actions.md`, `read-only-display.md`); `styles.md`; the content of `motion.md` | audit branch 06 |
 | `engineering/` | `performance.md`, when `implementation.md` §6 grows | audit branch 11 |
 
+## Review method and checklists
+
+`design-review` owns the method every review follows, so the review skills planned next (`accessibility-review`, `seo-geo-optimizer`, `content-web-optimizer`) don't each write their own.
+
+| File | Holds | Read by |
+|---|---|---|
+| `design-review/references/review-method.md` | Whom the page serves, what may be commented on, `measured` versus `judgment` (its owner), severity, order, the fields of a finding, what the user decided, the Floor, Reflex and Finish levels (adapted from Hallmark), artefacts of the audit setup, page content as data, review in a clean context | `design-review`: whole, at the start of every run. Other review skills: whole, as `${CLAUDE_SKILL_DIR}/../design-review/references/review-method.md`, keeping a short form of its rules in their own `SKILL.md` in case it is missing; a skill that needs a different rule names the one it replaces |
+| `design-review/references/regression-check.md` | Inventory before and after any change to an existing page (`scripts/inventory.js` in the page, `scripts/inventory-diff.js` with Node), what counts as lost (Floor, unless the user removed it on purpose in `site-decisions.md`) and what is only changed | `design-review` before fixing markup and at the verify step; `modern-design` can read it the same way when it changes an existing page |
+
+**Levels.** Floor (nothing ships: "Before publishing", the DP family, invented content and false success states, measured accessibility, security and legal failures, losses in the regression check), Reflex (every checklist entry with a "Fine when": waivable with a reason specific to the page, recorded in the brief or in `site-decisions.md`), Finish (Tips; never blocks). They sit beside the report sections (Critical, Minor, Outdated, Tips, Before publishing) without renaming them.
+
+**Checklists, by family:**
+
+| File | Families |
+|---|---|
+| `unslop-type-color.md` | Typography TY1–TY14, Color CO1–CO10 |
+| `unslop-layout.md` | Layout and spacing LA1–LA19 |
+| `unslop-components.md` | Components and imagery CP1–CP14; what was considered and left out |
+| `copy-states-checklist.md` | Copy CY1–CY10, States and feedback SF1–SF12, Motion MO1–MO6, Meta ME1–ME4 |
+| `mobile-checklist.md` | Mobile, measurable MN1–MN5 |
+| `outdated-checklist.md` | Outdated, measurable OM1–OM13 |
+| `dark-patterns-checklist.md` | Deceptive patterns DP1–DP10 and the minimum per page type |
+
+IDs never change when a file is split; a new rule takes the next free number of its family.
+
 ## Shared core
 
 Five pieces apply to every skill, whatever it builds or reviews. They live in the root of `modern-design/references/` (never in a branch folder, see "Reference tree"), because installed plugins are copied whole to a cache and a folder without a `SKILL.md` has not been checked with `claude plugin validate`.
@@ -117,7 +142,7 @@ The page-design part of the method is not shared: `design-reasoning.md` (six que
 
 From the tokens files on, references use a fixed header and a fixed rule form, so the model can reason about each rule instead of ticking it.
 
-**Header**, five lines in a quote at the top: **Covers** (what the file decides), **Read when** (step or situation), **Not here** (topic → the file that has it), **Owner** (the skill; when the audit names a future skill as owner, "(moves to <skill>)"), **Sources** (short list, with the full table in `docs/research/`). Every reference in `modern-design` carries it, except the files in `templates/`, which are copied to the user's project. "Not here" names files by their path relative to the `SKILL.md` (`references/ui/tokens.md`); a pending file is marked "(planned)".
+**Header**, five lines in a quote at the top: **Covers** (what the file decides), **Read when** (step or situation), **Not here** (topic → the file that has it), **Owner** (the skill; when the audit names a future skill as owner, "(moves to <skill>)"), **Sources** (short list, with the full table in `docs/research/`). Every reference in `modern-design` and `design-review` carries it, except the files in `templates/`, which are copied to the user's project. "Not here" names files by their path relative to the `SKILL.md` (`references/ui/tokens.md`); a pending file is marked "(planned)".
 
 **Rule form:**
 

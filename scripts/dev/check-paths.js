@@ -1,4 +1,4 @@
-// Usage: node scripts/dev/check-paths.js [repo-root]  (checks every references/ path and relative link in skills/; run after moving or renaming any file in skills/)
+// Usage: node scripts/dev/check-paths.js [repo-root]  (checks every references/ path, every ../modern-design/references/ and ../design-review/references|scripts/ path, and every relative link in skills/; run after moving or renaming any file in skills/)
 const fs = require('fs');
 const path = require('path');
 
@@ -30,6 +30,10 @@ for (const file of files) {
     // A/B: ${CLAUDE_SKILL_DIR}/../modern-design/references/... or modern-design/references/...
     for (const m of line.matchAll(/(?:\$\{CLAUDE_SKILL_DIR\}\/\.\.\/|\.\.\/)?modern-design\/references\/[A-Za-z0-9_./-]*/g)) {
       found.push({ kind: 'modern-design/references', raw: m[0], target: path.join(skillsDir, m[0].replace(/^.*?modern-design\//, 'modern-design/')) });
+    }
+    // A2: ${CLAUDE_SKILL_DIR}/../design-review/references|scripts/... or design-review/references|scripts/...
+    for (const m of line.matchAll(/(?:\$\{CLAUDE_SKILL_DIR\}\/\.\.\/|\.\.\/)?design-review\/(?:references|scripts)\/[A-Za-z0-9_./-]*/g)) {
+      found.push({ kind: 'design-review/', raw: m[0], target: path.join(skillsDir, m[0].replace(/^.*?design-review\//, 'design-review/')) });
     }
     // C: references/... not preceded by modern-design/ (optionally "design-review references/...")
     for (const m of line.matchAll(/(^|[^A-Za-z0-9_/-])((?:(design-review|modern-design) )?references\/[A-Za-z0-9_./-]*)/g)) {
