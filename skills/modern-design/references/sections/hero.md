@@ -34,7 +34,7 @@ The brief may replace the classic hero with something more useful (a ferry line'
 | Order | The headline, then the content that does the brief's main job, then the rest (see below) | Portrait: stacked like phone, or split only if each column keeps at least about 320 px. Landscape: split | Split (copy left, visual right), centered with visual below, or full-bleed media with text over it |
 | Headline size | 32–44 px | about 40–56 px | 48–80 px, fluid with `clamp()` |
 | Height | Content-driven; if full-screen, `min-height: 100svh`, never `100vh` | Content-driven; check portrait doesn't leave a tall empty band | About 80–90% of the first screen, so the next section peeks |
-| CTA | Full width inside the side padding, in thumb reach | Natural width, at least 48 px tall | Natural width |
+| CTA | Full width inside the side padding, in thumb reach | Natural width, at least `--target-touch` (44 px) tall | Natural width |
 | Top padding | 32–56 px | 48–80 px | 64–120 px |
 
 **Phone order.** On phones, put first what serves the main job in the brief, right after the headline. When the brief names a hero element that carries the information visitors come for (a timetable, a price, an availability slot, the product itself), place it straight under the headline, before the subheadline and buttons. When the brief gives a mobile order, follow it. Otherwise use headline, subheadline, CTA, reassurance, then the visual. Keep the header CTA visible, so the action stays on the first screen when the buttons move down. Reorder with CSS (`order`, `display: contents`) only when the reading and focus order still make sense. Otherwise change the HTML order.
