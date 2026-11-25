@@ -1,5 +1,11 @@
 # Worked reasoning examples
 
+> **Covers:** three worked examples of the method applied end to end, at different points of the persuasion dial.
+> **Read when:** step 1 of `modern-design`, from `design-reasoning.md`, when it helps to see the method applied to a whole product.
+> **Not here:** the shared method → references/reasoning.md; the six questions per screen → references/strategy/design-reasoning.md; the default dial per page type → references/ux/pages/
+> **Owner:** modern-design
+> **Sources:** integrated from the author's web-design-reasoning skill (MIT); full list in docs/SOURCES.md
+
 Reference for `modern-design`, step 1. Open it from `design-reasoning.md` when you want to see the method applied end to end.
 
 > **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` and `design-reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.

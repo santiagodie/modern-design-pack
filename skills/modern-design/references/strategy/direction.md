@@ -1,5 +1,11 @@
 # Direction
 
+> **Covers:** step 1: reading what exists, gathering context, researching live references, planning the structure from the content, committing to a direction, the template test, and the template of `design-brief.md`.
+> **Read when:** step 1 of `modern-design`, for a new interface or a redesign, or when the brief is missing and the change depends on it.
+> **Not here:** the shared method → references/reasoning.md; the six questions per screen and which page file to open → references/strategy/design-reasoning.md; page-type specifics → references/ux/pages/; turning the direction into tokens → references/ui/tokens.md; no invention and placeholders → references/content-truth.md
+> **Owner:** modern-design
+> **Sources:** frontend-design (Apache-2.0), Taste Skill (MIT), Figma's web design articles, Impeccable's file conventions; credits at the end of this file, full list in docs/SOURCES.md
+
 Reference for `modern-design`, step 1. Load it at the start of a new interface or a redesign. It produces `design-brief.md`, which every later step follows.
 
 ## When to use
