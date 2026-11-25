@@ -122,7 +122,7 @@ modern-design-pack/
 │   │   └── references/      # direction, reasoning, reasoning-examples, pages/, principles, ethics, content-truth, implementation, responsive, sections/, templates/, tokens, motion, resources
 │   └── design-review/
 │       ├── SKILL.md
-│       ├── references/      # review-method, unslop-type-color, unslop-layout, unslop-components, copy-states-checklist, mobile-checklist, outdated-checklist, dark-patterns-checklist, visual-qa, audit-report
+│       ├── references/      # review-method, unslop-type-color, unslop-layout, unslop-components, copy-states-checklist, mobile-checklist, outdated-checklist, dark-patterns-checklist, visual-qa, regression-check, audit-report
 │       └── scripts/         # page scripts run with playwright-cli eval
 ├── assets/banner.svg
 ├── docs/
