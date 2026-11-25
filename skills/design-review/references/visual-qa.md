@@ -99,7 +99,7 @@ Run it at each width. It returns JSON with horizontal overflow, the widest offen
 
 **1440 px (desktop)**
 - Lines of body text running much wider than about 75 characters.
-- Content floating in the middle of very wide empty margins, or stretched edge to edge.
+- Content floating in the middle of very wide empty margins, or stretched edge to edge. When lines or grids already run edge to edge here, take one extra screenshot at 1920 × 1080 (`<page>-1920.png`) for LA14.
 - Hierarchy: is the most important thing the most visible?
 - Focus indicators, from the focus screenshot.
 
