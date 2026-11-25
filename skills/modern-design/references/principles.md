@@ -249,9 +249,4 @@ Cross-cutting golden rule: trust is not a phase, it is a condition. Any trust fa
 
 ## 3. Level of persuasion allowed by context (general rule)
 
-- HIGH (explicit persuasion acceptable): Landing, Home, Pricing, Coming soon, Product page.
-- MEDIUM (supporting persuasion, no pressure): Catalogue, Category, Cart, Sign-up, Onboarding, Blog, Success page.
-- LOW (clarity and trust only): Checkout, Login, Verification, Settings, Billing, Dashboard, Admin, Documentation, Support.
-- NONE (any persuasive tactic is a legal or trust risk): Legal, Cookies, Cancellation, 404/500 errors, Maintenance.
-
-The closer the user is to money, their data or an irreversible action, the less persuasion and the more transparency.
+The closer the user is to money, their data or an irreversible action, the less persuasion and the more transparency. The levels of the dial are defined in `reasoning.md` §4; the default level for each page type is in its entry in `pages/`.

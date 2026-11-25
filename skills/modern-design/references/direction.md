@@ -153,7 +153,7 @@ None assumed here. Open questions about how the business works are business-ques
 ### <page> (one block per page; a single-page site has one)
 - Moment in the journey: <where the visitor comes from and what they already believe>
 - Main doubt: <the one doubt or effort this page must resolve>
-- Persuasion dial: <high | medium | low | none> — <why, for this page and this person>
+- Persuasion dial: <high | medium | medium-low | low | none> — <why, for this page and this person>
 1. <section or region>: <purpose> — <content or picture> — <real | placeholder; "depends on content-needed #n" when a business question decides it>
 
 ## Direction

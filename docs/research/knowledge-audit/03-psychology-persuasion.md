@@ -70,3 +70,26 @@ Convenciones: ver `01-reasoning.md`. "md:" = `modern-design/references/`, "dr:" 
 
 - **Conocidas:** `docs/research/landing-field-guide/00_README.md` "Psychology cheat-sheet" y `02_IMPORTANT.md` §5; `docs/research/web-reasoning/01-web-psychology-marketing-principles.md` (origen de `principles.md`); impeccable `skill/reference/mode-persuade.md`, `mode-operate.md`; ui-ux-pro-max `data/ux-guidelines.csv` (solo referencia).
 - **Nueva (candidata):** Deceptive Patterns, https://www.deceptive.design , sin licencia abierta ("©2026 Testimonium Ltd."; términos en /legal/terms-and-conditions/): solo resumir. Verificado 2026-11-25.
+
+## Resolución del dial (rama `fix-contradictions`)
+
+Regla: gana `pages/` salvo que `principles.md` §3 aporte evidencia o un motivo que la ficha no tenga. §3 no citaba evidencia, así que no se eligió en ningún caso.
+
+| Página | principles §3 | pages/ | Valor final | Motivo |
+|---|---|---|---|---|
+| Login | LOW | none | none | Gana `pages/`; §3 sin evidencia propia |
+| Verification | LOW | none | none | Ídem |
+| Settings | LOW | none | none | Ídem |
+| Dashboard | LOW | none | none | Ídem (no estaba en la tabla de la auditoría) |
+| Admin | LOW | none | none | Ídem (no estaba en la tabla de la auditoría) |
+| Documentation | LOW | none | none | Ídem |
+| Support | LOW | none | none | Ídem |
+| Catalogue | MEDIUM | medium-low | medium-low | Ídem |
+| Cart | MEDIUM | medium-low (cabecera del grupo: low) | medium-low | Ídem; cabecera del grupo corregida |
+| Success page | MEDIUM | low-medium | medium-low | Ídem; "low-medium" fusionado en "medium-low" |
+| Cancellation | NONE | Account & billing: low (una oferta de retención opcional y honesta) | low | La ficha tiene evidencia legal (FTC, DFA) y el matiz de la pausa |
+| Product page | HIGH | high (cabecera del grupo: "medium to low") | high | Coinciden; cabecera del grupo corregida |
+| About us | no listado | medium | medium | Solo lo da `pages/` |
+| Order history, FAQ, Notifications | no listados | none-low | low | "none-low" fusionado en "low" |
+
+Escala final (definida en `reasoning.md` §4): high, medium, medium-low, low, none. Fusiones: "low-medium" = "medium-low" (mismo nivel, otro orden de palabras); "none-low" = "low" (ambos permiten como mucho un paso u oferta opcional y fácil de ignorar).

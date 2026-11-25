@@ -110,7 +110,15 @@ Consequence for reasoning: endings are not closing details. A flawless purchase 
 
 ## 4. Context changes everything: persuasion has a dial
 
-What works on a landing page (curiosity, social proof, emotion) is friction on a payment form or an admin panel, where people want predictability. **The closer the person is to their money, their data or an irreversible action, the less persuasion and the more transparency.** Expert tools used daily optimise for speed and density; first-time consumer flows optimise for comprehension. Before borrowing any pattern, ask which side of the dial this page sits on: high, medium, low or none. Each file in `pages/` states its default setting and when it flips. Record the setting and the reason for each page in the brief; later steps use it to decide density and how much motion is allowed.
+What works on a landing page (curiosity, social proof, emotion) is friction on a payment form or an admin panel, where people want predictability. **The closer the person is to their money, their data or an irreversible action, the less persuasion and the more transparency.** Expert tools used daily optimise for speed and density; first-time consumer flows optimise for comprehension. Before borrowing any pattern, ask where on the dial this page sits. The scale has five levels:
+
+- **High:** persuading is the page's job. Emotion, proof and a strong call to action are legitimate, as long as every claim is true.
+- **Medium:** persuasion supports the content without pressure: proof next to the claim it backs, one call to action after the value is delivered.
+- **Medium-low:** the person is finding or finishing something. Persuasion only helps them choose (ratings, a relevant suggestion, one next step) and never competes with the main task.
+- **Low:** clarity and trust first; at most one optional, honest offer or next step that is easy to ignore.
+- **None:** no persuasive tactic; any would be friction or a legal or trust risk. Clarity, transparency and a way out.
+
+The default level for each page type, and when it flips, lives only in its entry in `pages/`. Record the setting and the reason for each page in the brief; later steps use it to decide density and how much motion is allowed.
 
 ---
 

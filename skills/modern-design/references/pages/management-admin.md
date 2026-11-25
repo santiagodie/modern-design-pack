@@ -4,7 +4,7 @@ Dashboard · Analytics / Reports · Admin panel · User / Team management
 
 Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
 
-Persuasion dial for this group: none. These users are often experts who come back daily. Optimise for speed, accuracy and confidence. Density that would overwhelm a newcomer can be exactly right for an expert; the question is always who uses the screen most and how often.
+Persuasion dial for this group: none; low for user and team management. These users are often experts who come back daily. Optimise for speed, accuracy and confidence. Density that would overwhelm a newcomer can be exactly right for an expert; the question is always who uses the screen most and how often.
 
 Group summary: dominant phase operational confidence; principles that weigh most P10, P07, P17, P12; main risk: density without hierarchy, irreversible errors.
 

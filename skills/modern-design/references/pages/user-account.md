@@ -147,7 +147,7 @@ Voluntary cancellations completed in-product versus chargebacks and complaints; 
 
 ## Notifications (preferences and permission requests)
 
-**Persuasion dial:** none-low.
+**Persuasion dial:** low.
 **3C weight:** Act 3 / Conf 2.
 
 ### The moment
