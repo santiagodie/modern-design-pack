@@ -12,7 +12,7 @@ Rules follow the form in `tokens.md`: Rule, Why, When it flips, Source.
 
 **Rule (SHOULD):** decide light or dark from where and when the page is used, not from the category or a habit. "Dark or light is never a default: write one sentence of physical scene (who uses this, where, under what light)" (impeccable). Write that sentence in the brief.
 
-**Why:** a dark page read in daylight on a phone strains the eyes; a white page in a dark room glares. The use scene is a fact about the user's moment (`reasoning.md` §2, "Who is here"), and the theme should serve it.
+**Why:** a dark page read in daylight on a phone strains the eyes; a white page in a dark room glares. The use scene is a fact about the user's moment (`design-reasoning.md` §1, "Who is here"), and the theme should serve it.
 
 **When it flips:**
 
@@ -32,7 +32,7 @@ Rules follow the form in `tokens.md`: Rule, Why, When it flips, Source.
 - **Text:** step back from pure white for body text when contrast allows; muted text is where dark themes fail most, so measure it.
 - **Images and logos:** check each one on the dark surfaces. A dark logo disappears; provide an alternate version or a light plate.
 
-**Why:** inverted themes keep the light theme's mistakes and add new ones: shadows that read as holes, saturated accents that glow, and grey text that drops below 4.5:1. The user switching themes expects the same product, not a negative of it (trust, `reasoning.md` §3).
+**Why:** inverted themes keep the light theme's mistakes and add new ones: shadows that read as holes, saturated accents that glow, and grey text that drops below 4.5:1. The user switching themes expects the same product, not a negative of it (trust, `reasoning.md` §2).
 
 **When it flips:** a brand-led direction can choose pure black and saturated accents on purpose (a night-time event, a gallery). Check contrast and the focus ring anyway.
 

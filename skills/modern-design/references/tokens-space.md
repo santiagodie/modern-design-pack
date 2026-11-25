@@ -57,7 +57,7 @@ Make it fluid with `clamp()` and a `rem` term, so it shrinks on phones without a
 
 **Rule (SHOULD):** declare the density of each region in the brief: compact, comfortable or spacious. "Does the amount of information per region fit use frequency, decision complexity, and visitor mode?" (impeccable). Implement it as a higher-order token: an attribute on the region (`data-density="compact"`) that reassigns the three levels, with low specificity (`:where([data-density="compact"])`) so components can still override it.
 
-**Why:** an expert who uses a screen every day reads density as speed; a first-time visitor reads the same density as effort (`reasoning.md` §5, novice versus expert).
+**Why:** an expert who uses a screen every day reads density as speed; a first-time visitor reads the same density as effort (`reasoning.md` §4, novice versus expert).
 
 **When it flips:** density never shrinks targets. Compact mode reduces space between things, never the size of what is tapped or clicked (section 6).
 

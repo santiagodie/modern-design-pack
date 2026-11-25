@@ -1,8 +1,8 @@
 # Worked reasoning examples
 
-Reference for `modern-design`, step 1. Open it from `reasoning.md` when you want to see the method applied end to end.
+Reference for `modern-design`, step 1. Open it from `design-reasoning.md` when you want to see the method applied end to end.
 
-> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
+> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` and `design-reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
 
 Three invented products, chosen because they sit at different points of the persuasion dial. Read them for *where the decisions come from*, not for the decisions themselves. None of these solutions should be copied to a different product.
 

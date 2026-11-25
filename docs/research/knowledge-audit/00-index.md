@@ -61,8 +61,8 @@ Presupuesto: menos de unas 300 líneas por archivo. Estado: **existe** (se queda
 |---|---|---|
 | `modern-design/references/ethics.md` | Regla de decisión, lista negra, casos, marco regulatorio, mínimo por página | existe (78); sin §5 si se mueve a `evidence.md` |
 | `modern-design/references/content-truth.md` | No invención, rellenos, `content-needed.md` | existe (43) |
-| `modern-design/references/reasoning.md` | Parte general del método: postura, seis preguntas, cuatro mecanismos, choques, comprobación final, presentar conclusiones, priors | **dividir** (190 → ~110) |
-| `modern-design/references/evidence.md` | Calidad de evidencia, grados A/B/C, mitos | **nuevo**, movido de `ethics.md` §5 y `principles.md` §0 |
+| `modern-design/references/reasoning.md` | Parte general del método: postura, seis preguntas, cuatro mecanismos, choques, comprobación final, presentar conclusiones, priors | **hecho** en la rama `core-reasoning`: dividido (198 → 147 con cabecera; añade "When the usual advice flips", texto nuevo). Se quedan la promesa central, los cuatro mecanismos, la escala del dial, los choques y priors; las seis preguntas, la comprobación final y cómo presentar el trabajo pasan a `design-reasoning.md` |
+| `modern-design/references/evidence.md` | Calidad de evidencia, grados A/B/C, mitos | **hecho** en la rama `core-reasoning`: grados A/B/C movidos de `principles.md`, qué cuenta como verificado y cómo citar (texto nuevo). Los mitos siguen en `ethics.md` §5 |
 | `modern-design/references/templates/site-decisions.md`, `content-needed.md` | Plantillas de los archivos del proyecto | existen (58, 34); decidir secciones por skill |
 
 ### `modern-design` (construir)
@@ -71,7 +71,7 @@ Presupuesto: menos de unas 300 líneas por archivo. Estado: **existe** (se queda
 |---|---|---|
 | `SKILL.md` | Pasos, orden de autoridad, reglas | existe (80); `## Rules` por escribir |
 | `references/direction.md` | Paso 1, brief, antidefectos | existe (196) |
-| `references/design-reasoning.md` | Promesa central, dial como instrumento, tabla página→archivo | **nuevo**, dividido de `reasoning.md` (~90) |
+| `references/design-reasoning.md` | Seis preguntas por pantalla, ejemplos trabajados, tabla página→archivo, comprobación final | **hecho** en la rama `core-reasoning`, dividido de `reasoning.md` (86 con cabecera). La promesa central y la escala del dial se quedaron en `reasoning.md` |
 | `references/reasoning-examples.md` | Ejemplos trabajados | existe (75) |
 | `references/principles.md` | P01-P31 | existe (257); dividir por bloque si crece; §3 pasa a enlazar el dial |
 | `references/pages/*.md` (13) | Razonamiento por tipo de página | existen; añadir "Layout & responsive" |
@@ -166,7 +166,7 @@ Ningún archivo de `skills/` pasa de 300 líneas; el más cercano es `unslop-che
 ## 7. Orden de trabajo propuesto
 
 1. **Resolver las contradicciones altas** en las skills actuales: umbral de objetivos en revisión (1) y dial único (2). Luego las medias (4, 5, 6). No dependen de nada.
-2. **Dividir `reasoning.md`** en parte general y `design-reasoning.md`, y mover la calidad de evidencia a `evidence.md`. Requisito de las tres skills nuevas.
+2. **Dividir `reasoning.md`** en parte general y `design-reasoning.md`, y mover la calidad de evidencia a `evidence.md`. Requisito de las tres skills nuevas. **Hecho** en la rama `core-reasoning` (cabeceras fijas en los seis archivos del núcleo y de razonamiento; `ethics.md` §5 se queda donde está).
 3. **Extraer `review-method.md`** de `unslop-checklist.md` y `audit-report.md`, y dividir `unslop-checklist.md`. Requisito de las tres skills que revisan.
 4. **Decidir los archivos del proyecto** para cinco skills (quién crea `site-decisions.md`, qué secciones son de quién, dónde viven las plantillas).
 5. **Poner la cabecera fija** a cada referencia cuando se revise (no en bloque).

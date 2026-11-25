@@ -383,7 +383,7 @@ Each point of the phase B brief, with what covers it.
 
 - Purpose (turn the brief into reusable decisions once, before components): no source; written from `direction.md` hand-off and `implementation.md` §4.
 - Three tiers, components read roles, themes remap the semantic tier, names by role: T1, T2, T4, T5, T6, T7, T16.
-- Brief to tokens (dial decides density, section rhythm, motion budget; motion names reserved): T26, T27; the dial link has no source and is written from `reasoning.md` §4.
+- Brief to tokens (dial decides density, section rhythm, motion budget; motion names reserved): T26, T27; the dial link has no source and is written from `reasoning.md` §3.
 - Method against convergence:
   - derive from promise and real material, references from other sectors, an explicit constraint, one line per choice citing the brief: no source; written from `direction.md` and CLAUDE.md;
   - checks against TY11, CO8 and CO1: T15, C18, C22, C24, Y5, Y6;

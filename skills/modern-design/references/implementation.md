@@ -2,7 +2,7 @@
 
 Reference for `modern-design`. Load it in step 1 when the brief has to choose a stack or decide between a static site and an app, and in step 3 before building pages and components. It covers how a page is built, not how it looks: rendering, state, reuse, performance, accessibility and the legal minimum. Each file in `pages/` has an "Implementation" subsection per page type; the summary table is at the end of this file.
 
-> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
+> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` and `design-reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
 
 **How strong each rule is.** MUST is used only for security, accessibility and legal requirements, and for the truth rule in `ethics.md` (never show something as done or true when it may not be). Everything else is SHOULD: the default, which you may leave when the project has a reason; write the reason in the brief or, when the user decided it, in `site-decisions.md`.
 

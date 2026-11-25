@@ -14,7 +14,8 @@ flowchart LR
 
 | Skill | Steps | Reference loaded per step |
 |---|---|---|
-| modern-design | 1. Direction: context, live references, central promise, design brief | `references/direction.md`, then `references/reasoning.md` before writing the brief |
+| modern-design | Start of every run: the shared core, read whole | `references/ethics.md`, `references/content-truth.md`, `references/reasoning.md`, `references/evidence.md` (see "Shared core") |
+| | 1. Direction: context, live references, central promise, design brief | `references/direction.md`, then `references/design-reasoning.md` before writing the brief |
 | | After reasoning: only the file of each page type in the brief, then principles when needed | `references/pages/<group>.md` (commerce is split in two: `commerce-purchase.md` and `commerce-after-purchase.md`), `references/principles.md` (`references/reasoning-examples.md` for worked examples) |
 | | Pages with prices, consent, subscriptions, scarcity, urgency or reviews (hard limit) | `references/ethics.md` |
 | | Every build: no invention, placeholders, `content-needed.md` (hard limit, same level as ethics) | `references/content-truth.md` |
@@ -24,6 +25,7 @@ flowchart LR
 | | 5. Hand off to design-review | none |
 | | Steps 1 and 3: static or app, rendering per route, kinds of state, reuse layers, performance, accessibility, legal minimum | `references/implementation.md` (and the "Implementation" subsection of each `pages/` entry) |
 | | Any step that needs an external resource | `references/resources.md` |
+| design-review (both modes) | Start of every run: the shared method and evidence rules, read whole when they exist | `../modern-design/references/reasoning.md`, `../modern-design/references/evidence.md` |
 | design-review: own project | 1. Review code and design decisions for generic patterns and mistakes | `references/unslop-checklist.md`, `references/copy-states-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`; `references/dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content |
 | | 2. Browser check with screenshots, when the app is running | `references/visual-qa.md` |
 | | 3. Fix, or send back to the modern-design step that owns the problem | none |
@@ -33,7 +35,7 @@ flowchart LR
 
 Nothing outside the plugin: installed plugins are copied to a cache, and files outside the plugin are not available. Skills may read each other's files inside the plugin (`design-review` reads `modern-design`'s section references when they exist) and must keep working when they don't.
 
-Order of authority, the same in both skills: ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). A user decision that breaks either hard limit is declined with the reason. `design-review` checks the hard limit through its DP family and reads `ethics.md` when it exists.
+Order of authority, the same in both skills: ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` and `design-reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). A user decision that breaks either hard limit is declined with the reason. `design-review` checks the hard limit through its DP family and reads `ethics.md` when it exists.
 
 A skill is split into more skills only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests.
 
@@ -62,7 +64,25 @@ The design references are organised in four levels, from the smallest piece to t
 | Sections | Whole page sections with phone, tablet and desktop layouts | `references/sections/`, `references/responsive.md` | Batch A written |
 | Pages | Per page type: the user's moment, what the page must prove, levers, specifics, when the usual advice flips, persuasion dial | `references/pages/` | Reasoning written; "Layout & responsive" per page type pending |
 
-Above the levels sits the reasoning layer (`reasoning.md`, `principles.md`, `ethics.md`, `content-truth.md`), which decides which pages and sections exist before any level is built. Beside them, `implementation.md` decides how each level is built: rendering per route, state, the same four levels as reuse layers, performance, accessibility and the legal minimum. Backend security is out of scope (its "Boundaries" section).
+Above the levels sits the reasoning layer (the shared core described below, plus `design-reasoning.md` and `principles.md`), which decides which pages and sections exist before any level is built. Beside them, `implementation.md` decides how each level is built: rendering per route, state, the same four levels as reuse layers, performance, accessibility and the legal minimum. Backend security is out of scope (its "Boundaries" section).
+
+## Shared core
+
+Five pieces apply to every skill, whatever it builds or reviews. They live in `modern-design/references/`, because installed plugins are copied whole to a cache and a folder without a `SKILL.md` has not been checked with `claude plugin validate`.
+
+| File | Holds | Read by |
+|---|---|---|
+| `ethics.md` | Hard limit: legitimate persuasion versus dark patterns, real cases, dated regulatory status, blacklist, quality of popular claims, minimum per page type | `modern-design`: whole, at the start of every run. `design-review`: for the cases behind its DP family |
+| `content-truth.md` | Hard limit: no invention, the three sources of every text, placeholders, `content-needed.md` | `modern-design`: whole, at the start of every run |
+| `reasoning.md` | The shared method: think instead of filling in, the central promise, the four mechanisms, the persuasion dial scale, collisions between principles, when the usual advice flips | Both skills: whole, at the start of every run |
+| `evidence.md` | Evidence grades A, B and C; what counts as verified (primary source, date checked, dated status, secondary sources as context, unverified claims marked); how to cite | Both skills: whole, at the start of every run |
+| `templates/site-decisions.md`, `templates/content-needed.md` | Templates of the project files | Whichever skill creates the file first |
+
+The page-design part of the method is not shared: `design-reasoning.md` (six questions per screen, worked examples, which reference to open, how to present design work) and `principles.md` belong to `modern-design`.
+
+**How other skills read it.** A skill other than `modern-design` names each core file by `${CLAUDE_SKILL_DIR}/../modern-design/references/<file>`, the pattern `design-review` already uses, and keeps working when the file is missing: its own `SKILL.md` carries the rules it needs in short form. The skill scanner reports these paths as `reference_missing`, which doesn't block the scan.
+
+**Standard form.** Core files carry the fixed header described below, with **Owner:** "shared core (lives in modern-design)", and write decision rules in the Rule / Why / When it flips / Source form. The order of authority is the same everywhere: ethics (`ethics.md` and `content-truth.md`) > `site-decisions.md` > `design-brief.md` > `reasoning.md` and `design-reasoning.md` > the other references.
 
 ## How new references are written
 

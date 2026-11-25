@@ -2,7 +2,7 @@
 
 Reference for `modern-design`, step 3. Load this file first, then only the file of each section you are about to build, plus `../responsive.md`. These files cover whole page sections; reusable pieces (buttons, cards, inputs on their own) will live in a separate `components/` folder in a later batch.
 
-> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
+> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` and `design-reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
 
 > **Scope.** This catalogue covers pages that **persuade**: landing pages, product homepages, local business sites, campaign pages. Sections for pages that **operate** (dashboards, internal tools, admin screens) will come in a later batch. Until then, build those from the brief's Structure, `../responsive.md` and your own judgment, and borrow only the parts of these files that clearly apply (buttons, forms, header).
 

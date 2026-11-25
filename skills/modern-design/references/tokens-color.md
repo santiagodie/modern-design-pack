@@ -34,7 +34,7 @@ Add `--color-accent` only when the direction spends a color on something other t
 
 **Rule (SHOULD):** use the action color only for what can be clicked or tapped, and the status colors only for state (success, warning, error, information). They are different hues, not shades of one.
 
-**Why:** people read color before words. When the button is the same green as "Saved", or an error red looks like a link, the user hesitates at the moment of deciding (`reasoning.md` §3, "Deciding is weighing"), and the page loses the one signal that says "act here".
+**Why:** people read color before words. When the button is the same green as "Saved", or an error red looks like a link, the user hesitates at the moment of deciding (`reasoning.md` §2, "Deciding is weighing"), and the page loses the one signal that says "act here".
 
 **When it flips:** when the brand's only color is the hue the status should have (a green brand), keep it for action and move success to another hue. Every status already carries an icon or text (section 7), so the move costs nothing. For example, on a climbing wall's site where colored holds mark route grades, the grade colors are information: the action color stays out of that set.
 
