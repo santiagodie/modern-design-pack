@@ -1,5 +1,11 @@
 # Responsive
 
+> **Covers:** phone, tablet and desktop: deciding by capability instead of device, the touch baseline, fluid layout and breakpoints, the rules per device, and what emulation can't reproduce.
+> **Read when:** step 3 of `modern-design`, together with `references/ui/sections/index.md`, whenever UI is built or restyled.
+> **Not here:** spacing and target tokens → references/ui/tokens-space.md; layout per section → references/ui/sections/; rendering and performance → references/engineering/implementation.md
+> **Owner:** modern-design
+> **Sources:** the author's landing field guide (docs/research/landing-field-guide/04_CROSS_CUTTING.md, MIT), emilkowalski/skills `mobile-native` (MIT); full list in docs/SOURCES.md
+
 Reference for `modern-design`, step 3. Load it together with `references/ui/sections/index.md` whenever you build or restyle UI. It covers phone, tablet and desktop, and the baseline that makes a web page behave well on touch screens.
 
 ## The principle: decide by capability, not by device

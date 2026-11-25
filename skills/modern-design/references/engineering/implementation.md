@@ -1,5 +1,11 @@
 # Implementation
 
+> **Covers:** how a page is built, not how it looks: rendering per route, static sites, kinds of state in apps, reuse layers, platform features and agent mistakes, performance, accessibility, the legal minimum, boundaries and a summary by page type.
+> **Read when:** step 1 of `modern-design` when the brief chooses a stack or decides between a static site and an app; step 3 when setting up routes, rendering, state or shared components.
+> **Not here:** implementation per page type → the "Implementation" subsection of each file in references/ux/pages/; target-size and focus tokens → references/ui/tokens.md; phone, tablet and desktop → references/engineering/responsive.md; the regulatory framework → references/ethics.md
+> **Owner:** modern-design
+> **Sources:** the author's implementation research (docs/research/implementation/, MIT), which summarises framework documentation, web.dev, MDN, OWASP and case studies; full list in docs/SOURCES.md
+
 Reference for `modern-design`. Load it in step 1 when the brief has to choose a stack or decide between a static site and an app, and in step 3 before building pages and components. It covers how a page is built, not how it looks: rendering, state, reuse, performance, accessibility and the legal minimum. Each file in `pages/` has an "Implementation" subsection per page type; the summary table is at the end of this file.
 
 > **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` and `design-reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
