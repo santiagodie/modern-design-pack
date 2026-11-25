@@ -89,7 +89,7 @@ The level of each page comes from its entry in `pages/`; the scale is defined in
 
 ## 4. The method against convergence
 
-Generators converge on the same few palettes and faces (`unslop-checklist.md` TY11, CO1 and CO8 in `design-review`). This step gives no starting palette and no font pair. Derive them instead:
+Generators converge on the same few palettes and faces (`unslop-type-color.md` TY11, CO1 and CO8 in `design-review`). This step gives no starting palette and no font pair. Derive them instead:
 
 1. **From the promise and the real material.** Start from the central promise and from what the user supplied: logo, existing colors, signage, product photos, packaging, the place itself. Color found in that material outranks any idea of yours.
 2. **From two or three real references in other sectors.** Look for references outside the user's category (a type specimen, a transport map, an instrument panel, a book series), cite each with its URL in the brief, and say what you take from it. References from the same category pull toward the category look.
