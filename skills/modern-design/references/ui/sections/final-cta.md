@@ -32,7 +32,7 @@ Long pages that persuade. Short pages for visitors who arrive ready to act may e
 | | Phone | Tablet | Desktop |
 |---|---|---|---|
 | Band | Full width, contrasting background | Same | Same |
-| Content | Left-aligned or centered, full-width button in thumb reach | Centered, max about 35–40rem | Centered, max about 40–45rem (a narrow block keeps the headline and the button reading as one unit) |
+| Content | Left-aligned or centered, full-width button in thumb reach | Centered, max `--measure` | Centered, max `--measure` (a narrow block keeps the headline and the button reading as one unit) |
 | Padding | `--space-section` | `--space-section` | `--space-section` |
 | Headline | `--text-headline` | `--text-headline` | `--text-headline` |
 | Sticky CTA | Hides when this section is visible | Same | — |

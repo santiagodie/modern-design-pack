@@ -31,7 +31,7 @@ Every page that persuades needs a mechanism: a form, a sign-up, a checkout, or a
 
 | | Phone | Tablet | Desktop |
 |---|---|---|---|
-| Width | Full width inside the side padding | Max about 30–35rem | 20–30rem; never stretched across the page (a field much wider than its answer is harder to scan) |
+| Width | Full width inside the side padding | Each field as wide as its expected answer, in `ch` (a few for a postcode or a code, more for an address) | Same; never stretched across the page (a field much wider than its answer is harder to scan, and its width hints at the length expected) |
 | Fields | `--control-height-touch`, at least `--target-touch` tall; font `--text-body` or larger (iOS zooms the page on focus when an input's text is under 16 px) | Same; two short related fields side by side (postcode and city) only when both stay readable | `--control-height` with a fine pointer, never under `--target-min` |
 | Keyboard | Right `type`, `inputmode`, `autocomplete` and `enterkeyhint`; the submit button stays reachable when the keyboard is open | Same; hardware keyboards are common | Logical tab order |
 | Position | Inline for small offers; a separate step or screen for big ones | Same | Beside the reassurance or proof |

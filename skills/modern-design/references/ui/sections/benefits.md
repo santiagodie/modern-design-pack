@@ -39,7 +39,7 @@ Pages that persuade, as the core argument. Experience pages may tell the same th
 
 | | Phone | Tablet | Desktop |
 |---|---|---|---|
-| Alternating rows | One column: headline, text, then the visual | Portrait: stacked, or two columns only if the text column keeps about 20rem (narrower, the text becomes a thin strip beside the visual). Landscape: two columns | Two columns; text column about 30–35rem, so its lines stay within the reading measure; `--space-between` between rows |
+| Alternating rows | One column: headline, text, then the visual | Portrait: stacked, or two columns only if the text column keeps about 20rem (narrower, the text becomes a thin strip beside the visual). Landscape: two columns | Two columns; text column at most `--measure`, so its lines stay within the reading measure; `--space-between` between rows |
 | Bento | One column, largest tile first | Two columns | Three or four columns; one tile about twice the others |
 | Tabs | Become an accordion or stacked blocks | Tabs if labels fit on one line; otherwise accordion | Tabs or pinned scroll story |
 | Screenshots | Cropped so their text stays legible | Same | Same; never a whole dashboard shrunk |
