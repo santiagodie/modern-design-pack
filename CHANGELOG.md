@@ -81,6 +81,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `implementation.md` names the token format "Design Tokens Community Group format 2025.10 (a community group report, not a W3C standard)".
 - `SKILL.md` step 2 describes the tokens step; `direction.md`, `reasoning.md` and `motion.md` point to the new files.
 
+### Added (knowledge audit)
+
+- `docs/research/knowledge-audit/`: an analysis-only audit of the plugin's knowledge in thirteen branches (plus one for unassigned items), each with where it lives today, coverage, duplicates and contradictions, proposed owner, gaps as questions and candidate sources; an index with the coverage matrix, the contradictions by severity, the proposed file tree for five skills, the shared core, missing headers, activation limits and a work order; and a review of Hallmark's mechanisms (adopt, adapt or reject). No change to `skills/`.
+
 ### Changed (phase 3b)
 
 - Skills may read each other's files inside the plugin; the rule is now "nothing outside the plugin".
