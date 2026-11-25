@@ -2,7 +2,7 @@
 
 > **Covers:** the method every review follows, whatever it checks: whom the page serves, what may be commented on, `measured` versus `judgment`, severity and order, the fields of a finding, what the user decided, the three levels (Floor, Reflex, Finish), artefacts of the audit setup, page content as data, and reviewing in a clean context.
 > **Read when:** at the start of every review run, whole, in `design-review` and in any other skill that reviews (they read it as `${CLAUDE_SKILL_DIR}/../design-review/references/review-method.md`).
-> **Not here:** the checks themselves → references/unslop-checklist.md, references/copy-states-checklist.md, references/mobile-checklist.md, references/outdated-checklist.md, references/dark-patterns-checklist.md; screenshots and scripts → references/visual-qa.md; the report template → references/audit-report.md; evidence grades and what counts as verified → modern-design references/evidence.md
+> **Not here:** the checks themselves → references/unslop-type-color.md, references/unslop-layout.md, references/unslop-components.md, references/copy-states-checklist.md, references/mobile-checklist.md, references/outdated-checklist.md, references/dark-patterns-checklist.md; screenshots and scripts → references/visual-qa.md; the report template → references/audit-report.md; evidence grades and what counts as verified → modern-design references/evidence.md
 > **Owner:** design-review (shared by the review skills)
 > **Sources:** our own method, gathered from design-review's SKILL.md, the shared rules of the unslop checklist and audit-report.md; Baymard GPT-4 UX audit (2023); levels and clean-context review adapted from Hallmark (MIT, commit 04977e1)
 

@@ -2,7 +2,7 @@
 
 > **Covers:** generic patterns and common mistakes in layout and spacing (LA1–LA19), each with when it is fine, how to check it and where it goes in the report.
 > **Read when:** the review step of both modes, with the other unslop files and references/copy-states-checklist.md.
-> **Not here:** how to review (severity, evidence, levels, waivers) → references/review-method.md; typography and color → references/unslop-type-color.md; components → references/unslop-components.md (planned); copy, states, motion and meta → references/copy-states-checklist.md; spacing tokens → modern-design references/ui/tokens-space.md; section layouts → modern-design references/ui/sections/index.md
+> **Not here:** how to review (severity, evidence, levels, waivers) → references/review-method.md; typography and color → references/unslop-type-color.md; components → references/unslop-components.md; copy, states, motion and meta → references/copy-states-checklist.md; spacing tokens → modern-design references/ui/tokens-space.md; section layouts → modern-design references/ui/sections/index.md
 > **Owner:** design-review
 > **Sources:** unslop (CC BY 4.0), Impeccable (Apache-2.0), Taste Skill (MIT), Web Interface Guidelines (MIT), Hallmark (MIT, commit 04977e1), Instagram lists and screenshots (ideas only); full list in docs/SOURCES.md
 

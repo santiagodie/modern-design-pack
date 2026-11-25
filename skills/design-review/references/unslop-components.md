@@ -1,14 +1,18 @@
-# Unslop checklist
+# Unslop checklist: components
 
-Reference for `design-review`, used in both modes during the review step. Load it when reviewing; you don't need it while taking screenshots. It holds the Components (CP) family; `unslop-type-color.md` holds Typography (TY) and Color (CO), `unslop-layout.md` holds Layout (LA), and `copy-states-checklist.md` holds Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME). Load all four.
+> **Covers:** generic patterns and common mistakes in components and imagery (CP1–CP14), each with when it is fine, how to check it and where it goes in the report; what was considered and left out.
+> **Read when:** the review step of both modes, with the other unslop files and references/copy-states-checklist.md.
+> **Not here:** how to review (severity, evidence, levels, waivers) → references/review-method.md; typography and color → references/unslop-type-color.md; layout → references/unslop-layout.md; copy, states, motion and meta → references/copy-states-checklist.md; placeholders and the no-invention rule → modern-design references/content-truth.md
+> **Owner:** design-review
+> **Sources:** unslop (CC BY 4.0), Impeccable (Apache-2.0), Taste Skill (MIT), Web Interface Guidelines (MIT), Hallmark (MIT, commit 04977e1), Instagram lists and screenshots (ideas only); full list in docs/SOURCES.md
 
-How to review, for this file and every other checklist (`mobile-checklist.md`, `outdated-checklist.md`, `dark-patterns-checklist.md`): `review-method.md`. It owns the template test, `measured` and `judgment`, severity, the order of findings, what the user decided, the levels and the artefacts of the audit setup.
+Reference for `design-review`, used in both modes during the review step. It holds the Components (CP) family. How to review (template test, severity, `measured` and `judgment`, levels, what the user decided) is in `review-method.md`.
 
 ## How to use it
 
 - **Context decides.** Every pattern below is fine somewhere. Check the "Fine when" line before flagging anything; a recorded reason in the brief or in `site-decisions.md` waives it (`review-method.md` §7 and §8).
 - **Report as** gives the default report section (`review-method.md` §4).
-- **Evidence:** typography, color and layout taste calls are `judgment`. Contrast ratios, sizes, missing states and meta tags you can check in code or with a tool are `measured`.
+- **Evidence:** taste calls are `judgment`. Sizes, colors, attributes and states you can read in the code or with a tool are `measured`.
 
 ## Components
 
@@ -70,13 +74,52 @@ How to review, for this file and every other checklist (`mobile-checklist.md`, `
 - **Fix:** remove it when the brief gives no reason, or tie it to the brand's world and write the reason in the brief.
 - **Report as:** outdated.
 
+### CP10. A drawing of a real object
+- **Look for:** an inline SVG or CSS drawing of a product, a plant, an animal, a person, a building or a scene, larger than an icon, standing where a photograph would go.
+- **Reads as generic because:** when no picture is supplied, generators draw one, and a drawing of the thing tells the visitor nothing about this business.
+- **Fine when:** it is a chart, map or diagram of real data or a real system and is named as one; it is the user's logo or the user's own illustration; or the brand's illustration style is recorded in the brief.
+- **Fix:** use the user's photograph. Until it arrives, a marked image placeholder with its aspect ratio and label (modern-design references/content-truth.md), listed in `content-needed.md`.
+- **How to check:** an inline `<svg>` over about 120 px with several paths and no text is a `measured` hint; what it depicts is `judgment`.
+- **Report as:** outdated (`judgment`).
+- **Source:** Adapted from Hallmark (MIT, commit 04977e1), gate 80. Hallmark fills these slots from a photo library; we keep marked placeholders instead (content-truth).
+
+### CP11. A page of empty frames
+- **Look for:** colored or gradient boxes where pictures go, with nothing inside and no label; or a row of image placeholders (a team of blank portraits, a range of blank products), so the page reads as a wireframe.
+- **Fine when:** the build is waiting for the user's material and every box is a marked placeholder listed in `content-needed.md`. Those are "Before publishing" items (CY3), not a design finding; still, when a set of people or products can be said in type (names, roles, facts), suggest it, and keep boxes for the pictures that matter.
+- **Fix:** an unlabelled box becomes a marked placeholder (label, aspect ratio, `data-placeholder`); a row of blank frames becomes a list or a table until the pictures arrive.
+- **How to check:** elements of about 300 × 200 px or more whose only content is a background; the number of `data-placeholder` image boxes in one row.
+- **Report as:** minor (`measured`); **critical** when an unlabelled box passes for a real picture (CY3).
+- **Source:** Adapted from Hallmark (MIT, commit 04977e1), gates 81 and 68.
+
+### CP12. Marks that count
+- **Look for:** rows of identical marks (dots, ticks, bars, small icons) standing for a quantity: one per customer, per bottle, per day.
+- **Fine when:** a chart whose marks differ in value, or a status grid where each mark is a real item with its own state.
+- **Fix:** set the number in type, with its source (CY3).
+- **Report as:** outdated (`judgment`).
+- **Source:** Adapted from Hallmark (MIT, commit 04977e1), gate 82.
+
+### CP13. Drawn browser and device frames
+- **Look for:** a browser bar drawn in CSS (three colored dots, an address pill) or an operating-system title bar around a picture; phone, laptop or terminal frames around content.
+- **Reads as generic because:** the frame is chrome around a picture of nothing, and around a real screenshot it adds a window the visitor already has.
+- **Fine when:** one device frame holds a real screenshot of the product, and the device matters (an app sold for phones).
+- **Fix:** show the real screenshot in a `<figure>` with a caption, with no frame.
+- **Report as:** outdated (`judgment`; drawn window dots in the markup are `measured`).
+- **Source:** Adapted from Hallmark (MIT, commit 04977e1), gates 47a and 47b.
+
+### CP14. A built mock where the real product exists
+- **Look for:** a dashboard or app screen built from styled boxes with sample figures, standing in for a product that already runs (it has a URL or a dev server, or its code is in the project).
+- **Fine when:** the product isn't built yet, or a capture would show private data; the mock is then labelled as an illustration and its sample values aren't presented as results.
+- **Fix:** capture the real product in a telling state and use the screenshots. When they can't be taken now, list the screens to capture in `content-needed.md`.
+- **Report as:** minor (`judgment`); **critical** when the mock's figures read as real results (CY3).
+- **Source:** Adapted from Hallmark (MIT, commit 04977e1), gate 84.
+
 ## Considered and left out
 
 These came up in the source lists but don't belong in a visual review of web pages: idempotency keys and stale-while-revalidate (backend and data concerns), pre-rendering (Lighthouse covers the effect), predictive back and swipe-to-dismiss sheets (native app patterns; check them only for app-like PWAs), command menus and shortcut hints (useful for apps, not for marketing pages; mention them as tips when reviewing a web app).
 
 ## Attribution
 
-This checklist is written in our own words. It draws on ideas from:
+Written in our own words. It draws on ideas from:
 
 - [unslop](https://github.com/heydamir/unslop) by Damir Sokolovsky, CC BY 4.0. Ideas adapted and rewritten; not endorsed by the author.
 - [Impeccable](https://github.com/pbakaus/impeccable) by Paul Bakaus, Apache-2.0, including ideas summarised from its [slop catalogue](https://impeccable.style/slop). Impeccable runs 60+ automated checks; this checklist doesn't reproduce them. Use Impeccable alongside this plugin for that depth.
@@ -84,5 +127,6 @@ This checklist is written in our own words. It draws on ideas from:
 - [Web Interface Guidelines](https://github.com/vercel-labs/web-interface-guidelines) by Vercel, MIT.
 - Instagram lists by @charles.unemployed ("20 Tips to Unslop AI Designs") and @millee.md ("20 ways to unslop your AI website designs"), and three shared screenshots whose authors are not yet identified (the third, a list of AI slop indicators, adds TY11, CO9, CP7–CP9 and CY6–CY8). Ideas only.
 - [Laws of UX](https://lawsofux.com) by Jon Yablonski, for the names of Fitts's and Hick's laws.
+- [Hallmark](https://github.com/Nutlope/hallmark), Copyright (c) 2026 Hallmark contributors, MIT, commit 04977e1: the entries marked "Adapted from Hallmark" (CP10–CP14). Its gates were rewritten as context rules with a "Fine when" line; its numeric thresholds and its photo-library stand-ins are not adopted.
 
 Full source list with licences: [docs/SOURCES.md](https://github.com/santiagodie/modern-design-pack/blob/main/docs/SOURCES.md). Licence notices: [THIRD_PARTY_NOTICES.md](https://github.com/santiagodie/modern-design-pack/blob/main/THIRD_PARTY_NOTICES.md).

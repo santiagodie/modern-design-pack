@@ -1,6 +1,6 @@
 # Copy, states, motion and meta checklist
 
-Reference for `design-review`, used in both modes during the review step, together with `unslop-checklist.md`. This file holds the Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME) families; `unslop-checklist.md` holds Typography, Color, Layout and Components; `review-method.md` holds how to review: severity, `measured` and `judgment`, levels and how to report.
+Reference for `design-review`, used in both modes during the review step, together with the three unslop files. This file holds the Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME) families; `unslop-type-color.md`, `unslop-layout.md` and `unslop-components.md` hold Typography, Color, Layout and Components; `review-method.md` holds how to review: severity, `measured` and `judgment`, levels and how to report.
 
 ## Copy
 
@@ -155,6 +155,6 @@ Reference for `design-review`, used in both modes during the review step, togeth
 
 ## Attribution
 
-Written in our own words, from the same sources as `unslop-checklist.md` (see its Attribution section). CY6–CY8 summarise ideas from a shared Instagram screenshot whose author is not yet identified ("AI slop indicators"); ideas only.
+Written in our own words, from the same sources as `unslop-type-color.md` (see its Attribution section). CY6–CY8 summarise ideas from a shared Instagram screenshot whose author is not yet identified ("AI slop indicators"); ideas only.
 
 Full source list with licences: [docs/SOURCES.md](https://github.com/santiagodie/modern-design-pack/blob/main/docs/SOURCES.md). Licence notices: [THIRD_PARTY_NOTICES.md](https://github.com/santiagodie/modern-design-pack/blob/main/THIRD_PARTY_NOTICES.md).
