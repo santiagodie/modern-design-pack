@@ -61,7 +61,7 @@ Presupuesto: menos de unas 300 líneas por archivo. Estado: **existe** (se queda
 |---|---|---|
 | `modern-design/references/ethics.md` | Regla de decisión, lista negra, casos, marco regulatorio, mínimo por página | existe (78); sin §5 si se mueve a `evidence.md` |
 | `modern-design/references/content-truth.md` | No invención, rellenos, `content-needed.md` | existe (43) |
-| `modern-design/references/reasoning.md` | Parte general del método: postura, seis preguntas, cuatro mecanismos, choques, comprobación final, presentar conclusiones, priors | **hecho** en la rama `core-reasoning`: dividido (198 → 131 con cabecera). Se quedan la promesa central, los cuatro mecanismos, la escala del dial, los choques y priors; las seis preguntas, la comprobación final y cómo presentar el trabajo pasan a `design-reasoning.md` |
+| `modern-design/references/reasoning.md` | Parte general del método: postura, seis preguntas, cuatro mecanismos, choques, comprobación final, presentar conclusiones, priors | **hecho** en la rama `core-reasoning`: dividido (198 → 147 con cabecera; añade "When the usual advice flips", texto nuevo). Se quedan la promesa central, los cuatro mecanismos, la escala del dial, los choques y priors; las seis preguntas, la comprobación final y cómo presentar el trabajo pasan a `design-reasoning.md` |
 | `modern-design/references/evidence.md` | Calidad de evidencia, grados A/B/C, mitos | **hecho** en la rama `core-reasoning`: grados A/B/C movidos de `principles.md`, qué cuenta como verificado y cómo citar (texto nuevo). Los mitos siguen en `ethics.md` §5 |
 | `modern-design/references/templates/site-decisions.md`, `content-needed.md` | Plantillas de los archivos del proyecto | existen (58, 34); decidir secciones por skill |
 
@@ -71,7 +71,7 @@ Presupuesto: menos de unas 300 líneas por archivo. Estado: **existe** (se queda
 |---|---|---|
 | `SKILL.md` | Pasos, orden de autoridad, reglas | existe (80); `## Rules` por escribir |
 | `references/direction.md` | Paso 1, brief, antidefectos | existe (196) |
-| `references/design-reasoning.md` | Seis preguntas por pantalla, ejemplos trabajados, tabla página→archivo, comprobación final | **hecho** en la rama `core-reasoning`, dividido de `reasoning.md` (80 con cabecera). La promesa central y la escala del dial se quedaron en `reasoning.md` |
+| `references/design-reasoning.md` | Seis preguntas por pantalla, ejemplos trabajados, tabla página→archivo, comprobación final | **hecho** en la rama `core-reasoning`, dividido de `reasoning.md` (86 con cabecera). La promesa central y la escala del dial se quedaron en `reasoning.md` |
 | `references/reasoning-examples.md` | Ejemplos trabajados | existe (75) |
 | `references/principles.md` | P01-P31 | existe (257); dividir por bloque si crece; §3 pasa a enlazar el dial |
 | `references/pages/*.md` (13) | Razonamiento por tipo de página | existen; añadir "Layout & responsive" |

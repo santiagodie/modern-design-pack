@@ -74,7 +74,7 @@ Five pieces apply to every skill, whatever it builds or reviews. They live in `m
 |---|---|---|
 | `ethics.md` | Hard limit: legitimate persuasion versus dark patterns, real cases, dated regulatory status, blacklist, quality of popular claims, minimum per page type | `modern-design`: whole, at the start of every run. `design-review`: for the cases behind its DP family |
 | `content-truth.md` | Hard limit: no invention, the three sources of every text, placeholders, `content-needed.md` | `modern-design`: whole, at the start of every run |
-| `reasoning.md` | The shared method: think instead of filling in, the central promise, the four mechanisms, the persuasion dial scale, collisions between principles | Both skills: whole, at the start of every run |
+| `reasoning.md` | The shared method: think instead of filling in, the central promise, the four mechanisms, the persuasion dial scale, collisions between principles, when the usual advice flips | Both skills: whole, at the start of every run |
 | `evidence.md` | Evidence grades A, B and C; what counts as verified (primary source, date checked, dated status, secondary sources as context, unverified claims marked); how to cite | Both skills: whole, at the start of every run |
 | `templates/site-decisions.md`, `templates/content-needed.md` | Templates of the project files | Whichever skill creates the file first |
 

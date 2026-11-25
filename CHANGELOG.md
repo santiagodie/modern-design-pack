@@ -102,9 +102,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Changed (shared core)
 
-- `reasoning.md` keeps the method shared by every skill (stance, central promise, four mechanisms, persuasion dial scale, collisions, priors); sections renumbered and every `reasoning.md` §n link updated.
+- `reasoning.md` keeps the method shared by every skill (stance, central promise, four mechanisms, persuasion dial scale, collisions, priors), plus a new general section "When the usual advice flips" (house rule, generalised from `pages/`); sections renumbered and every `reasoning.md` §n link updated.
 - Fixed header (Covers, Read when, Not here, Owner, Sources) on `ethics.md`, `content-truth.md`, `reasoning.md`, `design-reasoning.md`, `evidence.md` and `principles.md`.
-- Order of authority: `reasoning.md` and `design-reasoning.md` share the method position, in every file that states it.
+- Order of authority: `reasoning.md` and `design-reasoning.md` share the method position, in every file that states it; `design-review/SKILL.md` now declares it too.
 - `modern-design` reads `ethics.md`, `content-truth.md`, `reasoning.md` and `evidence.md` whole at the start of every run, and `design-reasoning.md` in step 1. `design-review` reads `reasoning.md` and `evidence.md` whole at the start of every run, and continues without them when they are missing.
 
 ### Changed (phase 3b)

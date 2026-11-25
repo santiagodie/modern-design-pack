@@ -1,6 +1,6 @@
 # Reasoning about web design from the user's mind
 
-> **Covers:** the shared method: think instead of filling in, the central promise, the four mechanisms, the persuasion dial scale, collisions between principles, and treating all of it as priors.
+> **Covers:** the shared method: think instead of filling in, the central promise, the four mechanisms, the persuasion dial scale, collisions between principles, when the usual advice flips, and treating all of it as priors.
 > **Read when:** at the start of any skill run, whole; in `modern-design`, before writing the brief.
 > **Not here:** the six questions per screen, worked examples, which reference to open and how to present design work → references/design-reasoning.md; evidence grades and verification → references/evidence.md; the default dial per page type → references/pages/
 > **Owner:** shared core (lives in modern-design)
@@ -123,6 +123,22 @@ Principles are not rules, because they often contradict each other. Knowing how 
 **Novice versus expert.** A screen that guides a first-time visitor slows down someone who uses it forty times a day, and density that suits the expert overwhelms the newcomer. Resolve it by asking: *who uses this screen most, and how often?* Design for them, and give the other group a path (a guided first run, or shortcuts and a dense view).
 
 In every case, the tiebreaker is the same: go back to the central promise and to the doubt the user has *at that moment*. The principle that resolves that doubt without breaking the promise wins.
+
+---
+
+## 5. When the usual advice flips
+
+Every guideline in these references assumes a typical visitor in a typical situation. Four kinds of context break that assumption: **who arrives** (returning or expert users rather than first-time visitors), **what is at stake** (high value, regulation, an irreversible or risky action), **where and how the page is used** (a shared device, a wall screen, a dim room) and **what the product makes possible** (it can be used before an account, or the buyer compares it with doing nothing rather than with other plans).
+
+**Rule:** before applying a guideline, check whether the mechanism behind it still holds for this person at this moment. When your answers to who is here, what they are deciding and what it costs them differ from what the guideline assumes, apply what the mechanism asks for in this context, even when that is the opposite of the usual advice, and record the reason in one sentence: in section 3 of `site-decisions.md` when the user made or confirmed the call, with the guideline it overrides; in the brief when it is your own design choice. `design-review` then reads it as a decision, not as a finding.
+
+**Why:** guidelines are compressed mechanisms (section 2). A guideline applied where its mechanism doesn't hold adds the friction or the doubt it was meant to remove, and the page looks right while failing this user.
+
+**When it flips:** the hard limits stay fixed. Nothing in `ethics.md` or `content-truth.md` turns into its opposite because of context, and measured failures (contrast, accessibility) are still reported in review, marked "decided by user".
+
+Examples, each in its `pages/` entry: hot traffic on a landing page (`pages/entry-marketing.md`, Landing page), re-authentication before a high-risk action (`pages/authentication.md`, Login / Sign-in), and an extra review step in a high-value or regulated checkout (`pages/commerce-purchase.md`, Checkout / Payment).
+
+**Source:** house rule, generalised from pages/.
 
 ---
 
