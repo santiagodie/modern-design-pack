@@ -163,7 +163,7 @@ First reason with this document: person, promise, decision, doubt, cost, exit, d
 | Visual system: color, dark mode, typography, spacing (step 2) | `tokens.md`, then `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md` |
 | Performance and accessibility | `implementation.md` |
 | Motion | (pending: `motion.md`) |
-| How a design style (minimalism, neo-brutalism, bento...) changes sections | (pending: tokens.md / styles.md) |
+| How a design style (minimalism, neo-brutalism, bento...) changes sections | (pending: styles.md) |
 
 - **The page file** checks whether you missed a typical doubt, gives research-backed specifics (sizes, numbers, thresholds) and says when the usual advice flips. It is a safety net, not a starting point. If your reasoning contradicts it and you can explain why in one sentence for this user, your reasoning wins.
 - **`principles.md`** names the mechanism you have already detected, with its evidence grade and limits.
