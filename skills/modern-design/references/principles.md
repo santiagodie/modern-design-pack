@@ -1,5 +1,11 @@
 # Web psychology and marketing principles
 
+> **Covers:** principles P01–P31 with their mechanism, evidence grade, application, limits and the pages they weigh on; the funnel from the 3Cs; the general rule on persuasion near money, data or irreversible actions.
+> **Read when:** after reasoning, to name a mechanism already detected, check its evidence and know its limits.
+> **Not here:** grade definitions → references/evidence.md; the dial scale → references/reasoning.md; the default dial per page type → references/pages/; hard limits → references/ethics.md and references/content-truth.md
+> **Owner:** modern-design
+> **Sources:** NN/g, Baymard, peer-reviewed studies and company data cited per principle with links in place; from docs/research/web-reasoning/; full list in docs/SOURCES.md
+
 Reference for `modern-design`. Consult it after reasoning (`reasoning.md`), never as a starting point: to name a mechanism you have already detected, check its evidence and know its limits. Use the principles while you reason; when you present, explain decisions in terms of the user's doubt rather than listing principle names or turning them into a visible checklist.
 
 > **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.

@@ -1,5 +1,11 @@
 # Content truth: no invention (hard limit)
 
+> **Covers:** the no-invention rule, the three possible sources of every visible or indexed text, business questions, placeholders and how to mark them, and the content-needed file.
+> **Read when:** every build, every page, every step and mode; before writing any text a visitor or a search engine reads.
+> **Not here:** persuasion and legal limits → references/ethics.md; evidence for claims inside the references → references/evidence.md; the content-needed template → references/templates/content-needed.md
+> **Owner:** shared core (lives in modern-design)
+> **Sources:** our own, from the no-invention tests (docs/examples/no-invention-results.md, docs/examples/no-invention-2-results.md)
+
 Reference for `modern-design` and `design-review`. This is a hard limit at the same level as [`ethics.md`](ethics.md): nothing on the page may present as a fact about the business something nobody supplied, and it applies to every build, page, step and mode.
 
 > **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.

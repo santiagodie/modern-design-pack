@@ -1,5 +1,11 @@
 # Reasoning about web design from the user's mind
 
+> **Covers:** the shared method: think instead of filling in, the central promise, the four mechanisms, the persuasion dial scale, collisions between principles, how to present conclusions, and treating all of it as priors.
+> **Read when:** at the start of any skill run, whole; in `modern-design`, before writing the brief.
+> **Not here:** the six questions per screen, worked examples and which reference to open → references/design-reasoning.md; evidence grades and verification → references/evidence.md; the default dial per page type → references/pages/
+> **Owner:** shared core (lives in modern-design)
+> **Sources:** Baymard GPT-4 UX audit (2023); our own method, from docs/research/web-reasoning/; full list in docs/SOURCES.md
+
 > **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
 
 This document does not teach components or patterns. It teaches how to think. If all you take away from it is a list of things to put on a page, you have read it wrong.

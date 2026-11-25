@@ -1,5 +1,11 @@
 # Evidence and verification
 
+> **Covers:** evidence grades A, B and C; what counts as verified (primary source, date checked, dated status, secondary sources as context, marking what is unverified); how to cite inside the references.
+> **Read when:** at the start of any skill run, whole; when writing or revising a reference; when a report or a page states a claim with a source.
+> **Not here:** popular claims that don't hold up → references/ethics.md §5; when a statistic may appear on a page → references/sections/index.md; `measured` versus `judgment` in reviews → design-review references/review-method.md (planned)
+> **Owner:** shared core (lives in modern-design)
+> **Sources:** house rules, written from the practice in docs/SOURCES.md, docs/research/tokens-sources.md, docs/ROADMAP.md and .claude/CLAUDE.md
+
 > **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
 
 ## How the rules are written

@@ -1,5 +1,11 @@
 # Ethical and legal limits, and quality of evidence
 
+> **Covers:** the decision rule between legitimate persuasion and a dark pattern, real reference cases, the EU and Spain regulatory framework with dated status, the blacklist, the quality of popular claims, and the minimum per page type.
+> **Read when:** a page shows prices, offers, trials, subscriptions, sign-ups, consent, stock, urgency or reviews; before handing off any page that persuades; when `design-review` runs its DP family.
+> **Not here:** no invention and placeholders → references/content-truth.md; evidence grades and what counts as verified → references/evidence.md; the DP checks → design-review references/dark-patterns-checklist.md
+> **Owner:** shared core (lives in modern-design)
+> **Sources:** FTC, CMA, Which?, Airbnb, EU texts (EAA, DSA, GDPR and ePrivacy, the DFA proposal), Bird & Bird, Euronews; studies cited in §5; links in place, full list in docs/SOURCES.md
+
 Reference for `modern-design` and `design-review`. A hard limit: if something deceives, it is not done, and good reasoning is no exception. When a recommendation in `principles.md` or `pages/` conflicts with this file, this file wins. `design-review` turns sections 4 and 6 into its DP checks. The no-invention rule, a hard limit at the same level, is in [`content-truth.md`](content-truth.md).
 
 Load it for any page that persuades. For every build, whatever the page, load `content-truth.md` as well.

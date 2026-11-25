@@ -1,5 +1,11 @@
 # Design reasoning: from the method to each page
 
+> **Covers:** the method applied to designing pages: the six questions per screen, the worked examples, which reference to open per page type, and the final checks per element and per flow.
+> **Read when:** `modern-design` step 1 (direction), after `reasoning.md` and before writing the brief.
+> **Not here:** the shared method (promise, mechanisms, dial scale, collisions) → references/reasoning.md; the examples themselves → references/reasoning-examples.md; page-type specifics and default dial → references/pages/
+> **Owner:** modern-design
+> **Sources:** our own method, from docs/research/web-reasoning/ and the integrated web-design-reasoning skill; full list in docs/SOURCES.md
+
 Reference for `modern-design`, step 1. Load it before writing `design-brief.md`; `direction.md` says when. It teaches a way of thinking, not a checklist: use it while you work, and when you present, explain decisions in terms of the user's doubt rather than reciting its headings or turning them into an output format (see "How to present design work" in `reasoning.md`).
 
 > **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
