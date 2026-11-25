@@ -4,7 +4,7 @@ Order confirmation · Order history / Orders
 
 This file and [`commerce-purchase.md`](commerce-purchase.md) form one group, commerce, split by moment in the journey: this one covers what comes after the purchase (order confirmation and order history), the other the purchase itself (cart and checkout). The group's persuasion dial, summary and order of authority below apply to both.
 
-Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
+Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../../strategy/principles.md`.
 
 Persuasion dial for this group: low; medium-low for the cart. The user has already decided to buy; the job now is not to lose them. Trust and friction dominate. The cart abandonment baseline is ~70% across 50 studies (Baymard), much of it "just browsing", but a large part is design-solvable.
 
@@ -54,7 +54,7 @@ That the deal is sealed exactly as agreed, and what happens next.
 - **Rendering:** rendered on the server, kept out of search results and caches; it shows the order only to its customer, through their session or a signed link.
 - **Data and state:** the order is fulfilled when the payment provider notifies the server, not when someone reaches this page; payments still pending have their own state; reloading the page doesn't count the sale again.
 - **Anti-patterns:** trusting a URL parameter to confirm payment; counting the purchase again on every reload.
-- **Terms:** webhooks in [`../implementation.md`, section 9](../implementation.md#9-boundaries).
+- **Terms:** webhooks in [`../../engineering/implementation.md`, section 9](../../engineering/implementation.md#9-boundaries).
 
 ---
 
@@ -101,5 +101,5 @@ Share of order issues resolved without contacting support; "where is my order" c
 - **Rendering:** rendered on the server behind login, in pages, with one page per order.
 - **Data and state:** each customer sees only their own orders; statuses come from the providers' notifications; filters live in the URL; reordering and downloading an invoice are actions; an empty state for the first visit.
 - **Anti-patterns:** working out an order's status in the browser.
-- **Terms:** webhooks in [`../implementation.md`, section 9](../implementation.md#9-boundaries).
+- **Terms:** webhooks in [`../../engineering/implementation.md`, section 9](../../engineering/implementation.md#9-boundaries).
 

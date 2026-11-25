@@ -70,7 +70,7 @@ playwright-cli --raw eval "$JS"
 
 Run it at each width. It returns JSON with horizontal overflow, the widest offenders, the size and spacing of pointer targets, images without `alt`, and the basic meta tags.
 
-`page-checks.js`: run it in step 4 at every width (375, 768, 1024, 1440, and phone landscape when used). `horizontalOverflow: true` or entries in `overflowing` are layout findings at that width. `targetsUnder24` lists targets under `--target-min` with `spacingOk` (the WCAG 2.5.8 spacing exception) and `inlineText` (a link inside a paragraph, also an exception); `targetsUnder44` lists targets between 24 and 44 px (`--target-touch`). Both tokens are owned by `modern-design/references/tokens.md` §5; SF4 decides which entries are findings. `imagesWithoutAlt`, `title`, `description`, `ogImage`, `lang`, `favicon` and `h1Count` feed the Meta checks (ME1–ME4), and `viewport` feeds OM1 and MN1.
+`page-checks.js`: run it in step 4 at every width (375, 768, 1024, 1440, and phone landscape when used). `horizontalOverflow: true` or entries in `overflowing` are layout findings at that width. `targetsUnder24` lists targets under `--target-min` with `spacingOk` (the WCAG 2.5.8 spacing exception) and `inlineText` (a link inside a paragraph, also an exception); `targetsUnder44` lists targets between 24 and 44 px (`--target-touch`). Both tokens are owned by `modern-design/references/ui/tokens.md` §5; SF4 decides which entries are findings. `imagesWithoutAlt`, `title`, `description`, `ogImage`, `lang`, `favicon` and `h1Count` feed the Meta checks (ME1–ME4), and `viewport` feeds OM1 and MN1.
 
 ## What to look at per width
 
@@ -115,7 +115,7 @@ Run it at each width. It returns JSON with horizontal overflow, the widest offen
 - When a screenshot looks wrong, recapture before reporting. Lazy loading and slow fonts cause false alarms.
 - Report a layout problem at the width where it first appears, and mention the other widths where it repeats.
 - Record what emulation couldn't verify under "Needs a real device" in the report or review notes: sticky hover after a tap, tap delay and press feel, safe areas around notches and home indicators, the on-screen keyboard (what it covers, input zoom), rubber-band and pull-to-refresh behaviour, real Safari (device presets change the viewport and touch, not the browser engine), and performance on a mid-range phone. List only the items that matter for this page.
-- You may read this plugin's section references (`${CLAUDE_SKILL_DIR}/../modern-design/references/sections/`) for the critical and common errors of a section under review. When that folder doesn't exist, continue without it.
+- You may read this plugin's section references (`${CLAUDE_SKILL_DIR}/../modern-design/references/ui/sections/`) for the critical and common errors of a section under review. When that folder doesn't exist, continue without it.
 - After fixing, capture again and look only at the areas you changed, at all four widths. Check them for gaps, empty panels, orphaned spacing or leftover styles that the fix itself created (for example, a decorative block that becomes an empty box once its decoration is removed). Fix those before calling the review done.
 - In URL audits, stay read-only: no clicking through forms, no logins, no accepting purchases. Accepting a cookie banner to see the page is fine; say so in the report.
 - Keep screenshots out of version control unless the user wants them committed.

@@ -2,7 +2,7 @@
 
 > **Covers:** step 2, turning the brief into one set of reusable visual decisions: tiers, names, the method against convergence, the mandatory tokens, the file format and the record in `site-decisions.md`.
 > **Read when:** step 2 of `modern-design`, or any request that changes colors, type, spacing, radii, shadows or themes.
-> **Not here:** color roles → references/tokens-color.md; dark theme → references/tokens-color-dark.md; type → references/tokens-type.md; spacing, radii, elevation and targets → references/tokens-space.md; motion values → references/motion.md
+> **Not here:** color roles → references/ui/tokens-color.md; dark theme → references/ui/tokens-color-dark.md; type → references/ui/tokens-type.md; spacing, radii, elevation and targets → references/ui/tokens-space.md; motion values → references/ui/motion.md
 > **Owner:** modern-design
 > **Sources:** impeccable (Apache-2.0), taste-skill (MIT), ui-ux-pro-max-skill (MIT), emilkowalski/skills (MIT), Modern Web Guidance (CC BY 4.0), WCAG 2.2, DTCG 2025.10; full table in docs/research/tokens-sources.md
 
@@ -202,7 +202,7 @@ Read only the file you need, and read it whole:
 - `tokens-type.md`: choosing faces, the scale, fluid type, line height, measure, fallbacks, numerals.
 - `tokens-space.md`: spacing scale and levels, density, containers, safe areas, targets, radii, elevation.
 
-Then step 3 (`sections/index.md`).
+Then step 3 (`references/ui/sections/index.md`).
 
 ## 9. Done when
 

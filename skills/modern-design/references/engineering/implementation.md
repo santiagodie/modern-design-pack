@@ -85,8 +85,8 @@ Classify every piece of state before writing it, and keep each kind in its own p
 - MUST: keep sessions in HttpOnly, Secure, SameSite cookies.
 - SHOULD: build changes as real forms that work before JavaScript loads, then add pending and optimistic states on top.
 - SHOULD: use optimistic UI (showing the result before the server confirms it) only for small, reversible, frequent actions (add to cart, like, rename).
-- MUST: never use optimistic UI for actions that are irreversible or move money, such as paying, deleting an account or sending an invoice: show an explicit pending state and wait for the server's confirmation. Showing "order placed" before the server confirms it can be false, which breaks the truth rule in [`ethics.md`, section 1](ethics.md#1-decision-rule-legitimate-persuasion-vs-dark-pattern).
-- SHOULD: give every route its own loading, error and not-found states, and give each dashboard widget its own error boundary, so one failure doesn't blank the page. Every list has loading, first-use empty, no-results, error and partial states (`pages/states-system.md`, Empty state).
+- MUST: never use optimistic UI for actions that are irreversible or move money, such as paying, deleting an account or sending an invoice: show an explicit pending state and wait for the server's confirmation. Showing "order placed" before the server confirms it can be false, which breaks the truth rule in [`ethics.md`, section 1](../ethics.md#1-decision-rule-legitimate-persuasion-vs-dark-pattern).
+- SHOULD: give every route its own loading, error and not-found states, and give each dashboard widget its own error boundary, so one failure doesn't blank the page. Every list has loading, first-use empty, no-results, error and partial states (`references/ux/pages/states-system.md`, Empty state).
 
 ## 4. Reuse layers
 
@@ -137,13 +137,13 @@ Target WCAG 2.2 AA. Under the European Accessibility Act, B2C commerce in the EU
 - MUST: use semantic elements for what they are: buttons, links, forms with labels, tables for tabular data, landmarks, one continuous heading outline.
 - MUST: manage focus when the view changes, keep a visible focus indicator with at least 3:1 contrast, and make background content inert behind a modal.
 - MUST: honour `prefers-reduced-motion` for every kind of motion, without hiding content.
-- MUST: build forms as [`sections/forms.md`](sections/forms.md#accessibility) says: persistent labels, errors linked to their field, an error summary on submit, and the right `autocomplete` and `inputmode` (its "Accessibility" section and keyboard row). Two points it doesn't spell out: put format hints above the field, linked with `aria-describedby`, where the on-screen keyboard and autofill can't cover them; and keep `aria-invalid` in sync with the error on screen, set and cleared together.
+- MUST: build forms as [`references/ui/sections/forms.md`](../ui/sections/forms.md#accessibility) says: persistent labels, errors linked to their field, an error summary on submit, and the right `autocomplete` and `inputmode` (its "Accessibility" section and keyboard row). Two points it doesn't spell out: put format hints above the field, linked with `aria-describedby`, where the on-screen keyboard and autofill can't cover them; and keep `aria-invalid` in sync with the error on screen, set and cleared together.
 - MUST: keep text contrast at 4.5:1 (3:1 for large text) and pointer targets at least 24 × 24 CSS px, or spaced as WCAG 2.5.8 allows. SHOULD: 44 × 44 px for primary actions under `(pointer: coarse)` (`tokens-space.md`).
 - SHOULD: announce results that arrive later (search counts, saved states, new messages) in a live region.
 
 ## 8. Legal minimum
 
-- MUST: load no non-essential tracking before consent, and make rejecting as easy as accepting (`ethics.md` and `pages/legal.md`, cookie policy and consent banner).
+- MUST: load no non-essential tracking before consent, and make rejecting as easy as accepting (`ethics.md` and `references/ux/pages/legal.md`, cookie policy and consent banner).
 - MUST: show the total price, with compulsory charges, wherever a price appears, from one source shared with checkout (`ethics.md`, sections 3 and 6).
 - SHOULD: keep legal documents versioned with an effective date, and record which version each user accepted.
 - SHOULD: keep the consent banner from becoming the largest element of the first screen or from shifting the layout.

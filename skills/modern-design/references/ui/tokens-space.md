@@ -2,7 +2,7 @@
 
 > **Covers:** the spacing scale and its three named levels, rhythm between sections, density, containers and gutters, safe areas and fixed bars, target sizes, radii, elevation and layers.
 > **Read when:** step 2, after `tokens.md`, whenever the project needs new or fixed spacing, radius, shadow or target tokens.
-> **Not here:** breakpoints and device behaviour → references/responsive.md; measure of text → references/tokens-type.md; tiers and format → references/tokens.md
+> **Not here:** breakpoints and device behaviour → references/engineering/responsive.md; measure of text → references/ui/tokens-type.md; tiers and format → references/ui/tokens.md
 > **Owner:** modern-design
 > **Sources:** impeccable (Apache-2.0), taste-skill (MIT), ui-ux-pro-max-skill (MIT), emilkowalski/skills (MIT), Modern Web Guidance (CC BY 4.0), WCAG 2.2, Apple HIG; full table in docs/research/tokens-sources.md
 

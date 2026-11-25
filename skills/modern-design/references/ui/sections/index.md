@@ -1,16 +1,16 @@
 # Sections
 
-Reference for `modern-design`, step 3. Load this file first, then only the file of each section you are about to build, plus `../responsive.md`. These files cover whole page sections; reusable pieces (buttons, cards, inputs on their own) will live in a separate `components/` folder in a later batch.
+Reference for `modern-design`, step 3. Load this file first, then only the file of each section you are about to build, plus `../../engineering/responsive.md`. These files cover whole page sections; reusable pieces (buttons, cards, inputs on their own) will live in a separate `components/` folder in a later batch.
 
 > **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` and `design-reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
 
-> **Scope.** This catalogue covers pages that **persuade**: landing pages, product homepages, local business sites, campaign pages. Sections for pages that **operate** (dashboards, internal tools, admin screens) will come in a later batch. Until then, build those from the brief's Structure, `../responsive.md` and your own judgment, and borrow only the parts of these files that clearly apply (buttons, forms, header).
+> **Scope.** This catalogue covers pages that **persuade**: landing pages, product homepages, local business sites, campaign pages. Sections for pages that **operate** (dashboards, internal tools, admin screens) will come in a later batch. Until then, build those from the brief's Structure, `../../engineering/responsive.md` and your own judgment, and borrow only the parts of these files that clearly apply (buttons, forms, header).
 
 ## How to use it
 
-1. Read the brief's Structure (from `../direction.md`). It decides which sections exist and in what order.
+1. Read the brief's Structure (from `../../strategy/direction.md`). It decides which sections exist and in what order.
 2. For each section, find its file below and load that file only.
-3. Load `../responsive.md` once, and build every section for phone, tablet and desktop.
+3. Load `../../engineering/responsive.md` once, and build every section for phone, tablet and desktop.
 4. Before handing off, run each section's "Generic-pattern watch" against `design-review`'s checklist IDs.
 
 ## Which sections each page job needs
@@ -38,11 +38,11 @@ For "operate" pages, `header.md`, `cta.md` and `forms.md` apply to the app bar, 
 
 When the project has no proof yet, build quick social proof with marked placeholders (see `social-proof.md`); removing it is the user's decision.
 
-Cross-cutting needs for every persuade page: mobile-first responsive (`../responsive.md`), performance within Core Web Vitals (LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1), accessibility at WCAG 2.2 AA, SEO basics, analytics with lawful cookie consent, and a consistent visual system.
+Cross-cutting needs for every persuade page: mobile-first responsive (`../../engineering/responsive.md`), performance within Core Web Vitals (LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1), accessibility at WCAG 2.2 AA, SEO basics, analytics with lawful cookie consent, and a consistent visual system.
 
 ## Possible content, not a page structure
 
-The research behind this catalogue lists a long-form order (announcement, header, hero, proof, problem, benefits, demo, how it works, testimonials, comparison, pricing, trust, FAQ, final CTA, footer). Use it as an **inventory of content a page might need**, never as the page's structure. The structure comes from `../direction.md`: what this product needs to say, in the order its audience needs it. Two useful signals from the research, as direction only:
+The research behind this catalogue lists a long-form order (announcement, header, hero, proof, problem, benefits, demo, how it works, testimonials, comparison, pricing, trust, FAQ, final CTA, footer). Use it as an **inventory of content a page might need**, never as the page's structure. The structure comes from `../../strategy/direction.md`: what this product needs to say, in the order its audience needs it. Two useful signals from the research, as direction only:
 
 - The less the visitor knows and the more the offer costs, the more the page has to explain and prove, so the longer it gets.
 - Visitors arriving ready to act (brand searches, returning customers) need less: a short page with proof and the action.
@@ -59,7 +59,7 @@ The research quotes conversion figures from single tests on single sites. In the
 - Put proof next to the doubt it answers: near the hero, near the action.
 - Gate hover effects by capability (`(hover: hover) and (pointer: fine)`) and give touch users `:active` feedback.
 - Every section has a phone, tablet and desktop layout. Tablet is not "stretched phone" or "squeezed desktop".
-- Real content or marked placeholders only (`../content-truth.md`). Never invent facts, logos, figures or reviews.
+- Real content or marked placeholders only (`../../content-truth.md`). Never invent facts, logos, figures or reviews.
 - A planned section with no data is built with placeholders, never left out; only the user decides to remove it. List every placeholder in `content-needed.md`.
 
 ## Sources

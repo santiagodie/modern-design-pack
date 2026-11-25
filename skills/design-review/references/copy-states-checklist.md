@@ -72,7 +72,7 @@ Reference for `design-review`, used in both modes during the review step, togeth
 - **Report as:** tip.
 
 ### SF4. Small touch targets
-- **Look for:** the thresholds are the tokens `--target-min` (24 px, MUST) and `--target-touch` (44 px, SHOULD), owned by `modern-design/references/tokens.md` §5. (1) Any target under 24 × 24 CSS px that fails the WCAG 2.5.8 spacing exception (`spacingOk: false` in `page-checks.js`) and no other exception (inline in text, an equivalent control, browser default, essential). (2) A primary action under 44 px in the screenshots with emulated touch (375, 768, 1024). The script lists every target's size; deciding which are primary is this check's call: the main call to action, the menu button, a form's submit, and every control when `site-decisions.md` records a touch-first product.
+- **Look for:** the thresholds are the tokens `--target-min` (24 px, MUST) and `--target-touch` (44 px, SHOULD), owned by `modern-design/references/ui/tokens.md` §5. (1) Any target under 24 × 24 CSS px that fails the WCAG 2.5.8 spacing exception (`spacingOk: false` in `page-checks.js`) and no other exception (inline in text, an equivalent control, browser default, essential). (2) A primary action under 44 px in the screenshots with emulated touch (375, 768, 1024). The script lists every target's size; deciding which are primary is this check's call: the main call to action, the menu button, a form's submit, and every control when `site-decisions.md` records a touch-first product.
 - **Fix:** enlarge the hit area with padding even when the visual stays small.
 - **Report as:** **critical** (`measured`) for (1); minor (`judgment`) for (2).
 

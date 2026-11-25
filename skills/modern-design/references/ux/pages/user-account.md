@@ -2,7 +2,7 @@
 
 Profile · Settings / Configuration · Account & billing · Notifications
 
-Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
+Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../../strategy/principles.md`.
 
 Persuasion dial for this group: none to low. These pages are about control. Users come with a specific task, often after something annoyed them (a charge, a notification, a privacy worry). The way you treat them here is remembered.
 

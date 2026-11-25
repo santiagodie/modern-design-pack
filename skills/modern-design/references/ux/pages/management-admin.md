@@ -2,7 +2,7 @@
 
 Dashboard · Analytics / Reports · Admin panel · User / Team management
 
-Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
+Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../../strategy/principles.md`.
 
 Persuasion dial for this group: none; low for user and team management. These users are often experts who come back daily. Optimise for speed, accuracy and confidence. Density that would overwhelm a newcomer can be exactly right for an expert; the question is always who uses the screen most and how often.
 

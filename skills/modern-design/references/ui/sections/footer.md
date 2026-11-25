@@ -28,7 +28,7 @@ Every public page. App screens that operate usually need only a minimal footer o
 | Product homepage | A full footer: product, company, resources, legal, social, language, optionally a newsletter field. |
 | Local business | Address, hours, phone, map link, legal links. A physical address is a strong trust signal. |
 
-In builds without real data, use placeholders for legal details and contact information (`[COMPANY NAME]`, `[TAX ID]`, `[ADDRESS]`, `[PHONE]`, each in a `data-placeholder` element; see `../content-truth.md`) and list them in `content-needed.md`. Never invent a tax ID, address or registry entry.
+In builds without real data, use placeholders for legal details and contact information (`[COMPANY NAME]`, `[TAX ID]`, `[ADDRESS]`, `[PHONE]`, each in a `data-placeholder` element; see `../../content-truth.md`) and list them in `content-needed.md`. Never invent a tax ID, address or registry entry.
 
 ## Layout per device
 

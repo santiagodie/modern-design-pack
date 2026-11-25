@@ -2,7 +2,7 @@
 
 > **Covers:** whether the page is light, dark or both; building a dark theme by reassigning roles; `light-dark()`, its fallback and the user's choice; surfaces with their own color scheme.
 > **Read when:** step 2, after `tokens-color.md`, when the brief asks for a dark theme or for both themes.
-> **Not here:** color roles, contrast and states → references/tokens-color.md; light text on dark (line height, tracking) → references/tokens-type.md
+> **Not here:** color roles, contrast and states → references/ui/tokens-color.md; light text on dark (line height, tracking) → references/ui/tokens-type.md
 > **Owner:** modern-design
 > **Sources:** impeccable (Apache-2.0), taste-skill (MIT), ui-ux-pro-max-skill (MIT), Modern Web Guidance (CC BY 4.0), webstatus.dev; full table in docs/research/tokens-sources.md
 

@@ -2,7 +2,7 @@
 
 > **Covers:** principles P01–P31 with their mechanism, evidence grade, application, limits and the pages they weigh on; the funnel from the 3Cs; the general rule on persuasion near money, data or irreversible actions.
 > **Read when:** after reasoning, to name a mechanism already detected, check its evidence and know its limits.
-> **Not here:** grade definitions → references/evidence.md; the dial scale → references/reasoning.md; the default dial per page type → references/pages/; hard limits → references/ethics.md and references/content-truth.md
+> **Not here:** grade definitions → references/evidence.md; the dial scale → references/reasoning.md; the default dial per page type → references/ux/pages/; hard limits → references/ethics.md and references/content-truth.md
 > **Owner:** modern-design
 > **Sources:** NN/g, Baymard, peer-reviewed studies and company data cited per principle with links in place; from docs/research/web-reasoning/; full list in docs/SOURCES.md
 

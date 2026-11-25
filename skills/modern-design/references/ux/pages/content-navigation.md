@@ -2,7 +2,7 @@
 
 Catalogue / Listing · Category / Collection · Product page · Search results · Map · Calendar / Booking
 
-Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
+Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../../strategy/principles.md`.
 
 Persuasion dial for this group: medium to low; high for the product page, with true persuasion only. People are *finding*, not being convinced. The best persuasion here is making the right option easy to find and evaluate.
 
@@ -123,7 +123,7 @@ The core of the promise: that this item does what was promised, arrives when pro
 - [A] 56% of users' first action on a product page was to explore images; 42% try to gauge size from images, so an "in scale" image is needed (Baymard).
 - [A] Up to 95% of test participants used reviews to evaluate products (Baymard).
 - [A] Only ~48% of leading US/EU desktop sites have "decent" or better product-page UX (Baymard, 2026 benchmark).
-- [A] Users are suspicious of perfect 5.0 ratings; a credible distribution helps (see `../sections/social-proof.md`).
+- [A] Users are suspicious of perfect 5.0 ratings; a credible distribution helps (see `../../ui/sections/social-proof.md`).
 
 ### 🔴 Critical errors
 - Fake low-stock or "X people viewing" claims (CMA action against booking sites; Which? found 34 free rooms behind an "only 1 left" message).

@@ -2,7 +2,7 @@
 
 > **Covers:** color roles, the strategy and the scales, a brand color that fails contrast, neutrals, contrast, states, the focus color and the browser surfaces.
 > **Read when:** step 2, after `tokens.md`, whenever the project needs new or fixed color tokens.
-> **Not here:** dark theme and color schemes → references/tokens-color-dark.md; tiers, names and format → references/tokens.md
+> **Not here:** dark theme and color schemes → references/ui/tokens-color-dark.md; tiers, names and format → references/ui/tokens.md
 > **Owner:** modern-design
 > **Sources:** impeccable (Apache-2.0), taste-skill (MIT), ui-ux-pro-max-skill (MIT), emilkowalski/skills (MIT), Modern Web Guidance (CC BY 4.0), WCAG 2.2; full table in docs/research/tokens-sources.md
 

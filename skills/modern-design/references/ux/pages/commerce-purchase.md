@@ -4,7 +4,7 @@ Cart · Checkout / Payment
 
 This file and [`commerce-after-purchase.md`](commerce-after-purchase.md) form one group, commerce, split by moment in the journey: this one covers the purchase (cart and checkout), the other what comes after it (order confirmation and order history). The group's persuasion dial, summary and order of authority below apply to both.
 
-Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
+Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../../strategy/principles.md`.
 
 Persuasion dial for this group: low; medium-low for the cart. The user has already decided to buy; the job now is not to lose them. Trust and friction dominate. The cart abandonment baseline is ~70% across 50 studies (Baymard), much of it "just browsing", but a large part is design-solvable.
 
@@ -55,7 +55,7 @@ Cart → checkout progression; cart edits followed by abandonment.
 - **Rendering:** rendered on the server for each visitor and kept out of shared caches; the cart count in the header is a small interactive part.
 - **Data and state:** the server keeps the cart and recognises it through a secure cookie; adding, changing and removing items are ordinary forms that also work without JavaScript, shown on screen at once with a pending mark on each line; the server recalculates totals, discounts and taxes; every cost is visible early.
 - **Anti-patterns:** keeping the cart only in browser storage; letting a shared cache serve one visitor's cart to others; accepting prices sent by the browser.
-- **Terms:** HttpOnly cookies in [`../implementation.md`, section 3](../implementation.md#3-apps-kinds-of-state); islands in [`../implementation.md`, section 1](../implementation.md#1-rendering-decided-per-route).
+- **Terms:** HttpOnly cookies in [`../../engineering/implementation.md`, section 3](../../engineering/implementation.md#3-apps-kinds-of-state); islands in [`../../engineering/implementation.md`, section 1](../../engineering/implementation.md#1-rendering-decided-per-route).
 
 ---
 
@@ -83,7 +83,7 @@ That the deal agreed on the previous pages holds: same price, same date, no surp
 - [A] GOV.UK pattern, tested with users and screen readers: before submitting, a "check your answers" summary with a "change" link per item; on error, an error summary at the top that receives focus plus messages beside each field. https://design-system.service.gov.uk/patterns/validation
 - [A] Passkeys: 93% sign-in success vs 78% for passwords + traditional MFA; ~2.8× faster (FIDO Passkey Index 2026).
 - [B] Expedia removed an optional "Company" field that caused customers to enter their bank's name and address, failing card verification; reported ~$12M/year in profit.
-- Form-level detail (labels, autocomplete attributes, input sizes): `../sections/forms.md`.
+- Form-level detail (labels, autocomplete attributes, input sizes): `../../ui/sections/forms.md`.
 
 ### 🔴 Critical errors
 - Forced account creation before purchase.
@@ -109,5 +109,5 @@ Checkout completion rate, errors per field, payment-decline recovery rate, suppo
 - **Rendering:** rendered on the server and never cached, in its own layout with few external scripts; card details go into the payment provider's own fields or page.
 - **Data and state:** guest checkout first; few fields, each with the right autofill and keyboard settings; one column; a retried payment attempt never charges twice, and the pay button can't be sent twice; the server checks totals and stock.
 - **Anti-patterns:** showing the order as complete before the server confirms it; building card fields by hand; loading the checkout page in advance; tracking scripts on the payment step.
-- **Terms:** autocomplete and inputmode in [`../implementation.md`, section 7](../implementation.md#7-accessibility) and [`../sections/forms.md`](../sections/forms.md#accessibility); optimistic UI in [`../implementation.md`, section 3](../implementation.md#3-apps-kinds-of-state); idempotency key and webhooks in [`../implementation.md`, section 9](../implementation.md#9-boundaries).
+- **Terms:** autocomplete and inputmode in [`../../engineering/implementation.md`, section 7](../../engineering/implementation.md#7-accessibility) and [`../../ui/sections/forms.md`](../../ui/sections/forms.md#accessibility); optimistic UI in [`../../engineering/implementation.md`, section 3](../../engineering/implementation.md#3-apps-kinds-of-state); idempotency key and webhooks in [`../../engineering/implementation.md`, section 9](../../engineering/implementation.md#9-boundaries).
 

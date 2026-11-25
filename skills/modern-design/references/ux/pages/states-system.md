@@ -2,7 +2,7 @@
 
 Error 404 · Error 500 · Maintenance · Empty state · Success / Thank-you page
 
-Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
+Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../../strategy/principles.md`.
 
 Persuasion dial for this group: none for errors and maintenance; low for empty states, medium-low for success pages. These are endings or interruptions — the moments memory weighs most (peak-end rule). They are also where list-mode design does the most damage, because they are designed last and copied from templates.
 

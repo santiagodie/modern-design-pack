@@ -1,6 +1,6 @@
 /*
  * Page checks: horizontal overflow and the widest offenders, the size and spacing of every pointer target, images without alt, and the basic meta tags.
- * Targets are measured against --target-min (24 px) and --target-touch (44 px), the tokens owned by modern-design/references/tokens.md §5. The script measures and lists; checklist SF4 decides which action is primary.
+ * Targets are measured against --target-min (24 px) and --target-touch (44 px), the tokens owned by modern-design/references/ui/tokens.md §5. The script measures and lists; checklist SF4 decides which action is primary.
  * Returns: an object with width, coarsePointer, targetCount, targetsUnder24, targetsUnder44, horizontalOverflow, overflowing, imagesWithoutAlt, title, description, viewport, ogImage, lang, favicon and h1Count.
  * Used from: references/visual-qa.md (Process, step 4, at every width).
  * Run it by passing this whole file to playwright-cli --raw eval (see the .md above).

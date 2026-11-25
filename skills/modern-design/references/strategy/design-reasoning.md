@@ -2,7 +2,7 @@
 
 > **Covers:** the method applied to designing pages: the six questions per screen, the worked examples, which reference to open per page type, the final checks per element and per flow, and how to present design work.
 > **Read when:** `modern-design` step 1 (direction), after `reasoning.md` and before writing the brief.
-> **Not here:** the shared method (promise, mechanisms, dial scale, collisions) → references/reasoning.md; the examples themselves → references/reasoning-examples.md; page-type specifics and default dial → references/pages/
+> **Not here:** the shared method (promise, mechanisms, dial scale, collisions) → references/reasoning.md; the examples themselves → references/strategy/reasoning-examples.md; page-type specifics and default dial → references/ux/pages/
 > **Owner:** modern-design
 > **Sources:** our own method, from docs/research/web-reasoning/ and the integrated web-design-reasoning skill; full list in docs/SOURCES.md
 
@@ -48,18 +48,18 @@ First reason with this document: person, promise, decision, doubt, cost, exit, d
 
 | Page | File |
 |---|---|
-| Landing, Home, About us, Pricing, Coming soon / Waitlist | `pages/entry-marketing.md` (for landing sections in depth, also `sections/`) |
-| Catalogue, Category, Product page, Search results, Map, Calendar | `pages/content-navigation.md` |
-| Cart, Checkout | `pages/commerce-purchase.md` |
-| Order confirmation, Order history | `pages/commerce-after-purchase.md` |
-| Sign-up, Login, Password recovery, Verification, Onboarding | `pages/authentication.md` |
-| Profile, Settings, Account and billing, Notifications | `pages/user-account.md` |
-| Forms, Editor, Messages / Chat, Feed / Activity | `pages/interaction-creation.md` |
-| Dashboard, Analytics, Admin panel, User / Team management | `pages/management-admin.md` |
-| Article list, Article, Documentation | `pages/blog-resources.md` |
-| Contact, FAQ / Help, Support / Tickets | `pages/support-contact.md` |
-| Terms, Privacy, Cookies | `pages/legal.md` |
-| 404, 500, Maintenance, Empty state, Success page | `pages/states-system.md` |
+| Landing, Home, About us, Pricing, Coming soon / Waitlist | `references/ux/pages/entry-marketing.md` (for landing sections in depth, also `sections/`) |
+| Catalogue, Category, Product page, Search results, Map, Calendar | `references/ux/pages/content-navigation.md` |
+| Cart, Checkout | `references/ux/pages/commerce-purchase.md` |
+| Order confirmation, Order history | `references/ux/pages/commerce-after-purchase.md` |
+| Sign-up, Login, Password recovery, Verification, Onboarding | `references/ux/pages/authentication.md` |
+| Profile, Settings, Account and billing, Notifications | `references/ux/pages/user-account.md` |
+| Forms, Editor, Messages / Chat, Feed / Activity | `references/ux/pages/interaction-creation.md` |
+| Dashboard, Analytics, Admin panel, User / Team management | `references/ux/pages/management-admin.md` |
+| Article list, Article, Documentation | `references/ux/pages/blog-resources.md` |
+| Contact, FAQ / Help, Support / Tickets | `references/ux/pages/support-contact.md` |
+| Terms, Privacy, Cookies | `references/ux/pages/legal.md` |
+| 404, 500, Maintenance, Empty state, Success page | `references/ux/pages/states-system.md` |
 | Naming a mechanism (P01–P31) and checking its evidence | `principles.md` |
 | Anything with prices, consent, subscriptions, scarcity, urgency or reviews | `ethics.md` (hard limit) |
 | Visual system: color, dark mode, typography, spacing (step 2) | `tokens.md`, then `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md` |

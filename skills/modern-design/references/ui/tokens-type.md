@@ -2,7 +2,7 @@
 
 > **Covers:** choosing faces by function, what to check before choosing one, loading and fallbacks, the type scale, fluid sizes, line height, measure, tracking, numerals and wrapping.
 > **Read when:** step 2, after `tokens.md`, whenever the project needs new or fixed type tokens.
-> **Not here:** color of text and contrast → references/tokens-color.md; spacing between text blocks → references/tokens-space.md; tiers and format → references/tokens.md
+> **Not here:** color of text and contrast → references/ui/tokens-color.md; spacing between text blocks → references/ui/tokens-space.md; tiers and format → references/ui/tokens.md
 > **Owner:** modern-design
 > **Sources:** impeccable (Apache-2.0), taste-skill (MIT), ui-ux-pro-max-skill (MIT), emilkowalski/skills (MIT), Modern Web Guidance (CC BY 4.0), WCAG 2.2, MDN; full table in docs/research/tokens-sources.md
 

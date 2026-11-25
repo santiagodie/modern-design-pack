@@ -15,15 +15,15 @@ flowchart LR
 | Skill | Steps | Reference loaded per step |
 |---|---|---|
 | modern-design | Start of every run: the shared core, read whole | `references/ethics.md`, `references/content-truth.md`, `references/reasoning.md`, `references/evidence.md` (see "Shared core") |
-| | 1. Direction: context, live references, central promise, design brief | `references/direction.md`, then `references/design-reasoning.md` before writing the brief |
-| | After reasoning: only the file of each page type in the brief, then principles when needed | `references/pages/<group>.md` (commerce is split in two: `commerce-purchase.md` and `commerce-after-purchase.md`), `references/principles.md` (`references/reasoning-examples.md` for worked examples) |
+| | 1. Direction: context, live references, central promise, design brief | `references/strategy/direction.md`, then `references/strategy/design-reasoning.md` before writing the brief |
+| | After reasoning: only the file of each page type in the brief, then principles when needed | `references/ux/pages/<group>.md` (commerce is split in two: `commerce-purchase.md` and `commerce-after-purchase.md`), `references/strategy/principles.md` (`references/strategy/reasoning-examples.md` for worked examples) |
 | | Pages with prices, consent, subscriptions, scarcity, urgency or reviews (hard limit) | `references/ethics.md` |
 | | Every build: no invention, placeholders, `content-needed.md` (hard limit, same level as ethics) | `references/content-truth.md` |
-| | 2. Tokens: tiers, method against convergence, mandatory tokens, format; then color, dark theme, type and space as needed | `references/tokens.md`, then only the files needed: `references/tokens-color.md`, `references/tokens-color-dark.md`, `references/tokens-type.md`, `references/tokens-space.md` |
-| | 3. Components: sections and components in the project's stack, for phone, tablet and desktop | `references/sections/index.md`, one file per section built, `references/responsive.md` |
-| | 4. Motion: purposeful animation and interaction | `references/motion.md` |
+| | 2. Tokens: tiers, method against convergence, mandatory tokens, format; then color, dark theme, type and space as needed | `references/ui/tokens.md`, then only the files needed: `references/ui/tokens-color.md`, `references/ui/tokens-color-dark.md`, `references/ui/tokens-type.md`, `references/ui/tokens-space.md` |
+| | 3. Components: sections and components in the project's stack, for phone, tablet and desktop | `references/ui/sections/index.md`, one file per section built, `references/engineering/responsive.md` |
+| | 4. Motion: purposeful animation and interaction | `references/ui/motion.md` |
 | | 5. Hand off to design-review | none |
-| | Steps 1 and 3: static or app, rendering per route, kinds of state, reuse layers, performance, accessibility, legal minimum | `references/implementation.md` (and the "Implementation" subsection of each `pages/` entry) |
+| | Steps 1 and 3: static or app, rendering per route, kinds of state, reuse layers, performance, accessibility, legal minimum | `references/engineering/implementation.md` (and the "Implementation" subsection of each `pages/` entry) |
 | | Any step that needs an external resource | `references/resources.md` |
 | design-review (both modes) | Start of every run: the shared method and evidence rules, read whole when they exist | `../modern-design/references/reasoning.md`, `../modern-design/references/evidence.md` |
 | design-review: own project | 1. Review code and design decisions for generic patterns and mistakes | `references/unslop-checklist.md`, `references/copy-states-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`; `references/dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content |
@@ -59,10 +59,10 @@ The design references are organised in four levels, from the smallest piece to t
 
 | Level | What it decides | Where | Status |
 |---|---|---|---|
-| Tokens | Three tiers (base values → semantic roles → component tokens; components read roles, themes remap only the semantic tier); color, dark theme, type, spacing, radii, elevation, targets, focus; motion names reserved | `references/tokens.md` (the step), `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md` | Written (3c); motion values pending in `motion.md` |
+| Tokens | Three tiers (base values → semantic roles → component tokens; components read roles, themes remap only the semantic tier); color, dark theme, type, spacing, radii, elevation, targets, focus; motion names reserved | `references/ui/tokens.md` (the step), `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md` | Written (3c); motion values pending in `motion.md` |
 | Components | Reusable pieces shared by several sections: buttons, cards, inputs, badges | `references/components/` | Pending (3b, batch D) |
-| Sections | Whole page sections with phone, tablet and desktop layouts | `references/sections/`, `references/responsive.md` | Batch A written |
-| Pages | Per page type: the user's moment, what the page must prove, levers, specifics, when the usual advice flips, persuasion dial | `references/pages/` | Reasoning written; "Layout & responsive" per page type pending |
+| Sections | Whole page sections with phone, tablet and desktop layouts | `references/ui/sections/`, `references/engineering/responsive.md` | Batch A written |
+| Pages | Per page type: the user's moment, what the page must prove, levers, specifics, when the usual advice flips, persuasion dial | `references/ux/pages/` | Reasoning written; "Layout & responsive" per page type pending |
 
 Above the levels sits the reasoning layer (the shared core described below, plus `design-reasoning.md` and `principles.md`), which decides which pages and sections exist before any level is built. Beside them, `implementation.md` decides how each level is built: rendering per route, state, the same four levels as reuse layers, performance, accessibility and the legal minimum. Backend security is out of scope (its "Boundaries" section).
 

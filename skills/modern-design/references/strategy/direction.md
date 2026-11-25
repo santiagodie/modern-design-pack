@@ -52,7 +52,7 @@ When you can ask, ask at most five short questions in one message, only about wh
 - **Content** the user would have to stand behind (prices, figures, business texts, reviews, hours, addresses, footer legal details, photos): build with the placeholders in `content-truth.md`.
 - **How the business works** (do they take orders, deliver, make or repair on site, take bookings, offer pickup, which country's law applies): write each open point as a business-question row in `content-needed.md`, listing the sections that depend on it. Those sections may be planned and built, with neutral headings or placeholders until the answer arrives.
 
-Write `content-needed.md` from `templates/content-needed.md`.
+Write `content-needed.md` from `references/templates/content-needed.md`.
 
 ### 3. Research live references
 

@@ -2,7 +2,7 @@
 
 Article list · Article / Post · Documentation
 
-Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
+Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../../strategy/principles.md`.
 
 Persuasion dial for this group: medium for blog content, none for documentation. This is where writing principles (one specific reader, value/time ratio, each paragraph earns the next, honest curiosity, specificity, cutting the fluff) apply most directly.
 

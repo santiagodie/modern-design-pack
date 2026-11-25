@@ -2,7 +2,7 @@
 
 Landing · Home · About us · Pricing · Coming soon / Waitlist
 
-How to read each entry: **The moment** describes the user's mind; **Must prove or protect** links the page to the central promise; **Levers** are mechanisms with the reason they apply (P-IDs → `../principles.md`); **Specifics** are research-backed details with evidence grade [A] experiment/large dataset, [B] company data/documented case, [C] professional consensus; **When the usual advice flips** lists conditions where the default is wrong; **3C weight** rates capture, confidence and conversion from 0 to 3 for that page (3 = critical; Act = activation and continuity, Mem = memory); **Real examples** illustrate a mechanism and are not designs to copy. **Implementation** says whether the page can be static, how to render it, where its data and state live, and the anti-patterns (`../implementation.md`). Use all of it after reasoning, not instead of it.
+How to read each entry: **The moment** describes the user's mind; **Must prove or protect** links the page to the central promise; **Levers** are mechanisms with the reason they apply (P-IDs → `../../strategy/principles.md`); **Specifics** are research-backed details with evidence grade [A] experiment/large dataset, [B] company data/documented case, [C] professional consensus; **When the usual advice flips** lists conditions where the default is wrong; **3C weight** rates capture, confidence and conversion from 0 to 3 for that page (3 = critical; Act = activation and continuity, Mem = memory); **Real examples** illustrate a mechanism and are not designs to copy. **Implementation** says whether the page can be static, how to render it, where its data and state live, and the anti-patterns (`../../engineering/implementation.md`). Use all of it after reasoning, not instead of it.
 
 Persuasion dial for this group: high by default. Marketing pages are where explicit persuasion is legitimate, provided it is true.
 
@@ -31,7 +31,7 @@ That the promise they clicked on is real and is here. The landing page is the fi
 - Value before the ask (P15, P21) when the product can show itself.
 
 ### Specifics
-- Section-level detail (hero anatomy, CTA states, form fields, final CTA, footer legal minimum, sizes and spacing) lives in `../sections/` (start with `../sections/index.md`). Problem, how it works, demo, testimonials, pricing, trust and FAQ sections are pending (batch B). Read them through the questions above.
+- Section-level detail (hero anatomy, CTA states, form fields, final CTA, footer legal minimum, sizes and spacing) lives in `../../ui/sections/` (start with `../../ui/sections/index.md`). Problem, how it works, demo, testimonials, pricing, trust and FAQ sections are pending (batch B). Read them through the questions above.
 - [A] Users judge visual appeal in ~50 ms and decide to stay or leave mostly in the first 10–30 s (Lindgaard 2006; NN/g). See P01, P02.
 - [A] Mobile speed: 0.1 s improvements were associated with +8.4% retail conversion (Deloitte/Google, correlational). See P03.
 
@@ -175,8 +175,8 @@ That the price is the real price and that leaving is as easy as joining. Pricing
 ### Specifics
 - [A] 40% of US shoppers who abandoned (excluding "just browsing") cited extra costs; 12% couldn't see the total up front (Baymard). See P13.
 - [A, with caution] Decoy/anchoring: Economist subscription example (Ariely). Mechanism robust in general, size varies. See P22.
-- [B] FTC v. Amazon (2025, $2.5B): enrollment and cancellation designs count as deception. See `../ethics.md`.
-- Component detail (tiers, toggles, layout): pending (batch B, pricing section in `../sections/`).
+- [B] FTC v. Amazon (2025, $2.5B): enrollment and cancellation designs count as deception. See `../../ethics.md`.
+- Component detail (tiers, toggles, layout): pending (batch B, pricing section in `../../ui/sections/`).
 - Note: many SEO-blog "pricing page benchmarks" with exact percentages have unverifiable methods. Don't treat them as evidence.
 
 ### 🔴 Critical errors

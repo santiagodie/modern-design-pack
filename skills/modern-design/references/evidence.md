@@ -2,7 +2,7 @@
 
 > **Covers:** evidence grades A, B and C; what counts as verified (primary source, date checked, dated status, secondary sources as context, marking what is unverified); how to cite inside the references.
 > **Read when:** at the start of any skill run, whole; when writing or revising a reference; when a report or a page states a claim with a source.
-> **Not here:** popular claims that don't hold up → references/ethics.md §5; when a statistic may appear on a page → references/sections/index.md; `measured` versus `judgment` in reviews → design-review references/review-method.md (planned)
+> **Not here:** popular claims that don't hold up → references/ethics.md §5; when a statistic may appear on a page → references/ui/sections/index.md; `measured` versus `judgment` in reviews → design-review references/review-method.md (planned)
 > **Owner:** shared core (lives in modern-design)
 > **Sources:** house rules, written from the practice in docs/SOURCES.md, docs/research/tokens-sources.md, docs/ROADMAP.md and .claude/CLAUDE.md
 

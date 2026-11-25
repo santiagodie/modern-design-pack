@@ -2,7 +2,7 @@
 
 Sign-up · Login · Password recovery · Verification (email / 2FA) · Onboarding
 
-Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
+Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../../strategy/principles.md`.
 
 Persuasion dial for this group: none for login, recovery and verification; medium for sign-up and onboarding. Authentication is a toll booth the user wants to pass, not a destination. Security matters, but security that users work around is not security.
 

@@ -2,7 +2,7 @@
 
 Forms / Content creation · Editor · Messages / Chat · Feed / Activity
 
-Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
+Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../../strategy/principles.md`.
 
 Persuasion dial for this group: none, except Feed (medium, with ethical limits). Here the user is the author. The product's job is to get out of the way, never lose their work, and make mistakes cheap.
 
@@ -34,7 +34,7 @@ That their effort is respected: asked only what's needed, saved, and confirmed.
 - [A] GOV.UK "one thing per page": start with one question, piece of information or decision per page, merge only when research shows it helps. Benefits reported: less overwhelm on small screens, simpler errors, simpler check-answers pages; users in GOV.UK Forms research welcomed it. https://www.gov.uk/service-manual/design/form-structure
 - [A] GOV.UK error pattern: error summary at the top that receives focus, plus a message next to each field; add "Error:" to the page title; avoid native HTML5 validation bubbles for consistency and accessibility. https://design-system.service.gov.uk/patterns/validation
 - [A] "Check your answers" before submitting medium/long forms; tested with visually impaired users, the label–answer–change rhythm let them correct mistakes efficiently.
-- [B] HubSpot's analysis of 40,000+ landing pages: field *type* matters more than count; multiple text areas and dropdowns hurt most (see `../sections/forms.md`).
+- [B] HubSpot's analysis of 40,000+ landing pages: field *type* matters more than count; multiple text areas and dropdowns hurt most (see `../../ui/sections/forms.md`).
 - [B] Expedia: one ambiguous optional field reportedly cost ~$12M/year.
 - [C] Autosave long forms; show "saved" status.
 

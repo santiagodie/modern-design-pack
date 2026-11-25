@@ -2,7 +2,7 @@
 
 Contact · FAQ / Help centre · Support centre / Tickets
 
-Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
+Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../../strategy/principles.md`.
 
 Persuasion dial for this group: none; low for FAQ and help centre. The user usually arrives with a problem, often frustrated. These pages are a trust test: the product's promise is being checked at its weakest moment, and how this ends is remembered (peak-end).
 
@@ -31,7 +31,7 @@ That real, accountable people are behind the promise and reachable.
 
 ### Specifics
 - [C] State expected response time per channel ("we reply within 1 business day").
-- [Legal, EU/Spain] Businesses offering services online must make identification and contact details easily accessible (LSSI in Spain; e-Commerce Directive at EU level) — see the footer legal minimum in `../sections/footer.md`.
+- [Legal, EU/Spain] Businesses offering services online must make identification and contact details easily accessible (LSSI in Spain; e-Commerce Directive at EU level) — see the footer legal minimum in `../../ui/sections/footer.md`.
 - [C] After sending, confirm on screen and by email with a reference number.
 
 ### 🔴 Critical errors
