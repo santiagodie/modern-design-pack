@@ -73,6 +73,6 @@ Sources: Bird & Bird on the EAA (https://www.twobirds.com/en/insights/2025/a-gui
 
 - Pricing / Billing / Sign-up with trial: total price, renewal date and amount, notice before trial ends, symmetric cancellation.
 - Product page / Listing / Map / Cart / Checkout: compulsory charges in the headline price; scarcity only if real; sponsored results marked; no pre-ticked extras.
-- Checkout / Login / Sign-up / Forms: WCAG 2.1 AA (focus, labels, errors not only by colour, touch targets).
+- Checkout / Login / Sign-up / Forms: WCAG 2.2 AA (focus, labels, errors not only by colour, touch targets).
 - Cookies / Privacy: accept/reject parity; no consent by default; readable layers.
 - Feed / Onboarding with gamification: escape valves (pause, freeze); special care if minors are involved.

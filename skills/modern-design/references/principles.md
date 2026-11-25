@@ -161,7 +161,7 @@ Cross-cutting golden rule: trust is not a phase, it is a condition. Any trust fa
 #### P18 · Accessibility as trust (and as a legal obligation)
 - Mechanism: a site that cannot be used with a keyboard, screen reader or under low contrast excludes people and signals carelessness.
 - Legal context: since 28-06-2025 the European Accessibility Act requires accessibility for most e-commerce services aimed at EU consumers; the technical standard (EN 301 549) incorporates WCAG 2.1 AA. https://www.twobirds.com/en/insights/2025/a-guide-to-navigating-the-european-accessibility-act-for-online-retailers-service-providers-and-plat
-- Application: WCAG 2.1 AA as a minimum (aim for 2.2), visible focus, errors not only in red, large touch targets, accessibility statement.
+- Application: WCAG 2.2 AA as a minimum, visible focus, errors not only in red, large touch targets, accessibility statement.
 - Weighs most on: ALL, but critical on Checkout, Sign-up/Login (authentication and payment are in scope), Forms, Legal.
 
 ### CONVERSION BLOCK
