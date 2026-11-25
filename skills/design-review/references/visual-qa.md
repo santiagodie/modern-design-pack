@@ -68,18 +68,16 @@ playwright-cli --raw eval "$JS"
 
 ### Checks script
 
-Run it at each width. It returns JSON with horizontal overflow, the widest offenders, small tap targets, images without `alt`, and the basic meta tags.
+Run it at each width. It returns JSON with horizontal overflow, the widest offenders, the size and spacing of pointer targets, images without `alt`, and the basic meta tags.
 
-`page-checks.js`: run it in step 4 at every width (375, 768, 1024, 1440, and phone landscape when used). `horizontalOverflow: true` or entries in `overflowing` are layout findings at that width; `smallTargets` lists targets under 44 px with a coarse pointer or 24 px with a fine one; `imagesWithoutAlt`, `title`, `description`, `ogImage`, `lang`, `favicon` and `h1Count` feed the Meta checks (ME1–ME4), and `viewport` feeds OM1 and MN1.
-
-The small-target list includes inline text links, which are fine inside a paragraph. Flag only targets that stand alone: navigation, icons, buttons, form controls.
+`page-checks.js`: run it in step 4 at every width (375, 768, 1024, 1440, and phone landscape when used). `horizontalOverflow: true` or entries in `overflowing` are layout findings at that width. `targetsUnder24` lists targets under `--target-min` with `spacingOk` (the WCAG 2.5.8 spacing exception) and `inlineText` (a link inside a paragraph, also an exception); `targetsUnder44` lists targets between 24 and 44 px (`--target-touch`). Both tokens are owned by `modern-design/references/tokens.md` §5; SF4 decides which entries are findings. `imagesWithoutAlt`, `title`, `description`, `ogImage`, `lang`, `favicon` and `h1Count` feed the Meta checks (ME1–ME4), and `viewport` feeds OM1 and MN1.
 
 ## What to look at per width
 
 **375 px (phone)**
 - Horizontal scroll or content cut off at the right edge.
 - Headlines wrapping badly: one word on the last line, words split, text clipped.
-- Tap targets under about 44 px, or targets packed so tightly they're hard to hit.
+- Targets under `--target-min` (24 px) without enough spacing, and primary actions under `--target-touch` (44 px); see SF4.
 - Fixed headers or bottom bars covering content, or taking more than about a fifth of the screen.
 - The main call to action visible without much scrolling.
 - Images cropped so the subject is lost.
@@ -95,7 +93,7 @@ The small-target list includes inline text links, which are fine inside a paragr
 - Tables and side panels overflowing instead of scrolling inside a container or reflowing.
 
 **1024 px (tablet landscape, touch)**
-- Desktop layouts shown to a finger: menus or content that only open on hover, tap targets under 44 px.
+- Desktop layouts shown to a finger: menus or content that only open on hover, primary actions under `--target-touch` (44 px; see SF4).
 - Hover styles that stay "stuck" after a tap (check the CSS: `:hover` outside a hover-capability query; see MN3).
 - Boards, tables and multi-column tools that need sideways scrolling to reach a column.
 
