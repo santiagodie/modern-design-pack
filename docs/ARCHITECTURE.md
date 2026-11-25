@@ -74,11 +74,11 @@ Five pieces apply to every skill, whatever it builds or reviews. They live in `m
 |---|---|---|
 | `ethics.md` | Hard limit: legitimate persuasion versus dark patterns, real cases, dated regulatory status, blacklist, quality of popular claims, minimum per page type | `modern-design`: whole, at the start of every run. `design-review`: for the cases behind its DP family |
 | `content-truth.md` | Hard limit: no invention, the three sources of every text, placeholders, `content-needed.md` | `modern-design`: whole, at the start of every run |
-| `reasoning.md` | The shared method: think instead of filling in, the central promise, the four mechanisms, the persuasion dial scale, collisions between principles, how to present conclusions | Both skills: whole, at the start of every run |
+| `reasoning.md` | The shared method: think instead of filling in, the central promise, the four mechanisms, the persuasion dial scale, collisions between principles | Both skills: whole, at the start of every run |
 | `evidence.md` | Evidence grades A, B and C; what counts as verified (primary source, date checked, dated status, secondary sources as context, unverified claims marked); how to cite | Both skills: whole, at the start of every run |
 | `templates/site-decisions.md`, `templates/content-needed.md` | Templates of the project files | Whichever skill creates the file first |
 
-The page-design part of the method is not shared: `design-reasoning.md` (six questions per screen, worked examples, which reference to open) and `principles.md` belong to `modern-design`.
+The page-design part of the method is not shared: `design-reasoning.md` (six questions per screen, worked examples, which reference to open, how to present design work) and `principles.md` belong to `modern-design`.
 
 **How other skills read it.** A skill other than `modern-design` names each core file by `${CLAUDE_SKILL_DIR}/../modern-design/references/<file>`, the pattern `design-review` already uses, and keeps working when the file is missing: its own `SKILL.md` carries the rules it needs in short form. The skill scanner reports these paths as `reference_missing`, which doesn't block the scan.
 

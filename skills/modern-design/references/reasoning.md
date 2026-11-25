@@ -1,8 +1,8 @@
 # Reasoning about web design from the user's mind
 
-> **Covers:** the shared method: think instead of filling in, the central promise, the four mechanisms, the persuasion dial scale, collisions between principles, how to present conclusions, and treating all of it as priors.
+> **Covers:** the shared method: think instead of filling in, the central promise, the four mechanisms, the persuasion dial scale, collisions between principles, and treating all of it as priors.
 > **Read when:** at the start of any skill run, whole; in `modern-design`, before writing the brief.
-> **Not here:** the six questions per screen, worked examples and which reference to open → references/design-reasoning.md; evidence grades and verification → references/evidence.md; the default dial per page type → references/pages/
+> **Not here:** the six questions per screen, worked examples, which reference to open and how to present design work → references/design-reasoning.md; evidence grades and verification → references/evidence.md; the default dial per page type → references/pages/
 > **Owner:** shared core (lives in modern-design)
 > **Sources:** Baymard GPT-4 UX audit (2023); our own method, from docs/research/web-reasoning/; full list in docs/SOURCES.md
 
@@ -10,7 +10,7 @@
 
 This document does not teach components or patterns. It teaches how to think. If all you take away from it is a list of things to put on a page, you have read it wrong.
 
-For the page-level part of the method (the six questions on every screen, the worked examples and which reference to open), see `design-reasoning.md`.
+For the page-level part of the method (the six questions on every screen, the worked examples, which reference to open and how to present design work), see `design-reasoning.md`.
 
 ---
 
@@ -123,12 +123,6 @@ Principles are not rules, because they often contradict each other. Knowing how 
 **Novice versus expert.** A screen that guides a first-time visitor slows down someone who uses it forty times a day, and density that suits the expert overwhelms the newcomer. Resolve it by asking: *who uses this screen most, and how often?* Design for them, and give the other group a path (a guided first run, or shortcuts and a dense view).
 
 In every case, the tiebreaker is the same: go back to the central promise and to the doubt the user has *at that moment*. The principle that resolves that doubt without breaking the promise wins.
-
----
-
-## 5. How to present design work
-
-Keep the reasoning mostly internal, but let its results show. When you present a design or a review, explain the two to four decisions that matter most in terms of the user's doubt ("the price includes delivery because the main reason people abandon here is a surprise cost"), not in terms of frameworks ("applying P13 and the peak-end rule"). Don't recite these headings or the six questions. When you assumed something about the user or the promise, state it in one line so it can be corrected.
 
 ---
 

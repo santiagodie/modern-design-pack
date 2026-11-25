@@ -97,12 +97,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 ### Added (shared core)
 
 - `modern-design/references/evidence.md`: evidence grades A, B and C (definition moved from `principles.md`, each principle keeps its grade), what counts as verified (primary source, date checked, dated legal or support status, secondary sources as context, unverified claims marked "verify before citing") and how to cite inside the references.
-- `modern-design/references/design-reasoning.md`: the page-design part of the method, moved word for word from `reasoning.md` (six questions per screen, worked examples, which reference to open, final checks).
+- `modern-design/references/design-reasoning.md`: the page-design part of the method, moved word for word from `reasoning.md` (six questions per screen, worked examples, which reference to open, final checks, how to present design work).
 - "Shared core" section in `docs/ARCHITECTURE.md`.
 
 ### Changed (shared core)
 
-- `reasoning.md` keeps the method shared by every skill (stance, central promise, four mechanisms, persuasion dial scale, collisions, presenting conclusions, priors); sections renumbered and every `reasoning.md` §n link updated.
+- `reasoning.md` keeps the method shared by every skill (stance, central promise, four mechanisms, persuasion dial scale, collisions, priors); sections renumbered and every `reasoning.md` §n link updated.
 - Fixed header (Covers, Read when, Not here, Owner, Sources) on `ethics.md`, `content-truth.md`, `reasoning.md`, `design-reasoning.md`, `evidence.md` and `principles.md`.
 - Order of authority: `reasoning.md` and `design-reasoning.md` share the method position, in every file that states it.
 - `modern-design` reads `ethics.md`, `content-truth.md`, `reasoning.md` and `evidence.md` whole at the start of every run, and `design-reasoning.md` in step 1. `design-review` reads `reasoning.md` and `evidence.md` whole at the start of every run, and continues without them when they are missing.

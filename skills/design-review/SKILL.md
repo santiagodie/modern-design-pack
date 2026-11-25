@@ -27,7 +27,7 @@ When a URL points to the user's own project and its code is here, use own-projec
 
 ## Process
 
-At the start of every run, in both modes, read the shared core whole: `${CLAUDE_SKILL_DIR}/../modern-design/references/reasoning.md` (the shared method: the central promise, the four mechanisms, the persuasion dial, collisions between principles, how to present conclusions) and `${CLAUDE_SKILL_DIR}/../modern-design/references/evidence.md` (evidence grades, what counts as verified, how to cite). Continue without either when it doesn't exist: the rules below already carry what a review needs from them.
+At the start of every run, in both modes, read the shared core whole: `${CLAUDE_SKILL_DIR}/../modern-design/references/reasoning.md` (the shared method: the central promise, the four mechanisms, the persuasion dial, collisions between principles) and `${CLAUDE_SKILL_DIR}/../modern-design/references/evidence.md` (evidence grades, what counts as verified, how to cite). Continue without either when it doesn't exist: the rules below already carry what a review needs from them.
 
 ### Mode 1: Own project
 

@@ -73,7 +73,7 @@ Read whole at the start of every run (the shared core, also read by `design-revi
 Load only when needed:
 
 - `references/direction.md`: step 1
-- `references/design-reasoning.md`: step 1, before writing the brief (six questions per screen, which reference to open)
+- `references/design-reasoning.md`: step 1, before writing the brief (six questions per screen, which reference to open, how to present design work)
 - `references/reasoning-examples.md`: worked examples of the method, when useful
 - `references/pages/`: step 1, only the file of each page type in the brief
 - `references/principles.md`: after reasoning, for reference
