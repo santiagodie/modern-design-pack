@@ -47,11 +47,23 @@ Write one reference at a time, test it on the bakery and the vet dashboard, and 
 - Watch for convergence: phase 3a and no-invention runs 1 and 2 all chose a near-white named "harina" (flour), and 3a and run 1 chose Archivo; run 2 changed the font (Barlow) but kept the base and the "sign plus hours board" idea. Part of the cause was in the references: the examples in `direction.md`, `hero.md`, `cta.md`, `final-cta.md`, `ethics.md` and the content-needed template came from our own bakery tests ("out of the oven today" board, sourdough bakery, "Order for tomorrow"). They were replaced by examples from varied businesses in claims round 2. If run 3, with another business, still converges on the same base or font, treat it as a plugin default and fix the cause (`direction.md`, generator defaults list)
 - [ ] Test `site-decisions.md`: record a user decision that overrides a checklist rule and check that `design-review` doesn't report it, except a measured failure marked "decided by user"
 - [ ] Verify before citing, then update: Next.js 16.4 and TanStack Start 1.0 claims in `implementation.md`
-- [ ] **Next:** 3c: `tokens.md` (section spacing rhythm, semantic color roles, density from the brief's persuasion dial per page, and two requirements from the 3b test: focus-ring tokens that keep 3:1 on every surface, dark bands and footers included; and touch-target tokens, at least 44 px on coarse pointers, also for inline links, nav items and footer links. Section files point to these tokens instead of repeating them; `site-decisions.md` section 1 points to the tokens in the code)
-- [ ] 3d: `motion.md` (how much animation each page allows, from the brief's persuasion dial: more room on high, almost none on low and none)
-- [ ] `resources.md`
+- [x] 3c: tokens step: `tokens.md` (three tiers, the brief's dial to density, rhythm and motion budget, the method against convergence, mandatory focus, target, placeholder and reduced-motion tokens, CSS by default with DTCG and Tailwind v4 as dated options, the record in `site-decisions.md`), `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md` and `tokens-space.md`, from five reference skills filtered by our rules (decision table in `docs/research/tokens-sources.md`). Target size aligned in `implementation.md` and `responsive.md`: MUST 24 × 24 CSS px (WCAG 2.5.8), SHOULD 44 px for primary actions on coarse pointers
+- [ ] 3d: `motion.md` (how much animation each page allows, from the brief's persuasion dial: more room on high, almost none on low and none). Names already reserved in `tokens.md` §3: `--duration-feedback`, `--duration-small`, `--duration-overlay`, `--duration-sheet`, `--ease-enter`, `--ease-exit`, `--ease-move`
+- [ ] **Next:** knowledge audit by branches: check each reference family (pages, sections, tokens, implementation) for gaps and contradictions, one branch per family, with the deferred rows of `docs/research/tokens-sources.md` as input for tokens
+- [ ] Test the tokens step: build a page for a business outside the anti-seed list and check that the palette and faces cite the brief, not a default (TY11, CO1, CO8)
+- [ ] `resources.md` (color, fonts and token links added with the tokens step; galleries, component libraries, backgrounds and motion pending)
 - [ ] Write the `modern-design` SKILL.md rules
-- [ ] Remove the "Sources to merge" sections as they are used
+- [ ] Remove the "Sources to merge" sections as they are used (done in `tokens.md`)
+
+### Pending verification
+
+Claims kept out of the skills, or left as they are, until checked at a primary source:
+
+- iOS Safari zooming the page when focus lands on an input under 16 px (stated in `responsive.md`; Apple doesn't document it).
+- Safari 17 as the version that added `@font-face size-adjust`.
+- Tailwind v4's single `--spacing` base variable.
+- Android's 48 dp minimum target.
+- From Modern Web Guidance: the "maximum within 2.5× the minimum" rule for fluid type; `<meta name="text-scale">`; a Chromium bug with `oklch` neutrals; forced colours removing `box-shadow`; Safari's `accent-color` caveat; support for `contrast-color()`, `text-box`, `corner-shape`, `hyphenate-limit-chars`, `font-size-adjust: from-font` and container style queries.
 
 ## Phase 4: Tests with real briefs
 

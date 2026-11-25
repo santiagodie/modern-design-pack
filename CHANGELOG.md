@@ -66,6 +66,21 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Versioning: the version is bumped only when a release is published; changes go to "Unreleased" until then.
 - `visual-qa.md`: `read -r -d '' JS <<'EOF' || true`, because `read` returns 1 at the end of input and stops scripts that use `set -e`.
 
+### Added (tokens step)
+
+- `modern-design` step 2: `references/tokens.md` (three tiers: base values, semantic roles, component tokens; the brief's persuasion dial to density, section rhythm and motion budget; a method against convergence with no starting palette or font pair; mandatory focus, target, placeholder and reduced-motion tokens; one CSS file by default, with the DTCG format 2025.10 and Tailwind v4 `@theme` as dated options; token names, never values, in `site-decisions.md`; motion token names reserved for step 4). Detail in `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md` and `tokens-space.md`, loaded only when needed.
+- New reference form, recorded in `ARCHITECTURE.md`: a five-line header (Covers, Read when, Not here, Owner, Sources) and rules written as Rule, Why, When it flips, Source.
+- `docs/research/tokens-sources.md`: decision table for the tokens step (adopt, adapt, reject, link, deferred) over impeccable, taste-skill, ui-ux-pro-max-skill, emilkowalski/skills, Modern Web Guidance and the author's research, plus the standards facts checked at their source (WCAG 2.2, Apple HIG, Baseline status, DTCG 2025.10, Tailwind v4).
+- `resources.md`: color, font and token entries.
+- `.claude/CLAUDE.md`: a living list of businesses already used as examples.
+- `ROADMAP.md`: a "Pending verification" list.
+
+### Changed (tokens step)
+
+- Target size aligned in `implementation.md` and `responsive.md`: MUST 24 × 24 CSS px with the exceptions of WCAG 2.5.8 (the 8 px gap figure replaced by WCAG's spacing exception); SHOULD 44 px for primary actions on coarse pointers (WCAG 2.5.5 AAA, Apple's default control size).
+- `implementation.md` names the token format "Design Tokens Community Group format 2025.10 (a community group report, not a W3C standard)".
+- `SKILL.md` step 2 describes the tokens step; `direction.md`, `reasoning.md` and `motion.md` point to the new files.
+
 ### Changed (phase 3b)
 
 - Skills may read each other's files inside the plugin; the rule is now "nothing outside the plugin".

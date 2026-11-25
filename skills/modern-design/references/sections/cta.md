@@ -23,9 +23,9 @@ Every page with an action. The CTA is a system repeated down the page (hero, aft
 
 | | Phone | Tablet | Desktop |
 |---|---|---|---|
-| Size | 48–56 px tall; full width inside the side padding is fine | At least 48 px tall; natural width, not stretched past about 480 px | 44–56 px tall, 24–32 px side padding |
+| Size | At least `--target-touch` (44 px) tall; full width inside the side padding is fine | At least `--target-touch` tall (touch-first); natural width, not stretched past about 480 px | `--control-height`, never under `--target-min` (24 px); side padding from the spacing scale |
 | Position | In thumb reach; a sticky bottom CTA can appear once the hero CTA scrolls out | As phone in portrait; inline in landscape | Inline; a sticky header CTA is enough |
-| Spacing | At least 8 px from other targets; 12–16 px between primary and secondary | Same | 12–16 px between primary and secondary |
+| Spacing | Targets under 24 px keep the spacing of WCAG 2.5.8 (`tokens.md` §5); `--space-inside` between primary and secondary | Same | `--space-inside` between primary and secondary |
 
 **Sticky mobile CTA (needs JavaScript):** appears after the hero CTA leaves the screen, hides when the final CTA or a form is visible, adds `env(safe-area-inset-bottom)` to its padding, and never covers the cookie banner, a submit button or the focused element. A short context line built from confirmed facts ("Free returns · 30 days") often helps more than the button alone.
 
@@ -50,7 +50,7 @@ Add `touch-action: manipulation` so taps fire without delay.
 
 - A real text label; icons alone need an accessible name.
 - Use `<button>` for actions and `<a>` for navigation.
-- Targets at least 24×24 px (WCAG 2.2 AA), 44–48 px for touch.
+- MUST: targets at least `--target-min` (24 × 24 CSS px, WCAG 2.5.8), or spaced as its exception allows. SHOULD: `--target-touch` (44 px) for the primary action under `(pointer: coarse)` (`tokens.md` §5).
 
 ## Critical errors
 

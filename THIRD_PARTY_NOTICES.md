@@ -4,7 +4,7 @@ modern-design-pack is released under the MIT License (see `LICENSE`). Some parts
 
 The full list of sources consulted, including those only linked, is in `docs/SOURCES.md`.
 
-No text or code from these sources is copied. The ideas below were rewritten in our own words and reorganised. They are listed here to credit the authors and to meet the attribution terms of their licences.
+The ideas below were rewritten in our own words and reorganised. The only exceptions are short quoted sentences in the tokens references (`skills/modern-design/references/tokens*.md`), taken from Impeccable (Apache-2.0) and ui-ux-pro-max-skill (MIT). Each one is in quotation marks with its source named next to it. The entries below credit the authors and meet the attribution terms of their licences.
 
 ## Entries
 
@@ -40,18 +40,91 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 - **URL:** https://github.com/pbakaus/impeccable (https://impeccable.style)
 - **Author / copyright holder:** Paul Bakaus
 - **License:** Apache License 2.0, https://www.apache.org/licenses/LICENSE-2.0
-- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`
-- **What was used:** ideas on anti-patterns (identical card grids, eyebrow labels, numbered sections, side accent bars, monospace as decoration, glass as decoration, ghost cards, icon tiles, cream defaults, formula copy) and quality checks (contrast floors, tracking, measure, states, heading outline). Some ideas come from the catalogue at https://impeccable.style/slop, whose site text has no stated licence; only the ideas were summarised.
-- **Changes:** rewritten in our own words, merged with other sources, and turned from bans into context-dependent rules. Impeccable's automated checks were not replicated.
+- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`; `skills/modern-design/references/tokens.md`, `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md`
+- **What was used:**
+  - In the checklists: ideas on anti-patterns (identical card grids, eyebrow labels, numbered sections, side accent bars, monospace as decoration, glass as decoration, ghost cards, icon tiles, cream defaults, formula copy) and quality checks (contrast floors, tracking, measure, states, heading outline). Some of these ideas come from the catalogue at https://impeccable.style/slop, whose site text has no stated licence; only the ideas were summarised.
+  - In the tokens references: rules from `skill/reference/colorize.md`, `typeset.md`, `layout.md`, `new-work.md`, `operate.md`, `polish.md`, `document.md`, `craft-floor.md`, `optimize.md` and `harden.md` (commit `9e460a8`). They cover color roles and strategy, OKLCH ramps, tinted neutrals, dark themes, names by purpose, type roles and line height, the spacing base, rhythm and density.
+- **Changes:** files modified. Ideas were rewritten in our own words and merged with other sources. Bans were turned into context-dependent rules. Fifteen short sentences are quoted verbatim and credited in place. Impeccable's automated checks and its NOTICE-listed material (`ios.md`, `android.md`, fonts, autoconsent) were not used.
 
 ### Taste Skill
 
 - **URL:** https://github.com/Leonxlnx/taste-skill (https://tasteskill.dev)
 - **Author / copyright holder:** Leon Lin and blueemi (Copyright (c) 2026 Leonxlnx)
 - **License:** MIT, https://opensource.org/license/mit
-- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`, `skills/modern-design/references/direction.md`
-- **What was used:** ideas on showing the real product, effects that don't fit the business, scroll-triggered card animations and mobile checks (checklist); writing down the real material before building, marking assumed facts, deciding structure by kind of business, and planning one line per section (direction).
-- **Changes:** rewritten in our own words and merged with other sources. Its seeded per-kind palette selection and fixed section lists were not used.
+- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`, `skills/modern-design/references/direction.md`, `skills/modern-design/references/tokens*.md`
+- **What was used:**
+  - Checklist: ideas on showing the real product, effects that don't fit the business, scroll-triggered card animations and mobile checks.
+  - Direction: writing down the real material before building, marking assumed facts, deciding structure by kind of business, and planning one line per section.
+  - Tokens (`assets/system.css`, `references/system.md`, `backgrounds.md`, `cards.md`, `layout-v4.md`, `motion.md`; commit `d1a2bb4`):
+    - the tier model with grounds that remap roles;
+    - action kept separate from accent, and lines and states derived with `color-mix()`;
+    - darkening a brand color until it passes;
+    - the focus ring, type scale tokens, tabular figures, numbers kept with their unit;
+    - the container formula, nested radii and motion token names.
+- **Changes:** rewritten in our own words and merged with other sources. Not used: its seeded per-kind palette selection, its fixed palette and font-pairing libraries, Google Fonts links, hue and font bans, and fixed section lists.
+
+### ui-ux-pro-max-skill (Next Level Builder)
+
+- **URL:** https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+- **Author / copyright holder:** Next Level Builder (Copyright (c) 2024 Next Level Builder). The `design-system`, `ui-styling` and `brand` skills inside the repo name "claudekit" as their author.
+- **License:** MIT, https://opensource.org/license/mit
+- **Used in:** `skills/modern-design/references/tokens.md`, `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md`
+- **What was used** (commit `8db3633`):
+  - From `ui-ux-pro-max/data/ux-guidelines.csv`, `references/quick-reference.md`, `pro-rules.md`, `colors.csv` (column set and notes), `landing.csv`, `app-interface.csv` and `google-fonts.csv`:
+    - keeping AA and AAA focus criteria apart;
+    - keeping web, iOS and Android target sizes apart;
+    - tabular figures (one sentence quoted);
+    - measuring real contrast pairs;
+    - adjusting a brand color per role;
+    - state parity across themes;
+    - checking font licences and subsets.
+  - From the claudekit skills (`design-system/references/token-architecture.md`, `primitive-tokens.md`, `semantic-tokens.md`, `ui-styling/references/shadcn-theming.md`, `tailwind-customization.md`, `brand/references/typography-specifications.md`):
+    - the three-tier model and the naming grammar;
+    - status and state roles;
+    - the radius root value, the shadow and z-index scales;
+    - tracking by role;
+    - DTCG and Tailwind `@theme` as formats.
+- **Changes:** rewritten in our own words, apart from one quoted sentence. Not used: per-sector palettes, font pairings with Google Fonts links, style presets, the Python tooling, and all of its fixed values.
+
+### emilkowalski/skills (Emil Kowalski)
+
+- **URL:** https://github.com/emilkowalski/skills
+- **Author / copyright holder:** Emil Kowalski (Copyright (c) 2026 Emil Kowalski)
+- **License:** MIT, https://opensource.org/license/mit
+- **Used in:** `skills/modern-design/references/tokens.md`, `tokens-color.md`, `tokens-type.md`, `tokens-space.md` (mobile-native is listed separately above)
+- **What was used** (commit `64eb3de`, from `skills/apple-design`, `animate`, `learn-taste`, `emil-design-eng` and `ui-cheatsheet.md`):
+  - tracking and line height by size;
+  - hierarchy from weight, size and leading;
+  - the system font as an option for tool UI;
+  - material and elevation criteria;
+  - reduced-transparency handling;
+  - eased gradient stops;
+  - motion token names by role;
+  - extending existing tokens;
+  - recording the user's decisions with their reason.
+- **Changes:** rewritten in our own words. Its fixed glass recipe and its review format were not used.
+
+### Modern Web Guidance (Google)
+
+- **URL:** https://github.com/GoogleChrome/modern-web-guidance-src (docs: https://developer.chrome.com/docs/modern-web-guidance)
+- **Author / copyright holder:** Google LLC (Chrome for Developers)
+- **License:** guide content under `guides/` is Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/; code is Apache-2.0. The source says parts of the guides derive from MDN Web Docs (Mozilla Contributors, CC BY-SA 2.5).
+- **Used in:** `skills/modern-design/references/tokens.md`, `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md`
+- **What was used** (commit `92686ac`), facts and techniques from `guides/`:
+  - from `visual-design/` (color, dark-mode, browser-ui-theming, typography, visually-stable-font-fallbacks, visual-effects): contrast for borders, states and focus; `light-dark()` with raw values kept apart; why `@property` `<color>` breaks themes; scoped color schemes; text over gradients; browser UI theming; forced colors; `prefers-contrast`; fluid type with a `rem` term and no root font size; `text-wrap`; fallback metrics;
+  - from `css/` (css, css-layout, design-token-reactivity): tiers sized to the project; layered shadows; logical properties; `gap`; density as a higher-order token;
+  - from `accessibility/` and `user-experience/form-factor-adaptation`: target size tokens; `scroll-padding` for fixed bars.
+- **Changes:** facts only, in our own wording and order (because of the MDN-derived prose); statements written as conditions instead of MANDATORY/DO NOT. Not endorsed by Google.
+
+### Standards cited
+
+- **WCAG 2.2** (W3C Recommendation, 12 December 2024), https://www.w3.org/TR/WCAG22/: success criteria 1.4.1, 1.4.3, 1.4.4, 1.4.6, 1.4.11, 2.4.7, 2.4.11, 2.4.13, 2.5.5 and 2.5.8 are cited by number and summarised in the tokens references. Copyright © 2020-2024 World Wide Web Consortium, under the W3C Document License (2023 version, https://www.w3.org/copyright/document-license/); no text reproduced beyond short criterion names.
+- **Design Tokens Format Module, Resolver Module and Color Module 2025.10** (Design Tokens Community Group, Final Community Group Reports, 28 October 2025), https://www.designtokens.org/TR/2025.10/: file format facts (`.tokens.json`, `$value`, `$type`, aliases, sets and modifiers) summarised in `tokens.md`. Not a W3C Standard.
+- **Apple Human Interface Guidelines, Accessibility**, https://developer.apple.com/design/human-interface-guidelines/accessibility: the default (44 × 44 pt) and minimum (28 × 28 pt) control sizes, cited as figures.
+
+### Author's research
+
+`docs/research/landing-field-guide/04_CROSS_CUTTING.md` (sections 1, 2, 3 and 13: spacing, type, color and dark mode) is the author's own research, written with Claude and released with this repository under MIT. It is adapted in the tokens references and credited there as "the author's research".
 
 ### Web Interface Guidelines
 
@@ -73,7 +146,7 @@ No text or code from these sources is copied. The ideas below were rewritten in 
 
 ### Ideas without a stated licence
 
-Ideas from these sources were used in rewritten form only, with credit and no reuse of their wording: Instagram posts by @charles.unemployed and @millee.md, three shared screenshots whose authors are not yet identified (the third is a list of AI slop indicators, used in `unslop-checklist.md` and `copy-states-checklist.md`), the names of laws from Laws of UX (https://lawsofux.com) by Jon Yablonski, and the legacy-to-modern direction of Chrome's Modern Web Guidance (https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers, used for the "Outdated, measurable" section in `outdated-checklist.md` (the detection script is our own). `direction.md` also uses rewritten ideas from Figma's articles "What is web design" and "Tendencias de diseño web" (content before visuals, mobile first, performance as a design input, choosing from audience and brand values), and follows Impeccable's convention of `PRODUCT.md` and `DESIGN.md` files without reproducing their format. See `docs/SOURCES.md`.
+Ideas from these sources were used in rewritten form only, with credit and no reuse of their wording: Instagram posts by @charles.unemployed and @millee.md, three shared screenshots whose authors are not yet identified (the third is a list of AI slop indicators, used in `unslop-checklist.md` and `copy-states-checklist.md`), the names of laws from Laws of UX (https://lawsofux.com) by Jon Yablonski, and the legacy-to-modern direction of Chrome's Modern Web Guidance (https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers (its guides are CC BY 4.0, see its entry above), used for the "Outdated, measurable" section in `outdated-checklist.md` (the detection script is our own). `direction.md` also uses rewritten ideas from Figma's articles "What is web design" and "Tendencias de diseño web" (content before visuals, mobile first, performance as a design input, choosing from audience and brand values), and follows Impeccable's convention of `PRODUCT.md` and `DESIGN.md` files without reproducing their format. See `docs/SOURCES.md`.
 
 ## Entry template
 

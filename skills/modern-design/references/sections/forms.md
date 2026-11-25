@@ -26,7 +26,7 @@ Every page that persuades needs a mechanism: a form, a sign-up, a checkout, or a
 | | Phone | Tablet | Desktop |
 |---|---|---|---|
 | Width | Full width inside the side padding | Max about 480–560 px | 320–480 px; never stretched across the page |
-| Fields | 44–56 px tall, font 16 px or more | Same; two short related fields side by side (postcode and city) only when both stay readable | Same |
+| Fields | `--control-height-touch`, at least `--target-touch` (44 px) tall; font 16 px or more | Same; two short related fields side by side (postcode and city) only when both stay readable | `--control-height` with a fine pointer, never under `--target-min` (24 px) |
 | Keyboard | Right `type`, `inputmode`, `autocomplete` and `enterkeyhint`; the submit button stays reachable when the keyboard is open | Same; hardware keyboards are common | Logical tab order |
 | Position | Inline for small offers; a separate step or screen for big ones | Same | Beside the reassurance or proof |
 | Spacing | Label to field 6–8 px; field to field 16–24 px; last field to button 24–32 px | Same | Same |

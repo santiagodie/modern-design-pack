@@ -6,7 +6,7 @@ license: MIT
 
 # Modern Design
 
-> In progress (v0.1.0). Step 1 (direction) and step 3 for pages that persuade (components and responsive) are written. Steps 2 and 4 are not covered yet: follow the brief with your own judgment until they are.
+> In progress (v0.1.0). Step 1 (direction), step 2 (tokens) and step 3 for pages that persuade (components and responsive) are written. Step 4 (motion) is not covered yet: follow the brief with your own judgment until it is, using the motion token names that step 2 reserves.
 
 ## When to use
 
@@ -43,7 +43,7 @@ Before step 1, and before any single step, read the site-decisions file in the p
 Run the steps in order for a new interface or a redesign. When the request covers only one part (for example "change the colors"), go straight to that step. Load each reference only when you reach its step, never all at once.
 
 1. **Direction.** Load `references/direction.md` and follow it: read what exists (the design-brief file, Impeccable's PRODUCT and DESIGN files, the stack), settle the context and the page's main job, research 3–5 live references, plan the structure from the content, commit to a direction, and write the design-brief file in the project root. Before writing the brief, `references/direction.md` sets the order: reason with `references/reasoning.md` (central promise and, per page, its moment, main doubt and persuasion dial), read only the `references/pages/` file of each page type, then `references/principles.md` and `references/ethics.md` when needed. When the brief must choose a stack or decide between a static site and an app, load `references/implementation.md`. When the user can't answer questions, assume design decisions, record them in the brief and continue; never assume content or how the business works (orders, delivery, on-site production): those are placeholders and business questions in the content-needed file (`references/content-truth.md`). Skip this step when a fitting design-brief file already exists.
-2. **Tokens.** Define color palette, type pairing, spacing, radii, shadows, and light and dark themes from the brief's Direction section. Load `references/tokens.md` when the project needs new or fixed tokens. (Reference not written yet.)
+2. **Tokens.** Turn the brief's Direction section into one set of reusable decisions before building any component. Load `references/tokens.md` and read it whole; from it, load only the files the project needs, each whole: `references/tokens-color.md`, `references/tokens-color-dark.md` (dark theme), `references/tokens-type.md`, `references/tokens-space.md`. Derive colors and faces from the brief and the user's real material, never from a starting palette. Write the token file in the project (one CSS file of custom properties by default, or the stack's equivalent), then update section 1 of the site-decisions file with the token file and the token names, never their values. The step is done when the "Done when" list of `references/tokens.md` holds.
 3. **Components.** Build or restyle sections and components in the project's stack, following the brief's Structure and the tokens. Load `references/sections/index.md` first, then only the file of each section you are about to build (for example `references/sections/hero.md`), plus `references/responsive.md`, and `references/implementation.md` when you set up routes, rendering, state or shared components. Build every component for phone, tablet and desktop. The catalogue covers pages that persuade; for pages that operate, use the brief, `references/responsive.md` and the parts of `references/sections/header.md`, `references/sections/cta.md` and `references/sections/forms.md` that apply.
 4. **Motion.** Add purposeful animation and interaction at the level the brief sets, or remove what doesn't help. Load `references/motion.md` when the UI needs motion or feels static or sluggish. (Reference not written yet.)
 5. **Hand off to `design-review`.** Run it in own-project mode before delivering any UI.
@@ -69,7 +69,8 @@ Load only when needed:
 - `references/principles.md`: after reasoning, for reference
 - `references/ethics.md`: hard limit, for pages with prices, consent, subscriptions, scarcity, urgency or reviews
 - `references/content-truth.md`: hard limit, the no-invention rule, placeholders and the content-needed file, for every build
-- `references/tokens.md`: step 2
+- `references/tokens.md`: step 2, read first and whole
+- `references/tokens-color.md`, `references/tokens-color-dark.md`, `references/tokens-type.md`, `references/tokens-space.md`: step 2, only the ones the project needs
 - `references/sections/index.md`: step 3, then one file per section being built
 - `references/responsive.md`: step 3, phone, tablet and desktop
 - `references/implementation.md`: step 1 when choosing static or app, and step 3 for rendering, state, reuse layers, performance, accessibility and the legal minimum; its "Boundaries" section says what this plugin doesn't review
