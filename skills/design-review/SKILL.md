@@ -27,6 +27,8 @@ When a URL points to the user's own project and its code is here, use own-projec
 
 ## Process
 
+At the start of every run, in both modes, read the shared core whole: `${CLAUDE_SKILL_DIR}/../modern-design/references/reasoning.md` (the shared method: the central promise, the four mechanisms, the persuasion dial, collisions between principles, how to present conclusions) and `${CLAUDE_SKILL_DIR}/../modern-design/references/evidence.md` (evidence grades, what counts as verified, how to cite). Continue without either when it doesn't exist: the rules below already carry what a review needs from them.
+
 ### Mode 1: Own project
 
 1. **Context.** Read the site-decisions file and the design-brief file when they exist (Markdown files named site-decisions and design-brief in the project root, written by `modern-design`), and note the product, audience and stack. Both override the checklist: a pattern the brief chose on purpose, or one the user decided in the site-decisions file, is not a finding. The exception is a measured failure (contrast, accessibility, a deceptive pattern): report it anyway, marked "decided by user" with the date of the decision.
@@ -86,6 +88,11 @@ Steps:
 - **URL audit:** no hand-off. When the user owns the site and wants the proposals applied, continue with `modern-design`.
 
 ## References
+
+Read whole at the start of every run, when they exist (the shared core, owned by `modern-design`):
+
+- `${CLAUDE_SKILL_DIR}/../modern-design/references/reasoning.md`: the shared method
+- `${CLAUDE_SKILL_DIR}/../modern-design/references/evidence.md`: evidence grades, what counts as verified, how to cite
 
 Load only when needed:
 

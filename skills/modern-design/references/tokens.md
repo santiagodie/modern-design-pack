@@ -6,7 +6,7 @@
 > **Owner:** modern-design
 > **Sources:** impeccable (Apache-2.0), taste-skill (MIT), ui-ux-pro-max-skill (MIT), emilkowalski/skills (MIT), Modern Web Guidance (CC BY 4.0), WCAG 2.2, DTCG 2025.10; full table in docs/research/tokens-sources.md
 
-> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
+> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` and `design-reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
 
 ## How the rules are written
 
@@ -57,7 +57,7 @@ The output is a token file in the user's project and an updated section 1 of `si
 
 ## 3. From the brief to the tokens
 
-Read the brief's Direction section and, per page, its persuasion dial and main job (`reasoning.md` §4, `direction.md` §2). The dial decides three things here:
+Read the brief's Direction section and, per page, its persuasion dial and main job (`reasoning.md` §3, `direction.md` §2). The dial decides three things here:
 
 | Dial and job | Density | Rhythm between sections | Motion budget |
 |---|---|---|---|
@@ -67,9 +67,9 @@ Read the brief's Direction section and, per page, its persuasion dial and main j
 | Low: complete, pay | Compact to comfortable | Tight and consistent | Functional only: feedback and state, never decoration |
 | None: operate, decide something irreversible, recover from an error | Compact for experts who return daily; comfortable for occasional readers | Tight and consistent | Functional only: feedback and state; nothing moves on its own |
 
-The level of each page comes from its entry in `pages/`; the scale is defined in `reasoning.md` §4.
+The level of each page comes from its entry in `pages/`; the scale is defined in `reasoning.md` §3.
 
-**Why:** near money, data or an irreversible action people want predictability (`reasoning.md` §4), and spacing and motion are part of what feels predictable. An expert using a screen forty times a day reads density as speed; a first-time visitor reads it as effort.
+**Why:** near money, data or an irreversible action people want predictability (`reasoning.md` §3), and spacing and motion are part of what feels predictable. An expert using a screen forty times a day reads density as speed; a first-time visitor reads it as effort.
 
 **When it flips:** a page with mixed regions (a marketing home with a live pricing calculator) gets two densities, one per region, from the same scale. A brand whose whole identity is calm can keep generous spacing even on its checkout, as long as targets and contrast hold.
 
@@ -99,7 +99,7 @@ Generators converge on the same few palettes and faces (`unslop-checklist.md` TY
 
 **Rule (SHOULD):** before choosing a tinted white or a "warm" tone as a background, name the part of the brief that asks for it. When nothing does, start from another point: plain white, the color of the material, or a dark ground when the use scene is dark.
 
-**Why:** attention is triage (`reasoning.md` §3). A page that looks like the category's template is ruled out as "another one of those" before its promise is read.
+**Why:** attention is triage (`reasoning.md` §2). A page that looks like the category's template is ruled out as "another one of those" before its promise is read.
 
 **When it flips:** the user's real brand wins over all of this. When `site-decisions.md`, `DESIGN.md` or the brand material already fixes colors and faces, use them and spend the method on what is still open (ramps, roles, dark theme). A cream background is right when the brand is cream.
 
@@ -129,7 +129,7 @@ Define these once in the token file, whatever the direction.
 
 **Rule (SHOULD):** `--target-touch: 44px` for primary actions under `@media (pointer: coarse)`. 44 × 44 CSS px is the AAA level of WCAG 2.5.5, and 44 × 44 pt is the default control size in Apple's Human Interface Guidelines, which give 28 × 28 pt as the minimum ([HIG, Accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility)).
 
-**Why:** a finger covers more than a cursor; a missed tap on a primary action reads as "this doesn't work" (deciding is weighing cost, `reasoning.md` §3).
+**Why:** a finger covers more than a cursor; a missed tap on a primary action reads as "this doesn't work" (deciding is weighing cost, `reasoning.md` §2).
 
 **When it flips:** dense expert tools used with a mouse keep 24 px targets and gain density. A touch-first product sets 44 px for every control, not only primary ones. `tokens-space.md` has the sizing method.
 

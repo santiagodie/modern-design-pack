@@ -8,7 +8,7 @@
 
 Reference for `modern-design`. Consult it after reasoning (`reasoning.md`), never as a starting point: to name a mechanism you have already detected, check its evidence and know its limits. Use the principles while you reason; when you present, explain decisions in terms of the user's doubt rather than listing principle names or turning them into a visible checklist.
 
-> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
+> **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` and `design-reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
 
 IDs P01–P31 are used by the files in `pages/`. Each principle keeps its evidence grade (A, B or C); the grades are defined in `evidence.md` §1.
 
@@ -255,4 +255,4 @@ Cross-cutting golden rule: trust is not a phase, it is a condition. Any trust fa
 
 ## 3. Level of persuasion allowed by context (general rule)
 
-The closer the user is to money, their data or an irreversible action, the less persuasion and the more transparency. The levels of the dial are defined in `reasoning.md` §4; the default level for each page type is in its entry in `pages/`.
+The closer the user is to money, their data or an irreversible action, the less persuasion and the more transparency. The levels of the dial are defined in `reasoning.md` §3; the default level for each page type is in its entry in `pages/`.

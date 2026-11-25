@@ -76,8 +76,8 @@ When search is unavailable, say so in the brief and set the direction from the c
 
 Work in this order before writing the brief:
 
-1. **Reason** with `reasoning.md` (in this folder): who arrives and from where, the central promise in one sentence, and for each page its moment in the journey, its main doubt and its place on the persuasion dial.
-2. **Read only the `pages/` file of each page type in the brief** (`reasoning.md`, "Which reference to open", maps types to files). Use it to catch a missed doubt and to check when the usual advice flips.
+1. **Reason** with `reasoning.md` and then `design-reasoning.md` (in this folder): who arrives and from where, the central promise in one sentence, and for each page its moment in the journey, its main doubt and its place on the persuasion dial.
+2. **Read only the `pages/` file of each page type in the brief** (`design-reasoning.md`, "Which reference to open", maps types to files). Use it to catch a missed doubt and to check when the usual advice flips.
 3. **Consult `principles.md` and `ethics.md` when needed:** principles to name a mechanism and check its evidence; ethics as a hard limit for anything with prices, consent, subscriptions, scarcity, urgency or reviews.
 4. **Write the brief**, starting with the structure below.
 
