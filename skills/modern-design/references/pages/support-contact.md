@@ -4,7 +4,7 @@ Contact · FAQ / Help centre · Support centre / Tickets
 
 Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
 
-Persuasion dial for this group: none. The user usually arrives with a problem, often frustrated. These pages are a trust test: the product's promise is being checked at its weakest moment, and how this ends is remembered (peak-end).
+Persuasion dial for this group: none; low for FAQ and help centre. The user usually arrives with a problem, often frustrated. These pages are a trust test: the product's promise is being checked at its weakest moment, and how this ends is remembered (peak-end).
 
 Group summary: dominant phase confidence; principles that weigh most P17, P04, P10; main risk: no way out to a human.
 
@@ -58,7 +58,7 @@ Submissions completed; first response within the promised time; repeat contacts 
 
 ## FAQ / Help centre
 
-**Persuasion dial:** none-low.
+**Persuasion dial:** low.
 **3C weight:** Conf 3.
 
 ### The moment

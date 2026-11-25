@@ -86,6 +86,6 @@ Built from sections 4 (never propose) and 6 (minimum by page type) of `modern-de
 |---|---|
 | Pricing, billing, sign-up with a trial | DP4 (total price), DP8 (renewal date and amount, notice before the trial ends), DP5 (cancellation) |
 | Product page, listing, map, cart, checkout | DP4, DP3, DP10, DP1 |
-| Checkout, login, sign-up, forms | Accessibility at WCAG 2.1 AA or better: SF5 (focus), labels, errors not shown by color alone, SF4 (targets), CO5 (contrast) |
+| Checkout, login, sign-up, forms | Accessibility at WCAG 2.2 AA: SF5 (focus), labels, errors not shown by color alone, SF4 (targets), CO5 (contrast) |
 | Cookie banner, privacy | DP7 |
 | Feed, onboarding with streaks or progress | DP9, with extra care when minors may use the product |

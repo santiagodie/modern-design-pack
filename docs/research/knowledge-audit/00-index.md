@@ -43,6 +43,14 @@ Alta = cambia lo que se construye o lo que la revisión exige; media = puede cam
 | 14 | baja | Inputs bajo 16 px: minor en MN2, tip en SF7 | dr:mobile-checklist.md 12 · dr:copy-states-checklist.md 92 | 09 |
 | 15 | baja | Anchos de captura sin 1024 en la arquitectura | docs/ARCHITECTURE.md 30 · design-review/SKILL.md 34 y 51 | 13 |
 
+**Resueltas en la rama `fix-contradictions`:**
+
+- 1, tamaño de objetivo: `e10a69f` (`fix(review): align target-size checks with tokens`).
+- 2, dial de persuasión: `3d8dcd3` (`fix(dial): single scale and single owner per page`). Tabla de decisiones en `03-psychology-persuasion.md`, "Resolución del dial".
+- 4, versión de WCAG: `77ec831` (`fix: target WCAG 2.2 AA everywhere`).
+- 6, CO8 y fondo crema: `4c600be` (`fix(review): CO8 follows the brief, not the sector`).
+- Erratas de `14-sin-rama.md`: `ec19d13` (`fix: typos from knowledge audit`).
+
 ## 3. Árbol propuesto para las cinco skills
 
 Presupuesto: menos de unas 300 líneas por archivo. Estado: **existe** (se queda), **mover** (cambia de sitio o de skill), **dividir**, **nuevo**. Entre paréntesis, líneas actuales.

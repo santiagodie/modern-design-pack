@@ -6,7 +6,7 @@ This file and [`commerce-after-purchase.md`](commerce-after-purchase.md) form on
 
 Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
 
-Persuasion dial for this group: low. The user has already decided to buy; the job now is not to lose them. Trust and friction dominate. The cart abandonment baseline is ~70% across 50 studies (Baymard), much of it "just browsing", but a large part is design-solvable.
+Persuasion dial for this group: low; medium-low for the cart. The user has already decided to buy; the job now is not to lose them. Trust and friction dominate. The cart abandonment baseline is ~70% across 50 studies (Baymard), much of it "just browsing", but a large part is design-solvable.
 
 Group summary: dominant phase confidence + conversion; principles that weigh most P13, P19, P14, P17, P12; main risk: hidden costs, friction, pre-ticked extras.
 

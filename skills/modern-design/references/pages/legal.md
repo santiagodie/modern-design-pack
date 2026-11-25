@@ -116,7 +116,7 @@ That choosing privacy is as easy as accepting tracking, and that the choice is r
 - [Legal] Consent must be freely given, specific, informed and unambiguous; pre-ticked boxes are not valid consent (GDPR/ePrivacy; CJEU *Planet49*, 2019).
 - [Not verified by search in this research; confirm before citing] European data protection authorities (e.g. the French CNIL in 2022) have fined sites where refusing cookies was harder than accepting, and the Spanish AEPD's cookie guidance reflects the same parity principle. Treat "Reject all" on the first layer, with equal prominence to "Accept all", as a design requirement.
 - [C] Provide a persistent way to change consent later (footer link or icon).
-- Implementation detail (consent mode, tag loading): (pending: tokens.md / styles.md).
+- Implementation detail (consent mode, tag loading): `../implementation.md` §8 and this entry's Implementation section.
 
 ### 🔴 Critical errors
 - Tracking scripts that load before consent.

@@ -61,9 +61,13 @@ Read the brief's Direction section and, per page, its persuasion dial and main j
 
 | Dial and job | Density | Rhythm between sections | Motion budget |
 |---|---|---|---|
-| High: persuade, experience (landing, home, launch) | Comfortable to spacious | Generous, with clear contrast between tight and wide intervals | Room for one expressive moment; the rest functional |
-| Medium: read, browse (articles, catalogue, pricing) | Comfortable | Regular, steady | Functional: feedback, state changes, small reveals |
-| Low or none: operate, pay, decide something irreversible (checkout, settings, dashboards) | Compact to comfortable | Tight and consistent | Functional only: feedback and state, never decoration |
+| High: persuade, experience | Comfortable to spacious | Generous, with clear contrast between tight and wide intervals | Room for one expressive moment; the rest functional |
+| Medium: read, browse | Comfortable | Regular, steady | Functional: feedback, state changes, small reveals |
+| Medium-low: find, choose, finish | Comfortable | Regular, tighter around the list or the main action | Functional: feedback and state changes; reveals only for what the person asked for (a filter applied, an item added) |
+| Low: complete, pay | Compact to comfortable | Tight and consistent | Functional only: feedback and state, never decoration |
+| None: operate, decide something irreversible, recover from an error | Compact for experts who return daily; comfortable for occasional readers | Tight and consistent | Functional only: feedback and state; nothing moves on its own |
+
+The level of each page comes from its entry in `pages/`; the scale is defined in `reasoning.md` §4.
 
 **Why:** near money, data or an irreversible action people want predictability (`reasoning.md` §4), and spacing and motion are part of what feels predictable. An expert using a screen forty times a day reads density as speed; a first-time visitor reads it as effort.
 

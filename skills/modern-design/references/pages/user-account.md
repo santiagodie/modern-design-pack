@@ -116,8 +116,9 @@ The "cancel anytime" and "no surprises" halves of the promise. This is the end o
 - A dignified ending (P28).
 
 ### Specifics
-- [B/legal] FTC v. Amazon (Sept. 2025): $2.5B settlement over Prime enrolment and a cancellation flow internally nicknamed "Iliad"; the order requires simple cancellation. https://www.pbs.org/newshour/economy/amazon-to-pay-2-5-billion-to-settle-ftc-allegations-it-duped-customers-into-enrolling-in-prime
-- [Legal, proposal] EU Digital Fairness Act (Commission proposal, 11 Nov 2026): simple, unambiguous cancellation; reminder and express consent before a free trial becomes paid; renewal reminders. Text may change during negotiation.
+- [B/legal] FTC v. Amazon (25 Sept 2025): $2.5B settlement under the FTC Act and ROSCA over Prime enrolment and a cancellation flow internally nicknamed "Iliad"; the order requires an easy way to cancel, through the same method used to sign up. https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-secures-historic-25-billion-settlement-against-amazon
+- [Legal, US, in force] ROSCA (15 U.S.C. § 8403) requires online subscription sellers to provide simple mechanisms to stop recurring charges. https://www.law.cornell.edu/uscode/text/15/8403. The FTC's 2024 "click-to-cancel" amendments to the Negative Option Rule are not a source: the Eighth Circuit vacated them on 8 July 2025 on procedural grounds (Custom Communications v. FTC, No. 24-3137). https://ecf.ca8.uscourts.gov/opndir/25/07/243137P.pdf
+- [Legal, EU, proposal] Digital Fairness Act (Commission proposal COM(2026) 1100, 11 Nov 2026; the Parliament and the Council must still adopt it): reminder and express agreement before a free trial becomes paid (Art. 20), reminders before automatic renewal (Art. 21–22), an online contract termination function (Art. 23). Text may change during negotiation. https://commission.europa.eu/law/law-topic/consumer-protection-law/digital-fairness-act_en
 - [C] Show the next charge date and amount on the billing page at all times; invoices downloadable without contacting support.
 - [C] On downgrade or cancellation, say exactly what happens to data and when; offer export.
 
@@ -147,7 +148,7 @@ Voluntary cancellations completed in-product versus chargebacks and complaints; 
 
 ## Notifications (preferences and permission requests)
 
-**Persuasion dial:** none-low.
+**Persuasion dial:** low.
 **3C weight:** Act 3 / Conf 2.
 
 ### The moment

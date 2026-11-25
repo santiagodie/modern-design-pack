@@ -4,7 +4,7 @@ Error 404 · Error 500 · Maintenance · Empty state · Success / Thank-you page
 
 Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
 
-Persuasion dial for this group: none for errors and maintenance; low to medium for empty states and success pages. These are endings or interruptions — the moments memory weighs most (peak-end rule). They are also where list-mode design does the most damage, because they are designed last and copied from templates.
+Persuasion dial for this group: none for errors and maintenance; low for empty states, medium-low for success pages. These are endings or interruptions — the moments memory weighs most (peak-end rule). They are also where list-mode design does the most damage, because they are designed last and copied from templates.
 
 Group summary: dominant phase confidence + memory; principles that weigh most P17, P28, P29, P27; main risk: dead ends, blaming the user.
 
@@ -185,7 +185,7 @@ Share of users who take the suggested action from the empty state; time to first
 
 ## Success / Thank-you page
 
-**Persuasion dial:** low-medium.
+**Persuasion dial:** medium-low.
 **3C weight:** Mem 3 / Act 3.
 
 ### The moment

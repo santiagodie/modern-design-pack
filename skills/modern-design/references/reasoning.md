@@ -110,7 +110,15 @@ Consequence for reasoning: endings are not closing details. A flawless purchase 
 
 ## 4. Context changes everything: persuasion has a dial
 
-What works on a landing page (curiosity, social proof, emotion) is friction on a payment form or an admin panel, where people want predictability. **The closer the person is to their money, their data or an irreversible action, the less persuasion and the more transparency.** Expert tools used daily optimise for speed and density; first-time consumer flows optimise for comprehension. Before borrowing any pattern, ask which side of the dial this page sits on: high, medium, low or none. Each file in `pages/` states its default setting and when it flips. Record the setting and the reason for each page in the brief; later steps use it to decide density and how much motion is allowed.
+What works on a landing page (curiosity, social proof, emotion) is friction on a payment form or an admin panel, where people want predictability. **The closer the person is to their money, their data or an irreversible action, the less persuasion and the more transparency.** Expert tools used daily optimise for speed and density; first-time consumer flows optimise for comprehension. Before borrowing any pattern, ask where on the dial this page sits. The scale has five levels:
+
+- **High:** persuading is the page's job. Emotion, proof and a strong call to action are legitimate, as long as every claim is true.
+- **Medium:** persuasion supports the content without pressure: proof next to the claim it backs, one call to action after the value is delivered.
+- **Medium-low:** the person is finding or finishing something. Persuasion only helps them choose (ratings, a relevant suggestion, one next step) and never competes with the main task.
+- **Low:** clarity and trust first; at most one optional, honest offer or next step that is easy to ignore.
+- **None:** no persuasive tactic; any would be friction or a legal or trust risk. Clarity, transparency and a way out.
+
+The default level for each page type, and when it flips, lives only in its entry in `pages/`. Record the setting and the reason for each page in the brief; later steps use it to decide density and how much motion is allowed.
 
 ---
 
@@ -162,14 +170,14 @@ First reason with this document: person, promise, decision, doubt, cost, exit, d
 | Anything with prices, consent, subscriptions, scarcity, urgency or reviews | `ethics.md` (hard limit) |
 | Visual system: color, dark mode, typography, spacing (step 2) | `tokens.md`, then `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md` |
 | Performance and accessibility | `implementation.md` |
-| Motion | (pending: `motion.md`) |
-| How a design style (minimalism, neo-brutalism, bento...) changes sections | (pending: styles.md) |
+| Motion | `motion.md` (skeleton; values pending) |
+| How a design style (minimalism, neo-brutalism, bento...) changes sections | (pending: `styles.md`) |
 
 - **The page file** checks whether you missed a typical doubt, gives research-backed specifics (sizes, numbers, thresholds) and says when the usual advice flips. It is a safety net, not a starting point. If your reasoning contradicts it and you can explain why in one sentence for this user, your reasoning wins.
 - **`principles.md`** names the mechanism you have already detected, with its evidence grade and limits.
 - **`ethics.md`** is a hard constraint. No exceptions for good reasoning here: if something deceives, it is not done.
 - **`sections/`** holds section-by-section rules for pages that persuade. A section belongs on the page only if it resolves a doubt this user actually has.
-- Five principles apply to every page: P03 speed, P09 familiarity in functional areas, P12 credibility, P17 errors, P18 accessibility..
+- Five principles apply to every page: P03 speed, P09 familiarity in functional areas, P12 credibility, P17 errors, P18 accessibility.
 
 When a request spans a flow (for example "sign-up to first value"), open every file the flow touches and reason about the hand-offs between pages, where promises most often break.
 

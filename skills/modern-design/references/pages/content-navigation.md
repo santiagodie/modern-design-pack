@@ -4,7 +4,7 @@ Catalogue / Listing · Category / Collection · Product page · Search results �
 
 Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../principles.md`.
 
-Persuasion dial for this group: medium to low. People are *finding*, not being convinced. The best persuasion here is making the right option easy to find and evaluate.
+Persuasion dial for this group: medium to low; high for the product page, with true persuasion only. People are *finding*, not being convinced. The best persuasion here is making the right option easy to find and evaluate.
 
 Group summary: dominant phase assisted conversion; principles that weigh most P10, P09, P31, P13; main risk: non-total price, poor filters.
 

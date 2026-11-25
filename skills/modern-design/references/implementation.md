@@ -90,7 +90,7 @@ Classify every piece of state before writing it, and keep each kind in its own p
 
 ## 4. Reuse layers
 
-The layers match the four levels in `docs/ARCHITECTURE.md` (tokens, components, sections, pages). Each layer uses only the layers below it.
+The layers match the plugin's four levels (tokens, components, sections, pages). Each layer uses only the layers below it.
 
 | Level | What lives there | In this plugin |
 |---|---|---|
@@ -201,4 +201,4 @@ Static: yes (fully static), partial (static page plus an endpoint, widget or isl
 
 ## Sources
 
-Written in our own words from the author's implementation research (written with Claude, MIT) (four documents, November 2026; see `docs/SOURCES.md`, "Implementation research"), which summarises framework documentation, web.dev, MDN, OWASP and published case studies. The case studies are listed with their URLs in `docs/SOURCES.md`. Modern Web Guidance is linked, not copied.
+Written in our own words from the author's implementation research (written with Claude, MIT) (four documents, November 2026; see [SOURCES.md](https://github.com/santiagodie/modern-design-pack/blob/main/docs/SOURCES.md), "Implementation research"), which summarises framework documentation, web.dev, MDN, OWASP and published case studies. The case studies are listed with their URLs in the same file. Modern Web Guidance is linked, not copied.
