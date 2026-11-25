@@ -43,6 +43,7 @@ Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badl
 ## Checks and releases
 
 - Run `claude plugin validate .` after every change.
+- After moving or renaming any file in `skills/`, run `node scripts/dev/check-paths.js` from the repository root. It checks every `references/...` and `../modern-design/references/...` path and every relative link in `skills/`, and must report 0 broken. A path followed by "(planned)" is skipped.
 - Add every change to the "Unreleased" section of `CHANGELOG.md`. Bump the version only when publishing a release, in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` together; until then it stays at 0.1.0.
 - Line endings are LF (see `.gitattributes`).
 
