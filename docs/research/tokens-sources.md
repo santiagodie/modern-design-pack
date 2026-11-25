@@ -17,7 +17,7 @@ Reviewed on 2026-11-25. Per-repo working notes (with short verbatim excerpts) st
 
 **Licence notes that shape the decisions:**
 
-- MWG has a clear licence, but its published skill is labelled Apache-2.0 while the guide text is CC-BY 4.0 and partly derived from MDN. Every MWG row is therefore **adapt** (paraphrased and credited "Google LLC, Modern Web Guidance, CC BY 4.0, changes made"), never adopt. `features/*.md` sits outside `guides/` and has no stated licence: summarise only.
+- MWG has a clear licence, but its published skill is labelled Apache-2.0 while the guide text is CC-BY 4.0 and partly derived from MDN. MDN's prose is CC BY-SA 2.5 or any later version (checked 2026-11-25 at https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Attrib_copyright_license; code samples are CC0). Every MWG row is therefore **adapt** with facts only, in our own wording and order, credited "Modern Web Guidance (CC BY 4.0, changes made)", never adopt. `features/*.md` sits outside `guides/` and has no stated licence: summarise only.
 - UUP files authored by claudekit are **adapt** only (paraphrase, credit both). Its `ux-guidelines.csv` and `quick-reference.md` (Next Level Builder) may be adopted.
 - IMP: `ios.md` and `android.md` are MIT from ehmo. They are not used as text; platform figures are cited from Apple and the standards instead.
 - `docs/SOURCES.md` still marks UUP's licence "TO VERIFY" and the MWG repo "not checked". Both are confirmed above and get updated in phase B.
@@ -53,13 +53,13 @@ Reviewed on 2026-11-25. Per-repo working notes (with short verbatim excerpts) st
 | T21 | DTCG JSON as interchange, CSS custom properties at run time; a single CSS file with tier comments by default | UUP token-architecture.md "W3C DTCG Alignment", "File Organization" | MIT (claudekit) | adapt | Format facts from the DTCG reports (table 2), not from UUP | tokens.md |
 | T22 | Tailwind v4 `@theme` with `--color-*` and the other namespaces as a dated example | UUP ui-styling/references/tailwind-customization.md "@theme Directive" | MIT (claudekit) | adapt | Source uses `--font-size-*` where v4 uses `--text-*`; cite Tailwind's docs | tokens.md |
 | T23 | HSL-channel variables and `tailwind.config.ts` theming (shadcn/Tailwind v3 pattern) | UUP shadcn-theming.md "Color Format"; tailwind-integration.md "HSL Format Benefits" | MIT (claudekit) | reject | Outdated for v4, internally inconsistent (RGB triplet labelled HSL) | none |
-| T24 | DESIGN.md / Stitch token format as an export option | IMP document.md "The frontmatter: token schema" | Apache-2.0 | link | External spec that changes; our file stays site-decisions | resources.md |
+| T24 | DESIGN.md / Stitch token format as an export option | IMP document.md "The frontmatter: token schema" | Apache-2.0 | link, deferred | External spec that changes; our file stays site-decisions | resources.md |
 | T25 | In the brief, describe colours in words; in site-decisions, cite token names | IMP document.md "Step 3", "Style guidelines" | Apache-2.0 | adapt | Descriptive names help people; values stay in code | tokens.md |
 | T26 | Motion token names by role: durations (press, small overlay, overlay/panel, sheet, or fast/normal/slow) and easings by intent (enter, exit, in-out) | EMK skills/animate/SKILL.md "Duration", easing block; TST references/motion.md (names); UUP design-system/references/primitive-tokens.md "Motion / Duration"; IMP document.md "Step 1" | MIT; MIT; MIT (claudekit); Apache-2.0 | adapt | Names only, reserved in tokens.md; values in motion.md | tokens.md, motion.md |
 | T27 | Reduced motion handled in one place; do not zero every duration with a global `0.01ms` | MWG ui-behaviors/motion "Respect reduced motion" | CC-BY 4.0 | adapt | Only the hook belongs here; detail in motion.md | tokens.md |
 | T28 | Global `.001ms !important` reduced-motion override | TST assets/system.css "highlight + entrance + motion" | MIT | reject | MWG explains why it can make motion more jarring | none |
-| T29 | Changing an inherited custom property recalculates all descendants; drive per-frame values on the element | EMK emil-design-eng "Performance Rules" | MIT | adapt | Motion concern | motion.md |
-| T30 | Classify drift (missing token, one-off, conceptual mismatch, local defect) before fixing | IMP polish.md "1. Establish the system" | Apache-2.0 | adapt | Belongs to a review; deferred | design-review (later) |
+| T29 | Changing an inherited custom property recalculates all descendants; drive per-frame values on the element | EMK emil-design-eng "Performance Rules" | MIT | adapt, deferred | Motion concern | motion.md |
+| T30 | Classify drift (missing token, one-off, conceptual mismatch, local defect) before fixing | IMP polish.md "1. Establish the system" | Apache-2.0 | adapt, deferred | Belongs to a review; deferred | design-review (later) |
 
 ### 1.2 `tokens-color.md`
 
@@ -107,7 +107,7 @@ Reviewed on 2026-11-25. Per-repo working notes (with short verbatim excerpts) st
 | C40 | Fixed palettes per sector or trade (64 TST palettes, 194 UUP product palettes, UUP example palettes per business type, UUP style presets including warm cream and tinted off-white) | TST library/palettes.json; UUP data/colors.csv, products.csv, ui-reasoning.csv, styles.csv; brand/references/color-palette-management.md "Color Palette Examples" | MIT; MIT; MIT (claudekit) | reject | Starter palettes per sector: the mechanism behind convergence | none |
 | C41 | Violet and lavender hues (OKLCH 270-330) banned and shifted to blue or rose | TST references/system.md "Colour"; scripts/start.mjs | MIT | reject | Absolute hue ban; ours targets the purple-blue gradient default only (CO1) | none |
 | C42 | Contrast minimums: text 4.5:1, large text (18 pt, or 14 pt bold) 3:1, UI boundaries, states, icons and focus indicators 3:1; checked in every theme and state | IMP colorize.md "Contrast and perception"; MWG visual-design/color "Contrast"; UUP quick-reference.md `color-contrast` | Apache-2.0; CC-BY 4.0; MIT | adapt | MUST; cite WCAG 1.4.3 and 1.4.11 (table 2), not the skills. UUP's "18px+" and "AAA UI 4.5:1" are wrong | tokens-color.md |
-| C43 | 7:1 for body text only when the project targets AAA | UUP quick-reference.md `color-accessible-pairs` | MIT | adapt | Keeps AAA as a choice | tokens-color.md |
+| C43 | 7:1 for body text only when the project targets AAA | UUP quick-reference.md `color-accessible-pairs` | MIT | adapt | Phase B: written under "When it flips" (long reading or low vision → consider 1.4.6, AAA), never as the norm | tokens-color.md |
 | C44 | Body text at 7:1 as the house default | TST references/system.md "Type"; scripts/consistency.mjs | MIT | reject | House choice presented as the norm | none |
 | C45 | Measure the real pair: muted text, placeholder, label on its fill, text over an image through its overlay, scrims | UUP data/landing.csv rows 1, 9; references/pro-rules.md "Scrim and modal legibility" | MIT | adapt | Method the step needs | tokens-color.md |
 | C46 | Check contrast on images and gradients at their worst point; muted footer and microcopy text is the most common failure | CC §3 "Insider notes" | Author | adopt | Our own research | tokens-color.md |
@@ -127,12 +127,12 @@ Reviewed on 2026-11-25. Per-repo working notes (with short verbatim excerpts) st
 | C60 | Forced colours: map colour tokens to system colours; do not rely on shadows or background images for borders and state | MWG visual-design/color "Forced Colors Mode" | CC-BY 4.0 | adapt | Rewrite the DON'Ts as conditions | tokens-color.md, tokens-space.md |
 | C61 | Theme browser surfaces with tokens: `accent-color`, `scrollbar-color` (thumb 3:1 on the track), `::selection`, caret, underline offset | MWG visual-design/dark-mode "Fine-grained browser UI customization"; browser-ui-theming; IMP craft-floor.md "Browser surfaces" | CC-BY 4.0; Apache-2.0 | adapt | Checklist; Safari `accent-color` caveat unverified | tokens-color.md |
 | C62 | One `theme-color` meta per scheme, matching the header surface | EMK skills/mobile-native "10. Status bar color doesn't match" | MIT | adapt | Already in `responsive.md`; cross-reference the header surface token only | tokens-color.md |
-| C63 | `contrast-color()` when a background is only known at run time; hand-checked pairs for fixed brand colours | MWG visual-design/contrast-color | CC-BY 4.0 | adapt | Only for dynamic backgrounds; formula credited to Lea Verou in the source; support unverified | tokens-color.md |
+| C63 | `contrast-color()` when a background is only known at run time; hand-checked pairs for fixed brand colours | MWG visual-design/contrast-color | CC-BY 4.0 | adapt, deferred | Only for dynamic backgrounds; formula credited to Lea Verou in the source; support unverified | tokens-color.md |
 | C64 | Choose the gradient interpolation space on purpose (`oklab` by default) | MWG visual-design/visual-effects "Gradients and color-mix()" | CC-BY 4.0 | adapt | Short note | tokens-color.md |
 | C65 | Eased gradient stops for scrims, to avoid a visible edge | EMK ui-cheatsheet.md | MIT | adapt | Short note | tokens-color.md |
 | C66 | Translucent surfaces: weight encodes hierarchy; no light translucent layer over another; text on them needs more contrast and slightly more weight | EMK skills/apple-design "12. Materials & depth" | MIT | adapt | Conditional on the direction using translucency (CO7) | tokens-color.md |
 | C67 | Fixed glass recipe (white 60 %, blur 20 px, saturate 180 %) | EMK skills/apple-design "12. Materials & depth" | MIT | reject | One recognisable look shipped as a default | none |
-| C68 | Brand-colour band: the words on it take the colour that passes contrast; the primary button inverts | TST references/backgrounds.md; assets/system.css `.ground-brand` | MIT | adapt | Recipe kept; "7:1, the one number" dropped | tokens-color.md |
+| C68 | Brand-colour band: the words on it take the colour that passes contrast; the primary button inverts | TST references/backgrounds.md; assets/system.css `.ground-brand` | MIT | adapt, deferred | Recipe kept; "7:1, the one number" dropped | tokens-color.md |
 | C69 | Example values to avoid as seeds: MWG `oklch(45% 0.23 270)` (purple-blue), IMP DESIGN.md example (`#faf7f2` + Cormorant Garamond), UUP purple-to-pink gradient button | MWG dark-mode; IMP document.md; UUP shadcn-theming.md "Customize Variants" | — | reject | Exactly the defaults CO1, CO8 and TY11 flag | none |
 
 ### 1.3 `tokens-type.md`
@@ -167,7 +167,7 @@ Reviewed on 2026-11-25. Per-repo working notes (with short verbatim excerpts) st
 | Y26 | `clamp(rem, rem + vw, rem)`, never `vw` alone; keep the maximum within about 2.5× the minimum so zoom still reaches 200 % | MWG visual-design/typography "Responsive Typography"; accessibility/respect-os-text-scale "Fluid Typography" | CC-BY 4.0 | adapt | MUST for the zoom part (WCAG 1.4.4); the 2.5× figure is a rule of thumb (unverified) | tokens-type.md |
 | Y27 | Fluid headings as a straight line from a phone size to a desktop size | TST assets/system.css "type scale" | MIT | adapt | Method kept; their sizes are house values | tokens-type.md |
 | Y28 | `clamp()` heroes with `vw` and no rem term | UUP data/styles.csv rows 20, 47 | MIT | reject | Fails text resize (1.4.4) | none |
-| Y29 | Component type with container units (`cqi`) inside `clamp()`, keeping a rem term | MWG css/fluid-scaling; css-layout "4.1" | CC-BY 4.0 | adapt | Their own example omits the rem term; fixed in ours | tokens-type.md |
+| Y29 | Component type with container units (`cqi`) inside `clamp()`, keeping a rem term | MWG css/fluid-scaling; css-layout "4.1" | CC-BY 4.0 | adapt, deferred | Their own example omits the rem term; fixed in ours | tokens-type.md |
 | Y30 | Sizes in rem, unitless line height, no fixed heights on text containers (WCAG 1.4.12) | MWG visual-design/typography "Overall best practices" | CC-BY 4.0 | adapt | Format rules; accessibility part MUST | tokens-type.md |
 | Y31 | Never set a root font size (no `62.5 %`); respect the OS text scale (`<meta name="text-scale">`) | MWG accessibility/respect-os-text-scale | CC-BY 4.0 | adapt | The meta is new: "verify before citing" | tokens-type.md |
 | Y32 | Body floor 1rem / 16 px unless a dense role, platform or user setting justifies otherwise | IMP typeset.md "Apply" | Apache-2.0 | adopt | Already conditional | tokens-type.md |
@@ -217,14 +217,14 @@ Reviewed on 2026-11-25. Per-repo working notes (with short verbatim excerpts) st
 | S23 | Radius as a short scale with roles, chosen from the direction; one root value with derived steps | UUP ui-styling/references/shadcn-theming.md "Radius Customization"; TST references/system.md "Radius and buttons" | MIT (claudekit); MIT | adapt | Roles kept; TST's sector table and UUP's default value rejected | tokens-space.md |
 | S24 | Nested radius: inner = outer minus inset, with a floor | TST references/cards.md "panel--inset" | MIT | adopt | Geometric rule | tokens-space.md |
 | S25 | Card radii fixed at 12-16 px; radius by sector ("sharp for fintech") | IMP craft-floor.md `<codex>`; TST references/system.md | Apache-2.0; MIT | reject | Defaults that converge every build | none |
-| S26 | `corner-shape: squircle` as progressive enhancement when the direction wants it | MWG css/css "9. Shapes" | CC-BY 4.0 | adapt | Option only; support unverified | tokens-space.md |
+| S26 | `corner-shape: squircle` as progressive enhancement when the direction wants it | MWG css/css "9. Shapes" | CC-BY 4.0 | adapt, deferred | Option only; support unverified | tokens-space.md |
 | S27 | Elevation declared once (border or shadow); shadows have offset and blur; zero-offset coloured glow is decoration | IMP craft-floor.md "Verify" | Apache-2.0 | adapt | Ties to CO3; drop absolutes | tokens-space.md |
 | S28 | A short named shadow scale by purpose (raised, overlay, modal); no ad hoc values | UUP quick-reference.md `elevation-consistent`; primitive-tokens.md "Shadows"; EMK learn-taste "Phase 3" (`shadow-raised`) | MIT; MIT (claudekit); MIT | adapt | Values rejected; names by role | tokens-space.md |
 | S29 | Layered shadows for soft depth; `drop-shadow()` for non-rectangular shapes | MWG visual-design/visual-effects "Depth and texture" | CC-BY 4.0 | adapt | Construction note | tokens-space.md |
 | S30 | Bigger surfaces read thicker; heavier shadow over busy content | EMK skills/apple-design "12. Materials & depth" | MIT | adapt | Ties elevation to size and context | tokens-space.md |
 | S31 | Hard offset shadows only in a direction that chose them; no blurred shadow at rest in flat directions | IMP craft-floor.md "Refuse"; TST references/cards.md "The card" | Apache-2.0; MIT | adapt | Both as "when the direction is…" | tokens-space.md |
 | S32 | Z-index as named layers | UUP primitive-tokens.md "Z-Index Scale"; data/ux-guidelines.csv row 15 | MIT (claudekit); MIT | adapt | Small, useful family | tokens-space.md |
-| S33 | Trim text boxes on badges and buttons so padding equals the visible gap; not on body text | MWG visual-design/precise-text-alignment | CC-BY 4.0 | adapt | Progressive; support unverified | tokens-space.md |
+| S33 | Trim text boxes on badges and buttons so padding equals the visible gap; not on body text | MWG visual-design/precise-text-alignment | CC-BY 4.0 | adapt, deferred | Progressive; support unverified | tokens-space.md |
 | S34 | One to three grounds down the page, changing only at section edges | TST references/backgrounds.md; scripts/consistency.mjs "grounds" | MIT | adapt | Default, not a limit | tokens-space.md |
 | S35 | Every section exactly one or two viewport heights | TST references/layout-v4.md §2 | MIT | reject | House layout doctrine; content decides height | none |
 | S36 | Dynamic viewport units everywhere | MWG css/responsive-design "Overall best practices" | CC-BY 4.0 | reject | We keep `svh` for heroes and `dvh` for app shells (`responsive.md`) | none |
@@ -239,7 +239,7 @@ Reviewed on 2026-11-25. Per-repo working notes (with short verbatim excerpts) st
 | L4 | Modern Web Guidance and webstatus.dev / Baseline for support status | MWG README; `web-features` | Link | link | Support data changes; "verify before citing" | resources.md |
 | L5 | taste-skill's `consistency.mjs` as an optional browser check | TST scripts/consistency.mjs | MIT | link | Needs Node 22 and Chrome; optional | resources.md |
 | L6 | next-themes (no-flash theme switching), cva (typed variants) | EMK skills/pick-ui-library "The list" | Link | link | Catalogue | resources.md |
-| L7 | DESIGN.md format spec | IMP document.md | Link | link | See T24 | resources.md |
+| L7 | DESIGN.md format spec | IMP document.md | Link | link, deferred | See T24 | resources.md |
 | L8 | DTCG reports (format, resolver, color) at designtokens.org | Standards | Link | link | Reference for multi-platform projects | resources.md |
 | L9 | Coolors: only its contrast checker and editing from a brand colour | Listed in the current `tokens.md` stub | Link; site licence not needed for a link | link | Its random generator is a starter-palette source (C40); say so | resources.md |
 | L10 | Fontshare | Current `tokens.md` stub | Link; per-font licence to check | link | Free faces; check each licence for self-hosting | resources.md |
@@ -278,6 +278,48 @@ A row can cite several sources, so the columns below add up to more than 207. A 
 | MWG | 0 | 39 | 3 | 1 |
 | CC (author) | 6 | 11 | 0 | 0 |
 | Standards and stub links | 0 | 0 | 0 | 6 |
+
+### 1.8 Phase B: where each row landed
+
+Changes approved on 2026-11-25 and applied:
+
+- Apple 44 × 44 pt is cited as the HIG's default control size and 28 × 28 pt as its minimum. Ours stays MUST 24 × 24 CSS px (2.5.8) and SHOULD 44 px for primary actions under `(pointer: coarse)`.
+- `text-wrap: pretty` and the `*-override` descriptors appear only as progressive enhancement, with what happens without support. `size-adjust` is a normal recommendation.
+- `light-dark()` is a dated example with a `prefers-color-scheme` fallback.
+- 7:1 appears only as a "When it flips" (C43).
+- Unverified claims stay out of the skills (`ROADMAP.md`, "Pending verification").
+
+Rows that say the same thing from several sources were merged into one rule in the files, crediting every source in that rule's Source line. The 35 reject rows (T23, T28, C19, C29, C31, C40, C41, C44, C52, C67, C69, Y7, Y14-Y16, Y18, Y20, Y28, Y39, Y48, S13, S25, S35, S36, L14, X1-X10) are not used.
+
+| Target | Rows used |
+|---|---|
+| `tokens.md` | T1-T22, T25-T27, C30 (scene sentence, by reference), C57, S19-S20 (target tokens) |
+| `tokens-color.md` | C1-C18, C20-C28, C42, C43, C45-C51, C53-C56, C58-C62, C64-C66 |
+| `tokens-color-dark.md` | C30, C32-C39 |
+| `tokens-type.md` | Y1-Y6, Y8-Y13, Y17, Y19, Y21-Y27, Y30-Y38, Y40-Y47 |
+| `tokens-space.md` | S1-S12, S14-S24, S27-S32, S34 |
+| `resources.md` | L1-L6, L8-L13 |
+
+**Deferred (9):**
+
+| ID | Why |
+|---|---|
+| T24, L7 | DESIGN.md spec URL not verified |
+| T29 | Belongs to `motion.md` |
+| T30 | Belongs to `design-review` |
+| C63 | `contrast-color()` support not verified |
+| C68 | Brand-band recipe; contrast MUST already covers the failure |
+| Y29 | Container-unit type not verified |
+| S26 | `corner-shape` support not verified |
+| S33 | `text-box` support not verified |
+
+Parts dropped from rows that were otherwise used, all because they are unverified:
+
+- C16: the Chromium `oklch` bug.
+- C61: the Safari `accent-color` caveat.
+- Y17: `font-size-adjust: from-font`.
+- Y26: the 2.5× rule.
+- Y31: `<meta name="text-scale">`.
 
 ## 2. Standards and support facts
 

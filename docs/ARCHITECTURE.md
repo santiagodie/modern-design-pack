@@ -18,7 +18,7 @@ flowchart LR
 | | After reasoning: only the file of each page type in the brief, then principles when needed | `references/pages/<group>.md` (commerce is split in two: `commerce-purchase.md` and `commerce-after-purchase.md`), `references/principles.md` (`references/reasoning-examples.md` for worked examples) |
 | | Pages with prices, consent, subscriptions, scarcity, urgency or reviews (hard limit) | `references/ethics.md` |
 | | Every build: no invention, placeholders, `content-needed.md` (hard limit, same level as ethics) | `references/content-truth.md` |
-| | 2. Tokens: color, type, spacing, radii, shadows, themes | `references/tokens.md` |
+| | 2. Tokens: tiers, method against convergence, mandatory tokens, format; then color, dark theme, type and space as needed | `references/tokens.md`, then only the files needed: `references/tokens-color.md`, `references/tokens-color-dark.md`, `references/tokens-type.md`, `references/tokens-space.md` |
 | | 3. Components: sections and components in the project's stack, for phone, tablet and desktop | `references/sections/index.md`, one file per section built, `references/responsive.md` |
 | | 4. Motion: purposeful animation and interaction | `references/motion.md` |
 | | 5. Hand off to design-review | none |
@@ -57,12 +57,27 @@ The design references are organised in four levels, from the smallest piece to t
 
 | Level | What it decides | Where | Status |
 |---|---|---|---|
-| Tokens | Color, type, spacing, radii, shadows, themes | `references/tokens.md` | Pending (3c) |
+| Tokens | Three tiers (base values → semantic roles → component tokens; components read roles, themes remap only the semantic tier); color, dark theme, type, spacing, radii, elevation, targets, focus; motion names reserved | `references/tokens.md` (the step), `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md` | Written (3c); motion values pending in `motion.md` |
 | Components | Reusable pieces shared by several sections: buttons, cards, inputs, badges | `references/components/` | Pending (3b, batch D) |
 | Sections | Whole page sections with phone, tablet and desktop layouts | `references/sections/`, `references/responsive.md` | Batch A written |
 | Pages | Per page type: the user's moment, what the page must prove, levers, specifics, when the usual advice flips, persuasion dial | `references/pages/` | Reasoning written; "Layout & responsive" per page type pending |
 
 Above the levels sits the reasoning layer (`reasoning.md`, `principles.md`, `ethics.md`, `content-truth.md`), which decides which pages and sections exist before any level is built. Beside them, `implementation.md` decides how each level is built: rendering per route, state, the same four levels as reuse layers, performance, accessibility and the legal minimum. Backend security is out of scope (its "Boundaries" section).
+
+## How new references are written
+
+From the tokens files on, references use a fixed header and a fixed rule form, so the model can reason about each rule instead of ticking it.
+
+**Header**, five lines in a quote at the top: **Covers** (what the file decides), **Read when** (step or situation), **Not here** (topic → the file that has it), **Owner** (the skill), **Sources** (short list, with the full table in `docs/research/`).
+
+**Rule form:**
+
+- **Rule:** "do X when Y". MUST only for accessibility, security, legal requirements and the truth rule; everything else SHOULD.
+- **Why:** the mechanism, tied to a concept of `reasoning.md` when there is one (central promise, attention, trust, deciding, memory, persuasion dial).
+- **When it flips:** the context where the usual rule stops working, and what to do then.
+- **Source:** a short credit ("adapted from <repo> (<licence>)"; "changes made" for CC BY).
+
+Trivial rules may fit on one line; decision rules always carry Why and When it flips. Older references move to this form when they are next revised.
 
 ## Context over rules
 

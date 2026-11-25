@@ -160,7 +160,9 @@ First reason with this document: person, promise, decision, doubt, cost, exit, d
 | 404, 500, Maintenance, Empty state, Success page | `pages/states-system.md` |
 | Naming a mechanism (P01–P31) and checking its evidence | `principles.md` |
 | Anything with prices, consent, subscriptions, scarcity, urgency or reviews | `ethics.md` (hard limit) |
-| Visual system, typography, spacing, performance, accessibility, motion, dark mode | (pending: tokens.md / styles.md) |
+| Visual system: color, dark mode, typography, spacing (step 2) | `tokens.md`, then `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md` |
+| Performance and accessibility | `implementation.md` |
+| Motion | (pending: `motion.md`) |
 | How a design style (minimalism, neo-brutalism, bento...) changes sections | (pending: tokens.md / styles.md) |
 
 - **The page file** checks whether you missed a typical doubt, gives research-backed specifics (sizes, numbers, thresholds) and says when the usual advice flips. It is a safety net, not a starting point. If your reasoning contradicts it and you can explain why in one sentence for this user, your reasoning wins.

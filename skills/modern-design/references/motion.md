@@ -2,6 +2,8 @@
 
 > Reference for `modern-design`, step 4. Skeleton: content written in phase 3. Load only during this step.
 
+Token names already reserved by step 2 (`tokens.md` §3), with their values to be set here: `--duration-feedback`, `--duration-small`, `--duration-overlay`, `--duration-sheet`, `--ease-enter`, `--ease-exit`, `--ease-move`. The reduced-motion handling lives in the token file (`tokens.md` §5).
+
 ## When to use
 
 TODO

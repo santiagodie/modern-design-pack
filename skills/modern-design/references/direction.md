@@ -96,7 +96,7 @@ For "operate" pages, think in regions instead of sections: navigation, the prima
 Choose one clear aesthetic direction and give it a short name ("harbour tide table" for a sailing school, "night-shift dispatch log" for a logistics tool). Take it from the subject's own world: its industry, materials, places and vernacular. Then decide:
 
 - **Typography:** one family, or two that clearly differ, each with a role. The scale and the size of the headline voice.
-- **Color strategy:** a neutral base and where color is spent. Plan 4 to 6 named colors with their roles; `design-tokens` turns them into tokens.
+- **Color strategy:** a neutral base and where color is spent. Plan 4 to 6 named colors with their roles; step 2 (`tokens.md`) turns them into tokens.
 - **Layout concept:** grid, alignment, how the first screen (or main workspace) is composed. A rough ASCII sketch helps.
 - **Imagery:** what pictures the page needs, which are real and which are placeholders.
 - **Density and motion level:** following the page's job.
