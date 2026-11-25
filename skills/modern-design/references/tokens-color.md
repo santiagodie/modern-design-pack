@@ -114,7 +114,7 @@ Disabled controls and logos are exempt from these minimums (1.4.3 and 1.4.11).
 
 **Why:** text that can't be read is content that doesn't exist for that person, and the page's promise never reaches them.
 
-**When it flips:** for long reading (documentation, articles, reports) or an audience with low vision, consider 7:1 for body text (1.4.6, AAA). Use it as the project's target only when the brief says so, never as a house rule.
+**When it flips:** for long reading (documentation, articles, reports) or an audience with low vision, consider [WCAG 1.4.6 Contrast (Enhanced)](https://www.w3.org/TR/WCAG22/#contrast-enhanced) (AAA): 7:1 for text, 4.5:1 for large text. Use it as the project's target only when the brief says so, never as a house rule.
 
 **Source:** WCAG 2.2; adapted from impeccable `colorize.md` (Apache-2.0), ui-ux-pro-max-skill `quick-reference.md` and `landing.csv` (MIT), Modern Web Guidance "Visual effects" (CC BY 4.0, changes made) and the author's research (`04_CROSS_CUTTING.md` §3).
 

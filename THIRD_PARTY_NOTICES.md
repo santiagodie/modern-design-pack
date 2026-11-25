@@ -118,7 +118,7 @@ The ideas below were rewritten in our own words and reorganised. The only except
 
 ### Standards cited
 
-- **WCAG 2.2** (W3C Recommendation, 12 December 2024), https://www.w3.org/TR/WCAG22/: success criteria 1.4.1, 1.4.3, 1.4.4, 1.4.6, 1.4.11, 2.4.7, 2.4.11, 2.4.13, 2.5.5 and 2.5.8 are cited by number and summarised in the tokens references. Copyright © W3C (MIT, ERCIM, Keio, Beihang); no text reproduced beyond short criterion names.
+- **WCAG 2.2** (W3C Recommendation, 12 December 2024), https://www.w3.org/TR/WCAG22/: success criteria 1.4.1, 1.4.3, 1.4.4, 1.4.6, 1.4.11, 2.4.7, 2.4.11, 2.4.13, 2.5.5 and 2.5.8 are cited by number and summarised in the tokens references. Copyright © 2020-2024 World Wide Web Consortium, under the W3C Document License (2023 version, https://www.w3.org/copyright/document-license/); no text reproduced beyond short criterion names.
 - **Design Tokens Format Module, Resolver Module and Color Module 2025.10** (Design Tokens Community Group, Final Community Group Reports, 28 October 2025), https://www.designtokens.org/TR/2025.10/: file format facts (`.tokens.json`, `$value`, `$type`, aliases, sets and modifiers) summarised in `tokens.md`. Not a W3C Standard.
 - **Apple Human Interface Guidelines, Accessibility**, https://developer.apple.com/design/human-interface-guidelines/accessibility: the default (44 × 44 pt) and minimum (28 × 28 pt) control sizes, cited as figures.
 
