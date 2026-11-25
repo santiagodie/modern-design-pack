@@ -1,5 +1,11 @@
 # User & account pages
 
+> **Covers:** Profile, settings, account and billing, and notifications: for each, the user's moment, what the page must prove or protect, levers, specifics with evidence grades, when the usual advice flips, 3C weight, real examples and implementation; the group's persuasion dial.
+> **Read when:** step 1 of `modern-design`, after reasoning, only when the brief includes one of these page types; `design-review` may read it when reviewing the same page type.
+> **Not here:** P-IDs → references/strategy/principles.md; the dial scale → references/reasoning.md; which file per page type → references/strategy/design-reasoning.md; rendering and state in depth → references/engineering/implementation.md; subscription and cancellation limits → references/ethics.md
+> **Owner:** modern-design
+> **Sources:** web reasoning research (docs/research/web-reasoning/) and implementation research (docs/research/implementation/), both the author's (MIT); studies and cases cited per entry with links in place; full list in docs/SOURCES.md
+
 Profile · Settings / Configuration · Account & billing · Notifications
 
 Entry format and evidence grades: see the header of `entry-marketing.md`. P-IDs → `../../strategy/principles.md`.

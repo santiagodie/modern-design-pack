@@ -1,5 +1,11 @@
 # Entry & marketing pages
 
+> **Covers:** Landing, home, about us, pricing and coming soon or waitlist: for each, the user's moment, what the page must prove or protect, levers, specifics with evidence grades, when the usual advice flips, 3C weight, real examples and implementation; the group's persuasion dial. Its opening paragraph defines the entry format the other page files use.
+> **Read when:** step 1 of `modern-design`, after reasoning, only when the brief includes one of these page types; `design-review` may read it when reviewing the same page type.
+> **Not here:** P-IDs → references/strategy/principles.md; the dial scale → references/reasoning.md; which file per page type → references/strategy/design-reasoning.md; rendering and state in depth → references/engineering/implementation.md; landing sections in depth → references/ui/sections/index.md
+> **Owner:** modern-design
+> **Sources:** web reasoning research (docs/research/web-reasoning/) and implementation research (docs/research/implementation/), both the author's (MIT); studies and cases cited per entry with links in place; full list in docs/SOURCES.md
+
 Landing · Home · About us · Pricing · Coming soon / Waitlist
 
 How to read each entry: **The moment** describes the user's mind; **Must prove or protect** links the page to the central promise; **Levers** are mechanisms with the reason they apply (P-IDs → `../../strategy/principles.md`); **Specifics** are research-backed details with evidence grade [A] experiment/large dataset, [B] company data/documented case, [C] professional consensus; **When the usual advice flips** lists conditions where the default is wrong; **3C weight** rates capture, confidence and conversion from 0 to 3 for that page (3 = critical; Act = activation and continuity, Mem = memory); **Real examples** illustrate a mechanism and are not designs to copy. **Implementation** says whether the page can be static, how to render it, where its data and state live, and the anti-patterns (`../../engineering/implementation.md`). Use all of it after reasoning, not instead of it.

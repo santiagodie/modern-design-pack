@@ -1,5 +1,11 @@
 # Commerce pages: purchase
 
+> **Covers:** Cart and checkout: for each, the user's moment, what the page must prove or protect, levers, specifics with evidence grades, when the usual advice flips, 3C weight, real examples and implementation; the group's persuasion dial.
+> **Read when:** step 1 of `modern-design`, after reasoning, only when the brief includes one of these page types; `design-review` may read it when reviewing the same page type.
+> **Not here:** P-IDs → references/strategy/principles.md; the dial scale → references/reasoning.md; which file per page type → references/strategy/design-reasoning.md; rendering and state in depth → references/engineering/implementation.md; order confirmation and order history → references/ux/pages/commerce-after-purchase.md; form fields → references/ui/sections/forms.md; prices, trials and urgency limits → references/ethics.md
+> **Owner:** modern-design
+> **Sources:** web reasoning research (docs/research/web-reasoning/) and implementation research (docs/research/implementation/), both the author's (MIT); studies and cases cited per entry with links in place; full list in docs/SOURCES.md
+
 Cart · Checkout / Payment
 
 This file and [`commerce-after-purchase.md`](commerce-after-purchase.md) form one group, commerce, split by moment in the journey: this one covers the purchase (cart and checkout), the other what comes after it (order confirmation and order history). The group's persuasion dial, summary and order of authority below apply to both.
