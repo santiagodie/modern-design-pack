@@ -4,7 +4,7 @@ Reference for `modern-design`. Consult it after reasoning (`reasoning.md`), neve
 
 > **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
 
-IDs P01–P31 are used by the files in `pages/`. Evidence: **A** = experiment, meta-analysis or large-scale primary data; **B** = company primary data or documented case; **C** = professional consensus or heuristic without a public experiment.
+IDs P01–P31 are used by the files in `pages/`. Each principle keeps its evidence grade (A, B or C); the grades are defined in `evidence.md` §1.
 
 ## 0. How to use this document (instructions for the LLM)
 
