@@ -1,5 +1,11 @@
 # Resources
 
+> **Covers:** a curated catalogue of external resources (galleries, palettes, fonts, token data, component libraries, backgrounds, motion), each added only after its licence is checked. Mostly a skeleton.
+> **Read when:** any step of `modern-design` that needs a specific external resource.
+> **Not here:** how to choose colors and type → references/ui/tokens-color.md and references/ui/tokens-type.md; motion → references/ui/motion.md
+> **Owner:** modern-design
+> **Sources:** none yet; each entry's licence is recorded in docs/SOURCES.md
+
 > Reference for `modern-design`. Curated link catalogue. Skeleton: entries are added in phase 3, only after each source's licence is checked. Load only when a step needs a specific external resource.
 
 ## How to use this catalogue
