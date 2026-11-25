@@ -1,5 +1,11 @@
 # Motion
 
+> **Covers:** step 4 (skeleton, not written yet): when to animate, the values of the motion tokens reserved in step 2, reduced motion.
+> **Read when:** step 4 of `modern-design`, when the UI needs motion or feels static or sluggish.
+> **Not here:** the motion token names and the reduced-motion handling in the token file → references/ui/tokens.md; motion checks in review → design-review references/copy-states-checklist.md (MO family)
+> **Owner:** modern-design
+> **Sources:** to be merged in phase 3 (list at the end of this file); full list in docs/SOURCES.md
+
 > Reference for `modern-design`, step 4. Skeleton: content written in phase 3. Load only during this step.
 
 Token names already reserved by step 2 (`tokens.md` §3), with their values to be set here: `--duration-feedback`, `--duration-small`, `--duration-overlay`, `--duration-sheet`, `--ease-enter`, `--ease-exit`, `--ease-move`. The reduced-motion handling lives in the token file (`tokens.md` §5).
