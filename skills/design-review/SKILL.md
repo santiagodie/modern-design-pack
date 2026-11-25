@@ -25,6 +25,10 @@ Designing something new or redesigning from scratch belongs to `modern-design`. 
 
 When a URL points to the user's own project and its code is here, use own-project mode. When it is unclear, ask.
 
+## Order of authority
+
+ethics (`${CLAUDE_SKILL_DIR}/../modern-design/references/ethics.md` and `${CLAUDE_SKILL_DIR}/../modern-design/references/content-truth.md`, hard limits) > the site-decisions file (what exists and what the user decided) > the design-brief file > `${CLAUDE_SKILL_DIR}/../modern-design/references/reasoning.md` and `${CLAUDE_SKILL_DIR}/../modern-design/references/design-reasoning.md` (method for writing the brief) > the other references (`${CLAUDE_SKILL_DIR}/../modern-design/references/principles.md`, `${CLAUDE_SKILL_DIR}/../modern-design/references/pages/`, `${CLAUDE_SKILL_DIR}/../modern-design/references/sections/`, `${CLAUDE_SKILL_DIR}/../modern-design/references/implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
+
 ## Process
 
 At the start of every run, in both modes, read the shared core whole: `${CLAUDE_SKILL_DIR}/../modern-design/references/reasoning.md` (the shared method: the central promise, the four mechanisms, the persuasion dial, collisions between principles) and `${CLAUDE_SKILL_DIR}/../modern-design/references/evidence.md` (evidence grades, what counts as verified, how to cite). Continue without either when it doesn't exist: the rules below already carry what a review needs from them.
