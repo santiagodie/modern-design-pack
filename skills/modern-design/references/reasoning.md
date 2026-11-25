@@ -2,7 +2,7 @@
 
 > **Covers:** the shared method: think instead of filling in, the central promise, the four mechanisms, the persuasion dial scale, collisions between principles, when the usual advice flips, and treating all of it as priors.
 > **Read when:** at the start of any skill run, whole; in `modern-design`, before writing the brief.
-> **Not here:** the six questions per screen, worked examples, which reference to open and how to present design work → references/design-reasoning.md; evidence grades and verification → references/evidence.md; the default dial per page type → references/pages/
+> **Not here:** the six questions per screen, worked examples, which reference to open and how to present design work → references/strategy/design-reasoning.md; evidence grades and verification → references/evidence.md; the default dial per page type → references/ux/pages/
 > **Owner:** shared core (lives in modern-design)
 > **Sources:** Baymard GPT-4 UX audit (2023); our own method, from docs/research/web-reasoning/; full list in docs/SOURCES.md
 
@@ -136,7 +136,7 @@ Every guideline in these references assumes a typical visitor in a typical situa
 
 **When it flips:** the hard limits stay fixed. Nothing in `ethics.md` or `content-truth.md` turns into its opposite because of context, and measured failures (contrast, accessibility) are still reported in review, marked "decided by user".
 
-Examples, each in its `pages/` entry: hot traffic on a landing page (`pages/entry-marketing.md`, Landing page), re-authentication before a high-risk action (`pages/authentication.md`, Login / Sign-in), and an extra review step in a high-value or regulated checkout (`pages/commerce-purchase.md`, Checkout / Payment).
+Examples, each in its `pages/` entry: hot traffic on a landing page (`references/ux/pages/entry-marketing.md`, Landing page), re-authentication before a high-risk action (`references/ux/pages/authentication.md`, Login / Sign-in), and an extra review step in a high-value or regulated checkout (`references/ux/pages/commerce-purchase.md`, Checkout / Payment).
 
 **Source:** house rule, generalised from pages/.
 

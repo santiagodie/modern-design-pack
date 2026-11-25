@@ -51,6 +51,12 @@ Alta = cambia lo que se construye o lo que la revisión exige; media = puede cam
 - 6, CO8 y fondo crema: `4c600be` (`fix(review): CO8 follows the brief, not the sector`).
 - Erratas de `14-sin-rama.md`: `ec19d13` (`fix: typos from knowledge audit`).
 
+**Resuelta en la rama `modern-design-tree`:**
+
+- 5, rangos en px en las secciones: `b7dab7b` (`fix(sections): express sizes as tokens`). Espaciado, objetivos, alturas de control y tamaños de texto pasan a nombres de token; los anchos que no son de la escala, a `rem` con su motivo. Quedan en px dos hechos que no son medidas de diseño: el umbral de 16 px de iOS (`forms.md`, igual que MN2) y la descripción de una pantalla de 768 px (`hero.md`). La 10 (texto del pie a 13-14 px) queda resuelta de paso: el pie usa `--text-small`.
+
+**Nota sobre rutas.** Desde la rama `modern-design-tree`, las referencias de `modern-design` están en carpetas por rama (`strategy/`, `ux/pages/`, `ui/`, `ui/sections/`, `engineering/`); el núcleo común sigue en la raíz. Los archivos de esta auditoría citan las rutas de antes del movimiento ("md:tokens.md" es hoy `md:ui/tokens.md`); el árbol vigente está en `docs/ARCHITECTURE.md`, "Reference tree".
+
 ## 3. Árbol propuesto para las cinco skills
 
 Presupuesto: menos de unas 300 líneas por archivo. Estado: **existe** (se queda), **mover** (cambia de sitio o de skill), **dividir**, **nuevo**. Entre paréntesis, líneas actuales.
@@ -155,6 +161,8 @@ No la tienen (42): `modern-design/SKILL.md`; en `modern-design/references/`: `co
 
 Ningún archivo de `skills/` pasa de 300 líneas; el más cercano es `unslop-checklist.md` (297).
 
+**Hecho para `modern-design`** (ramas `core-reasoning` y `modern-design-tree`): todas sus referencias tienen la cabecera fija, salvo las dos plantillas de `templates/`, que se copian al proyecto del usuario y no la llevan. Ninguna lleva "(moves to …)": según §3 y las secciones "Dueño propuesto", ningún archivo actual de `modern-design` cambia de skill; las skills nuevas recogen partes por enlace. Quedan sin cabecera `modern-design/SKILL.md`, `design-review/SKILL.md` y las siete referencias de `design-review`.
+
 ## 6. Límites de activación (borrador)
 
 - **modern-design:** diseña, construye o rediseña interfaces (dirección, tokens, componentes, secciones, motion); no revisa interfaces terminadas ni audita accesibilidad, SEO o contenido en profundidad.
@@ -169,7 +177,7 @@ Ningún archivo de `skills/` pasa de 300 líneas; el más cercano es `unslop-che
 2. **Dividir `reasoning.md`** en parte general y `design-reasoning.md`, y mover la calidad de evidencia a `evidence.md`. Requisito de las tres skills nuevas. **Hecho** en la rama `core-reasoning` (cabeceras fijas en los seis archivos del núcleo y de razonamiento; `ethics.md` §5 se queda donde está).
 3. **Extraer `review-method.md`** de `unslop-checklist.md` y `audit-report.md`, y dividir `unslop-checklist.md`. Requisito de las tres skills que revisan.
 4. **Decidir los archivos del proyecto** para cinco skills (quién crea `site-decisions.md`, qué secciones son de quién, dónde viven las plantillas).
-5. **Poner la cabecera fija** a cada referencia cuando se revise (no en bloque).
+5. **Poner la cabecera fija** a cada referencia cuando se revise (no en bloque). **Hecho para `modern-design`** en la rama `modern-design-tree` (ver §5); pendiente en `design-review`.
 6. **`accessibility-review`:** depende de 2, 3 y de decidir el dueño de los umbrales (objetivos, contraste). `design-review` pasa a enlazarla para lo que no sea visible.
 7. **`seo-geo-optimizer`:** depende de 2, 3 y de la regla de metadatos de `content-truth.md`; recoge por enlace `implementation.md` §2 y las `### Implementation` de `pages/`.
 8. **`content-web-optimizer`:** depende de 2, 3 y de decidir si la familia CY se queda en `design-review` o pasa a esta skill.

@@ -15,15 +15,15 @@ flowchart LR
 | Skill | Steps | Reference loaded per step |
 |---|---|---|
 | modern-design | Start of every run: the shared core, read whole | `references/ethics.md`, `references/content-truth.md`, `references/reasoning.md`, `references/evidence.md` (see "Shared core") |
-| | 1. Direction: context, live references, central promise, design brief | `references/direction.md`, then `references/design-reasoning.md` before writing the brief |
-| | After reasoning: only the file of each page type in the brief, then principles when needed | `references/pages/<group>.md` (commerce is split in two: `commerce-purchase.md` and `commerce-after-purchase.md`), `references/principles.md` (`references/reasoning-examples.md` for worked examples) |
+| | 1. Direction: context, live references, central promise, design brief | `references/strategy/direction.md`, then `references/strategy/design-reasoning.md` before writing the brief |
+| | After reasoning: only the file of each page type in the brief, then principles when needed | `references/ux/pages/<group>.md` (commerce is split in two: `commerce-purchase.md` and `commerce-after-purchase.md`), `references/strategy/principles.md` (`references/strategy/reasoning-examples.md` for worked examples) |
 | | Pages with prices, consent, subscriptions, scarcity, urgency or reviews (hard limit) | `references/ethics.md` |
 | | Every build: no invention, placeholders, `content-needed.md` (hard limit, same level as ethics) | `references/content-truth.md` |
-| | 2. Tokens: tiers, method against convergence, mandatory tokens, format; then color, dark theme, type and space as needed | `references/tokens.md`, then only the files needed: `references/tokens-color.md`, `references/tokens-color-dark.md`, `references/tokens-type.md`, `references/tokens-space.md` |
-| | 3. Components: sections and components in the project's stack, for phone, tablet and desktop | `references/sections/index.md`, one file per section built, `references/responsive.md` |
-| | 4. Motion: purposeful animation and interaction | `references/motion.md` |
+| | 2. Tokens: tiers, method against convergence, mandatory tokens, format; then color, dark theme, type and space as needed | `references/ui/tokens.md`, then only the files needed: `references/ui/tokens-color.md`, `references/ui/tokens-color-dark.md`, `references/ui/tokens-type.md`, `references/ui/tokens-space.md` |
+| | 3. Components: sections and components in the project's stack, for phone, tablet and desktop | `references/ui/sections/index.md`, one file per section built, `references/engineering/responsive.md` |
+| | 4. Motion: purposeful animation and interaction | `references/ui/motion.md` |
 | | 5. Hand off to design-review | none |
-| | Steps 1 and 3: static or app, rendering per route, kinds of state, reuse layers, performance, accessibility, legal minimum | `references/implementation.md` (and the "Implementation" subsection of each `pages/` entry) |
+| | Steps 1 and 3: static or app, rendering per route, kinds of state, reuse layers, performance, accessibility, legal minimum | `references/engineering/implementation.md` (and the "Implementation" subsection of each `pages/` entry) |
 | | Any step that needs an external resource | `references/resources.md` |
 | design-review (both modes) | Start of every run: the shared method and evidence rules, read whole when they exist | `../modern-design/references/reasoning.md`, `../modern-design/references/evidence.md` |
 | design-review: own project | 1. Review code and design decisions for generic patterns and mistakes | `references/unslop-checklist.md`, `references/copy-states-checklist.md`, `references/mobile-checklist.md`, `references/outdated-checklist.md`; `references/dark-patterns-checklist.md` when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content |
@@ -59,16 +59,45 @@ The design references are organised in four levels, from the smallest piece to t
 
 | Level | What it decides | Where | Status |
 |---|---|---|---|
-| Tokens | Three tiers (base values → semantic roles → component tokens; components read roles, themes remap only the semantic tier); color, dark theme, type, spacing, radii, elevation, targets, focus; motion names reserved | `references/tokens.md` (the step), `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md` | Written (3c); motion values pending in `motion.md` |
-| Components | Reusable pieces shared by several sections: buttons, cards, inputs, badges | `references/components/` | Pending (3b, batch D) |
-| Sections | Whole page sections with phone, tablet and desktop layouts | `references/sections/`, `references/responsive.md` | Batch A written |
-| Pages | Per page type: the user's moment, what the page must prove, levers, specifics, when the usual advice flips, persuasion dial | `references/pages/` | Reasoning written; "Layout & responsive" per page type pending |
+| Tokens | Three tiers (base values → semantic roles → component tokens; components read roles, themes remap only the semantic tier); color, dark theme, type, spacing, radii, elevation, targets, focus; motion names reserved | `references/ui/tokens.md` (the step), `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md` | Written (3c); motion values pending in `motion.md` |
+| Components | Reusable pieces shared by several sections: buttons, cards, inputs, badges | `references/ui/components/` | Pending (3b, batch D) |
+| Sections | Whole page sections with phone, tablet and desktop layouts | `references/ui/sections/`, `references/engineering/responsive.md` | Batch A written |
+| Pages | Per page type: the user's moment, what the page must prove, levers, specifics, when the usual advice flips, persuasion dial | `references/ux/pages/` | Reasoning written; "Layout & responsive" per page type pending |
 
 Above the levels sits the reasoning layer (the shared core described below, plus `design-reasoning.md` and `principles.md`), which decides which pages and sections exist before any level is built. Beside them, `implementation.md` decides how each level is built: rendering per route, state, the same four levels as reuse layers, performance, accessibility and the legal minimum. Backend security is out of scope (its "Boundaries" section).
 
+## Reference tree
+
+`modern-design/references/` is ordered by branch of knowledge (the branches of `docs/research/knowledge-audit/`). The shared core stays in the root; everything else lives in a branch folder.
+
+```text
+skills/modern-design/references/
+├── ethics.md, content-truth.md, reasoning.md, evidence.md   shared core (fixed paths)
+├── templates/            site-decisions.md, content-needed.md (no header: copied to the user's project)
+├── resources.md          curated links (no branch in the audit)
+├── strategy/             direction.md, design-reasoning.md, reasoning-examples.md, principles.md
+├── ux/pages/             one file per group of page types (12)
+├── ui/                   tokens.md, tokens-color.md, tokens-color-dark.md, tokens-type.md, tokens-space.md, motion.md
+│   └── sections/         index.md and one file per section (8)
+└── engineering/          implementation.md, responsive.md
+```
+
+**The core stays in the root.** `ethics.md`, `content-truth.md`, `reasoning.md`, `evidence.md` and `templates/` never move: other skills read them as `${CLAUDE_SKILL_DIR}/../modern-design/references/<file>`, and that path must not change.
+
+**Templates carry no header.** The files in `templates/` are copied to the user's project as they are, so they don't get the fixed header that every other reference has.
+
+**Pending, by folder** (listed here, not created as empty files):
+
+| Folder | Pending | Source of the plan |
+|---|---|---|
+| `strategy/` | none | |
+| `ux/` | `navigation.md` (site and app navigation, labels, global search) | audit branch 05 |
+| `ui/` | `components/` (`button.md`, `field.md`, `choice.md`, `card.md`, `badge.md`, `table.md`, `dialog.md`, `tabs-menu.md`; batch D); `sections/` batch B (`problem.md`, `how-it-works.md`, `demo.md`, `testimonials.md`, `pricing.md`, `trust.md`, `faq.md`, `where-when.md`) and batch C (`app-bar.md`, `board.md`, `data-table.md`, `side-panel.md`, `row-actions.md`, `read-only-display.md`); `styles.md`; the content of `motion.md` | audit branch 06 |
+| `engineering/` | `performance.md`, when `implementation.md` §6 grows | audit branch 11 |
+
 ## Shared core
 
-Five pieces apply to every skill, whatever it builds or reviews. They live in `modern-design/references/`, because installed plugins are copied whole to a cache and a folder without a `SKILL.md` has not been checked with `claude plugin validate`.
+Five pieces apply to every skill, whatever it builds or reviews. They live in the root of `modern-design/references/` (never in a branch folder, see "Reference tree"), because installed plugins are copied whole to a cache and a folder without a `SKILL.md` has not been checked with `claude plugin validate`.
 
 | File | Holds | Read by |
 |---|---|---|
@@ -88,7 +117,7 @@ The page-design part of the method is not shared: `design-reasoning.md` (six que
 
 From the tokens files on, references use a fixed header and a fixed rule form, so the model can reason about each rule instead of ticking it.
 
-**Header**, five lines in a quote at the top: **Covers** (what the file decides), **Read when** (step or situation), **Not here** (topic → the file that has it), **Owner** (the skill), **Sources** (short list, with the full table in `docs/research/`).
+**Header**, five lines in a quote at the top: **Covers** (what the file decides), **Read when** (step or situation), **Not here** (topic → the file that has it), **Owner** (the skill; when the audit names a future skill as owner, "(moves to <skill>)"), **Sources** (short list, with the full table in `docs/research/`). Every reference in `modern-design` carries it, except the files in `templates/`, which are copied to the user's project. "Not here" names files by their path relative to the `SKILL.md` (`references/ui/tokens.md`); a pending file is marked "(planned)".
 
 **Rule form:**
 
@@ -97,7 +126,7 @@ From the tokens files on, references use a fixed header and a fixed rule form, s
 - **When it flips:** the context where the usual rule stops working, and what to do then.
 - **Source:** a short credit ("adapted from <repo> (<licence>)"; "changes made" for CC BY).
 
-Trivial rules may fit on one line; decision rules always carry Why and When it flips. Older references move to this form when they are next revised.
+Trivial rules may fit on one line; decision rules always carry Why and When it flips. Older references move to the rule form when they are next revised; the header is already on all of them.
 
 ## Context over rules
 

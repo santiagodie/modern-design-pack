@@ -107,6 +107,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Order of authority: `reasoning.md` and `design-reasoning.md` share the method position, in every file that states it; `design-review/SKILL.md` now declares it too.
 - `modern-design` reads `ethics.md`, `content-truth.md`, `reasoning.md` and `evidence.md` whole at the start of every run, and `design-reasoning.md` in step 1. `design-review` reads `reasoning.md` and `evidence.md` whole at the start of every run, and continues without them when they are missing.
 
+### Changed (modern-design tree)
+
+- `modern-design/references/` ordered in branch folders, moved with history and without content changes: `strategy/` (`direction.md`, `design-reasoning.md`, `reasoning-examples.md`, `principles.md`), `ux/pages/`, `ui/` (the five `tokens*.md`, `motion.md`, `sections/`) and `engineering/` (`implementation.md`, `responsive.md`). The shared core (`ethics.md`, `content-truth.md`, `reasoning.md`, `evidence.md`, `templates/`) and `resources.md` stay in the root, so `${CLAUDE_SKILL_DIR}/../modern-design/references/<file>` doesn't change for the core.
+- Every path updated in both `SKILL.md` files, the references (headers, "Which reference to open", links between files), `design-review` and its scripts, `.claude/CLAUDE.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, `docs/SOURCES.md` and the research notes. Folder-prefixed paths in prose (`pages/legal.md`) became `references/ux/pages/legal.md`, because they no longer resolve from every folder.
+- Fixed header (Covers, Read when, Not here, Owner, Sources) on every remaining `modern-design` reference: `direction.md`, `reasoning-examples.md`, `motion.md`, `implementation.md`, `responsive.md`, `resources.md`, the twelve `pages/` files and the nine `sections/` files. The templates have none, because they are copied to the user's project.
+- `sections/`: spacing, target sizes, control heights and text sizes are token names instead of px ranges (`--space-section`, `--space-between`, `--space-inside`, `--target-touch`, `--header-height`, `--text-display`…); widths outside the token scale are in `rem` with their reason, and widths that hold text are in `ch`: `--measure` for the benefits text column and the final CTA, the expected answer for each form field. Resolves contradictions 5 and 10 of the knowledge audit.
+- `docs/ARCHITECTURE.md`: "Reference tree" section with the tree, the rule that the core stays in the root, the templates exception and the pending files per folder.
+- `scripts/dev/check-paths.js`: checks every `references/` path and relative link in `skills/`; `.claude/CLAUDE.md` says to run it after moving or renaming any file there.
+
 ### Changed (phase 3b)
 
 - Skills may read each other's files inside the plugin; the rule is now "nothing outside the plugin".

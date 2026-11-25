@@ -63,7 +63,7 @@ Column guide:
 
 ## Author's research: Landing Page Field Guide
 
-Six files in `docs/research/landing-field-guide/` (`00_README.md` to `05_DESIGN_STYLES.md`), written by the repository's author with Claude and released under this repository's MIT licence. They are the basis of `modern-design/references/sections/` and of `responsive.md`. Checked on 2026-11-23: they paraphrase their sources and contain no long verbatim quotations. Figures from conversion studies are kept in the research with its warning, and the skills use only the direction of each effect.
+Six files in `docs/research/landing-field-guide/` (`00_README.md` to `05_DESIGN_STYLES.md`), written by the repository's author with Claude and released under this repository's MIT licence. They are the basis of `modern-design/references/ui/sections/` and of `responsive.md`. Checked on 2026-11-23: they paraphrase their sources and contain no long verbatim quotations. Figures from conversion studies are kept in the research with its warning, and the skills use only the direction of each effect.
 
 | Source | URL | Author | Type | License | Used in | How | Notes |
 |---|---|---|---|---|---|---|---|
@@ -104,7 +104,7 @@ Sources cited by the field guide. Not read or used directly by the skills; liste
 Written by the repository's author with Claude and released under this repository's MIT licence. Two batches:
 
 - **Four documents** (2026-11-24), archived unchanged in `docs/research/web-reasoning/`: `00-core-reasoning`, `01-web-psychology-marketing-principles`, `02-page-type-matrix`, `03-ethical-legal-limits-and-evidence`. They became `modern-design/references/reasoning.md`, `principles.md`, `page-types.md` (later replaced by `pages/`) and `ethics.md`, and the DP family of `design-review/references/dark-patterns-checklist.md`.
-- **A `web-design-reasoning` skill** written in another session (2026-11-24), integrated rather than shipped as a separate skill. Its eleven page files became `modern-design/references/pages/` and `reasoning-examples.md` was copied as is. From its `SKILL.md`, the Baymard evidence, the list-mode signal about advice on what isn't visible, the persuasion dial, the novice-versus-expert collision, the reference table and "How to present design work" went into `reasoning.md` (the six questions and the reference table now live in `design-reasoning.md`); its review rules went into `design-review/SKILL.md`. Its copies of `principles.md` and `limits-and-evidence.md` were older versions of ours and were not used, and its `landing-field-guide/` copy was identical to `docs/research/landing-field-guide/` and was not copied.
+- **A `web-design-reasoning` skill** written in another session (2026-11-24), integrated rather than shipped as a separate skill. Its eleven page files became `modern-design/references/ux/pages/` and `reasoning-examples.md` was copied as is. From its `SKILL.md`, the Baymard evidence, the list-mode signal about advice on what isn't visible, the persuasion dial, the novice-versus-expert collision, the reference table and "How to present design work" went into `reasoning.md` (the six questions and the reference table now live in `design-reasoning.md`); its review rules went into `design-review/SKILL.md`. Its copies of `principles.md` and `limits-and-evidence.md` were older versions of ours and were not used, and its `landing-field-guide/` copy was identical to `docs/research/landing-field-guide/` and was not copied.
 
 Checked on 2026-11-24:
 
@@ -143,8 +143,8 @@ Four documents written by the repository's author with Claude (2026-11-24) and r
 
 How they were used:
 
-- `01` became `modern-design/references/implementation.md`, rewritten in our own words. Rule IDs were not kept, and MUST is reserved for security, accessibility and legal rules. Backend security (data access layer, CSP, idempotency, specific CVEs, sync engines, CRDTs) became only a "Boundaries" section that points to OWASP and the framework's docs. The platform-features table (§4.2) and the agent-mistakes list (§8) were not copied: a short checklist links to Modern Web Guidance. The Next.js 16.4 and TanStack Start 1.0 claims are marked "verify before citing".
-- `02` became the "Implementation" subsection of each entry in `modern-design/references/pages/` and the summary table in `implementation.md`, rewritten.
+- `01` became `modern-design/references/engineering/implementation.md`, rewritten in our own words. Rule IDs were not kept, and MUST is reserved for security, accessibility and legal rules. Backend security (data access layer, CSP, idempotency, specific CVEs, sync engines, CRDTs) became only a "Boundaries" section that points to OWASP and the framework's docs. The platform-features table (§4.2) and the agent-mistakes list (§8) were not copied: a short checklist links to Modern Web Guidance. The Next.js 16.4 and TanStack Start 1.0 claims are marked "verify before citing".
+- `02` became the "Implementation" subsection of each entry in `modern-design/references/ux/pages/` and the summary table in `implementation.md`, rewritten.
 - `03` is recorded below; no skill file quotes it.
 - `00`: only its source registry is recorded below. Its conventions and glossary were not copied.
 
