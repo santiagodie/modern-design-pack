@@ -1,5 +1,11 @@
 # Copy, states, motion and meta checklist
 
+> **Covers:** copy (CY1–CY10), states and feedback (SF1–SF12), motion (MO1–MO6) and meta (ME1–ME4): each pattern with when it is fine, how to check it and where it goes in the report.
+> **Read when:** the review step of both modes, with the three unslop files.
+> **Not here:** how to review → references/review-method.md; typography, color, layout, components → references/unslop-type-color.md, references/unslop-layout.md, references/unslop-components.md; the no-invention rule → modern-design references/content-truth.md; motion values → modern-design references/ui/motion.md
+> **Owner:** design-review
+> **Sources:** unslop (CC BY 4.0), Impeccable (Apache-2.0), Taste Skill (MIT), Web Interface Guidelines (MIT), Hallmark (MIT, commit 04977e1), Instagram screenshot (ideas only); full list in docs/SOURCES.md
+
 Reference for `design-review`, used in both modes during the review step, together with the three unslop files. This file holds the Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME) families; `unslop-type-color.md`, `unslop-layout.md` and `unslop-components.md` hold Typography, Color, Layout and Components; `review-method.md` holds how to review: severity, `measured` and `judgment`, levels and how to report.
 
 ## Copy

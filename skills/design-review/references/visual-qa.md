@@ -1,5 +1,11 @@
 # Visual QA
 
+> **Covers:** the browser check: tools, serving over HTTP, widths and input emulation, how to run the page scripts, the focus pass, what to look at per width, clean-up.
+> **Read when:** both modes, whenever a page can be opened in a browser.
+> **Not here:** how to review and tag findings → references/review-method.md; inventory before and after a change → references/regression-check.md; what each script result means → references/mobile-checklist.md, references/outdated-checklist.md, references/copy-states-checklist.md (SF4, ME1–ME4)
+> **Owner:** design-review
+> **Sources:** Web Interface Guidelines (MIT), emilkowalski/skills (MIT), Playwright agent CLI documentation
+
 Reference for `design-review`: the browser check. Used in both modes. Load it when a page can be opened in a browser: the user's running app (own project) or a public URL (URL audit).
 
 ## Tools

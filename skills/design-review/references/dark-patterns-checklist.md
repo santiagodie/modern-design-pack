@@ -1,5 +1,11 @@
 # Dark patterns checklist
 
+> **Covers:** deceptive patterns DP1–DP10 and the minimum checks per page type; every DP finding is Floor.
+> **Read when:** the review step of both modes, when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content.
+> **Not here:** how to review → references/review-method.md; invented testimonials, logos and figures → references/copy-states-checklist.md (CY3); the cases behind each rule → modern-design references/ethics.md
+> **Owner:** design-review
+> **Sources:** modern-design references/ethics.md (our own, with its cited cases); full list in docs/SOURCES.md
+
 Reference for `design-review`, used in both modes during the review step. Load it when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content. When in doubt, load it; it is a small file. `review-method.md` holds how to review: severity, `measured` and `judgment`, levels and how to report. Every DP finding is Floor (`review-method.md` §8).
 
 ## Deceptive patterns

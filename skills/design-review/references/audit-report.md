@@ -1,5 +1,11 @@
 # Audit report format
 
+> **Covers:** the URL audit report: what is specific to the report (language, measured outdated signals first, lab data, Floor first, empty sections), the section guide, the finding block, file locations and the template.
+> **Read when:** URL audit mode, last step, when writing the report.
+> **Not here:** how to judge, tag and order findings → references/review-method.md; the checks → references/unslop-type-color.md, references/unslop-layout.md, references/unslop-components.md, references/copy-states-checklist.md; own-project review notes → design-review SKILL.md, Mode 1 step 7
+> **Owner:** design-review
+> **Sources:** our own format
+
 Reference for `design-review`, URL audit mode. Load only when writing the report.
 
 ## How to write it
