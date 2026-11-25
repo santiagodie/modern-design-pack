@@ -85,6 +85,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 - `docs/research/knowledge-audit/`: an analysis-only audit of the plugin's knowledge in thirteen branches (plus one for unassigned items), each with where it lives today, coverage, duplicates and contradictions, proposed owner, gaps as questions and candidate sources; an index with the coverage matrix, the contradictions by severity, the proposed file tree for five skills, the shared core, missing headers, activation limits and a work order; and a review of Hallmark's mechanisms (adopt, adapt or reject). No change to `skills/`.
 
+### Changed (audit contradictions)
+
+- Target size in review aligned with `tokens.md` §5: SF4 is critical (`measured`) for targets under `--target-min` (24 px) that fail the WCAG 2.5.8 spacing exception, and minor (`judgment`) for primary actions under `--target-touch` (44 px) in the touch screenshots (375, 768, 1024). `page-checks.js` now measures every target's size and the 2.5.8 spacing test (`targetsUnder24`, `targetsUnder44`) and no longer decides by pointer type; `visual-qa.md` follows.
+- Persuasion dial: one five-level scale (high, medium, medium-low, low, none) defined in `reasoning.md` §4, with "low-medium" merged into "medium-low" and "none-low" into "low"; the value per page type lives only in `pages/` (`principles.md` §3 now links to it; group headers in `pages/` corrected); `tokens.md` §3 has one row per level, without page examples; the brief template lists the five levels.
+- WCAG 2.2 AA as the minimum in `principles.md` P18, `ethics.md` (minimum by page) and the minimum-by-page table of `dark-patterns-checklist.md`. The EN 301 549 → WCAG 2.1 legal facts stay as they are.
+- CO8 accepts a cream background only for a concrete reason in the brief (existing brand, the business's own material or photography, a recorded decision), never by sector; `tokens.md` §4 owns the rule.
+- Typos from the audit: pending markers in `reasoning.md`, `sections/index.md` and `pages/legal.md`; repository-document paths in `implementation.md`; an evidence grade in `pages/interaction-creation.md`.
+
 ### Changed (phase 3b)
 
 - Skills may read each other's files inside the plugin; the rule is now "nothing outside the plugin".
