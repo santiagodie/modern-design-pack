@@ -1,6 +1,6 @@
 # Outdated checklist
 
-Reference for `design-review`, used in both modes during the review step, for the measurable part of the "Outdated" section. `unslop-checklist.md` holds the shared rules: how to use the checklists, severity, `measured` and `judgment`, and how to report.
+Reference for `design-review`, used in both modes during the review step, for the measurable part of the "Outdated" section. `review-method.md` holds how to review: severity, `measured` and `judgment`, levels and how to report.
 
 ## Outdated, measurable
 

@@ -1,6 +1,6 @@
 # Dark patterns checklist
 
-Reference for `design-review`, used in both modes during the review step. Load it when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content. When in doubt, load it; it is a small file. `unslop-checklist.md` holds the shared rules: how to use the checklists, severity, `measured` and `judgment`, and how to report.
+Reference for `design-review`, used in both modes during the review step. Load it when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content. When in doubt, load it; it is a small file. `review-method.md` holds how to review: severity, `measured` and `judgment`, levels and how to report. Every DP finding is Floor (`review-method.md` §8).
 
 ## Deceptive patterns
 

@@ -1,6 +1,6 @@
 # Copy, states, motion and meta checklist
 
-Reference for `design-review`, used in both modes during the review step, together with `unslop-checklist.md`. This file holds the Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME) families; `unslop-checklist.md` holds Typography, Color, Layout and Components, and the shared rules for every checklist: how to use them, severity, `measured` and `judgment`, and how to report.
+Reference for `design-review`, used in both modes during the review step, together with `unslop-checklist.md`. This file holds the Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME) families; `unslop-checklist.md` holds Typography, Color, Layout and Components; `review-method.md` holds how to review: severity, `measured` and `judgment`, levels and how to report.
 
 ## Copy
 

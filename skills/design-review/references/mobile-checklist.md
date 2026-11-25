@@ -1,6 +1,6 @@
 # Mobile checklist
 
-Reference for `design-review`, used in both modes during the review step, for pages used on touch screens. `unslop-checklist.md` holds the shared rules: how to use the checklists, severity, `measured` and `judgment`, and how to report.
+Reference for `design-review`, used in both modes during the review step, for pages used on touch screens. `review-method.md` holds how to review: severity, `measured` and `judgment`, levels and how to report.
 
 ## Mobile, measurable
 

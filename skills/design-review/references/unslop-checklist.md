@@ -1,25 +1,14 @@
 # Unslop checklist
 
-Reference for `design-review`, used in both modes during the review step. Load it when reviewing; you don't need it while taking screenshots. It holds the shared rules and the Typography (TY), Color (CO), Layout (LA) and Components (CP) families; `copy-states-checklist.md` holds Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME). Load both.
+Reference for `design-review`, used in both modes during the review step. Load it when reviewing; you don't need it while taking screenshots. It holds the Typography (TY), Color (CO), Layout (LA) and Components (CP) families; `copy-states-checklist.md` holds Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME). Load both.
 
-Three more checklists use the same rules for severity, evidence and reporting (below): `mobile-checklist.md` (MN1–MN5), `outdated-checklist.md` (OM1–OM13) and `dark-patterns-checklist.md` (DP1–DP10, loaded when the page shows prices, offers, free trials, subscriptions, a sign-up, a payment, consent or cookies, stock or scarcity, urgency or deadlines, reviews or testimonials, or sponsored content).
+How to review, for this file and every other checklist (`mobile-checklist.md`, `outdated-checklist.md`, `dark-patterns-checklist.md`): `review-method.md`. It owns the template test, `measured` and `judgment`, severity, the order of findings, what the user decided, the levels and the artefacts of the audit setup.
 
 ## How to use it
 
-- **Context decides.** Every pattern below is fine somewhere. Check the "Fine when" line before flagging anything. When the project has a `site-decisions.md`, the user's decisions in it win, and then the design brief. Two exceptions: the Deceptive patterns family and the no-invention rule (ethics ranks above both), and measured failures such as contrast or accessibility, which are reported anyway, marked "decided by user".
-- **Run the template test first.** Swap the product's name for a competitor's. If the page still makes sense, it is generic. Report the result in plain words ("the page could belong to any competitor" or "the page is specific to this product"), never as "passes" or "fails", which readers take in opposite ways.
-- **Flag a pattern once.** Name the first clear case and say "also in X, Y" instead of repeating the finding.
-- **Report as** gives the default report section. Raise or lower it when the impact on this page is clearly different, and say why.
+- **Context decides.** Every pattern below is fine somewhere. Check the "Fine when" line before flagging anything; a recorded reason in the brief or in `site-decisions.md` waives it (`review-method.md` §7 and §8).
+- **Report as** gives the default report section (`review-method.md` §4).
 - **Evidence:** typography, color and layout taste calls are `judgment`. Contrast ratios, sizes, missing states and meta tags you can check in code or with a tool are `measured`.
-
-Severity in short: **critical** stops people from reading, using, trusting or reaching the page; **minor** is a real problem with limited impact; **outdated** makes the page look generic or dated (measured legacy techniques first, then judgment); **tip** is a small, cheap improvement.
-
-Before reporting, rule out artefacts of the audit setup:
-
-- **Lab performance numbers** (Lighthouse's simulated slow mobile) are a worst case. Report them as lab data. Mark performance critical only when content stays hidden, broken or unusable, not from a lab timing alone.
-- **Locale.** The audit browser may run in the user's language. When a finding depends on language, number or currency formatting, compare it with `navigator.language` and the page's `lang`. Report it only when it also happens in the site's own language, or label it as locale-dependent.
-- **Well-executed intent.** On a page that is clearly specific and well made, a checklist pattern used with intent goes in "What to keep", not in Outdated. When you would call a finding "borderline" or "a limit case", it belongs in Tips with the reason, never in Outdated.
-- **Format negotiation.** CDNs often serve WebP or AVIF from URLs without a file extension (`f=auto`, `format=auto`). Confirm OM5 with Lighthouse or the response content type before reporting it.
 
 ## Typography
 
