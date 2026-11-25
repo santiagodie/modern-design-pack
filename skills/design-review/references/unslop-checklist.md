@@ -145,9 +145,9 @@ Before reporting, rule out artefacts of the audit setup:
 - **Report as:** outdated.
 
 ### CO8. Warm cream as the automatic background
-- **Look for:** an off-white, cream or beige page background chosen by default, with brown or terracotta accents, on a product that has no reason for warmth.
+- **Look for:** an off-white, cream or beige page background chosen by default, with brown or terracotta accents, when nothing in the brief asks for it.
 - **Reads as generic because:** generators reach for it as the "tasteful" alternative to white, so it now signals a template too.
-- **Fine when:** the product is warm, crafted or food-related (a ceramics studio, a wine shop) and the palette comes from the brand.
+- **Fine when:** the brief gives a concrete reason: an existing brand, the business's own material or photography, or a decision recorded in `site-decisions.md`. A category or sector is never the reason (`modern-design/references/tokens.md` §4 owns this rule).
 - **Fix:** derive the background from the brand and the use scene, not from a default.
 - **Report as:** outdated.
 
