@@ -32,11 +32,11 @@ Convenciones: ver `01-reasoning.md`. "md:" = `modern-design/references/`, "dr:" 
 
 ## 3. Duplicados y contradicciones
 
-- **Confirmaciones frente a deshacer:** md:principles.md P17 (158), md:reasoning-examples.md 261, md:pages/user-account.md Settings (74), interaction-creation.md Editor (84), management-admin.md Admin (124-126), dr:copy-states-checklist.md SF3 (69-72). Coherentes.
+- **Confirmaciones frente a deshacer:** md:principles.md P17 (158), md:reasoning-examples.md 71, md:pages/user-account.md Settings (74), interaction-creation.md Editor (84), management-admin.md Admin (124-126), dr:copy-states-checklist.md SF3 (69-72). Coherentes.
 - **Estados vacíos:** md:principles.md P29, md:pages/states-system.md `## Empty state`, md:implementation.md §3 (89), dr:copy-states-checklist.md SF2. Coherentes.
 - **Paginación vs scroll infinito:** content-navigation.md 36 y 175 ("Load more"), implementation.md §3 (URL). Coherentes.
-- **Enlaces de cabecera:** md:sections/header.md 92 ("At most 5 links") frente a md:pages/entry-marketing.md Home (routing por público, "Familiar structure"). No contradicción: la cabecera de sección es para páginas que persuaden; la home necesita rutas. Falta una regla para webs con muchas páginas.
-- **Menú en tablet con 44 px:** md:responsive.md 66 y md:sections/header.md 102 piden enlaces en línea solo si caben con objetivos de 44 px. Coherente con `tokens.md` §5 como SHOULD.
+- **Enlaces de cabecera:** md:sections/header.md 25 ("At most 5 links") frente a md:pages/entry-marketing.md Home (routing por público, "Familiar structure"). No contradicción: la cabecera de sección es para páginas que persuaden; la home necesita rutas. Falta una regla para webs con muchas páginas.
+- **Menú en tablet con 44 px:** md:responsive.md 66 y md:sections/header.md 35 piden enlaces en línea solo si caben con objetivos de 44 px. Coherente con `tokens.md` §5 como SHOULD.
 - **Dial por página:** ver **CONTRADICCIÓN** en `03-psychology-persuasion.md` (gravedad alta).
 
 ## 4. Dueño propuesto

@@ -25,7 +25,7 @@ Convenciones: ver `01-reasoning.md`. "md:" = `modern-design/references/`, "dr:" 
 | md:sections/final-cta.md | `## Content` | 13-23 | Reformular la promesa, repetir la oferta, ninguna información nueva | regla | — |
 | md:sections/benefits.md | `## Content` | 13-21 | Beneficio, mecanismo y prueba; orden por las preguntas del visitante | regla | — |
 | md:pages/entry-marketing.md | `### Implementation` (Landing) | 58-62 | Variantes A/B servidas desde el servidor, no por un script que oculta la página | regla | — |
-| design-review/SKILL.md | `## Process` (Mode 2, paso 5, promise check) | 28-62 (140) | La promesa de la primera página se mantiene en las demás | regla | — |
+| design-review/SKILL.md | `## Process` (Mode 2, paso 5, promise check) | 28-62 (60) | La promesa de la primera página se mantiene en las demás | regla | — |
 | md:reasoning-examples.md | `## 1. SaaS for small dental clinics` · `## 2. Online running-shoe store` | 16-38 · 39-59 | La promesa aplicada a un flujo completo | ejemplo | — |
 
 ## 2. Cobertura
@@ -35,7 +35,7 @@ Convenciones: ver `01-reasoning.md`. "md:" = `modern-design/references/`, "dr:" 
 ## 3. Duplicados y contradicciones
 
 - **Message match:** md:principles.md P16 (148-153), md:pages/entry-marketing.md Landing "Levers" (27), md:reasoning.md §1, md:sections/hero.md `## Content` (titular en palabras del visitante). Coherentes.
-- **Número de planes:** md:principles.md P10 (107: "Application: 3 plans with one recommended") frente a md:reasoning-examples.md 215 ("A decoy third plan would be a mistake: she is comparing against the phone") y md:pages/entry-marketing.md 191 (si se compara con "no hacer nada", una estructura de tres niveles añade confusión). **CONTRADICCIÓN**: P10 lo da como aplicación sin condición y no remite al flip. Gravedad **baja** (cambia la redacción de P10, no lo que construye quien lee `pages/`).
+- **Número de planes:** md:principles.md P10 (107: "Application: 3 plans with one recommended") frente a md:reasoning-examples.md 25 ("A decoy third plan would be a mistake: she is comparing against the phone") y md:pages/entry-marketing.md 191 (si se compara con "no hacer nada", una estructura de tres niveles añade confusión). **CONTRADICCIÓN**: P10 lo da como aplicación sin condición y no remite al flip. Gravedad **baja** (cambia la redacción de P10, no lo que construye quien lee `pages/`).
 - **CTA arriba vs conversiones abajo:** md:pages/entry-marketing.md 49 y `docs/research/landing-field-guide/01_MANDATORY.md` 142. Coherentes.
 - **Medición:** "Signal it's working" en cada `pages/`, md:sections/forms.md `## Level-up` (inicios y fines por campo), md:sections/final-cta.md `## Level-up` (medir este CTA aparte). Dispersos y coherentes.
 
