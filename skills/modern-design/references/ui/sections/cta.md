@@ -29,9 +29,9 @@ Every page with an action. The CTA is a system repeated down the page (hero, aft
 
 | | Phone | Tablet | Desktop |
 |---|---|---|---|
-| Size | At least `--target-touch` (44 px) tall; full width inside the side padding is fine | At least `--target-touch` tall (touch-first); natural width, not stretched past about 480 px | `--control-height`, never under `--target-min` (24 px); side padding from the spacing scale |
+| Size | At least `--target-touch` tall; full width inside the side padding is fine | At least `--target-touch` tall (touch-first); natural width, not stretched past about 30rem (wider, it reads as a bar rather than a button) | `--control-height`, never under `--target-min`; side padding from the spacing scale |
 | Position | In thumb reach; a sticky bottom CTA can appear once the hero CTA scrolls out | As phone in portrait; inline in landscape | Inline; a sticky header CTA is enough |
-| Spacing | Targets under 24 px keep the spacing of WCAG 2.5.8 (`tokens.md` §5); `--space-inside` between primary and secondary | Same | `--space-inside` between primary and secondary |
+| Spacing | Targets under `--target-min` keep the spacing of WCAG 2.5.8 (`tokens.md` §5); `--space-inside` between primary and secondary | Same | `--space-inside` between primary and secondary |
 
 **Sticky mobile CTA (needs JavaScript):** appears after the hero CTA leaves the screen, hides when the final CTA or a form is visible, adds `env(safe-area-inset-bottom)` to its padding, and never covers the cookie banner, a submit button or the focused element. A short context line built from confirmed facts ("Free returns · 30 days") often helps more than the button alone.
 
@@ -46,7 +46,7 @@ Every page with an action. The CTA is a system repeated down the page (hero, aft
 | Default | Accent fill reserved for primary actions; label contrast at least 4.5:1 |
 | Hover | Inside `(hover: hover) and (pointer: fine)` only: slightly darker or lighter fill, 120–200 ms |
 | Active (pressed) | Immediate feedback on touch and mouse: darker fill or a slight press, 100–160 ms ease-out |
-| Focus-visible | 2–3 px outline with offset, at least 3:1 against the background |
+| Focus-visible | Outline of `--focus-width` at `--focus-offset`, at least 3:1 against the background |
 | Loading | Keep the label ("Sending…") with a spinner, and lock the width so nothing jumps |
 | Disabled | Avoid. Keep it enabled and explain what's missing on click |
 
@@ -56,7 +56,7 @@ Add `touch-action: manipulation` so taps fire without delay.
 
 - A real text label; icons alone need an accessible name.
 - Use `<button>` for actions and `<a>` for navigation.
-- MUST: targets at least `--target-min` (24 × 24 CSS px, WCAG 2.5.8), or spaced as its exception allows. SHOULD: `--target-touch` (44 px) for the primary action under `(pointer: coarse)` (`tokens.md` §5).
+- MUST: targets at least `--target-min` (WCAG 2.5.8), or spaced as its exception allows. SHOULD: `--target-touch` for the primary action under `(pointer: coarse)` (`tokens.md` §5).
 
 ## Critical errors
 

@@ -41,8 +41,8 @@ In builds without real data, use placeholders for legal details and contact info
 | | Phone | Tablet | Desktop |
 |---|---|---|---|
 | Columns | Stacked lists; accordions only for large footers | 2–3 columns | 4–5 columns |
-| Links | Each at least `--target-min` (24 × 24 CSS px, MUST), or spaced as WCAG 2.5.8 allows; padding to reach `--target-touch` (44 px) when a link is a main way out of the page (SHOULD) | Same | At least `--target-min`, with padding |
-| Text | 13–14 px, contrast at least 4.5:1 | Same | Same |
+| Links | Each at least `--target-min` (MUST), or spaced as WCAG 2.5.8 allows; padding to reach `--target-touch` when a link is a main way out of the page (SHOULD) | Same | At least `--target-min`, with padding |
+| Text | `--text-small`, contrast at least 4.5:1 | Same | Same |
 | Padding | `--space-section` vertical (its phone size), plus `env(safe-area-inset-bottom)` when content touches the bottom edge | `--space-section` | `--space-section` |
 
 ## States and interaction

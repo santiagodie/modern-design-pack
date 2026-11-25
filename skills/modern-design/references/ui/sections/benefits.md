@@ -39,13 +39,13 @@ Pages that persuade, as the core argument. Experience pages may tell the same th
 
 | | Phone | Tablet | Desktop |
 |---|---|---|---|
-| Alternating rows | One column: headline, text, then the visual | Portrait: stacked, or two columns only if the text column keeps about 320 px. Landscape: two columns | Two columns; text column 480–560 px; 64–120 px between rows |
+| Alternating rows | One column: headline, text, then the visual | Portrait: stacked, or two columns only if the text column keeps about 20rem (narrower, the text becomes a thin strip beside the visual). Landscape: two columns | Two columns; text column about 30–35rem, so its lines stay within the reading measure; `--space-between` between rows |
 | Bento | One column, largest tile first | Two columns | Three or four columns; one tile about twice the others |
 | Tabs | Become an accordion or stacked blocks | Tabs if labels fit on one line; otherwise accordion | Tabs or pinned scroll story |
 | Screenshots | Cropped so their text stays legible | Same | Same; never a whole dashboard shrunk |
-| Section padding | 48–80 px | 64–96 px | 96–160 px |
+| Section padding | `--space-section` | `--space-section` | `--space-section` |
 
-Spacing inside a block (title to text) must be clearly smaller than spacing between blocks; a ratio of about 1:3 works. Section heading 26–32 px on phones, 36–48 px on desktop, with at most two lines of intro.
+Spacing inside a block (title to text, `--space-inside`) must be clearly smaller than spacing between blocks (`--space-between`); a ratio of about 1:3 works. Section heading `--text-headline`, with at most two lines of intro.
 
 ## States and interaction
 

@@ -43,9 +43,9 @@ Precise numbers read as more credible than round ones for small counts; round nu
 | Logos | 2–3 per row in a wrapped grid, or a horizontally scrollable row with a visible edge | One row of 4–6 | One row of 5–8 |
 | Rating or count | One line, under the CTA or right below the hero | Same | Same, or beside the CTA |
 | Position | Right below the hero so it peeks into the first screen | Same | Same |
-| Spacing | 24–32 px between logos | 32–40 px | 32–48 px; 32–64 px from the hero CTA |
+| Spacing | `--space-between` between logos | Same | Same; `--space-between` or more from the hero CTA |
 
-Logo container about 24–40 px tall. Equalise **visual weight**, not width: a wide wordmark and a square mark need different sizes to look equal. Label ("Trusted by teams at") 12–14 px in a muted color that still meets contrast.
+Logo container about 1.5–2.5rem tall (enough to read a wordmark without competing with the headline). Equalise **visual weight**, not width: a wide wordmark and a square mark need different sizes to look equal. Label ("Trusted by teams at") `--text-label` in a muted color that still meets contrast.
 
 ## States and interaction
 

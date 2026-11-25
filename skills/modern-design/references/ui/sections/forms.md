@@ -31,11 +31,11 @@ Every page that persuades needs a mechanism: a form, a sign-up, a checkout, or a
 
 | | Phone | Tablet | Desktop |
 |---|---|---|---|
-| Width | Full width inside the side padding | Max about 480–560 px | 320–480 px; never stretched across the page |
-| Fields | `--control-height-touch`, at least `--target-touch` (44 px) tall; font 16 px or more | Same; two short related fields side by side (postcode and city) only when both stay readable | `--control-height` with a fine pointer, never under `--target-min` (24 px) |
+| Width | Full width inside the side padding | Max about 30–35rem | 20–30rem; never stretched across the page (a field much wider than its answer is harder to scan) |
+| Fields | `--control-height-touch`, at least `--target-touch` tall; font `--text-body` or larger (iOS zooms the page on focus when an input's text is under 16 px) | Same; two short related fields side by side (postcode and city) only when both stay readable | `--control-height` with a fine pointer, never under `--target-min` |
 | Keyboard | Right `type`, `inputmode`, `autocomplete` and `enterkeyhint`; the submit button stays reachable when the keyboard is open | Same; hardware keyboards are common | Logical tab order |
 | Position | Inline for small offers; a separate step or screen for big ones | Same | Beside the reassurance or proof |
-| Spacing | Label to field 6–8 px; field to field 16–24 px; last field to button 24–32 px | Same | Same |
+| Spacing | Label to field `--space-inside`; field to field `--space-between`; last field to button `--space-between` or more | Same | Same |
 
 ## States and interaction
 

@@ -37,12 +37,12 @@ The more ready to act the visitor is, the fewer exits the header should offer.
 
 | | Phone | Tablet | Desktop |
 |---|---|---|---|
-| Height | 52–64 px | 56–64 px | 56–72 px |
-| Content | Logo, primary action as a visible small button, menu button | Inline links only if they all fit with `--target-touch` (44 px) targets; otherwise the phone pattern with a visible CTA | Logo left, links, CTA right |
+| Height | `--header-height` | `--header-height` | `--header-height` (a larger desktop value is set in the token file) |
+| Content | Logo, primary action as a visible small button, menu button | Inline links only if they all fit with `--target-touch` targets; otherwise the phone pattern with a visible CTA | Logo left, links, CTA right |
 | Menu | Full-height sheet with rows at least `--target-touch` tall, the CTA repeated at the bottom | Same sheet, or inline links when they fit | Inline; dropdowns only when unavoidable, opening on click and focus, not hover alone |
-| Sticky behaviour | Hide on scroll down, reveal on scroll up; pad with `env(safe-area-inset-top)` when fixed | Same as phone in portrait; shrink in landscape | Optional; shrink 8–16 px on scroll |
+| Sticky behaviour | Hide on scroll down, reveal on scroll up; pad with `env(safe-area-inset-top)` when fixed | Same as phone in portrait; shrink in landscape | Optional; shrink by a step of the spacing scale on scroll |
 
-Keep horizontal padding equal to the page container, and 24–40 px between links. The logo should read at about the weight of the nav text, not dominate it.
+Keep horizontal padding equal to the page container (`--gutter`), and `--space-between` between links. The logo should read at about the weight of the nav text, not dominate it.
 
 ## States and interaction
 
@@ -64,7 +64,7 @@ When the brief or stack rules out JavaScript:
 
 - Show the links inline on phones when they fit with `--target-touch` targets (a second row under the name works for 3–5 short links). When they don't fit, build the menu with `<details>` and `<summary>`: it opens and closes with the keyboard and announces its state without a script. Keep the primary action outside it.
 - Use real anchor or page links, never `href="#"` with a handler.
-- Skip hide-on-scroll and the transparent-to-solid change. Choose a header that works in one state: solid background, sticky with `position: sticky` only when the screen is tall enough (for example from about 560 px of height), or not sticky at all.
+- Skip hide-on-scroll and the transparent-to-solid change. Choose a header that works in one state: solid background, sticky with `position: sticky` only when the screen is tall enough (for example from about 35rem of viewport height: on shorter screens, such as a phone in landscape, a sticky bar takes too much of the view), or not sticky at all.
 
 ## Critical errors
 

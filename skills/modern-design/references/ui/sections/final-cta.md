@@ -32,9 +32,9 @@ Long pages that persuade. Short pages for visitors who arrive ready to act may e
 | | Phone | Tablet | Desktop |
 |---|---|---|---|
 | Band | Full width, contrasting background | Same | Same |
-| Content | Left-aligned or centered, full-width button in thumb reach | Centered, max about 560–640 px | Centered, max about 640–720 px |
-| Padding | 48–80 px | 64–96 px | 96–160 px |
-| Headline | 28–36 px | 32–44 px | 36–56 px |
+| Content | Left-aligned or centered, full-width button in thumb reach | Centered, max about 35–40rem | Centered, max about 40–45rem (a narrow block keeps the headline and the button reading as one unit) |
+| Padding | `--space-section` | `--space-section` | `--space-section` |
+| Headline | `--text-headline` | `--text-headline` | `--text-headline` |
 | Sticky CTA | Hides when this section is visible | Same | — |
 
 **Background:** use a contrasting band from the palette (a dark band on a light page, or the brand color). Use a gradient only when the brand itself uses one; gradient bands as decoration read as generic (checklist CO2).
