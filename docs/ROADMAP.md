@@ -64,6 +64,7 @@ Claims kept out of the skills, or left as they are, until checked at a primary s
 - Tailwind v4's single `--spacing` base variable.
 - Android's 48 dp minimum target.
 - From Modern Web Guidance: the "maximum within 2.5× the minimum" rule for fluid type; `<meta name="text-scale">`; a Chromium bug with `oklch` neutrals; forced colours removing `box-shadow`; Safari's `accent-color` caveat; support for `contrast-color()`, `text-box`, `corner-shape`, `hyphenate-limit-chars`, `font-size-adjust: from-font` and container style queries.
+- EN 301 549: version in force and the WCAG version it references.
 
 ## Phase 4: Tests with real briefs
 
