@@ -40,7 +40,7 @@ Ship this before the first component, and give each line a reason in the code wh
 ## Phone (up to about 600 px)
 
 - Put primary actions where the thumb reaches easily: lower and centered, not in the top corners.
-- Touch targets at least 44–48 px, with at least 8 px between neighbours. WCAG 2.2 AA sets 24×24 px as the floor.
+- Touch targets: MUST be at least 24 × 24 CSS px (WCAG 2.2, 2.5.8, AA). A smaller target passes only when a 24 px circle centred on it doesn't overlap another target or that target's circle, or when another exception of 2.5.8 applies (inline in text, an equivalent control, browser default, essential). SHOULD be 44 × 44 px for primary actions under `(pointer: coarse)`: that is the AAA level of 2.5.5 and Apple's default control size. The size and spacing come from the target tokens (`tokens-space.md`).
 - Order content for reading: the headline and main action before the hero visual in most cases.
 - Primary buttons can go full width inside the side padding.
 - Add up all sticky chrome (header, announcement bar, cookie bar, chat bubble, sticky CTA). Together it should leave most of the screen for content; hide the header on scroll down when it doesn't.

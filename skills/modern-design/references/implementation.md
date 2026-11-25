@@ -100,7 +100,7 @@ The layers match the four levels in `docs/ARCHITECTURE.md` (tokens, components, 
 | Pages | Layouts (marketing, app shell, docs, auth, checkout) and the routes that compose sections and load their data | `pages/` |
 
 - SHOULD: before creating a component, section or page, check the inventory in `site-decisions.md` for one to reuse or extend.
-- SHOULD: define tokens once in a tool-neutral form and expose them as CSS custom properties; the W3C Design Tokens format reached its first stable version (2025.10). Use tiers: base values, then semantic roles, then component tokens; themes swap only the semantic tier.
+- SHOULD: define tokens once in a tool-neutral form and expose them as CSS custom properties (`tokens.md`); for several platforms, use the Design Tokens Community Group format 2025.10 (a community group report, not a W3C standard). Use tiers: base values, then semantic roles, then component tokens; themes swap only the semantic tier.
 - SHOULD: own the component source (the shadcn/ui model) instead of wrapping a library and fighting its styles, and keep one prop vocabulary across components (`size`, `variant`).
 - SHOULD: make components responsible for their own responsive behavior with container queries, and let layouts own the space between them.
 - SHOULD: keep one source for business catalogues used on several pages (plans and prices, navigation, legal versions, the cookie list), so pricing, checkout and billing never disagree.
@@ -138,7 +138,7 @@ Target WCAG 2.2 AA. Under the European Accessibility Act, B2C commerce in the EU
 - MUST: manage focus when the view changes, keep a visible focus indicator with at least 3:1 contrast, and make background content inert behind a modal.
 - MUST: honour `prefers-reduced-motion` for every kind of motion, without hiding content.
 - MUST: build forms as [`sections/forms.md`](sections/forms.md#accessibility) says: persistent labels, errors linked to their field, an error summary on submit, and the right `autocomplete` and `inputmode` (its "Accessibility" section and keyboard row). Two points it doesn't spell out: put format hints above the field, linked with `aria-describedby`, where the on-screen keyboard and autofill can't cover them; and keep `aria-invalid` in sync with the error on screen, set and cleared together.
-- MUST: keep text contrast at 4.5:1 (3:1 for large text) and touch targets at least 24 × 24 px (44 px on touch-first layouts).
+- MUST: keep text contrast at 4.5:1 (3:1 for large text) and pointer targets at least 24 × 24 CSS px, or spaced as WCAG 2.5.8 allows. SHOULD: 44 × 44 px for primary actions under `(pointer: coarse)` (`tokens-space.md`).
 - SHOULD: announce results that arrive later (search counts, saved states, new messages) in a live region.
 
 ## 8. Legal minimum

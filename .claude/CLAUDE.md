@@ -35,6 +35,9 @@ Split a skill only when its `SKILL.md` grows past ~500 lines or it triggers badl
 - Nothing outside the plugin. Skills may read each other's files inside the plugin (for example `${CLAUDE_SKILL_DIR}/../modern-design/references/sections/`), but never paths outside the plugin root, because installed plugins are copied to a cache without anything around them. A skill that reads another skill's files must keep working when they're missing. No symlinks anywhere in the repo.
 - Descriptions stay under 1024 characters and must not overlap with each other.
 - Never copy concepts, names or solutions from the briefs and results in `docs/examples/` into `skills/` as examples. Keep the examples in the references varied, and don't repeat a business or concept across files. Reason: in tests 3a, no-invention 1 and no-invention 2, the bakery examples in the references made the builds converge (the same "flour" white, the same hours board).
+- Businesses already used as examples (a living list: grep `skills/` and `docs/examples/` before adding an example, and add every new one here). A new example uses a business that isn't on it.
+  - In `skills/` and `docs/examples/`: bakery (and chocolate maker), veterinary clinic, bicycle repair workshop, physiotherapy practice, warehouse dashboard, ferry line, sailing school, logistics and night-shift dispatch, translation agency, language school, fishmonger, florist, coffee roaster and café, ceramics studio, wine shop, dental clinic booking tool, running-shoe shop, internal support console, hotel (real cases in `ethics.md` and `principles.md`).
+  - In the reference skills we draw from: guesthouse, restaurant, yoga studio, brewery, bike shop, coffee beans, beauty spa, "Ops Console" dashboard, AI search homepage, the "daily-grind" coffee shop, allergy-aware recipe app.
 
 ## Checks and releases
 
