@@ -45,15 +45,17 @@ Lo que no encaja en ninguna de las trece ramas: el mecanismo de archivos de proy
 - **Conocidas:** impeccable `document.md` (DESIGN.md como registro); Hallmark `references/design-md.md` (bloquear el sistema en un archivo) y su `.hallmark/` (preflight, log, before).
 - **Nuevas:** ninguna.
 
-## Erratas y notas anotadas (sin corregir)
+## Erratas y notas anotadas
 
-- `modern-design/references/reasoning.md` 165: "(pending: `motion.md`)", aunque el archivo existe como esqueleto. 166: "(pending: styles.md)", archivo inexistente. 172: "P18 accessibility.." con doble punto.
-- `modern-design/references/sections/index.md` 58: "see `../tokens.md` when it has content"; `tokens.md` ya tiene contenido.
-- `modern-design/references/pages/legal.md` 119: "(pending: tokens.md / styles.md)" para el detalle de consentimiento, que ya está en `implementation.md` §8 y en la propia entrada (`### Implementation`).
-- `modern-design/references/pages/entry-marketing.md` 34 y 179: secciones del lote B pendientes (correcto, pero conviene revisar cuando existan).
-- `modern-design/references/implementation.md` 93 y 204: un archivo de skill remite a `docs/ARCHITECTURE.md` y `docs/SOURCES.md` (documentos del repositorio). Los archivos de `design-review` lo hacen con URL absolutas de GitHub en "Attribution".
-- `modern-design/references/motion.md`: esqueleto con TODO y "Sources to merge"; `resources.md`: cuatro TODO; `modern-design/SKILL.md` 55: `## Rules` en TODO.
-- `modern-design/references/pages/interaction-creation.md` 37: el análisis de HubSpot (datos de empresa) se marca [A]; por la escala de `principles.md` sería [B].
-- `modern-design/references/pages/content-navigation.md` 7: la cabecera del grupo dice "medium to low", pero Product page es "high".
-- `modern-design/references/pages/commerce-purchase.md` 9 y `commerce-after-purchase.md` 9: cabecera de grupo duplicada (intencionado).
-- Archivos sin la cabecera fija: ver `00-index.md` §5.
+Estado tras la rama `fix-contradictions` (commit `fix: typos from knowledge audit` salvo que se diga otro):
+
+- `modern-design/references/reasoning.md` 165: "(pending: `motion.md`)", aunque el archivo existe como esqueleto. 166: "(pending: styles.md)", archivo inexistente. 172: "P18 accessibility.." con doble punto. **Corregidas** las tres (motion.md marcado como esqueleto; styles.md sigue pendiente, ahora con el mismo formato).
+- `modern-design/references/sections/index.md` 58: "see `../tokens.md` when it has content"; `tokens.md` ya tiene contenido. **Corregida.**
+- `modern-design/references/pages/legal.md` 119: "(pending: tokens.md / styles.md)" para el detalle de consentimiento, que ya está en `implementation.md` §8 y en la propia entrada (`### Implementation`). **Corregida:** ahora enlaza ambos.
+- `modern-design/references/pages/entry-marketing.md` 34 y 179: secciones del lote B pendientes (correcto, pero conviene revisar cuando existan). **Sin cambio:** no es errata.
+- `modern-design/references/implementation.md` 93 y 204: un archivo de skill remite a `docs/ARCHITECTURE.md` y `docs/SOURCES.md` (documentos del repositorio). Los archivos de `design-review` lo hacen con URL absolutas de GitHub en "Attribution". **Corregida:** 93 ya no nombra el documento; 204 usa la URL absoluta de GitHub, como `design-review`.
+- `modern-design/references/motion.md`: esqueleto con TODO y "Sources to merge"; `resources.md`: cuatro TODO; `modern-design/SKILL.md` 55: `## Rules` en TODO. **Sin cambio:** trabajo pendiente, no errata.
+- `modern-design/references/pages/interaction-creation.md` 37: el análisis de HubSpot (datos de empresa) se marca [A]; por la escala de `principles.md` sería [B]. **Corregida** a [B] (datos de empresa).
+- `modern-design/references/pages/content-navigation.md` 7: la cabecera del grupo dice "medium to low", pero Product page es "high". **Corregida** en `fix(dial): single scale and single owner per page`: la cabecera nombra la excepción.
+- `modern-design/references/pages/commerce-purchase.md` 9 y `commerce-after-purchase.md` 9: cabecera de grupo duplicada (intencionado). **Sin cambio**; las dos copias se actualizaron igual en el commit del dial.
+- Archivos sin la cabecera fija: ver `00-index.md` §5. **Sin cambio:** se añade al revisar cada archivo.

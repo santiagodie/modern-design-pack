@@ -34,7 +34,7 @@ That their effort is respected: asked only what's needed, saved, and confirmed.
 - [A] GOV.UK "one thing per page": start with one question, piece of information or decision per page, merge only when research shows it helps. Benefits reported: less overwhelm on small screens, simpler errors, simpler check-answers pages; users in GOV.UK Forms research welcomed it. https://www.gov.uk/service-manual/design/form-structure
 - [A] GOV.UK error pattern: error summary at the top that receives focus, plus a message next to each field; add "Error:" to the page title; avoid native HTML5 validation bubbles for consistency and accessibility. https://design-system.service.gov.uk/patterns/validation
 - [A] "Check your answers" before submitting medium/long forms; tested with visually impaired users, the label–answer–change rhythm let them correct mistakes efficiently.
-- [A] HubSpot's analysis of 40,000+ landing pages: field *type* matters more than count; multiple text areas and dropdowns hurt most (see `../sections/forms.md`).
+- [B] HubSpot's analysis of 40,000+ landing pages: field *type* matters more than count; multiple text areas and dropdowns hurt most (see `../sections/forms.md`).
 - [B] Expedia: one ambiguous optional field reportedly cost ~$12M/year.
 - [C] Autosave long forms; show "saved" status.
 
