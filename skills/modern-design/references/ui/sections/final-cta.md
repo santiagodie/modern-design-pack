@@ -1,5 +1,11 @@
 # Final CTA
 
+> **Covers:** The final call to action that closes the page: job, when it applies, content, layout per device, states and interaction, accessibility, critical and common errors, level-up, generic-pattern watch and style notes.
+> **Read when:** step 3 of `modern-design`, when building or restyling this section; `design-review` may read it to check it.
+> **Not here:** which sections a page needs → references/ui/sections/index.md; token values → references/ui/tokens.md; the phone, tablet and desktop baseline → references/engineering/responsive.md; the button system → references/ui/sections/cta.md
+> **Owner:** modern-design
+> **Sources:** the author's landing field guide (docs/research/landing-field-guide/, MIT), written in our own words; full list in docs/SOURCES.md
+
 Reference for `modern-design`, step 3. `design-review` may also read it to check this component.
 
 ## Job

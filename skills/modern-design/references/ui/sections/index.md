@@ -1,5 +1,11 @@
 # Sections
 
+> **Covers:** the catalogue of sections for pages that persuade: how to use it, which sections each page job needs, the priority matrix, possible content, statistics and the rules shared by every section.
+> **Read when:** step 3 of `modern-design`, first, before any section file.
+> **Not here:** the page structure → the brief, from references/strategy/direction.md; the rules of one section → its own file in references/ui/sections/; phone, tablet and desktop → references/engineering/responsive.md; reusable pieces → references/ui/components/ (planned)
+> **Owner:** modern-design
+> **Sources:** the author's landing field guide (docs/research/landing-field-guide/, MIT), written in our own words; full list in docs/SOURCES.md
+
 Reference for `modern-design`, step 3. Load this file first, then only the file of each section you are about to build, plus `../../engineering/responsive.md`. These files cover whole page sections; reusable pieces (buttons, cards, inputs on their own) will live in a separate `components/` folder in a later batch.
 
 > **Order of authority:** ethics (`ethics.md` and `content-truth.md`, hard limits) > `site-decisions.md` (what exists and what the user decided) > `design-brief.md` > `reasoning.md` and `design-reasoning.md` (method for writing the brief) > the other references (`principles.md`, `pages/`, `sections/`, `implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
