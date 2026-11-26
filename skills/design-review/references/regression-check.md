@@ -27,7 +27,7 @@ Screenshots show how a page looks. They don't show that a link, a field or a hea
 1. **Before.** Serve the page as it is (`visual-qa.md`, "Serve over HTTP"), open it, set reduced motion, resize to 1440 × 900 and run `scroll-check.js`. Open any menu, tab or disclosure whose links should be counted. Then pass `scripts/inventory.js` to `playwright-cli --raw eval` (`visual-qa.md`, "How to run the scripts") and save the output as `inventory-<page>-before.json` in the screenshot folder. Take the before screenshots at the same time.
 2. **Change** the page.
 3. **After.** Open the same path at the same width, repeat the same steps and save `inventory-<page>-after.json`.
-4. **Compare** with `scripts/inventory-diff.js`, run with Node outside the page, with the before file first and the after file second. From another skill, the script is at `${CLAUDE_SKILL_DIR}/../design-review/scripts/inventory-diff.js`. It prints `lost`, `changed` and `added`, and exits with 1 when `lost` is not empty.
+4. **Compare** with `scripts/inventory-diff.js`, run with Node outside the page, with the before file first and the after file second. From another skill, it is the same `scripts/inventory-diff.js`, inside the design-review skill folder, which sits next to the calling skill's folder. It prints `lost`, `changed` and `added`, and exits with 1 when `lost` is not empty.
 5. **Several pages:** one pair of inventories per page, compared page by page.
 
 **Why:** the same width, the same path and the same open menus make the two inventories comparable; a difference then means the page changed, not the setup.
