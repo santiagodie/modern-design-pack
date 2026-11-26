@@ -4,6 +4,7 @@
  * Changed: the same item with different text (a link's text, a field's label or type, a heading's words, a button's label, the title).
  * Returns: JSON on stdout with lost, changed, added and counts; exit code 1 when lost is not empty.
  * Reads only the two files named on the command line; writes nothing.
+ * Every item is first turned into a plain object { key, text, label }; one function then compares those lists, with strings only.
  * Used from: references/regression-check.md. Run with Node, outside the page: node inventory-diff.js before.json after.json
  */
 const fs = require('fs');
@@ -25,24 +26,64 @@ const after = parseInventory(fs.readFileSync(afterPath, 'utf8'));
 
 const out = { lost: [], changed: [], added: [] };
 
-// Pair two lists: exact matches first, then the same key with different text (changed), then leftovers (lost, added).
-function pair(kind, b, a, key, text, show) {
-  const left = (b || []).slice();
-  const right = (a || []).slice();
+// 1. Normalise each kind to { key, text, label }.
+function linkItems(list) {
+  const items = [];
+  for (const l of list || []) items.push({ key: l.href, text: l.text, label: `${l.href} ("${l.text}")` });
+  return items;
+}
+function fieldKey(f) {
+  if (f.name) return 'name=' + f.name;
+  if (f.id) return 'id=' + f.id;
+  return `${f.type} "${f.label || ''}"`;
+}
+function fieldItems(list, formKey) {
+  const items = [];
+  for (const f of list || []) items.push({ key: fieldKey(f), text: `${f.type}, label "${f.label || ''}"`, label: `${fieldKey(f)} in ${formKey}` });
+  return items;
+}
+function buttonItems(list) {
+  const items = [];
+  for (const b of list || []) items.push({ key: `${b.form || 'page'} ${b.type}`, text: b.text, label: `${b.type} "${b.text}"${b.form ? ' in ' + b.form : ''}` });
+  return items;
+}
+function headingItems(list) {
+  const items = [];
+  for (const h of list || []) items.push({ key: 'h' + h.level, text: h.text, label: `h${h.level} "${h.text}"` });
+  return items;
+}
+function landmarkItems(list) {
+  const items = [];
+  for (const l of list || []) items.push({ key: l.role, text: l.label || '', label: `${l.role}${l.label ? ' "' + l.label + '"' : ''}` });
+  return items;
+}
+
+// 2. Compare two normalised lists: exact matches first, then the same key with different text (changed), then leftovers (lost, added).
+function indexOfExact(list, key, text) {
+  for (let j = 0; j < list.length; j++) if (list[j].key === key && list[j].text === text) return j;
+  return -1;
+}
+function indexOfKey(list, key) {
+  for (let j = 0; j < list.length; j++) if (list[j].key === key) return j;
+  return -1;
+}
+function compare(kind, beforeItems, afterItems) {
+  const left = beforeItems.slice();
+  const right = afterItems.slice();
   for (let i = left.length - 1; i >= 0; i--) {
-    const j = right.findIndex(r => key(r) === key(left[i]) && text(r) === text(left[i]));
+    const j = indexOfExact(right, left[i].key, left[i].text);
     if (j >= 0) { left.splice(i, 1); right.splice(j, 1); }
   }
   for (let i = 0; i < left.length; i++) {
-    const j = right.findIndex(r => key(r) === key(left[i]));
+    const j = indexOfKey(right, left[i].key);
     if (j >= 0) {
-      out.changed.push({ kind, item: show(left[i]), before: text(left[i]), after: text(right[j]) });
+      out.changed.push({ kind, item: left[i].label, before: left[i].text, after: right[j].text });
       left.splice(i, 1); i--;
       right.splice(j, 1);
     }
   }
-  left.forEach(x => out.lost.push({ kind, item: show(x) }));
-  right.forEach(x => out.added.push({ kind, item: show(x) }));
+  for (const x of left) out.lost.push({ kind, item: x.label });
+  for (const x of right) out.added.push({ kind, item: x.label });
 }
 
 // Title and description: two fixed fields, compared one by one.
@@ -55,15 +96,17 @@ single('title', before.title, after.title);
 single('description', before.description, after.description);
 
 // Links.
-pair('link', before.links, after.links, l => l.href, l => l.text, l => `${l.href} ("${l.text}")`);
+compare('link', linkItems(before.links), linkItems(after.links));
 
 // Forms: matched by key, else by action and method; then their fields.
-const fieldKey = f => (f.name ? 'name=' + f.name : f.id ? 'id=' + f.id : `${f.type} "${f.label || ''}"`);
-const fieldText = f => `${f.type}, label "${f.label || ''}"`;
+function indexOfForm(forms, fb) {
+  for (let j = 0; j < forms.length; j++) if (forms[j].key === fb.key) return j;
+  for (let j = 0; j < forms.length; j++) if (forms[j].action === fb.action && forms[j].method === fb.method) return j;
+  return -1;
+}
 const formsAfter = (after.forms || []).slice();
 for (const fb of before.forms || []) {
-  let j = formsAfter.findIndex(fa => fa.key === fb.key);
-  if (j < 0) j = formsAfter.findIndex(fa => fa.action === fb.action && fa.method === fb.method);
+  const j = indexOfForm(formsAfter, fb);
   if (j < 0) {
     out.lost.push({ kind: 'form', item: `${fb.key} (${fb.method || ''} ${fb.action ?? 'no action'}, ${fb.fields.length} fields)` });
     continue;
@@ -71,14 +114,14 @@ for (const fb of before.forms || []) {
   const fa = formsAfter.splice(j, 1)[0];
   if (fa.action !== fb.action) out.lost.push({ kind: 'form action', item: `${fb.key}: ${fb.action ?? 'no action'} (now ${fa.action ?? 'no action'})` });
   if (fa.method !== fb.method) out.lost.push({ kind: 'form method', item: `${fb.key}: ${fb.method} (now ${fa.method})` });
-  pair('field', fb.fields, fa.fields, fieldKey, fieldText, f => `${fieldKey(f)} in ${fb.key}`);
+  compare('field', fieldItems(fb.fields, fb.key), fieldItems(fa.fields, fb.key));
 }
-formsAfter.forEach(fa => out.added.push({ kind: 'form', item: `${fa.key} (${fa.fields.length} fields)` }));
+for (const fa of formsAfter) out.added.push({ kind: 'form', item: `${fa.key} (${fa.fields.length} fields)` });
 
 // Buttons, headings, landmarks.
-pair('button', before.buttons, after.buttons, b => `${b.form || 'page'} ${b.type}`, b => b.text, b => `${b.type} "${b.text}"${b.form ? ' in ' + b.form : ''}`);
-pair('heading', before.headings, after.headings, h => 'h' + h.level, h => h.text, h => `h${h.level} "${h.text}"`);
-pair('landmark', before.landmarks, after.landmarks, l => l.role, l => l.label || '', l => `${l.role}${l.label ? ' "' + l.label + '"' : ''}`);
+compare('button', buttonItems(before.buttons), buttonItems(after.buttons));
+compare('heading', headingItems(before.headings), headingItems(after.headings));
+compare('landmark', landmarkItems(before.landmarks), landmarkItems(after.landmarks));
 
 out.counts = { lost: out.lost.length, changed: out.changed.length, added: out.added.length };
 console.log(JSON.stringify(out, null, 1));
