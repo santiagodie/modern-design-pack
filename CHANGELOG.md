@@ -135,6 +135,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Redesign check from `modern-design`: before the first change to an existing page, it takes the "before" inventory as `design-review/references/regression-check.md` describes and passes it as BASELINE to the review, which reports every loss as Floor.
 - `design-review/SKILL.md`, "Agent and context routing": the delegation message (MODE, TARGET, SCOPE, READ-LIST, PROJECT FILES, REPORT PATH, BASELINE), REPORT PATH per mode, and fixes kept in the main session.
 - Without subagents, both skills run the same steps in the main session.
+- `design-explorer` term format and section ranges: TERMS takes one term per line with synonyms after ` | `, all literal strings; each term and synonym is searched separately as literal text (a string starting with hyphens is still the pattern); a section ends at the next heading of any level; all matches are sorted before LIMIT applies; `terms` lists the literal strings found in each section, and `no_match` lists a term only when neither it nor any synonym appears. `modern-design/SKILL.md` gives the TERMS format.
+- Both `SKILL.md` files name each agent by its full plugin name (`modern-design-pack:design-writer`, `modern-design-pack:design-reviewer`, `modern-design-pack:design-explorer`) the first time, and by its short name after that.
 
 ### Changed (phase 3b)
 

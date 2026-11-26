@@ -27,7 +27,7 @@ When a URL points to the user's own project and its code is here, use own-projec
 
 ## Agent and context routing
 
-- When the Agent tool is available, delegate measuring and report writing to the design-reviewer agent. The delegation message has exactly these headings: MODE, TARGET, SCOPE, READ-LIST, PROJECT FILES, REPORT PATH, and BASELINE when there is one.
+- When the Agent tool is available, delegate measuring and report writing to the modern-design-pack:design-reviewer agent. The delegation message has exactly these headings: MODE, TARGET, SCOPE, READ-LIST, PROJECT FILES, REPORT PATH, and BASELINE when there is one.
 - READ-LIST starts with this SKILL.md (absolute path built from `echo "${CLAUDE_SKILL_DIR}"`), followed by references/review-method.md, references/visual-qa.md and references/audit-report.md. The reviewer decides which checklists apply by following this file.
 - PROJECT FILES: the design brief, site decisions and content-needed files in the project root. Do not pass the builder's report or plan.
 - REPORT PATH: in URL audits, the report path of Mode 2 step 6; in own-project mode, the review-notes file of Mode 1 step 7 in the project root. A hero review in own-project mode writes its notes instead to a Markdown file named review-notes-hero in the project's audits folder, in the own-project format; the full review that follows writes the review-notes file in the root and links to the hero notes in its summary. The reviewer writes the report in that mode's format and fixes nothing: every finding stays "not fixed". Fixing (Mode 1 steps 5 and 6) and changing a finding's status happen in this session.
