@@ -11,44 +11,76 @@
 
 <p align="center"><b>English</b> · <a href="README.es.md">Español</a></p>
 
-> **Early development.** `design-review` is written and has been through a first round of tests ([results](docs/examples/phase-2-results.md)). `modern-design` has its first step (direction and design brief) written and tested ([results](docs/examples/phase-3/phase-3-results.md)); its tokens, components and motion steps are still empty. See the [Roadmap](docs/ROADMAP.md).
+> **Early development (v0.1.0, not released yet).** Both skills work, but they are lightly tested, and motion guidance is not written yet. See [Known Limitations](#known-limitations) and the [Roadmap](docs/ROADMAP.md).
 
 ## Table of Contents
 
-- [About the Project](#about-the-project)
-- [Features](#features)
+- [What It Is](#what-it-is)
+- [What Works Today](#what-works-today)
+- [Requirements](#requirements)
 - [Installation](#installation)
 - [How It Works](#how-it-works)
-- [Skills](#skills)
+- [Principles](#principles)
 - [Project Structure](#project-structure)
 - [Known Limitations](#known-limitations)
 - [Credits](#credits)
 - [License](#license)
 - [Contact](#contact)
 
-## About the Project
+## What It Is
 
 There are too many design resources: component libraries, skill packs, galleries, font sites, animation kits, "unslop" checklists on social media. For a designer that is a toolbox. For someone who isn't a designer it is friction: you don't know which one to use, when, or how they fit together, so you end up with the same purple-gradient landing page as everyone else.
 
-This plugin puts those resources in order and applies them with judgement. It asks about the product and the audience first, looks at real sites on the web for reference, and then works through tokens, components, motion and review in a fixed sequence. Rules depend on context: a pattern that is a cliché for one product can be the right call for another.
+This plugin puts those resources in order and applies them with judgment. It asks about the product and the audience first, looks at real sites for reference, and then works through tokens, sections and review in a fixed order.
 
-## Features
+The goal is five skills that share one review method:
 
-Planned. None of this works yet.
+| Skill | Status | What it is for |
+|---|---|---|
+| `modern-design` | Available | Designing or redesigning a site, a landing page, an app screen or a flow: direction, tokens, sections, motion |
+| `design-review` | Available | Reviewing any interface: your own project (review, browser check, fixes) or a public URL (read-only audit with a report) |
+| `accessibility-review` | Planned | Accessibility review beyond what is visible in screenshots |
+| `seo-geo-optimizer` | Planned | Search and AI-answer visibility |
+| `content-web-optimizer` | Planned | Page copy and content |
 
-- **Context first:** a short brief (product, audience, tone, stack) that every later step follows.
-- **Live references:** searches the web for comparable sites and extracts principles from them, without cloning.
-- **Design tokens:** palette, type pairing, spacing, radii, shadows, light and dark themes.
-- **Components from proven sources:** sections and components adapted to the brief and the project's stack.
-- **Purposeful motion:** timing, easing and micro-interactions, and knowing when not to animate.
-- **Anti-slop review:** catches generic AI-made patterns before delivery.
-- **Visual QA:** real-browser screenshots at three widths, plus contrast, focus, overflow and empty states.
-- **Audit any URL:** a read-only review of any public site, returned as a report with critical issues, minor issues, outdated patterns, tips, proposals and alternatives. Each finding says whether it was measured or is design judgment.
-- **Bilingual triggers:** skills respond to requests in English and Spanish.
+What it is not: a component library, a template generator or a page builder. It doesn't write your business content (see [Principles](#principles)), and it doesn't review backend security; it tells you when a project needs that review.
+
+## What Works Today
+
+`modern-design`:
+
+- **Direction:** gathers context (product, audience, tone, stack), finds three to five comparable live sites, and writes a design brief with one committed direction and a central promise.
+- **Page reasoning:** twelve page-type guides (entry and marketing, commerce, account, legal, support and others), each with the user's moment, the main doubt the page must answer and when the usual advice flips.
+- **Tokens:** color (including a dark theme), typography and spacing, with focus, target size and reduced-motion tokens.
+- **Sections:** eight section types for pages that persuade (header, hero, call to action, social proof, benefits, forms, final call to action, footer), each with phone, tablet and desktop layouts.
+- **Implementation:** rendering per route, state, performance, accessibility and the legal minimum.
+- **Motion:** not written yet; the model follows the brief with its own judgment.
+
+`design-review`:
+
+- **Own project:** reviews the code against checklists of generic AI-made patterns and UI mistakes, checks the page in a real browser, fixes local issues and writes review notes.
+- **URL audit:** a read-only review of up to three public pages, saved as a report with critical issues, minor issues, outdated patterns, tips and proposals. Every finding says whether it was measured or is a judgment call.
+- **Browser check:** screenshots at 375, 768, 1024 and 1440 px (1920 only when lines or grids run edge to edge), touch emulated at the first three, reduced motion on, page scripts for overflow, target size, meta tags and mobile signals, a keyboard focus pass, and Lighthouse when Chrome is available.
+
+## Requirements
+
+- **Required:** [Claude Code](https://code.claude.com). The plugin needs no other plugin or skill.
+- **For the browser check in `design-review` and the reference screenshots in `modern-design`:** Node.js (LTS) with npm.
+  - `@playwright/cli` 0.1.25, installed globally with npm after the skill asks you. It downloads its own browser on first use.
+  - `serve` 14.2.8, run through `npx`, only for static sites without a dev server.
+- **For Lighthouse scores:** Google Chrome. Lighthouse 13.6.0 runs through `npx`.
+- **Network access:** for the `npx` and browser downloads, and for WebSearch and WebFetch in the direction step.
+
+What happens when something is missing:
+
+- **No Node.js:** `design-review` says so once and does a judgment review of the code or the HTML; every measurement is recorded as "not measured".
+- **No Chrome:** the report says Lighthouse didn't run and gives no scores.
+- **No browser in the direction step:** reference pages are read with WebFetch, and the brief says the visual comparison was skipped.
+- **Impeccable's `PRODUCT.md` and `DESIGN.md`:** read only when they already exist in your project; the plugin never writes them.
 
 ## Installation
 
-Requires [Claude Code](https://code.claude.com). In a Claude Code session:
+From GitHub, in a Claude Code session:
 
 ```text
 /plugin marketplace add santiagodie/modern-design-pack
@@ -72,11 +104,17 @@ To offer it to everyone working on a project, add this to the project's `.claude
 
 Each contributor accepts the workspace trust prompt and installs the plugin once per clone, for example with `claude plugin install modern-design-pack@santiagodie-plugins --scope project`.
 
-Skills trigger on their own from the description, or can be called directly, for example `/modern-design-pack:modern-design`, or `/modern-design-pack:design-review https://example.com` to audit a site.
+For local development, clone the repository and start Claude Code with the plugin loaded for that session:
+
+```bash
+claude --plugin-dir ./modern-design-pack
+```
+
+Run `/reload-plugins` after editing its files.
+
+Skills trigger on their own from their description, or can be called directly: `/modern-design-pack:modern-design`, or `/modern-design-pack:design-review https://example.com` to audit a site.
 
 ## How It Works
-
-Two skills: one builds, the other checks.
 
 ```mermaid
 flowchart LR
@@ -84,56 +122,60 @@ flowchart LR
     B -- issues found --> A
 ```
 
-`modern-design` works in five steps: direction, tokens, components, motion, then hand-off to `design-review`. Each step loads its own reference file only when that step is needed, so a request about colors does not pull in the motion guidance.
+- **`modern-design` steps:** direction, tokens, components (sections), motion, then hand-off to `design-review`. Each step loads only its own reference files.
+- **Hero first:** on a new site or page, only the hero of the main page is built first. `design-review` checks it, and the rest is built once you agree with the direction.
+- **Three subagents:**
+  - `design-explorer` (Haiku) locates text in your project and in the plugin's lists;
+  - `design-writer` (Sonnet) builds from the plan;
+  - `design-reviewer` (Sonnet) measures and writes the report in a clean context, and fixes nothing.
 
-`design-review` has two modes. On your own project it reviews, checks in a real browser and fixes. Given a public URL it runs a read-only audit (three pages at most, no logins) with screenshots at 375, 768 and 1440 px, an HTML read and Lighthouse when Chrome is available, and saves a report in `audits/`.
+  Your main session plans, decides and asks you questions; use the most capable model you have. Without the Agent tool, everything runs in the main session in the same order.
+- **Two `design-review` modes:** own project (review, browser check, fix, review notes) and URL audit (read-only, public pages only, three at most).
+- **Redesign check:** before an existing page changes, `design-review` records what it links to, submits and announces. After the change it compares; anything lost blocks delivery unless you removed it on purpose.
+- **Levels:** every finding is **Floor** (never ships: correctness, access, honesty), **Reflex** (a habit a model falls into, acceptable with a reason specific to the page) or **Finish** (craft detail, never blocks).
 
-**Context over rules.** Rules are written as "do X when Y", not as absolute bans. The user's decisions in `site-decisions.md`, then the brief from the direction step, decide when a rule applies.
+Details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-**Nothing invented.** `modern-design` never invents prices, figures, business texts, reviews, hours, addresses, legal details or photos, and declines when asked. Missing content becomes a visibly marked placeholder, listed in `content-needed.md`, and `design-review` treats every placeholder as blocking before publishing. This rule ranks above everything else, including the user's decisions.
+**Project files.** `modern-design` writes in your project root: `design-brief.md` (the direction), `site-decisions.md` (the standards in your code, an inventory of what exists, and your own decisions) and `content-needed.md` (what you still need to supply). `design-review` writes `review-notes.md` in your project, and URL audits go to `audits/`.
 
-**Project files.** `modern-design` writes three files in your project root: `design-brief.md` (the direction), `site-decisions.md` (the standards in your code, an inventory of what exists, and your own decisions, which rank above the brief) and `content-needed.md` (what you still need to supply).
+## Principles
 
-**Implementation.** `implementation.md` covers rendering per route, static site or app, state, reuse layers, performance, accessibility and the legal minimum. The plugin doesn't review backend security; it says when a project needs that review.
-
-**Subagents.** Three subagents do the heavy reading and writing: `design-explorer` (Haiku) locates text in your code, `design-writer` (Sonnet) builds from the plan, and `design-reviewer` (Sonnet) reviews in a clean context. The plugin doesn't choose the model of your main session, which plans, decides and asks you questions; use the most capable model you have. When your settings or your organization don't allow a subagent's model, Claude Code runs it on another one under its own rules. Without subagents, everything works the same in the main session.
-
-**References, not copies.** The direction step uses WebSearch to find comparable sites, WebFetch to read them, and Playwright screenshots to see them. It records the principles behind each reference and never its code, assets or copy.
-
-More detail in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
-
-## Skills
-
-| Skill | What it is for |
-|---|---|
-| `modern-design` | Entry point for designing or redesigning. Gathers context and live references, then sets direction, tokens (color, type, spacing), components and motion for the project. |
-| `design-review` | Reviews any interface. Own project: finds and fixes generic AI-made patterns and UI mistakes, with a real-browser check. Public URL: read-only audit with a full report. |
+- **Nothing invented.** Prices, figures, business texts, reviews, hours, addresses, legal details and photos are never made up. Missing content becomes a visibly marked placeholder, listed in `content-needed.md`, and `design-review` blocks publishing while any remain.
+- **You decide, except on ethics.** Your decisions in `site-decisions.md` rank above the brief and above the checklists. The only things above them are the hard limits: no invented content and no deceptive patterns.
+- **Reasoning over checklists.** Each page starts from what its visitor doubts and what it must prove. Rules are written as "do X when Y", and a pattern that is a cliché for one product can be the right call for another.
+- **References, not copies.** Live sites inform principles, never code, assets or copy.
 
 ## Project Structure
 
 ```text
 modern-design-pack/
-├── .github/workflows/
-│   └── skill-checks.yml     # NVIDIA SkillEvaluator checks on every push and PR
 ├── .claude-plugin/
 │   ├── plugin.json          # plugin manifest
 │   └── marketplace.json     # marketplace "santiagodie-plugins", lists this repo as "./"
-├── agents/                  # design-explorer, design-writer, design-reviewer (subagents)
+├── .github/workflows/
+│   └── skill-checks.yml     # NVIDIA SkillEvaluator checks on every push and PR
+├── agents/                  # design-explorer, design-writer, design-reviewer
 ├── skills/
 │   ├── modern-design/
 │   │   ├── SKILL.md
-│   │   └── references/      # direction, reasoning, reasoning-examples, pages/, principles, ethics, content-truth, implementation, responsive, sections/, templates/, tokens, motion, resources
+│   │   └── references/
+│   │       ├── reasoning.md, evidence.md, ethics.md, content-truth.md, resources.md
+│   │       ├── strategy/    # direction, design reasoning, principles, examples
+│   │       ├── ux/pages/    # twelve page-type guides
+│   │       ├── ui/          # tokens (color, dark, type, space), motion, sections/
+│   │       ├── engineering/ # implementation, responsive
+│   │       └── templates/   # site-decisions, content-needed
 │   └── design-review/
 │       ├── SKILL.md
-│       ├── references/      # review-method, unslop-type-color, unslop-layout, unslop-components, copy-states-checklist, mobile-checklist, outdated-checklist, dark-patterns-checklist, visual-qa, regression-check, audit-report
-│       └── scripts/         # page scripts run with playwright-cli eval
+│       ├── references/      # review method, checklists, visual QA, regression check, report format
+│       └── scripts/         # page scripts and the inventory comparison
 ├── assets/banner.svg
 ├── docs/
-│   ├── research/            # the author's landing page field guide, basis of the components
-│   ├── examples/            # test reports and screenshots from each phase
+│   ├── ARCHITECTURE.md      # skill flow, agents, levels, reference tree
+│   ├── ROADMAP.md
 │   ├── SOURCES.md           # every external source, with licence status
-│   ├── ARCHITECTURE.md      # skill flow and principles
-│   └── ROADMAP.md
+│   ├── examples/            # test reports and screenshots
+│   └── research/            # research behind the references
 ├── .claude/CLAUDE.md        # conventions for working on this repo
 ├── README.md / README.es.md
 ├── CHANGELOG.md
@@ -143,23 +185,23 @@ modern-design-pack/
 
 ## Known Limitations
 
-- **modern-design is incomplete:** direction, reasoning, the sections for pages that persuade, and implementation have content. Tokens and motion run on the model's default judgment, following the brief.
-- **New rules untested:** the no-invention rule, `site-decisions.md` and the implementation layer have not been tested in a full build yet (see the roadmap).
-- **Lightly tested:** `design-review` was tested on three public sites and one generated landing page, once or twice each, in non-interactive sessions ([results](docs/examples/phase-2-results.md)). Two rule changes made after the last round are not re-tested. Judgment calls and lab metrics vary between runs. Skill triggering from natural requests in English and Spanish is unverified.
-- **Partial licence audit:** only the sources used by `design-review` have been checked. The rest of `docs/SOURCES.md` is still `TO VERIFY` and is checked when each source is about to be used. No third-party text has been copied; ideas are rewritten and credited.
-- **Unidentified sources:** three of the anti-slop lists come from screenshots whose authors are not yet identified.
-- **Browser dependency:** the browser check in `design-review` and the screenshot part of the direction step will need Playwright, which is not set up by the plugin. Lighthouse in URL audits also needs Chrome; without it, the report says so and skips the measured scores.
+- **Motion is not written:** the motion step is a skeleton; the model follows the brief with its own judgment, using the motion token names the tokens step reserves.
+- **Sections for pages that operate are missing:** dashboards, tables and admin screens have page guides but no section files yet. Reusable components (buttons, cards, inputs) are not written either.
+- **Lightly tested:** `design-review` was tested on a few public sites and generated pages, and the no-invention rule in two rebuilds ([results](docs/examples/)). Not tested yet: the tokens step, `site-decisions.md` overriding a rule, the subagents and the hero-first review, and triggering from natural requests in English and Spanish. Judgment calls and lab metrics vary between runs.
+- **Reference research:** in non-interactive tests the browser couldn't open external sites; an interactive re-test is pending.
+- **Partial licence audit:** each source's licence is checked when it is about to be used; rows still marked `TO VERIFY` in `docs/SOURCES.md` are not checked yet. No third-party text has been copied beyond short credited quotes.
+- **Unidentified sources:** some anti-slop lists come from screenshots whose authors are not yet identified; they are credited as such.
 - **No icon:** the plugin has no listing icon yet.
 
 ## Credits
 
-This plugin organises ideas from many designers and open-source projects. The full list is in [docs/SOURCES.md](docs/SOURCES.md), and anything adapted will be credited with its licence in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+This plugin organises ideas from many designers and open-source projects. Every source is listed in [docs/SOURCES.md](docs/SOURCES.md), and adapted material is credited with its licence in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-Recommended companions (optional):
+Optional companions (not needed to use this plugin):
 
-- [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): a large searchable catalogue of styles, palettes and font pairings that fits alongside this plugin.
-- [Impeccable](https://impeccable.style) by Paul Bakaus: design commands and 60+ automated anti-pattern checks. It overlaps with `design-review`, which summarises some of its ideas in its own words but doesn't replicate its checks. Use Impeccable when you want that depth.
-- [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers: an agent skill with guides on native web platform features and the implementation mistakes agents make. `modern-design`'s `implementation.md` keeps only a short checklist and points to it; at its 1.0 release one agent ("Agent One") was reported to pass 60.8% of 19 checks with no guidance, 76.5% with the skill installed and 94.0% when the prompt named it ([Search Engine Journal](https://www.searchenginejournal.com/google-releases-modern-web-guidance-1-0-for-ai-coding-agents/596495/)). Use it alongside this plugin for implementation depth.
+- [Impeccable](https://impeccable.style) by Paul Bakaus: design commands and many automated anti-pattern checks. It overlaps with `design-review`, which summarises some of its ideas in its own words but doesn't replicate its checks.
+- [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers: an agent skill with guides on native web platform features and the mistakes agents make. `modern-design`'s implementation reference keeps a short checklist and points to it.
+- [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): a large searchable catalogue of styles, palettes and font pairings.
 
 ## License
 
