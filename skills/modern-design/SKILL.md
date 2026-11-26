@@ -53,7 +53,7 @@ The paths in this table are fixed: open them directly, do not search for them.
 
 ### Order of work
 
-- **Hero first.** On a new site or a new page, the first build delegation covers only the hero of the main page. Then run design-review with SCOPE hero, fix its Floor items, show the user the screenshots and the remaining findings, and build the rest once the user agrees with the direction.
+- **Hero first.** On a new site or a new page, the first build delegation covers only the hero of the main page. Then run design-review with SCOPE hero and, as REPORT PATH, the review-notes-hero file in the project's audits folder (the rule is design-review's), fix its Floor items, show the user the screenshots and the remaining findings, and build the rest once the user agrees with the direction.
 - **Existing pages.** Before the first change to a page that already exists, take the "before" inventory as regression-check.md describes, and pass it as BASELINE in the review step.
 
 ### Delegating
