@@ -63,7 +63,7 @@ flowchart TD
 - **Read receipt.** `design-writer` and `design-reviewer` read every READ-LIST file whole before acting and reply with one line per file: its line count, first heading and last heading, copied exactly. The orchestrator checks the last heading against the file with a Grep and sends the writer back when one is missing or wrong.
 - **BLOCKED when something is missing.** Each subagent checks the headings of its task message first and replies `BLOCKED: missing <section>` (or `BLOCKED: cannot read <path>`) instead of guessing.
 
-**Limits of plugin subagents that shape the design** (checked on 2026-11-26 in the official Claude Code documentation, read through a summary of the page; re-check the wording before quoting it):
+**Limits of plugin subagents that shape the design** (checked on 2026-11-26 against the text of the official page https://code.claude.com/docs/en/sub-agents):
 
 - They ignore the `hooks`, `mcpServers` and `permissionMode` frontmatter fields (also `initialPrompt`), so none of the three agents sets them. https://code.claude.com/docs/en/sub-agents#choose-the-subagent-scope and https://code.claude.com/docs/en/plugins-reference
 - `AskUserQuestion` is among the tools removed from subagents even when listed, so the writer reports OPEN QUESTIONS and the main session asks the user. https://code.claude.com/docs/en/sub-agents#available-tools
