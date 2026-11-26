@@ -96,6 +96,8 @@ flowchart LR
 
 **Implementation.** `implementation.md` covers rendering per route, static site or app, state, reuse layers, performance, accessibility and the legal minimum. The plugin doesn't review backend security; it says when a project needs that review.
 
+**Subagents.** Three subagents do the heavy reading and writing: `design-explorer` (Haiku) locates text in your code, `design-writer` (Sonnet) builds from the plan, and `design-reviewer` (Sonnet) reviews in a clean context. The plugin doesn't choose the model of your main session, which plans, decides and asks you questions; use the most capable model you have. When your settings or your organization don't allow a subagent's model, Claude Code runs it on another one under its own rules. Without subagents, everything works the same in the main session.
+
 **References, not copies.** The direction step uses WebSearch to find comparable sites, WebFetch to read them, and Playwright screenshots to see them. It records the principles behind each reference and never its code, assets or copy.
 
 More detail in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
@@ -116,6 +118,7 @@ modern-design-pack/
 ├── .claude-plugin/
 │   ├── plugin.json          # plugin manifest
 │   └── marketplace.json     # marketplace "santiagodie-plugins", lists this repo as "./"
+├── agents/                  # design-explorer, design-writer, design-reviewer (subagents)
 ├── skills/
 │   ├── modern-design/
 │   │   ├── SKILL.md
