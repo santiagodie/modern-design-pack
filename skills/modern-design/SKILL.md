@@ -37,6 +37,38 @@ ethics (`references/ethics.md` and `references/content-truth.md`, hard limits) >
 - `references/evidence.md` (read at the start of every run) sets the evidence grades, what counts as verified and how sources are cited.
 - `references/strategy/principles.md` and the files in `references/ux/pages/` (one per group of page types; commerce has two, `references/ux/pages/commerce-purchase.md` and `references/ux/pages/commerce-after-purchase.md`) are consulted after reasoning, to name a mechanism or catch a missed doubt. When reasoning you can explain in one sentence disagrees with them, the reasoning wins.
 
+## Agent and context routing
+
+This skill runs as an orchestrator. Rule files are read whole, from disk, by whoever applies them. Nobody passes on a summary of a rule file.
+
+| Tier | Files | Read by | When |
+|---|---|---|---|
+| Core | references/ethics.md, references/content-truth.md, references/reasoning.md, references/evidence.md; in the project root: the design brief, site decisions and content-needed files, if they exist (when site decisions doesn't, copy references/templates/site-decisions.md to the project root and fill it) | this session | at the start, every time the skill runs |
+| Step | direction: references/strategy/direction.md, references/strategy/design-reasoning.md and the references/ux/pages/ file of each page type, plus references/engineering/implementation.md when the brief chooses a stack; tokens: references/ui/tokens.md and the tokens files it points to; components: references/ui/sections/index.md; motion: references/ui/motion.md | this session | at that step only |
+| Build | the Core files, references/strategy/design-reasoning.md, references/engineering/implementation.md, references/engineering/responsive.md, references/ui/tokens.md, references/ui/sections/index.md, and the references/ui/sections/ and references/ux/pages/ files named in the plan; in the tokens step, also the tokens files the plan names; in the motion step, also references/ui/motion.md | modern-design-pack:design-writer | before it writes anything |
+| Redesign | `${CLAUDE_SKILL_DIR}/../design-review/references/regression-check.md` | this session | before changing any page that already exists |
+| Lookup | references/strategy/principles.md (by P-ID, with Grep); references/strategy/reasoning-examples.md when an example helps; references/resources.md and the user's existing code (modern-design-pack:design-explorer) | this session or design-explorer | when a step needs it |
+
+The paths in this table are fixed: open them directly, do not search for them.
+
+### Order of work
+
+- **Hero first.** On a new site or a new page, the first build delegation covers only the hero of the main page. Then run design-review with SCOPE hero and, as REPORT PATH, the review-notes-hero file in the project's audits folder (the rule is design-review's), fix its Floor items, show the user the screenshots and the remaining findings, and build the rest once the user agrees with the direction.
+- **Existing pages.** Before the first change to a page that already exists, take the "before" inventory as regression-check.md describes, and pass it as BASELINE in the review step.
+
+### Delegating
+
+- Resolve the skill folder once with `echo "${CLAUDE_SKILL_DIR}"` and build absolute paths from it.
+- Each step that writes project code (steps 2, 3 and 4: the token file, the sections and components, the motion) goes to the design-writer agent. The delegation message has exactly these headings: TASK, PLAN, READ-LIST (absolute paths), PROJECT FILES (absolute paths), OUTPUT SCOPE. Pass paths, not file contents. Say in TASK when the page already exists.
+- When it returns, compare its READ RECEIPT with the READ-LIST. For each file, check the last heading against the real one with a Grep for lines starting with `#`. If a file is missing or a heading does not match, send the writer back to read that file and re-check its work before accepting the result.
+- Do not open generated code to review it: the design-review step does that. Open a generated file only to answer a specific question.
+- Use design-explorer only for the user's existing code (for example, to inventory it for site decisions) and for references/resources.md. Never use it for this plugin's rule files: their paths are in the table. You choose its ROOTS and TERMS (one term per line, synonyms after ` | `); it only reports where they are. Then read the sections it returns yourself, whole.
+- Open questions the writer reports are asked to the user from this session. They are never answered by a guess.
+
+### Without subagents
+
+If the Agent tool is unavailable, or the user prefers no delegation, run the same steps in this session in the same order, hero first, and read the Build tier in full before writing any code.
+
 ## Process
 
 At the start of every run, read the shared core whole: `references/ethics.md`, `references/content-truth.md`, `references/reasoning.md` and `references/evidence.md`. They are short and apply to every step.

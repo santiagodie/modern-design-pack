@@ -39,6 +39,40 @@ Order of authority, the same in both skills: ethics (`ethics.md` and `content-tr
 
 A skill is split into more skills only when its `SKILL.md` grows past ~500 lines or it triggers badly in tests.
 
+## Agents and context routing
+
+Three plugin subagents live in `agents/`, next to `skills/`: `design-explorer` (Haiku, read-only locator), `design-writer` (Sonnet, builds from a plan) and `design-reviewer` (Sonnet, measures and writes the report in a clean context). The main session runs `modern-design` as an orchestrator: it reasons, decides and asks the user; the subagents read their rule files from disk and do the work. Which file is read by whom and when is the table in `skills/modern-design/SKILL.md`, "Agent and context routing"; the delegation to the reviewer (SCOPE hero, BASELINE, REPORT PATH per mode) is the section of the same name in `skills/design-review/SKILL.md`. Neither is copied here.
+
+```mermaid
+flowchart TD
+    M["Main session (modern-design as orchestrator)<br/>reads: Core tier (ethics, content-truth, reasoning, evidence, project files)<br/>and the Step tier of each step"]
+    E["design-explorer (optional)<br/>reads: the user's existing code, references/resources.md"]
+    W1["design-writer: hero of the main page<br/>reads: Build tier (Core, design-reasoning, implementation,<br/>responsive, tokens, sections/index and the sections and pages in the plan)"]
+    R1["design-reviewer, SCOPE hero<br/>reads: design-review SKILL.md, review-method, visual-qa,<br/>audit-report, the checklists that apply, project files"]
+    W2["design-writer: the rest<br/>reads: Build tier"]
+    R2["design-reviewer, SCOPE full<br/>(BASELINE when the page existed: regression-check)<br/>reads: as above, plus regression-check"]
+    M -. "locate terms" .-> E
+    M --> W1 --> R1
+    R1 -- "Floor fixed, user agrees with the direction" --> W2 --> R2
+    R2 -- "findings; fixes in the main session" --> M
+```
+
+**Three guarantees.**
+
+- **Fixed paths.** Rule files are opened at the paths in the routing table, never searched for; `design-explorer` is used only for the user's code and `resources.md`, and only reports where its terms are.
+- **Read receipt.** `design-writer` and `design-reviewer` read every READ-LIST file whole before acting and reply with one line per file: its line count, first heading and last heading, copied exactly. The orchestrator checks the last heading against the file with a Grep and sends the writer back when one is missing or wrong.
+- **BLOCKED when something is missing.** Each subagent checks the headings of its task message first and replies `BLOCKED: missing <section>` (or `BLOCKED: cannot read <path>`) instead of guessing.
+
+**Limits of plugin subagents that shape the design** (checked on 2026-11-26 against the text of the official page https://code.claude.com/docs/en/sub-agents):
+
+- They ignore the `hooks`, `mcpServers` and `permissionMode` frontmatter fields (also `initialPrompt`), so none of the three agents sets them. https://code.claude.com/docs/en/sub-agents#choose-the-subagent-scope and https://code.claude.com/docs/en/plugins-reference
+- `AskUserQuestion` is among the tools removed from subagents even when listed, so the writer reports OPEN QUESTIONS and the main session asks the user. https://code.claude.com/docs/en/sub-agents#available-tools
+- A subagent with `Agent` in its `tools` can start subagents of its own, up to three layers below the main conversation; without `Agent` it can't. None of the three lists it, so delegation stays one level deep and under the orchestrator's control. https://code.claude.com/docs/en/sub-agents#let-subagents-spawn-their-own-subagents
+- `maxTurns` is a documented field; at the limit the subagent's output comes back marked as partial. https://code.claude.com/docs/en/sub-agents#frontmatter-reference
+- When an `availableModels` allowlist in the settings blocks a subagent's model, Claude Code runs it on a replacement (the newest permitted version of the family, then `CLAUDE_CODE_SUBAGENT_MODEL`, then the main conversation's model). Behaviour set at organization level is not described in those words: unverified. https://code.claude.com/docs/en/sub-agents#when-an-allowlist-blocks-a-subagent-model
+
+The CI scanner reads `skills/` only: the files in `agents/` are not scanned, and passing CI says nothing about them.
+
 ## Project files
 
 `modern-design` writes three files in the root of the user's project, and `design-review` reads them when they exist:

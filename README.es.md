@@ -96,6 +96,8 @@ flowchart LR
 
 **Implementación.** `implementation.md` cubre el renderizado por ruta, web estática o app, el estado, las capas de reutilización, el rendimiento, la accesibilidad y el mínimo legal. El plugin no revisa la seguridad del backend; avisa cuando un proyecto necesita esa revisión.
 
+**Subagentes.** Tres subagentes hacen la lectura y la escritura pesadas: `design-explorer` (Haiku) localiza texto en tu código, `design-writer` (Sonnet) construye a partir del plan y `design-reviewer` (Sonnet) revisa en un contexto limpio. El plugin no elige el modelo de tu sesión principal, que planifica, decide y te hace las preguntas; usa el más capaz que tengas. Si tu configuración o tu organización no permiten el modelo de un subagente, Claude Code usa otro según sus propias reglas. Sin subagentes, todo funciona igual en la sesión principal.
+
 **Referencias, no copias.** El paso de dirección usa WebSearch para encontrar webs comparables, WebFetch para leerlas y capturas con Playwright para verlas. Anota los principios de cada referencia, nunca su código, recursos ni textos.
 
 Más detalle en [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) (en inglés).
@@ -116,6 +118,7 @@ modern-design-pack/
 ├── .claude-plugin/
 │   ├── plugin.json          # manifiesto del plugin
 │   └── marketplace.json     # marketplace "santiagodie-plugins", apunta a este repo como "./"
+├── agents/                  # design-explorer, design-writer, design-reviewer (subagentes)
 ├── skills/
 │   ├── modern-design/
 │   │   ├── SKILL.md

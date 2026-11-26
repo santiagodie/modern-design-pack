@@ -25,6 +25,17 @@ Designing something new or redesigning from scratch belongs to `modern-design`. 
 
 When a URL points to the user's own project and its code is here, use own-project mode. When it is unclear, ask.
 
+## Agent and context routing
+
+- When the Agent tool is available, delegate measuring and report writing to the modern-design-pack:design-reviewer agent. The delegation message has exactly these headings: MODE, TARGET, SCOPE, READ-LIST, PROJECT FILES, REPORT PATH, and BASELINE when there is one.
+- READ-LIST starts with this SKILL.md (absolute path built from `echo "${CLAUDE_SKILL_DIR}"`), followed by references/review-method.md, references/visual-qa.md and references/audit-report.md. The reviewer decides which checklists apply by following this file.
+- PROJECT FILES: the design brief, site decisions and content-needed files in the project root. Do not pass the builder's report or plan.
+- REPORT PATH: in URL audits, the report path of Mode 2 step 6; in own-project mode, the review-notes file of Mode 1 step 7 in the project root. A hero review in own-project mode writes its notes instead to a Markdown file named review-notes-hero in the project's audits folder, in the own-project format; the full review that follows writes the review-notes file in the root and links to the hero notes in its summary. The reviewer writes the report in that mode's format and fixes nothing: every finding stays "not fixed". Fixing (Mode 1 steps 5 and 6) and changing a finding's status happen in this session.
+- SCOPE is `full` unless the caller asks for `hero`. A hero review covers only the first section of one page: screenshots at the four widths, the unslop checklists, and the Floor items that apply to that section. It skips Lighthouse. modern-design uses it to check the direction before building the rest.
+- BASELINE is the "before" inventory of a page that already existed (references/regression-check.md). When it is present, the reviewer takes the "after" inventory, compares them and reports each loss as Floor, unless site decisions record that the user removed it.
+- When it returns, read its reply and, only if needed, the report sections it points to. Show the user the counts and the blocking items; the full report stays on disk.
+- Without the Agent tool, run the same procedure in this session.
+
 ## Order of authority
 
 ethics (`${CLAUDE_SKILL_DIR}/../modern-design/references/ethics.md` and `${CLAUDE_SKILL_DIR}/../modern-design/references/content-truth.md`, hard limits) > the site-decisions file (what exists and what the user decided) > the design-brief file > `${CLAUDE_SKILL_DIR}/../modern-design/references/reasoning.md` and `${CLAUDE_SKILL_DIR}/../modern-design/references/strategy/design-reasoning.md` (method for writing the brief) > the other references (`${CLAUDE_SKILL_DIR}/../modern-design/references/strategy/principles.md`, `${CLAUDE_SKILL_DIR}/../modern-design/references/ux/pages/`, `${CLAUDE_SKILL_DIR}/../modern-design/references/ui/sections/`, `${CLAUDE_SKILL_DIR}/../modern-design/references/engineering/implementation.md` and the rest, consulted afterwards). When two disagree, the higher one wins; a user decision that breaks either hard limit is declined with the reason.
