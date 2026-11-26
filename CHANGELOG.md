@@ -138,6 +138,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `design-explorer` term format and section ranges: TERMS takes one term per line with synonyms after ` | `, all literal strings; each term and synonym is searched separately as literal text (a string starting with hyphens is still the pattern); a section ends at the next heading of any level; all matches are sorted before LIMIT applies; `terms` lists the literal strings found in each section, and `no_match` lists a term only when neither it nor any synonym appears. `modern-design/SKILL.md` gives the TERMS format.
 - Both `SKILL.md` files name each agent by its full plugin name (`modern-design-pack:design-writer`, `modern-design-pack:design-reviewer`, `modern-design-pack:design-explorer`) the first time, and by its short name after that.
 
+### Added (browser tools research)
+
+- `docs/research/browser-tools/`: research only (phase A), no change to `skills/`, `agents/` or the plugin configuration. Covers what Chrome DevTools for agents (`chrome-devtools-mcp`) would measure compared with `playwright-cli`: console errors, network on form submit (SF10), dark mode, CPU and network throttling, the accessibility tree, performance traces, and WebMCP / agentic browsing. Also measured context cost (full MCP 11.7k tokens, slim 198, zero up front with tool search; the CLI adds none), privacy flags, versions and Windows behaviour, packaging options, subagent tool lists, and an inventory of ECC. Decision table BT1–BT16, a proposal (keep `playwright-cli`; `chrome-devtools-mcp@1.13.0` only as an on-demand CLI with privacy off; no MCP server in the plugin), phase B risks (the SF10 test submit must block outgoing requests and log only the attempt), and a preliminary, unverified list of other MCP servers.
+- `docs/SOURCES.md`: rows for `chrome-devtools-mcp`, ECC and the Claude Code documentation. The Playwright CLI licence is now Apache-2.0, and the 14-day rule applies to every future version bump (0.1.25 is kept).
+
 ### Changed (phase 3b)
 
 - Skills may read each other's files inside the plugin; the rule is now "nothing outside the plugin".
