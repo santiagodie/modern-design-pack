@@ -10,7 +10,7 @@ Reference for `design-review`: the browser check. Used in both modes. Load it wh
 
 ## Tools
 
-Use the Playwright agent CLI (`playwright-cli`). When it isn't installed, install it with `npm install -g @playwright/cli@0.1.25` after asking the user (this is the tested version; don't install `@latest`). It downloads a browser on first use. When it can't run, say so in the report and review the HTML and code only.
+Use the Playwright agent CLI (`playwright-cli`). It needs Node.js with npm; when Node is missing, follow the Tools step in SKILL.md and review the HTML and code only. When it isn't installed, install it with `npm install -g @playwright/cli@0.1.25` after asking the user (this is the tested version; don't install `@latest`). It downloads a browser on first use. When it can't run, say so in the report and review the HTML and code only.
 
 Useful commands. Replace URL, WIDTH, HEIGHT, FILE and JS_FUNCTION with real values.
 

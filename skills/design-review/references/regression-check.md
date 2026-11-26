@@ -32,7 +32,7 @@ Screenshots show how a page looks. They don't show that a link, a field or a hea
 
 **Why:** the same width, the same path and the same open menus make the two inventories comparable; a difference then means the page changed, not the setup.
 
-**When it flips:** when the page renders different navigation on phones (a menu that only exists at 375 px), take a second pair at 375 px. When the before page can't be served any more, say so: the check can't run, and the review notes record it.
+**When it flips:** when the page renders different navigation on phones (a menu that only exists at 375 px), take a second pair at 375 px. When the before page can't be served any more, say so: the check can't run, and the review notes record it. When Node.js is missing, neither the inventories nor `inventory-diff.js` can run: record the comparison as `not measured (Node not found)` and list it as blocking under "Before publishing" until it runs.
 
 **Source:** our own procedure; the inventory and the comparison are our scripts.
 
