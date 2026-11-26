@@ -55,6 +55,11 @@ Alta = cambia lo que se construye o lo que la revisión exige; media = puede cam
 
 - 5, rangos en px en las secciones: `b7dab7b` (`fix(sections): express sizes as tokens`). Espaciado, objetivos, alturas de control y tamaños de texto pasan a nombres de token; los anchos que no son de la escala, a `rem` con su motivo. Quedan en px dos hechos que no son medidas de diseño: el umbral de 16 px de iOS (`forms.md`, igual que MN2) y la descripción de una pantalla de 768 px (`hero.md`). La 10 (texto del pie a 13-14 px) queda resuelta de paso: el pie usa `--text-small`.
 
+**Resuelta en la rama `design-review-tree`:**
+
+- 15, anchos de captura sin 1024 en la arquitectura: `bec63a2` (`docs: design-review tree (partial)`). La fila de la auditoría por URL de `docs/ARCHITECTURE.md` dice 375, 768, 1024 y 1440 px.
+- 3, política de fotos de Hallmark: no se adopta. `THIRD_PARTY_NOTICES.md` (entrada Hallmark) la deja fuera porque choca con `content-truth.md`; manda `content-truth.md`.
+
 **Nota sobre rutas.** Desde la rama `modern-design-tree`, las referencias de `modern-design` están en carpetas por rama (`strategy/`, `ux/pages/`, `ui/`, `ui/sections/`, `engineering/`); el núcleo común sigue en la raíz. Los archivos de esta auditoría citan las rutas de antes del movimiento ("md:tokens.md" es hoy `md:ui/tokens.md`); el árbol vigente está en `docs/ARCHITECTURE.md`, "Reference tree".
 
 ## 3. Árbol propuesto para las cinco skills
@@ -99,14 +104,14 @@ Presupuesto: menos de unas 300 líneas por archivo. Estado: **existe** (se queda
 | Archivo | Cubre | Estado |
 |---|---|---|
 | `SKILL.md` | Modos, proceso, reglas | existe (99) |
-| `references/review-method.md` | Formato de hallazgo, evidencia (`measured`/`judgment`), gravedad, niveles, dispensas, artefactos de auditoría; compartido por las cuatro skills que revisan | **nuevo**, movido de `unslop-checklist.md` "How to use it" (7-23) y `audit-report.md` "How to write it" (5-17) |
-| `references/unslop-checklist.md` | TY, CO, LA, CP | existe (297): **dividir** en `unslop-type-color.md` y `unslop-layout-components.md` |
+| `references/review-method.md` | Formato de hallazgo, evidencia (`measured`/`judgment`), gravedad, niveles, dispensas, artefactos de auditoría; compartido por las cuatro skills que revisan | **hecho** en la rama `design-review-tree` (`dc689d7`): movido de `unslop-checklist.md` "How to use it" y `audit-report.md` "How to write it", con los niveles Floor, Reflex y Finish y la revisión en contexto limpio (Hallmark) |
+| `references/unslop-checklist.md` | TY, CO, LA, CP | **hecho** en la rama `design-review-tree`: dividido en tres, no en dos, sin cambiar ningún ID: `unslop-type-color.md` (TY, CO), `unslop-layout.md` (LA) y `unslop-components.md` (CP) |
 | `references/copy-states-checklist.md` | CY, SF, MO, ME | existe (160); SF4 enlaza el umbral de objetivos del dueño (`tokens.md` o `accessibility-review`) |
 | `references/mobile-checklist.md`, `outdated-checklist.md`, `dark-patterns-checklist.md` | MN, OM, DP | existen (25, 37, 91) |
 | `references/visual-qa.md` | Capturas, scripts, foco, qué mirar | existe (134) |
-| `references/regression-check.md` | Inventario antes y después de arreglar (Hallmark H1, adaptado) | **nuevo** |
+| `references/regression-check.md` | Inventario antes y después de arreglar (Hallmark H1, adaptado) | **hecho** en la rama `design-review-tree` (`d2f77f7`) |
 | `references/audit-report.md` | Formato del informe | existe (140) |
-| `scripts/` (4) + `scripts/inventory.js` | Medición en la página | existen; uno **nuevo** |
+| `scripts/` (4) + `scripts/inventory.js` | Medición en la página | existen; **hecho** en la rama `design-review-tree`: `inventory.js` (en la página) e `inventory-diff.js` (con Node, compara dos inventarios) |
 
 ### `accessibility-review`
 
@@ -163,6 +168,8 @@ Ningún archivo de `skills/` pasa de 300 líneas; el más cercano es `unslop-che
 
 **Hecho para `modern-design`** (ramas `core-reasoning` y `modern-design-tree`): todas sus referencias tienen la cabecera fija, salvo las dos plantillas de `templates/`, que se copian al proyecto del usuario y no la llevan. Ninguna lleva "(moves to …)": según §3 y las secciones "Dueño propuesto", ningún archivo actual de `modern-design` cambia de skill; las skills nuevas recogen partes por enlace. Quedan sin cabecera `modern-design/SKILL.md`, `design-review/SKILL.md` y las siete referencias de `design-review`.
 
+**Hecho para `design-review`** (rama `design-review-tree`, `8f50517`): sus once referencias tienen la cabecera fija. Los dos `SKILL.md` siguen sin ella. Tras la división de `unslop-checklist.md`, el archivo más largo de `skills/` es `ux/pages/content-navigation.md` (284).
+
 ## 6. Límites de activación (borrador)
 
 - **modern-design:** diseña, construye o rediseña interfaces (dirección, tokens, componentes, secciones, motion); no revisa interfaces terminadas ni audita accesibilidad, SEO o contenido en profundidad.
@@ -175,15 +182,15 @@ Ningún archivo de `skills/` pasa de 300 líneas; el más cercano es `unslop-che
 
 1. **Resolver las contradicciones altas** en las skills actuales: umbral de objetivos en revisión (1) y dial único (2). Luego las medias (4, 5, 6). No dependen de nada.
 2. **Dividir `reasoning.md`** en parte general y `design-reasoning.md`, y mover la calidad de evidencia a `evidence.md`. Requisito de las tres skills nuevas. **Hecho** en la rama `core-reasoning` (cabeceras fijas en los seis archivos del núcleo y de razonamiento; `ethics.md` §5 se queda donde está).
-3. **Extraer `review-method.md`** de `unslop-checklist.md` y `audit-report.md`, y dividir `unslop-checklist.md`. Requisito de las tres skills que revisan.
+3. **Extraer `review-method.md`** de `unslop-checklist.md` y `audit-report.md`, y dividir `unslop-checklist.md`. Requisito de las tres skills que revisan. **Hecho** en la rama `design-review-tree`.
 4. **Decidir los archivos del proyecto** para cinco skills (quién crea `site-decisions.md`, qué secciones son de quién, dónde viven las plantillas).
-5. **Poner la cabecera fija** a cada referencia cuando se revise (no en bloque). **Hecho para `modern-design`** en la rama `modern-design-tree` (ver §5); pendiente en `design-review`.
+5. **Poner la cabecera fija** a cada referencia cuando se revise (no en bloque). **Hecho para `modern-design`** en la rama `modern-design-tree` y **para `design-review`** en la rama `design-review-tree` (ver §5).
 6. **`accessibility-review`:** depende de 2, 3 y de decidir el dueño de los umbrales (objetivos, contraste). `design-review` pasa a enlazarla para lo que no sea visible.
 7. **`seo-geo-optimizer`:** depende de 2, 3 y de la regla de metadatos de `content-truth.md`; recoge por enlace `implementation.md` §2 y las `### Implementation` de `pages/`.
 8. **`content-web-optimizer`:** depende de 2, 3 y de decidir si la familia CY se queda en `design-review` o pasa a esta skill.
 9. **Descripciones y pruebas de activación** de las cinco skills en inglés y español (fase 4), con los límites de §6.
 10. **En paralelo, huecos de `modern-design`:** `motion.md` (dueño único de tiempos), `components/`, secciones de los lotes B y C, `styles.md`, `navigation.md`.
-11. **Mecanismos de Hallmark** (ver `13-review-method.md`): el inventario antes/después (H1) con el paso 3; el hero primero (H3) con `modern-design` paso 3; la calibración (H12) antes de probar las skills nuevas.
+11. **Mecanismos de Hallmark** (ver `13-review-method.md`): el inventario antes/después (H1) con el paso 3; el hero primero (H3) con `modern-design` paso 3; la calibración (H12) antes de probar las skills nuevas. H1 **hecho** en la rama `design-review-tree` (`regression-check.md`, `inventory.js`, `inventory-diff.js`), junto con los niveles y la revisión en contexto limpio (`review-method.md` §8 y §11) y 24 señales adaptadas como entradas de las listas; H3 y H12, pendientes.
 
 ## Qué no se leyó o no se verificó
 

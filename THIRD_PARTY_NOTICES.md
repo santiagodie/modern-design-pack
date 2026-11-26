@@ -31,7 +31,7 @@ The ideas below were rewritten in our own words and reorganised. The only except
 - **URL:** https://github.com/heydamir/unslop
 - **Author / copyright holder:** Damir Sokolovsky (@heydamir)
 - **License:** Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/
-- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`
+- **Used in:** `skills/design-review/references/unslop-type-color.md`, `skills/design-review/references/unslop-layout.md`, `skills/design-review/references/unslop-components.md`, `skills/design-review/references/copy-states-checklist.md`
 - **What was used:** ideas for detecting generic AI-made UI patterns (gradients and glows, emoji icons, nested radii, filler visuals, decorative loops, copy tells, the template test).
 - **Changes:** rewritten in our own words, merged with other sources, reorganised by category, and given context exceptions and report severities. Not endorsed by the original author.
 
@@ -40,7 +40,7 @@ The ideas below were rewritten in our own words and reorganised. The only except
 - **URL:** https://github.com/pbakaus/impeccable (https://impeccable.style)
 - **Author / copyright holder:** Paul Bakaus
 - **License:** Apache License 2.0, https://www.apache.org/licenses/LICENSE-2.0
-- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`; `skills/modern-design/references/tokens.md`, `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md`
+- **Used in:** `skills/design-review/references/unslop-type-color.md`, `skills/design-review/references/unslop-layout.md`, `skills/design-review/references/unslop-components.md`, `skills/design-review/references/copy-states-checklist.md`; `skills/modern-design/references/tokens.md`, `tokens-color.md`, `tokens-color-dark.md`, `tokens-type.md`, `tokens-space.md`
 - **What was used:**
   - In the checklists: ideas on anti-patterns (identical card grids, eyebrow labels, numbered sections, side accent bars, monospace as decoration, glass as decoration, ghost cards, icon tiles, cream defaults, formula copy) and quality checks (contrast floors, tracking, measure, states, heading outline). Some of these ideas come from the catalogue at https://impeccable.style/slop, whose site text has no stated licence; only the ideas were summarised.
   - In the tokens references: rules from `skill/reference/colorize.md`, `typeset.md`, `layout.md`, `new-work.md`, `operate.md`, `polish.md`, `document.md`, `craft-floor.md`, `optimize.md` and `harden.md` (commit `9e460a8`). They cover color roles and strategy, OKLCH ramps, tinted neutrals, dark themes, names by purpose, type roles and line height, the spacing base, rhythm and density.
@@ -51,7 +51,7 @@ The ideas below were rewritten in our own words and reorganised. The only except
 - **URL:** https://github.com/Leonxlnx/taste-skill (https://tasteskill.dev)
 - **Author / copyright holder:** Leon Lin and blueemi (Copyright (c) 2026 Leonxlnx)
 - **License:** MIT, https://opensource.org/license/mit
-- **Used in:** `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`, `skills/modern-design/references/direction.md`, `skills/modern-design/references/tokens*.md`
+- **Used in:** `skills/design-review/references/unslop-type-color.md`, `skills/design-review/references/unslop-layout.md`, `skills/design-review/references/unslop-components.md`, `skills/design-review/references/copy-states-checklist.md`, `skills/modern-design/references/direction.md`, `skills/modern-design/references/tokens*.md`
 - **What was used:**
   - Checklist: ideas on showing the real product, effects that don't fit the business, scroll-triggered card animations and mobile checks.
   - Direction: writing down the real material before building, marking assumed facts, deciding structure by kind of business, and planning one line per section.
@@ -131,7 +131,7 @@ The ideas below were rewritten in our own words and reorganised. The only except
 - **URL:** https://github.com/vercel-labs/web-interface-guidelines (https://vercel.com/design/guidelines)
 - **Author / copyright holder:** Vercel
 - **License:** MIT, https://opensource.org/license/mit
-- **Used in:** `skills/design-review/references/visual-qa.md`, `skills/design-review/references/unslop-checklist.md`, `skills/design-review/references/copy-states-checklist.md`
+- **Used in:** `skills/design-review/references/visual-qa.md`, `skills/design-review/references/unslop-type-color.md`, `skills/design-review/references/unslop-layout.md`, `skills/design-review/references/unslop-components.md`, `skills/design-review/references/copy-states-checklist.md`
 - **What was used:** guidance on tap target sizes, focus states, text wrapping, layout shift, loading timing, reduced motion, safe areas and mobile input sizes.
 - **Changes:** rewritten in our own words and mapped to checks at 375, 768 and 1440 px. The Vercel-specific section was not used.
 
@@ -144,9 +144,33 @@ The ideas below were rewritten in our own words and reorganised. The only except
 - **What was used:** the release workflow file, copied unmodified (SHA-256 `c192e32cf40cf42c789d9ec326114a18f7a1e723fe7333cf9fe8210e00dfa73f`, matching the bundle's `SHA256SUMS.txt`). Its SPDX header is kept.
 - **Changes:** none. It calls NVIDIA's reusable workflow and container image, pinned by commit SHA and digest, at run time.
 
+### Hallmark
+
+- **URL:** https://github.com/Nutlope/hallmark
+- **Author / copyright holder:** Hallmark contributors (Copyright (c) 2026 Hallmark contributors)
+- **License:** MIT, https://opensource.org/license/mit
+- **Version used:** commit `04977e15f3dfd6ee4b74c887dac3eb52665d6c92` (2026-11-11), read on 2026-11-25
+- **Used in:** `skills/design-review/references/review-method.md`, `skills/design-review/references/regression-check.md`, `skills/design-review/references/unslop-type-color.md`, `skills/design-review/references/unslop-layout.md`, `skills/design-review/references/unslop-components.md`, `skills/design-review/references/copy-states-checklist.md`, `skills/design-review/scripts/inventory.js`, `skills/design-review/scripts/inventory-diff.js`, `skills/modern-design/references/content-truth.md`
+- **What was used:**
+  - The Floor, Reflex and Finish tiers and the rule that a waiver must give a reason specific to the page (`skills/hallmark/references/gates.md` §1–§2), mapped to our report sections.
+  - Reviews in a fresh context, without the builder's transcript (`gates.md` §6).
+  - The redesign check: record links, forms, fields and headings before a redesign and report what is missing afterwards (`scripts/sloplint.mjs` `--before` and `--kept`, `references/redesign.md` "Before" and "After").
+  - Signals adapted as checklist entries: TY12–TY14, CO10, LA11–LA19, CP10–CP14, CY9, CY10, SF10–SF12, MO6 (gates 10a, 17, 39a, 42, 44d, 47a, 47b, 49a, 49b, 56, 58, 66, 68, 69, 70, 73, 74, 77, 78, 79, 80, 81, 82, 83, 84, 85, and finish checks F1 and F2).
+- **Changes:** rewritten in our own words as context rules with a "Fine when" line; no text quoted and no code copied (`inventory.js` and `inventory-diff.js` are our own and work in the browser through `playwright-cli`, not on source files). Not used: its "house rules" as Floor (eyebrow, tracked capitals, word budget, template punctuation), its numeric thresholds as rules, its photo-library stand-ins (they conflict with our no-invention rule), the CSS stamp (we record decisions in `site-decisions.md`), its themes and its edit-time hook.
+
+MIT License
+
+Copyright (c) 2026 Hallmark contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 ### Ideas without a stated licence
 
-Ideas from these sources were used in rewritten form only, with credit and no reuse of their wording: Instagram posts by @charles.unemployed and @millee.md, three shared screenshots whose authors are not yet identified (the third is a list of AI slop indicators, used in `unslop-checklist.md` and `copy-states-checklist.md`), the names of laws from Laws of UX (https://lawsofux.com) by Jon Yablonski, and the legacy-to-modern direction of Chrome's Modern Web Guidance (https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers (its guides are CC BY 4.0, see its entry above), used for the "Outdated, measurable" section in `outdated-checklist.md` (the detection script is our own). `direction.md` also uses rewritten ideas from Figma's articles "What is web design" and "Tendencias de diseño web" (content before visuals, mobile first, performance as a design input, choosing from audience and brand values), and follows Impeccable's convention of `PRODUCT.md` and `DESIGN.md` files without reproducing their format. See `docs/SOURCES.md`.
+Ideas from these sources were used in rewritten form only, with credit and no reuse of their wording: Instagram posts by @charles.unemployed and @millee.md, three shared screenshots whose authors are not yet identified (the third is a list of AI slop indicators, used in the three unslop checklists (`unslop-type-color.md`, `unslop-layout.md`, `unslop-components.md`) and `copy-states-checklist.md`), the names of laws from Laws of UX (https://lawsofux.com) by Jon Yablonski, and the legacy-to-modern direction of Chrome's Modern Web Guidance (https://developer.chrome.com/docs/modern-web-guidance) by Chrome for Developers (its guides are CC BY 4.0, see its entry above), used for the "Outdated, measurable" section in `outdated-checklist.md` (the detection script is our own). `direction.md` also uses rewritten ideas from Figma's articles "What is web design" and "Tendencias de diseño web" (content before visuals, mobile first, performance as a design input, choosing from audience and brand values), and follows Impeccable's convention of `PRODUCT.md` and `DESIGN.md` files without reproducing their format. See `docs/SOURCES.md`.
 
 ## Entry template
 

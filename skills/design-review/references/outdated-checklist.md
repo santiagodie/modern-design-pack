@@ -1,6 +1,12 @@
 # Outdated checklist
 
-Reference for `design-review`, used in both modes during the review step, for the measurable part of the "Outdated" section. `unslop-checklist.md` holds the shared rules: how to use the checklists, severity, `measured` and `judgment`, and how to report.
+> **Covers:** measurable outdated signals OM1–OM13: legacy techniques with a modern replacement, and how to check each.
+> **Read when:** the review step of both modes, at 1440 px, before the judgment part of the Outdated section.
+> **Not here:** how to review → references/review-method.md; aesthetic outdated patterns → references/unslop-type-color.md, references/unslop-layout.md, references/unslop-components.md
+> **Owner:** design-review
+> **Sources:** Modern Web Guidance by Chrome for Developers (CC BY 4.0, ideas only); LG München I, 3 O 17493/20; the detection script is our own
+
+Reference for `design-review`, used in both modes during the review step, for the measurable part of the "Outdated" section. `review-method.md` holds how to review: severity, `measured` and `judgment`, levels and how to report.
 
 ## Outdated, measurable
 

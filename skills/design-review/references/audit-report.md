@@ -1,19 +1,22 @@
 # Audit report format
 
+> **Covers:** the URL audit report: what is specific to the report (language, measured outdated signals first, lab data, Floor first, empty sections), the section guide, the finding block, file locations and the template.
+> **Read when:** URL audit mode, last step, when writing the report.
+> **Not here:** how to judge, tag and order findings → references/review-method.md; the checks → references/unslop-type-color.md, references/unslop-layout.md, references/unslop-components.md, references/copy-states-checklist.md; own-project review notes → design-review SKILL.md, Mode 1 step 7
+> **Owner:** design-review
+> **Sources:** our own format
+
 Reference for `design-review`, URL audit mode. Load only when writing the report.
 
 ## How to write it
 
+How to judge, tag, order and word each finding is in `review-method.md`: whom the page serves (§1), what may be commented on and numbers only from tools (§2), `measured` and `judgment` (§3), severity (§4), order (§5), the fields of a finding and a neutral tone (§6), levels (§8). What follows is only about this report.
+
 - **Language:** this template is in English. Write the final report, headings included, in the language the user writes in.
-- **Every finding is grounded.** Point to a screenshot file or a CSS selector. A finding with no location is advice, not a finding; cut it or move it to Tips.
-- **Every finding says how it is known.** Tag it `measured` when a tool or the code shows it (Lighthouse score, contrast ratio, missing `alt`, image weight, a broken layout visible in a screenshot at a given width). Tag it `judgment` when it rests on design criteria.
 - **Make "Outdated" measurable where you can.** Start the section with the signals in the "Outdated, measurable" table of `outdated-checklist.md` (legacy techniques with a modern Baseline replacement, after Chrome's Modern Web Guidance). Those are `measured`: name the signal, the evidence and the modern approach. Aesthetic findings (a dated gradient, a template hero) come after them and are `judgment`. Say so in plain words and name what they are being compared to.
-- **Say what kind of measurement it is.** Lighthouse runs are lab data on a simulated slow phone; write "lab" next to those numbers and don't present them as what real visitors get.
-- **Never invent numbers.** Give a value only when a tool produced it. When a tool could not run, say which one and what that leaves unchecked.
-- **Be specific to this site.** "Improve contrast" is not a fix. "Set the hero subtitle (`.hero p`) from #9CA3AF to at least #6B7280 on white for 4.5:1" is.
-- **Prioritise honestly.** Critical means it stops people from using, reading, trusting or reaching the page. Visual polish is never critical on its own. Within each section, put first what blocks the page's main decision most.
+- **Say what kind of measurement it is.** Lighthouse runs are lab data on a simulated slow phone; write "lab" next to those numbers and don't present them as what real visitors get. When a tool could not run, say which one and what that leaves unchecked.
+- **Floor findings come first** inside Critical issues, and placeholders and claims go to "Before publishing", never to another section (`review-method.md` §8).
 - **Empty sections stay.** Write "None found" instead of padding a section.
-- **Keep the tone neutral.** The site may belong to the user, a client or a competitor.
 
 ## Section guide
 
@@ -30,7 +33,7 @@ Reference for `design-review`, URL audit mode. Load only when writing the report
 
 ## Finding format
 
-Number findings by section: C1, C2 for critical; M1 for minor; O1 for outdated; T1 for tips; P1 for proposals; A1 for alternatives.
+Number findings by section: C1, C2 for critical; M1 for minor; O1 for outdated; T1 for tips; P1 for proposals; A1 for alternatives. The fields are defined in `review-method.md` §6.
 
 ```markdown
 ### C1. Short title of the problem

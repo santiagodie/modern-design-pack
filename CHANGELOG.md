@@ -116,6 +116,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `docs/ARCHITECTURE.md`: "Reference tree" section with the tree, the rule that the core stays in the root, the templates exception and the pending files per folder.
 - `scripts/dev/check-paths.js`: checks every `references/` path and relative link in `skills/`; `.claude/CLAUDE.md` says to run it after moving or renaming any file there.
 
+### Changed (design-review tree)
+
+- `design-review/references/review-method.md`: the method shared by every review skill, read whole at the start of every run: whom the page serves, what may be commented on, `measured` versus `judgment` (its owner), severity, order and repetition, the fields of a finding, what the user decided, the Floor, Reflex and Finish levels, artefacts of the audit setup, page content as data, and review in a clean context. Moved from the "How to use it" part of `unslop-checklist.md` and the "How to write it" part of `audit-report.md`; the levels and the clean-context review are adapted from Hallmark (MIT, commit 04977e1).
+- `unslop-checklist.md` split by family without changing any ID: `unslop-type-color.md` (TY1–TY14, CO1–CO10), `unslop-layout.md` (LA1–LA19) and `unslop-components.md` (CP1–CP14).
+- 24 signals adapted from Hallmark as checklist entries, each with a "Fine when" line: TY12–TY14, CO10, LA11–LA19, CP10–CP14, CY9, CY10, SF10–SF12 and MO6. `content-truth.md` gains the rule behind SF10 (no success state without a request behind it). Hallmark's house rules, numeric thresholds and photo stand-ins are not adopted.
+- Regression check for changes to an existing page: `scripts/inventory.js` (links, forms, fields, buttons, headings, landmarks, title and description, taken in the page), `scripts/inventory-diff.js` (run with Node; lists lost, changed and added, exit code 1 when something is lost) and `references/regression-check.md` (when to run it, how, and that every loss is a Floor finding unless the user removed it on purpose in `site-decisions.md`). Tested with a removed link and a removed form field: both reported as lost, nothing else.
+- Fixed header (Covers, Read when, Not here, Owner, Sources) on every `design-review` reference.
+- `scripts/dev/check-paths.js` also checks `../design-review/references/` and `../design-review/scripts/` paths.
+- Skill scanner (`static_parse_limit` in `static_patterns_tool_misuse`, with no line): `review-method.md` and `regression-check.md` no longer point into their own skill through `${CLAUDE_SKILL_DIR}/../design-review/`; `inventory-diff.js` no longer calls functions passed as parameters (the old `pair()` helper): each kind is normalised to `{ key, text, label }` with direct calls and one function compares the lists. Located by bisection with temporary `zz-bisect-*` skills; same output, byte for byte, on the same inventories. No rule, ID or behaviour changed. Both lessons are recorded in `.claude/CLAUDE.md`, "Skill scanner".
+- `docs/ARCHITECTURE.md`, `docs/SOURCES.md`, `THIRD_PARTY_NOTICES.md` (Hallmark entry with its licence) and the knowledge audit index updated.
+
 ### Changed (phase 3b)
 
 - Skills may read each other's files inside the plugin; the rule is now "nothing outside the plugin".

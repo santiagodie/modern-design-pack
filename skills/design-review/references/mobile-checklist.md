@@ -1,6 +1,12 @@
 # Mobile checklist
 
-Reference for `design-review`, used in both modes during the review step, for pages used on touch screens. `unslop-checklist.md` holds the shared rules: how to use the checklists, severity, `measured` and `judgment`, and how to report.
+> **Covers:** measurable mobile checks MN1–MN5 for pages used on touch screens.
+> **Read when:** the review step of both modes, once at a touch width.
+> **Not here:** how to review → references/review-method.md; screenshots and touch emulation → references/visual-qa.md; target sizes → references/copy-states-checklist.md (SF4)
+> **Owner:** design-review
+> **Sources:** mobile-native skill by Emil Kowalski (MIT); the detection script is our own
+
+Reference for `design-review`, used in both modes during the review step, for pages used on touch screens. `review-method.md` holds how to review: severity, `measured` and `judgment`, levels and how to report.
 
 ## Mobile, measurable
 

@@ -1,6 +1,12 @@
 # Copy, states, motion and meta checklist
 
-Reference for `design-review`, used in both modes during the review step, together with `unslop-checklist.md`. This file holds the Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME) families; `unslop-checklist.md` holds Typography, Color, Layout and Components, and the shared rules for every checklist: how to use them, severity, `measured` and `judgment`, and how to report.
+> **Covers:** copy (CY1–CY10), states and feedback (SF1–SF12), motion (MO1–MO6) and meta (ME1–ME4): each pattern with when it is fine, how to check it and where it goes in the report.
+> **Read when:** the review step of both modes, with the three unslop files.
+> **Not here:** how to review → references/review-method.md; typography, color, layout, components → references/unslop-type-color.md, references/unslop-layout.md, references/unslop-components.md; the no-invention rule → modern-design references/content-truth.md; motion values → modern-design references/ui/motion.md
+> **Owner:** design-review
+> **Sources:** unslop (CC BY 4.0), Impeccable (Apache-2.0), Taste Skill (MIT), Web Interface Guidelines (MIT), Hallmark (MIT, commit 04977e1), Instagram screenshot (ideas only); full list in docs/SOURCES.md
+
+Reference for `design-review`, used in both modes during the review step, together with the three unslop files. This file holds the Copy (CY), States and feedback (SF), Motion (MO) and Meta (ME) families; `unslop-type-color.md`, `unslop-layout.md` and `unslop-components.md` hold Typography, Color, Layout and Components; `review-method.md` holds how to review: severity, `measured` and `judgment`, levels and how to report.
 
 ## Copy
 
@@ -54,6 +60,22 @@ Reference for `design-review`, used in both modes during the review step, togeth
 - **Fix:** write full sentences that say what the product does and for whom.
 - **Report as:** minor.
 
+### CY9. The same fact everywhere
+- **Look for:** one fact (a price, a date, an opening time, a count) printed in four or more sections, or a section whose last line repeats its heading.
+- **Reads as generic because:** with few facts to work with, a generator says them again, and each repetition reads as filler.
+- **Fine when:** a table or a list repeats a value by nature, or the fact belongs to the action (a price next to each buy button).
+- **Fix:** say each fact once, where it does work.
+- **How to check:** search the visible text for the fact and count the sections it appears in.
+- **Report as:** tip (`measured` for the count).
+- **Source:** Adapted from Hallmark (MIT, commit 04977e1), gate 69.
+
+### CY10. Decoration text
+- **Look for:** text that looks designed and carries no fact: "scroll" cues, a version or `BETA` pill in the hero, rotated vertical labels, a city, weather or local-time strip, counters such as "01 / 4" on tiles, credit lines under stand-in pictures.
+- **Fine when:** the text is a fact the visitor needs (a product that really is in beta, the local time of a venue for a live event).
+- **Fix:** remove it; a fact that would be lost becomes a caption or a footer line.
+- **Report as:** outdated (`judgment`). TY4 covers labels above headings and CP1 badges above the headline: flag the pattern once.
+- **Source:** Adapted from Hallmark (MIT, commit 04977e1), gate 66.
+
 ## States and feedback
 
 ### SF1. No loading state
@@ -101,6 +123,28 @@ Reference for `design-review`, used in both modes during the review step, togeth
 - **Fix:** fix the source, and make reveal effects start from visible content so a failed script doesn't hide anything.
 - **Report as:** **critical** when content or the main image is missing (`measured`).
 
+### SF10. A form that says sent when nothing was sent
+- **Look for:** a form or control that shows success ("Sent", "Booked", "You're on the list", "Thanks") with no request behind it: the submit handler only changes the screen, the form's `action` is empty or `#`, or no endpoint exists in the project. Also a confirmation of something the business never offered.
+- **Why it matters:** the visitor leaves believing the message, the booking or the order went through. A success state with nothing behind it is invented content (CY3; modern-design references/content-truth.md), and it breaks the truth MUST in modern-design references/engineering/implementation.md: never show as done what may not be.
+- **Fine when:** never as success. Until the endpoint exists, the form validates and says plainly that nothing was sent, and the missing endpoint is a row in `content-needed.md`.
+- **How to check:** read the submit handler and the form's `action` in the code. In URL audits, don't submit anything (read-only): judge from the code the page ships, and say that the flow wasn't tested.
+- **Report as:** **critical**, Floor (`measured` in code; `judgment` when only the shipped script can be read). In own-project mode, also list it under "Before publishing".
+- **Source:** Adapted from Hallmark (MIT, commit 04977e1), gate 70.
+
+### SF11. Field states that shift the layout
+- **Look for:** input borders that change width on focus or on error, so the layout jumps; a focus ring drawn with `border` instead of `outline`; an input taller or shorter than the button beside it; disabled fields shown by lower opacity alone.
+- **Fix:** keep the border width constant across states; draw focus with `outline` and an offset; share one control height (a token) between inputs and buttons; mark disabled fields with the native attribute and a visible style besides opacity.
+- **How to check:** the computed `border-width` in the default, `:focus` and `[aria-invalid="true"]` states; the heights of an input and its neighbouring button.
+- **Report as:** minor (`measured`).
+- **Source:** Adapted from Hallmark (MIT, commit 04977e1), gate 39a.
+
+### SF12. Tooltips that wait for keyboard focus
+- **Look for:** a tooltip with the same delay on focus as on hover, so a keyboard user tabs past before it appears; a tooltip that only opens on hover; one that can't be dismissed without moving focus.
+- **Fix:** a short delay on hover and none on focus; the same content reachable from the keyboard; dismissable with Escape (WCAG 2.2, 1.4.13).
+- **How to check:** the tooltip's CSS or script for `:focus` and `:focus-visible` handling and its delays; the focus pass in `visual-qa.md`.
+- **Report as:** minor (`measured`).
+- **Source:** Adapted from Hallmark (MIT, commit 04977e1), gate 17.
+
 ## Motion
 
 ### MO1. Fade-in on every section
@@ -131,6 +175,15 @@ Reference for `design-review`, used in both modes during the review step, togeth
 - **Fix:** carry the user between states: the card grows into the page, back reverses the move. View transitions help here.
 - **Report as:** tip.
 
+### MO6. `transition: all` and animated layout
+- **Look for:** `transition: all`, or transitions and keyframes on `width`, `height`, `top`, `left`, `margin` or `padding`.
+- **Reads as generic because:** `all` is the shortcut a generator writes; it animates properties nobody chose, and layout properties make the browser recompute the page on every frame.
+- **Fine when:** one rare size change that `transform` can't express (an accordion opening), with reduced motion handled.
+- **Fix:** list the properties that should move, and animate `transform` and `opacity`.
+- **How to check:** search the CSS for `transition: all`, `transition-property: all` and transitions naming layout properties.
+- **Report as:** minor (`measured`).
+- **Source:** Adapted from Hallmark (MIT, commit 04977e1), gate 10a.
+
 ## Meta
 
 ### ME1. Default favicon and missing meta
@@ -155,6 +208,6 @@ Reference for `design-review`, used in both modes during the review step, togeth
 
 ## Attribution
 
-Written in our own words, from the same sources as `unslop-checklist.md` (see its Attribution section). CY6–CY8 summarise ideas from a shared Instagram screenshot whose author is not yet identified ("AI slop indicators"); ideas only.
+Written in our own words, from the same sources as `unslop-type-color.md` (see its Attribution section). CY6–CY8 summarise ideas from a shared Instagram screenshot whose author is not yet identified ("AI slop indicators"); ideas only. CY9, CY10, SF10–SF12 and MO6 are adapted from [Hallmark](https://github.com/Nutlope/hallmark), Copyright (c) 2026 Hallmark contributors, MIT, commit 04977e1: its gates rewritten as context rules, without its numeric thresholds.
 
 Full source list with licences: [docs/SOURCES.md](https://github.com/santiagodie/modern-design-pack/blob/main/docs/SOURCES.md). Licence notices: [THIRD_PARTY_NOTICES.md](https://github.com/santiagodie/modern-design-pack/blob/main/THIRD_PARTY_NOTICES.md).

@@ -18,7 +18,7 @@ Order of authority: ethics (`ethics.md` and `content-truth.md`, hard limits) > `
 
 1. **Current standards.** One row per area: palette, typography, spacing, radii, motion. Each row points to the tokens in the code (file and token names) and never copies their values, so the file can't drift from the code. When what this file says and what the code does disagree, ask the user which one is right before changing either; in a non-interactive run, follow the code and add the mismatch to the brief's Assumptions.
 2. **Inventory.** Every page, section and reusable component that exists, with its path and a few words on what it does. One line each.
-3. **User decisions.** Only decisions the user made, never the model's own choices (those go in the brief). Each entry has the date, the decision, the user's reason, and the guideline it overrides (file and rule ID when there is one, for example `unslop-checklist.md` TY2). When the user revokes a decision, delete the entry (git keeps the history) and generate the affected part again from the references.
+3. **User decisions.** Only decisions the user made, never the model's own choices (those go in the brief). Each entry has the date, the decision, the user's reason, and the guideline it overrides (file and rule ID when there is one, for example `unslop-type-color.md` TY2). When the user revokes a decision, delete the entry (git keeps the history) and generate the affected part again from the references.
 
 ## Template
 
@@ -54,5 +54,5 @@ Order of authority: ethics (ethics.md and content-truth.md, hard limits) > this 
 
 | Date | Decision | Reason | Overrides |
 |---|---|---|---|
-| <YYYY-MM-DD> | <for example: keep the italic word in the hero headline> | <the user's reason> | <`unslop-checklist.md` TY2> |
+| <YYYY-MM-DD> | <for example: keep the italic word in the hero headline> | <the user's reason> | <`unslop-type-color.md` TY2> |
 ```
