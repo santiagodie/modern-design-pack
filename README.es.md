@@ -1,6 +1,6 @@
-<p align="center"><img src="assets/banner.svg" width="100%" alt="modern-design-pack · Modern, context-aware UI design for Claude Code" /></p>
+<p align="center"><img src="assets/banner.svg" width="100%" alt="modern-design-pack · Diseño de interfaces moderno y adaptado al contexto para Claude Code" /></p>
 
-<p align="center">Un plugin de Claude Code para que cualquier persona, sepa o no de diseño, consiga interfaces modernas, adaptadas a su proyecto, que no parezcan hechas con IA y basadas en referencias reales de internet.</p>
+<p align="center">Un plugin de Claude Code que ayuda a cualquiera, sepa o no de diseño, a conseguir interfaces modernas, adaptadas a su proyecto, que no parezcan hechas con IA y basadas en referencias reales de la web.</p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-C9A227?style=flat-square&labelColor=0B1F3A" alt="Licencia: MIT" /></a>
@@ -11,44 +11,76 @@
 
 <p align="center"><a href="README.md">English</a> · <b>Español</b></p>
 
-> **En desarrollo inicial.** `design-review` está escrita y ha pasado una primera ronda de pruebas ([resultados](docs/examples/phase-2-results.md), en inglés). `modern-design` tiene escrito y probado su primer paso, dirección y brief de diseño ([resultados](docs/examples/phase-3/phase-3-results.md), en inglés); los pasos de tokens, componentes y animación siguen vacíos. Consulta el [Roadmap](docs/ROADMAP.md).
+> **En desarrollo inicial (v0.1.0, aún sin publicar).** Las dos skills funcionan, pero apenas se han probado, y la guía de animación todavía no está escrita. Consulta las [limitaciones conocidas](#limitaciones-conocidas) y el [Roadmap](docs/ROADMAP.md) (en inglés).
 
 ## Tabla de contenidos
 
-- [Sobre el proyecto](#sobre-el-proyecto)
-- [Funcionalidades](#funcionalidades)
+- [Qué es](#qué-es)
+- [Qué funciona hoy](#qué-funciona-hoy)
+- [Requisitos](#requisitos)
 - [Instalación](#instalación)
-- [Cómo funciona](#cómo-funciona)
-- [Skills](#skills)
+- [Cómo trabaja](#cómo-trabaja)
+- [Principios](#principios)
 - [Estructura del proyecto](#estructura-del-proyecto)
 - [Limitaciones conocidas](#limitaciones-conocidas)
 - [Créditos](#créditos)
 - [Licencia](#licencia)
 - [Contacto](#contacto)
 
-## Sobre el proyecto
+## Qué es
 
-Hay demasiados recursos de diseño: librerías de componentes, packs de skills, galerías, webs de fuentes, kits de animación, listas para quitar el "aspecto IA" en redes sociales. Para una diseñadora o un diseñador es una caja de herramientas. Para alguien que no lo es, es fricción: no sabes cuál usar, cuándo ni cómo encajan, y acabas con la misma landing con degradado morado que todo el mundo.
+Hay demasiados recursos de diseño: librerías de componentes, paquetes de skills, galerías, webs de fuentes, kits de animación, listas "anti-slop" en redes sociales. Para quien diseña son una caja de herramientas. Para quien no, son un obstáculo: no sabes cuál usar, cuándo ni cómo encajan, y acabas con la misma landing de degradado morado que todo el mundo.
 
-Este plugin ordena esos recursos y los aplica con criterio. Primero pregunta por el producto y el público, mira webs reales como referencia y después pasa por tokens, componentes, animación y revisión en un orden fijo. Las reglas dependen del contexto: un patrón que es un cliché en un producto puede ser la decisión correcta en otro.
+Este plugin ordena esos recursos y los aplica con criterio. Primero pregunta por el producto y el público, busca webs reales como referencia y después recorre tokens, secciones y revisión en un orden fijo.
 
-## Funcionalidades
+El objetivo son cinco skills que comparten un mismo método de revisión:
 
-Previstas. Nada de esto funciona todavía.
+| Skill | Estado | Para qué sirve |
+|---|---|---|
+| `modern-design` | Disponible | Diseñar o rediseñar una web, una landing, una pantalla de app o un flujo: dirección, tokens, secciones, animación |
+| `design-review` | Disponible | Revisar cualquier interfaz: tu propio proyecto (revisión, comprobación en navegador, correcciones) o una URL pública (auditoría de solo lectura con informe) |
+| `accessibility-review` | Planificada | Revisión de accesibilidad más allá de lo que se ve en las capturas |
+| `seo-geo-optimizer` | Planificada | Visibilidad en buscadores y en respuestas de IA |
+| `content-web-optimizer` | Planificada | Textos y contenido de la página |
 
-- **Primero el contexto:** un brief breve (producto, público, tono, stack) que siguen todos los pasos posteriores.
-- **Referencias en vivo:** busca en internet webs comparables y extrae sus principios, sin clonarlas.
-- **Tokens de diseño:** paleta, combinación tipográfica, espaciado, radios, sombras, temas claro y oscuro.
-- **Componentes de fuentes contrastadas:** secciones y componentes adaptados al brief y al stack del proyecto.
-- **Animación con propósito:** tiempos, curvas y microinteracciones, y saber cuándo no animar.
-- **Revisión anti-slop:** detecta los patrones genéricos de las webs hechas con IA antes de entregar.
-- **QA visual:** capturas en un navegador real a tres anchos, más contraste, foco, desbordamientos y estados vacíos.
-- **Auditar cualquier URL:** revisión de solo lectura de cualquier web pública, entregada como informe con problemas críticos, problemas menores, patrones obsoletos, consejos, propuestas y alternativas. Cada hallazgo indica si está medido o es criterio de diseño.
-- **Activación bilingüe:** las skills responden a peticiones en inglés y en español.
+Qué no es: una librería de componentes, un generador de plantillas ni un constructor de páginas. No escribe el contenido de tu negocio (ver [Principios](#principios)) y no revisa la seguridad del backend; te avisa cuando un proyecto necesita esa revisión.
+
+## Qué funciona hoy
+
+`modern-design`:
+
+- **Dirección:** reúne el contexto (producto, público, tono, stack), busca de tres a cinco webs reales comparables y escribe un brief de diseño con una dirección decidida y una promesa central.
+- **Razonamiento por página:** doce guías por tipo de página (entrada y marketing, comercio, cuenta, legal, soporte y otras), cada una con el momento del usuario, la duda principal que la página debe resolver y cuándo se invierte el consejo habitual.
+- **Tokens:** color (con tema oscuro), tipografía y espaciado, con tokens de foco, tamaño de objetivo táctil y movimiento reducido.
+- **Secciones:** ocho tipos de sección para páginas que persuaden (cabecera, hero, llamada a la acción, prueba social, beneficios, formularios, llamada final, pie), cada una con su diseño para móvil, tableta y escritorio.
+- **Implementación:** renderizado por ruta, estado, rendimiento, accesibilidad y el mínimo legal.
+- **Animación:** sin escribir todavía; el modelo sigue el brief con su propio criterio.
+
+`design-review`:
+
+- **Proyecto propio:** revisa el código con listas de patrones genéricos de IA y errores de interfaz, comprueba la página en un navegador real, corrige lo local y escribe notas de revisión.
+- **Auditoría de URL:** revisión de solo lectura de hasta tres páginas públicas, guardada como informe con problemas críticos, problemas menores, patrones anticuados, consejos y propuestas. Cada hallazgo indica si se midió o es una valoración.
+- **Comprobación en navegador:** capturas a 375, 768, 1024 y 1440 px (1920 solo cuando líneas o rejillas llegan de borde a borde), táctil emulado en las tres primeras, movimiento reducido activado, scripts de página para desbordes, tamaño de objetivos, metaetiquetas y señales móviles, un recorrido de foco con teclado y Lighthouse si hay Chrome.
+
+## Requisitos
+
+- **Imprescindible:** [Claude Code](https://code.claude.com). El plugin no necesita ningún otro plugin ni skill.
+- **Para la comprobación en navegador de `design-review` y las capturas de referencia de `modern-design`:** Node.js (LTS) con npm.
+  - `@playwright/cli` 0.1.25, instalado de forma global con npm después de que la skill te lo pregunte. Descarga su propio navegador la primera vez.
+  - `serve` 14.2.8, ejecutado con `npx`, solo para webs estáticas sin servidor de desarrollo.
+- **Para las puntuaciones de Lighthouse:** Google Chrome. Lighthouse 13.6.0 se ejecuta con `npx`.
+- **Acceso a la red:** para las descargas de `npx` y del navegador, y para WebSearch y WebFetch en el paso de dirección.
+
+Qué pasa si falta algo:
+
+- **Sin Node.js:** `design-review` lo dice una vez y hace una revisión de criterio del código o del HTML; cada medición queda como "not measured".
+- **Sin Chrome:** el informe dice que Lighthouse no se ejecutó y no da puntuaciones.
+- **Sin navegador en el paso de dirección:** las páginas de referencia se leen con WebFetch y el brief indica que se omitió la comparación visual.
+- **`PRODUCT.md` y `DESIGN.md` de Impeccable:** se leen solo si ya existen en tu proyecto; el plugin nunca los escribe.
 
 ## Instalación
 
-Necesitas [Claude Code](https://code.claude.com). En una sesión de Claude Code:
+Desde GitHub, en una sesión de Claude Code:
 
 ```text
 /plugin marketplace add santiagodie/modern-design-pack
@@ -72,68 +104,78 @@ Para ofrecerlo a todo el equipo de un proyecto, añade esto al `.claude/settings
 
 Cada persona acepta el aviso de confianza del espacio de trabajo e instala el plugin una vez por clon, por ejemplo con `claude plugin install modern-design-pack@santiagodie-plugins --scope project`.
 
-Las skills se activan solas a partir de su descripción, o se pueden llamar directamente, por ejemplo `/modern-design-pack:modern-design`, o `/modern-design-pack:design-review https://example.com` para auditar una web.
+Para desarrollo en local, clona el repositorio y arranca Claude Code con el plugin cargado para esa sesión:
 
-## Cómo funciona
+```bash
+claude --plugin-dir ./modern-design-pack
+```
 
-Dos skills: una construye y la otra revisa.
+Ejecuta `/reload-plugins` después de editar sus archivos.
+
+Las skills se activan solas a partir de su descripción, o se pueden llamar directamente: `/modern-design-pack:modern-design`, o `/modern-design-pack:design-review https://example.com` para auditar una web.
+
+## Cómo trabaja
 
 ```mermaid
 flowchart LR
     A[modern-design] --> B[design-review]
-    B -- problemas detectados --> A
+    B -- problemas encontrados --> A
 ```
 
-`modern-design` trabaja en cinco pasos: dirección, tokens, componentes, animación y paso a `design-review`. Cada paso carga su propio archivo de referencia solo cuando hace falta, así que una petición sobre colores no carga las pautas de animación.
+- **Pasos de `modern-design`:** dirección, tokens, componentes (secciones), animación y paso a `design-review`. Cada paso carga solo sus propios archivos de referencia.
+- **Primero el hero:** en una web o página nueva, se construye primero solo el hero de la página principal. `design-review` lo revisa, y el resto se construye cuando estás de acuerdo con la dirección.
+- **Tres subagentes:**
+  - `design-explorer` (Haiku) localiza texto en tu proyecto y en las listas del plugin;
+  - `design-writer` (Sonnet) construye a partir del plan;
+  - `design-reviewer` (Sonnet) mide y escribe el informe en un contexto limpio, sin corregir nada.
 
-`design-review` tiene dos modos. En tu propio proyecto revisa, comprueba en un navegador real y corrige. Con una URL pública hace una auditoría de solo lectura (tres páginas como máximo, sin logins) con capturas a 375, 768 y 1440 px, lectura del HTML y Lighthouse si hay Chrome disponible, y guarda un informe en `audits/`.
-
-**El contexto manda sobre las reglas.** Las reglas se escriben como "haz X cuando Y", no como prohibiciones absolutas. Tus decisiones en `site-decisions.md`, y después el brief del paso de dirección, deciden cuándo se aplica cada una.
-
-**Nada inventado.** `modern-design` nunca inventa precios, cifras, textos del negocio, reseñas, horarios, direcciones, datos legales ni fotos, y lo rechaza si se le pide. El contenido que falta se convierte en un relleno marcado de forma visible y se anota en `content-needed.md`; `design-review` trata cada relleno como un bloqueo antes de publicar. Esta regla está por encima de todo, incluidas tus decisiones.
-
-**Archivos del proyecto.** `modern-design` escribe tres archivos en la raíz del proyecto: `design-brief.md` (la dirección), `site-decisions.md` (los estándares de tu código, el inventario de lo que existe y tus decisiones, que están por encima del brief) y `content-needed.md` (lo que aún tienes que aportar).
-
-**Implementación.** `implementation.md` cubre el renderizado por ruta, web estática o app, el estado, las capas de reutilización, el rendimiento, la accesibilidad y el mínimo legal. El plugin no revisa la seguridad del backend; avisa cuando un proyecto necesita esa revisión.
-
-**Subagentes.** Tres subagentes hacen la lectura y la escritura pesadas: `design-explorer` (Haiku) localiza texto en tu código, `design-writer` (Sonnet) construye a partir del plan y `design-reviewer` (Sonnet) revisa en un contexto limpio. El plugin no elige el modelo de tu sesión principal, que planifica, decide y te hace las preguntas; usa el más capaz que tengas. Si tu configuración o tu organización no permiten el modelo de un subagente, Claude Code usa otro según sus propias reglas. Sin subagentes, todo funciona igual en la sesión principal.
-
-**Referencias, no copias.** El paso de dirección usa WebSearch para encontrar webs comparables, WebFetch para leerlas y capturas con Playwright para verlas. Anota los principios de cada referencia, nunca su código, recursos ni textos.
+  Tu sesión principal planifica, decide y te pregunta; usa el modelo más capaz que tengas. Sin la herramienta Agent, todo se hace en la sesión principal en el mismo orden.
+- **Dos modos de `design-review`:** proyecto propio (revisión, comprobación en navegador, corrección, notas de revisión) y auditoría de URL (solo lectura, solo páginas públicas, tres como máximo).
+- **Revisión de rediseños:** antes de cambiar una página que ya existe, `design-review` anota a dónde enlaza, qué envía y qué anuncia. Después del cambio compara; lo que se haya perdido bloquea la entrega, salvo que lo quitaras a propósito.
+- **Niveles:** cada hallazgo es **Floor** (no se publica con él: corrección, acceso, honestidad), **Reflex** (un hábito en el que cae un modelo, aceptable con un motivo propio de la página) o **Finish** (detalle de oficio, nunca bloquea).
 
 Más detalle en [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) (en inglés).
 
-## Skills
+**Archivos del proyecto.** `modern-design` escribe en la raíz de tu proyecto: `design-brief.md` (la dirección), `site-decisions.md` (los estándares de tu código, el inventario de lo que existe y tus propias decisiones) y `content-needed.md` (lo que aún tienes que aportar). `design-review` escribe `review-notes.md` en tu proyecto, y las auditorías de URL van a `audits/`.
 
-| Skill | Para qué sirve |
-|---|---|
-| `modern-design` | Punto de entrada para diseñar o rediseñar. Reúne contexto y referencias en vivo y después define dirección, tokens (color, tipografía, espaciado), componentes y animación para el proyecto. |
-| `design-review` | Revisa cualquier interfaz. En tu proyecto: detecta y corrige patrones genéricos de IA y errores de UI, con revisión en un navegador real. Con una URL pública: auditoría de solo lectura con informe completo. |
+## Principios
+
+- **Nada inventado.** Nunca se inventan precios, cifras, textos del negocio, reseñas, horarios, direcciones, datos legales ni fotos. El contenido que falta se convierte en un marcador visible, anotado en `content-needed.md`, y `design-review` bloquea la publicación mientras quede alguno.
+- **Decides tú, salvo en ética.** Tus decisiones en `site-decisions.md` están por encima del brief y de las listas de comprobación. Por encima de ellas solo están los límites firmes: no inventar contenido y no usar patrones engañosos.
+- **Razonar antes que recorrer listas.** Cada página parte de lo que duda su visitante y de lo que debe demostrar. Las reglas se escriben como "haz X cuando Y", y un patrón que es un tópico para un producto puede ser lo correcto para otro.
+- **Referencias, no copias.** Las webs reales aportan principios, nunca código, recursos ni textos.
 
 ## Estructura del proyecto
 
 ```text
 modern-design-pack/
-├── .github/workflows/
-│   └── skill-checks.yml     # comprobaciones de NVIDIA SkillEvaluator en cada push y PR
 ├── .claude-plugin/
 │   ├── plugin.json          # manifiesto del plugin
-│   └── marketplace.json     # marketplace "santiagodie-plugins", apunta a este repo como "./"
-├── agents/                  # design-explorer, design-writer, design-reviewer (subagentes)
+│   └── marketplace.json     # marketplace "santiagodie-plugins", lista este repo como "./"
+├── .github/workflows/
+│   └── skill-checks.yml     # comprobaciones de NVIDIA SkillEvaluator en cada push y PR
+├── agents/                  # design-explorer, design-writer, design-reviewer
 ├── skills/
 │   ├── modern-design/
 │   │   ├── SKILL.md
-│   │   └── references/      # direction, reasoning, reasoning-examples, pages/, principles, ethics, content-truth, implementation, responsive, sections/, templates/, tokens, motion, resources
+│   │   └── references/
+│   │       ├── reasoning.md, evidence.md, ethics.md, content-truth.md, resources.md
+│   │       ├── strategy/    # dirección, razonamiento de diseño, principios, ejemplos
+│   │       ├── ux/pages/    # doce guías por tipo de página
+│   │       ├── ui/          # tokens (color, oscuro, tipografía, espaciado), animación, sections/
+│   │       ├── engineering/ # implementación, responsive
+│   │       └── templates/   # site-decisions, content-needed
 │   └── design-review/
 │       ├── SKILL.md
-│       ├── references/      # review-method, unslop-type-color, unslop-layout, unslop-components, copy-states-checklist, mobile-checklist, outdated-checklist, dark-patterns-checklist, visual-qa, regression-check, audit-report
-│       └── scripts/         # page scripts run with playwright-cli eval
+│       ├── references/      # método de revisión, listas, revisión visual, rediseños, formato del informe
+│       └── scripts/         # scripts de página y la comparación de inventarios
 ├── assets/banner.svg
 ├── docs/
-│   ├── research/            # guía de landing pages del autor, base de los componentes
-│   ├── examples/            # informes y capturas de las pruebas de cada fase
-│   ├── SOURCES.md           # todas las fuentes externas y el estado de su licencia
-│   ├── ARCHITECTURE.md      # flujo entre skills y principios
-│   └── ROADMAP.md
+│   ├── ARCHITECTURE.md      # flujo de skills, agentes, niveles, árbol de referencias
+│   ├── ROADMAP.md
+│   ├── SOURCES.md           # todas las fuentes externas, con el estado de su licencia
+│   ├── examples/            # informes y capturas de las pruebas
+│   └── research/            # investigación en la que se basan las referencias
 ├── .claude/CLAUDE.md        # convenciones para trabajar en este repo
 ├── README.md / README.es.md
 ├── CHANGELOG.md
@@ -143,23 +185,23 @@ modern-design-pack/
 
 ## Limitaciones conocidas
 
-- **modern-design está incompleta:** tienen contenido la dirección, el razonamiento, las secciones de las páginas que persuaden y la implementación. Tokens y animación funcionan con el criterio por defecto del modelo, siguiendo el brief.
-- **Reglas nuevas sin probar:** la regla de no inventar, `site-decisions.md` y la capa de implementación aún no se han probado en una construcción completa (ver la hoja de ruta).
-- **Poco probado:** `design-review` se ha probado con tres webs públicas y una landing generada, una o dos veces cada una, en sesiones no interactivas ([resultados](docs/examples/phase-2-results.md)). Dos cambios de reglas hechos tras la última ronda no se han vuelto a probar. Los juicios y las métricas de laboratorio varían entre ejecuciones. No está comprobado que las skills se activen con peticiones naturales en inglés y en español.
-- **Auditoría de licencias parcial:** solo se han revisado las fuentes que usa `design-review`. El resto de `docs/SOURCES.md` sigue en `TO VERIFY` y se revisa cuando se vaya a usar cada fuente. No se ha copiado texto de terceros: las ideas se reescriben y se acreditan.
-- **Fuentes sin identificar:** tres de las listas anti-slop vienen de capturas cuyo autor aún no está identificado.
-- **Depende de un navegador:** la revisión en navegador de `design-review` y la parte de capturas del paso de dirección necesitarán Playwright, que el plugin no instala. Lighthouse en las auditorías de URL también necesita Chrome; si no está, el informe lo indica y omite las puntuaciones medidas.
+- **La animación no está escrita:** el paso de animación es un esqueleto; el modelo sigue el brief con su propio criterio, con los nombres de tokens de animación que reserva el paso de tokens.
+- **Faltan las secciones de páginas que operan:** paneles, tablas y pantallas de administración tienen guía de página, pero aún no tienen archivos de sección. Tampoco están escritos los componentes reutilizables (botones, tarjetas, campos).
+- **Poco probado:** `design-review` se ha probado en unas pocas webs públicas y páginas generadas, y la regla de no inventar en dos reconstrucciones ([resultados](docs/examples/), en inglés). Sin probar todavía: el paso de tokens, que `site-decisions.md` anule una regla, los subagentes y la revisión del hero primero, y la activación con peticiones naturales en inglés y en español. Las valoraciones y las métricas de laboratorio varían entre ejecuciones.
+- **Búsqueda de referencias:** en las pruebas no interactivas el navegador no pudo abrir webs externas; falta repetirla en una sesión interactiva.
+- **Auditoría de licencias parcial:** la licencia de cada fuente se comprueba cuando se va a usar; las filas que siguen marcadas `TO VERIFY` en `docs/SOURCES.md` aún no se han comprobado. No se ha copiado texto de terceros, salvo citas breves acreditadas.
+- **Fuentes sin identificar:** algunas listas anti-slop vienen de capturas cuyos autores aún no se han identificado; se acreditan como tales.
 - **Sin icono:** el plugin aún no tiene icono para el listado.
 
 ## Créditos
 
-Este plugin ordena ideas de muchas personas del diseño y de proyectos de código abierto. La lista completa está en [docs/SOURCES.md](docs/SOURCES.md), y todo lo que se adapte se acreditará con su licencia en [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Este plugin ordena ideas de muchas personas del diseño y de proyectos de código abierto. Todas las fuentes están en [docs/SOURCES.md](docs/SOURCES.md), y el material adaptado se acredita con su licencia en [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-Complementos recomendados (opcionales):
+Complementos opcionales (no hacen falta para usar este plugin):
 
-- [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): un gran catálogo de estilos, paletas y combinaciones tipográficas que encaja bien junto a este plugin.
-- [Impeccable](https://impeccable.style), de Paul Bakaus: comandos de diseño y más de 60 comprobaciones automáticas de antipatrones. Se solapa con `design-review`, que resume algunas de sus ideas con palabras propias pero no replica sus comprobaciones. Úsalo cuando quieras esa profundidad.
-- [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance), de Chrome for Developers: una skill para agentes con guías sobre las funciones nativas de la plataforma web y los fallos de implementación que cometen los agentes. El `implementation.md` de `modern-design` solo guarda una checklist breve y remite a ella; en su versión 1.0 se informó de que un agente ("Agent One") pasó del 60,8% de 19 comprobaciones sin guía al 76,5% con la skill instalada y al 94,0% al nombrarla en la petición ([Search Engine Journal](https://www.searchenginejournal.com/google-releases-modern-web-guidance-1-0-for-ai-coding-agents/596495/)). Úsala junto a este plugin para profundizar en la implementación.
+- [Impeccable](https://impeccable.style), de Paul Bakaus: comandos de diseño y muchas comprobaciones automáticas de antipatrones. Se solapa con `design-review`, que resume algunas de sus ideas con palabras propias pero no replica sus comprobaciones.
+- [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance), de Chrome for Developers: una skill para agentes con guías sobre las funciones nativas de la plataforma web y los fallos que cometen los agentes. La referencia de implementación de `modern-design` guarda una lista breve y remite a ella.
+- [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): un gran catálogo de estilos, paletas y combinaciones tipográficas.
 
 ## Licencia
 

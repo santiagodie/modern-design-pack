@@ -143,6 +143,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `docs/research/browser-tools/`: research only (phase A), no change to `skills/`, `agents/` or the plugin configuration. Covers what Chrome DevTools for agents (`chrome-devtools-mcp`) would measure compared with `playwright-cli`: console errors, network on form submit (SF10), dark mode, CPU and network throttling, the accessibility tree, performance traces, and WebMCP / agentic browsing. Also measured context cost (full MCP 11.7k tokens, slim 198, zero up front with tool search; the CLI adds none), privacy flags, versions and Windows behaviour, packaging options, subagent tool lists, and an inventory of ECC. Decision table BT1–BT16, a proposal (keep `playwright-cli`; `chrome-devtools-mcp@1.13.0` only as an on-demand CLI with privacy off; no MCP server in the plugin), phase B risks (the SF10 test submit must block outgoing requests and log only the attempt), and a preliminary, unverified list of other MCP servers.
 - `docs/SOURCES.md`: rows for `chrome-devtools-mcp`, ECC and the Claude Code documentation. The Playwright CLI licence is now Apache-2.0, and the 14-day rule applies to every future version bump (0.1.25 is kept).
 
+### Changed (requirements and README)
+
+- `design-review`: a Tools step before any browser step, in both modes. It checks `node --version` and `npx --version`. When Node.js is missing, the skill tells the user once, does a judgment review of the code or the HTML, records each measurement as `not measured (Node not found)` and gives no number that no tool produced. The own-project review notes gain a "Tools not available" line. `visual-qa.md` says that `playwright-cli` needs Node.js with npm. `regression-check.md` records the comparison as not measured and blocking when Node is missing. `agents/design-reviewer.md` is unchanged.
+- `README.md` and `README.es.md` rewritten to match the repository:
+  - the five target skills, two available and three planned;
+  - what works today, described in user terms;
+  - a Requirements section (Claude Code; Node.js with npm, `@playwright/cli` 0.1.25 and `serve` 14.2.8 for the browser check; Chrome for Lighthouse 13.6.0; network access), what happens without each one, no other plugin or skill needed, and Impeccable's files read only when they exist;
+  - local development with `claude --plugin-dir`;
+  - how it works (steps, hero first, the three subagents, both review modes, the redesign check, Floor, Reflex and Finish), with a link to `docs/ARCHITECTURE.md`;
+  - principles;
+  - screenshot widths 375, 768, 1024 and 1440 (1920 when needed);
+  - the current folder tree and updated limitations.
+
 ### Changed (phase 3b)
 
 - Skills may read each other's files inside the plugin; the rule is now "nothing outside the plugin".
